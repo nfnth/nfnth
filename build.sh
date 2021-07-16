@@ -249,6 +249,7 @@ EOF
             do
                 echo "I got:$col1|$col2"
                 certbot certonly -w /root/cert -d ${domain} --email matt@sebolt.us --csr ecc-csr.pem --agree-tos --non-interactive --standalone
+                sed -i '$ d' foo.txt
                 echo $col1 >> /etc/ssl/openssl.cnf
             done < manifest
             sudo -E bash -c 'cat 0000_cert.pem ecc-privkey.pem > /etc/haproxy/cert/multi000.pem'
