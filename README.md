@@ -37,3 +37,22 @@ Based in Washington state.
 Stack runs on [Linode]() using [Arch Linux]() and Python, see [bitOS]().
  
 To contact, use matt@sebolt.us.
+
+<p align="center">
+  <img src="https://github.com/nfnth/nfnth/raw/main/res/coat_arms.png" width="360" height="440" /></p>
+
+<br/>
+
+## Domain (Registry)
+
+### Stocks
+
+|Domain|Owner|Info|
+|-|-|-|
+|abbv.us|available||
+
+### Tribes
+
+|Domain|Owner|Info|
+|-|-|-|
+|[patos.us]()|[mekanistic.com]()|[data]()<br/>[image](shutterstock_1312119701.jpg)|
