@@ -278,7 +278,7 @@ function setEditor(doc) {
     $("#toolset").show();$("#grid").show(); break;
    case 4:
 		   $("#stats").show();
-    $.get("https://github.com/nfnth/deed/raw/main/manifest", function (data) { $("#stats").html(renderMd(data));}); break;
+    $.get("../manifest", function (data) { $("#stats").html(renderMd(data));}); break;
    case 5:
     $("#map").show(); break;
    default:}}
