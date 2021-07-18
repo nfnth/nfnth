@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/nfnth/res/site/bird.png" width="360" height="440" /></p>
+  <img src="https://github.com/nfnth/res/raw/main/site/bird.png" width="360" height="440" /></p>
 
 <br/>
 
