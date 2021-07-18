@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img src="https://github.com/nfnth/res/raw/main/site/bird.png" width="360" height="440" /></p>
+  <img src="https://github.com/nfnth/res/raw/main/site/coat.png" width="360" height="440" /></p>
 
 <br/>
 
@@ -39,7 +39,7 @@ Stack runs on [Linode]() using [Arch Linux]() and Python, see [bitOS]().
 To contact, use matt@sebolt.us.
 
 <p align="center">
-  <img src="https://github.com/nfnth/nfnth/raw/main/res/coat_arms.png" width="360" height="440" /></p>
+  <img src="https://github.com/nfnth/res/raw/main/site/bird.png" width="360" height="440" /></p>
 
 <br/>
 
