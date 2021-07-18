@@ -4,33 +4,33 @@
 
 <br/>
 
-Welcome to the land of 1776!
+Welcome to the UR.Land of Deed and Domain.
 
-UR.Land is home of deeds and domains. 
+The home of **1776** (limited) deeds to domains. 
 
-Welcome to Deed and Domain!
+Each deed includes the following:
 
-View listings
+- Control territory
+- Write the land treaty and strategy *game only*
+- Site access (or domain forward)
+- Profile post
+- Access to mail and trade
 
-Purchase domains
+Tenants include:
 
-Map territory
+- Access to land *game only*
+- Registry access and post
 
-Build your profile to enhance...
+To view listings and purchase domains, see site.
 
+Use the editor to:
 
+- Create a profile
+- Write a treaty (trade)
+- Develop strategy
+- Campaign (with mail)
 
-
-We offer 1776 collectible and functional .us domains. 
-
-Feel free to browse and explore a continent filled with amazing peoples and lands. 
-
-Sign up to post content and/or purchase a deed. Deeds offer the following:
-
-- Official ownership
-- Terriotorial control
-- Access to mail and trade (site forwarding)
-- Subscription 
+Feel free to map and explore a continent filled with amazing peoples and lands. 
 
 Based in Washington state. 
 
