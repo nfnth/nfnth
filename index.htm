@@ -31,11 +31,10 @@
     <div>
       <a id="slider" href="#" data-target="user-pane" class="sidenav-trigger" style="background-color: #2f8fff;margin: 0;padding: 18;justify-items: center;display: flex;align-items: center;"><i class="material-icons">menu</i></a>
       <a style="display: flex; align-items: center; height: 100%; ">
-      <img id="menu-logo" onclick="mode=0; setEditor('https://github.com/nfnth/deed/README.md');" draggable="false" ondragstart="return false;" style="height:48; width:48; cursor: pointer; margin-left: 16;" /></a></div>
+      <img id="menu-logo" class="hide-on-med-and-down" onclick="mode=0; setEditor('https://github.com/nfnth/deed/README.md');" draggable="false" ondragstart="return false;" style="height:48; width:48; cursor: pointer; margin-left: 16;" /></a></div>
     
-    <a class="screen-hide" onclick="mode=0; setEditor('../static/manifest');"><i class="material-icons right">menu_book</i></a>
-    <a class="screen-hide" onclick="mode=4; setEditor('');"><i class="material-icons right">map</i></a>
-    <a class="screen-hide" onclick="mode=3; setEditor('');"><i class="material-icons right">view_list</i></a>
+    <a class="screen-hide" onclick="mode=5; setEditor('');"><i class="material-icons right">map</i></a>
+    <a class="screen-hide" onclick="mode=4; setEditor('');"><i class="material-icons right">view_list</i></a>
     <a class="screen-hide" onclick="mode=1; setEditor('../static/manifest');"><i class="material-icons right">edit</i></a>
     <a class="screen-hide" onclick="mode=3; setEditor('');"><i class="material-icons right">search</i></a>
     <ul class="hide-on-med-and-down" >
@@ -63,10 +62,11 @@
   <li><div class="user-view z-depth-1" style="background-color: #608396;display: flex;margin: auto; padding: 0;align-items: flex-end;">
     <img draggable="false" ondragstart="return false;" id="user-pic" style="height: 72;background-color: #a2b9cc; padding: 12;" src="https://cdn.jsdelivr.net/gh/nfnth/nfnth@latest/res/shield.png" /></div></li>
   <li style="text-align: center;"><a class="subheader">
-    <span style="font-size: 20;font-weight: bold; color: #000000;">UR.Land</span>
+    <span style="font-size: 20;font-weight: bold; color: #000000;">Dralun</span>
     <span style="margin-left:4;font-size: 16;font-weight: bold; color: #494646; ">· Deed and Domain</span></a></li>
   <li style="height:24;"><a class="subheader"></a></li>
-  <li><a class="waves-effect" onclick="mode=0; setEditor('../doc/README.md'); $('#user-pane').sidenav('close');"><i class="material-icons">terrain</i>Learn Domain Land</a></li>
+  <li><a class="waves-effect" onclick="mode=0; setEditor('../doc/README.md'); $('#user-pane').sidenav('close');"><i class="material-icons">terrain</i>Learn UR.Land</a></li>
+     <li><a class="waves-effect" ><i class="material-icons">terrain</i>View Domain Manifest</a></li>
 	<li><a class="waves-effect" onclick="mode=0; setEditor('../doc/REFERENCE.md'); $('#user-pane').sidenav('close');"><i class="material-icons">menu_book</i>Use MarkDown 2.0</a></li>
 	<li><a class="waves-effect" onclick="mode=0; setEditor('../doc/PLANME.md'); $('#user-pane').sidenav('close');"><i class="material-icons">book</i>Read Civilian Complex</a></li>
   <li><a class="waves-effect" onclick="mode=0; setEditor('../doc/ABOUT.md'); $('#user-pane').sidenav('close');"><i class="material-icons">help</i>About Dralun</a></li>
@@ -77,7 +77,7 @@
         <div id="logo" style="text-align:center;">
           <img draggable="false" id="leafy" style="width:64;height:48;" src="https://cdn.jsdelivr.net/gh/nfnth/nfnth@latest/res/eagle/eagle1.png"/></div>
         <div style="display: flex;align-items: center;justify-content: center;">
-          <span id="title" style="font-weight: bold; font-size: 25px;">NFNth</span>
+          <span id="title" style="font-weight: bold; font-size: 25px;">NfNth</span>
           <i class="material-icons" >copyright</i>2021</div></div>
         <div><span style="cursor: pointer;" onclick="mode=0; setEditor('../doc/BITOS.md'); $('#user-pane').sidenav('close');" class="new badge green darken-2" data-badge-caption="bitOS, version 1.02"></span></div>
       <div id="header-title"><span id="phrase" style="font-style: italic;">software on infinitive basis</span></div></div></li></ul>
