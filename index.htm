@@ -60,7 +60,7 @@
 <!-- panel -->
 <ul id="user-pane" class="sidenav loader" style="visibility:hidden;">
   <li><div class="user-view z-depth-1" style="background-color: #608396;display: flex;margin: auto; padding: 0;align-items: flex-end;">
-    <img draggable="false" ondragstart="return false;" id="user-pic" style="height: 72;background-color: #a2b9cc; padding: 12;" src="https://cdn.jsdelivr.net/gh/nfnth/nfnth@latest/res/shield.png" /></div></li>
+    <img draggable="false" ondragstart="return false;" id="user-pic" style="height: 72;background-color: #a2b9cc; padding: 12;" src="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/shield.png" /></div></li>
   <li style="text-align: center;"><a class="subheader">
     <span style="font-size: 20;font-weight: bold; color: #000000;">Dralun</span>
     <span style="margin-left:4;font-size: 16;font-weight: bold; color: #494646; ">· Deed and Domain</span></a></li>
@@ -202,7 +202,7 @@ mode=0; setEditor('../doc/START.md');
   searchClear();
 
   var castle = Math.floor(Math.random() * (16 - 1 + 1)) + 1; 
-  document.getElementById('menu-logo').src = "https://cdn.jsdelivr.net/gh/nfnth/nfnth@latest/res/castle/castle" + castle.toString() + ".png";
+  document.getElementById('menu-logo').src = "https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/castle/castle" + castle.toString() + ".png";
  
   var pathArray = window.location.pathname.split('/'); 
   domain = window.location.host;
