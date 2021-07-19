@@ -48,6 +48,7 @@
           <label class="label-icon" for="search" ></label>
           <i class="material-icons" onclick="searchClear()">close</i></div></a></li></ul>
     <ul class="right">
+	    <li><a id="actions" href="#!" data-target="action"><i class="material-icons">account_circle</i></a></li>
       <li style="display: flex; height: 64; align-items: center;">
         <a class="waves-effect waves-light btn modal-trigger blue" href="#user-modal"><i class="material-icons">account_circle</i></a></li></ul>
 	
@@ -61,7 +62,7 @@
   <li><a onclick="mode=5; setEditor('');"><i class="material-icons">map</i>Explore Map</a></li></ul>
 
 <!-- users -->
-<ul id="users" class="dropdown-content loader" style="visibility:hidden;">
+<ul id="action" class="dropdown-content loader" style="visibility:hidden;">
   <li><a onclick="mode=3; setEditor('');"><i class="material-icons">view_list</i>Create User</a></li>
   <li><a onclick="mode=4; setEditor('');"><i class="material-icons">equalizer</i>Sign In</a></li>
   <li><a onclick="mode=5; setEditor('');"><i class="material-icons">map</i>Reset Account</a></li></ul>
@@ -99,11 +100,20 @@
     <span style="font-size: 20;font-weight: bold; color: #000000;">Dralun</span>
     <span style="margin-left:4;font-size: 16;font-weight: bold; color: #494646; ">· Deed and Domain</span></a></li>
   <li style="height:24;"><a class="subheader"></a></li>
-  <li><a class="waves-effect" onclick="mode=0; setEditor('../doc/DOMAIN.md'); $('#user-pane').sidenav('close');"><i class="material-icons">terrain</i>Learn UR.Land</a></li>
-     <li><a class="waves-effect" onclick="mode=3; setEditor(''); $('#user-pane').sidenav('close');" ><i class="material-icons">ballot</i>View Domain Manifest</a></li>
-	<li><a class="waves-effect" onclick="mode=1; setEditor('../doc/MATTDOWN.md'); $('#user-pane').sidenav('close');"><i class="material-icons">menu_book</i>Use MarkDown 2.0</a></li>
-	<li><a class="waves-effect" onclick="mode=0; setEditor('../doc/MANIFEST.md'); $('#user-pane').sidenav('close');"><i class="material-icons">book</i>Read Civilian Complex</a></li>
-  <li><a class="waves-effect" onclick="mode=0; setEditor('../doc/DRALUN.md'); $('#user-pane').sidenav('close');"><i class="material-icons">help</i>About Dralun</a></li>
+     <li> <div class="input-field col s12" style="margin-right:24; width:225;">
+      <select multiple>
+        <option value="" disabled selected>Options...</option>
+	      <option value="1" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color5.png"><a>Series 1</a></option>
+        <option value="2" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color1.png">Reservation</option>
+        <option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color2.png">Monument</option>
+        <option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color3.png">National Landmark</option>
+        <option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color4.png">International</option></select><label>Filter By</label></div></li>
+  <li>  <div class="input-field col s12" style="margin-right:24;">
+      <select>
+        <option value="" disabled selected>Types...</option>
+        <option value="1" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color6.png">Name</option>
+	      <option value="2">Category</option></select><label>Sort By</label></div></li>
+    <li>   <a class="waves-effect waves-light btn" style="margin-left:24;"><i class="material-icons">clear</i></a></div></li>
   <li><div style="margin-top:0;" class="divider"></div></li>
   <li><a class="subheader"></a></li>
   <li><div id="header-logo" style="display: flex; flex-flow:column; align-items: center;justify-content: center;align-items: center; display: flex;">
@@ -183,20 +193,21 @@
 <a href="#!" class="collection-item">Alvin</a></div></div>
 
 <div id="toolset" class="z-depth-1 content loader" style="display:flex;align-items: center;justify-content: center;padding: 12; margin-bottom: 4; width:100%;position: fixed;background-color: white; z-index:4; ">
-    <div class="input-field col s12" style="margin-right:24; width:225;">
-      <select multiple>
-        <option value="" disabled selected>Options...</option>
-	      <option value="1" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color5.png"><a>Series 1</a></option>
-        <option value="2" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color1.png">Reservation</option>
-        <option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color2.png">Monument</option>
-        <option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color3.png">National Landmark</option>
-        <option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color4.png">International</option></select><label>Filter By</label></div>
-    <div class="input-field col s12" style="margin-right:24;">
-      <select>
-        <option value="" disabled selected>Types...</option>
-        <option value="1" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color6.png">Name</option>
-        <option value="2">Category</option></select><label>Sort By</label></div>
-        <a class="waves-effect waves-light btn" style="margin-left:24;"><i class="material-icons">clear</i></a></div>
+	<div class="row">
+    <div class="col s12">
+      <ul class="tabs">
+        <li class="tab col s3"><a href="#test1">Test 1</a></li>
+        <li class="tab col s3"><a class="active" href="#test2">Test 2</a></li>
+        <li class="tab col s3 disabled"><a href="#test3">Disabled Tab</a></li>
+        <li class="tab col s3"><a href="#test4">Test 4</a></li>
+      </ul>
+    </div>
+    <div id="test1" class="col s12">Test 1</div>
+    <div id="test2" class="col s12">Test 2</div>
+    <div id="test3" class="col s12">Test 3</div>
+    <div id="test4" class="col s12">Test 4</div>
+  </div>
+
 <div id="grid" class="content loader">
   <ul class="collapsible popout" style="padding-top: 112;">
     <li>
@@ -235,8 +246,8 @@ context.drawImage(video, 0, 0, 640, 480);}
 function changeDialog(dialog) { $('#'+dialog).removeClass('hidden'); $('#console').addClass('hidden'); }
 
 async function initial() {
-  $('select').formSelect();
-  $('#marks').dropdown({ constrainWidth: false } ); $('#domains').dropdown({ constrainWidth: false } ); //$('#users').dropdown({ constrainWidth: false } );
+  $('select').formSelect(); $('.tabs').tabs();
+  $('#marks').dropdown({ constrainWidth: false } ); $('#domains').dropdown({ constrainWidth: false } ); $('#actions').dropdown({ constrainWidth: false } );
   $('.modal').modal(); $('#user-pane').sidenav(); $('#user-setting').sidenav({ edge: 'right' } );
   $('.collapsible').collapsible(); 
   $('.datepicker').datepicker(); $('.timepicker').timepicker();$('.datepicker').onSelect = function(param) { alert('yes'); alert(param);}
