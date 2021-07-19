@@ -49,7 +49,7 @@
           <i class="material-icons" onclick="searchClear()">close</i></div></a></li></ul>
     <ul class="right">
       <li style="display: flex; height: 64; align-items: center;">
-        <a class="waves-effect waves-light btn modal-trigger green" href="#user-modal"><i class="material-icons">account_circle</i></a></li></ul></div></nav>
+        <a class="waves-effect waves-light btn modal-trigger blue" href="#user-modal"><i class="material-icons">account_circle</i></a></li></ul></div></nav>
 
 <!-- domains -->
 <ul id="domain" class="dropdown-content loader" style="visibility:hidden;">
@@ -356,7 +356,7 @@ var el = document.createElement('div'); el.id = 'marker';
 new mapboxgl.Marker(el).setLngLat(monument).setPopup(popup).addTo(map);
 
 var map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/mapbox/dark-v10', zoom: 4, center: [37.64757499700629, -86.99869603364057] });
-map.on('load', function () { map.loadImage('https://github.com/nfnth/res/raw/main/site/color/color1.png',
+map.on('load', function () { map.loadImage('https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color1.png',
 function (error, image) {if (error) throw error; map.addImage('cat', image);
 map.addSource('point', {'type': 'geojson','data': {'type': 'FeatureCollection','features': [{'type': 'Feature','geometry': {'type': 'Point','coordinates': [-77.4144, 25.0759]}}]}});
 map.addLayer({'id': 'points','type': 'symbol','source': 'point', 'layout': {'icon-image': 'cat', 'icon-size': 0.25}}); });});
