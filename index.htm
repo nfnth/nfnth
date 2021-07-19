@@ -49,7 +49,10 @@
           <i class="material-icons" onclick="searchClear()">close</i></div></a></li></ul>
     <ul class="right">
       <li style="display: flex; height: 64; align-items: center;">
-        <a class="waves-effect waves-light btn modal-trigger blue" href="#user-modal"><i class="material-icons">account_circle</i></a></li></ul></div></nav>
+        <a class="waves-effect waves-light btn modal-trigger blue" href="#user-modal"><i class="material-icons">account_circle</i></a></li></ul>
+	
+	  <div><a id="slider2" href="#" data-target="user-setting" class="sidenav-trigger" style="background-color: #2f8fff;margin: 0;padding: 18;justify-items: center;display: flex;align-items: center;"><i class="material-icons">menu</i></a></div>
+	</div></nav>
 
 <!-- domains -->
 <ul id="domain" class="dropdown-content loader" style="visibility:hidden;">
@@ -57,8 +60,39 @@
   <li><a onclick="mode=4; setEditor('');"><i class="material-icons">equalizer</i>View Stats</a></li>
   <li><a onclick="mode=5; setEditor('');"><i class="material-icons">map</i>Explore Map</a></li></ul>
 
+<!-- users -->
+<ul id="users" class="dropdown-content loader" style="visibility:hidden;">
+  <li><a onclick="mode=3; setEditor('');"><i class="material-icons">view_list</i>Create User</a></li>
+  <li><a onclick="mode=4; setEditor('');"><i class="material-icons">equalizer</i>Sign In</a></li>
+  <li><a onclick="mode=5; setEditor('');"><i class="material-icons">map</i>Reset Account</a></li></ul>
+
 <!-- panel -->
 <ul id="user-pane" class="sidenav loader" style="visibility:hidden;">
+  <li><div class="user-view z-depth-1" style="background-color: #608396;display: flex;margin: auto; padding: 0;align-items: flex-end;">
+    <img draggable="false" ondragstart="return false;" id="user-pic" style="height: 72;background-color: #a2b9cc; padding: 12;" src="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/shield.png" /></div></li>
+  <li style="text-align: center;"><a class="subheader">
+    <span style="font-size: 20;font-weight: bold; color: #000000;">Dralun</span>
+    <span style="margin-left:4;font-size: 16;font-weight: bold; color: #494646; ">· Deed and Domain</span></a></li>
+  <li style="height:24;"><a class="subheader"></a></li>
+  <li><a class="waves-effect" onclick="mode=0; setEditor('../doc/DOMAIN.md'); $('#user-pane').sidenav('close');"><i class="material-icons">terrain</i>Learn UR.Land</a></li>
+     <li><a class="waves-effect" onclick="mode=3; setEditor(''); $('#user-pane').sidenav('close');" ><i class="material-icons">ballot</i>View Domain Manifest</a></li>
+	<li><a class="waves-effect" onclick="mode=1; setEditor('../doc/MATTDOWN.md'); $('#user-pane').sidenav('close');"><i class="material-icons">menu_book</i>Use MarkDown 2.0</a></li>
+	<li><a class="waves-effect" onclick="mode=0; setEditor('../doc/MANIFEST.md'); $('#user-pane').sidenav('close');"><i class="material-icons">book</i>Read Civilian Complex</a></li>
+  <li><a class="waves-effect" onclick="mode=0; setEditor('../doc/DRALUN.md'); $('#user-pane').sidenav('close');"><i class="material-icons">help</i>About Dralun</a></li>
+  <li><div style="margin-top:0;" class="divider"></div></li>
+  <li><a class="subheader"></a></li>
+  <li><div id="header-logo" style="display: flex; flex-flow:column; align-items: center;justify-content: center;align-items: center; display: flex;">
+      <div id="header-logo">
+        <div id="logo" style="text-align:center;">
+          <img draggable="false" id="leafy" style="width:64;height:48;" src="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/eagle/eagle1.png"/></div>
+        <div style="display: flex;align-items: center;justify-content: center;">
+          <span id="title" style="font-weight: bold; font-size: 25px;">NfNth</span>
+          <i class="material-icons" >copyright</i>2021</div></div>
+        <div><span style="cursor: pointer;" onclick="mode=0; setEditor('../doc/BITOS.md'); $('#user-pane').sidenav('close');" class="new badge green darken-2" data-badge-caption="bitOS, version 1.02"></span></div>
+      <div id="header-title"><span id="phrase" style="font-style: italic;">software on infinitive basis</span></div></div></li></ul>
+
+<!-- panel -->
+<ul id="user-setting" class="sidenav loader" style="visibility:hidden;">
   <li><div class="user-view z-depth-1" style="background-color: #608396;display: flex;margin: auto; padding: 0;align-items: flex-end;">
     <img draggable="false" ondragstart="return false;" id="user-pic" style="height: 72;background-color: #a2b9cc; padding: 12;" src="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/shield.png" /></div></li>
   <li style="text-align: center;"><a class="subheader">
@@ -178,8 +212,6 @@
       <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div></li></ul></div>
 <div id="map" style="top:110px;" class="content loader"></div>
 	
-
-
 <script>
 		const preloadImage = src => 
            new Promise(r => {
@@ -199,21 +231,17 @@ if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) { // Not addin
 
 var canvas = document.getElementById('canvas'); var context = canvas.getContext('2d'); var video = document.getElementById('video');
 context.drawImage(video, 0, 0, 640, 480);}
-
-
   
 function changeDialog(dialog) { $('#'+dialog).removeClass('hidden'); $('#console').addClass('hidden'); }
 
 async function initial() {
   $('select').formSelect();
-  $('#marks').dropdown({ constrainWidth: false } ); $('#domains').dropdown({ constrainWidth: false } );
-  $('.modal').modal(); $('.sidenav').sidenav();
+  $('#marks').dropdown({ constrainWidth: false } ); $('#domains').dropdown({ constrainWidth: false } ); $('#users').dropdown({ constrainWidth: false } );
+  $('.modal').modal(); $('#user-pane').sidenav(); $('#user-setting').sidenav({ edge: right } );
   $('.collapsible').collapsible(); 
   $('.datepicker').datepicker(); $('.timepicker').timepicker();$('.datepicker').onSelect = function(param) { alert('yes'); alert(param);}
 mode=0; setEditor('../README.md');
 
-           
-         
          await preloadImage('https://github.com/nfnth/res/raw/main/site/coat.png') // Preload an image
 	await preloadImage('https://github.com/nfnth/res/raw/main/site/chimi_hi.png') 
 	await preloadImage('https://github.com/nfnth/res/raw/main/site/chimi_cards.png') 
@@ -241,8 +269,6 @@ initial();
 function openInNewTab(url, tab=true) { if (tab) { var win = window.open(url, '_blank'); win.focus(); } else window.open(url, '_self'); }
 function searchClear() { $('#search').val(''); }
 function searchResults() { $.post("../search/word", $('#search').val(), function(data, status){ $('#results').html(data); }); }
-
-
 	
 var current = new Date(); // timestamp, milliseconds since 1970 (?) vs. milliseconds (UTC)
  var yyyy = current.getFullYear(), MM = current.getMonth(), dd = current.getDate(), hh = current.getHours(), mm = current.getMinutes(), ss = current.getSeconds();
@@ -356,8 +382,6 @@ function renderMd(text) {
    $.ajax({ url: site + "/upload", type: "POST", data: formdata, processData: false, contentType: false, success: function(data) { alert('uploaded'); } }); }
  
    var flag = ["tribe", "monument", "town", "forest", "international"]; //pair? series 1?
-   
-
 
 mapboxgl.accessToken = 'pk.eyJ1IjoibmZudGgiLCJhIjoiY2tweW1rNXlsMGFpYzJwcGt1cHh6dmxzcyJ9.ZJaFrGpPDv5froWZMLXXYQ';
 var monument = [-82.99869603364057, 35.64757499700629, ];
