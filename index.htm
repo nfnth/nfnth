@@ -34,9 +34,9 @@
       <img id="menu-logo" class="hide-on-med-and-down" onclick="mode=0; setEditor('https://github.com/nfnth/deed/README.md');" draggable="false" ondragstart="return false;" style="height:48; width:48; cursor: pointer; margin-left: 16;" /></a></div>
     
     <a class="screen-hide" onclick="mode=5; setEditor('');"><i class="material-icons right">map</i></a>
-    <a class="screen-hide" onclick="mode=4; setEditor('');"><i class="material-icons right">view_list</i></a>
+    <a class="screen-hide" onclick="mode=3; setEditor('');"><i class="material-icons right">view_list</i></a>
     <a class="screen-hide" onclick="mode=1; setEditor('../static/manifest');"><i class="material-icons right">edit</i></a>
-    <a class="screen-hide" onclick="mode=3; setEditor('');"><i class="material-icons right">search</i></a>
+    <a class="screen-hide" onclick="mode=4; setEditor('');"><i class="material-icons right">search</i></a>
     <ul class="hide-on-med-and-down" >
       <li><a onclick="mode=0; setEditor('../doc/DOMAIN.md');">GET STARTED</a></li>
       <li><a id="domains" href="#!" data-target="domain">DOMAINS<i class="material-icons right">arrow_drop_down</i></a></li>
@@ -66,7 +66,7 @@
     <span style="margin-left:4;font-size: 16;font-weight: bold; color: #494646; ">· Deed and Domain</span></a></li>
   <li style="height:24;"><a class="subheader"></a></li>
   <li><a class="waves-effect" onclick="mode=0; setEditor('../doc/DOMAIN.md'); $('#user-pane').sidenav('close');"><i class="material-icons">terrain</i>Learn UR.Land</a></li>
-     <li><a class="waves-effect" onclick="mode=0; setEditor('../static/manifest');$('#user-pane').sidenav('close');" ><i class="material-icons">list</i>View Domain Manifest</a></li>
+     <li><a class="waves-effect" onclick="mode=3; setEditor(''); $('#user-pane').sidenav('close');" ><i class="material-icons">view_list</i>View Domain Manifest</a></li>
 	<li><a class="waves-effect" onclick="mode=1; setEditor('../doc/MATTDOWN.md'); $('#user-pane').sidenav('close');"><i class="material-icons">menu_book</i>Use MarkDown 2.0</a></li>
 	<li><a class="waves-effect" onclick="mode=0; setEditor('../doc/MANIFEST.md'); $('#user-pane').sidenav('close');"><i class="material-icons">book</i>Read Civilian Complex</a></li>
   <li><a class="waves-effect" onclick="mode=0; setEditor('../doc/DRALUN.md'); $('#user-pane').sidenav('close');"><i class="material-icons">help</i>About Dralun</a></li>
@@ -124,13 +124,14 @@
     <i class="material-icons right">publish</i>Post</a></div>
 	
 <div id="holder" style="display:flex; width:100%; justify-content:center;height: calc(100% - 60px);">
-  <div id="viewer" style="text-align:left;padding:24;height:100%; overflow-y:auto; margin-top:64;"></div>
+  <div id="viewer" style="text-align:left;padding:24;height:100%; overflow-y:auto; "></div>
+<div id="code" class="content loader" contentEditable="false" style="width:50%; height:50%; ">
+       <div  contentEditable="true"   style="text-align:left; overflow-y: auto; width:100%; height:100%;"></div></div>
 </div>
 	
-  <div id="code" class="content loader" contentEditable="false" style="width:50%; height:50%; ">
-       <div  contentEditable="true"   style="text-align:left; overflow-y: auto; width:100%; height:100%;"></div></div>
+  
 
-<div id="tools" class="content loader" style="display:none;">
+<div id="device" class="content loader" style="display:none;">
   <a id='marks' class='dropdown-trigger btn' href='#' data-target='mark'>
 	  <i class="material-icons right">build</i>Tool</a>
 <ul id='mark' class='dropdown-content'>
