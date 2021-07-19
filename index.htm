@@ -198,7 +198,7 @@ context.drawImage(video, 0, 0, 640, 480);}
   
 function changeDialog(dialog) { $('#'+dialog).removeClass('hidden'); $('#console').addClass('hidden'); }
 
-function initial() {
+async function initial() {
   $('select').formSelect();
   $('#marks').dropdown({ constrainWidth: false } ); $('#domains').dropdown({ constrainWidth: false } );
   $('.modal').modal(); $('.sidenav').sidenav();
