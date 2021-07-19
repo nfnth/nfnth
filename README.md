@@ -6,7 +6,7 @@
 
 Welcome to the UR.Land of Deed and Domain.
 
-The home of **1776** (limited) deeds to domains. 
+Home of the **1776 Collection** of (limited) deeds to domains. 
 
 Each deed includes the following:
 
