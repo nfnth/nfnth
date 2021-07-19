@@ -125,7 +125,10 @@
 	
 <div id="holder" style="display:flex; width:100%; justify-content:center;height: calc(100% - 160px);">
   <div id="viewer" style="text-align:left;padding:24;height:100%;"></div>
-  <div id="mycode" style="text-align:left;">
+  <div id="code" style="text-align:left; overflow-y: auto; width:100%;
+  height:100%;
+  max-height:200px;    /* if max height is exceeded */
+  overflow-y: auto;    /* add scrollbars */">
     <textarea id="code-markdown" name="code"></textarea></div></div>
 <div id="tools" class="content loader" style="display:none;">
   <a id='marks' class='dropdown-trigger btn' href='#' data-target='mark'>
@@ -172,7 +175,7 @@
       <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
     </li>
     <li>
-      <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+      <div class="collapsible-header"><i class="material-icons">place</i>Third</div>
       <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div></li></ul></div>
 <div id="map" style="top:110px;" class="content loader"></div>
 	
@@ -273,7 +276,7 @@ function setEditor(doc) {
      $("#holder").show(); $("#viewer").show(); $("#viewer").css("width", "100%"); $("#viewer").css("height", "100%");
      $.get(doc, function (data) { $("#viewer").html(renderMd(data));}); break;
    case 1:
-     $("#holder").show(); $("#tools").show();
+     $("#holder").show(); $("#tools").show(); $("#code").show();
      //$.get(doc, function (data) { });
 	     break;
    case 2:
