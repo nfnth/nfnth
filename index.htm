@@ -182,6 +182,13 @@
 
 
 <script>
+		const preloadImage = src => 
+           new Promise(r => {
+             const image = new Image()
+             image.onload = r
+             image.onerror = r
+             image.src = src })
+		
 function getLocation() { navigator.geolocation.getCurrentPosition(showPosition); }
 function showPosition(position) { alert(position.coords.latitude); alert(position.coords.longitude); }
   
@@ -234,12 +241,7 @@ function openInNewTab(url, tab=true) { if (tab) { var win = window.open(url, '_b
 function searchClear() { $('#search').val(''); }
 function searchResults() { $.post("../search/word", $('#search').val(), function(data, status){ $('#results').html(data); }); }
 
-	const preloadImage = src => 
-           new Promise(r => {
-             const image = new Image()
-             image.onload = r
-             image.onerror = r
-             image.src = src })
+
 	
 var current = new Date(); // timestamp, milliseconds since 1970 (?) vs. milliseconds (UTC)
  var yyyy = current.getFullYear(), MM = current.getMonth(), dd = current.getDate(), hh = current.getHours(), mm = current.getMinutes(), ss = current.getSeconds();
