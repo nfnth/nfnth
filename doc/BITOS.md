@@ -1,6 +1,6 @@
 
 <p align="center">
-<img src="https://github.com/msebolt/patOS/raw/main/boxapprentice.png" width="200" height="240" />
+<img src="https://github.com/nfnth/res/raw/main/site/chimi_hi.png" width="200" height="240" />
 </p>
 
 ## bitOS, simplistic speed
@@ -29,7 +29,7 @@ bitOS (*version 1.04*) is a minimal site/browser-based stack based on being easy
 
 That's it. Enjoy!
 
-<p align="center"><img src="https://github.com/msebolt/patOS/raw/main/boxapprentice2.png" width="200" height="200" /></p>
+<p align="center"><img src="https://github.com/nfnth/res/raw/main/site/chimi_cards.png" width="200" height="200" /></p>
 
 ### Additional info
 
