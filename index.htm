@@ -82,6 +82,30 @@
         <div><span style="cursor: pointer;" onclick="mode=0; setEditor('../doc/BITOS.md'); $('#user-pane').sidenav('close');" class="new badge green darken-2" data-badge-caption="bitOS, version 1.02"></span></div>
       <div id="header-title"><span id="phrase" style="font-style: italic;">software on infinitive basis</span></div></div></li></ul>
 
+<!-- dialog -->
+<div id="user-modal" class="modal content loader"><div class="modal-content">
+    <div id="intro" class="row-section"><!-- options -->
+      <div id="console" class="row">
+        <div class="col s12 m12" style="display: flex;flex-direction: column;align-items: center;">
+          <a class="waves-effect waves-light btn blue" style="width:240; display: flex; justify-content: space-between;" onclick="changeDialog('create');"><i class="material-icons">account_circle</i>Create User</a><br/>
+	<a class="waves-effect waves-light btn green" style="width:240; display: flex; justify-content: space-between;" onclick="changeDialog('forgot');"><i class="material-icons">login</i>Sign In</a><br/>
+          <a class="waves-effect waves-light btn" style="width:240; display: flex; justify-content: space-between;" onclick="changeDialog('forgot');"><i class="material-icons">mail</i>Reset Account</a>
+	      </div></div>
+
+<div id="create" class="row hidden">
+	      
+<div class="hover-base col s12 m12" id="new-name" style="display: flex; justify-content: center;"><div class="input-field"><i class="material-icons prefix">account_circle</i><input id="user-name" name="user-name" type="text" class="user-input" max="24" tabindex="1" oninput="userLookup(this);" ><label for="user-name">Username</label><span id="user-issue" class="helper-text" data-error="Invalid input" data-success="" >Enter username</span></div></div>
+	      
+<div class="hover-base col s12 m12" id="new-name" style="display: flex; justify-content: center;"><div class="input-field"><i class="material-icons prefix">account_circle</i><input id="user-password" name="user-name" type="text" class="user-input" max="24" tabindex="1" oninput="userLookup(this);" ><label for="user-name">Password</label><span id="user-issue" class="helper-text" data-error="Invalid input" data-success="" >Enter password</span></div></div>
+	      
+<div class="hover-base col s12 m12" id="new-name" style="display: flex; justify-content: center;"><div class="input-field"><i class="material-icons prefix">account_circle</i><input id="user-confirm" name="user-name" type="text" class="user-input" max="24" tabindex="1" oninput="userLookup(this);" ><label for="user-name">Confirm</label><span id="user-issue" class="helper-text" data-error="Invalid input" data-success="" >Confirm password</span></div></div>
+	 
+<div class="hover-base col s12 m12" id="new-name" style="display: flex; justify-content: center;"><div class="input-field"><i class="material-icons prefix">account_circle</i><input id="user-mail" name="user-name" type="text" class="user-input" max="24" tabindex="1" oninput="userLookup(this);" ><label for="user-name">Email</label>
+          <span id="user-issue" class="helper-text" data-error="Invalid input" data-success="" >Enter email</span></div></div></div>
+  
+<div class="modal-footer"><img draggable="false" id="leafy" style="width:64;height:48;" src="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/badge/badge1.png"/>
+      <button id="button-next" class="btn waves-effect waves-light" onclick="currentUser.check('matt');">Claim Payout<i class="material-icons left">login</i></button><a href="#!" class="modal-close waves-effect waves-gray btn-flat disabled">Cancel</a></div></div></div>
+	
 <!-- home -->
 <div id="home" style="text-align:center;margin-top:64;visibility:hidden; width:100%; z-index:1;" class="content loader">
   <input type="text" class="datepicker gone"><input type="text" class="timepicker gone">
@@ -124,11 +148,11 @@
     <div class="input-field col s12" style="margin-right:24; width:225;">
       <select multiple>
         <option value="" disabled selected>Options...</option>
-	      <option value="1"><a><i class="material-icons">park</i>Series 1</a></option>
-        <option value="2" data-icon="https://cdn.jsdelivr.net/gh/msebolt/res@latest/img/icon/symbol/wings.png">Reservation</option>
-        <option value="3" data-icon="https://cdn.jsdelivr.net/gh/msebolt/res@latest/img/icon/symbol/triangle.png">Monument</option>
-        <option value="3" data-icon="https://cdn.jsdelivr.net/gh/msebolt/res@latest/img/icon/symbol/marker.png">National Landmark</option>
-        <option value="3" data-icon="https://cdn.jsdelivr.net/gh/msebolt/res@latest/img/icon/symbol/colors.png">International</option></select><label>Filter By</label></div>
+	      <option value="1" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color5.png"><a>Series 1</a></option>
+        <option value="2" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color1.png">Reservation</option>
+        <option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color2.png">Monument</option>
+        <option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color3.png">National Landmark</option>
+        <option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color4.png">International</option></select><label>Filter By</label></div>
     <div class="input-field col s12" style="margin-right:24;">
       <select>
         <option value="" disabled selected>Types...</option>
@@ -150,29 +174,7 @@
       <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div></li></ul></div>
 <div id="map" style="top:110px;" class="content loader"></div>
 	
-<!-- dialog -->
-<div id="user-modal" class="modal content loader"><div class="modal-content">
-    <div id="intro" class="row-section"><!-- options -->
-      <div id="console" class="row">
-        <div class="col s12 m12" style="display: flex;flex-direction: column;align-items: center;">
-          <a class="waves-effect waves-light btn blue" style="width:240; display: flex; justify-content: space-between;" onclick="changeDialog('create');"><i class="material-icons">account_circle</i>Create User</a><br/>
-	<a class="waves-effect waves-light btn green" style="width:240; display: flex; justify-content: space-between;" onclick="changeDialog('forgot');"><i class="material-icons">login</i>Sign In</a><br/>
-          <a class="waves-effect waves-light btn" style="width:240; display: flex; justify-content: space-between;" onclick="changeDialog('forgot');"><i class="material-icons">mail</i>Reset Account</a>
-	      <img draggable="false" id="leafy" style="width:64;height:48;" src="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/badge/badge1.png"/></div></div>
 
-<div id="create" class="row hidden">
-	      
-<div class="hover-base col s12 m12" id="new-name" style="display: flex; justify-content: center;"><div class="input-field"><i class="material-icons prefix">account_circle</i><input id="user-name" name="user-name" type="text" class="user-input" max="24" tabindex="1" oninput="userLookup(this);" ><label for="user-name">Username</label><span id="user-issue" class="helper-text" data-error="Invalid input" data-success="" >Enter username</span></div></div>
-	      
-<div class="hover-base col s12 m12" id="new-name" style="display: flex; justify-content: center;"><div class="input-field"><i class="material-icons prefix">account_circle</i><input id="user-password" name="user-name" type="text" class="user-input" max="24" tabindex="1" oninput="userLookup(this);" ><label for="user-name">Password</label><span id="user-issue" class="helper-text" data-error="Invalid input" data-success="" >Enter password</span></div></div>
-	      
-<div class="hover-base col s12 m12" id="new-name" style="display: flex; justify-content: center;"><div class="input-field"><i class="material-icons prefix">account_circle</i><input id="user-confirm" name="user-name" type="text" class="user-input" max="24" tabindex="1" oninput="userLookup(this);" ><label for="user-name">Confirm</label><span id="user-issue" class="helper-text" data-error="Invalid input" data-success="" >Confirm password</span></div></div>
-	 
-<div class="hover-base col s12 m12" id="new-name" style="display: flex; justify-content: center;"><div class="input-field"><i class="material-icons prefix">account_circle</i><input id="user-mail" name="user-name" type="text" class="user-input" max="24" tabindex="1" oninput="userLookup(this);" ><label for="user-name">Email</label>
-          <span id="user-issue" class="helper-text" data-error="Invalid input" data-success="" >Enter email</span></div></div></div>
-  
-<div class="modal-footer hidden">
-      <button id="button-next" class="btn waves-effect waves-light" onclick="currentUser.check('matt');">Claim Payout<i class="material-icons left">login</i></button><a href="#!" class="modal-close waves-effect waves-gray btn-flat disabled">Cancel</a></div></div></div>
 
 <script>
 function getLocation() { navigator.geolocation.getCurrentPosition(showPosition); }
@@ -355,7 +357,7 @@ var el = document.createElement('div'); el.id = 'marker';
  
 new mapboxgl.Marker(el).setLngLat(monument).setPopup(popup).addTo(map);
 
-var map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/mapbox/dark-v10', zoom: 4, center: [-86.99869603364057, 37.64757499700629, ] });
+//var map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/mapbox/dark-v10', zoom: 4, center: [-86.99869603364057, 37.64757499700629, ] });
 map.on('load', function () { map.loadImage('https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color1.png',
 function (error, image) {if (error) throw error; map.addImage('cat', image);
 map.addSource('point', {'type': 'geojson','data': {'type': 'FeatureCollection','features': [{'type': 'Feature','geometry': {'type': 'Point','coordinates': [-77.4144, 25.0759]}}]}});
@@ -439,5 +441,5 @@ code { color: gray;line-height: 1;}
   
   body { margin: 0; padding: 0; }
 #map { position: absolute; top: 0; bottom: 0; width: 100%; }
-#marker { background-image: url('https://docs.mapbox.com/mapbox-gl-js/assets/washington-monument.jpg'); background-size: cover; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; }
+#marker { background-image: url('https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color2.png'); background-size: cover; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; }
 .mapboxgl-popup { max-width: 200px; }</style>
