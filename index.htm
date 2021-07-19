@@ -84,21 +84,23 @@
 
 <!-- dialog -->
 <div id="user-modal" class="modal content loader"><div class="modal-content">
-    <div id="intro" class="row-section"><!-- options -->
-      <div id="console" class="row">
-        <div class="col s12 m12" style="display: flex;flex-direction: column;align-items: center;">
+    <div id="intro" class="row-section">
+      <div id="console" class="row"><div class="col s12 m12" style="display: flex;flex-direction: column;align-items: center;">
           <a class="waves-effect waves-light btn blue" style="width:240; display: flex; justify-content: space-between;" onclick="changeDialog('create');"><i class="material-icons">account_circle</i>Create User</a><br/>
 	<a class="waves-effect waves-light btn green" style="width:240; display: flex; justify-content: space-between;" onclick="changeDialog('forgot');"><i class="material-icons">login</i>Sign In</a><br/>
           <a class="waves-effect waves-light btn" style="width:240; display: flex; justify-content: space-between;" onclick="changeDialog('forgot');"><i class="material-icons">mail</i>Reset Account</a>
-	      </div></div>
+	      </div></div></div>
 
 <div id="create" class="row hidden">
 	      
-<div class="hover-base col s12 m12" id="new-name" style="display: flex; justify-content: center;"><div class="input-field"><i class="material-icons prefix">account_circle</i><input id="user-name" name="user-name" type="text" class="user-input" max="24" tabindex="1" oninput="userLookup(this);" ><label for="user-name">Username</label><span id="user-issue" class="helper-text" data-error="Invalid input" data-success="" >Enter username</span></div></div>
+<div class="hover-base col s12 m12" id="new-name" style="display: flex; justify-content: center;"><div class="input-field">
+	<i class="material-icons prefix">account_circle</i><input id="user-name" name="user-name" type="text" class="user-input" max="24" tabindex="1" oninput="userLookup(this);" ><label for="user-name">Username</label><span id="user-issue" class="helper-text" data-error="Invalid input" data-success="" >Enter username</span></div></div>
 	      
-<div class="hover-base col s12 m12" id="new-name" style="display: flex; justify-content: center;"><div class="input-field"><i class="material-icons prefix">account_circle</i><input id="user-password" name="user-name" type="text" class="user-input" max="24" tabindex="1" oninput="userLookup(this);" ><label for="user-name">Password</label><span id="user-issue" class="helper-text" data-error="Invalid input" data-success="" >Enter password</span></div></div>
+<div class="hover-base col s12 m12" id="new-name" style="display: flex; justify-content: center;"><div class="input-field">
+	<i class="material-icons prefix">account_circle</i><input id="user-password" name="user-name" type="text" class="user-input" max="24" tabindex="1" oninput="userLookup(this);" ><label for="user-name">Password</label><span id="user-issue" class="helper-text" data-error="Invalid input" data-success="" >Enter password</span></div></div>
 	      
-<div class="hover-base col s12 m12" id="new-name" style="display: flex; justify-content: center;"><div class="input-field"><i class="material-icons prefix">account_circle</i><input id="user-confirm" name="user-name" type="text" class="user-input" max="24" tabindex="1" oninput="userLookup(this);" ><label for="user-name">Confirm</label><span id="user-issue" class="helper-text" data-error="Invalid input" data-success="" >Confirm password</span></div></div>
+<div class="hover-base col s12 m12" id="new-name" style="display: flex; justify-content: center;"><div class="input-field">
+	<i class="material-icons prefix">account_circle</i><input id="user-confirm" name="user-name" type="text" class="user-input" max="24" tabindex="1" oninput="userLookup(this);" ><label for="user-name">Confirm</label><span id="user-issue" class="helper-text" data-error="Invalid input" data-success="" >Confirm password</span></div></div>
 	 
 <div class="hover-base col s12 m12" id="new-name" style="display: flex; justify-content: center;"><div class="input-field"><i class="material-icons prefix">account_circle</i><input id="user-mail" name="user-name" type="text" class="user-input" max="24" tabindex="1" oninput="userLookup(this);" ><label for="user-name">Email</label>
           <span id="user-issue" class="helper-text" data-error="Invalid input" data-success="" >Enter email</span></div></div></div>
@@ -199,7 +201,7 @@ function initial() {
   $('.modal').modal(); $('.sidenav').sidenav();
   $('.collapsible').collapsible(); 
   $('.datepicker').datepicker(); $('.timepicker').timepicker();$('.datepicker').onSelect = function(param) { alert('yes'); alert(param);}
-mode=0; setEditor('../doc/START.md');
+mode=0; setEditor('../README.md');
   setTimeout(function() {  $(".loader").css("visibility", "visible");}, 1000);
  //mermaid.initialize({startOnLoad:true});
   searchClear();
@@ -228,7 +230,7 @@ var current = new Date(); // timestamp, milliseconds since 1970 (?) vs. millisec
  var yyyy = current.getFullYear(), MM = current.getMonth(), dd = current.getDate(), hh = current.getHours(), mm = current.getMinutes(), ss = current.getSeconds();
  var datestamp = yyyy + "." + MM + "." + dd;
  var timestamp = hh + ":" + mm + ":" + ss;
- $.post("../search/ip", "", function (data) { $('#stat-date').html(datestamp); $('#stat-time').html(timestamp); $('#stat-ip').html(data);});
+ //$.post("../search/ip", "", function (data) { $('#stat-date').html(datestamp); $('#stat-time').html(timestamp); $('#stat-ip').html(data);});
 
  async function submitUser() { let hash = await genEncryptionKey($("#user-password").val()); }
    
