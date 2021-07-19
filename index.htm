@@ -3,7 +3,7 @@
 <title>Dralun · Deed and Domain</title>
 
 <link class="ico" rel="icon" href="https://cdn.jsdelivr.net/gh/nfnth/res@latest/icon/urland/favicon.ico" type="image/x-icon">
-<link class="ico" rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/nfnth/res@latest/ricon/urland/favicon.ico" type="image/x-icon">
+<link class="ico" rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/nfnth/res@latest/icon/urland/favicon.ico" type="image/x-icon">
 <link class="ico" rel="apple-touch-icon" sizes="128x128" href="https://cdn.jsdelivr.net/gh/nfnth/res@latest/icon/urland/apple-touch-icon.png">
 <link class="ico" rel="icon" sizes="192x192" href="https://cdn.jsdelivr.net/gh/nfnth/res@latest/icon/urland/android-chrome-192x192.png">
 
@@ -348,14 +348,14 @@ function renderMd(text) {
          //await Promise.all(images.map(x => preloadImage(x.src))) // Preload a bunch of images in parallel 
 
 mapboxgl.accessToken = 'pk.eyJ1IjoibmZudGgiLCJhIjoiY2tweW1rNXlsMGFpYzJwcGt1cHh6dmxzcyJ9.ZJaFrGpPDv5froWZMLXXYQ';
-var monument = [35.64757499700629, -82.99869603364057];
+var monument = [-82.99869603364057, 35.64757499700629, ];
 var map = new mapboxgl.Map({container: 'map',style: 'mapbox://styles/mapbox/light-v10',center: monument,zoom: 15});
 var popup = new mapboxgl.Popup({ offset: 25 }).setText('Construction on the Washington Monument began in 1848.');
 var el = document.createElement('div'); el.id = 'marker';
  
 new mapboxgl.Marker(el).setLngLat(monument).setPopup(popup).addTo(map);
 
-var map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/mapbox/dark-v10', zoom: 4, center: [37.64757499700629, -86.99869603364057] });
+var map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/mapbox/dark-v10', zoom: 4, center: [-86.99869603364057, 37.64757499700629, ] });
 map.on('load', function () { map.loadImage('https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color1.png',
 function (error, image) {if (error) throw error; map.addImage('cat', image);
 map.addSource('point', {'type': 'geojson','data': {'type': 'FeatureCollection','features': [{'type': 'Feature','geometry': {'type': 'Point','coordinates': [-77.4144, 25.0759]}}]}});
