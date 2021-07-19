@@ -123,7 +123,7 @@
   <a onclick="exportDoc();" class="btn waves-effect waves-light green tool" style="margin-left:24;">
     <i class="material-icons right">publish</i>Post</a></div>
 	
-<div id="holder" style="display:flex; width:100%; justify-content:center;height: calc(100% - 160px);">
+<div id="holder" style="display:flex; width:100%; justify-content:center;height: calc(100% - 60px);">
   <div id="viewer" style="text-align:left;padding:24;height:100%; overflow-y:auto;"></div>
 </div>
 	
@@ -205,6 +205,11 @@ function initial() {
   $('.collapsible').collapsible(); 
   $('.datepicker').datepicker(); $('.timepicker').timepicker();$('.datepicker').onSelect = function(param) { alert('yes'); alert(param);}
 mode=0; setEditor('../README.md');
+
+           
+         
+         await preloadImage('https://github.com/nfnth/res/raw/main/site/coat.png') // Preload an image
+         //await Promise.all(images.map(x => preloadImage(x.src))) // Preload a bunch of images in parallel 
   setTimeout(function() {  $(".loader").css("visibility", "visible");}, 1000);
  //mermaid.initialize({startOnLoad:true});
   searchClear();
@@ -229,6 +234,13 @@ function openInNewTab(url, tab=true) { if (tab) { var win = window.open(url, '_b
 function searchClear() { $('#search').val(''); }
 function searchResults() { $.post("../search/word", $('#search').val(), function(data, status){ $('#results').html(data); }); }
 
+	const preloadImage = src => 
+           new Promise(r => {
+             const image = new Image()
+             image.onload = r
+             image.onerror = r
+             image.src = src })
+	
 var current = new Date(); // timestamp, milliseconds since 1970 (?) vs. milliseconds (UTC)
  var yyyy = current.getFullYear(), MM = current.getMonth(), dd = current.getDate(), hh = current.getHours(), mm = current.getMinutes(), ss = current.getSeconds();
  var datestamp = yyyy + "." + MM + "." + dd;
@@ -342,17 +354,7 @@ function renderMd(text) {
  
    var flag = ["tribe", "monument", "town", "forest", "international"]; //pair? series 1?
    
-  //     for(a = 0; a < 0; a++) //final.length; a++)
- //      {
-   //        const preloadImage = src => 
-   //        new Promise(r => {
-    //         const image = new Image()
-     //        image.onload = r
-    //         image.onerror = r
-     //        image.src = src })
-         
-         //await preloadImage('https://picsum.photos/100/100') // Preload an image
-         //await Promise.all(images.map(x => preloadImage(x.src))) // Preload a bunch of images in parallel 
+
 
 mapboxgl.accessToken = 'pk.eyJ1IjoibmZudGgiLCJhIjoiY2tweW1rNXlsMGFpYzJwcGt1cHh6dmxzcyJ9.ZJaFrGpPDv5froWZMLXXYQ';
 var monument = [-82.99869603364057, 35.64757499700629, ];
