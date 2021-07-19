@@ -38,9 +38,9 @@
     <a class="screen-hide" onclick="mode=1; setEditor('../static/manifest');"><i class="material-icons right">edit</i></a>
     <a class="screen-hide" onclick="mode=3; setEditor('');"><i class="material-icons right">search</i></a>
     <ul class="hide-on-med-and-down" >
-      <li><a onclick="mode=0; setEditor('../README.md');">GET STARTED</a></li>
+      <li><a onclick="mode=0; setEditor('../doc/DOMAIN.md');">GET STARTED</a></li>
       <li><a id="domains" href="#!" data-target="domain">DOMAINS<i class="material-icons right">arrow_drop_down</i></a></li>
-      <li><a onclick="mode=1; setEditor('../PLANME.md');">EDITOR</a></li>
+      <li><a onclick="mode=1; setEditor('../doc/MATTDOWN.md');">EDITOR</a></li>
       <li style="height:64px;">
         <a style="height:inherit; padding-right:0;"><i onclick="$('#search').focus();" style="height:inherit; padding-right:4;" class="material-icons">search</i><span onclick="$('#search').focus();" class="badge blue">1865</span>
         <div id="search-box" class="input-field" style="height:inherit;">
@@ -65,11 +65,11 @@
     <span style="font-size: 20;font-weight: bold; color: #000000;">Dralun</span>
     <span style="margin-left:4;font-size: 16;font-weight: bold; color: #494646; ">· Deed and Domain</span></a></li>
   <li style="height:24;"><a class="subheader"></a></li>
-  <li><a class="waves-effect" onclick="mode=0; setEditor('../README.md'); $('#user-pane').sidenav('close');"><i class="material-icons">terrain</i>Learn UR.Land</a></li>
-     <li><a class="waves-effect" ><i class="material-icons">terrain</i>View Domain Manifest</a></li>
-	<li><a class="waves-effect" onclick="mode=2; setEditor('../doc/REFERENCE.md'); $('#user-pane').sidenav('close');"><i class="material-icons">menu_book</i>Use MarkDown 2.0</a></li>
-	<li><a class="waves-effect" onclick="mode=0; setEditor('../PLANME.md'); $('#user-pane').sidenav('close');"><i class="material-icons">book</i>Read Civilian Complex</a></li>
-  <li><a class="waves-effect" onclick="mode=0; setEditor('../doc/ABOUT.md'); $('#user-pane').sidenav('close');"><i class="material-icons">help</i>About Dralun</a></li>
+  <li><a class="waves-effect" onclick="mode=0; setEditor('../doc/DOMAIN.md'); $('#user-pane').sidenav('close');"><i class="material-icons">terrain</i>Learn UR.Land</a></li>
+     <li><a class="waves-effect" ><i class="material-icons">fact_check</i>View Domain Manifest</a></li>
+	<li><a class="waves-effect" onclick="mode=2; setEditor('../doc/MATTDOWN.md'); $('#user-pane').sidenav('close');"><i class="material-icons">menu_book</i>Use MarkDown 2.0</a></li>
+	<li><a class="waves-effect" onclick="mode=0; setEditor('../doc/MANIFEST.md'); $('#user-pane').sidenav('close');"><i class="material-icons">book</i>Read Civilian Complex</a></li>
+  <li><a class="waves-effect" onclick="mode=0; setEditor('../doc/DRALUN.md'); $('#user-pane').sidenav('close');"><i class="material-icons">help</i>About Dralun</a></li>
   <li><div style="margin-top:0;" class="divider"></div></li>
   <li><a class="subheader"></a></li>
   <li><div id="header-logo" style="display: flex; flex-flow:column; align-items: center;justify-content: center;align-items: center; display: flex;">
@@ -155,9 +155,10 @@
     <div id="intro" class="row-section"><!-- options -->
       <div id="console" class="row">
         <div class="col s12 m12" style="display: flex;flex-direction: column;align-items: center;">
-          <a class="waves-effect waves-light btn green" style="width:240; display: flex; justify-content: space-between;" onclick="changeDialog('forgot');"><i class="material-icons">login</i>Sign In</a><br/>
           <a class="waves-effect waves-light btn blue" style="width:240; display: flex; justify-content: space-between;" onclick="changeDialog('create');"><i class="material-icons">account_circle</i>Create User</a><br/>
-          <a class="waves-effect waves-light btn" style="width:240; display: flex; justify-content: space-between;" onclick="changeDialog('forgot');"><i class="material-icons">mail</i>Reset Account</a></div></div>
+	<a class="waves-effect waves-light btn green" style="width:240; display: flex; justify-content: space-between;" onclick="changeDialog('forgot');"><i class="material-icons">login</i>Sign In</a><br/>
+          <a class="waves-effect waves-light btn" style="width:240; display: flex; justify-content: space-between;" onclick="changeDialog('forgot');"><i class="material-icons">mail</i>Reset Account</a>
+	      <img draggable="false" id="leafy" style="width:64;height:48;" src="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/badge/badge1.png"/></div></div>
 
 <div id="create" class="row hidden">
 	      
