@@ -124,7 +124,7 @@
     <i class="material-icons right">publish</i>Post</a></div>
 	
 <div id="holder" style="display:flex; width:100%; justify-content:center;height: calc(100% - 160px);">
-  <div id="viewer" style="text-align:left;padding:24;height:100%;"></div>
+  <div id="viewer" style="text-align:left;padding:24;height:100%; overflow-y:auto;"></div>
 </div>
 	
   <div id="code" class="content loader" contentEditable="false" style="width:50%; height:50%; ">
@@ -370,7 +370,7 @@ map.addLayer({'id': 'points','type': 'symbol','source': 'point', 'layout': {'ico
 </script>
   
 <style>
-body { margin: 0; top: 0; left: 0; overflow-x: hidden; padding: 0 0 0 0; font-family: Arial, Helvetica, sans-serif; background-color: white; }
+body { margin: 0; top: 0; left: 0; overflow-x: hidden; overflow-y: hidden; padding: 0 0 0 0; font-family: Arial, Helvetica, sans-serif; background-color: white; }
 
 .hidden { display:none!important; height: 0; padding: 0!important; } .disappear { visibility: hidden; } .load { opacity: 0; } .gone { width:0; height:0; z-index:-400; position:absolute; top:-9999; left:-9999;}
 .fade {-webkit-animation-name: fade;-webkit-animation-duration: 1.5s;animation-name: fade;animation-duration: 1.5s;} @-webkit-keyframes fade {from {opacity: .4}to {opacity: 1}} @keyframes fade {from {opacity: .4}to {opacity: 1}}
