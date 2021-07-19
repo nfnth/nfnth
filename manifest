@@ -1,6 +1,6 @@
 300zx.us		
 35r.us
-abbv.us
+abbv.us,stock
 abder.us
 abenaki.us
 abrashkin.us
@@ -47,7 +47,7 @@ amphicar.us
 ananias.us
 andreessen.us
 androscoggin.us		
-andv.us, 
+andv.us,stock
 angelou.us
 angolabay.us
 aniakchak.us
@@ -67,7 +67,7 @@ argonne.us
 arikara.us
 armisen.us
 armistead.us
-arnc.us
+arnc.us,stock
 aronofsky.us
 arver.us, 
 ashepoo.us		
@@ -89,7 +89,7 @@ aucilla.us
 aulavik.ca
 auriemma.us
 averne.us
-avgo.us
+avgo.us,stock
 avildsen.us
 b747.us		
 b787.us		
@@ -191,7 +191,7 @@ brices.us
 bridgerteton.us
 briggle.us		
 bristleconepine.us
-brkb.us		
+brkb.us,stock
 brolin.us
 brooking.us
 brownpelican.us
@@ -270,7 +270,7 @@ chiricahua.us
 choctawhatchee.us
 chosin.us
 chpaaqn.us
-chrw.us		
+chrw.us,stock
 chukachida.ca
 churncreek.ca
 churubusco.us		
@@ -301,9 +301,9 @@ costner.us
 cotigao.in
 cowasuck.us
 cowpens.us
-coxe.us		
-cpgx.us		
-cpwr.us		
+coxe.us,political
+cpgx.us,stock
+cpwr.us,stock
 crabcontrol.us		
 craney.us		
 cratermoon.us
@@ -315,9 +315,9 @@ cruces.us
 crysler.us		
 csonka.us		
 csr22.us		
-ctas.us		
-ctsh.us		
-ctva.us		
+ctas.us,stock
+ctsh.us,stock
+ctva.us,stock
 cubicolor.us		
 cudi.us		
 cukor.us
@@ -374,8 +374,8 @@ dismalswamp.us
 dispoint.us
 disston.us		
 ditka.us		
-dlph.us		
-dltr.us		
+dlph.us,stock
+dltr.us,stock
 dojacat.us
 donelson.us
 doqui.us		
@@ -397,7 +397,7 @@ dunmore.us
 durant.us
 dushku.us		
 dusky.us		
-dwdp.us		
+dwdp.us,stock
 e36.us		
 easthemlock.us
 eastpine.us
