@@ -236,7 +236,7 @@ function changeDialog(dialog) { $('#'+dialog).removeClass('hidden'); $('#console
 
 async function initial() {
   $('select').formSelect();
-  $('#marks').dropdown({ constrainWidth: false } ); $('#domains').dropdown({ constrainWidth: false } ); $('#users').dropdown({ constrainWidth: false } );
+  $('#marks').dropdown({ constrainWidth: false } ); $('#domains').dropdown({ constrainWidth: false } ); //$('#users').dropdown({ constrainWidth: false } );
   $('.modal').modal(); $('#user-pane').sidenav(); $('#user-setting').sidenav({ edge: 'right' } );
   $('.collapsible').collapsible(); 
   $('.datepicker').datepicker(); $('.timepicker').timepicker();$('.datepicker').onSelect = function(param) { alert('yes'); alert(param);}
