@@ -66,8 +66,8 @@
     <span style="margin-left:4;font-size: 16;font-weight: bold; color: #494646; ">· Deed and Domain</span></a></li>
   <li style="height:24;"><a class="subheader"></a></li>
   <li><a class="waves-effect" onclick="mode=0; setEditor('../doc/DOMAIN.md'); $('#user-pane').sidenav('close');"><i class="material-icons">terrain</i>Learn UR.Land</a></li>
-     <li><a class="waves-effect" ><i class="material-icons">fact_check</i>View Domain Manifest</a></li>
-	<li><a class="waves-effect" onclick="mode=2; setEditor('../doc/MATTDOWN.md'); $('#user-pane').sidenav('close');"><i class="material-icons">menu_book</i>Use MarkDown 2.0</a></li>
+     <li><a class="waves-effect" onclick="mode=0; setEditor('../static/manifest');$('#user-pane').sidenav('close');" ><i class="material-icons">list</i>View Domain Manifest</a></li>
+	<li><a class="waves-effect" onclick="mode=1; setEditor('../doc/MATTDOWN.md'); $('#user-pane').sidenav('close');"><i class="material-icons">menu_book</i>Use MarkDown 2.0</a></li>
 	<li><a class="waves-effect" onclick="mode=0; setEditor('../doc/MANIFEST.md'); $('#user-pane').sidenav('close');"><i class="material-icons">book</i>Read Civilian Complex</a></li>
   <li><a class="waves-effect" onclick="mode=0; setEditor('../doc/DRALUN.md'); $('#user-pane').sidenav('close');"><i class="material-icons">help</i>About Dralun</a></li>
   <li><div style="margin-top:0;" class="divider"></div></li>
@@ -124,7 +124,7 @@
     <i class="material-icons right">publish</i>Post</a></div>
 	
 <div id="holder" style="display:flex; width:100%; justify-content:center;height: calc(100% - 60px);">
-  <div id="viewer" style="text-align:left;padding:24;height:100%; overflow-y:auto;"></div>
+  <div id="viewer" style="text-align:left;padding:24;height:100%; overflow-y:auto; margin-top:64;"></div>
 </div>
 	
   <div id="code" class="content loader" contentEditable="false" style="width:50%; height:50%; ">
@@ -216,6 +216,8 @@ mode=0; setEditor('../README.md');
            
          
          await preloadImage('https://github.com/nfnth/res/raw/main/site/coat.png') // Preload an image
+	await preloadImage('https://github.com/nfnth/res/raw/main/site/chimi_hi.png') 
+	await preloadImage('https://github.com/nfnth/res/raw/main/site/chimi_cards.png') 
          //await Promise.all(images.map(x => preloadImage(x.src))) // Preload a bunch of images in parallel 
   setTimeout(function() {  $(".loader").css("visibility", "visible");}, 1000);
  //mermaid.initialize({startOnLoad:true});
