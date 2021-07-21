@@ -66,7 +66,7 @@ async def user(request):
     return json2obj(user_template)
 
 async def data(request):
-    async def doc(request): #track views/stars
+ #   async def doc(request): #track views/stars
     name = request.match_info.get('name', 'matt')
     doc = request.match_info.get('doc', 'profile')
     item = request.match_info.get('item', '') #file
