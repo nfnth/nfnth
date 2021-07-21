@@ -44,7 +44,7 @@ async def user(request):
     action = request.match_info.get('action', 'check')
 
     if action == "check":
-        return web.Response(text=str(os.path.exists(USER_DATA + name)), content_type='text/html')
+        return web.Response(text=str(os.path.exists(DATA + name)), content_type='text/html')
     elif action == "create":
         data = await request.post()
         #user_client = json2obj(data["user"])
