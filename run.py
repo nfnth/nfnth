@@ -220,7 +220,7 @@ async def site(port):
     
     app.add_routes([web.post('/data', data)])
 
-    app.add_routes([web.post('/search/{name}', search)])
+  #  app.add_routes([web.post('/search/{name}', search)])
     
     runner = web.AppRunner(app)
     loop = asyncio.new_event_loop()
