@@ -1,4 +1,6 @@
 
+[![Jekyll site CI](https://github.com/nfnth/nfnth/actions/workflows/jekyll.yml/badge.svg)](https://github.com/nfnth/nfnth/actions/workflows/jekyll.yml)
+
 <p align="center">
   <img src="https://github.com/nfnth/res/raw/main/site/coat.png" width="360" height="440" /></p>
 
