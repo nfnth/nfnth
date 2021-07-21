@@ -1,6 +1,4 @@
 
-[![Pip Boy](https://github.com/nfnth/nfnth/actions/workflows/python-package.yml/badge.svg)](https://github.com/nfnth/nfnth/actions/workflows/python-package.yml)
-
 <p align="center">
   <img src="https://github.com/nfnth/res/raw/main/site/coat.png" width="360" height="440" /></p>
 
@@ -34,7 +32,7 @@ Use the editor to:
 
 Feel free to map and explore a continent filled with amazing peoples and lands. 
 
-Learn to code using our stack, see [bitOS]().
+Learn to code using our stack, see [bitOS](https://github.com/nfnth/nfnth/wiki/Bit-OS).
 
 Read our mantra, the [Civilian's Complex]().
 Based in Washington state. 
