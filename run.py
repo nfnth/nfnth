@@ -178,7 +178,7 @@ def sendMail(to, subject, template, parameters):
         message["Subject"] = subject
         message["From"] = SMTP_EMAIL
         message["To"] = to
-        message_template = HEADER + template + FOOTER
+        message_template = template #HEADER + template + FOOTER
         for parameter in parameters:
             message_template = message_template.replace('####', parameter)
         part1 = MIMEText(message_template, "plain")
