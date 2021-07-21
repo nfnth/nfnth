@@ -33,10 +33,10 @@
       <a style="display: flex; align-items: center; height: 100%; ">
       <img id="menu-logo" class="hide-on-med-and-down" onclick="mode=0; setEditor('../README.md');" draggable="false" ondragstart="return false;" style="height:48; width:48; cursor: pointer; margin-left: 16;" /></a></div>
     
-    <a class="screen-hide" onclick="mode=5; setEditor('');"><i class="material-icons right">map</i></a>
-    <a id="domains2" class="screen-hide" href="#!" data-target="domain"><i class="material-icons right">view_list</i></a>
-    <a class="screen-hide" onclick="mode=1; setEditor('../static/manifest');"><i class="material-icons right">edit</i></a>
-    <a class="screen-hide" onclick="mode=4; setEditor('');"><i class="material-icons right">search</i></a>
+    <a class="screen-hide" onclick="mode=0; setEditor('../README.md');"><i class="material-icons">menu_book</i></a>
+    <a id="domains-hide" class="screen-hide" href="#!" data-target="domain"><i class="material-icons right">view_list</i></a>
+    <a class="screen-hide" onclick="mode=1; setEditor('../doc/MANIFEST.md');"><i class="material-icons right">edit</i></a>
+    <a class="screen-hide" onclick="searchSwitch();"><i class="material-icons right">search</i></a>
     <ul class="hide-on-med-and-down" >
       <li><a onclick="mode=0; setEditor('../doc/DOMAIN.md');">GET STARTED</a></li>
       <li><a id="domains" href="#!" data-target="domain">DOMAINS<i class="material-icons right">arrow_drop_down</i></a></li>
@@ -47,26 +47,17 @@
           <input id="search" type="search" onkeyup="searchResults()" style="padding-left:12; width: calc(100% - 1rem);">
           <label class="label-icon" for="search" ></label>
           <i class="material-icons" onclick="searchClear()">close</i></div></a></li></ul>
-    <ul class="right">
-	    <li><a id="actions" href="#!" data-target="action"><i class="material-icons">account_circle</i></a></li>
-      </ul>
 	
-	  <div><a id="slider2" href="#" data-target="user-setting" class="sidenav-trigger" style="margin: 0;padding: 18;justify-items: center;display: flex;align-items: center;"><i class="material-icons">settings</i></a></div>
+	  <div><a id="slider2" href="#" data-target="user-setting" class="sidenav-trigger" style="margin: 0;padding: 18;justify-items: center;display: flex;align-items: center;"><i class="material-icons">account_box</i></a></div>
 	</div></nav>
 
 <!-- domains -->
 <ul id="domain" class="dropdown-content loader" style="visibility:hidden;">
-  <li><a onclick="mode=3; setEditor('');"><i class="material-icons">view_list</i>See Listings</a></li>
-  <li><a onclick="mode=4; setEditor('');"><i class="material-icons">equalizer</i>View Stats</a></li>
+  <li><a onclick="mode=3; setEditor('');"><i class="material-icons">view_list</i>View Listings</a></li>
+  <li><a onclick="mode=4; setEditor('');"><i class="material-icons">equalizer</i>Show Stats</a></li>
   <li><a onclick="mode=5; setEditor('');"><i class="material-icons">map</i>Explore Map</a></li></ul>
 
-<!-- users -->
-<ul id="action" class="dropdown-content loader" style="visibility:hidden;">
-  <li><a class="modal-trigger" href="#user-modal"><i class="material-icons">account_box</i>Create User</a></li>
-  <li><a onclick="mode=4; setEditor('');"><i class="material-icons">login</i>Sign In</a></li>
-  <li><a onclick="mode=5; setEditor('');"><i class="material-icons">mail</i>Reset Account</a></li></ul>
-
-<!-- panel -->
+<!-- panel (system) -->
 <ul id="user-pane" class="sidenav loader" style="visibility:hidden;">
   <li><div class="user-view z-depth-1" style="background-color: #608396;display: flex;margin: auto; padding: 0;align-items: flex-end;">
     <img draggable="false" ondragstart="return false;" id="user-pic" style="height: 72;background-color: #a2b9cc; padding: 12;" src="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/shield.png" /></div></li>
@@ -74,6 +65,22 @@
     <span style="font-size: 20;font-weight: bold; color: #000000;">Dralun</span>
     <span style="margin-left:4;font-size: 16;font-weight: bold; color: #494646; ">· Deed and Domain</span></a></li>
   <li style="height:24;"><a class="subheader"></a></li>
+	
+     <li> <div>
+      <select multiple>
+        <option value="" disabled selected>Options...</option>
+	      <option value="1" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color5.png"><a>Series 1</a></option>
+        <option value="2" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color1.png">Reservation</option>
+        <option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color2.png">Monument</option>
+        <option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color3.png">National Landmark</option>
+        <option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color4.png">International</option></select><label>Filter By</label></div></li>
+  <li>  <div>
+      <select>
+        <option value="" disabled selected>Types...</option>
+        <option value="1" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color6.png">Name</option>
+	      <option value="2">Category</option></select><label>Sort By</label></div></li>
+    <li>   <a class="waves-effect waves-light btn"><i class="material-icons">clear</i>Clear Filters</a></div></li>
+
   <li><a class="waves-effect" onclick="mode=0; setEditor('../doc/DOMAIN.md'); $('#user-pane').sidenav('close');"><i class="material-icons">terrain</i>Learn UR.Land</a></li>
      <li><a class="waves-effect" onclick="mode=3; setEditor(''); $('#user-pane').sidenav('close');" ><i class="material-icons">ballot</i>View Domain Manifest</a></li>
 	<li><a class="waves-effect" onclick="mode=1; setEditor('../doc/MATTDOWN.md'); $('#user-pane').sidenav('close');"><i class="material-icons">menu_book</i>Use MarkDown 2.0</a></li>
@@ -91,56 +98,35 @@
         <div><span style="cursor: pointer;" onclick="mode=0; setEditor('../doc/BITOS.md'); $('#user-pane').sidenav('close');" class="new badge green darken-2" data-badge-caption="bitOS, version 1.02"></span></div>
       <div id="header-title"><span id="phrase" style="font-style: italic;">software on infinitive basis</span></div></div></li></ul>
 
-<!-- panel -->
+<!-- panel (user) -->
 <ul id="user-setting" class="sidenav loader" style="visibility:hidden;">
   <li><div class="user-view z-depth-1" style="background-color: #608396;display: flex;margin: auto; padding: 0;align-items: flex-end;">
     <img draggable="false" ondragstart="return false;" id="user-pic" style="height: 72;background-color: #a2b9cc; padding: 12;" src="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/shield.png" /></div></li>
   <li style="text-align: center;"><a class="subheader">
-    <span style="font-size: 20;font-weight: bold; color: #000000;">Dralun</span>
-    <span style="margin-left:4;font-size: 16;font-weight: bold; color: #494646; ">· Deed and Domain</span></a></li>
+    <span style="font-size: 20;font-weight: bold; color: #000000;">User Profile</span></a></li>
   <li style="height:24;"><a class="subheader"></a></li>
-     <li> <div class="input-field col s12" style="margin-right:24; width:225;">
-      <select multiple>
-        <option value="" disabled selected>Options...</option>
-	      <option value="1" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color5.png"><a>Series 1</a></option>
-        <option value="2" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color1.png">Reservation</option>
-        <option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color2.png">Monument</option>
-        <option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color3.png">National Landmark</option>
-        <option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color4.png">International</option></select><label>Filter By</label></div></li>
-  <li>  <div class="input-field col s12" style="margin-right:24;">
-      <select>
-        <option value="" disabled selected>Types...</option>
-        <option value="1" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color6.png">Name</option>
-	      <option value="2">Category</option></select><label>Sort By</label></div></li>
-    <li>   <a class="waves-effect waves-light btn" style="margin-left:24;"><i class="material-icons">clear</i></a></div></li>
-  <li><div style="margin-top:0;" class="divider"></div></li>
-  <li><a class="subheader"></a></li>
-  <li><div id="header-logo" style="display: flex; flex-flow:column; align-items: center;justify-content: center;align-items: center; display: flex;">
-      <div id="header-logo">
-        <div id="logo" style="text-align:center;">
-          <img draggable="false" id="leafy" style="width:64;height:48;" src="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/eagle/eagle1.png"/></div>
-        <div style="display: flex;align-items: center;justify-content: center;">
-          <span id="title" style="font-weight: bold; font-size: 25px;">NfNth</span>
-          <i class="material-icons" >copyright</i>2021</div></div>
-        <div><span style="cursor: pointer;" onclick="mode=0; setEditor('../doc/BITOS.md'); $('#user-pane').sidenav('close');" class="new badge green darken-2" data-badge-caption="bitOS, version 1.02"></span></div>
-      <div id="header-title"><span id="phrase" style="font-style: italic;">software on infinitive basis</span></div></div></li></ul>
+	<li><a class="modal-trigger" href="#user-modal"><i class="material-icons">person</i>Create User</a></li>
+<li><a class="waves-effect" onclick="mode=1; setEditor('../doc/MATTDOWN.md'); $('#user-pane').sidenav('close');"><i class="material-icons">login</i>Sign In</a></li>
+<li><a class="waves-effect" onclick="mode=1; setEditor('../doc/MATTDOWN.md'); $('#user-pane').sidenav('close');"><i class="material-icons">mail</i>Reset Account</a></li>
+
+	<li><div style="margin-top:0;" class="divider"></div></li></ul>
 
 <!-- dialog -->
 <div id="user-modal" class="modal content loader"><div class="modal-content">
     <div id="intro" class="row-section">
-      <div id="console" class="row"><div class="col s12 m12" style="display: flex;flex-direction: column;align-items: center;">
-          <a class="waves-effect waves-light btn blue" style="width:240; display: flex; justify-content: space-between;" onclick="changeDialog('create');"><i class="material-icons">account_circle</i>Create User</a><br/>
-	<a class="waves-effect waves-light btn green" style="width:240; display: flex; justify-content: space-between;" onclick="changeDialog('forgot');"><i class="material-icons">login</i>Sign In</a><br/>
-          <a class="waves-effect waves-light btn" style="width:240; display: flex; justify-content: space-between;" onclick="changeDialog('forgot');"><i class="material-icons">mail</i>Reset Account</a>
-	      </div></div></div>
-
-<div id="create" class="row hidden">
+      <div id="console" class="row">
+	      
 	      
 <div class="hover-base col s12 m12" id="new-name" style="display: flex; justify-content: center;"><div class="input-field">
 	<i class="material-icons prefix">account_circle</i><input id="user-name" name="user-name" type="text" class="user-input" max="24" tabindex="1" oninput="userLookup(this);" ><label for="user-name">Username</label><span id="user-issue" class="helper-text" data-error="Invalid input" data-success="" >Enter username</span></div></div>
 	      
 <div class="hover-base col s12 m12" id="new-name" style="display: flex; justify-content: center;"><div class="input-field">
 	<i class="material-icons prefix">account_circle</i><input id="user-password" name="user-name" type="text" class="user-input" max="24" tabindex="1" oninput="userLookup(this);" ><label for="user-name">Password</label><span id="user-issue" class="helper-text" data-error="Invalid input" data-success="" >Enter password</span></div></div>
+	      
+	      </div></div>
+
+<div id="create" class="row hidden">
+	      
 	      
 <div class="hover-base col s12 m12" id="new-name" style="display: flex; justify-content: center;"><div class="input-field">
 	<i class="material-icons prefix">account_circle</i><input id="user-confirm" name="user-name" type="text" class="user-input" max="24" tabindex="1" oninput="userLookup(this);" ><label for="user-name">Confirm</label><span id="user-issue" class="helper-text" data-error="Invalid input" data-success="" >Confirm password</span></div></div>
@@ -192,22 +178,20 @@
 <a href="#!" class="collection-item">Alvin</a></div></div>
 
 <div id="toolset" class="z-depth-1 content loader" style="display:flex;align-items: center;justify-content: center;padding: 12; margin-bottom: 4; width:100%;position: fixed;background-color: white; z-index:4; ">
+
+	<div id="grid" class="content loader">
 	<div class="row">
     <div class="col s12">
       <ul class="tabs">
-        <li class="tab col s3"><a href="#test1">Test 1</a></li>
+        <li class="tab col s3"><a href="#test1"><i class="material-icons">terrain</i>Land</a></li>
         <li class="tab col s3"><a class="active" href="#test2">Test 2</a></li>
         <li class="tab col s3 disabled"><a href="#test3">Disabled Tab</a></li>
         <li class="tab col s3"><a href="#test4">Test 4</a></li>
       </ul>
     </div>
-    <div id="test1" class="col s12">Test 1</div>
-    <div id="test2" class="col s12">Test 2</div>
-    <div id="test3" class="col s12">Test 3</div>
-    <div id="test4" class="col s12">Test 4</div>
-	</div></div>
-
-<div id="grid" class="content loader">
+    <div id="test1" class="col s12">
+		
+	    
   <ul class="collapsible popout" style="padding-top: 112;">
     <li>
       <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
@@ -219,7 +203,14 @@
     </li>
     <li>
       <div class="collapsible-header"><i class="material-icons">place</i>Third</div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div></li></ul></div>
+      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div></li></ul>
+		
+		</div>
+    <div id="test2" class="col s12">Test 2</div>
+    <div id="test3" class="col s12">Test 3</div>
+    <div id="test4" class="col s12">Test 4</div>
+		</div></div></div>
+
 <div id="map" style="top:110px;" class="content loader"></div>
 	
 <footer class="page-footer">
@@ -231,12 +222,6 @@
               </div>
               <div class="col l4 offset-l2 s12">
                 <h5 class="white-text">Links</h5>
-                <ul>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-                </ul>
               </div>
             </div>
           </div>
