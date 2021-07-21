@@ -72,7 +72,7 @@ async def data(request):
     item = request.match_info.get('item', '') #file
 
     if item == '':
-        return web.FileResponse(USER_DATA + name + '/doc/' + doc + '/md')
+        return web.FileResponse(DATA + name + '/doc/' + doc + '/md')
     #else:
     #    return web.FileResponse(USER_DATA + name + '/doc/' + doc + '/item/' + item)
     
