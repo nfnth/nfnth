@@ -239,6 +239,6 @@ try:
     loop.run_forever()
 except:
     pass
-finally:
-    for runner in runners:
-        loop.run_until_complete(runner.cleanup())
+#finally:
+#    for runner in runners:
+#        loop.run_until_complete(runner.cleanup())
