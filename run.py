@@ -47,8 +47,8 @@ async def user(request):
         return web.Response(text=str(os.path.exists(DATA + name)), content_type='text/html')
     elif action == "create":
         data = await request.post()
-        #user_client = json2obj(data["user"])
-        #path = USER_DATA + user_client["name"]
+        user_client = json2obj(data["user"])
+        path = DATA + user_client["name"]
         #if not os.path.exists(path):
         #    shutil.copy('res/template', path)
         #    key_copy = json2obj(key_template)
@@ -60,8 +60,8 @@ async def user(request):
          #       f.write(obj2json(key_copy))
          #   return web.Response(text=obj2json(await scrub(key_copy)), content_type='text/html')
        # user_file = open(USER_DATA + name + '/key.json', mode='r') #include object map...?
-   # user_template = key_file.read()
-   # user_file.close()
+    user_template = key_file.read()
+    #user_file.close()
 
     return json2obj(user_template)
 
