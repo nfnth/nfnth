@@ -73,77 +73,77 @@ async def data(request):
 
     if item == '':
         return web.FileResponse(USER_DATA + name + '/doc/' + doc + '/md')
-    else:
-        return web.FileResponse(USER_DATA + name + '/doc/' + doc + '/item/' + item)
+    #else:
+    #    return web.FileResponse(USER_DATA + name + '/doc/' + doc + '/item/' + item)
     
-    data = await request.post() #request.json()
-    user_client = json2obj(data["user"])
-    user_server = key(user_client["name"])
+   # data = await request.post() #request.json()
+   # user_client = json2obj(data["user"])
+   # user_server = key(user_client["name"])
 
-    token = user_client["token"] #add mail support, ip log?
-    valid = False
-    if token == user_server.token and not user_server.token == "": #check expires...
-        valid = True
-    else:
-        if user_client["secret"] == user_server.secret: #key? 2fa?
-            valid = True
-            user_server.token = "new"
+#    token = user_client["token"] #add mail support, ip log?
+ #   valid = False
+ #   if token == user_server.token and not user_server.token == "": #check expires...
+  #      valid = True
+  #  else:
+   #     if user_client["secret"] == user_server.secret: #key? 2fa?
+    #        valid = True
+     #       user_server.token = "new"
 
-    if valid is True:
-        action = user_client["action"]
-        if action == "reset":
-            user_server.token = ""
-            with open(USER_DATA + user_client["name"] + '/key.json', 'wb') as f:
-                f.write(obj2json(user_server))
-        elif action == "update":
-            user_client["private"] = user_server.private
-            with open(USER_DATA + user_client["name"] + '/key.json', 'wb') as f:
-                f.write(obj2json(user_client))
-        elif action == "search": #add general search term, receipt...
-            return await archive(user_client["name"], "general", "")
-        elif action == "publish":
-            level = user_client["level"] #md item
-            sub = user_client["sub"] #new edit delete
-            doc = user_client["doc"]
-            path = USER_DATA + name + '/doc/' + doc
-            if user_client["private"] == "yes":
-                private = "x"
-            else:
-                private = ""
-            if level == "md": 
-                if sub == "new":
-                    if not os.path.exists(path):
-                        os.mkdir(path)
-                    with open(path + '/md' + private, 'wb') as f:
-                        f.write(data["doc"])
-                    filename = data['upload'].filename
-                    input_file = data['upload'].file
-                    content = input_file.read() #check file sizes?
-                    with open(os.path.join(path + '/item' + private, filename), 'wb') as f:
-                        f.write(content)
-                elif sub == "edit":
-                    with open(path + '/md' + private, 'wb') as f:
-                        f.write(data["doc"])
-                elif action == "delete":
-                    shutil.rmtree(path)
-            elif level == "item":
-                item = user_client["item"]
-                if sub == "new":
-                    filename = data['upload'].filename
-                    input_file = data['upload'].file
-                    content = input_file.read() #check file sizes?
-                    with open(os.path.join(path + '/item' + private, filename), 'wb') as f:
-                        f.write(content)
-                elif sub == "edit":
-                    filename = data['upload'].filename
-                    input_file = data['upload'].file
-                    content = input_file.read() #check file sizes?
-                    with open(os.path.join(path + '/item' + private, filename), 'wb') as f:
-                        f.write(content)
-                elif sub == "delete":
-                    shutil.rmtree(path)
-
-        return web.Response(text=obj2josn(await(scrub(user_server)), content_type='text/html'))
+   # if valid is True:
+   #     action = user_client["action"]
+    #    if action == "reset":
+#            user_server.token = ""
+ #           with open(USER_DATA + user_client["name"] + '/key.json', 'wb') as f:
+  #              f.write(obj2json(user_server))
+   #     elif action == "update":
+    #        user_client["private"] = user_server.private
+     #       with open(USER_DATA + user_client["name"] + '/key.json', 'wb') as f:
+      #          f.write(obj2json(user_client))
+    #    elif action == "search": #add general search term, receipt...
+     #       return await archive(user_client["name"], "general", "")
+     #   elif action == "publish":
+      #      level = user_client["level"] #md item
+       #     sub = user_client["sub"] #new edit delete
+        #    doc = user_client["doc"]
+         #   path = USER_DATA + name + '/doc/' + doc
+          #  if user_client["private"] == "yes":
+           #     private = "x"
+         #   else:
+          #      private = ""
+          #  if level == "md": 
+           #     if sub == "new":
+            #        if not os.path.exists(path):
+             #           os.mkdir(path)
+       #             with open(path + '/md' + private, 'wb') as f:
+        #                f.write(data["doc"])
+          #          filename = data['upload'].filename
+          #          input_file = data['upload'].file
+           #         content = input_file.read() #check file sizes?
+         #           with open(os.path.join(path + '/item' + private, filename), 'wb') as f:
+         #               f.write(content)
+        #        elif sub == "edit":
+        #            with open(path + '/md' + private, 'wb') as f:
+        #                f.write(data["doc"])
+       #         elif action == "delete":
+      #              shutil.rmtree(path)
+     #       elif level == "item":
+   #             item = user_client["item"]
+     #           if sub == "new":
+  #                 filename = data['upload'].filename
+  #                  input_file = data['upload'].file
+           #         content = input_file.read() #check file sizes?
+          #          with open(os.path.join(path + '/item' + private, filename), 'wb') as f:
+         #               f.write(content)
+        #        elif sub == "edit":
+       #             filename = data['upload'].filename
+      #              input_file = data['upload'].file
+     #               content = input_file.read() #check file sizes?
+    #                with open(os.path.join(path + '/item' + private, filename), 'wb') as f:
+   #                     f.write(content)
+  #              elif sub == "delete":
+ #                   shutil.rmtree(path)
+#
+     #   return web.Response(text=obj2josn(await(scrub(user_server)), content_type='text/html'))
 
 import stripe
 stripe.api_key = "sk_test_4eC39HqLyjWDarjtT1zdp7dc"
