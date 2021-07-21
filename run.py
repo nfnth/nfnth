@@ -2,7 +2,7 @@
 import os, socket, json, types, shutil#, six
 from datetime import datetime
 
-USER_DATA = "data/ur.land/" #os.pardir
+DATA = "data/ur.land/" #os.pardir
 PATH = os.path.abspath(os.path.dirname(__file__))
 REL = os.getcwd()
 
@@ -31,8 +31,6 @@ while i < len(defs)-1:
     i += 1
 
 # private (data)
-import stripe
-stripe.api_key = "sk_test_4eC39HqLyjWDarjtT1zdp7dc"
 #import base64
 key_file = open('data/ur.land/bit/key.json', mode='r') #include object map...?
 key_template = key_file.read()
@@ -66,17 +64,6 @@ async def user(request):
     user_file.close()
 
     return json2obj(user_template)
-
-async def bank(request):
-    #data = json.loads(await request.json())
-    intent = stripe.PaymentIntent.create(amount=1499, currency='usd')
-    secret = intent['client_secret']
-    return web.Response(text='{"clientSecret":"'+secret+'"}')
-
-    elif action == "pay": #datetime.now().strftime("%d/%m/%Y %H:%M:%S")
-            transaction = "random" #generate uuid
-            with open(RECEIPT_DATA + user_client["name"] + transaction, 'wb') as f:
-                f.write(obj2json(user_client))
 
 async def data(request):
     async def doc(request): #track views/stars
@@ -112,7 +99,6 @@ async def data(request):
             user_client["private"] = user_server.private
             with open(USER_DATA + user_client["name"] + '/key.json', 'wb') as f:
                 f.write(obj2json(user_client))
-        
         elif action == "search": #add general search term, receipt...
             return await archive(user_client["name"], "general", "")
         elif action == "publish":
@@ -159,18 +145,29 @@ async def data(request):
 
         return web.Response(text=obj2josn(await(scrub(user_server)), content_type='text/html'))
 
+import stripe
+stripe.api_key = "sk_test_4eC39HqLyjWDarjtT1zdp7dc"
+async def bank(request):
+    #data = json.loads(await request.json())
+    intent = stripe.PaymentIntent.create(amount=1499, currency='usd')
+    secret = intent['client_secret']
+    return web.Response(text='{"clientSecret":"'+secret+'"}')
+
+    elif action == "pay": #datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+            transaction = "random" #generate uuid
+            with open(RECEIPT_DATA + user_client["name"] + transaction, 'wb') as f:
+                f.write(obj2json(user_client))
+
 # mail
 import threading, email, uuid, smtplib, base64, ssl
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-from aiosmtpd.controller import Controller
 
 SMTP_RELAY = "smtp.google.com"
 SMTP_LOGIN = ""
 SMTP_PASSWORD = ""
 SMTP_EMAIL = ""
 
-##(client)
 def sendMail(to, subject, template, parameters):
     context = ssl.create_default_context()
 
@@ -189,44 +186,6 @@ def sendMail(to, subject, template, parameters):
         message.attach(part1)
         message.attach(part2)
         server.send_message(message)
-
-##(server)
-class MailHandler():
-    async def handle_RCPT(self, server, session, envelope, address, rcpt_options):
-        if not address.endswith('@ur.land'): #use variable...
-            return '550 not relaying to that domain'
-        envelope.rcpt_tos.append(address)
-        return '250 OK'
-
-    async def handle_DATA(self, server, session, envelope): #check len(data) just in case...
-        # filter project@user.servius.me
-        #print('Message from %s' % envelope.mail_from)
-        #print('Message for %s' % envelope.rcpt_tos)
-        #print('Message data:\n')
-        #message = email.message_from_string(envelope.content.decode('utf8', errors='replace'))
-        mail_id = str(uuid.uuid4())
-
-        if os.path.exists(REL + '/data/mail/' + str(envelope.rcpt_tos)):
-            with open(REL + '/data/mail/' + str(envelope.rcpt_tos) + '/' + mail_id, 'w') as f:
-                f.write(envelope.content.decode('utf8', errors='replace'))
-
-        return '250 Message accepted for delivery'
-
-def handleAttachment():
-    counter = 1
-    for part in msg.walk():
-        if part.get_content_maintype() == 'multipart': # multipart/* are just containers
-            continue
-        filename = part.get_filename() # Applications should really sanitize the given filename so that an email message can't be used to overwrite important files
-        if not filename:
-            ext = mimetypes.guess_extension(part.get_content_type())
-            if not ext:
-                ext = '.bin'
-            filename = 'part-%03d%s' % (counter, ext)
-        counter += 1
-        fp = open(os.path.join(opts.directory, filename), 'wb')
-        fp.write(part.get_payload(decode=True))
-        fp.close()
 
 # server
 import asyncio, aiohttp
@@ -271,10 +230,6 @@ async def site(port):
     site = web.TCPSite(runner, 'localhost', 5000+port)
     await site.start()
 
-async def mail(port):
-    controller = Controller(MailHandler(), hostname='localhost', port=5000+port)
-    controller.start()
-
 try:
     loop = asyncio.get_event_loop()
     executor = ProcessPoolExecutor(max_workers=14)
@@ -287,6 +242,3 @@ except:
 finally:
     for runner in runners:
         loop.run_until_complete(runner.cleanup())
-        
-#https://stackoverflow.com/questions/49978705/access-ip-camera-in-python-opencv
-#depth/object detection
