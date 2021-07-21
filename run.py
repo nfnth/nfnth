@@ -47,21 +47,21 @@ async def user(request):
         return web.Response(text=str(os.path.exists(USER_DATA + name)), content_type='text/html')
     elif action == "create":
         data = await request.post()
-        user_client = json2obj(data["user"])
-        path = USER_DATA + user_client["name"]
-        if not os.path.exists(path):
-            shutil.copy('res/template', path)
-            key_copy = json2obj(key_template)
-            key_copy.name = user_client["name"]
-            key_copy.mail = user_client["mail"]
-            key_copy.secret = user_client["secret"]
+        #user_client = json2obj(data["user"])
+        #path = USER_DATA + user_client["name"]
+        #if not os.path.exists(path):
+        #    shutil.copy('res/template', path)
+        #    key_copy = json2obj(key_template)
+        #    key_copy.name = user_client["name"]
+         #   key_copy.mail = user_client["mail"]
+         #   key_copy.secret = user_client["secret"]
             #send mail...
-            with open(path + '/key.json', 'wb') as f:
-                f.write(obj2json(key_copy))
-            return web.Response(text=obj2json(await scrub(key_copy)), content_type='text/html')
-        user_file = open(USER_DATA + name + '/key.json', mode='r') #include object map...?
-    user_template = key_file.read()
-    user_file.close()
+         #   with open(path + '/key.json', 'wb') as f:
+         #       f.write(obj2json(key_copy))
+         #   return web.Response(text=obj2json(await scrub(key_copy)), content_type='text/html')
+       # user_file = open(USER_DATA + name + '/key.json', mode='r') #include object map...?
+   # user_template = key_file.read()
+   # user_file.close()
 
     return json2obj(user_template)
 
