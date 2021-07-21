@@ -49,8 +49,7 @@
           <i class="material-icons" onclick="searchClear()">close</i></div></a></li></ul>
     <ul class="right">
 	    <li><a id="actions" href="#!" data-target="action"><i class="material-icons">account_circle</i></a></li>
-      <li style="display: flex; height: 64; align-items: center;">
-        <a class="waves-effect waves-light btn modal-trigger blue" href="#user-modal"><i class="material-icons">account_circle</i></a></li></ul>
+      </ul>
 	
 	  <div><a id="slider2" href="#" data-target="user-setting" class="sidenav-trigger" style="background-color: #2f8fff;margin: 0;padding: 18;justify-items: center;display: flex;align-items: center;"><i class="material-icons">menu</i></a></div>
 	</div></nav>
@@ -63,7 +62,7 @@
 
 <!-- users -->
 <ul id="action" class="dropdown-content loader" style="visibility:hidden;">
-  <li><a onclick="mode=3; setEditor('');"><i class="material-icons">view_list</i>Create User</a></li>
+  <li><a class="modal-trigger" href="#user-modal"><i class="material-icons">view_list</i>Create User</a></li>
   <li><a onclick="mode=4; setEditor('');"><i class="material-icons">equalizer</i>Sign In</a></li>
   <li><a onclick="mode=5; setEditor('');"><i class="material-icons">map</i>Reset Account</a></li></ul>
 
