@@ -207,15 +207,15 @@ async def site(port):
     app = web.Application(client_max_size=10000000)
 
     app.router.add_static('/static', '/mnt/res')
-    app.add_routes([web.post('/cash', cash)])
+    app.add_routes([web.post('/cash', bank)])
 
     app.add_routes([web.get('/', index)])
 
     app.add_routes([web.get('/user/{name}/{action}', user)])
 
     app.add_routes([web.get('/{name}', index)])
-    app.add_routes([web.get('/{name}/{doc}', doc)])
-    app.add_routes([web.get('/{name}/{doc}/{item}', doc)])
+   # app.add_routes([web.get('/{name}/{doc}', doc)])
+#    app.add_routes([web.get('/{name}/{doc}/{item}', doc)])
     #app.add_routes([web.get('/{domain}/{user}/{doc}/{item}', doc)])
     
     app.add_routes([web.post('/data', data)])
