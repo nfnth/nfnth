@@ -34,7 +34,7 @@
       <img id="menu-logo" class="hide-on-med-and-down" onclick="mode=0; setEditor('../README.md');" draggable="false" ondragstart="return false;" style="height:48; width:48; cursor: pointer; margin-left: 16;" /></a></div>
     
     <a class="screen-hide" onclick="mode=5; setEditor('');"><i class="material-icons right">map</i></a>
-    <a class="screen-hide" onclick="mode=3; setEditor('');"><i class="material-icons right">view_list</i></a>
+    <a id="domains2" class="screen-hide" href="#!" data-target="domain"><i class="material-icons right">view_list</i></a>
     <a class="screen-hide" onclick="mode=1; setEditor('../static/manifest');"><i class="material-icons right">edit</i></a>
     <a class="screen-hide" onclick="mode=4; setEditor('');"><i class="material-icons right">search</i></a>
     <ul class="hide-on-med-and-down" >
@@ -51,7 +51,7 @@
 	    <li><a id="actions" href="#!" data-target="action"><i class="material-icons">account_circle</i></a></li>
       </ul>
 	
-	  <div><a id="slider2" href="#" data-target="user-setting" class="sidenav-trigger" style="background-color: #2f8fff;margin: 0;padding: 18;justify-items: center;display: flex;align-items: center;"><i class="material-icons">menu</i></a></div>
+	  <div><a id="slider2" href="#" data-target="user-setting" class="sidenav-trigger" style="margin: 0;padding: 18;justify-items: center;display: flex;align-items: center;"><i class="material-icons">settings</i></a></div>
 	</div></nav>
 
 <!-- domains -->
@@ -62,9 +62,9 @@
 
 <!-- users -->
 <ul id="action" class="dropdown-content loader" style="visibility:hidden;">
-  <li><a class="modal-trigger" href="#user-modal"><i class="material-icons">view_list</i>Create User</a></li>
-  <li><a onclick="mode=4; setEditor('');"><i class="material-icons">equalizer</i>Sign In</a></li>
-  <li><a onclick="mode=5; setEditor('');"><i class="material-icons">map</i>Reset Account</a></li></ul>
+  <li><a class="modal-trigger" href="#user-modal"><i class="material-icons">account_box</i>Create User</a></li>
+  <li><a onclick="mode=4; setEditor('');"><i class="material-icons">login</i>Sign In</a></li>
+  <li><a onclick="mode=5; setEditor('');"><i class="material-icons">mail</i>Reset Account</a></li></ul>
 
 <!-- panel -->
 <ul id="user-pane" class="sidenav loader" style="visibility:hidden;">
@@ -271,7 +271,7 @@ function changeDialog(dialog) { $('#'+dialog).removeClass('hidden'); $('#console
 
 async function initial() {
   $('select').formSelect(); $('.tabs').tabs();
-  $('#marks').dropdown({ constrainWidth: false } ); $('#domains').dropdown({ constrainWidth: false } ); $('#actions').dropdown({ constrainWidth: false } );
+  $('#marks').dropdown({ constrainWidth: false } ); $('#domains').dropdown({ constrainWidth: false } ); $('#actions').dropdown({ constrainWidth: false } ); $('#domains2').dropdown({ constrainWidth: false } ); 
   $('.modal').modal(); $('#user-pane').sidenav(); $('#user-setting').sidenav({ edge: 'right' } );
   $('.collapsible').collapsible(); 
   $('.datepicker').datepicker(); $('.timepicker').timepicker();$('.datepicker').onSelect = function(param) { alert('yes'); alert(param);}
