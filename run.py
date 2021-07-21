@@ -153,10 +153,10 @@ async def bank(request):
     secret = intent['client_secret']
     return web.Response(text='{"clientSecret":"'+secret+'"}')
 
-    elif action == "pay": #datetime.now().strftime("%d/%m/%Y %H:%M:%S")
-            transaction = "random" #generate uuid
-            with open(RECEIPT_DATA + user_client["name"] + transaction, 'wb') as f:
-                f.write(obj2json(user_client))
+    #elif action == "pay": #datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+     #       transaction = "random" #generate uuid
+      #      with open(RECEIPT_DATA + user_client["name"] + transaction, 'wb') as f:
+       #         f.write(obj2json(user_client))
 
 # mail
 import threading, email, uuid, smtplib, base64, ssl
