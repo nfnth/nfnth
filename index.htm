@@ -2,6 +2,7 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dralun · Deed and Domain</title>
 
+<!-- resources -->
 <link class="ico" rel="icon" href="https://cdn.jsdelivr.net/gh/nfnth/res@latest/icon/urland/favicon.ico" type="image/x-icon">
 <link class="ico" rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/nfnth/res@latest/icon/urland/favicon.ico" type="image/x-icon">
 <link class="ico" rel="apple-touch-icon" sizes="128x128" href="https://cdn.jsdelivr.net/gh/nfnth/res@latest/icon/urland/apple-touch-icon.png">
@@ -28,10 +29,10 @@
 <!-- menu -->
 <nav id="main-menu" style="position: fixed;top:0; z-index:2;visibility:hidden;" class="loader">
   <div class="nav-wrapper header" style="background-color:rgb(33, 124, 185); display:flex; justify-content: space-between;">
+    
     <div>
       <a id="slider" href="#" data-target="user-pane" class="sidenav-trigger" style="background-color: #2f8fff;margin: 0;padding: 18;justify-items: center;display: flex;align-items: center;"><i class="material-icons">menu</i></a>
-      <a style="display: flex; align-items: center; height: 100%; ">
-      <img id="menu-logo" class="hide-on-med-and-down" onclick="mode=0; setEditor('../README.md');" draggable="false" ondragstart="return false;" style="height:48; width:48; cursor: pointer; margin-left: 16;" /></a></div>
+      <a style="display: flex; align-items: center; height: 100%; "><img id="menu-logo" class="hide-on-med-and-down" onclick="mode=0; setEditor('../README.md');" draggable="false" ondragstart="return false;" style="height:48; width:48; cursor: pointer; margin-left: 16;" /></a></div>
     
     <a class="screen-hide" onclick="mode=0; setEditor('../README.md');"><i class="material-icons">menu_book</i></a>
     <a id="domains-hide" class="screen-hide" href="#!" data-target="domain"><i class="material-icons right">view_list</i></a>
@@ -48,8 +49,7 @@
           <label class="label-icon" for="search" ></label>
           <i class="material-icons" onclick="searchClear()">close</i></div></a></li></ul>
 	
-	  <div><a id="slider2" href="#" data-target="user-setting" class="sidenav-trigger" style="margin: 0;padding: 18;justify-items: center;display: flex;align-items: center;"><i class="material-icons">account_box</i></a></div>
-	</div></nav>
+      <div><a id="slider2" href="#" data-target="user-setting" class="sidenav-trigger" style="margin: 0;padding: 18;justify-items: center;display: flex;align-items: center;"><i class="material-icons">account_box</i></a></div></div></nav>
 
 <!-- domains -->
 <ul id="domain" class="dropdown-content loader" style="visibility:hidden;">
