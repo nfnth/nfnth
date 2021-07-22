@@ -34,10 +34,7 @@ Feel free to map and explore a continent filled with amazing peoples and lands.
 
 Learn to code using our stack, see [bitOS](https://github.com/nfnth/nfnth/wiki/Bit-OS).
 
-Read our mantra, the [Civilian's Complex]().
-Based in Washington state. 
-
-Stack runs on [Linode]() using [Arch Linux]() and Python, see [bitOS]().
+Read our mantra, the [Civilian's Complex](https://github.com/nfnth/nfnth/wiki/Manifest).
  
 To contact, use matt@sebolt.us.
 
