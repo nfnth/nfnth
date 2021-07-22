@@ -32,7 +32,7 @@ Use the editor to:
 
 Feel free to map and explore a continent filled with amazing peoples and lands. 
 
-Learn to code using our stack, see [bitOS](https://github.com/nfnth/nfnth/wiki/Bit-OS). For code specifics, see the [repo]() or view the demo at [drhab.com](https://drhab.com).
+Learn to code using our stack, see [bitOS](https://github.com/nfnth/nfnth/wiki/Bit-OS). For code specifics, see the [repo](), download the [script](https://gist.github.com/nfnth/ef98bc2ade9286b240eac846ff52bcce), or view the demo at [drhab.com](https://drhab.com).
 
 We use JavaScript regex rendering to confirm conform to [MattDown](https://github.com/nfnth/nfnth/wiki/Mattdown), or MarkDown 2.0.
 
