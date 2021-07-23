@@ -13,7 +13,7 @@ while IFS= read -r line;do
   #command "${fields[1]}" -x "${fields[2]}" ... # ${fields[1]} is field 2
   sed -i '$ d' /etc/ssl/openssl.cnf
   echo "DNS.1 = " ${fields[0]} >> /etc/ssl/openssl.cnf
-  openssl req -new -sha256 -key ecc-privkey.pem -nodes -outform pem -out ecc-csr.pem
+  openssl req -new -sha256 -key ecc-privkey.pem -nodes -outform pem -out ecc-csr.pem -subj /C=US/ST=Washington/L=Seattle/O=Nfnth/OU=House/CN=*.nfnth.com
   certbot certonly -d ${fields[0]} --email matt@sebolt.us --csr ecc-csr.pem --agree-tos --non-interactive --standalone
   sudo -E bash -c 'cat 0000_cert.pem >> alldomain.pem'
   rm 0000_cert.pem
