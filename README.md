@@ -4,6 +4,15 @@
 <link class="ico" rel="apple-touch-icon" sizes="128x128" href="https://cdn.jsdelivr.net/gh/nfnth/res@latest/icon/urland/apple-touch-icon.png">
 <link class="ico" rel="icon" sizes="192x192" href="https://cdn.jsdelivr.net/gh/nfnth/res@latest/icon/urland/android-chrome-192x192.png">
 
+<script>
+  var link = document.querySelector("link[rel~='icon']");
+if (!link) {
+    link = document.createElement('link');
+    link.rel = 'icon';
+    document.getElementsByTagName('head')[0].appendChild(link);
+}
+link.href = 'https://cdn.jsdelivr.net/gh/nfnth/res@latest/icon/urland/favicon.ico';</script>
+
 <p align="center">
   <img src="https://github.com/nfnth/res/raw/main/site/coat.png" width="360" height="440" /></p>
 
