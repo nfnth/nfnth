@@ -47,6 +47,8 @@ To contact, use matt@sebolt.us.
 
 <br/>
 
+For stack issues, see [here](https://github.com/nfnth/bitos/issues), for all other issues, see [here](https://github.com/nfnth/nfnth/issues).
+
 Sites [dralun.com]() and [UR.Land](), along with [Ustat.us](), coming soon!
 
 <link class="ico" rel="icon" href="https://cdn.jsdelivr.net/gh/nfnth/res@latest/icon/urland/favicon.ico" type="image/x-icon">
