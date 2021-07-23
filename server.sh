@@ -15,10 +15,10 @@ while IFS= read -r line;do
   echo "DNS.1 = " ${fields[0]} >> /etc/ssl/openssl.cnf
   openssl req -new -sha256 -key ecc-privkey.pem -nodes -outform pem -out ecc-csr.pem -subj /C=US/ST=Washington/L=Seattle/O=Nfnth/OU=House/CN=${fields[0]}
   certbot certonly -w /root/test/nfnth -d ${fields[0]} --email matt@sebolt.us --csr ecc-csr.pem --agree-tos --non-interactive --standalone
-  sudo -E bash -c 'cat 0000_cert.pem >> alldomain.pem'
+  sudo -E bash -c 'cat 0000_cert.pem >> alldomains.pem'
   rm 0000_cert.pem
-done < manifest2
+done < manifest
 
-sudo -E bash -c 'cat ecc-privkey.pem >> alldomain.pem'
+sudo -E bash -c 'cat ecc-privkey.pem >> alldomains.pem'
 #sudo -E bash -c 'cat 0000_cert.pem 0001_cert.pem 0002_cert.pem 0003_cert.pem 0004_cert.pem 0005_cert.pem 0006_cert.pem ecc-privkey.pem > /etc/haproxy/cert/multi000.pem
 #certbot certonly -w /root/cert -d abder.us -d www.abder.us --email pot@ladl.co --csr ecc-csr.pem --agree-tos --non-interactive --standalone
