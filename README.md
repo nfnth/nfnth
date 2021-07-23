@@ -8,22 +8,49 @@
 
 Welcome to [Dralun](https://dralun.com), the [UR.Land](https://ur.land) of Deed and Domain.
 
-Home to a limited **1776** supply of *.us* deeds, see the current registry [here](https://dralun.com/list).
+To view our limited **1776** supply of *.us* deeds, see [registry](https://dralun.com/list).
 
-Each deed includes the following:
+### Deed Civilian
+
+Includes, 
+
+- **Nfnth** survival bag
+- subscription to Civilian's journal
+- Civilian user badge
+
+### Deed Tenet (domain specific)
+
+Includes,
+
+- Sole Tenent rights to domain:
+  - Free advertising
+  - Access to domain's tenant AI
+- *Founders Edition* copy of Civilian Complex
+- **Nfnth** survival bag
+- subscription to Civilian's journal
+- Tenent user badge
 
 - Control territory
 - Write the land treaty and strategy *game only*
 - Site access (or domain forward)
-- Profile post
 - Access to mail and trade
 
-Tenants include:
+### Deed Ownership (domain specific)
 
-- Access to land *game only*
-- Registry access and post
+Includes, 
 
-To view listings and purchase domains, see site.
+- Sole Ownership rights to domain:
+  - Free advertising
+  - Access to domain's owner AI
+- *Founders Edition* copy of Civilian Complex
+- **Nfnth** survival bag
+- subscription to Civilian's journal
+- Owner user badge
+
+### Deed Civilian
+
+<p align="center">
+  <img src="https://github.com/nfnth/res/raw/main/site/fox.png" width="240" height="240" /></p>
 
 Use the editor to:
 
@@ -43,7 +70,7 @@ Read our mantra, the [Civilian's Complex](https://github.com/nfnth/nfnth/wiki/Ma
 To contact, use matt@sebolt.us.
 
 <p align="center">
-  <img src="https://github.com/nfnth/res/raw/main/site/bird.png" width="360" height="440" /></p>
+  <img src="https://github.com/nfnth/res/raw/main/site/bird.png" width="280" height="320" /></p>
 
 <br/>
 
