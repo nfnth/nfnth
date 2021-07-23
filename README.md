@@ -51,9 +51,18 @@ Includes,
 
 To purchase, see [ownership listings]().
 
-### BitOS (with Jaspre and Markre)
+### Try brOS (with Jaspre and Markre)
 
-Learn to code using our stack, see [bitOS](https://github.com/nfnth/nfnth/wiki/Bit-OS). For code specifics, see the [repo](), download the [script](https://gist.github.com/nfnth/ef98bc2ade9286b240eac846ff52bcce), or view the demo at [drhab.com](https://drhab.com).
+Features include,
+
+- Browser-only, lightweight distro (Arch-based)
+- Web-based admin console, 
+    - Command-line access
+    - Folder/file browser
+    - Text editor
+- Remote deployment
+
+Learn to code using our stack, see [brOS](https://github.com/nfnth/nfnth/wiki/Bit-OS). For code specifics, see the [repo](), download the [script](https://gist.github.com/nfnth/ef98bc2ade9286b240eac846ff52bcce), or view the demo at [drhab.com](https://drhab.com).
 
 <p align="center">
   <img src="https://github.com/nfnth/res/raw/main/site/fox.png" width="240" height="240" /></p>
