@@ -47,27 +47,31 @@ Includes,
 - subscription to Civilian's journal
 - Owner user badge
 
-### Deed Civilian
+### BitOS (with Jaspre and Markre)
 
 <p align="center">
   <img src="https://github.com/nfnth/res/raw/main/site/fox.png" width="240" height="240" /></p>
 
-Use the editor to:
+Use Jaspre to:
+
+- Transfer/store JSON objects between client (JavaScript) and serve (Python)
+
+Use the Markre editor to:
 
 - Create a profile
 - Write a treaty (trade)
 - Develop strategy
 - Campaign (with mail)
 
-Feel free to map and explore a continent filled with amazing peoples and lands. 
-
 Learn to code using our stack, see [bitOS](https://github.com/nfnth/nfnth/wiki/Bit-OS). For code specifics, see the [repo](), download the [script](https://gist.github.com/nfnth/ef98bc2ade9286b240eac846ff52bcce), or view the demo at [drhab.com](https://drhab.com).
 
 We use JavaScript regex rendering to confirm conform to [MattDown](https://github.com/nfnth/nfnth/wiki/Mattdown), or MarkDown 2.0.
 
+### Explore
+
+Feel free to map and explore a continent filled with amazing peoples and lands. 
+
 Read our mantra, the [Civilian's Complex](https://github.com/nfnth/nfnth/wiki/Manifest).
- 
-To contact, use matt@sebolt.us.
 
 <p align="center">
   <img src="https://github.com/nfnth/res/raw/main/site/bird.png" width="280" height="320" /></p>
@@ -76,7 +80,7 @@ To contact, use matt@sebolt.us.
 
 For stack issues, see [here](https://github.com/nfnth/bitos/issues), for all other issues, see [here](https://github.com/nfnth/nfnth/issues).
 
-Sites [dralun.com]() and [UR.Land](), along with [Ustat.us](), coming soon!
+Site [UStat.us](), coming soon!
 
 <link class="ico" rel="icon" href="https://cdn.jsdelivr.net/gh/nfnth/res@latest/icon/urland/favicon.ico" type="image/x-icon">
 <link class="ico" rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/nfnth/res@latest/icon/urland/favicon.ico" type="image/x-icon">
