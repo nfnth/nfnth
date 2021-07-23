@@ -12,6 +12,8 @@ while IFS= read -r line;do
   fields=($(printf "%s" "$line"|cut -d'|' --output-delimiter=' ' -f1-))
   #command "${fields[1]}" -x "${fields[2]}" ... # ${fields[1]} is field 2
   sed -i '$ d' /etc/ssl/openssl.cnf
+  echo "${fields[1]}" 
+  echo "${fields[0]}"
   echo "DNS.1 = " ${fields[1]} >> /etc/ssl/openssl.cnf
   openssl req -new -sha256 -key ecc-privkey.pem -nodes -outform pem -out ecc-csr.pem
   certbot certonly -d ${fields[1]} --email matt@sebolt.us --csr ecc-csr.pem --agree-tos --non-interactive --standalone
