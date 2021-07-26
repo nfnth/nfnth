@@ -38,3 +38,6 @@ https://www.name.com/account/domain/details/xn--en8hb.ws
 https://www.name.com/account/domain/details/xn--fn8ha.ws
 https://www.name.com/account/domain/details/xn--en8ha.ws
 https://www.name.com/account/domain/details/xn--en8hc.ws
+
+abbv.us
+mq1.us
