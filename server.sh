@@ -3,7 +3,7 @@
 openssl ecparam -genkey -name secp384r1 | openssl ec -out ecc-privkey.pem
 
 COUNTER=0
-
+COMMAND=""
 #echo $COUNTER
 #mv /etc/ssl/openssl.cnf /etc/ssl/openssl.cnf.old
 cp openssl.cnf openssl.cnf.tmp
@@ -14,13 +14,16 @@ while IFS= read -r line;do
   let COUNTER++
   #command "${fields[1]}" -x "${fields[2]}" ... # ${fields[1]} is field 2
   
-  echo "DNS." $COUNTER " = " ${fields[0]} >> openssl.cnf.tmp #/etc/ssl/openssl.cnf
+  echo "DNS."$COUNTER" = "${fields[0]} >> openssl.cnf.tmp #/etc/ssl/openssl.cnf
+  COMMAND += " -d "${fields[0]}
   if (( $COUNTER % 100 == 0 )); then
-    #openssl req -new -sha256 -key ecc-privkey.pem -nodes -outform pem -out ecc-csr.pem -subj /C=US/ST=Washington/L=Seattle/O=Nfnth/OU=House/CN=${fields[0]}
-    #certbot certonly -w /root/test/nfnth -d ${fields[0]} --email matt@sebolt.us --csr ecc-csr.pem --agree-tos --non-interactive --standalone
+    cp openssl.cnf.tmp /etc/ssl/openssl.cnf
+    openssl req -new -sha256 -key ecc-privkey.pem -nodes -outform pem -out ecc-csr.pem -subj /C=US/ST=Washington/L=Seattle/O=Nfnth/OU=House/CN=${fields[0]}
+    certbot certonly -w /root/test/nfnth $COMMAND --email matt@sebolt.us --csr ecc-csr.pem --agree-tos --non-interactive --standalone
     sudo -E bash -c 'cat 0000_cert.pem >> alldomains.pem'
+    COMMAND = ""
     rm 0000_cert.pem
-    mv openssl.cnf.tmp $COUNTER.cnf
+    #mv openssl.cnf.tmp $COUNTER.cnf
     cp openssl.cnf openssl.cnf.tmp
     sed -i '$ d' openssl.cnf.tmp
   fi
