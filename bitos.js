@@ -91,11 +91,11 @@ window.onpopstate = function(e){
     //document.title = e.state.pageTitle;
   } else { backConsole('home');} };
 
-var mode = 0; //0(view), 1(edit), 2(preview), 3(stats), 4(list), 5(map)
+var mode = 0; //0(view), 1(edit), 2(preview), 3(stats), 4(list), 5(map), 7(code)
 function setEditor(doc) {
    var width = window.innerWidth; var height = window.innerHeight - 48; //menu, footer
    $("#holder").hide(); $("#viewer").hide(); $("#code").hide(); $("#grid").hide(); $("#map").hide(); $("#stats").hide();
-   $("#tools").hide(); $("#toolset").hide();
+   $("#tools").hide(); $("#toolset").hide();$("#bros").hide();
  
    switch(mode) {
    case 0:
@@ -124,6 +124,8 @@ function setEditor(doc) {
 		   break;
    case 5:
     $("#map").show(); break;
+	   case 7:
+		   $("#bros").show(); break;
    default:}}
  
 var manifest;
