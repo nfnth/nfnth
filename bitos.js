@@ -119,7 +119,8 @@ function setEditor(doc) {
 					div.innerHTML += '<a href="#!" class="collection-item">' + fields[0] + fields[1] + fields[2] + '</a>';
 					  //alert(result[0]); 
 					  $("#grid").show();
-					//  $("#stats").html(renderMd(data));}); 
+					//  $("#stats").html(renderMd(data));
+					 }); 
 		   break;
    case 5:
     $("#map").show(); break;
