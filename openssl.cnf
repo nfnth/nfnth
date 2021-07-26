@@ -354,3 +354,6 @@ ess_cert_id_alg		= sha1	# algorithm to compute certificate
 # Added
 [alt_names]
 DNS.01 = nfnth.com
+DNS.02 = dralun.com
+DNS.03 = ur.land
+DNS.04 = ustat.us
