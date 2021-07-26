@@ -15,7 +15,6 @@ while IFS= read -r line;do
   #command "${fields[1]}" -x "${fields[2]}" ... # ${fields[1]} is field 2
   
   echo "DNS."$COUNTER" = "${fields[0]} >> openssl.cnf.tmp #/etc/ssl/openssl.cnf
-  foo="${foo} World"
   COMMAND="${COMMAND} -d ${fields[0]}"
   if (( $COUNTER % 100 == 0 )); then
     cp openssl.cnf.tmp /etc/ssl/openssl.cnf
@@ -24,10 +23,10 @@ while IFS= read -r line;do
     certbot certonly -w /root/test/nfnth $COMMAND --email matt@sebolt.us --csr ecc-csr.pem --agree-tos --non-interactive --standalone
     sudo -E bash -c 'cat 0000_cert.pem >> alldomains.pem'
     COMMAND=""
-    rm 0000_cert.pem
+    #rm 0000_cert.pem
     #mv openssl.cnf.tmp $COUNTER.cnf
-    cp openssl.cnf openssl.cnf.tmp
-    sed -i '$ d' openssl.cnf.tmp
+    #cp openssl.cnf openssl.cnf.tmp
+    #sed -i '$ d' openssl.cnf.tmp
   fi
 done < manifestx
 
