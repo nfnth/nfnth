@@ -112,20 +112,29 @@ function setEditor(doc) {
     $("#toolset").show();$("#grid").show(); break;
    case 4:
 		   //$("#stats").show();
-    $.get("../manifest", function (data) { result = data.split(/\r?\n/); 
-					  var fields = result[0].split('|');
+		   var fields = manifest[0].split('|');
 					  var div = document.getElementById('registry');
 
-					div.innerHTML += '<a href="#!" class="collection-item">' + fields[0] + fields[1] + fields[2] + '</a>';
+					div.innerHTML += "<a onclick='showDomain(0);' class='collection-item'>" + fields[0] + '</a>';
 					  //alert(result[0]); 
 					  $("#grid").show();
 					//  $("#stats").html(renderMd(data));
-					 }); 
+		   
+
 		   break;
    case 5:
     $("#map").show(); break;
    default:}}
  
+var manifest;
+$.get("../manifest", function (data) { manifest = data.split(/\r?\n/); }); 
+function showDomain(index) {
+	var fields = manifest[index].split('|');
+	var div = document.getElementById('toolset');
+
+					div.innerHTML += "<h4>" + fields[0] + "</h4>";
+					div.innerHTML += "<img src='https://github.com/nfnth/res/raw/main/thumb/" + fields[4] + "' />";
+}
 function renderMd(text) { 
   //$('#mermaid').html(""); var mermaidEx = /<textarea[\s\S]*?>([\s\S]*?)(?=<\/textarea>)/gi;
  
