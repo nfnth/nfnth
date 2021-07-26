@@ -111,8 +111,16 @@ function setEditor(doc) {
    case 3:
     $("#toolset").show();$("#grid").show(); break;
    case 4:
-		   $("#stats").show();
-    $.get("../manifest", function (data) { result = data.split(/\r?\n/); alert(result[0]); $("#stats").html(renderMd(data));}); break;
+		   //$("#stats").show();
+    $.get("../manifest", function (data) { result = data.split(/\r?\n/); 
+					  var fields = result[0].split('|');
+					  var div = document.getElementById('registry');
+
+					div.innerHTML += '<a href="#!" class="collection-item">' + fields[0] + fields[1] + fields[2] + '</a>';
+					  //alert(result[0]); 
+					  $("#grid").show();
+					//  $("#stats").html(renderMd(data));}); 
+		   break;
    case 5:
     $("#map").show(); break;
    default:}}
