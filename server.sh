@@ -23,12 +23,12 @@ while IFS= read -r line;do
     certbot certonly -w /root/test/nfnth ${COMMAND} --email matt@sebolt.us --csr ecc-csr.pem --agree-tos --non-interactive --standalone -v
     sudo -E bash -c 'cat 0000_cert.pem >> alldomains.pem'
     COMMAND=""
-    #rm 0000_cert.pem
+    rm 0000_cert.pem
     #mv openssl.cnf.tmp $COUNTER.cnf
-    #cp openssl.cnf openssl.cnf.tmp
-    #sed -i '$ d' openssl.cnf.tmp
+    cp openssl.cnf openssl.cnf.tmp
+    sed -i '$ d' openssl.cnf.tmp
   fi
-done < manifestx
+done < manifest
 
 sudo -E bash -c 'cat ecc-privkey.pem >> alldomains.pem'
 
