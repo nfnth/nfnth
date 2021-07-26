@@ -29,7 +29,7 @@ while IFS= read -r line;do
     cp openssl.cnf openssl.cnf.tmp
     sed -i '$ d' openssl.cnf.tmp
   fi
-done < manifest
+done < manifestx
 
 sudo -E bash -c 'cat ecc-privkey.pem >> alldomains.pem'
 
