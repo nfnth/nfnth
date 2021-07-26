@@ -3,8 +3,8 @@
 openssl ecparam -genkey -name secp384r1 | openssl ec -out ecc-privkey.pem
 
 cp openssl.cnf /etc/ssl/openssl.cnf
-openssl req -new -sha256 -key ecc-privkey.pem -nodes -outform pem -out ecc-csr.pem -subj /C=US/ST=Washington/L=Seattle/O=Nfnth/OU=House/CN=nfnth.com
-certbot certonly -w /root/test/nfnth -d nfnth.com -d dralun.com -d ur.land -d ustat.us --email matt@sebolt.us --csr ecc-csr.pem --agree-tos --non-interactive --standalone -v
+openssl req -new -sha256 -key ecc-privkey.pem -nodes -outform pem -out ecc-csr.pem -subj /C=US/ST=Washington/L=Seattle/O=Nfnth/OU=House/CN=dralun.com
+certbot certonly -w /root/test/nfnth -d dralun.com -d ur.land -d ustat.us --email matt@sebolt.us --csr ecc-csr.pem --agree-tos --non-interactive --standalone -v
 echo "Continue?"
 read input </dev/tty
 
@@ -16,7 +16,6 @@ COMMAND=""
 #echo $COUNTER
 #mv /etc/ssl/openssl.cnf /etc/ssl/openssl.cnf.old
 cp openssl.cnf openssl.cnf.tmp
-sed -i '$ d' openssl.cnf.tmp
 sed -i '$ d' openssl.cnf.tmp
 sed -i '$ d' openssl.cnf.tmp
 sed -i '$ d' openssl.cnf.tmp
@@ -38,7 +37,6 @@ while IFS= read -r line;do
     rm 0000_cert.pem
     #mv openssl.cnf.tmp $COUNTER.cnf
     cp openssl.cnf openssl.cnf.tmp
-    sed -i '$ d' openssl.cnf.tmp
     sed -i '$ d' openssl.cnf.tmp
     sed -i '$ d' openssl.cnf.tmp
     sed -i '$ d' openssl.cnf.tmp
