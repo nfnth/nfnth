@@ -1,6 +1,5 @@
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dralun · Deed to Domain</title>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Dralun · Deed to Domain</title>
 
 <!-- resources -->
 <link class="ico" rel="icon" href="https://cdn.jsdelivr.net/gh/nfnth/res@latest/icon/urland/favicon.ico" type="image/x-icon">
@@ -12,12 +11,9 @@
 <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.0/mapbox-gl.js"></script>
 <script src="https://js.stripe.com/v3/"></script>
 <script src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=fetch"></script>
-
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
-<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
@@ -26,99 +22,91 @@
 <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 	
-<link href="./bitos.css" rel="stylesheet">
-</head>
+<link href="./bitos.css" rel="stylesheet"></head>
 
 <!-- menu -->
 <nav id="main-menu" style="position: fixed;top:0; z-index:2;visibility:hidden;" class="loader">
-  <div class="nav-wrapper header" style="background-color:rgb(33, 124, 185); display:flex; justify-content: space-between;">
+  	<div class="nav-wrapper header" style="background-color:rgb(33, 124, 185); display:flex; justify-content: space-between;">
+    		<div>
+      		<a id="slider" href="#" data-target="user-pane" class="sidenav-trigger" style="background-color: #2f8fff;margin: 0;padding: 18;justify-items: center;display: flex;align-items: center;"><i class="material-icons">menu</i></a>
+      		<a style="display: flex; align-items: center; height: 100%; "><img id="menu-logo" class="hide-on-med-and-down" onclick="mode=0; setEditor('../README.md');" draggable="false" ondragstart="return false;" style="height:48; width:48; cursor: pointer; margin-left: 16;" /></a></div>
     
-    <div>
-      <a id="slider" href="#" data-target="user-pane" class="sidenav-trigger" style="background-color: #2f8fff;margin: 0;padding: 18;justify-items: center;display: flex;align-items: center;"><i class="material-icons">menu</i></a>
-      <a style="display: flex; align-items: center; height: 100%; "><img id="menu-logo" class="hide-on-med-and-down" onclick="mode=0; setEditor('../README.md');" draggable="false" ondragstart="return false;" style="height:48; width:48; cursor: pointer; margin-left: 16;" /></a></div>
-    
-    <a class="screen-hide" onclick="mode=0; setEditor('../README.md');"><i class="material-icons">menu_book</i></a>
-    <a id="domains-hide" class="screen-hide" href="#!" data-target="domain"><i class="material-icons right">view_list</i></a>
-    <a class="screen-hide" onclick="mode=1; setEditor('../doc/MANIFEST.md');"><i class="material-icons right">edit</i></a>
-    <a class="screen-hide" onclick="searchSwitch();"><i class="material-icons right">search</i></a>
-    <ul class="hide-on-med-and-down" >
-      <li><a onclick="mode=0; setEditor('../README.md.md');">GET STARTED</a></li>
-      <li><a id="domains" href="#!" data-target="domain">DOMAINS<i class="material-icons right">arrow_drop_down</i></a></li>
-      <li><a onclick="mode=1; setEditor('../README.md');">EDITOR</a></li>
-      <li style="height:64px;">
-        <a style="height:inherit; padding-right:0;"><i onclick="$('#search').focus();" style="height:inherit; padding-right:4;" class="material-icons">search</i><span onclick="$('#search').focus();" class="badge blue">1865</span>
-        <div id="search-box" class="input-field" style="height:inherit;">
-          <input id="search" type="search" onkeyup="searchResults()" style="padding-left:12; width: calc(100% - 1rem);">
-          <label class="label-icon" for="search" ></label>
-          <i class="material-icons" onclick="searchClear()">close</i></div></a></li></ul>
+    		<a class="screen-hide" onclick="mode=0; setEditor('../README.md');"><i class="material-icons">menu_book</i></a>
+    		<a id="domains-hide" class="screen-hide" href="#!" data-target="domain"><i class="material-icons right">view_list</i></a>
+    		<a class="screen-hide" onclick="mode=1; setEditor('../doc/MANIFEST.md');"><i class="material-icons right">edit</i></a>
+    		<a class="screen-hide" onclick="searchSwitch();"><i class="material-icons right">search</i></a>
+		
+    		<ul class="hide-on-med-and-down" >
+      			<li><a onclick="mode=0; setEditor('../README.md.md');">GET STARTED</a></li>
+      			<li><a id="domains" href="#!" data-target="domain">DOMAINS<i class="material-icons right">arrow_drop_down</i></a></li>
+      			<li><a onclick="mode=1; setEditor('../README.md');">EDITOR</a></li>
+      			<li style="height:64px;">
+        			<a style="height:inherit; padding-right:0;"><i onclick="$('#search').focus();" style="height:inherit; padding-right:4;" class="material-icons">search</i><span onclick="$('#search').focus();" class="badge blue">1865</span>
+        			<div id="search-box" class="input-field" style="height:inherit;">
+          				<input id="search" type="search" onkeyup="searchResults()" style="padding-left:12; width: calc(100% - 1rem);">
+          				<label class="label-icon" for="search" ></label>
+          				<i class="material-icons" onclick="searchClear()">close</i></div></a></li></ul>
 	
-      <div><a id="slider2" href="#" data-target="user-setting" class="sidenav-trigger" style="margin: 0;padding: 18;justify-items: center;display: flex;align-items: center;"><i class="material-icons">account_box</i></a></div></div></nav>
+      		<div><a id="slider2" href="#" data-target="user-setting" class="sidenav-trigger" style="margin: 0;padding: 18;justify-items: center;display: flex;align-items: center;"><i class="material-icons">account_box</i></a></div></div></nav>
 
 <!-- domains -->
 <ul id="domain" class="dropdown-content loader" style="visibility:hidden;">
-  <li><a onclick="mode=3; setEditor('');"><i class="material-icons">view_list</i>View Listings</a></li>
-  <li><a onclick="mode=5; setEditor('');"><i class="material-icons">map</i>Explore Map</a></li>
-  <li><a onclick="mode=4; setEditor('');"><i class="material-icons">equalizer</i>Show Stats</a></li></ul>
+  	<li><a onclick="mode=3; setEditor('');"><i class="material-icons">view_list</i>View Listings</a></li>
+  	<li><a onclick="mode=5; setEditor('');"><i class="material-icons">map</i>Explore Map</a></li>
+  	<li><a onclick="mode=4; setEditor('');"><i class="material-icons">equalizer</i>Show Stats</a></li></ul>
 
 <!-- panel (system) -->
 <ul id="user-pane" class="sidenav loader" style="visibility:hidden;">
-  <li style="text-align:right"><div class="user-view z-depth-1" style="background-color: #608396;display: flex;margin: auto; padding: 0;align-items: flex-end;">
-    <img draggable="false" ondragstart="return false;" id="user-pic" style="height: 72;background-color: #a2b9cc; padding: 12;" src="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/shield.png" /></div></li>
-  <li style="text-align: center;"><a class="subheader">
-    <span style="font-size: 20;font-weight: bold; color: #000000;">Dralun</span>
-    <span style="margin-left:4;font-size: 16;font-weight: bold; color: #494646; ">· Deed to Domain</span></a></li>
-  <li style="height:24;"><a class="subheader"></a></li>
+	<li><div class="user-view z-depth-1" style="background-color: #608396;display: flex;margin: auto; padding: 0;align-items: flex-end;"><img draggable="false" ondragstart="return false;" id="user-pic" style="height: 72;background-color: #a2b9cc; padding: 12;" src="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/shield.png" /></div></li>
+  	<li style="text-align: center;"><a class="subheader">
+    		<span style="font-size: 20;font-weight: bold; color: #000000;">Dralun</span>
+    		<span style="margin-left:4;font-size: 16;font-weight: bold; color: #494646; ">· Deed to Domain</span></a></li>
+  	<li style="height:24;"><a class="subheader"></a></li>
 	<li><a class="subheader">Purchase Options</a></li>
-<li style="padding:12;"><p>
-      <label>
-        <input type="checkbox" class="filled-in" checked="checked" />
-        <span>Unclaimed</span>
-      </label>
-	</p></li>
-     <li style="padding:12;"> <div>
-      <select multiple>
-        <option value="" disabled selected>Filter By...</option>
-	      <option value="1" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color5.png"><a>Land</a></option>
-        <option value="2" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color1.png">Machine</option>
-        <option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color2.png">Monument</option>
-        <option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color3.png">Person</option>
-        <option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color4.png">Stock</option>
-	<option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color4.png">Tribe</option></select><label>Filter By</label></div></li>
-  <li style="padding:12;"><div>
-      <select>
-        <option value="" disabled selected>Sort By...</option>
-        <option value="1" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color6.png">Name (Ascending)</option>
-	      <option value="1" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color6.png">Name (Descending)</option>
-	      <option value="2">Category</option>
-	  </select><label>Sort By</label></div></li>
-    <li>   <a class="waves-effect waves-light btn">Clear Filters</a></div></li>
-<li><a class="subheader"></a></li>
-  <li><a class="waves-effect" onclick="mode=1; setEditor('../README.md'); $('#user-pane').sidenav('close');"><i class="material-icons">menu_book</i>Purchase Civilian's Complex</a></li>
+	<li style="padding:12;"><p>
+      		<label><input type="checkbox" class="filled-in" checked="checked" /><span>Unclaimed</span></label></p></li>
+     	<li style="padding:12;"> <div>
+      		<select multiple>
+        		<option value="" disabled selected>Filter By...</option>
+	      		<option value="1" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color5.png"><a>Land</a></option>
+        		<option value="2" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color1.png">Machine</option>
+        		<option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color2.png">Monument</option>
+        		<option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color3.png">Person</option>
+        		<option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color4.png">Stock</option>
+			<option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color4.png">Tribe</option></select><label>Filter By</label></div></li>
+  	<li style="padding:12;"><div>
+      		<select>
+        		<option value="" disabled selected>Sort By...</option>
+        		<option value="1" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color6.png">Name (Ascending)</option>
+	      		<option value="1" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color6.png">Name (Descending)</option>
+	      		<option value="2">Category</option></select><label>Sort By</label></div></li>
+    	<li><a class="waves-effect waves-light btn">Clear Filters</a></div></li>
+	<li><a class="subheader"></a></li>
+  	<li><a class="waves-effect" onclick="mode=1; setEditor('../README.md'); $('#user-pane').sidenav('close');"><i class="material-icons">menu_book</i>Purchase Civilian's Complex</a></li>
 	<li><a class="waves-effect" onclick="mode=0; setEditor('../README.md'); $('#user-pane').sidenav('close');"><i class="material-icons">book</i>Use MarkDown 2.0</a></li>
-  <li><a class="waves-effect" onclick="mode=0; setEditor('../.md'); $('#user-pane').sidenav('close');"><i class="material-icons">help</i>About Dralun</a></li>
-  <li><div style="margin-top:0;" class="divider"></div></li>
-  <li><a class="subheader"></a></li>
-  <li><div id="header-logo" style="display: flex; flex-flow:column; align-items: center;justify-content: center;align-items: center; display: flex;">
-      <div id="header-logo">
-        <div id="logo" style="text-align:center;">
-          <img draggable="false" id="leafy" style="width:64;height:48;" src="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/eagle/eagle1.png"/></div>
-        <div style="display: flex;align-items: center;justify-content: center;">
-          <span id="title" style="font-weight: bold; font-size: 25px;">NfNth</span>
-          <i class="material-icons" >copyright</i>2021</div></div>
-        <div><span style="cursor: pointer;" onclick="mode=0; setEditor('../doc/BITOS.md'); $('#user-pane').sidenav('close');" class="new badge green darken-2" data-badge-caption="bitOS, version 1.02"></span></div>
-      <div id="header-title"><span id="phrase" style="font-style: italic;">software on infinitive basis</span></div></div></li></ul>
+  	<li><a class="waves-effect" onclick="mode=0; setEditor('../.md'); $('#user-pane').sidenav('close');"><i class="material-icons">help</i>About Dralun</a></li>
+  	<li><div style="margin-top:0;" class="divider"></div></li>
+  	<li><a class="subheader"></a></li>
+  	<li><div id="header-logo" style="display: flex; flex-flow:column; align-items: center;justify-content: center;align-items: center; display: flex;">
+      		<div id="header-logo">
+        	<div id="logo" style="text-align:center;">
+          		<img draggable="false" id="leafy" style="width:64;height:48;" src="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/eagle/eagle1.png"/></div>
+        		<div style="display: flex;align-items: center;justify-content: center;">
+          			<span id="title" style="font-weight: bold; font-size: 25px;">NfNth</span>
+          			<i class="material-icons" >copyright</i>2021</div></div>
+        		<div><span style="cursor: pointer;" onclick="mode=0; setEditor('../doc/BITOS.md'); $('#user-pane').sidenav('close');" class="new badge green darken-2" data-badge-caption="bitOS, version 1.02"></span></div>
+      			<div id="header-title"><span id="phrase" style="font-style: italic;">software on infinitive basis</span></div></div></li></ul>
 
 <!-- panel (user) -->
 <ul id="user-setting" class="sidenav loader" style="visibility:hidden;">
-  <li><div class="user-view z-depth-1" style="background-color: #608396;display: flex;margin: auto; padding: 0;align-items: flex-end;">
-    <img draggable="false" ondragstart="return false;" id="user-pic" style="height: 72;background-color: #a2b9cc; padding: 12;" src="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/shield.png" /></div></li>
-  <li style="text-align: center;"><a class="subheader">
-    <span style="font-size: 20;font-weight: bold; color: #000000;">User Profile</span></a></li>
-  <li style="height:24;"><a class="subheader"></a></li>
+	<li style="text-align:right"><div class="user-view z-depth-1" style="background-color: #608396; margin: auto; padding: 0;">
+    		<img draggable="false" ondragstart="return false;" id="user-pic" style="height: 72;background-color: #a2b9cc; padding: 12;" src="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/shield.png" /></div></li>
+  	<li style="text-align: center;"><a class="subheader">
+    		<span style="font-size: 20;font-weight: bold; color: #000000;">User Profile</span></a></li>
+  	<li style="height:24;"><a class="subheader"></a></li>
 	<li><a class="modal-trigger" href="#user-modal"><i class="material-icons">person</i>Create User</a></li>
-<li><a class="waves-effect" onclick="mode=1; setEditor('../doc/MATTDOWN.md'); $('#user-pane').sidenav('close');"><i class="material-icons">login</i>Sign In</a></li>
-<li><a class="waves-effect" onclick="mode=1; setEditor('../doc/MATTDOWN.md'); $('#user-pane').sidenav('close');"><i class="material-icons">mail</i>Reset Account</a></li>
-
+	<li><a class="waves-effect" onclick="mode=1; setEditor('../doc/MATTDOWN.md'); $('#user-pane').sidenav('close');"><i class="material-icons">login</i>Sign In</a></li>
+	<li><a class="waves-effect" onclick="mode=1; setEditor('../doc/MATTDOWN.md'); $('#user-pane').sidenav('close');"><i class="material-icons">mail</i>Reset Account</a></li>
 	<li><div style="margin-top:0;" class="divider"></div></li></ul>
 
 <!-- dialog -->
@@ -126,18 +114,14 @@
     <div id="intro" class="row-section">
       <div id="console" class="row">
 	      
-	      
 <div class="hover-base col s12 m12" id="new-name" style="display: flex; justify-content: center;"><div class="input-field">
 	<i class="material-icons prefix">account_circle</i><input id="user-name" name="user-name" type="text" class="user-input" max="24" tabindex="1" oninput="userLookup(this);" ><label for="user-name">Username</label><span id="user-issue" class="helper-text" data-error="Invalid input" data-success="" >Enter username</span></div></div>
 	      
 <div class="hover-base col s12 m12" id="new-name" style="display: flex; justify-content: center;"><div class="input-field">
-	<i class="material-icons prefix">account_circle</i><input id="user-password" name="user-name" type="text" class="user-input" max="24" tabindex="1" oninput="userLookup(this);" ><label for="user-name">Password</label><span id="user-issue" class="helper-text" data-error="Invalid input" data-success="" >Enter password</span></div></div>
-	      
-	      </div></div>
+	<i class="material-icons prefix">account_circle</i><input id="user-password" name="user-name" type="text" class="user-input" max="24" tabindex="1" oninput="userLookup(this);" ><label for="user-name">Password</label><span id="user-issue" class="helper-text" data-error="Invalid input" data-success="" >Enter password</span></div></div></div></div>
 
 <div id="create" class="row hidden">
-	      
-	      
+	        
 <div class="hover-base col s12 m12" id="new-name" style="display: flex; justify-content: center;"><div class="input-field">
 	<i class="material-icons prefix">account_circle</i><input id="user-confirm" name="user-name" type="text" class="user-input" max="24" tabindex="1" oninput="userLookup(this);" ><label for="user-name">Confirm</label><span id="user-issue" class="helper-text" data-error="Invalid input" data-success="" >Confirm password</span></div></div>
 	 
@@ -149,89 +133,81 @@
 	
 <!-- home -->
 <div id="home" style="text-align:center;margin-top:64;visibility:hidden; width:100%; z-index:1;" class="content loader">
-  <input type="text" class="datepicker gone"><input type="text" class="timepicker gone">
+  	<input type="text" class="datepicker gone"><input type="text" class="timepicker gone">
 
 <!-- search -->
 <div id="results" style="margin:80; display:none;" class="content loader">search...</div>
   
-<!-- editor/viewer -->
+<!-- editor -->
 <div id="tools" class="z-depth-1" style="display:flex;align-items: center;justify-content: flex-end;padding: 12; margin-bottom: 4; width:100%;">
-  <div class="switch" onclick="previewMode();"><label style="display: flex;align-items: center;">Preview&nbsp;&nbsp;<i class="material-icons">chrome_reader_mode</i><input type="checkbox" id="preview"><span class="lever"></span></label></div>
-<a id='marks' class='dropdown-trigger btn waves-effect waves-light blue tool' href='#' data-target='mark'>
-	  <i class="material-icons right">build</i>Tool</a>
-
-  <a onclick="exportDoc();" class="btn waves-effect waves-light green tool" style="margin-left:24;">
-    <i class="material-icons right">publish</i>Post</a></div>
+  	<div class="switch" onclick="previewMode();"><label style="display: flex;align-items: center;">Preview&nbsp;&nbsp;<i class="material-icons">chrome_reader_mode</i><input type="checkbox" id="preview"><span class="lever"></span></label></div>
+	<div class="switch" onclick="previewMode();"><label style="display: flex;align-items: center;">Private?&nbsp;&nbsp;<input type="checkbox" id="preview"><span class="lever"></span></label></div>
+	
+	<a id='marks2' class='dropdown-trigger btn waves-effect waves-light blue tool' href='#' data-target='mark'><i class="material-icons right">build</i>Template</a>
+	<a id='marks' class='dropdown-trigger btn waves-effect waves-light blue tool' href='#' data-target='mark'><i class="material-icons right">build</i>Tool</a>
+  	<a onclick="exportDoc();" class="btn waves-effect waves-light green tool" style="margin-left:24;"><i class="material-icons right">publish</i>Post</a></div>
 	
 <div id="holder" style="display:flex; width:100%; justify-content:center;height: calc(100% - 60px);">
-  <div id="viewer" style="text-align:left;padding:24;height:100%; overflow-y:auto; "></div>
-  <div id="code" class="content loader" contentEditable="false" style="width:50%; height:50%; ">
-       <div  contentEditable="true"   style="text-align:left; overflow-y: auto; width:100%; height:100%;     border: 2px solid aliceblue;box-shadow: 1px 1px beige;padding: 24;"></div></div></div>
+  	<div id="viewer" style="text-align:left;padding:24;height:100%; overflow-y:auto; "></div>
+  	<div id="code" class="content loader" contentEditable="false" style="width:50%; height:50%; ">
+       		<div  contentEditable="true"   style="text-align:left; overflow-y: auto; width:100%; height:100%;     border: 2px solid aliceblue;box-shadow: 1px 1px beige;padding: 24;"></div></div></div>
 
 <div id="device" class="content loader" style="display:none;">
-  
-<ul id='mark' class='dropdown-content'>
-    <li><a onclick="camera();" ><i class="material-icons left">photo_camera</i>Camera</a></li>
-    <li><a onclick="getLocation();" ><i class="material-icons left">gps_fixed</i>Location</a></li>
-    <li class="divider" tabindex="-1"></li>
-    <li><a onclick="$('.timepicker').timepicker('open');"><i class="material-icons">schedule</i>Time</a></li>
-    <li><a onclick="$('.datepicker').datepicker('open');"><i class="material-icons">event</i>Date</a></li><li class="divider" tabindex="-1"></li>
-	<li class="divider" tabindex="-1"></li>
-	<li><a href="#!"><i class="material-icons">attach_file</i>File</a></li></ul></div>
+	<ul id='mark' class='dropdown-content'>
+		<li><a onclick="camera();" ><i class="material-icons left">photo_camera</i>Camera</a></li>
+		<li><a onclick="getLocation();" ><i class="material-icons left">gps_fixed</i>Location</a></li>
+		<li class="divider" tabindex="-1"></li>
+		<li><a onclick="$('.timepicker').timepicker('open');"><i class="material-icons">schedule</i>Time</a></li>
+		<li><a onclick="$('.datepicker').datepicker('open');"><i class="material-icons">event</i>Date</a></li>
+		<li><a onclick="$('.datepicker').datepicker('open');"><i class="material-icons">event</i>Draw</a></li><li class="divider" tabindex="-1"></li>
+		<li class="divider" tabindex="-1"></li>
+		<li><a href="#!"><i class="material-icons">attach_file</i>File</a></li></ul>
+
+	<ul id='mark2' class='dropdown-content'>
+		<li><a onclick="camera();" ><i class="material-icons left">photo_camera</i>Label</a></li>
+		<li><a onclick="getLocation();" ><i class="material-icons left">gps_fixed</i>List</a></li>
+		<li class="divider" tabindex="-1"></li>
+		<li><a onclick="$('.timepicker').timepicker('open');"><i class="material-icons">Diagram</i>Time</a></li>
+		<li><a onclick="$('.datepicker').datepicker('open');"><i class="material-icons">Equation</i>Date</a></li><li class="divider" tabindex="-1"></li>
+		<li class="divider" tabindex="-1"></li>
+		<li><a href="#!"><i class="material-icons">attach_file</i>File</a></li></ul></div>
 
 <!-- stats/grid/map -->
 <div id="stats" class="content loader">
-
 <div class="row">
-    <div class="col s12">
-      <ul class="tabs">
-        <li class="tab col s3"><a href="#test1"><i class="material-icons">terrain</i>Land</a></li>
-        <li class="tab col s3"><a class="active" href="#test2">Test 2</a></li>
-        <li class="tab col s3 disabled"><a href="#test3">Disabled Tab</a></li>
-        <li class="tab col s3"><a href="#test4">Test 4</a></li>
-      </ul>
-    </div>
-    <div id="test1" class="col s12">
-		
-	    
-  <ul class="collapsible popout" style="padding-top: 112;">
-    <li>
-      <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-    </li>
-    <li>
-      <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-    </li>
-    <li>
-      <div class="collapsible-header"><i class="material-icons">place</i>Third</div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div></li></ul>
-		
-		</div>
-    <div id="test2" class="col s12">Test 2</div>
-    <div id="test3" class="col s12">Test 3</div>
-    <div id="test4" class="col s12">Test 4</div>
-		</div></div>
+	<div class="col s12"><ul class="tabs">
+        	<li class="tab col s3"><a href="#test1"><i class="material-icons">terrain</i>Land</a></li>
+        	<li class="tab col s3"><a class="active" href="#test2">Test 2</a></li>
+        	<li class="tab col s3 disabled"><a href="#test3">Disabled Tab</a></li>
+        	<li class="tab col s3"><a href="#test4">Test 4</a></li></ul></div>
+	
+    	<div id="test1" class="col s12"><ul class="collapsible popout" style="padding-top: 112;">
+    		<li>
+      			<div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
+      			<div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div></li>
+    		<li>
+      			<div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+      			<div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div></li>
+    		<li>
+      			<div class="collapsible-header"><i class="material-icons">place</i>Third</div>
+      			<div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div></li></ul></div>
 
+    	<div id="test2" class="col s12">Test 2</div>
+    	<div id="test3" class="col s12">Test 3</div>
+    	<div id="test4" class="col s12">Test 4</div></div></div></div>
 
-</div>
+<div id="toolset" class="z-depth-1 content loader" style="display:flex;align-items: center;justify-content: center;padding: 12; margin-bottom: 4; width:100%;position: fixed;background-color: white; z-index:4; ">
+	<a href="#test1"><i class="material-icons">terrain</i>Share</a><a href="#test1"><i class="material-icons">terrain</i>Embed</a></div>
 
-<div id="toolset" class="z-depth-1 content loader" style="display:flex;align-items: center;justify-content: center;padding: 12; margin-bottom: 4; width:100%;position: fixed;background-color: white; z-index:4; "></div>
-
-	<div id="grid" class="content loader">
-
-<div id="registry" class="collection">
-<a href="#!" class="collection-item">Alvin</a>
-<a href="#!" class="collection-item active">Alvin</a>
-<a href="#!" class="collection-item">Alvin</a>
-<a href="#!" class="collection-item">Alvin</a></div>
-
-	</div>
+<div id="grid" class="content loader">
+	<div id="registry" class="collection">
+		<a href="#!" class="collection-item">Alvin</a>
+		<a href="#!" class="collection-item active">Alvin</a>
+		<a href="#!" class="collection-item">Alvin</a>
+		<a href="#!" class="collection-item">Alvin</a></div></div>
 
 <div id="map" style="top:110px;" class="content loader"></div>
 	
-<div class="footer">
-  <p>Footer</p>
-</div>
+<div class="footer"><p>Footer</p></div>
 
-	<script src="./bitos.js"></script>
+<script src="./bitos.js"></script>
