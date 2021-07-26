@@ -28,12 +28,7 @@ while IFS= read -r line;do
     cp openssl.cnf openssl.cnf.tmp
     sed -i '$ d' openssl.cnf.tmp
     echo "Continue?"
-    select yn in "Yes" "No"; do
-        case $yn in
-            Yes ) echo "...";;
-            No ) exit;;
-    esac
-done
+    read answer
   fi
 done < manifest
 
