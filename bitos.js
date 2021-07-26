@@ -112,7 +112,7 @@ function setEditor(doc) {
     $("#toolset").show();$("#grid").show(); break;
    case 4:
 		   $("#stats").show();
-    $.get("../manifest", function (data) { $("#stats").html(renderMd(data));}); break;
+    $.get("../manifest", function (data) { result = data.split(/\r?\n/); alert(result[0]); $("#stats").html(renderMd(data));}); break;
    case 5:
     $("#map").show(); break;
    default:}}
