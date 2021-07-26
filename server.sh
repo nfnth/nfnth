@@ -30,7 +30,7 @@ while IFS= read -r line;do
     echo "Continue?"
     select yn in "Yes" "No"; do
         case $yn in
-            Yes ) echo "..."
+            Yes ) echo "...";;
             No ) exit;;
     esac
 done
