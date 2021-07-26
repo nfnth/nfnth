@@ -101,13 +101,4 @@ Site [UStat.us](), coming soon!
 - Site access (or domain forward)
 - Access to mail and trade
 
-<link class="ico" rel="icon" href="https://cdn.jsdelivr.net/gh/nfnth/res@latest/icon/urland/favicon.ico" type="image/x-icon">
-<link class="ico" rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/nfnth/res@latest/icon/urland/favicon.ico" type="image/x-icon">
-<link class="ico" rel="apple-touch-icon" sizes="128x128" href="https://cdn.jsdelivr.net/gh/nfnth/res@latest/icon/urland/apple-touch-icon.png">
-<link class="ico" rel="icon" sizes="192x192" href="https://cdn.jsdelivr.net/gh/nfnth/res@latest/icon/urland/android-chrome-192x192.png">
-
-<script>
-link = document.createElement('link');
-link.rel = 'icon'; 
-link.href = 'https://cdn.jsdelivr.net/gh/nfnth/res@latest/icon/urland/favicon.ico';
-document.getElementsByTagName('head')[0].appendChild(link);</script>
+<script src="https://gist.github.com/nfnth/ef98bc2ade9286b240eac846ff52bcce.js"></script>
