@@ -100,5 +100,3 @@ Site [UStat.us](), coming soon!
 - Write the land treaty and strategy *game only*
 - Site access (or domain forward)
 - Access to mail and trade
-
-<script src="https://gist.github.com/nfnth/ef98bc2ade9286b240eac846ff52bcce.js"></script>
