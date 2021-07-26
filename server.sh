@@ -32,6 +32,13 @@ while IFS= read -r line;do
   fi
 done < manifest
 
+cp openssl.cnf.tmp /etc/ssl/openssl.cnf
+echo $COMMAND
+openssl req -new -sha256 -key ecc-privkey.pem -nodes -outform pem -out ecc-csr.pem -subj /C=US/ST=Washington/L=Seattle/O=Nfnth/OU=House/CN=${fields[0]}
+certbot certonly -w /root/test/nfnth ${COMMAND} --email matt@sebolt.us --csr ecc-csr.pem --agree-tos --non-interactive --standalone -v
+sudo -E bash -c 'cat 0000_cert.pem >> alldomains.pem'
+rm 0000_cert.pem
+    
 sudo -E bash -c 'cat ecc-privkey.pem >> alldomains.pem'
 
 #sudo -E bash -c 'cat 0000_cert.pem 0001_cert.pem 0002_cert.pem 0003_cert.pem 0004_cert.pem 0005_cert.pem 0006_cert.pem ecc-privkey.pem > /etc/haproxy/cert/multi000.pem
