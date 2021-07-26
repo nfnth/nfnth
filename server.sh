@@ -15,13 +15,15 @@ while IFS= read -r line;do
   #command "${fields[1]}" -x "${fields[2]}" ... # ${fields[1]} is field 2
   
   echo "DNS."$COUNTER" = "${fields[0]} >> openssl.cnf.tmp #/etc/ssl/openssl.cnf
-  COMMAND += " -d "${fields[0]}
+  foo="${foo} World"
+  COMMAND="${COMMAND} -d ${fields[0]}"
   if (( $COUNTER % 100 == 0 )); then
     cp openssl.cnf.tmp /etc/ssl/openssl.cnf
+    echo $COMMAND
     openssl req -new -sha256 -key ecc-privkey.pem -nodes -outform pem -out ecc-csr.pem -subj /C=US/ST=Washington/L=Seattle/O=Nfnth/OU=House/CN=${fields[0]}
     certbot certonly -w /root/test/nfnth $COMMAND --email matt@sebolt.us --csr ecc-csr.pem --agree-tos --non-interactive --standalone
     sudo -E bash -c 'cat 0000_cert.pem >> alldomains.pem'
-    COMMAND = ""
+    COMMAND=""
     rm 0000_cert.pem
     #mv openssl.cnf.tmp $COUNTER.cnf
     cp openssl.cnf openssl.cnf.tmp
