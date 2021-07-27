@@ -26,8 +26,8 @@
 <nav id="main-menu" style="position: fixed;top:0; z-index:2;visibility:hidden;" class="loader">
   	<div class="nav-wrapper header" style="background-color:rgb(33, 124, 185); display:flex; justify-content: space-between;">
     		<div>
-      		<a id="slider" href="#" data-target="user-pane" class="sidenav-trigger" style="background-color: #2f8fff;margin: 0;padding: 18;justify-items: center;display: flex;align-items: center;"><i class="material-icons">menu</i></a>
-      		<a style="display: flex; align-items: center; height: 100%; "><img id="menu-logo" class="hide-on-med-and-down" onclick="mode=0; setEditor('../doc/CC.md');" draggable="false" ondragstart="return false;" style="height:48; width:48; cursor: pointer; margin-left: 16;" /></a></div>
+      			<a id="slider" href="#" data-target="user-pane" class="sidenav-trigger" style="background-color: #2f8fff;margin: 0;padding: 18;justify-items: center;display: flex;align-items: center;"><i class="material-icons">menu</i></a>
+      			<a style="display: flex; align-items: center; height: 100%; "><img id="menu-logo" class="hide-on-med-and-down" onclick="mode=0; setEditor('../doc/CC.md');" draggable="false" ondragstart="return false;" style="height:48; width:48; cursor: pointer; margin-left: 16;" /></a></div>
     
     		<a class="screen-hide" onclick="mode=0; setEditor('../doc/CC.md');"><i class="material-icons">menu_book</i></a>
     		<a id="domains-hide" class="screen-hide" href="#!" data-target="domain"><i class="material-icons right">view_list</i></a>
@@ -35,7 +35,7 @@
     		<a class="screen-hide" onclick="searchSwitch();"><i class="material-icons right">search</i></a>
 		
     		<ul class="hide-on-med-and-down" >
-      			<li><a onclick="mode=0; setEditor('../doc/DEED.md.md');">GET STARTED</a></li>
+      			<li><a onclick="mode=0; setEditor('../doc/DEED.md');">GET STARTED</a></li>
       			<li><a id="domains" href="#!" data-target="domain">DOMAINS<i class="material-icons right">arrow_drop_down</i></a></li>
       			<li><a onclick="openInNewTab('https://nfnth.com');">EDITOR</a></li>
       			<li style="height:64px;">
@@ -83,33 +83,21 @@
   	<li style="text-align: center;"><a class="subheader">
     		<span style="font-size: 20;font-weight: bold; color: #000000;">User Profile</span></a></li>
   	<li style="height:24;"><a class="subheader"></a></li>
-	<li><a class="modal-trigger" href="#user-modal"><i class="material-icons">person</i>Create User</a></li>
+	<li><a class="modal-trigger" href="#user-modal" onclick="$('#user-setting').sidenav('close');"><i class="material-icons">person</i>Create User</a></li>
 	<li><a class="waves-effect" onclick="mode=1; setEditor('../doc/MATTDOWN.md'); $('#user-pane').sidenav('close');"><i class="material-icons">login</i>Sign In</a></li>
 	<li><a class="waves-effect" onclick="mode=1; setEditor('../doc/MATTDOWN.md'); $('#user-pane').sidenav('close');"><i class="material-icons">mail</i>Reset Account</a></li>
 	<li><div style="margin-top:0;" class="divider"></div></li></ul>
 
 <!-- dialog -->
-<div id="user-modal" class="modal content loader"><div class="modal-content">
-    <div id="intro" class="row-section">
-      <div id="console" class="row">
-	      
-<div class="hover-base col s12 m12" id="new-name" style="display: flex; justify-content: center;"><div class="input-field">
-	<i class="material-icons prefix">account_circle</i><input id="user-name" name="user-name" type="text" class="user-input" max="24" tabindex="1" oninput="userLookup(this);" ><label for="user-name">Username</label><span id="user-issue" class="helper-text" data-error="Invalid input" data-success="" >Enter username</span></div></div>
-	      
-<div class="hover-base col s12 m12" id="new-name" style="display: flex; justify-content: center;"><div class="input-field">
-	<i class="material-icons prefix">account_circle</i><input id="user-password" name="user-name" type="text" class="user-input" max="24" tabindex="1" oninput="userLookup(this);" ><label for="user-name">Password</label><span id="user-issue" class="helper-text" data-error="Invalid input" data-success="" >Enter password</span></div></div></div></div>
+<div id="user-modal" class="modal content loader">
+	<div class="modal-content">
+		<div id="intro" class="row-section"><div id="console" class="row">    
+			<div class="hover-base col s12 m12" id="new-name" style="display: flex; justify-content: center;"><div class="input-field">
+		<i class="material-icons prefix">account_circle</i><input id="user-name" name="user-name" type="text" class="user-input" max="24" tabindex="1" oninput="userLookup(this);" ><label for="user-name">Email</label><span id="user-issue" class="helper-text" data-error="Invalid input" data-success="" >Enter username</span></div></div></div></div></div>
 
-<div id="create" class="row hidden">
-	        
-<div class="hover-base col s12 m12" id="new-name" style="display: flex; justify-content: center;"><div class="input-field">
-	<i class="material-icons prefix">account_circle</i><input id="user-confirm" name="user-name" type="text" class="user-input" max="24" tabindex="1" oninput="userLookup(this);" ><label for="user-name">Confirm</label><span id="user-issue" class="helper-text" data-error="Invalid input" data-success="" >Confirm password</span></div></div>
-	 
-<div class="hover-base col s12 m12" id="new-name" style="display: flex; justify-content: center;"><div class="input-field"><i class="material-icons prefix">account_circle</i><input id="user-mail" name="user-name" type="text" class="user-input" max="24" tabindex="1" oninput="userLookup(this);" ><label for="user-name">Email</label>
-          <span id="user-issue" class="helper-text" data-error="Invalid input" data-success="" >Enter email</span></div></div></div>
-  
-<div class="modal-footer"><img draggable="false" id="leafy" style="width:64;height:48;" src="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/badge/badge1.png"/>
-      <button id="button-next" class="btn waves-effect waves-light" onclick="currentUser.check('matt');">Claim Payout<i class="material-icons left">login</i></button><a href="#!" class="modal-close waves-effect waves-gray btn-flat disabled">Cancel</a></div></div></div>
-	
+	<div class="modal-footer">
+	      <button id="button-next" class="btn waves-effect waves-light" onclick="currentUser.check('matt');">Sign In<i class="material-icons left">login</i></button><a href="#!" class="modal-close waves-effect waves-gray btn-flat disabled">Cancel</a></div></div>
+
 <!-- home -->
 <div id="home" style="text-align:center;margin-top:64;visibility:hidden; width:100%; z-index:1;" class="content loader">
   	<input type="text" class="datepicker gone"><input type="text" class="timepicker gone">
@@ -119,37 +107,20 @@
   
 <!-- editor -->
 <div id="tools" class="z-depth-1" style="display:flex;align-items: center;justify-content: flex-end;padding: 12; margin-bottom: 4; width:100%;">
-  	<div class="switch" onclick="previewMode();"><label style="display: flex;align-items: center;">Preview&nbsp;&nbsp;<i class="material-icons">chrome_reader_mode</i><input type="checkbox" id="preview"><span class="lever"></span></label></div>
-	<div class="switch" onclick="previewMode();"><label style="display: flex;align-items: center;">Private?&nbsp;&nbsp;<input type="checkbox" id="preview"><span class="lever"></span></label></div>
-	
-	<a id='marks2' class='dropdown-trigger btn waves-effect waves-light blue tool' href='#' data-target='mark'><i class="material-icons right">build</i>Template</a>
+	<div class="switch" onclick="previewMode();"><label style="display: flex;align-items: center;">Private?<input type="checkbox" id="preview"><span class="lever"></span></label></div>
 	<a id='marks' class='dropdown-trigger btn waves-effect waves-light blue tool' href='#' data-target='mark'><i class="material-icons right">build</i>Tool</a>
-  	<a onclick="exportDoc();" class="btn waves-effect waves-light green tool" style="margin-left:24;"><i class="material-icons right">publish</i>Post</a></div>
+  	<a onclick="exportDoc();" class="btn waves-effect waves-light green tool" style="margin-left:24;"><i class="material-icons right">publish</i>Post</a>
+	<div class="switch" onclick="previewMode();"><label style="display: flex;align-items: center;">Preview&nbsp;&nbsp;<i class="material-icons">chrome_reader_mode</i><input type="checkbox" id="preview"><span class="lever"></span></label></div></div>
 	
 <div id="holder" style="display:flex; width:100%; justify-content:center;height: calc(100% - 60px);">
   	<div id="viewer" style="text-align:left;padding:24;height:100%; overflow-y:auto; "></div>
   	<div id="code" class="content loader" contentEditable="false" style="width:50%; height:50%; ">
-       		<div  contentEditable="true"   style="text-align:left; overflow-y: auto; width:100%; height:100%;     border: 2px solid aliceblue;box-shadow: 1px 1px beige;padding: 24;"></div></div></div>
+       		<div contentEditable="true" style="text-align:left; overflow-y: auto; width:100%; height:100%; border: 2px solid aliceblue;box-shadow: 1px 1px beige;padding: 24;"></div></div></div>
 
 <div id="device" class="content loader" style="display:none;">
 	<ul id='mark' class='dropdown-content'>
 		<li><a onclick="camera();" ><i class="material-icons left">photo_camera</i>Camera</a></li>
-		<li><a onclick="getLocation();" ><i class="material-icons left">gps_fixed</i>Location</a></li>
-		<li class="divider" tabindex="-1"></li>
-		<li><a onclick="$('.timepicker').timepicker('open');"><i class="material-icons">schedule</i>Time</a></li>
-		<li><a onclick="$('.datepicker').datepicker('open');"><i class="material-icons">event</i>Date</a></li>
-		<li><a onclick="$('.datepicker').datepicker('open');"><i class="material-icons">event</i>Draw</a></li><li class="divider" tabindex="-1"></li>
-		<li class="divider" tabindex="-1"></li>
-		<li><a href="#!"><i class="material-icons">attach_file</i>File</a></li></ul>
-
-	<ul id='mark2' class='dropdown-content'>
-		<li><a onclick="camera();" ><i class="material-icons left">photo_camera</i>Label</a></li>
-		<li><a onclick="getLocation();" ><i class="material-icons left">gps_fixed</i>List</a></li>
-		<li class="divider" tabindex="-1"></li>
-		<li><a onclick="$('.timepicker').timepicker('open');"><i class="material-icons">Diagram</i>Time</a></li>
-		<li><a onclick="$('.datepicker').datepicker('open');"><i class="material-icons">Equation</i>Date</a></li><li class="divider" tabindex="-1"></li>
-		<li class="divider" tabindex="-1"></li>
-		<li><a href="#!"><i class="material-icons">attach_file</i>File</a></li></ul></div>
+		<li><a onclick="getLocation();" ><i class="material-icons left">gps_fixed</i>Location</a></li></ul></div>
 
 <!-- stats/grid/map -->
 <div id="stats" class="content loader">
@@ -185,32 +156,26 @@
         		<option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color2.png">Monument</option>
         		<option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color3.png">Person</option>
         		<option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color4.png">Stock</option>
-			<option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color4.png">Tribe</option></select><label>Filter By</label></div>
+			<option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color4.png">Tribe</option></select></div>
   	<div>
       		<select>
         		<option value="" disabled selected>Sort By...</option>
         		<option value="1" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color6.png">Name (Ascending)</option>
 	      		<option value="1" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color6.png">Name (Descending)</option>
-	      		<option value="2">Category</option></select><label>Sort By</label></div></li>
-    	<li><a class="waves-effect waves-light btn">Clear Search</a></div></li>
-	<li><a class="subheader"></a>
+	      		<option value="2">Category</option></select></div>
+    	<a class="waves-effect waves-light btn">Reset</a>
 	<a href="#test1"><i class="material-icons">terrain</i>Share</a><a href="#test1"><i class="material-icons">terrain</i>Embed</a></div>
 
 <div id="grid" class="content loader">
 	<div id="registry" class="collection">
-		<a href="#!" class="collection-item">Alvin</a>
 		<a href="#!" class="collection-item active">Alvin</a>
-		<a class="collection-item modal-trigger" href="#modal1">Purcahse</a>
-		<a href="#!" class="collection-item">Alvin</a></div></div>
+		<a class="collection-item modal-trigger" href="#modal1">Purcahse</a></div></div>
 
 <div id="map" style="top:110px;" class="content loader"></div>
 
-  <!-- Modal Structure -->
 <div id="modal1" class="modal bottom-sheet">
-    <div class="modal-content">
-      <h4>Modal Header</h4><p>A bunch of text</p></div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a></div></div>
+    <div class="modal-content"><h4>Modal Header</h4><p>A bunch of text</p></div>
+    <div class="modal-footer"><a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a></div></div>
 
 <script src="./nfnth.js"></script>
 
@@ -365,4 +330,41 @@ function showDomain(index) {
 					div.innerHTML += "<h4>" + fields[0] + "</h4>";
 					div.innerHTML += "<img src='https://github.com/nfnth/res/raw/main/thumb/" + fields[4] + "' />";
 }
+
+var mode = 0; //0(view), 1(edit), 2(preview), 3(list), 4(map), 5(nft), 6(stat), 7(mail), 8(game)
+function setEditor(doc) {
+   var width = window.innerWidth; var height = window.innerHeight - 48; //menu, footer
+   $("#holder").hide(); $("#viewer").hide(); $("#code").hide(); $("#grid").hide(); $("#map").hide(); $("#stats").hide();
+   $("#tools").hide(); $("#toolset").hide(); 
+ 
+   switch(mode) {
+   case 0:
+     $("#holder").show(); $("#viewer").show(); $("#viewer").css("width", "100%"); $("#viewer").css("height", "100%");
+     $.get(doc, function (data) { $("#viewer").html(renderMd(data));}); break;
+   case 1:
+     $("#holder").show(); $("#tools").show(); $("#code").show();
+     //$.get(doc, function (data) { });
+	     break;
+   case 2:
+     $("#holder").show(); $("#tools").show(); $("#viewer").css("width", width/2); $("#viewer").css("height", height);
+     $("#viewer").html(renderMd(data)); break;
+   case 3:
+    $("#toolset").show();$("#grid").show(); break;
+   case 4:
+		   //$("#stats").show();
+		   var fields = manifest[0].split('|');
+					  var div = document.getElementById('registry');
+
+					div.innerHTML += "<a onclick='showDomain(0);' class='collection-item'>" + fields[0] + '</a>';
+					  //alert(result[0]); 
+					  $("#grid").show();
+					//  $("#stats").html(renderMd(data));
+		   
+
+		   break;
+   case 5:
+    $("#map").show(); break;
+	   case 7:
+		   $("#bros").show(); break;
+   default:}}
 </script>
