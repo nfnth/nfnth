@@ -23,10 +23,7 @@ function changeDialog(dialog) { $('#'+dialog).removeClass('hidden'); $('#console
 
 document.addEventListener('DOMContentLoaded', function() { var elems = document.querySelectorAll('.modal'); var instances = M.Modal.init(elems); });
 window.onresize = function(event) { setEditor(); }
-initial(); 
-function openInNewTab(url, tab=true) { if (tab) { var win = window.open(url, '_blank'); win.focus(); } else window.open(url, '_self'); }
-function searchClear() { $('#search').val(''); }
-function searchResults() { $.post("../search/word", $('#search').val(), function(data, status){ $('#results').html(data); }); }
+
 	
 var current = new Date(); // timestamp, milliseconds since 1970 (?) vs. milliseconds (UTC)
  var yyyy = current.getFullYear(), MM = current.getMonth(), dd = current.getDate(), hh = current.getHours(), mm = current.getMinutes(), ss = current.getSeconds();
