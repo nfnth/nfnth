@@ -319,11 +319,12 @@ code { color: gray;line-height: 1;}
 		
 		$.ajax({                                                                                                                                                                                                        
     type: 'GET',                                                                                                                                                                                                 
-    url: 'https://ur.land/jsonp?' + data,                                                                                                                                              
+    url: 'https://ur.land/jsonp?' + data,     
+			jsonp: false,
+jsonpCallback: "my_callback",
     dataType: 'jsonp',                                                                                                                                                                                                
     success: function(data) { alert(data); console.log('Success!'); },                                                                                                                                                                                       
-    error: function(data) { alert(data); console.log('Uh Oh!'); },
-    jsonp: 'jsonp'                                                                                                                                                
+    error: function(data) { alert(data); console.log('Uh Oh!'); }                                                                                                                                             
 });
 	
 		
