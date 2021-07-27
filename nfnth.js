@@ -61,44 +61,6 @@ window.onpopstate = function(e){
     //document.title = e.state.pageTitle;
   } else { backConsole('home');} };
 
-var mode = 0; //0(view), 1(edit), 2(preview), 3(stats), 4(list), 5(map), 7(code)
-function setEditor(doc) {
-   var width = window.innerWidth; var height = window.innerHeight - 48; //menu, footer
-   $("#holder").hide(); $("#viewer").hide(); $("#code").hide(); $("#grid").hide(); $("#map").hide(); $("#stats").hide();
-   $("#tools").hide(); $("#toolset").hide();$("#bros").hide();
- 
-   switch(mode) {
-   case 0:
-     $("#holder").show(); $("#viewer").show(); $("#viewer").css("width", "100%"); $("#viewer").css("height", "100%");
-     $.get(doc, function (data) { $("#viewer").html(renderMd(data));}); break;
-   case 1:
-     $("#holder").show(); $("#tools").show(); $("#code").show();
-     //$.get(doc, function (data) { });
-	     break;
-   case 2:
-     $("#holder").show(); $("#tools").show(); $("#viewer").css("width", width/2); $("#viewer").css("height", height);
-     $("#viewer").html(renderMd(data)); break;
-   case 3:
-    $("#toolset").show();$("#grid").show(); break;
-   case 4:
-		   //$("#stats").show();
-		   var fields = manifest[0].split('|');
-					  var div = document.getElementById('registry');
-
-					div.innerHTML += "<a onclick='showDomain(0);' class='collection-item'>" + fields[0] + '</a>';
-					  //alert(result[0]); 
-					  $("#grid").show();
-					//  $("#stats").html(renderMd(data));
-		   
-
-		   break;
-   case 5:
-    $("#map").show(); break;
-	   case 7:
-		   $("#bros").show(); break;
-   default:}}
- 
-
 function renderMd(text) { 
   //$('#mermaid').html(""); var mermaidEx = /<textarea[\s\S]*?>([\s\S]*?)(?=<\/textarea>)/gi;
  
