@@ -321,16 +321,21 @@ async function initial() {
   $('#marks').dropdown({ constrainWidth: false } ); $('#domains').dropdown({ constrainWidth: false } ); $('#actions').dropdown({ constrainWidth: false } ); $('#domains2').dropdown({ constrainWidth: false } ); 
   $('.modal').modal(); $('#user-pane').sidenav(); $('#user-setting').sidenav({ edge: 'right' } );
   $('.collapsible').collapsible(); 
-mode=0; setEditor('../README.md');
+mode=0; setEditor('../doc/CC.md');
 
         // await preloadImage('https://github.com/nfnth/res/raw/main/site/coat.png') // Preload an image
 //	await preloadImage('https://github.com/nfnth/res/raw/main/site/chimi_hi.png') 
 //	await preloadImage('https://github.com/nfnth/res/raw/main/site/chimi_cards.png') 
          //await Promise.all(images.map(x => preloadImage(x.src))) // Preload a bunch of images in parallel 
-  setTimeout(function() {  $(".loader").css("visibility", "visible");}, 1000);
+  setTimeout(function() {  $(".loader").css("visibility", "visible"); }, 1000);
  //mermaid.initialize({startOnLoad:true});
-  searchClear();
+  searchClear(); }
 
+initial(); 
+//function openInNewTab(url, tab=true) { if (tab) { var win = window.open(url, '_blank'); win.focus(); } else window.open(url, '_self'); }
+function searchClear() { $('#search').val(''); }
+function searchResults() { $.post("../search/word", $('#search').val(), function(data, status){ $('#results').html(data); }); }
+	
 var castle = Math.floor(Math.random() * (16 - 1 + 1)) + 1; 
 document.getElementById('menu-logo').src = "https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/castle/castle" + castle.toString() + ".png";
 var eagle = Math.floor(Math.random() * (16 - 1 + 1)) + 1; 
