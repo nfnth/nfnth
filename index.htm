@@ -108,19 +108,15 @@
 <!-- editor -->
 <div id="tools" class="z-depth-1" style="display:flex;align-items: center;justify-content: flex-end;padding: 12; margin-bottom: 4; width:100%;">
 	<div class="switch" onclick="previewMode();"><label style="display: flex;align-items: center;">Private?<input type="checkbox" id="preview"><span class="lever"></span></label></div>
-	<a id='marks' class='dropdown-trigger btn waves-effect waves-light blue tool' href='#' data-target='mark'><i class="material-icons right">build</i>Tool</a>
+	<a onclick="camera();" style="margin: 0;padding: 18;justify-items: center;display: flex;align-items: center;"><i class="material-icons">photo_camera</i></a>
+	<a onclick="getLocation();" style="margin: 0;padding: 18;justify-items: center;display: flex;align-items: center;"><i class="material-icons">gps_fixed</i></a>
   	<a onclick="exportDoc();" class="btn waves-effect waves-light green tool" style="margin-left:24;"><i class="material-icons right">publish</i>Post</a>
-	<div class="switch" onclick="previewMode();"><label style="display: flex;align-items: center;">Preview&nbsp;&nbsp;<i class="material-icons">chrome_reader_mode</i><input type="checkbox" id="preview"><span class="lever"></span></label></div></div>
+	<div class="switch" onclick="previewMode();"><label style="display: flex;align-items: center;"><i class="material-icons">chrome_reader_mode</i><input type="checkbox" id="preview"><span class="lever"></span></label></div></div>
 	
 <div id="holder" style="display:flex; width:100%; justify-content:center;height: calc(100% - 60px);">
   	<div id="viewer" style="text-align:left;padding:24;height:100%; overflow-y:auto; "></div>
   	<div id="code" class="content loader" contentEditable="false" style="width:50%; height:50%; ">
        		<div contentEditable="true" style="text-align:left; overflow-y: auto; width:100%; height:100%; border: 2px solid aliceblue;box-shadow: 1px 1px beige;padding: 24;"></div></div></div>
-
-<div id="device" class="content loader" style="display:none;">
-	<ul id='mark' class='dropdown-content'>
-		<li><a onclick="camera();" ><i class="material-icons left">photo_camera</i>Camera</a></li>
-		<li><a onclick="getLocation();" ><i class="material-icons left">gps_fixed</i>Location</a></li></ul></div>
 
 <!-- stats/grid/map -->
 <div id="stats" class="content loader">
