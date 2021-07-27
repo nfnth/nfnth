@@ -348,7 +348,7 @@ switch (pathArray.length) {
 
 var manifest; var list = document.getElementById('toolset');
 $.get("../manifest", function (data) { manifest = data.split(/\r?\n/); 
-	for (let i = 0; i < manifest.length - 1; i++) { var fields = manifest[index].split('|'); 
+	for (let i = 0; i < manifest.length - 1; i++) { var fields = manifest[i].split('|'); 
 		$("#registry").append("<a href='#!' class='collection-item'>" + fields[0] + "</a>"); } }); 
 
 function showDomain(index) {
