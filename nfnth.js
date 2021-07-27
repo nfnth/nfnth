@@ -19,34 +19,7 @@ context.drawImage(video, 0, 0, 640, 480);}
   
 function changeDialog(dialog) { $('#'+dialog).removeClass('hidden'); $('#console').addClass('hidden'); }
 
-async function initial() {
-  $('select').formSelect(); $('.tabs').tabs();
-  $('#marks').dropdown({ constrainWidth: false } ); $('#domains').dropdown({ constrainWidth: false } ); $('#actions').dropdown({ constrainWidth: false } ); $('#domains2').dropdown({ constrainWidth: false } ); 
-  $('.modal').modal(); $('#user-pane').sidenav(); $('#user-setting').sidenav({ edge: 'right' } );
-  $('.collapsible').collapsible(); 
-  $('.datepicker').datepicker(); $('.timepicker').timepicker();$('.datepicker').onSelect = function(param) { alert('yes'); alert(param);}
-mode=0; setEditor('../README.md');
 
-         await preloadImage('https://github.com/nfnth/res/raw/main/site/coat.png') // Preload an image
-	await preloadImage('https://github.com/nfnth/res/raw/main/site/chimi_hi.png') 
-	await preloadImage('https://github.com/nfnth/res/raw/main/site/chimi_cards.png') 
-         //await Promise.all(images.map(x => preloadImage(x.src))) // Preload a bunch of images in parallel 
-  setTimeout(function() {  $(".loader").css("visibility", "visible");}, 1000);
- //mermaid.initialize({startOnLoad:true});
-  searchClear();
-
-  var castle = Math.floor(Math.random() * (16 - 1 + 1)) + 1; 
-  document.getElementById('menu-logo').src = "https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/castle/castle" + castle.toString() + ".png";
- 
-  var pathArray = window.location.pathname.split('/'); 
-  domain = window.location.host;
-  //if (domain != "dralun.com") { document.title = "Dralun · " + domain; }
-  switch (pathArray.length) {
-    case 2:
-      address = pathArray[1];// makeEditor();
-      mode=0; //setEditor("../" + address + "/profile");
-      //$.get("../" + address + "/profile", function (data) {  $("#home").html(renderMd(data));});
-      break; } }
 
 document.addEventListener('DOMContentLoaded', function() { var elems = document.querySelectorAll('.modal'); var instances = M.Modal.init(elems); });
 window.onresize = function(event) { setEditor(); }
@@ -128,15 +101,7 @@ function setEditor(doc) {
 		   $("#bros").show(); break;
    default:}}
  
-var manifest;
-$.get("../manifest", function (data) { manifest = data.split(/\r?\n/); }); 
-function showDomain(index) {
-	var fields = manifest[index].split('|');
-	var div = document.getElementById('toolset');
 
-					div.innerHTML += "<h4>" + fields[0] + "</h4>";
-					div.innerHTML += "<img src='https://github.com/nfnth/res/raw/main/thumb/" + fields[4] + "' />";
-}
 function renderMd(text) { 
   //$('#mermaid').html(""); var mermaidEx = /<textarea[\s\S]*?>([\s\S]*?)(?=<\/textarea>)/gi;
  
