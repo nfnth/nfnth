@@ -37,7 +37,7 @@
     		<ul class="hide-on-med-and-down" >
       			<li><a onclick="mode=0; setEditor('../README.md.md');">GET STARTED</a></li>
       			<li><a id="domains" href="#!" data-target="domain">DOMAINS<i class="material-icons right">arrow_drop_down</i></a></li>
-      			<li><a onclick="mode=1; setEditor('../README.md');">EDITOR</a></li>
+      			<li><a onclick="openInNewTab('https://nfnth.com');">EDITOR</a></li>
       			<li style="height:64px;">
         			<a style="height:inherit; padding-right:0;"><i onclick="$('#search').focus();" style="height:inherit; padding-right:4;" class="material-icons">search</i><span onclick="$('#search').focus();" class="badge blue">1865</span>
         			<div id="search-box" class="input-field" style="height:inherit;">
@@ -81,7 +81,7 @@
 	<li><a class="subheader"></a></li>
   	<li><a class="waves-effect" onclick="mode=1; setEditor('../README.md'); $('#user-pane').sidenav('close');"><i class="material-icons">menu_book</i>Purchase Civilian's Complex</a></li>
 	<li><a class="waves-effect" onclick="outside('simple test'); $('#user-pane').sidenav('close');"><i class="material-icons">book</i>Use MarkDown 2.0</a></li>
-  	<li><a class="waves-effect" onclick="mode=0; setEditor('../.md'); $('#user-pane').sidenav('close');"><i class="material-icons">help</i>About Dralun</a></li>
+  	<li><a class="waves-effect" onclick="openInNewTab('https://github.com/nfnth'); $('#user-pane').sidenav('close');"><i class="material-icons">help</i>About Dralun</a></li>
   	<li><div style="margin-top:0;" class="divider"></div></li>
   	<li><a class="subheader"></a></li>
   	<li><div id="header-logo" style="display: flex; flex-flow:column; align-items: center;justify-content: center;align-items: center; display: flex;">
@@ -91,7 +91,7 @@
         		<div style="display: flex;align-items: center;justify-content: center;">
           			<span id="title" style="font-weight: bold; font-size: 25px;">NfNth</span>
           			<i class="material-icons" >copyright</i>2021</div></div>
-        		<div><span style="cursor: pointer;" onclick="mode=7; setEditor(''); $('#user-pane').sidenav('close');" class="new badge green darken-2" data-badge-caption="bitOS, version 1.02"></span></div>
+        		<div><span style="cursor: pointer;" onclick="openInNewTab('https://gist.github.com/nfnth/ef98bc2ade9286b240eac846ff52bcce'); $('#user-pane').sidenav('close');" class="new badge green darken-2" data-badge-caption="bitOS, version 1.02"></span></div>
       			<div id="header-title"><span id="phrase" style="font-style: italic;">software on infinitive basis</span></div></div></li></ul>
 
 <!-- panel (user) -->
@@ -314,6 +314,10 @@ code { color: gray;line-height: 1;}
 </style>
 
 <script>
+	function openInNewTab(url) {
+ window.open(url, '_blank').focus();
+}
+	
 	function outside(data) {
 		alert('calling outside');
 		
