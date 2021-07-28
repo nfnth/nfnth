@@ -31,13 +31,13 @@
     
     		<a class="screen-hide" onclick="mode=0; setEditor('../doc/CC.md');"><i class="material-icons">menu_book</i></a>
     		<a id="domains-hide" class="screen-hide" href="#!" data-target="domain"><i class="material-icons right">view_list</i></a>
-    		<a class="screen-hide" onclick="openInNewTab('https://nfnth.com');"><i class="material-icons right">edit</i></a>
+    		<a class="screen-hide" onclick="mode=0; setEditor('../doc/MATTDOWN.md'); openInNewTab('https://nfnth.com');"><i class="material-icons right">edit</i></a>
     		<a class="screen-hide" onclick="searchSwitch();"><i class="material-icons right">search</i></a>
 		
     		<ul class="hide-on-med-and-down" >
       			<li><a onclick="mode=0; setEditor('../doc/DEED.md');">GET STARTED</a></li>
       			<li><a id="domains" href="#!" data-target="domain">DOMAINS<i class="material-icons right">arrow_drop_down</i></a></li>
-      			<li><a onclick="openInNewTab('https://nfnth.com');">EDITOR</a></li>
+      			<li><a onclick="mode=0; setEditor('../doc/MATTDOWN.md'); openInNewTab('https://nfnth.com');">EDITOR</a></li>
       			<li style="height:64px;">
         			<a style="height:inherit; padding-right:0;"><i onclick="$('#search').focus();" style="height:inherit; padding-right:4;" class="material-icons">search</i><span onclick="$('#search').focus();" class="badge blue">1865</span>
         			<div id="search-box" class="input-field" style="height:inherit;">
@@ -49,10 +49,10 @@
 
 <!-- domains -->
 <ul id="domain" class="dropdown-content loader" style="visibility:hidden;">
-  	<li><a onclick="mode=3; setEditor('');"><i class="material-icons">view_list</i>View Listings</a></li>
+  	<li><a onclick="mode=3; setEditor('');"><i class="material-icons">view_list</i>See Listings</a></li>
   	<li><a onclick="mode=5; setEditor('');"><i class="material-icons">map</i>Explore Map</a></li>
-  	<li><a onclick="mode=4; setEditor('');"><i class="material-icons">equalizer</i>Show Stats</a></li>
-	<li><a onclick="mode=4; setEditor('');"><i class="material-icons">equalizer</i>Shop NFTs</a></li></ul>
+  	<li><a onclick="mode=4; setEditor('');"><i class="material-icons">equalizer</i>View Stats</a></li>
+	<li><a onclick="mode=4; setEditor('');"><i class="material-icons">military_tech</i>Shop NFTs</a></li></ul>
 
 <!-- panel (system) -->
 <ul id="user-pane" class="sidenav loader" style="visibility:hidden;">
