@@ -26,3 +26,5 @@ Feel free to map and explore a continent filled with amazing peoples and lands.
  Visit our [PLANME.md](https://github.com/users/nfnth/projects/3) project page
  
  [UStat.us](https://ustat.us)
+ 
+ ### Sponsors
