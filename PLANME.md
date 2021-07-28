@@ -3,21 +3,21 @@
 <img src="https://github.com/nfnth/res/raw/main/site/chimi_hi.png" width="200" height="240" />
 </p>
 
-## bitOS, simplistic speed
+## brOS, simplistic speed, *v1.04*
 
-bitOS (*version 1.04*) is a minimal site/browser-based stack based on being easy to use. 
+BrOS is a light, browser-based yet dev-focused, stack based on being easy to use, based on [Arch Linux](https://archlinux.org/).
 
-### Installation steps
+To get started, download the [Arch Linux ISO](http://mirror.rackspace.com/archlinux/iso/2021.06.01/archlinux-2021.06.01-x86_64.iso).
 
-1. Use [Arch Linux](https://archlinux.org/), or download the [ISO](http://mirror.rackspace.com/archlinux/iso/2021.06.01/archlinux-2021.06.01-x86_64.iso): 
+- To run, download the [brOS ISO](), image, then reboot:
 
    ```
    wget http://mirror.rackspace.com/archlinux/iso/2021.06.01/archlinux-2021.06.01-x86_64.iso
    dd if=archlinux-2021.06.01-x86_64.iso of=/dev/sda status=progress #fdisk -l #show drives
-   #launch BIOS (use Esc, Del, or F1..F12 on restart), then boot to USB/ISO drive
+   #launch BIOS (use Esc, Del, or F1..F12 on restart), then boot to USB/ISO drive...
    ```
 
-1. Download *build.sh*, adjust parameters, then run:
+- To build, download the script set, adjust parameters, then run:
 
    ```
    pacman -S git --noconfirm #scp...? wget...?
@@ -26,18 +26,14 @@ bitOS (*version 1.04*) is a minimal site/browser-based stack based on being easy
    chmod +x nfnth/build.sh
    nfnth/build.sh
    ```
+   
+After booting into brOS, to use the site application, run `nfnth/build.sh deploy`.
 
 That's it. Enjoy!
 
 <p align="center"><img src="https://github.com/nfnth/res/raw/main/site/chimi_cards.png" width="200" height="200" /></p>
 
 ### Additional info
-
-- For site changes, edit *run.py* and *index.htm*, then run:
-
-   ```
-   nfnth/build.sh deploy
-   ```
 
 - Script parameters:
 
@@ -56,9 +52,6 @@ That's it. Enjoy!
    |**ip**|`192.168.1.111`|IP used to assign(client) or deploy(server)|
    |**wifi_id**|||
    |**wifi_password**|||
-   |**mail_server**|||
-   |**mail_id**|||
-   |**mail_password**|||
 
 - Ensure the following ports are open:
 
@@ -86,42 +79,24 @@ That's it. Enjoy!
    #sed 's/.*six.*/fault/' file     # check all lines
    ```
 
-
 ## New features
 
-
- 🧦🧦.ws Get Whois Privacy16 Dec 2021 On
- 🧤🧤.ws Get Whois Privacy16 Dec 2021 On
- 👣👣.ws Get Whois Privacy16 Dec 2021 On
- 🙂🙂.ws Get Whois Privacy16 Dec 2021 On
- 👖👖.ws Get Whois Privacy16 Dec 2021 On
- 👓👓.ws Get Whois Privacy16 Dec 2021 On
- 🌳🌳.ws Private 27 May 2022 On
- 📚📚.ws Private 12 Jul 2022 On
- ⚙⚙.ws Private 16 Nov 2022 On
- ♠♠.ws Private 16 Nov 2022 On
- 🖱🖱.ws Private 16 Feb 2023 On
- 🐁🐁.ws Private 16 Feb 2023 On
- 🏴🏳.ws Private 15 Apr 2023 On
- 🏴🏴.ws Private 15 Apr 2023 On
- 🏳🏳.ws Private 15 Apr 2023 On
- 🏳🏴.ws Private 15 Apr 2023 On
-https://www.name.com/account/domain/details/xn--wv9ha.ws
-https://www.name.com/account/domain/details/xn--uv9ha.ws
-https://www.name.com/account/domain/details/xn--lq8ha.ws
-https://www.name.com/account/domain/details/xn--938ha.ws
-https://www.name.com/account/domain/details/xn--7p8ha.ws
-https://www.name.com/account/domain/details/xn--4p8ha.ws
-https://www.name.com/account/domain/details/xn--wh8ha.ws
-https://www.name.com/account/domain/details/xn--zt8ha.ws
-https://www.name.com/account/domain/details/xn--x7ha.ws
-https://www.name.com/account/domain/details/xn--b6ha.ws
-https://www.name.com/account/domain/details/xn--4z8ha.ws
-https://www.name.com/account/domain/details/xn--sn8ha.ws
-https://www.name.com/account/domain/details/xn--en8hb.ws
-https://www.name.com/account/domain/details/xn--fn8ha.ws
-https://www.name.com/account/domain/details/xn--en8ha.ws
-https://www.name.com/account/domain/details/xn--en8hc.ws
+ 🧦🧦.ws https://www.name.com/account/domain/details/xn--wv9ha.ws
+ 🧤🧤.ws https://www.name.com/account/domain/details/xn--uv9ha.ws
+ 👣👣.ws https://www.name.com/account/domain/details/xn--lq8ha.ws
+ 🙂🙂.ws https://www.name.com/account/domain/details/xn--938ha.ws
+ 👖👖.ws https://www.name.com/account/domain/details/xn--7p8ha.ws
+ 👓👓.ws https://www.name.com/account/domain/details/xn--4p8ha.ws
+ 🌳🌳.ws https://www.name.com/account/domain/details/xn--wh8ha.ws
+ 📚📚.ws https://www.name.com/account/domain/details/xn--zt8ha.ws
+ ⚙⚙.ws https://www.name.com/account/domain/details/xn--x7ha.ws
+ ♠♠.ws https://www.name.com/account/domain/details/xn--b6ha.ws
+ 🖱🖱.ws https://www.name.com/account/domain/details/xn--4z8ha.ws
+ 🐁🐁.ws https://www.name.com/account/domain/details/xn--sn8ha.ws
+ 🏴🏳.ws https://www.name.com/account/domain/details/xn--en8hb.ws
+ 🏴🏴.ws https://www.name.com/account/domain/details/xn--fn8ha.ws
+ 🏳🏳.ws https://www.name.com/account/domain/details/xn--en8ha.ws
+ 🏳🏴.ws https://www.name.com/account/domain/details/xn--en8hc.ws
 
 abbv.us
 mq1.us
