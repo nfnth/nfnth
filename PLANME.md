@@ -3,6 +3,33 @@
 <img src="https://github.com/nfnth/res/raw/main/site/chimi_hi.png" width="200" height="240" />
 </p>
 
+### Try brOS (with Jaspre and Markre)
+
+Features include,
+
+- Browser-only, lightweight distro (Arch-based)
+- Web-based admin console, 
+    - Command-line access
+    - Folder/file browser
+    - Text editor
+- Remote deployment
+
+Learn to code using our stack, see [brOS](https://github.com/nfnth/nfnth/wiki/Bit-OS). For code specifics, see the [repo](), download the [script](https://gist.github.com/nfnth/ef98bc2ade9286b240eac846ff52bcce), or view the demo at [drhab.com](https://drhab.com).
+
+Use Jaspre to:
+
+- Transfer/store JSON objects between client (JavaScript) and serve (Python)
+
+Use the Markre editor to:
+
+- Create a profile
+- Write a treaty (trade)
+- Develop strategy
+- Campaign (with mail)
+
+The Markre editor uses JavaScript regex rendering to confirm conform to [MattDown](https://github.com/nfnth/nfnth/wiki/Mattdown), or MarkDown 2.0.
+
+
 ## brOS, simplistic speed, *v1.04*
 
 BrOS is a light, browser-based yet dev-focused, stack based on being easy to use, based on [Arch Linux](https://archlinux.org/).
