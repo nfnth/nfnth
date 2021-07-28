@@ -2,49 +2,40 @@
 <p align="center">
   <img src="https://github.com/nfnth/res/raw/main/site/coat.png" width="360" height="440" /></p><br/>
 
-We provide a limited **1776** supply of collectible *.us* domain deeds, to browse see [registry](https://dralun.com/list).
-
 ## From Deed to Domain
 
-Similar to a registrar, we license domains for use on the Internet.
+Own the ultimate profile with a domain deed.
 
-We provide (3) levels of deed:
+The following types of deeds are available:
 
-### Civilian Deed (non-domain specific)
+### Civilian's Deed (domain non-specific)
 
 Includes, 
 
-- Basic [Civilian]() rights
-- **Nfnth** survival bag
-- subscription to Civilian's journal
-- Civilian user badge
+- *Standard Edition* copy of Civilian's Complex, domain manifest
+- Civilian status
 
 To purchase, see [become a civilian]().
 
-### Tenet Deed
+### Tenet's Deed (domain specific)
 
 Includes,
 
-- [Sole Tenent]() rights to domain:
-  - Free advertising
-  - Access to domain's tenant AI
-- *Founders Edition* copy of Civilian Complex
-- **Nfnth** survival bag
-- subscription to Civilian's journal
-- Tenent user badge
+- *Founder's Edition* copy of Civilian Complex
+- [Tenent]() status
+  - Limited publicity (based on domain occupancy)
+  - Limited AI strength (based on domain occupancy)
 
-To purchase, see [tenet listings]().
+To purchase, see [become a tenant]().
 
 ### Ownership Deed
 
 Includes, 
 
-- [Sole Ownership]() rights to domain:
-  - Free advertising
-  - Access to domain's owner AI
-- *Founders Edition* copy of Civilian Complex
 - **Nfnth** survival bag
-- subscription to Civilian's journal
-- Owner user badge
+- *Founders Edition* copy of Civilian Complex
+- [Ownership]() status
+  - Unlimited publicity
+  - Unlimited AI strength
 
-To purchase, see [ownership listings]().
+To purchase, see [become an owner]().
