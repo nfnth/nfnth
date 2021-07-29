@@ -15,17 +15,7 @@ Visit the [UR.Land](https://ur.land) map and explore a continent filled with ama
   - Post artifacts
   - Create a profile in MarkDown 2.0
  
-### Developers Rule
-
-For upcoming feaures, see our [PLANME.md](https://github.com/users/nfnth/projects/3) project page.
-
-|**Engine**|**Download**|**Reference**|
-|-|-|-|
-|**Markre**|[release]()||
-|**Jaspre**|[package]()||
-|**brOS**|[package]()|[documentation](https://github.com/nfnth/nfnth/blob/master/doc/BROS.md)|
-
-For support, see [issues](https://github.com/nfnth/nfnth/issues), or email details to **matt@sebolt.us**.
+That's it! All nomads may wander our land as free!
 
 ### Explore Further
 
@@ -35,9 +25,19 @@ View real-time stats with the [UStat.us](https://ustat.us) dashboard...
 - Control territory, write a land treaty, and share strategy
 - Read our manifest, the [Civilian's Complex](https://github.com/nfnth/nfnth/blob/master/doc/CC.md) (also available to [purchase]())
 
-All nomads may wander our land as free!
-
 <p align="center"><img src="https://github.com/nfnth/res/raw/main/site/fox.png" width="240" height="240" /></p>
+
+## Development
+
+To view upcoming feaures, see our [PLANME.md](https://github.com/users/nfnth/projects/3) project page.
+
+|**Engine**(*reference*)|**Download**(*release*)|
+|-|-|-|
+|[**Markre**]()|[v1.0.1]()|
+|[**Jaspre**]()|[latest]()|
+|[**brOS**](https://github.com/nfnth/nfnth/blob/master/doc/BROS.md)|[latest]()|
+
+To receive support, [start an issue](https://github.com/nfnth/nfnth/issues), or contact **matt@sebolt.us**.
 
 ### Sponsors
 
