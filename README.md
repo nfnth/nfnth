@@ -5,21 +5,23 @@
 
 Visit the [UR.Land](https://ur.land) map and explore a continent filled with amazing peoples and lands. 
 
-[Sign in]() or [create an account]() to recieve a user badge with **Nomad** status.
+[Sign in](), or [create an account]() to recieve a user badge with **Nomad** status, then:
 
-- View [deed listings](https://github.com/nfnth/nfnth/blob/master/doc/DEED.md), with option to:
+- View our [deed listings](https://github.com/nfnth/nfnth/blob/master/doc/DEED.md), with option to:
   - [purchase]() as **Owner**
   - [claim]() as **Tenant**
   - [proceed]() as **Civilian**
-- Use [Markre](https://github.com/nfnth/nfnth/blob/master/doc/MATTDOWN.md) editor at [nfnth.com](https://nfnth.com), with tools to: 
+- Use the [Markre](https://github.com/nfnth/nfnth/blob/master/doc/MATTDOWN.md) editor at [nfnth.com](https://nfnth.com), with tools to: 
   - Post artifacts
   - Create a profile in MarkDown 2.0
  
+### Developers Rule
+
 To install the **Jaspre** engine, see [brOS](https://github.com/nfnth/nfnth/blob/master/doc/BROS.md), or download [package]().
 
-To view upcoming feaures, see our [PLANME.md](https://github.com/users/nfnth/projects/3) project page, with latest [site release]().
+To see upcoming feaures, view our [PLANME.md](https://github.com/users/nfnth/projects/3) project page and latest [site release]().
 
-For support, file issues [here](https://github.com/nfnth/nfnth/issues), or email details to **matt@sebolt.us**.
+To contact support, see [here](https://github.com/nfnth/nfnth/issues), or email details to **matt@sebolt.us**.
 
 ### Explore Further
 
@@ -35,4 +37,4 @@ All nomads may wander our land as free!
 
 ### Sponsors
 
-Sponsor our work to get listed here...
+All sponsors get listed here...
