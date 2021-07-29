@@ -3,18 +3,20 @@
   
 ## [Dralun](https://dralun.com), the Land of Deed to Domain
 
-To start, [sign in]() or [create an account]() to recieve a user badge with **Nomad** status.
+To begin, [sign in]() or [create an account]() to recieve a user badge with **Nomad** status.
+
+Next,
 
 - View [deed listings](https://github.com/nfnth/nfnth/blob/master/doc/DEED.md), with option to:
   - [purchase]() as **Owner**
   - [claim]() as **Tenant**
   - [proceed]() as **Civilian**
-- Try [Markre](https://github.com/nfnth/nfnth/blob/master/doc/MATTDOWN.md) editor at [nfnth.com](https://nfnth.com), with tools to: 
+- Use [Markre](https://github.com/nfnth/nfnth/blob/master/doc/MATTDOWN.md) editor at [nfnth.com](https://nfnth.com), with tools to: 
   - Post artifacts
   - Create a profile with MarkDown 2.0
-- Use **Jaspre** engine, with code to install [brOS](https://github.com/nfnth/nfnth/blob/master/doc/BROS.md) with [package]()
+- Install **Jaspre** engine, see [brOS](https://github.com/nfnth/nfnth/blob/master/doc/BROS.md) with [package]()
 
-For upcoming feaures, see our [PLANME.md](https://github.com/users/nfnth/projects/3) project page with latest [site release]().
+For upcoming feaures, see our [PLANME.md](https://github.com/users/nfnth/projects/3) project page, with latest [site release]().
 
 ### Explore Further
 
