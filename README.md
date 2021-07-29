@@ -5,16 +5,16 @@
 
 To start, [create an account]() or [sign in]() to recieve a user badge with **Nomad** status.
 
-- View the [deed listings](https://github.com/nfnth/nfnth/blob/master/doc/DEED.md), with option to:
+- View [deed listings](https://github.com/nfnth/nfnth/blob/master/doc/DEED.md), with option to:
   - Purchase as **Owner**
   - Claim as **Tenant**
   - Proceed as **Civilian**
-- Use the [Markre](https://github.com/nfnth/nfnth/blob/master/doc/MATTDOWN.md) editor at [nfnth.com](https://nfnth.com), with tools to: 
+- Try [Markre](https://github.com/nfnth/nfnth/blob/master/doc/MATTDOWN.md) editor at [nfnth.com](https://nfnth.com), with tools to: 
   - Post artifacts
   - Create a profile in MarkDown 2.0
-- See status of the **Jaspre** engine, with updates to:
-  - the [brOS](https://github.com/nfnth/nfnth/blob/master/doc/BROS.md) [package]()
-  - the [site release schedule]()
+- Use **Jaspre** engine, with code to:
+  - Install [brOS](https://github.com/nfnth/nfnth/blob/master/doc/BROS.md) with [package]()
+  - Review the [site release schedule]()
 
 For upcoming feaures, see our [PLANME.md](https://github.com/users/nfnth/projects/3) project page.
 
