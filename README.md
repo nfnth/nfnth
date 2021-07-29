@@ -1,13 +1,19 @@
 
 <p align="center"><img src="https://github.com/nfnth/res/raw/main/site/bird.png" width="280" height="320" /></p>
   
-## [Dralun](https://dralun.com), land of deed and domain
+## [Dralun](https://dralun.com), the Land of Deed and Domain
 
 - View [deeds](https://github.com/nfnth/nfnth/blob/master/doc/DEED.md) with the option to either purchase or rent
-- Use the [Markre](https://github.com/nfnth/nfnth/blob/master/doc/MATTDOWN.md) editor at [nfnth.com](https://nfnth.com) to create your profile
-- Support open-source development, see [brOS](https://github.com/nfnth/nfnth/blob/master/doc/BROS.md) with **Jaspre** engine
+  - Purchase ownership
+  - Rent tenancy
+  - 
+- Use [Markre](https://github.com/nfnth/nfnth/blob/master/doc/MATTDOWN.md) at [nfnth.com](https://nfnth.com) to create your profile and post artifacts
+- See code at [brOS](https://github.com/nfnth/nfnth/blob/master/doc/BROS.md) with **Jaspre** engine
 
-For issues, see [here](https://github.com/nfnth/nfnth/issues), or email details to **matt@sebolt.us**.
+For issues, either:
+
+- Use GitHub [issues](https://github.com/nfnth/nfnth/issues)
+- Email details to **matt@sebolt.us**.
 
 ### Explore Further
 
@@ -17,7 +23,7 @@ Feel free to visit the [UR.Land](https://ur.land) map and explore a continent fi
 - Control territory, write a land treaty, and share strategy
 - Post artifacts
 
-Read the [Civilian's Complex manifest](https://github.com/nfnth/nfnth/blob/master/doc/CC.md) for further inspiration.
+For further inspiration, read our manifest, the [Civilian's Complex manifest](https://github.com/nfnth/nfnth/blob/master/doc/CC.md). Also available to [purchase]().
 
 <p align="center"><img src="https://github.com/nfnth/res/raw/main/site/fox.png" width="240" height="240" /></p>
   
@@ -25,7 +31,7 @@ Read the [Civilian's Complex manifest](https://github.com/nfnth/nfnth/blob/maste
  
 View real-time stats on the [UStat.us](https://ustat.us) dashboard. 
  
-For upcoming feaures, visit our [PLANME.md](https://github.com/users/nfnth/projects/3) project page
+For upcoming feaures, visit our [PLANME.md](https://github.com/users/nfnth/projects/3) project page.
  
 ### Sponsors
 
