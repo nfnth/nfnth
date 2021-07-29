@@ -3,17 +3,17 @@
   
 ## [Dralun](https://dralun.com), the Land of Deed to Domain
 
-Visit the [UR.Land](https://ur.land) map and explore a continent filled with amazing peoples and lands. 
+Open the [UR.Land](https://ur.land) map and visit a continent filled with amazing peoples and lands. 
 
-To begin, [sign in](), or [create an account](), to recieve a user badge with **Nomad** status.
+To begin, [sign in]() (or [create an account]()), to recieve a user badge with **Nomad** status.
 
-Site features, include:
+Our site features, include:
 
-- View our [deed listings](https://github.com/nfnth/nfnth/blob/master/doc/DEED.md), with option to:
+-  View our [deed listings](https://github.com/nfnth/nfnth/blob/master/doc/DEED.md), with option to:
   - [purchase]() as **Owner**
   - [claim]() as **Tenant**
   - [proceed]() as **Civilian**
-- Use the Markre editor at [nfnth.com](https://nfnth.com), with tools to: 
+- Go to [nfnth.com](https://nfnth.com), with tools to: 
   - Post artifacts
   - Create a profile (in MarkDown 2.0)
  
@@ -31,9 +31,9 @@ View real-time stats with the [UStat.us](https://ustat.us) dashboard...
 
 ### On Development
 
-To view upcoming feaures, see our [PLANME.md](https://github.com/users/nfnth/projects/3) project page.
+To see upcoming feaures, go to the [PLANME.md](https://github.com/users/nfnth/projects/3) project page.
 
-To get support, either start an issue [here](https://github.com/nfnth/nfnth/issues), or contact **matt@sebolt.us**.
+To get help, [start an issue](https://github.com/nfnth/nfnth/issues), or contact **matt@sebolt.us**.
 
 #### Release Schedule
 
