@@ -5,9 +5,7 @@
 
 Open the [UR.Land](https://ur.land) map and visit a continent filled with amazing peoples and lands. 
 
-To begin, [sign in]() (or [create an account]()), to recieve a user badge with **Nomad** status.
-
-Some site features, include:
+**Dralun** features, include:
 
 - View our [deed listings](https://github.com/nfnth/nfnth/blob/master/doc/DEED.md), with option to:
   - [purchase]() as **Owner**
@@ -16,6 +14,21 @@ Some site features, include:
 - Use the [nfnth.com](https://nfnth.com) editor, with tools to: 
   - Post artifacts
   - Create a profile (in MarkDown 2.0)
+
+### Get Started
+
+To begin, [sign in]() (or [create an account]()), to recieve a user badge with **Nomad** status.
+
+#### Domain Rights
+
+All domain rights are dependent on the deed, see the following list of deeds:
+
+|**Deed**|**Rights**|
+|-|-|
+|nomad||
+|civilian||
+|tenent||
+|owner||
  
 And that's it! All nomads may wander our land as free.
 
