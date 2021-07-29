@@ -1,13 +1,13 @@
 
 <p align="center"><img src="https://github.com/nfnth/res/raw/main/site/bird.png" width="280" height="320" /></p>
   
-Welcome to [Dralun](https://dralun.com), From Deed to Domain!
+## Welcome to [Dralun](https://dralun.com), the land of deeds and domains
 
-- Purchase [deeds](https://github.com/nfnth/nfnth/blob/master/doc/DEED.md)
-- Try our [Markre](https://github.com/nfnth/nfnth/blob/master/doc/MATTDOWN.md) editor, see demo at [nfnth.com](https://nfnth.com)
-- Support development of the Jaspre engine, see [brOS](https://github.com/nfnth/nfnth/blob/master/doc/BROS.md) for details
+- View and/or purchase [domain deeds](https://github.com/nfnth/nfnth/blob/master/doc/DEED.md)
+- Try the [Markre](https://github.com/nfnth/nfnth/blob/master/doc/MATTDOWN.md) editor, see [nfnth.com](https://nfnth.com)
+- Use [brOS](https://github.com/nfnth/nfnth/blob/master/doc/BROS.md), with **Jaspre** engine
 
-For issues, please file [here](https://github.com/nfnth/nfnth/issues), or email **matt@sebolt.us** with details.
+For issues, please file [here](https://github.com/nfnth/nfnth/issues), or send details to **matt@sebolt.us**.
 
 ### Explore Further
 
