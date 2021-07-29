@@ -3,20 +3,18 @@
   
 ## [Dralun](https://dralun.com), the Land of Deed to Domain
 
-To start, [create an account]() or [sign in]() to recieve a user badge with **Nomad** status.
+To start, [sign in]() or [create an account]() to recieve a user badge with **Nomad** status.
 
 - View [deed listings](https://github.com/nfnth/nfnth/blob/master/doc/DEED.md), with option to:
-  - Purchase as **Owner**
-  - Claim as **Tenant**
-  - Proceed as **Civilian**
+  - [purchase]() as **Owner**
+  - [claim]() as **Tenant**
+  - [proceed]() as **Civilian**
 - Try [Markre](https://github.com/nfnth/nfnth/blob/master/doc/MATTDOWN.md) editor at [nfnth.com](https://nfnth.com), with tools to: 
   - Post artifacts
-  - Create a profile in MarkDown 2.0
-- Use **Jaspre** engine, with code to:
-  - Install [brOS](https://github.com/nfnth/nfnth/blob/master/doc/BROS.md) with [package]()
-  - Review the [site release schedule]()
+  - Create a profile with MarkDown 2.0
+- Use **Jaspre** engine, with code to install [brOS](https://github.com/nfnth/nfnth/blob/master/doc/BROS.md) with [package]()
 
-For upcoming feaures, see our [PLANME.md](https://github.com/users/nfnth/projects/3) project page.
+For upcoming feaures, see our [PLANME.md](https://github.com/users/nfnth/projects/3) project page with latest [site release]().
 
 ### Explore Further
 
@@ -24,8 +22,7 @@ Visit the [UR.Land](https://ur.land) map and explore a continent filled with ama
 
 - Create the ultimate profile
 - Control territory, write a land treaty, and share strategy
-- Read our manifest, the [Civilian's Complex](https://github.com/nfnth/nfnth/blob/master/doc/CC.md)
-  - Also, available to [purchase]()
+- Read our manifest, the [Civilian's Complex](https://github.com/nfnth/nfnth/blob/master/doc/CC.md) (available to [purchase]())
 
 All nomads may wander our land as free!
 
@@ -41,4 +38,4 @@ Sponsor our work to get listed here...
 
 ### Support
 
-For issues, see [here](https://github.com/nfnth/nfnth/issues) page, or email details to **matt@sebolt.us**.
+For issues, see [here](https://github.com/nfnth/nfnth/issues), or email details to **matt@sebolt.us**.
