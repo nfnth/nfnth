@@ -21,11 +21,13 @@ And that's it! All nomads may wander our land as free.
 
 ### Explore Further
 
-- Create the ultimate profile
-- Control territory, write a land treaty, and share strategy
-- Read our manifest, the [Civilian's Complex](https://github.com/nfnth/nfnth/blob/master/doc/CC.md) (also, available to [purchase]())
+To achieve dominion, take the following steps:
 
-View real-time stats with the [UStat.us](https://ustat.us) dashboard...
+1. Create the ultimate profile
+1. Control territory, write a land treaty, and share strategy
+1. View your stats *real-time* with the [UStat.us](https://ustat.us) dashboard
+ 
+For further inspiration, read our manifest, the [Civilian's Complex](https://github.com/nfnth/nfnth/blob/master/doc/CC.md) (also, available to [purchase]())
 
 <p align="center"><img src="https://github.com/nfnth/res/raw/main/site/fox.png" width="240" height="240" /></p>
 
