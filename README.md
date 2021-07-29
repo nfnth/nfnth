@@ -3,9 +3,9 @@
   
 ## [Dralun](https://dralun.com), the Land of Deed to Domain
 
-To begin, [sign in]() or [create an account]() to recieve a user badge with **Nomad** status.
+[Sign in]() or [create an account]() to recieve a user badge with **Nomad** status.
 
-Next,
+Visit the [UR.Land](https://ur.land) map and explore a continent filled with amazing peoples and lands. 
 
 - View [deed listings](https://github.com/nfnth/nfnth/blob/master/doc/DEED.md), with option to:
   - [purchase]() as **Owner**
@@ -16,11 +16,19 @@ Next,
   - Create a profile with MarkDown 2.0
 - Install **Jaspre** engine, see [brOS](https://github.com/nfnth/nfnth/blob/master/doc/BROS.md) with [package]()
 
+### Support
+
 For upcoming feaures, see our [PLANME.md](https://github.com/users/nfnth/projects/3) project page, with latest [site release]().
+
+For issues, see [here](https://github.com/nfnth/nfnth/issues), or email details to **matt@sebolt.us**.
+
+### Sponsors
+
+Sponsor our work to get listed here...
 
 ### Explore Further
 
-Visit the [UR.Land](https://ur.land) map and explore a continent filled with amazing peoples and lands. 
+View real-time stats with the [UStat.us](https://ustat.us) dashboard...
 
 - Create the ultimate profile
 - Control territory, write a land treaty, and share strategy
@@ -29,15 +37,3 @@ Visit the [UR.Land](https://ur.land) map and explore a continent filled with ama
 All nomads may wander our land as free!
 
 <p align="center"><img src="https://github.com/nfnth/res/raw/main/site/fox.png" width="240" height="240" /></p>
-  
-### Coming soon
- 
-View real-time stats on the [UStat.us](https://ustat.us) dashboard...
- 
-### Sponsors
-
-Sponsor our work to get listed here...
-
-### Support
-
-For issues, see [here](https://github.com/nfnth/nfnth/issues), or email details to **matt@sebolt.us**.
