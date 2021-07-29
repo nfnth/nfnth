@@ -17,11 +17,15 @@ Visit the [UR.Land](https://ur.land) map and explore a continent filled with ama
  
 ### Developers Rule
 
-To install the **Jaspre** engine, see [brOS](https://github.com/nfnth/nfnth/blob/master/doc/BROS.md), or download [package]().
+For upcoming feaures, see our [PLANME.md](https://github.com/users/nfnth/projects/3) project page.
 
-To see upcoming feaures, view our [PLANME.md](https://github.com/users/nfnth/projects/3) project page and latest [site release]().
+|**Engine**|**Download**|**Reference**|
+|-|-|-|
+|**Markre**|[release]()||
+|**Jaspre**|[package]()||
+|**brOS**|[package]()|[documentation](https://github.com/nfnth/nfnth/blob/master/doc/BROS.md)|
 
-To contact support, see [here](https://github.com/nfnth/nfnth/issues), or email details to **matt@sebolt.us**.
+For support, see [issues](https://github.com/nfnth/nfnth/issues), or email details to **matt@sebolt.us**.
 
 ### Explore Further
 
@@ -29,7 +33,7 @@ View real-time stats with the [UStat.us](https://ustat.us) dashboard...
 
 - Create the ultimate profile
 - Control territory, write a land treaty, and share strategy
-- Read our manifest, the [Civilian's Complex](https://github.com/nfnth/nfnth/blob/master/doc/CC.md) (available to [purchase]())
+- Read our manifest, the [Civilian's Complex](https://github.com/nfnth/nfnth/blob/master/doc/CC.md) (also available to [purchase]())
 
 All nomads may wander our land as free!
 
