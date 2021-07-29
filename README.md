@@ -7,13 +7,13 @@ Open the [UR.Land](https://ur.land) map and visit a continent filled with amazin
 
 To begin, [sign in]() (or [create an account]()), to recieve a user badge with **Nomad** status.
 
-Our site features, include:
+Some site features, include:
 
--  View our [deed listings](https://github.com/nfnth/nfnth/blob/master/doc/DEED.md), with option to:
+- View our [deed listings](https://github.com/nfnth/nfnth/blob/master/doc/DEED.md), with option to:
   - [purchase]() as **Owner**
   - [claim]() as **Tenant**
   - [proceed]() as **Civilian**
-- Go to [nfnth.com](https://nfnth.com), with tools to: 
+- Use the [nfnth.com](https://nfnth.com) editor, with tools to: 
   - Post artifacts
   - Create a profile (in MarkDown 2.0)
  
@@ -33,7 +33,7 @@ View real-time stats with the [UStat.us](https://ustat.us) dashboard...
 
 To see upcoming feaures, go to the [PLANME.md](https://github.com/users/nfnth/projects/3) project page.
 
-To get help, [start an issue](https://github.com/nfnth/nfnth/issues), or contact **matt@sebolt.us**.
+To get help, either [start an issue](https://github.com/nfnth/nfnth/issues), or contact **matt@sebolt.us**.
 
 #### Release Schedule
 
