@@ -19,11 +19,11 @@ And that's it! All nomads may wander our land as free.
 
 ### Explore Further
 
-View real-time stats with the [UStat.us](https://ustat.us) dashboard...
-
 - Create the ultimate profile
 - Control territory, write a land treaty, and share strategy
 - Read our manifest, the [Civilian's Complex](https://github.com/nfnth/nfnth/blob/master/doc/CC.md) (also available to [purchase]())
+
+View real-time stats with the [UStat.us](https://ustat.us) dashboard...
 
 <p align="center"><img src="https://github.com/nfnth/res/raw/main/site/fox.png" width="240" height="240" /></p>
 
@@ -31,13 +31,15 @@ View real-time stats with the [UStat.us](https://ustat.us) dashboard...
 
 To view upcoming feaures, see our [PLANME.md](https://github.com/users/nfnth/projects/3) project page.
 
-|**Engine**(*reference*)|**Download**(*release*)|
-|-|-|
-|[**Markre**]()|[v1.0.1]()|
-|[**Jaspre**]()|[latest]()|
-|[**brOS**](https://github.com/nfnth/nfnth/blob/master/doc/BROS.md)|[latest]()|
-
 To receive support, [start an issue](https://github.com/nfnth/nfnth/issues), or contact **matt@sebolt.us**.
+
+#### Release Schedule
+
+|**Engine**|*description*|*download*|
+|-|-|-|
+|[**Markre**]()|JavaScript MarkDown renderer|[v1.0.1]()|
+|[**Jaspre**]()|JAvaScriptPythonstRipE objects|[latest]()|
+|[**brOS**](https://github.com/nfnth/nfnth/blob/master/doc/BROS.md)|Browser OS (on Arch Linux)|[latest]()|
 
 #### Sponsors
 
