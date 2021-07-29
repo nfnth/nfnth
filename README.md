@@ -5,15 +5,17 @@
 
 Visit the [UR.Land](https://ur.land) map and explore a continent filled with amazing peoples and lands. 
 
-[Sign in](), or [create an account](), to recieve a user badge with **Nomad** status, then:
+To begin, [sign in](), or [create an account](), to recieve a user badge with **Nomad** status.
+
+Site features, include:
 
 - View our [deed listings](https://github.com/nfnth/nfnth/blob/master/doc/DEED.md), with option to:
   - [purchase]() as **Owner**
   - [claim]() as **Tenant**
   - [proceed]() as **Civilian**
-- Use the [Markre](https://github.com/nfnth/nfnth/blob/master/doc/MATTDOWN.md) editor at [nfnth.com](https://nfnth.com), with tools to: 
+- Use the Markre editor at [nfnth.com](https://nfnth.com), with tools to: 
   - Post artifacts
-  - Create a profile in MarkDown 2.0
+  - Create a profile (in MarkDown 2.0)
  
 And that's it! All nomads may wander our land as free.
 
@@ -21,7 +23,7 @@ And that's it! All nomads may wander our land as free.
 
 - Create the ultimate profile
 - Control territory, write a land treaty, and share strategy
-- Read our manifest, the [Civilian's Complex](https://github.com/nfnth/nfnth/blob/master/doc/CC.md) (also available to [purchase]())
+- Read our manifest, the [Civilian's Complex](https://github.com/nfnth/nfnth/blob/master/doc/CC.md) (also, available to [purchase]())
 
 View real-time stats with the [UStat.us](https://ustat.us) dashboard...
 
@@ -31,16 +33,16 @@ View real-time stats with the [UStat.us](https://ustat.us) dashboard...
 
 To view upcoming feaures, see our [PLANME.md](https://github.com/users/nfnth/projects/3) project page.
 
-To receive support, [start an issue](https://github.com/nfnth/nfnth/issues), or contact **matt@sebolt.us**.
+To get support, either start an issue [here](https://github.com/nfnth/nfnth/issues), or contact **matt@sebolt.us**.
 
 #### Release Schedule
 
 |**Engine**|*description*|*download*|
 |-|-|-|
-|[**Markre**]()|JavaScript MarkDown renderer|[v1.0.1]()|
-|[**Jaspre**]()|JAvaScriptPythonstRipE objects|[latest]()|
-|[**brOS**](https://github.com/nfnth/nfnth/blob/master/doc/BROS.md)|Browser OS (on Arch Linux)|[latest]()|
+|[Markre](https://github.com/nfnth/nfnth/blob/master/doc/MATTDOWN.md)|JavaScript MarkDown renderer|[v1.0.1]()|
+|[Jaspre]()|JAvaScriptPythonstRipE objects|[latest]()|
+|[brOS](https://github.com/nfnth/nfnth/blob/master/doc/BROS.md)|Browser OS (on Arch Linux)|[latest]()|
 
 #### Sponsors
 
-All sponsors get listed here...
+All sponsors to be listed here...
