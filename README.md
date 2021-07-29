@@ -3,17 +3,18 @@
   
 ## [Dralun](https://dralun.com), the Land of Deed and Domain
 
-- View [deeds](https://github.com/nfnth/nfnth/blob/master/doc/DEED.md) with the option to either purchase or rent
-  - Purchase ownership
-  - Rent tenancy
-  - 
-- Use [Markre](https://github.com/nfnth/nfnth/blob/master/doc/MATTDOWN.md) at [nfnth.com](https://nfnth.com) to create your profile and post artifacts
+All nomads may wander the land as free!
+
+- View [deeds](https://github.com/nfnth/nfnth/blob/master/doc/DEED.md), with option to:
+  - Purchase **Ownership**
+  - Claim as **Tenant**
+  - Proceed as **Civilian**
+- Use [Markre](https://github.com/nfnth/nfnth/blob/master/doc/MATTDOWN.md) at [nfnth.com](https://nfnth.com), to: 
+  - Create your profile in MarkDown 2.0
+  - Post artifacts
 - See code at [brOS](https://github.com/nfnth/nfnth/blob/master/doc/BROS.md) with **Jaspre** engine
 
-For issues, either:
-
-- Use GitHub [issues](https://github.com/nfnth/nfnth/issues)
-- Email details to **matt@sebolt.us**.
+For issues, please see GitHub [issues](https://github.com/nfnth/nfnth/issues), or email details to **matt@sebolt.us**.
 
 ### Explore Further
 
