@@ -3,13 +3,13 @@
   
 ## [Dralun](https://dralun.com), the Land of Deed to Domain
 
-All nomads may wander our land as free!
+Sign up to recieve a user badge and nomad status
 
-- View the [deed listings](https://github.com/nfnth/nfnth/blob/master/doc/DEED.md), with option to:
+- View our [deed listings](https://github.com/nfnth/nfnth/blob/master/doc/DEED.md), with option to:
   - Purchase as **Owner**
   - Claim as **Tenant**
   - Proceed as **Civilian**
-- Use [Markre](https://github.com/nfnth/nfnth/blob/master/doc/MATTDOWN.md) editor at [nfnth.com](https://nfnth.com), to: 
+- Use the [Markre](https://github.com/nfnth/nfnth/blob/master/doc/MATTDOWN.md) editor at [nfnth.com](https://nfnth.com), to: 
   - Post artifacts
   - Create a profile in MarkDown 2.0
 - See code at [brOS](https://github.com/nfnth/nfnth/blob/master/doc/BROS.md) with **Jaspre** engine
@@ -24,8 +24,10 @@ For upcoming feaures, visit our [PLANME.md](https://github.com/users/nfnth/proje
 
 Visit the [UR.Land](https://ur.land) map and explore a continent filled with amazing peoples and lands. 
 
-- Create the ultimate profile
+- Create an ultimate profile
 - Control territory, write land treaties, and share strategy
+
+All nomads may wander our land as free!
 
 Read our manifest, the [Civilian's Complex manifest](https://github.com/nfnth/nfnth/blob/master/doc/CC.md), also available to [purchase]().
 
