@@ -16,20 +16,18 @@ Some **Dralun** features, include:
   - Create a profile (in MarkDown 2.0)
 - Setup your own domain using the **Jaspre** engine
 
-#### Get Started
-
-To begin, [sign in]() (or [create an account]()), to recieve a user badge with **Nomad** status.
-
-#### Domain Rights
-
 All domain rights are dependent on the deed, see the following list of deeds:
 
-|**Deed**|**Rights of Domain**|
+|**Deed**|**Domain Rights**|
 |-|-|
 |nomad||
 |civilian||
 |tenent||
 |owner||
+
+#### Get Started
+
+To begin, [sign in]() (or [create an account]()), to recieve a user badge with **Nomad** status.
  
 And that's it! All nomads may wander our land as free.
 
