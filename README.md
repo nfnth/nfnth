@@ -13,7 +13,7 @@ Nomads, Create and post artifiacts
 - Tenants, control over content only
 - Owner, control over access and content
 
-Notable features, include:
+Some notable features, include:
 
 - access to the [deed regisrty](https://github.com/nfnth/nfnth/blob/master/doc/DEED.md), with options to,
   - [purchase]() as **Owner**, [claim]() as **Tenant**, or [proceed]() as **Civilian**
@@ -48,12 +48,12 @@ Dralun uses user groupings to differentiate, and domains can be permenently tran
 
 #### Civilian Class
 
-|Class|Control?|Content?|Description|
+|Class|*Control?*|*Content?*|Ability|Description|
 |-|-|-|-|
-|Civilian|no|no|Vote|
-|Tenent|no|yes|Tenent deeds (Domain licenses) must be renewed same as with domain registrations. |
-|Holder|yes|no|Controller has control access, source content is not guaranteed.|
-|Owner|yes|yes|Owner has control access and rights to source content. Owner deeds (Domain transfers) are permanent and require only the one-time fee.|
+|Civilian|*no*|*no*|Proceed|Vote|
+|Tenent|*no*|*yes*|Claim|Tenent deeds (Domain licenses) must be renewed same as with domain registrations. |
+|Holder|*yes*|*no*|Hold|Controller has control access, source content is not guaranteed.|
+|Owner|*yes*|*yes*|Own|Owner has control access and rights to source content. Owner deeds (Domain transfers) are permanent and require only the one-time fee.|
 
 **Control** = Access to name records, ie. A, AAAA, CNAME, etc.
 
