@@ -13,25 +13,6 @@ Owner deeds (transferred)
 
 Use the [UR.Land](https://ur.land) map to visit a continent filled with amazing peoples and lands. 
 
-Additional **Dralun** features, include:
-
-- access to the [deed regisrty](https://github.com/nfnth/nfnth/blob/master/doc/DEED.md), with options to,
-  - [purchase]() as **Owner**, [claim]() as **Tenant**, or [proceed]() as **Civilian**
-  - view public records of all purchase, forfeiture, and transfer
-  - review historical context
-- use of the **Markre** editor, see [nfnth.com](https://nfnth.com), with tools to,
-  - Create *artifacts* (includes text, image, location)
-  - Create profile (in MarkDown 2.0) for user and domains
-  - Use MarkDown 2.0 constructs, such as treaty and strategy
-- instruction for the **Jaspre** engine, to setup a custom domain,
-  - Run the **brOS** build script, see [gist]()
-
-### Get Started
-
-To begin, [sign in]() (or [create an account]()), to recieve a user badge with **Nomad** status.
-
-And that's it! All nomads may wander our land as free.
-
 #### Domain Deeds
 
 **Dralun** is the concept of the *domain deed*, a differentiaion between control and content.
@@ -62,13 +43,30 @@ Domains can be permenently transferred, or temporarily licensed, depending on th
 
 ### Explore Further
 
+To begin, [sign in]() (or [create an account]()), to recieve a user badge with **Nomad** status.
+
 To achieve dominion, take the following steps:
 
 - Create the ultimate profile
 - Control territory, write a land treaty, share strategy
 - View real-time stats on the [UStat.us](https://ustat.us) dashboard
+
+**Dralun** features, include:
+
+- access to the [deed regisrty](https://github.com/nfnth/nfnth/blob/master/doc/DEED.md), with options to,
+  - [purchase]() as **Owner**, [claim]() as **Tenant**, or [proceed]() as **Civilian**
+  - view public records of all purchase, forfeiture, and transfer
+  - review historical context
+- use of the **Markre** editor, see [nfnth.com](https://nfnth.com), with tools to,
+  - Create *artifacts* (includes text, image, location)
+  - Create profile (in MarkDown 2.0) for user and domains
+  - Use MarkDown 2.0 constructs, such as treaty and strategy
+- instruction for the **Jaspre** engine, to setup a custom domain,
+  - Run the **brOS** build script, see [gist]()
  
 For further inspiration, read our manifest, the [Civilian's Complex](https://github.com/nfnth/nfnth/blob/master/doc/CC.md) (also, available to [purchase]())
+
+And that's it! All nomads may wander our land as free.
 
 <p align="center"><img style="padding-right:120px;position:relative;" src="https://github.com/nfnth/res/raw/main/site/fox.png" width="240" height="240" /></p>
 
