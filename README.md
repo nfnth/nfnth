@@ -50,13 +50,15 @@ Dralun uses user groupings to differentiate, and domains can be permenently tran
 
 #### Civilian Class
 
-|**Dralun Deed**|Control?|Content?|Description|
+|**Class Type**|Control?|Content?|Description|
 |-|-|-|-|
-|nomad|NA|NA|Free|
-|civilian|NA|NA|Vote|
-|tenent|No|Yes|Tenent deeds (Domain licenses) must be renewed same as with domain registrations. |
-|controller|Yes|No|Controller has control access, source content is not guaranteed.|
-|owner|Yes|Yes|Owner has control access and rights to source content. Owner deeds (Domain transfers) are permanent and require only the one-time fee.|
+|Civilian|no|no|Vote|
+|Tenent|No|Yes|Tenent deeds (Domain licenses) must be renewed same as with domain registrations. |
+|Holder|Yes|No|Controller has control access, source content is not guaranteed.|
+|Owner|Yes|Yes|Owner has control access and rights to source content. Owner deeds (Domain transfers) are permanent and require only the one-time fee.|
+
+**Control** = Access to name records, ie. A, AAAA, CNAME, etc.
+**Content** = Access to source files, ie. profile, artifacts, etc.
 
 ### On Development
 
@@ -66,7 +68,7 @@ For upcoming feaures, go to the [PLANME.md](https://github.com/users/nfnth/proje
 
 For help, [start an issue](https://github.com/nfnth/nfnth/issues), or contact **matt@sebolt.us**.
 
-#### Current Releases
+#### Current Release
 
 |**Engine**|*description*|*download*|
 |-|-|-|
