@@ -3,7 +3,7 @@
   
 ## On [Dralun](https://dralun.com), Land of Deed to Domain
 
-Dralun is a land build upon the people and the deeds etched in code.
+The land built upon the people and the deeds etched in code.
 
 Nomad and Civilian deeds are domain non-specific and are used to extend UR.Land functionality,
 
@@ -48,19 +48,20 @@ Dralun uses user groupings to differentiate, and domains can be permenently tran
 
 #### Civilian Class
 
-|**Class Type**|Control?|Content?|Description|
+|Class|Control?|Content?|Description|
 |-|-|-|-|
 |Civilian|no|no|Vote|
-|Tenent|No|Yes|Tenent deeds (Domain licenses) must be renewed same as with domain registrations. |
-|Holder|Yes|No|Controller has control access, source content is not guaranteed.|
-|Owner|Yes|Yes|Owner has control access and rights to source content. Owner deeds (Domain transfers) are permanent and require only the one-time fee.|
+|Tenent|no|yes|Tenent deeds (Domain licenses) must be renewed same as with domain registrations. |
+|Holder|yes|no|Controller has control access, source content is not guaranteed.|
+|Owner|yes|yes|Owner has control access and rights to source content. Owner deeds (Domain transfers) are permanent and require only the one-time fee.|
 
 **Control** = Access to name records, ie. A, AAAA, CNAME, etc.
+
 **Content** = Access to source files, ie. profile, artifacts, etc.
 
 ### On Development
 
-Dralun is built on brOS, a light-weight, open-source stack, to host our platforms using [Linode]() and [GitHub]().
+**Dralun** is built on brOS, a light-weight, open-source stack, to host our platforms using [Linode]() and [GitHub]().
 
 For upcoming feaures, go to the [PLANME.md](https://github.com/users/nfnth/projects/3) project page
 
