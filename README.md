@@ -5,7 +5,15 @@
 
 Dralun is a land build upon the people and the deeds etched in code.
 
-Key **Dralun** features, include:
+Nomad and Civilian deeds are domain non-specific and are used to extend UR.Land functionality,
+
+Nomads, Create and post artifiacts
+
+- Civilians, Run scenarios "Live" (and vote) withen any domain (Civilian only)
+- Tenants, control over content only
+- Owner, control over access and content
+
+Features, include:
 
 - access to the [deed regisrty](https://github.com/nfnth/nfnth/blob/master/doc/DEED.md), with options to,
   - [purchase]() as **Owner**, [claim]() as **Tenant**, or [proceed]() as **Civilian**
@@ -18,21 +26,9 @@ Key **Dralun** features, include:
 - instruction for the **Jaspre** engine, to setup a custom domain,
   - Run the **brOS** build script, see [gist]()
 
-For upcoming feaures, go to the [PLANME.md](https://github.com/users/nfnth/projects/3) project page
-
-#### Civilian Class
-
-Nomad and Civilian deeds are domain non-specific and are used to extend UR.Land functionality,
-
-Nomads, Create and post artifiacts
-
-- Civilians, Run scenarios "Live" (and vote) withen any domain (Civilian only)
-- Tenants, control over content only
-- Owner, control over access and content
-
 To begin, [sign in]() (or [create an account]()), to recieve a user badge with **Nomad** status.
 
-### On Deed
+### On Deed to Domain
 
 **Dralun** is the concept of the *domain deed*, a differentiaion between control and content.
 
@@ -65,6 +61,8 @@ Domains can be permenently transferred, or temporarily licensed, depending on th
 ### On Development
 
 Dralun is built on brOS, a light-weight, open-source stack, to host our platforms using [Linode]() and [GitHub]().
+
+For upcoming feaures, go to the [PLANME.md](https://github.com/users/nfnth/projects/3) project page
 
 For help, [start an issue](https://github.com/nfnth/nfnth/issues), or contact **matt@sebolt.us**.
 
