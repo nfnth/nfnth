@@ -11,18 +11,6 @@ Nomad and Civilian deeds are domain non-specific and are used to extend UR.Land 
 
 Owner deeds (transferred) 
 
-Use the [UR.Land](https://ur.land) map to visit a continent filled with amazing peoples and lands. 
-
-### Explore Further
-
-To begin, [sign in]() (or [create an account]()), to recieve a user badge with **Nomad** status.
-
-To achieve dominion, take the following steps:
-
-- Create the ultimate profile
-- Control territory, write a land treaty, share strategy
-- View real-time stats on the [UStat.us](https://ustat.us) dashboard
-
 **Dralun** features, include:
 
 - access to the [deed regisrty](https://github.com/nfnth/nfnth/blob/master/doc/DEED.md), with options to,
@@ -35,14 +23,10 @@ To achieve dominion, take the following steps:
   - Use MarkDown 2.0 constructs, such as treaty and strategy
 - instruction for the **Jaspre** engine, to setup a custom domain,
   - Run the **brOS** build script, see [gist]()
- 
-For further inspiration, read our manifest, the [Civilian's Complex](https://github.com/nfnth/nfnth/blob/master/doc/CC.md) (also, available to [purchase]())
 
-And that's it! All nomads may wander our land as free.
+To begin, [sign in]() (or [create an account]()), to recieve a user badge with **Nomad** status.
 
-<p align="center"><img style="padding-right:120px;position:relative;" src="https://github.com/nfnth/res/raw/main/site/fox.png" width="240" height="240" /></p>
-
-### Domain Deeds
+### On Domain Deeds
 
 **Dralun** is the concept of the *domain deed*, a differentiaion between control and content.
 
@@ -86,10 +70,25 @@ For help, [start an issue](https://github.com/nfnth/nfnth/issues), or contact **
 |[Jaspre]()|JAvaScriptPythonstRipE objects|[latest]()|
 |[brOS](https://github.com/nfnth/nfnth/blob/master/doc/BROS.md)|Browser OS (on Arch Linux)|[latest]()|
 
-#### Jobs
+#### Sponsorship
 
 Only sponsor-enabled GitHub profiles will be considered. To apply, please send your profile information to **matt@sebolt.us**.
 
-#### Sponsors
-
 All sponsors to be listed here...
+
+### Explore Further
+
+Use the [UR.Land](https://ur.land) map to visit a continent filled with amazing peoples and lands. 
+
+To achieve dominion, take the following steps:
+
+- Create the ultimate profile
+- Control territory, write a land treaty, share strategy
+- View real-time stats on the [UStat.us](https://ustat.us) dashboard
+ 
+For further inspiration, read our manifest, the [Civilian's Complex](https://github.com/nfnth/nfnth/blob/master/doc/CC.md) (also, available to [purchase]())
+
+And that's it! All nomads may wander our land as free.
+
+<p align="center"><img style="padding-right:120px;position:relative;" src="https://github.com/nfnth/res/raw/main/site/fox.png" width="240" height="240" /></p>
+
