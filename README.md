@@ -45,7 +45,7 @@ To achieve dominion, take the following steps:
  
 For further inspiration, read our manifest, the [Civilian's Complex](https://github.com/nfnth/nfnth/blob/master/doc/CC.md) (also, available to [purchase]())
 
-<p align="center"><img style="padding-right:48;" src="https://github.com/nfnth/res/raw/main/site/fox.png" width="240" height="240" /></p>
+<div style="text-align:center; margin-right:120;"><img style="padding-right:48;" src="https://github.com/nfnth/res/raw/main/site/fox.png" width="240" height="240" /></div>
 
 ### On Development
 
