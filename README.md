@@ -5,22 +5,32 @@
 
 Use the [UR.Land](https://ur.land) map to visit a continent filled with amazing peoples and lands. 
 
-The concept of "domain deed"...
+The concept of *domain deed* can mean one of the following:
 
+- a 3rd party provider of domain names, subject to a formal registrar of ICAHNN
 - a licensed domain when sold withen a controlled group, offers more value than sold individually (similar to the .com)
-- a 3rd party provider to the Registar
+- an easy way to build sites on a project to project basis
+
+Domains can be permenently transferred, or temporarily licensed, depending on the need.
 
 All domain rights are dependent on the deed, see the following table of deed types:
 
 |**Deed**|**Domain Rights**|Cost|
 |-|-|-|
 |nomad|*basic* editor<br/>*basic* user|Free|
-|civilian||$7.99|
-|tenent|||
-|owner|||
-|transfer|||
+|civilian|tenent|$7.99|
+|tenent|licensed||
+|owner|transfer||
 
-Deeds may be transferred at any time, see [deed transfers]().
+Nomad and Civilian deeds are domain non-specific and are used to extend UR.Land functionality,
+
+- Create and post artifiacts
+- Run scenarios
+- "Live" (and vote) withen any domain (Civilian only)
+
+Tenent deeds (Domain licenses) must be renewed same as with domain registrations. 
+
+Owner deeds (Domain transfers) are permanent and require only the one-time fee.
 
 Noted **Dralun**'s features, include:
 
