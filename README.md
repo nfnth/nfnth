@@ -32,7 +32,7 @@ To begin, [sign in]() (or [create an account]()), to recieve a user badge with *
 
 And that's it! All nomads may wander our land as free.
 
-### Domain Deeds
+#### Domain Deeds
 
 **Dralun** is the concept of the *domain deed*, a differentiaion between control and content.
 
