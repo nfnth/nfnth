@@ -3,7 +3,7 @@
   
 ## On [Dralun](https://dralun.com), Land of Deed to Domain
 
-The land built upon the people and the deeds etched in code.
+**Dralun** is the land built upon the people and the deeds etched in code.
 
 Nomad and Civilian deeds are domain non-specific and are used to extend UR.Land functionality,
 
@@ -48,12 +48,12 @@ Dralun uses user groupings to differentiate, and domains can be permenently tran
 
 #### Civilian Class
 
-|Class|*Control?*|*Content?*|Ability|Description|
-|-|-|-|-|-|
-|Civilian|*no*|*no*|Proceed|Vote|
-|Tenent|*no*|*yes*|Claim|Tenent deeds (Domain licenses) must be renewed same as with domain registrations. |
-|Holder|*yes*|*no*|Hold|Controller has control access, source content is not guaranteed.|
-|Owner|*yes*|*yes*|Own|Owner has control access and rights to source content. Owner deeds (Domain transfers) are permanent and require only the one-time fee.|
+|**Class** (*ability*)|*Control?*|*Content?*|Description|
+|-|-|-|-|
+|**Civilian** (*proceed*)|no|no|Vote|
+|**Tenent** (*claim*)|no|yes|Tenent deeds (Domain licenses) must be renewed same as with domain registrations. |
+|**Holder** (*hold*)|yes|no|Controller has control access, source content is not guaranteed.|
+|**Owner** (*own*)|yes|yes|Owner has control access and rights to source content. Owner deeds (Domain transfers) are permanent and require only the one-time fee.|
 
 **Control** = Access to name records, ie. A, AAAA, CNAME, etc.
 
