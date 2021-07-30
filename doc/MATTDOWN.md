@@ -1,51 +1,49 @@
 
-MarkDown 2.0 reference
+## the MarkDown 2.0 Quick View
 
-`## Header example`
+Use the original MarkDown syntax to create **bold** and *italic* text, [hyperlinks](), and `code snippets`, also includes:
 
-## Header example
+## Headers
 
-### Section
+[!image alt text](https://cdn.jsdelivr.net/gh/nfnth/nfnth@latest/res/castle/castle2.png) height/width?
 
-Create **bold** and *italic* text.
+### Sections
 
-Create [links]().
-
-Create an image, [!castle](https://cdn.jsdelivr.net/gh/nfnth/nfnth@latest/res/castle/castle2.png) height/width?
-
-Create lists,
+...and multiple block types, in the following order: bullet, step, code, table
 
 - bullet 1
 - bullet 2
+- bullet 3
    
 1. step 1
 1. step 2
+1. step 3
 
-> PLANME objectives
->! README objectives
-
-```code block``` //<pre><code>?
+```
+code 1
+code 2
+code 3
+``` 
    
-|table|header|
-|-|-|
-|column|data|
+|header 1|header 2|header 3|
+|-|-|-|
+|column 1, row 1|column 1, row 1|column 1, row 1|
+|column 1, row 1|column 1, row 1|column 1, row 1|
+|column 1, row 1|column 1, row 1|column 1, row 1|
 
-[!LABEL](text|color) sticker...
+Use MarkDown 2.0 syntax to create advanced formats, includes:
 
-[!NOTE](text)
+> unchecked task
+>! checked task
 
-[!DATETIME](utc|text|duration|frequency) // ...S-M-T-W-T-F-S(bubble buttons)(repeat), use reminder/alarms with timer/stopwatch, countdown
+[!LABEL](project 1|blue) [!LABEL](project 2|red)
 
-[!LOCATION](term, key) (latitude, longitude, key) destination?
+[!NOTE](note to self...)
 
-[!file]()
+[!LOCATION](term, key) (latitude, longitude, key)
 
-[!KEY](type|value) SSH, monero (wallet) QR?
+Now includes external libraries, such as:
 
-[!CONTACT] // message? comment? [!mail](to|from|subject)[message][attachment1|attachment2]
-
-[!MEDIA]()
-
- // figure, empty block "stragety", mermaid, shipping, notifications? input?
-
-[!CALC](ledger/payment?)
+Mermaid, MathJax, Strykr...
+ 
+As per standard MarkDown funcationlity, all embedded HTML/CSS/JS is also supported to facilitate custom functionality and style.
