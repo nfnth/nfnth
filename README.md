@@ -5,7 +5,7 @@
 
 Open the [UR.Land](https://ur.land) map and visit a continent filled with amazing peoples and lands. 
 
-Some of **Dralun**'s features, include:
+Some of **Dralun**'s features, include,
 
 - View the entire set of [deed listings](https://github.com/nfnth/nfnth/blob/master/doc/DEED.md), with option to:
   - [purchase]() as **Owner**
@@ -14,9 +14,10 @@ Some of **Dralun**'s features, include:
 - Use the **Markre** editor at [nfnth.com](https://nfnth.com), with tools to: 
   - Post artifacts
   - Create a profile (in MarkDown 2.0)
-- Setup your own domain using the **Jaspre** engine, see [**On Development**](#On_Development) below
+- Setup your own domain using the **Jaspre** engine:
+  - Run the **brOS** build script, see [**On Development**](#on-development)
 
-All domain rights are dependent on the deed. The following is a list of deed types:
+All domain rights are dependent on the deed, see the following list of deed types:
 
 |**Deed**|**Domain Rights**|
 |-|-|
@@ -59,7 +60,7 @@ We provide light-weight, open-source tools to host our platform using [Linode]()
 
 To see upcoming feaures, go to the [PLANME.md](https://github.com/users/nfnth/projects/3) project page.
 
-To get help, either [start an issue](https://github.com/nfnth/nfnth/issues), or contact **matt@sebolt.us**.
+To get help, [start an issue](https://github.com/nfnth/nfnth/issues), or contact **matt@sebolt.us**.
 
 #### Sponsors
 
