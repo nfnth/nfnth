@@ -1,20 +1,20 @@
 
 <p align="center"><img src="https://github.com/nfnth/res/raw/main/site/bird.png" width="280" height="320" /></p>
   
-## [Dralun](https://dralun.com), the Land of Deed to Domain
+## On [Dralun](https://dralun.com), the Land of Deed to Domain
 
-Open the [UR.Land](https://ur.land) map to visit a continent filled with amazing peoples and lands. 
+Use the [UR.Land](https://ur.land) map to visit a continent filled with amazing peoples and lands. 
 
-Some of **Dralun**'s features, include,
+Some of **Dralun**'s features, include:
 
-- View the entire set of [deed listings](https://github.com/nfnth/nfnth/blob/master/doc/DEED.md), with option to:
+- View [listed deeds](https://github.com/nfnth/nfnth/blob/master/doc/DEED.md), with options to,
   - [purchase]() as **Owner**
   - [claim]() as **Tenant**
   - [proceed]() as **Civilian**
-- Use the **Markre** editor at [nfnth.com](https://nfnth.com), with tools to: 
-  - Post artifacts
+- Edit with **Markre**, see [nfnth.com](https://nfnth.com), with tools to,
+  - Create and post *artifacts* (includes text, image, location)
   - Create a profile (in MarkDown 2.0)
-- Setup a custom domain using the **Jaspre** engine:
+- Setup a custom domain using the **Jaspre** engine,
   - Run the **brOS** build script, see [gist]()
 
 All domain rights are dependent on the deed, see the following table of deed types:
