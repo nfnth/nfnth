@@ -5,17 +5,18 @@
 
 Open the [UR.Land](https://ur.land) map and visit a continent filled with amazing peoples and lands. 
 
-**Dralun** features, include:
+Some **Dralun** features, include:
 
-- View our [deed listings](https://github.com/nfnth/nfnth/blob/master/doc/DEED.md), with option to:
+- View the entire set of [deed listings](https://github.com/nfnth/nfnth/blob/master/doc/DEED.md), with option to:
   - [purchase]() as **Owner**
   - [claim]() as **Tenant**
   - [proceed]() as **Civilian**
-- Use the [nfnth.com](https://nfnth.com) editor, with tools to: 
+- Use the **Markre** editor at [nfnth.com](https://nfnth.com), with tools to: 
   - Post artifacts
   - Create a profile (in MarkDown 2.0)
+- Setup your own domain using the **Jaspre** engine
 
-### Get Started
+#### Get Started
 
 To begin, [sign in]() (or [create an account]()), to recieve a user badge with **Nomad** status.
 
@@ -23,7 +24,7 @@ To begin, [sign in]() (or [create an account]()), to recieve a user badge with *
 
 All domain rights are dependent on the deed, see the following list of deeds:
 
-|**Deed**|**Rights**|
+|**Deed**|**Rights of Domain**|
 |-|-|
 |nomad||
 |civilian||
@@ -36,9 +37,9 @@ And that's it! All nomads may wander our land as free.
 
 To achieve dominion, take the following steps:
 
-1. Create the ultimate profile
-1. Control territory, write a land treaty, and share strategy
-1. View your stats *real-time* with the [UStat.us](https://ustat.us) dashboard
+- Create the ultimate profile
+- Control territory, write a land treaty, and share strategy
+- View your stats *real-time* with the [UStat.us](https://ustat.us) dashboard
  
 For further inspiration, read our manifest, the [Civilian's Complex](https://github.com/nfnth/nfnth/blob/master/doc/CC.md) (also, available to [purchase]())
 
