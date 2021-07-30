@@ -49,7 +49,7 @@ Dralun uses user groupings to differentiate, and domains can be permenently tran
 #### Civilian Class
 
 |Class|*Control?*|*Content?*|Ability|Description|
-|-|-|-|-|
+|-|-|-|-|-|
 |Civilian|*no*|*no*|Proceed|Vote|
 |Tenent|*no*|*yes*|Claim|Tenent deeds (Domain licenses) must be renewed same as with domain registrations. |
 |Holder|*yes*|*no*|Hold|Controller has control access, source content is not guaranteed.|
