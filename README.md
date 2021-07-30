@@ -25,6 +25,7 @@ All domain rights are dependent on the deed, see the following table of deed typ
 |civilian||$7.99|
 |tenent|||
 |owner|||
+|transfer|||
 
 Deeds may be transferred at any time, see [deed transfers]().
 
@@ -44,15 +45,15 @@ To achieve dominion, take the following steps:
  
 For further inspiration, read our manifest, the [Civilian's Complex](https://github.com/nfnth/nfnth/blob/master/doc/CC.md) (also, available to [purchase]())
 
-<p align="center"><img src="https://github.com/nfnth/res/raw/main/site/fox.png" width="240" height="240" /></p>
+<p align="center"><img style="padding-right:48;" src="https://github.com/nfnth/res/raw/main/site/fox.png" width="240" height="240" /></p>
 
 ### On Development
 
 We provide a light-weight, open-source stack to host our platform using [Linode]() and [GitHub]().
 
-To see upcoming feaures, go to the [PLANME.md](https://github.com/users/nfnth/projects/3) project page.
+For upcoming feaures, go to the [PLANME.md](https://github.com/users/nfnth/projects/3) project page.
 
-To get help, [start an issue](https://github.com/nfnth/nfnth/issues), or contact **matt@sebolt.us**.
+For help, [start an issue](https://github.com/nfnth/nfnth/issues), or contact **matt@sebolt.us**.
 
 #### Release Schedule
 
@@ -61,6 +62,10 @@ To get help, [start an issue](https://github.com/nfnth/nfnth/issues), or contact
 |[Markre](https://github.com/nfnth/nfnth/blob/master/doc/MATTDOWN.md)|JavaScript MarkDown renderer|[v1.0.1]()|
 |[Jaspre]()|JAvaScriptPythonstRipE objects|[latest]()|
 |[brOS](https://github.com/nfnth/nfnth/blob/master/doc/BROS.md)|Browser OS (on Arch Linux)|[latest]()|
+
+#### Jobs
+
+Only sponsor-enabled GitHub profiles will be considered. To apply, please send your profile information to **matt@sebolt.us**.
 
 #### Sponsors
 
