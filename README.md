@@ -1,7 +1,7 @@
 
 <p align="center"><img src="https://github.com/nfnth/res/raw/main/site/bird.png" width="280" height="320" /></p>
   
-## On [Dralun](https://dralun.com), the Land of Deed to Domain
+## On [Dralun](https://dralun.com), Land of Deed to Domain
 
 Nomad and Civilian deeds are domain non-specific and are used to extend UR.Land functionality,
 
@@ -11,9 +11,9 @@ Nomads, Create and post artifiacts
 - Tenants, control over content only
 - Owner, control over access and content
 
-Owner deeds (transferred) 
+To begin, [sign in]() (or [create an account]()), to recieve a user badge with **Nomad** status.
 
-**Dralun** features, include:
+Additional **Dralun** features, include:
 
 - access to the [deed regisrty](https://github.com/nfnth/nfnth/blob/master/doc/DEED.md), with options to,
   - [purchase]() as **Owner**, [claim]() as **Tenant**, or [proceed]() as **Civilian**
@@ -26,17 +26,11 @@ Owner deeds (transferred)
 - instruction for the **Jaspre** engine, to setup a custom domain,
   - Run the **brOS** build script, see [gist]()
 
-To begin, [sign in]() (or [create an account]()), to recieve a user badge with **Nomad** status.
+For upcoming feaures, go to the [PLANME.md](https://github.com/users/nfnth/projects/3) project page.
 
 ### On Deed
 
 **Dralun** is the concept of the *domain deed*, a differentiaion between control and content.
-
-For most cases this is a non-issue, take the example of domain https://twitter.com/nfnth. Upon transfer (of password), both control and content are transferred.
-
-Unfortunately with base domains, ie. https://tactician.us, it's not as simple. Upon transfer (of registrar password), only control is transferred. All content is subject to variation based on time and/or intent of either party involved...
-
-Thus, by definition then, *domain deed* becomes the representation of both the control and content, the said **source** of a digital property.
 
 This can be used to mean one of the following:
 
@@ -44,9 +38,17 @@ This can be used to mean one of the following:
 - access to digital property associated to domain (similar to copyright license)
 - (both) access to control and access to source
 
-Domain rights can vary, see the following table of deed types:
+For example, use domain https://twitter.com/nfnth, upon transfer (of password), both control and content are transferred.
 
-|**Deed**|Control?|Content?|Description|
+On the other hand, with base domains, ie. https://twitter.com, it's not as simple. Upon transfer (of registrar password), only control is transferred. 
+
+The difference with base domains is that all content is subject to the intent of both parties involved...
+
+Thus a need for *domain deed* to become the representation of both control and content, the said **source** of a digital property.
+
+Dralun uses user groupings to differentiate, see the following table of deed types:
+
+|**Dralun Deed**|Control?|Content?|Description|
 |-|-|-|-|
 |nomad|NA|NA|Free|
 |civilian|NA|NA|Vote|
@@ -58,9 +60,7 @@ Domains can be permenently transferred, or temporarily licensed, depending on th
 
 ### On Development
 
-Dralun is build on brOS, a light-weight, open-source stack, to host our platforms using [Linode]() and [GitHub]().
-
-For upcoming feaures, go to the [PLANME.md](https://github.com/users/nfnth/projects/3) project page.
+Dralun is built on brOS, a light-weight, open-source stack, to host our platforms using [Linode]() and [GitHub]().
 
 For help, [start an issue](https://github.com/nfnth/nfnth/issues), or contact **matt@sebolt.us**.
 
