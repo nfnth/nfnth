@@ -3,7 +3,7 @@
   
 ## [Dralun](https://dralun.com), the Land of Deed to Domain
 
-Open the [UR.Land](https://ur.land) map and visit a continent filled with amazing peoples and lands. 
+Open the [UR.Land](https://ur.land) map to visit a continent filled with amazing peoples and lands. 
 
 Some of **Dralun**'s features, include,
 
@@ -17,14 +17,14 @@ Some of **Dralun**'s features, include,
 - Setup a custom domain using the **Jaspre** engine:
   - Run the **brOS** build script, see [gist]()
 
-All domain rights are dependent on the deed, see the following list of deed types:
+All domain rights are dependent on the deed, see the following table of deed types:
 
-|**Deed**|**Domain Rights**|
-|-|-|
-|nomad|- basic editor<br/>- basic user|
-|civilian||
-|tenent||
-|owner||
+|**Deed**|**Domain Rights**|Cost|
+|-|-|-|
+|nomad|*basic* editor<br/>*basic* user|Free|
+|civilian||$7.99|
+|tenent|||
+|owner|||
 
 Deeds may be transferred at any time, see [deed transfers]().
 
@@ -39,8 +39,8 @@ And that's it! All nomads may wander our land as free.
 To achieve dominion, take the following steps:
 
 - Create the ultimate profile
-- Control territory, write a land treaty, and share strategy
-- View real-time stats with the [UStat.us](https://ustat.us) dashboard
+- Control territory, write a land treaty, share strategy
+- View real-time stats on the [UStat.us](https://ustat.us) dashboard
  
 For further inspiration, read our manifest, the [Civilian's Complex](https://github.com/nfnth/nfnth/blob/master/doc/CC.md) (also, available to [purchase]())
 
