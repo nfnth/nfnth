@@ -3,17 +3,9 @@
   
 ## On [Dralun](https://dralun.com), Land of Deed to Domain
 
-Nomad and Civilian deeds are domain non-specific and are used to extend UR.Land functionality,
+Dralun is a land build upon the people and the deeds etched in code.
 
-Nomads, Create and post artifiacts
-
-- Civilians, Run scenarios "Live" (and vote) withen any domain (Civilian only)
-- Tenants, control over content only
-- Owner, control over access and content
-
-To begin, [sign in]() (or [create an account]()), to recieve a user badge with **Nomad** status.
-
-Additional **Dralun** features, include:
+Key **Dralun** features, include:
 
 - access to the [deed regisrty](https://github.com/nfnth/nfnth/blob/master/doc/DEED.md), with options to,
   - [purchase]() as **Owner**, [claim]() as **Tenant**, or [proceed]() as **Civilian**
@@ -26,7 +18,19 @@ Additional **Dralun** features, include:
 - instruction for the **Jaspre** engine, to setup a custom domain,
   - Run the **brOS** build script, see [gist]()
 
-For upcoming feaures, go to the [PLANME.md](https://github.com/users/nfnth/projects/3) project page.
+For upcoming feaures, go to the [PLANME.md](https://github.com/users/nfnth/projects/3) project page
+
+#### Civilian Class
+
+Nomad and Civilian deeds are domain non-specific and are used to extend UR.Land functionality,
+
+Nomads, Create and post artifiacts
+
+- Civilians, Run scenarios "Live" (and vote) withen any domain (Civilian only)
+- Tenants, control over content only
+- Owner, control over access and content
+
+To begin, [sign in]() (or [create an account]()), to recieve a user badge with **Nomad** status.
 
 ### On Deed
 
