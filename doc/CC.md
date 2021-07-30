@@ -1,5 +1,8 @@
 ## a Civilian's Complex, an exercise in armchair centrism and use of the personal tactician
 
+<p align="center">
+  <img src="https://github.com/nfnth/res/raw/main/site/coat.png" width="360" height="440" /></p><br/>
+
 The tacit understanding of the needs and concerns of middle-class comfort.
 
 As the poet creates monsters at will, these demons must be vanquished. It is the need of self-propagation and infinitive-basis and a utopian watchmaker's workshop to build and destroy such things. 
