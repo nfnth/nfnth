@@ -38,6 +38,22 @@ Laws of Governance [order]: past/present/true/false (suit quadrant?)
 1. get home and sit on floor with back against wall, eat dinner, watch old shows with chess/cards, music/news, relax, read by a fire, work late with classical music, study with homework/reading/writing/drawing
 1. rest and wash up, drink water, medicine, then sleep (midnight snack of milk and apple), no Stress
 
+<div id="twitch-embed"></div>
+
+    <!-- Load the Twitch embed JavaScript file -->
+    <script src="https://embed.twitch.tv/embed/v1.js"></script>
+
+    <!-- Create a Twitch.Embed object that will render within the "twitch-embed" element -->
+    <script type="text/javascript">
+      new Twitch.Embed("twitch-embed", {
+        width: 854,
+        height: 480,
+        channel: "nfnth"
+        // Only needed if this page is going to be embedded on other websites
+        //parent: ["embed.example.com", "othersite.example.com"]
+      });
+    </script>
+
 ### Case example: Huff Parker (asleep)
 
 Suffering from the prisoner's dilemna, a person is alone and confused now fallen into a state of continual discomfort. For example, he wakes up in a cave of darkness. Damn, he mutters checking the time. He was running late and was already lost in the memories of last night's dream. The thoughts of work encroach upon his mind and for a moment he tells himself one more minute of rest until his phone awakens. Damn, he said again and so it was. Lying in a messy bedroom, unshowered/unshaved, only looking forward to his stash of drugs and a smoke with Mr. Pibbles and his clan of cats, now oblvious to the light outside.
