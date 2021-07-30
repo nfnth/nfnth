@@ -26,7 +26,13 @@ Additional **Dralun** features, include:
 - instruction for the **Jaspre** engine, to setup a custom domain,
   - Run the **brOS** build script, see [gist]()
 
-## Domain Deeds
+### Get Started
+
+To begin, [sign in]() (or [create an account]()), to recieve a user badge with **Nomad** status.
+
+And that's it! All nomads may wander our land as free.
+
+### Domain Deeds
 
 **Dralun** is the concept of the *domain deed*, a differentiaion between control and content.
 
@@ -53,12 +59,6 @@ Domain rights can vary, see the following table of deed types:
 |owner|transfer|Owner has control access and rights to source content. Owner deeds (Domain transfers) are permanent and require only the one-time fee.|
 
 Domains can be permenently transferred, or temporarily licensed, depending on the need.
-
-#### Get Started
-
-To begin, [sign in]() (or [create an account]()), to recieve a user badge with **Nomad** status.
-
-And that's it! All nomads may wander our land as free.
 
 ### Explore Further
 
