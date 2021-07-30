@@ -13,16 +13,14 @@ Nomads, Create and post artifiacts
 - Tenants, control over content only
 - Owner, control over access and content
 
-Features, include:
+Notable features, include:
 
 - access to the [deed regisrty](https://github.com/nfnth/nfnth/blob/master/doc/DEED.md), with options to,
   - [purchase]() as **Owner**, [claim]() as **Tenant**, or [proceed]() as **Civilian**
-  - view public records of all purchase, forfeiture, and transfer
-  - review historical context
+  - view public records (with historical context) of all purchases, forfeiture, and transfer
 - use of the **Markre** editor, see [nfnth.com](https://nfnth.com), with tools to,
   - Create *artifacts* (includes text, image, location)
-  - Create profile (in MarkDown 2.0) for user and domains
-  - Use MarkDown 2.0 constructs, such as treaty and strategy
+  - Create *profiles* (in MarkDown 2.0) for user and domains with MarkDown 2.0 constructs, such as treaty and strategy
 - instruction for the **Jaspre** engine, to setup a custom domain,
   - Run the **brOS** build script, see [gist]()
 
