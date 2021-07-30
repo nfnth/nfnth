@@ -13,34 +13,6 @@ Owner deeds (transferred)
 
 Use the [UR.Land](https://ur.land) map to visit a continent filled with amazing peoples and lands. 
 
-#### Domain Deeds
-
-**Dralun** is the concept of the *domain deed*, a differentiaion between control and content.
-
-For most cases this is a non-issue, take the example of domain https://twitter.com/nfnth. Upon transfer (of password), both control and content are transferred.
-
-Unfortunately with base domains, ie. https://tactician.us, it's not as simple. Upon transfer (of registrar password), only control is transferred. All content is subject to variation based on time and/or intent of either party involved...
-
-Thus, by definition then, *domain deed* becomes the representation of both the control and content, the said **source** of a digital property.
-
-This can be used to mean one of the following:
-
-- access to name records, subject to a formal registrar of ICAHNN (as typically used) (requires permanent transfer)
-- access to digital property associated to domain (similar to copyright license)
-- (both) access to control and access to source
-
-Domain rights can vary, see the following table of deed types:
-
-|**Deed**|**Domain Rights**|Cost|
-|-|-|-|
-|nomad|*basic* editor<br/>*basic* user|Free|
-|civilian|tenent|$7.99|
-|tenent|licensed|Tenent deeds (Domain licenses) must be renewed same as with domain registrations. |
-|controller|transfer|Controller has control access, source content is not guaranteed.|
-|owner|transfer|Owner has control access and rights to source content. Owner deeds (Domain transfers) are permanent and require only the one-time fee.|
-
-Domains can be permenently transferred, or temporarily licensed, depending on the need.
-
 ### Explore Further
 
 To begin, [sign in]() (or [create an account]()), to recieve a user badge with **Nomad** status.
@@ -69,6 +41,34 @@ For further inspiration, read our manifest, the [Civilian's Complex](https://git
 And that's it! All nomads may wander our land as free.
 
 <p align="center"><img style="padding-right:120px;position:relative;" src="https://github.com/nfnth/res/raw/main/site/fox.png" width="240" height="240" /></p>
+
+### Domain Deeds
+
+**Dralun** is the concept of the *domain deed*, a differentiaion between control and content.
+
+For most cases this is a non-issue, take the example of domain https://twitter.com/nfnth. Upon transfer (of password), both control and content are transferred.
+
+Unfortunately with base domains, ie. https://tactician.us, it's not as simple. Upon transfer (of registrar password), only control is transferred. All content is subject to variation based on time and/or intent of either party involved...
+
+Thus, by definition then, *domain deed* becomes the representation of both the control and content, the said **source** of a digital property.
+
+This can be used to mean one of the following:
+
+- access to name records, subject to a formal registrar of ICAHNN (as typically used) (requires permanent transfer)
+- access to digital property associated to domain (similar to copyright license)
+- (both) access to control and access to source
+
+Domain rights can vary, see the following table of deed types:
+
+|**Deed**|**Domain Rights**|Cost|
+|-|-|-|
+|nomad|*basic* editor<br/>*basic* user|Free|
+|civilian|tenent|$7.99|
+|tenent|licensed|Tenent deeds (Domain licenses) must be renewed same as with domain registrations. |
+|controller|transfer|Controller has control access, source content is not guaranteed.|
+|owner|transfer|Owner has control access and rights to source content. Owner deeds (Domain transfers) are permanent and require only the one-time fee.|
+
+Domains can be permenently transferred, or temporarily licensed, depending on the need.
 
 ### On Development
 
