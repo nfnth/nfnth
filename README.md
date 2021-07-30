@@ -16,7 +16,7 @@ Some **Dralun** features, include:
   - Create a profile (in MarkDown 2.0)
 - Setup your own domain using the **Jaspre** engine
 
-All domain rights are dependent on the deed, see the following list of deeds:
+All domain rights are dependent on the deed. The following is a list of deed types:
 
 |**Deed**|**Domain Rights**|
 |-|-|
@@ -24,6 +24,8 @@ All domain rights are dependent on the deed, see the following list of deeds:
 |civilian||
 |tenent||
 |owner||
+
+Deeds may be transferred at any time.
 
 #### Get Started
 
@@ -37,7 +39,7 @@ To achieve dominion, take the following steps:
 
 - Create the ultimate profile
 - Control territory, write a land treaty, and share strategy
-- View your stats *real-time* with the [UStat.us](https://ustat.us) dashboard
+- View real-time stats with the [UStat.us](https://ustat.us) dashboard
  
 For further inspiration, read our manifest, the [Civilian's Complex](https://github.com/nfnth/nfnth/blob/master/doc/CC.md) (also, available to [purchase]())
 
