@@ -24,8 +24,6 @@ Some notable features, include:
 - instruction for the **Jaspre** engine, to setup a custom domain,
   - Run the **brOS** build script, see [gist]()
 
-Included in every Owner (or Tenant) Deed is the **NfNth** survival bag.
-
 To begin, [sign in]() (or [create an account]()), to recieve a user badge with **Nomad** status.
 
 ### On Deed to Domain
@@ -52,7 +50,7 @@ Dralun uses user groupings to differentiate, and domains can be permenently tran
 
 |**Class** (*ability*)|*Control?*|*Content?*|Description|
 |-|-|-|-|
-|**Civilian** (*proceed*)|no|no|Vote|
+|**Civilian** (*vote*)|no|no|Vote|
 |**Tenent** (*claim*)|no|yes|Tenent deeds (Domain licenses) must be renewed same as with domain registrations. |
 |**Holder** (*hold*)|yes|no|Controller has control access, source content is not guaranteed.|
 |**Owner** (*own*)|yes|yes|Owner has control access and rights to source content.<br/>Owner deeds (Domain transfers) are permanent and require only the one-time fee.|
@@ -60,6 +58,31 @@ Dralun uses user groupings to differentiate, and domains can be permenently tran
 **Control** = Access to name records, ie. A, AAAA, CNAME, etc.
 
 **Content** = Access to source files, ie. profile, artifacts, etc.
+
+### On Demand
+
+**Dralun** is made on the proceeds from citizens.
+
+Included in every Owner (or Tenant) Deed is the **NfNth** survival bag.
+
+For further inspiration, read our manifest, the [Civilian's Complex](https://github.com/nfnth/nfnth/blob/master/doc/CC.md).
+
+Also, available for [purchase]() as Founder's Edition (or Standard Edition).
+
+#### Explore Further
+
+Use the [UR.Land](https://ur.land) map to visit a continent filled with amazing peoples and lands. 
+
+To achieve dominion, take the following steps:
+
+- Create the ultimate profile
+- Control territory, write a land treaty, share strategy
+- View real-time stats on the [UStat.us](https://ustat.us) dashboard
+
+And that's it! May a nomad wander until what is lost is found.
+
+<p align="center"><img style="padding-right:120px;position:relative;" src="https://github.com/nfnth/res/raw/main/site/fox.png" width="240" height="240" /></p>
+
 
 ### On Development
 
@@ -83,20 +106,4 @@ Only sponsor-enabled GitHub profiles will be considered. To apply, please send y
 
 All sponsors to be listed here...
 
-### Explore Further
-
-Use the [UR.Land](https://ur.land) map to visit a continent filled with amazing peoples and lands. 
-
-To achieve dominion, take the following steps:
-
-- Create the ultimate profile
-- Control territory, write a land treaty, share strategy
-- View real-time stats on the [UStat.us](https://ustat.us) dashboard
- 
-For further inspiration, read our manifest, the [Civilian's Complex](https://github.com/nfnth/nfnth/blob/master/doc/CC.md) (also, available to [purchase]())
-
-Also, available for [purchase]() as Founder's Edition (or Standard Edition).
-
-And that's it! May a nomad wander until what is lost is found.
-
-<p align="center"><img style="padding-right:120px;position:relative;" src="https://github.com/nfnth/res/raw/main/site/fox.png" width="240" height="240" /></p>
+image...
