@@ -87,8 +87,12 @@ function renderMd(text) {
    var listStartEnd = /(1\. ((?!\n\n\n).)*)/gis; var listEx = /1\. (((?!\n\n).)*)/gis; 
    text = text.replace(listStartEnd, '<ol>$1</ol>'); text = text.replace(listEx, '<li>$1</li>');
    var codeEx = /```\n([^`]+)```/gi; text = text.replace(codeEx, "<div class='coder'><code>$1</code></div>"); 
-   var tableStart = /(\|(?:(?!\n\n)[\s\S])*)/; //var tableRow = /\|(((?!\|\n)[\s\S])*)/gi; var tableCell = /(.*)(?:\|)(.*)/gi;
-   //text = text.replace(tableStart, '<table><tr><td>$1</td></tr></table>').replaceAll("|", "</td><td>").replaceAll("<td>\n</td>","</tr><tr>").replaceAll("<td>-</td>","").replaceAll("<td></td>",""); //text = text.replace(tableRow, '<tr>$1</tr>'); text = text.replace(tableCell, '<td>$1</td><td>$2</td>');
+   var tableStart = /(\|(?:(?!\n\n)[\s\S])*)/;
+   var tableRow = /\|(((?!\|\n)[\s\S])*)\|/gi; 
+   var tableCell = /\|([^\|\n]+)/gi;
+   text = text.replace(tableStart, '<table><tr><td>$1</td></tr></table>').replaceAll("|", "</td><td>").replaceAll("<td>\n</td>","</tr><tr>").replaceAll("<td>-</td>","").replaceAll("<td></td>","");
+   text = text.replace(tableRow, '<tr>$1</tr>'); 
+   text = text.replace(tableCell, '<td>$1</td><td>$2</td>');
    
    var figureEx = ""; // empty block "stragety", mermaid, shipping
    var lineEx = /\n\n/gi; text = text.replace(lineEx, '<br/>');
