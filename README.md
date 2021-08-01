@@ -86,7 +86,7 @@ And that's it! May a nomad wander until what is lost is found.
 
 ### On Development
 
-**Dralun** is built on brOS, a light-weight, open-source stack, to host our platforms using [Linode]() and [GitHub]().
+**Dralun** is built on brOS, a light-weight, open-source stack, to host our platforms using [Linode](https://cloud.linode.com/linodes) and [GitHub]().
 
 For upcoming feaures, go to the [PLANME.md](https://github.com/users/nfnth/projects/3) project page
 
