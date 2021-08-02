@@ -93,6 +93,15 @@ function renderMd(text) {
    text = text.replace(tableStart, '<table><tr><td>$1</td></tr></table>').replaceAll("|", "</td><td>").replaceAll("<td>\n</td>","</tr><tr>").replaceAll("<td>-</td>","").replaceAll("<td></td>","");
    text = text.replace(tableRow, '<tr>$1</tr>'); 
    text = text.replace(tableCell, '<td>$1</td><td>$2</td>');
+	
+	const string = "something format_abc";
+const regexp = /(?:^|\s)format_(.*?)(?:\s|$)/g;
+const matches = string.matchAll(regexp);
+    
+for (const match of matches) {
+  console.log(match);
+  console.log(match.index)
+}
    
    var figureEx = ""; // empty block "stragety", mermaid, shipping
    var lineEx = /\n\n/gi; text = text.replace(lineEx, '<br/>');
@@ -121,7 +130,6 @@ var monument = [-82.99869603364057, 35.64757499700629, ];
 var map = new mapboxgl.Map({container: 'map',style: 'mapbox://styles/mapbox/light-v10',center: monument,zoom: 15});
 var popup = new mapboxgl.Popup({ offset: 25 }).setText('Construction on the Washington Monument began in 1848.');
 var el = document.createElement('div'); el.id = 'marker';
- 
 new mapboxgl.Marker(el).setLngLat(monument).setPopup(popup).addTo(map);
 
 //var map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/mapbox/dark-v10', zoom: 4, center: [-86.99869603364057, 37.64757499700629, ] });
