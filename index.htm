@@ -389,14 +389,14 @@ const account = accounts[0]; alert(account);
 //  params: [transactionParameters],
 //});
 	
-	const fmPhantom = new Fortmatic.Phantom('YOUR_API_KEY'); 
+	const fmPhantom = new Fortmatic.Phantom('pk_live_68F42DEA74EDF831'); 
 	const handleLoginWithMagicLink = async () => {
     const email = document.getElementById('user-email').value;
     const user = await fmPhantom.loginWithMagicLink({ email });
     console.log(await user.isLoggedIn()); // => true
     console.log((await user.getMetadata()).publicAddress); // You should use this as a unique user Id.
 };
-	//const fmPhantom = new Fortmatic.Phantom('YOUR_API_KEY'); // ✨
+	//const fmPhantom = new Fortmatic.Phantom('pk_live_68F42DEA74EDF831'); // ✨
 
 //web3 = new Web3(fmPhantom.getProvider()); // Instantiate web3 object
 
