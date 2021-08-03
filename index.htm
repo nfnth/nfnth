@@ -14,6 +14,8 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	
+<script src="https://cdn.jsdelivr.net/npm/fortmatic/dist/fortmatic.js"></script>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
@@ -94,6 +96,8 @@
 	<div class="modal-content">
 		<div id="intro" class="row-section"><div id="console" class="row">   
 			<button id="button-next" class="btn waves-effect waves-light" onclick="signer();">Sign In<i class="material-icons left">login</i></button>
+			<input type="text" id="user-email" placeholder="Enter your email!" />
+<button onclick="handleLoginWithMagicLink()">
 			<!--<div class="hover-base col s12 m12" id="new-name" style="display: flex; justify-content: center;"><div class="input-field">
 		<i class="material-icons prefix">account_circle</i><input id="user-name" name="user-name" type="text" class="user-input" max="24" tabindex="1" oninput="userLookup(this);" ><label for="user-name">Email</label><span id="user-issue" class="helper-text" data-error="Invalid input" data-success="" >Enter username</span></div></div>--></div></div></div>
 
@@ -374,4 +378,12 @@ function setEditor(doc) {
 			const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
 const account = accounts[0]; alert(account);
 		}
+	
+	const fmPhantom = new Fortmatic.Phantom('YOUR_API_KEY'); 
+	const handleLoginWithMagicLink = async () => {
+    const email = document.getElementById('user-email').value;
+    const user = await fmPhantom.loginWithMagicLink({ email });
+    console.log(await user.isLoggedIn()); // => true
+    console.log((await user.getMetadata()).publicAddress); // You should use this as a unique user Id.
+};
 </script>
