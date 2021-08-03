@@ -47,7 +47,7 @@
       		<div><a class="modal-trigger" href="#user-modal" onclick="$('#user-setting').sidenav('close');" style="margin: 0;padding: 18;justify-items: center;display: flex;align-items: center;"><i class="material-icons">account_box</i></a> </div>
 		<div><a id="slider2" href="#" data-target="user-setting" class="sidenav-trigger" style="margin: 0;padding: 18;justify-items: center;display: flex;align-items: center;"><i class="material-icons">settings</i></a></div></div></nav>
 
-<!-- domains --
+<!-- domains -->
 <ul id="domain" class="dropdown-content loader" style="visibility:hidden;">
 	<li><a onclick="mode=5; setEditor('');"><i class="material-icons">map</i>Explore Map</a></li>
   	<li><a onclick="mode=3; setEditor('');"><i class="material-icons">view_list</i>View Listings</a></li>
@@ -278,9 +278,9 @@ async function initial() {
   $('select').formSelect(); 
   $('#marks').dropdown({ constrainWidth: false } ); 
 	$('#domains').dropdown({ constrainWidth: false } );
-	//$('#domains-hide').dropdown({ constrainWidth: false } ); 
-	//$('#actions').dropdown({ constrainWidth: false } );
-	//$('#domains2').dropdown({ constrainWidth: false } ); 
+	$('#domains-hide').dropdown({ constrainWidth: false } ); 
+	$('#actions').dropdown({ constrainWidth: false } );
+	$('#domains2').dropdown({ constrainWidth: false } ); 
   $('.modal').modal(); $('#user-pane').sidenav(); $('#user-setting').sidenav({ edge: 'right' } );
   $('.collapsible').collapsible(); 
 mode=0; setEditor('../doc/CC.md');
