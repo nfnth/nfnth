@@ -255,6 +255,11 @@ code { color: gray;line-height: 1;}
  bottom: 0; width: 100%; }
 #marker { background-image: url('https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color2.png'); background-size: cover; width: 24px; height: 24px; border-radius: 50%; cursor: pointer; }
 .mapboxgl-popup { max-width: 200px; }
+	.mapboxgl-canvas-container {
+
+    height: 100vh;
+
+}
 </style>
 
 <script>
@@ -424,10 +429,10 @@ new mapboxgl.Marker(el).setLngLat(monument).setPopup(popup).addTo(map);
 	map.on('load', function () {
     
 });
-map.on('load', function () { map.loadImage('https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color1.png',
+map.on('load', function (event) { map.loadImage('https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color1.png',
 function (error, image) {if (error) throw error; map.addImage('cat', image);
 map.addSource('point', {'type': 'geojson','data': {'type': 'FeatureCollection','features': [{'type': 'Feature','geometry': {'type': 'Point','coordinates': [-77.4144, 25.0759]}}]}});
 map.addLayer({'id': 'points','type': 'symbol','source': 'point', 'layout': {'icon-image': 'cat', 'icon-size': 0.25}}); });
-			   map.resize();
+			   event.map.resize();
 			   });
 </script>
