@@ -19,12 +19,9 @@ context.drawImage(video, 0, 0, 640, 480);}
   
 function changeDialog(dialog) { $('#'+dialog).removeClass('hidden'); $('#console').addClass('hidden'); }
 
-
-
 document.addEventListener('DOMContentLoaded', function() { var elems = document.querySelectorAll('.modal'); var instances = M.Modal.init(elems); });
 window.onresize = function(event) { setEditor(); }
 
-	
 var current = new Date(); // timestamp, milliseconds since 1970 (?) vs. milliseconds (UTC)
  var yyyy = current.getFullYear(), MM = current.getMonth(), dd = current.getDate(), hh = current.getHours(), mm = current.getMinutes(), ss = current.getSeconds();
  var datestamp = yyyy + "." + MM + "." + dd;
@@ -125,15 +122,4 @@ for (const match of matches) {
  
    var flag = ["tribe", "monument", "town", "forest", "international"]; //pair? series 1?
 
-mapboxgl.accessToken = 'pk.eyJ1IjoibmZudGgiLCJhIjoiY2tweW1rNXlsMGFpYzJwcGt1cHh6dmxzcyJ9.ZJaFrGpPDv5froWZMLXXYQ';
-var monument = [-82.99869603364057, 35.64757499700629, ];
-var map = new mapboxgl.Map({container: 'map',style: 'mapbox://styles/mapbox/light-v10',center: monument,zoom: 15});
-var popup = new mapboxgl.Popup({ offset: 25 }).setText('Construction on the Washington Monument began in 1848.');
-var el = document.createElement('div'); el.id = 'marker';
-new mapboxgl.Marker(el).setLngLat(monument).setPopup(popup).addTo(map);
 
-//var map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/mapbox/dark-v10', zoom: 4, center: [-86.99869603364057, 37.64757499700629, ] });
-map.on('load', function () { map.loadImage('https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color1.png',
-function (error, image) {if (error) throw error; map.addImage('cat', image);
-map.addSource('point', {'type': 'geojson','data': {'type': 'FeatureCollection','features': [{'type': 'Feature','geometry': {'type': 'Point','coordinates': [-77.4144, 25.0759]}}]}});
-map.addLayer({'id': 'points','type': 'symbol','source': 'point', 'layout': {'icon-image': 'cat', 'icon-size': 0.25}}); });});
