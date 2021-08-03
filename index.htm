@@ -426,13 +426,10 @@ var el = document.createElement('div'); el.id = 'marker';
 new mapboxgl.Marker(el).setLngLat(monument).setPopup(popup).addTo(map);
 
 //var map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/mapbox/dark-v10', zoom: 4, center: [-86.99869603364057, 37.64757499700629, ] });
-	map.on('load', function () {
-    
-});
 map.on('load', function (event) { map.loadImage('https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color1.png',
 function (error, image) {if (error) throw error; map.addImage('cat', image);
 map.addSource('point', {'type': 'geojson','data': {'type': 'FeatureCollection','features': [{'type': 'Feature','geometry': {'type': 'Point','coordinates': [-77.4144, 25.0759]}}]}});
 map.addLayer({'id': 'points','type': 'symbol','source': 'point', 'layout': {'icon-image': 'cat', 'icon-size': 0.25}}); });
-			   event.map.resize();
+			   map.resize();
 			   });
 </script>
