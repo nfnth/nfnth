@@ -1,7 +1,6 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-	<meta name="fortmatic-site-verification" content="XHvcktou4P9Jyc0J" /><title>Dralun · Deed to Domain</title>
+<meta name="fortmatic-site-verification" content="XHvcktou4P9Jyc0J" /><title>UR.Land · Deed to Domain</title>
 
 <!-- resources -->
 <link class="ico" rel="icon" href="https://cdn.jsdelivr.net/gh/nfnth/res@latest/icon/urland/favicon.ico" type="image/x-icon">
@@ -9,16 +8,12 @@
 <link class="ico" rel="apple-touch-icon" sizes="128x128" href="https://cdn.jsdelivr.net/gh/nfnth/res@latest/icon/urland/apple-touch-icon.png">
 <link class="ico" rel="icon" sizes="192x192" href="https://cdn.jsdelivr.net/gh/nfnth/res@latest/icon/urland/android-chrome-192x192.png">
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>	
+<script src="https://cdn.jsdelivr.net/npm/fortmatic/dist/fortmatic.js"></script>
 <link href="https://api.mapbox.com/mapbox-gl-js/v2.3.0/mapbox-gl.css" rel="stylesheet">
 <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.0/mapbox-gl.js"></script>
-<script src="https://js.stripe.com/v3/"></script>
 <script src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=fetch"></script>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	
-<script src="https://cdn.jsdelivr.net/npm/fortmatic/dist/fortmatic.js"></script>
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
@@ -49,14 +44,14 @@
           				<label class="label-icon" for="search" ></label>
           				<i class="material-icons" onclick="searchClear()">close</i></div></a></li></ul>
 	
-      		<div><a id="slider2" href="#" data-target="user-setting" class="sidenav-trigger" style="margin: 0;padding: 18;justify-items: center;display: flex;align-items: center;"><i class="material-icons">account_box</i></a></div></div></nav>
+      		<div><a class="modal-trigger" href="#user-modal" onclick="$('#user-setting').sidenav('close');" style="margin: 0;padding: 18;justify-items: center;display: flex;align-items: center;"><i class="material-icons">account_box</i></a> </div>
+		<div><a id="slider2" href="#" data-target="user-setting" class="sidenav-trigger" style="margin: 0;padding: 18;justify-items: center;display: flex;align-items: center;"><i class="material-icons">settings</i></a></div></div></nav>
 
-<!-- domains -->
+<!-- domains --
 <ul id="domain" class="dropdown-content loader" style="visibility:hidden;">
-  	<li><a onclick="mode=3; setEditor('');"><i class="material-icons">view_list</i>See Listings</a></li>
-  	<li><a onclick="mode=5; setEditor('');"><i class="material-icons">map</i>Explore Map</a></li>
-  	<li><a onclick="mode=4; setEditor('');"><i class="material-icons">equalizer</i>View Stats</a></li>
-	<li><a onclick="mode=4; setEditor('');"><i class="material-icons">military_tech</i>Shop NFTs</a></li></ul>
+	<li><a onclick="mode=5; setEditor('');"><i class="material-icons">map</i>Explore Map</a></li>
+  	<li><a onclick="mode=3; setEditor('');"><i class="material-icons">view_list</i>View Listings</a></li>
+  	<li><a onclick="mode=4; setEditor('');"><i class="material-icons">equalizer</i>Show Stats</a></li></ul>
 
 <!-- panel (system) -->
 <ul id="user-pane" class="sidenav loader" style="visibility:hidden;">
@@ -65,9 +60,9 @@
     		<span style="font-size: 20;font-weight: bold; color: #000000;">UR.Land</span>
     		<span style="margin-left:4;font-size: 16;font-weight: bold; color: #494646; ">· Deed to Domain</span></a></li>
   	<li style="height:24;"><a class="subheader"></a></li>
-  	<li><a class="waves-effect" onclick="mode=0; setEditor('../README.md'); $('#user-pane').sidenav('close');"><i class="material-icons">menu_book</i>Get Started with Land Domains</a></li>
-	<li><a class="waves-effect" onclick="mode=0; setEditor('../doc/CC.md'); $('#user-pane').sidenav('close');"><i class="material-icons">book</i>Read the Civilian's Complex</a></li>
-	<li><a class="waves-effect" onclick="outside('simple test'); $('#user-pane').sidenav('close');"><i class="material-icons">book</i>How to Use MarkDown 2.0</a></li>
+  	<li><a class="waves-effect" onclick="mode=0; setEditor('../README.md'); $('#user-pane').sidenav('close');"><i class="material-icons">menu_book</i>Get Started with UR.Land</a></li>
+	<li><a class="waves-effect" onclick="mode=0; setEditor('../doc/CC.md'); $('#user-pane').sidenav('close');"><i class="material-icons">book</i>Read Civilian's Complex</a></li>
+	<li><a class="waves-effect" onclick="outside('simple test'); $('#user-pane').sidenav('close');"><i class="material-icons">edit</i>Use MarkDown 2.0</a></li>
   	<li><a class="waves-effect" onclick="openInNewTab('https://github.com/nfnth'); $('#user-pane').sidenav('close');"><i class="material-icons">help</i>About Dralun</a></li>
   	<li><div style="margin-top:0;" class="divider"></div></li>
   	<li><a class="subheader"></a></li>
@@ -78,7 +73,7 @@
         		<div style="display: flex;align-items: center;justify-content: center;">
           			<span id="title" style="font-weight: bold; font-size: 25px;">NfNth</span>
           			<i class="material-icons" >copyright</i>2021</div></div>
-        		<div><span style="cursor: pointer;" onclick="mode=0; setEditor('../doc/BROS.md'); $('#user-pane').sidenav('close');" class="new badge green darken-2" data-badge-caption="bitOS, version 1.02"></span></div>
+        		<div><span style="cursor: pointer;" onclick="mode=0; setEditor('../doc/BROS.md'); $('#user-pane').sidenav('close');" class="new badge green darken-2" data-badge-caption="brOS, version 1.02"></span></div>
       			<div id="header-title"><span id="phrase" style="font-style: italic;">software on infinitive basis</span></div></div></li></ul>
 
 <!-- panel (user) -->
@@ -88,9 +83,22 @@
   	<li style="text-align: center;"><a class="subheader">
     		<span style="font-size: 20;font-weight: bold; color: #000000;">User Profile</span></a></li>
   	<li style="height:24;"><a class="subheader"></a></li>
-	<li><a class="modal-trigger" href="#user-modal" onclick="$('#user-setting').sidenav('close');"><i class="material-icons">person</i>Create User</a></li>
-	<li><a class="waves-effect" onclick="mode=1; setEditor('../doc/MATTDOWN.md'); $('#user-pane').sidenav('close');"><i class="material-icons">login</i>Sign In</a></li>
-	<li><a class="waves-effect" onclick="mode=1; setEditor('../doc/MATTDOWN.md'); $('#user-pane').sidenav('close');"><i class="material-icons">mail</i>Reset Account</a></li>
+	     	<li>
+      		<select multiple>
+        		<option value="" disabled selected>Select By...</option>
+	      		<option value="1" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color5.png"><a>Land</a></option>
+        		<option value="2" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color1.png">Machine</option>
+        		<option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color2.png">Monument</option>
+        		<option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color3.png">Person</option>
+        		<option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color4.png">Stock</option>
+			<option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color4.png">Tribe</option></select></li>
+  	<li>
+      		<select>
+        		<option value="" disabled selected>Sort By...</option>
+        		<option value="1" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color6.png">Name (Ascending)</option>
+	      		<option value="1" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color6.png">Name (Descending)</option>
+	      		<option value="2">Category</option></select></li>
+    	<a class="waves-effect waves-light btn">Reset</a>
 	<li><div style="margin-top:0;" class="divider"></div></li></ul>
 
 <!-- dialog -->
@@ -129,11 +137,7 @@
 <!-- stats/grid/map -->
 <div id="stats" class="content loader">
 <div class="row">
-	<div class="col s12"><ul class="tabs">
-        	<li class="tab col s3"><a href="#test1"><i class="material-icons">terrain</i>Land</a></li>
-        	<li class="tab col s3"><a class="active" href="#test2">Test 2</a></li>
-        	<li class="tab col s3 disabled"><a href="#test3">Disabled Tab</a></li>
-        	<li class="tab col s3"><a href="#test4">Test 4</a></li></ul></div>
+
 	
     	<div id="test1" class="col s12"><ul class="collapsible popout" style="padding-top: 112;">
     		<li>
@@ -152,22 +156,7 @@
 
 <div id="toolset" class="z-depth-1 content loader" style="display:flex;align-items: center;justify-content: center;padding: 12; margin-bottom: 4; width:100%;position: fixed;background-color: white; z-index:4; ">
 	<p><label><input type="checkbox" class="filled-in" checked="checked" /><span>Unclaimed Territory</span></label></p>
-     	<div>
-      		<select multiple>
-        		<option value="" disabled selected>Select By...</option>
-	      		<option value="1" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color5.png"><a>Land</a></option>
-        		<option value="2" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color1.png">Machine</option>
-        		<option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color2.png">Monument</option>
-        		<option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color3.png">Person</option>
-        		<option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color4.png">Stock</option>
-			<option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color4.png">Tribe</option></select></div>
-  	<div>
-      		<select>
-        		<option value="" disabled selected>Sort By...</option>
-        		<option value="1" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color6.png">Name (Ascending)</option>
-	      		<option value="1" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color6.png">Name (Descending)</option>
-	      		<option value="2">Category</option></select></div>
-    	<a class="waves-effect waves-light btn">Reset</a>
+
 	<a href="#test1"><i class="material-icons">terrain</i>Share</a><a href="#test1"><i class="material-icons">terrain</i>Embed</a></div>
 
 <div id="grid" class="content loader" style="overflow-y: auto; height: 95%;">
