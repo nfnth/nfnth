@@ -338,7 +338,7 @@ function setEditor(doc) {
  
    switch(mode) {
    case 0:
-     $("#holder").show(); $("#viewer").show(); $("#viewer").css("width", "100%"); $("#viewer").css("height", "100%");
+     $("#holder").show(); $("#viewer").show(); //$("#viewer").css("width", "100%"); $("#viewer").css("height", "100%");
      $.get(doc, function (data) { $("#viewer").html(renderMd(data));}); break;
    case 1:
      $("#holder").show(); $("#tools").show(); $("#code").show();
