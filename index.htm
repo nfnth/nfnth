@@ -415,7 +415,7 @@ const account = accounts[0]; alert(account);
 	
 	mapboxgl.accessToken = 'pk.eyJ1IjoibmZudGgiLCJhIjoiY2tweW1rNXlsMGFpYzJwcGt1cHh6dmxzcyJ9.ZJaFrGpPDv5froWZMLXXYQ';
 var monument = [-98.5558020753026, 39.80981352007335, ];[-82.99869603364057, 35.64757499700629, ];
-var map = new mapboxgl.Map({container: 'map',style: 'mapbox://styles/mapbox/light-v10',center: monument,zoom: 8});
+var map = new mapboxgl.Map({container: 'map',center: monument,zoom: 6}); //style: 'mapbox://styles/mapbox/light-v10',
 var popup = new mapboxgl.Popup({ offset: 25 }).setText('Construction on the Washington Monument began in 1848.');
 var el = document.createElement('div'); el.id = 'marker';
 new mapboxgl.Marker(el).setLngLat(monument).setPopup(popup).addTo(map);
