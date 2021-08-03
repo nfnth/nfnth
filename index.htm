@@ -1,6 +1,7 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="fortmatic-site-verification" content="YdT3izYAUp2PpYlp" /><title>Dralun · Deed to Domain</title>
+
+	<meta name="fortmatic-site-verification" content="XHvcktou4P9Jyc0J" /><title>Dralun · Deed to Domain</title>
 
 <!-- resources -->
 <link class="ico" rel="icon" href="https://cdn.jsdelivr.net/gh/nfnth/res@latest/icon/urland/favicon.ico" type="image/x-icon">
@@ -380,6 +381,25 @@ function setEditor(doc) {
 const account = accounts[0]; alert(account);
 		}
 	
+//	const transactionParameters = {
+  //nonce: '0x00', // ignored by MetaMask
+  //gasPrice: '0x09184e72a000', // customizable by user during MetaMask confirmation.
+  //gas: '0x2710', // customizable by user during MetaMask confirmation.
+  //to: '0x0000000000000000000000000000000000000000', // Required except during contract publications.
+  //from: ethereum.selectedAddress, // must match user's active address.
+  //value: '0x00', // Only required to send ether to the recipient from the initiating external account.
+  //data:
+  //  '0x7f7465737432000000000000000000000000000000000000000000000000000000600057', // Optional, but used for defining smart contract creation and interaction.
+ // chainId: '0x3', // Used to prevent transaction reuse across blockchains. Auto-filled by MetaMask.
+//};
+
+// txHash is a hex string
+// As with any RPC call, it may throw an error
+//const txHash = await ethereum.request({
+//  method: 'eth_sendTransaction',
+//  params: [transactionParameters],
+//});
+	
 	const fmPhantom = new Fortmatic.Phantom('YOUR_API_KEY'); 
 	const handleLoginWithMagicLink = async () => {
     const email = document.getElementById('user-email').value;
@@ -387,4 +407,15 @@ const account = accounts[0]; alert(account);
     console.log(await user.isLoggedIn()); // => true
     console.log((await user.getMetadata()).publicAddress); // You should use this as a unique user Id.
 };
+	//const fmPhantom = new Fortmatic.Phantom('YOUR_API_KEY'); // ✨
+
+//web3 = new Web3(fmPhantom.getProvider()); // Instantiate web3 object
+
+// Send a transaction using web3
+//web3.eth.sendTransaction({
+ // from: web3.eth.accounts[0],
+ // to: '0x22b05D73097c0a2440D29aF61db4b4eD3803e55E',
+ // value: web3.utils.toWei('1', 'ether')
+//})
+	
 </script>
