@@ -73,7 +73,7 @@
         		<div style="display: flex;align-items: center;justify-content: center;">
           			<span id="title" style="font-weight: bold; font-size: 25px;">NfNth</span>
           			<i class="material-icons" >copyright</i>2021</div></div>
-        		<div><span style="cursor: pointer;" onclick="mode=0; setEditor('../doc/BROS.md'); $('#user-pane').sidenav('close');" class="new badge green darken-2" data-badge-caption="use brOS, v1.02"></span></div>
+        		<div><span style="cursor: pointer;" onclick="mode=0; setEditor('../doc/BROS.md'); $('#user-pane').sidenav('close');" class="new badge green darken-2" data-badge-caption="brOS, v1.02"></span></div>
       			<div id="header-title"><span id="phrase" style="font-style: italic;">software on infinitive basis</span></div></div></li></ul>
 
 <!-- panel (user) -->
@@ -104,14 +104,13 @@
 <!-- dialog -->
 <div id="user-modal" class="modal content loader">
 	<div class="modal-content">
-		<div id="intro" class="row-section"><div id="console" class="row" onclick="signer();">   
-			<img width="64" height="28" src="https://github.com/nfnth/res/raw/main/icon/metamask-logo-horizontal.svg" />
-			<button id="button-next" class="btn waves-effect waves-light" onclick="signer();">Sign In<i class="material-icons left">login</i></button>
-			<input type="text" id="user-email" placeholder="Enter your email!" />
-			<!--<div class="hover-base col s12 m12" id="new-name" style="display: flex; justify-content: center;"><div class="input-field">
-		<i class="material-icons prefix">account_circle</i><input id="user-name" name="user-name" type="text" class="user-input" max="24" tabindex="1" oninput="userLookup(this);" ><label for="user-name">Email</label><span id="user-issue" class="helper-text" data-error="Invalid input" data-success="" >Enter username</span></div></div>--></div>
+		<div id="intro" class="row-section">
+			<div id="console" class="row hover-base" onclick="signer();">   
+				<img width="240" height="120" src="https://github.com/nfnth/res/raw/main/icon/metamask-logo-horizontal.svg" /></div>
 			
-			<div class="row" onclick="handleLoginWithMagicLink()"><img  width="64" height="28"  src="https://github.com/nfnth/res/raw/main/icon/logo.e302dbb6.svg" /></div></div>
+			<div class="row hover-base" onclick="handleLoginWithMagicLink()">
+				<div class="input-field"><i class="material-icons prefix">mail</i><input type="text" id="user-email" name="user-email" class="user-input" placeholder="Enter email" /><label for="user-email">Email</label><span id="user-issue" class="helper-text" data-error="Invalid input" data-success="" >Enter Email</span>
+				<img  width="240" height="120"  src="https://github.com/nfnth/res/raw/main/icon/logo.e302dbb6.svg" /></div></div>
 
 	<div class="modal-footer">
 	      <button id="button-next" class="btn waves-effect waves-light" onclick="signer();">Sign In<i class="material-icons left">login</i></button><a href="#!" class="modal-close waves-effect waves-gray btn-flat disabled">Cancel</a></div></div>
