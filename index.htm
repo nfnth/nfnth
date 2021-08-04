@@ -44,14 +44,14 @@
           				<label class="label-icon" for="search" ></label>
           				<i class="material-icons" onclick="searchClear()">close</i></div></a></li></ul>
 	
-      		<div><a class="modal-trigger" href="#user-modal" onclick="$('#user-setting').sidenav('close');" style="margin: 0;padding: 18;justify-items: center;display: flex;align-items: center;"><i class="material-icons">account_box</i></a> </div>
-		<div><a id="slider2" href="#" data-target="user-setting" class="sidenav-trigger" style="margin: 0;padding: 18;justify-items: center;display: flex;align-items: center;"><i class="material-icons">settings</i></a></div></div></nav>
+      		<div><a class="modal-trigger" href="#user-modal" onclick="$('#user-setting').sidenav('close');" style="justify-items: center;display: flex;align-items: center;"><i class="material-icons">account_box</i></a>
+			<a id="slider2" href="#" data-target="user-setting" class="sidenav-trigger" style="margin: 0;padding: 18;justify-items: center;display: flex;align-items: center;"><i class="material-icons">settings</i></a></div></div></nav>
 
 <!-- domains -->
 <ul id="domain" class="dropdown-content loader" style="visibility:hidden;">
 	<li><a onclick="mode=5; setEditor('');"><i class="material-icons">map</i>Explore Map</a></li>
   	<li><a onclick="mode=3; setEditor('');"><i class="material-icons">view_list</i>View Listings</a></li>
-  	<li><a onclick="mode=4; setEditor('');"><i class="material-icons">equalizer</i>Show Stats</a></li></ul>
+  	<li><a onclick="mode=4; setEditor('');"><i class="material-icons">equalizer</i>Show Historical</a></li></ul>
 
 <!-- panel (system) -->
 <ul id="user-pane" class="sidenav loader" style="visibility:hidden;">
@@ -105,6 +105,7 @@
 <div id="user-modal" class="modal content loader">
 	<div class="modal-content">
 		<div id="intro" class="row-section"><div id="console" class="row">   
+			<img src="https://github.com/nfnth/res/raw/main/icon/metamask-logo-horizontal.svg" />
 			<button id="button-next" class="btn waves-effect waves-light" onclick="signer();">Sign In<i class="material-icons left">login</i></button>
 			<input type="text" id="user-email" placeholder="Enter your email!" />
 <button onclick="handleLoginWithMagicLink()">
