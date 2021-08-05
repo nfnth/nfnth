@@ -321,7 +321,19 @@ function setEditor(doc) {
 
 		   break;
    case 5:
-    $("#map").show(); break;
+    $("#map").show(); 
+		   const settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://api.opensea.io/api/v1/asset/0x495f947276749Ce646f68AC8c248420045cb7b5e/62652367444291733483705976494538757758952482544655308357132039899726208827393/",
+  "method": "GET",
+  "headers": {}
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+		   break;
 	   case 7:
 		   $("#bros").show(); break;
    default:
