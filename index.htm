@@ -355,7 +355,7 @@ $.get("../manifest", function (data) { manifest = data.split(/\r?\n/);
 						       
 		var monument = [fields[5], fields[4]]; //-98.5558020753026, 39.80981352007335, ];
 						       
-		var popup = new mapboxgl.Popup({ offset: 25 }).setHtml('<h6>' + fields[1] + '</h6><a href="'+ fields[3] + '">More info...</a>');
+		var popup = new mapboxgl.Popup({ offset: 25 }).setHTML('<h6>' + fields[1] + '</h6><a href="'+ fields[3] + '">More info...</a>');
 		var el = document.createElement('div'); el.id = 'marker'; //class per icon type...
 		var map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/mapbox/light-v10', center: monument,zoom: 6});
 		new mapboxgl.Marker(el).setLngLat(monument).setPopup(popup).addTo(map); } });
