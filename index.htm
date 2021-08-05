@@ -16,7 +16,6 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.2.0/fabric.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script></head>
@@ -34,7 +33,7 @@
 		
     		<ul class="hide-on-med-and-down" >
       			<li><a id="domains" href="#!" data-target="domain">DOMAINS<i class="material-icons right">arrow_drop_down</i></a></li>
-			<li><a id="domains" href="#!" data-target="domain">ARTIFACTS<i class="material-icons right">arrow_drop_down</i></a></li>
+			<li><a id="artifacts" href="#!" data-target="domain">ARTIFACTS<i class="material-icons right">arrow_drop_down</i></a></li>
       			<li style="height:64px;">
         			<a style="height:inherit; padding-right:0;"><i onclick="$('#search').focus();" style="height:inherit; padding-right:4;" class="material-icons">search</i><span onclick="$('#search').focus();" class="badge blue">1865</span>
         			<div id="search-box" class="input-field" style="height:inherit;">
@@ -42,18 +41,18 @@
           				<label class="label-icon" for="search" ></label>
           				<i class="material-icons" onclick="searchClear()">close</i></div></a></li></ul>
 	
-      		<div style="display:flex;"><a class="modal-trigger" href="#user-modal" onclick="$('#user-setting').sidenav('close');" style="justify-items: center;display: flex;align-items: center;"><i class="material-icons">account_box</i></a></div></div></nav>
+      		<div style="display:flex;"><a class="modal-trigger" href="#user-modal" onclick="$('#user-setting').sidenav('close');" style="justify-items: center;display: flex;align-items: center; margin-right:48;"><i class="material-icons">account_box</i></a></div></div></nav>
 
 <!-- domains -->
 <ul id="domain" class="dropdown-content loader" style="visibility:hidden;">
-	<li><a onclick="mode=0; setEditor(mode);"><i class="material-icons">map</i>Explore Map</a></li>
-  	<li><a onclick="mode=1; setEditor(mode);"><i class="material-icons">view_list</i>View Listings (Land)</a></li>
-	<li><a onclick="mode=2; setEditor(mode);"><i class="material-icons">view_list</i>View Listings (Tribe)</a></li>
-  	<li><a onclick="mode=3; setEditor(mode);"><i class="material-icons">equalizer</i>Browse Things</a></li></ul>
+	<li><a onclick="mode=5; setEditor('land');"><i class="material-icons">map</i>Explore Map</a></li>
+  	<li><a onclick="mode=0; setEditor('land');"><i class="material-icons">view_list</i>View Listings (Land)</a></li>
+	<li><a onclick="mode=0; setEditor('tribe');"><i class="material-icons">view_list</i>View Listings (Tribe)</a></li>
+  	<li><a onclick="mode=0; setEditor('drhab');"><i class="material-icons">equalizer</i>Browse Things</a></li></ul>
 
 <ul id="artifact" class="dropdown-content loader" style="visibility:hidden;">
-	<li><a onclick="mode=4; setEditor(mode);"><i class="material-icons">map</i>View Collectibles</a></li>
-  	<li><a onclick="mode=5; setEditor(mode);"><i class="material-icons">view_list</i>View Artworks</a></li></ul>
+	<li><a onclick="mode=0; setEditor('civilplex');"><i class="material-icons">map</i>View Collectibles</a></li>
+  	<li><a onclick="mode=0; setEditor('nfnth');"><i class="material-icons">view_list</i>View Artworks</a></li></ul>
 
 <!-- panel (system) -->
 <ul id="user-pane" class="sidenav loader" style="visibility:hidden;">
@@ -65,7 +64,6 @@
   	<li><a class="waves-effect" onclick="mode=0; setEditor('../README.md'); $('#user-pane').sidenav('close');"><i class="material-icons">menu_book</i>Learn Deed Domains</a></li>
 	<li><a class="waves-effect" onclick="mode=0; setEditor('../README.md'); $('#user-pane').sidenav('close');"><i class="material-icons">menu_book</i>Learn Artifacts</a></li>
 	<li><a class="waves-effect" onclick="mode=0; setEditor('../doc/CC.md'); $('#user-pane').sidenav('close');"><i class="material-icons">book</i>Read Civilian's Complex</a></li>
-	<li><a class="waves-effect" onclick="outside('simple test'); $('#user-pane').sidenav('close');"><i class="material-icons">edit</i>Use MarkDown 2.0</a></li>
   	<li><a class="waves-effect" onclick="openInNewTab('https://github.com/nfnth'); $('#user-pane').sidenav('close');"><i class="material-icons">help</i>About Dralun</a></li>
   	<li><div style="margin-top:0;" class="divider"></div></li>
   	<li><a class="subheader"></a></li>
@@ -127,7 +125,19 @@
 <!-- map/store -->
 <div id="map" class="content loader"></div>
 	
-<div id="store" class="content loader">
+<div id="land" class="content loader">
+<iframe id='opensea' src='https://opensea.io/assets/urland?embed=true' width='100%' height='100%' frameborder='0' allowfullscreen></iframe></div>
+	
+<div id="tribe" class="content loader">
+<iframe id='opensea' src='https://opensea.io/assets/dralun?embed=true' width='100%' height='100%' frameborder='0' allowfullscreen></iframe></div>
+	
+<div id="drhab" class="content loader">
+<iframe id='opensea' src='https://opensea.io/assets/drhab?embed=true' width='100%' height='100%' frameborder='0' allowfullscreen></iframe></div>
+
+<div id="civilplex" class="content loader">
+<iframe id='opensea' src='https://opensea.io/assets/civilplex?embed=true' width='100%' height='100%' frameborder='0' allowfullscreen></iframe></div>
+	
+<div id="nfnth" class="content loader">
 <iframe id='opensea' src='https://opensea.io/assets/nfnth?embed=true' width='100%' height='100%' frameborder='0' allowfullscreen></iframe></div>
 
 <div id="grid" class="content loader" style="overflow-y: auto; height: 95%;">
@@ -293,21 +303,11 @@ var mode = 0; //0(view), 1(edit), 2(preview), 3(list), 4(map), 5(stat), 7(mail),
 function setEditor(doc) {
    var width = window.innerWidth; var height = window.innerHeight - 44; //menu, footer
    $("#holder").hide(); $("#viewer").hide(); $("#code").hide(); $("#grid").hide(); $("#map").hide(); $("#stats").hide();
-   $("#tools").hide(); $("#toolset").hide(); 
+   $("#land").hide(); $("#tribe").hide(); $("#drhab").hide(); $("#civilplex").hide(); $("#nfnth").hide(); 
  
+	
+	
    switch(mode) {
-   case 0:
-     $("#holder").show(); $("#viewer").show(); //$("#viewer").css("width", "100%"); $("#viewer").css("height", "100%");
-     ('#opensea').attr('src', 'https://opensea.io/assets/urland?embed=true'); break;
-   case 1:
-     $("#holder").show(); $("#tools").show(); $("#code").show();
-     ('#opensea').attr('src', 'https://opensea.io/assets/dralun?embed=true');
-	     break;
-   case 2:
-     $("#holder").show(); $("#tools").show(); $("#viewer").css("width", width/2); $("#viewer").css("height", height);
-    ('#opensea').attr('src', 'https://opensea.io/assets/drhab?embed=true'); break;
-   case 3:
-    $("#toolset").show();$("#grid").show(); break;
    case 4:
 		   $("#stats").show();
 		   //var fields = manifest[0].split('|');
@@ -324,7 +324,8 @@ function setEditor(doc) {
     $("#map").show(); break;
 	   case 7:
 		   $("#bros").show(); break;
-   default:}}
+   default:
+   $('#'+doc).show(); }}
 	
 	if (typeof window.ethereum !== 'undefined') {
   console.log('MetaMask is installed!'); }
