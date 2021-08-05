@@ -1,6 +1,6 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="fortmatic-site-verification" content="XHvcktou4P9Jyc0J" /><title>UR.Land · Deed to Domain</title>
+<meta name="fortmatic-site-verification" content="XHvcktou4P9Jyc0J" /><title>Nfnth · Deed to Domain</title>
 
 <!-- resources -->
 <link class="ico" rel="icon" href="https://cdn.jsdelivr.net/gh/nfnth/res@latest/icon/urland/favicon.ico" type="image/x-icon">
@@ -29,12 +29,13 @@
     
     		<a id="domains-hide" class="screen-hide" href="#!" data-target="domain"><i class="material-icons right">view_list</i></a>
 		<a id="artifacts-hide" class="screen-hide" href="#!" data-target="domain"><i class="material-icons right">view_list</i></a>
+		<a class="screen-hide" onclick="setEditor('map');"><i class="material-icons right">map</i></a>
     		<a class="screen-hide" onclick="searchSwitch();"><i class="material-icons right">search</i></a>
 		
     		<ul class="hide-on-med-and-down" >
-			<li><a onclick="mode=5; setEditor('land');">MAP</a></li>
       			<li><a id="domains" href="#!" data-target="domain">DOMAINS<i class="material-icons right">arrow_drop_down</i></a></li>
 			<li><a id="artifacts" href="#!" data-target="artifact">ARTIFACTS<i class="material-icons right">arrow_drop_down</i></a></li>
+			<li><a onclick="setEditor('map');">MAP</a></li>
       			<li style="height:64px;">
         			<a style="height:inherit; padding-right:0;"><i onclick="$('#search').focus();" style="height:inherit; padding-right:4;" class="material-icons">search</i><span onclick="$('#search').focus();" class="badge blue">1865</span>
         			<div id="search-box" class="input-field" style="height:inherit;">
@@ -44,21 +45,21 @@
 	
       		<div style="display:flex;"><a class="modal-trigger" href="#user-modal" onclick="$('#user-setting').sidenav('close');" style="justify-items: center;display: flex;align-items: center; margin-right:48;"><i class="material-icons">account_box</i></a></div></div></nav>
 
-<!-- domains -->
+<!-- drop downs -->
 <ul id="domain" class="dropdown-content loader" style="visibility:hidden;">
-  	<li><a onclick="mode=0; setEditor('land');"><i class="material-icons">view_list</i>View Listings (Land)</a></li>
-	<li><a onclick="mode=0; setEditor('tribe');"><i class="material-icons">view_list</i>View Listings (Tribe)</a></li>
-  	<li><a onclick="mode=0; setEditor('drhab');"><i class="material-icons">equalizer</i>Browse Things</a></li></ul>
+  	<li><a onclick="mode=0; setEditor('land');"><i class="material-icons">landscape</i>Land Deeds</a></li>
+	<li><a onclick="mode=0; setEditor('tribe');"><i class="material-icons">cottage</i>Tribal Rights</a></li>
+  	<li><a onclick="mode=0; setEditor('drhab');"><i class="material-icons">emoji_objects</i>Personal Effects</a></li></ul>
 
 <ul id="artifact" class="dropdown-content loader" style="visibility:hidden;">
-	<li><a onclick="mode=0; setEditor('civilplex');"><i class="material-icons">map</i>View Collectibles</a></li>
-  	<li><a onclick="mode=0; setEditor('nfnth');"><i class="material-icons">view_list</i>View Artworks</a></li></ul>
+	<li><a onclick="mode=0; setEditor('civilplex');"><i class="material-icons">inventory_2</i>Collectibles</a></li>
+  	<li><a onclick="mode=0; setEditor('nfnth');"><i class="material-icons">card_membership</i>Artworks</a></li></ul>
 
-<!-- panel (system) -->
+<!-- panel -->
 <ul id="user-pane" class="sidenav loader" style="visibility:hidden;">
 	<li><div class="user-view z-depth-1" style="background-color: #608396;display: flex;margin: auto; padding: 0;align-items: flex-end;"><img draggable="false" ondragstart="return false;" id="user-pic" style="height: 72;background-color: #a2b9cc; padding: 12;" src="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/shield.png" /></div></li>
   	<li style="text-align: center;"><a class="subheader">
-    		<span style="font-size: 20;font-weight: bold; color: #000000;">UR.Land</span>
+    		<span style="font-size: 20;font-weight: bold; color: #000000;">Nfnth</span>
     		<span style="margin-left:4;font-size: 16;font-weight: bold; color: #494646; ">· Deed to Domain</span></a></li>
   	<li style="height:24;"><a class="subheader"></a></li>
   	<li><a class="waves-effect" onclick="mode=0; setEditor('../README.md'); $('#user-pane').sidenav('close');"><i class="material-icons">menu_book</i>Learn Deed Domains</a></li>
@@ -76,31 +77,6 @@
           			<i class="material-icons" >copyright</i>2021</div></div>
         		<div><span style="cursor: pointer;" onclick="mode=0; setEditor('../doc/BROS.md'); $('#user-pane').sidenav('close');" class="new badge green darken-2" data-badge-caption="brOS, v1.02"></span></div>
       			<div id="header-title"><span id="phrase" style="font-style: italic;">software on infinitive basis</span></div></div></li></ul>
-
-<!-- panel (user) -->
-<ul id="user-setting" class="sidenav loader" style="visibility:hidden;">
-	<li style="text-align:right"><div class="user-view z-depth-1" style="background-color: #608396; margin: auto; padding: 0;">
-    		<img draggable="false" ondragstart="return false;" id="user-pic" style="height: 72;background-color: #a2b9cc; padding: 12;" src="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/shield.png" /></div></li>
-  	<li style="text-align: center;"><a class="subheader">
-    		<span style="font-size: 20;font-weight: bold; color: #000000;">User Profile</span></a></li>
-  	<li style="height:24;"><a class="subheader"></a></li>
-	     	<li style="padding:12;">
-      		<select multiple>
-        		<option value="" disabled selected>Select By...</option>
-	      		<option value="1" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color5.png"><a>Land</a></option>
-        		<option value="2" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color1.png">Machine</option>
-        		<option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color2.png">Monument</option>
-        		<option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color3.png">Person</option>
-        		<option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color4.png">Stock</option>
-			<option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color4.png">Tribe</option></select></li>
-  	<li style="padding:12;">
-      		<select>
-        		<option value="" disabled selected>Sort By...</option>
-        		<option value="1" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color6.png">Name (Ascending)</option>
-	      		<option value="1" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color6.png">Name (Descending)</option>
-	      		<option value="2">Category</option></select></li>
-    	<a class="waves-effect waves-light btn">Reset</a>
-	<li><div style="margin-top:0;" class="divider"></div></li></ul>
 
 <!-- dialog -->
 <div id="user-modal" class="modal content loader">
@@ -147,13 +123,28 @@
 
 <div id="modal1" class="modal bottom-sheet">
     <div class="modal-content"><h4>Modal Header</h4><p>A bunch of text</p></div>
+	<li style="padding:12;">
+      		<select multiple>
+        		<option value="" disabled selected>Select By...</option>
+	      		<option value="1" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color5.png"><a>Land</a></option>
+        		<option value="2" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color1.png">Machine</option>
+        		<option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color2.png">Monument</option>
+        		<option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color3.png">Person</option>
+        		<option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color4.png">Stock</option>
+			<option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color4.png">Tribe</option></select></li>
+  	<li style="padding:12;">
+      		<select>
+        		<option value="" disabled selected>Sort By...</option>
+        		<option value="1" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color6.png">Name (Ascending)</option>
+	      		<option value="1" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color6.png">Name (Descending)</option>
+	      		<option value="2">Category</option></select></li>
+    	<a class="waves-effect waves-light btn">Reset</a>
     <div class="modal-footer"><a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a></div></div>
 
 <script src="./nfnth.js"></script>
 
 <style>
 body { margin: 0; top: 0; left: 0; overflow-x: hidden; overflow-y: hidden; padding: 0 0 0 0; font-family: Arial, Helvetica, sans-serif; background-color: white; }
-
 .hidden { display:none!important; height: 0; padding: 0!important; } .disappear { visibility: hidden; } .load { opacity: 0; } .gone { width:0; height:0; z-index:-400; position:absolute; top:-9999; left:-9999;}
 .fade {-webkit-animation-name: fade;-webkit-animation-duration: 1.5s;animation-name: fade;animation-duration: 1.5s;} @-webkit-keyframes fade {from {opacity: .4}to {opacity: 1}} @keyframes fade {from {opacity: .4}to {opacity: 1}}
 /*.disabled { pointer-events: none; opacity: 0.5; background: #CCC; }*//*div:hover { color: rgba(0, 0, 0, 0.3); }*/
@@ -176,11 +167,11 @@ nav ul a {display: flex!important; align-items: center; width:100%;}
 
 .sidenav .collapsible, .sidenav.fixed .collapsible {border-top: 1px solid #ddd!important; border-right: 1px solid #ddd!important; border-left: 1px solid #ddd!important;margin: .5rem 0 1rem 0;-webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2)!important;box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2)!important; }
 
-.pac-container { z-index:1100!important; } .pac-logo::after { display: none!important; }
+/*.pac-container { z-index:1100!important; } .pac-logo::after { display: none!important; }
 .pac-card {   margin: 10px 10px 0 0; border-radius: 2px 0 0 2px;  box-sizing: border-box; -moz-box-sizing: border-box; outline: none;  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);  background-color: #fff; font-family: Roboto;}
 #pac-container { padding-bottom: 12px;  margin-right: 12px; }
 .pac-controls { display: inline-block; padding: 5px 11px; } .pac-controls label {  font-family: Roboto; font-size: 13px; font-weight: 300; }
-#pac-input { background-color: #fff;  font-family: Roboto; font-size: 15px;  font-weight: 300;  margin-left: 12px;  padding: 0 11px 0 13px;  text-overflow: ellipsis;   width: 400px; } #pac-input:focus { border-color: #4d90fe; }
+#pac-input { background-color: #fff;  font-family: Roboto; font-size: 15px;  font-weight: 300;  margin-left: 12px;  padding: 0 11px 0 13px;  text-overflow: ellipsis;   width: 400px; } #pac-input:focus { border-color: #4d90fe; }*/
 
 .select-dropdown li img { width: 32px; height: 32px; }
 .dropdown-content li { display:flex; align-items: center;}
@@ -225,11 +216,8 @@ code { color: gray;line-height: 1;}
 .btn { overflow: hidden; } .btn:hover:before { opacity:1; }
 .btn:before { content: ''; opacity: 0.5;  background-color: rgba(109, 109, 109, 0.6); position: absolute; width: 100%; height: 100%; left: 0; top: 0; transition: opacity .2s; z-index: -1;}
   
-  body { margin: 0; padding: 0; }
-#map { height: 93%;
-    /* position: absolute; */
-    /* top: 0; */
- bottom: 0; width: 100%; }
+
+#map { height: 93%; bottom: 0; width: 100%; }
 #marker { background-image: url('https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color2.png'); background-size: cover; width: 24px; height: 24px; border-radius: 50%; cursor: pointer; }
 .mapboxgl-popup { max-width: 200px; }
 </style>
@@ -238,22 +226,19 @@ code { color: gray;line-height: 1;}
 function openInNewTab(url) { window.open(url, '_blank').focus(); }
 	
 function outside(data) {
-		alert('calling outside');
-		$.ajax({ type: 'GET', url: 'https://ur.land/jsonp?' + data,jsonp: false,jsonpCallback: "my_callback", dataType: 'jsonp',
-    success: function(data) { alert(data); console.log('Success!'); },                   
-    error: function(data) { alert(data); console.log('Uh Oh!'); }  }); }
+	alert('calling outside');
+	$.ajax({ type: 'GET', url: 'https://ur.land/jsonp?' + data,jsonp: false,jsonpCallback: "my_callback", dataType: 'jsonp',
+    success: function(data) { alert(data); console.log('Success!'); }, error: function(data) { alert(data); console.log('Uh Oh!'); }  }); }
 	
-	function my_callback(dataWeGotViaJsonp){ alert(dataWeGotViaJsonp);  }
+function my_callback(dataWeGotViaJsonp){ alert(dataWeGotViaJsonp);  }
 	
 async function initial() {
-  $('select').formSelect(); 
-  $('#marks').dropdown({ constrainWidth: false } ); 
-	$('#domains').dropdown({ constrainWidth: false } );
-	$('#domains-hide').dropdown({ constrainWidth: false } ); 
-	$('#artifacts').dropdown({ constrainWidth: false } );
-	$('#artifacts-hide').dropdown({ constrainWidth: false } ); 
-	$('#actions').dropdown({ constrainWidth: false } );
-	$('#domains2').dropdown({ constrainWidth: false } ); 
+	$('select').formSelect(); 
+  	$('#marks').dropdown({ constrainWidth: false } ); 
+	$('#domains').dropdown({ constrainWidth: false } ); $('#domains-hide').dropdown({ constrainWidth: false } ); 
+	$('#artifacts').dropdown({ constrainWidth: false } ); $('#artifacts-hide').dropdown({ constrainWidth: false } ); 
+	//$('#actions').dropdown({ constrainWidth: false } );
+	//$('#domains2').dropdown({ constrainWidth: false } ); 
   $('.modal').modal(); $('#user-pane').sidenav(); $('#user-setting').sidenav({ edge: 'right' } );
   $('.collapsible').collapsible(); 
 //mode=0; setEditor('../doc/CC.md');
@@ -287,17 +272,10 @@ function searchClear() { $('#search').val(''); }
 function searchResults() { $.post("../search/word", $('#search').val(), function(data, status){ $('#results').html(data); }); }
 
 var manifest; var list = document.getElementById('toolset');
-//$.get("../manifest", function (data) { manifest = data.split(/\r?\n/); 
-	//for (let i = 0; i < manifest.length - 1; i++) { var fields = manifest[i].split('|'); 
-		//$("#registry").append("<a href='#!' class='collection-item'>" + fields[0] + "</a>"); } }); 
-
-function showDomain(index) {
-	var fields = manifest[index].split('|');
-	var div = document.getElementById('toolset');
-
-					div.innerHTML += "<h4>" + fields[0] + "</h4>";
-					div.innerHTML += "<img src='https://github.com/nfnth/res/raw/main/thumb/" + fields[4] + "' />";
-}
+$.get("../manifest", function (data) { manifest = data.split(/\r?\n/); 
+	for (let i = 0; i < manifest.length - 1; i++) { var fields = manifest[i].split('|'); 
+		//render map dialogs and list?
+		$("#registry").append("<a href='#!' class='collection-item'>" + fields[0] + "</a>"); } }); 
 
 var mode = 0; //0(view), 1(edit), 2(preview), 3(list), 4(map), 5(stat), 7(mail), 8(game)
 function setEditor(doc) {
@@ -313,28 +291,17 @@ function setEditor(doc) {
 
 					//div.innerHTML += "<a onclick='showDomain(0);' class='collection-item'>" + fields[0] + '</a>';
 					  //alert(result[0]); 
-					//  $("#grid").show();
-					//  $("#stats").html(renderMd(data));
-		   
-
 		   break;
    case 5:
-    $("#map").show(); 
+	$("#map").show(); 
 		   const settings = {
-  "async": true,
-  "crossDomain": true,
-  "url": "https://api.opensea.io/api/v1/asset/0x495f947276749Ce646f68AC8c248420045cb7b5e/62652367444291733483705976494538757758952482544655308357132039899726208827393/",
-  "method": "GET",
-  "headers": {}
-};
+  "async": true, "crossDomain": true, "url":"https://api.opensea.io/api/v1/asset/0x495f947276749Ce646f68AC8c248420045cb7b5e/62652367444291733483705976494538757758952482544655308357132039899726208827393/", "method": "GET", "headers": {} };
 
 $.ajax(settings).done(function (response) {
-	var obj = JSON.parse(response);
+	//var obj = JSON.parse(response);
   console.log(response);
 });
 		   break;
-	   case 7:
-		   $("#bros").show(); break;
    default:
    $('#'+doc).show(); }}
 	
@@ -368,10 +335,10 @@ const account = accounts[0]; alert(account);
 	
 	const fmPhantom = new Fortmatic.Phantom('pk_live_68F42DEA74EDF831'); 
 	const handleLoginWithMagicLink = async () => {
-    const email = document.getElementById('user-email').value;
-    const user = await fmPhantom.loginWithMagicLink({ email });
-    console.log(await user.isLoggedIn()); // => true
-    console.log((await user.getMetadata()).publicAddress); // You should use this as a unique user Id.
+    	const email = document.getElementById('user-email').value;
+    	const user = await fmPhantom.loginWithMagicLink({ email });
+    	console.log(await user.isLoggedIn()); // => true
+	console.log((await user.getMetadata()).publicAddress); // You should use this as a unique user Id.
 };
 	//const fmPhantom = new Fortmatic.Phantom('pk_live_68F42DEA74EDF831'); // ✨
 
