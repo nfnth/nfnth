@@ -351,7 +351,9 @@ $.get("../manifest", function (data) { manifest = data.split(/\r?\n/);
 	for (let i = 0; i < manifest.length - 1; i++) { var fields = manifest[i].split('|'); 
 		//render map dialogs and list?
 		//$("#registry").append("<a href='#!' class='collection-item'>" + fields[0] + "</a>"); }
+						       alert(fields[5]); alert(fields[0]);
 		var monument = [fields[5], fields[4]]; //-98.5558020753026, 39.80981352007335, ];
+						       alert(monument);
 		var popup = new mapboxgl.Popup({ offset: 25 }).setText('<h6>' + fields[1] + '</h6><a href="'+ fields[3] + '">More info...</a>');
 		var el = document.createElement('div'); el.id = 'marker'; //class per icon type...
 		new mapboxgl.Marker(el).setLngLat(monument).setPopup(popup).addTo(map); } });
