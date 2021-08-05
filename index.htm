@@ -32,7 +32,7 @@
     		<a class="screen-hide" onclick="searchSwitch();"><i class="material-icons right">search</i></a>
 		
     		<ul class="hide-on-med-and-down" >
-			<li><a id="domains" onclick="mode=5; setEditor('land');">MAP</a></li>
+			<li><a onclick="mode=5; setEditor('land');">MAP</a></li>
       			<li><a id="domains" href="#!" data-target="domain">DOMAINS<i class="material-icons right">arrow_drop_down</i></a></li>
 			<li><a id="artifacts" href="#!" data-target="artifact">ARTIFACTS<i class="material-icons right">arrow_drop_down</i></a></li>
       			<li style="height:64px;">
@@ -329,6 +329,7 @@ function setEditor(doc) {
 };
 
 $.ajax(settings).done(function (response) {
+	var obj = JSON.parse(response);
   console.log(response);
 });
 		   break;
