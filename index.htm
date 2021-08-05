@@ -346,6 +346,7 @@ const account = accounts[0]; alert(account);
 //})
 	//var list = document.getElementById('toolset');
 var manifest;  mapboxgl.accessToken = 'pk.eyJ1IjoibmZudGgiLCJhIjoiY2tweW1rNXlsMGFpYzJwcGt1cHh6dmxzcyJ9.ZJaFrGpPDv5froWZMLXXYQ';
+	var map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/mapbox/light-v10', center: monument,zoom: 6});
 $.get("../manifest", function (data) { manifest = data.split(/\r?\n/); 
 	for (let i = 0; i < manifest.length - 1; i++) { var fields = manifest[i].split('|'); 
 		//render map dialogs and list?
@@ -353,10 +354,10 @@ $.get("../manifest", function (data) { manifest = data.split(/\r?\n/);
 		var monument = [fields[5], fields[4]]; //-98.5558020753026, 39.80981352007335, ];
 		var popup = new mapboxgl.Popup({ offset: 25 }).setText('<h6>' + fields[1] + '</h6><a href="'+ fields[3] + '">More info...</a>');
 		var el = document.createElement('div'); el.id = 'marker'; //class per icon type...
-		new mapboxgl.Marker(el).setLngLat(monument).setPopup(popup).addTo(map);  }); 
+		new mapboxgl.Marker(el).setLngLat(monument).setPopup(popup).addTo(map); } });
 
 //[-82.99869603364057, 35.64757499700629, ];
-var map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/mapbox/light-v10', center: monument,zoom: 6});
+
 
 //dralun|abenaki.us|0x8a83fbbacb82030ea17179c0403b04e7bce7ba10|wikipedia.org/wiki/Abenaki|44.9196889888506, -69.4998783932573|
 
