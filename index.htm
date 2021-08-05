@@ -28,15 +28,13 @@
       			<a id="slider" href="#" data-target="user-pane" class="sidenav-trigger" style="background-color: #2f8fff;margin: 0;padding: 18;justify-items: center;display: flex;align-items: center;"><i class="material-icons">menu</i></a>
       			<a style="display: flex; align-items: center; height: 100%; "><img id="menu-logo" class="hide-on-med-and-down" onclick="mode=0; setEditor('../doc/CC.md');" draggable="false" ondragstart="return false;" style="height:48; width:48; cursor: pointer; margin-left: 16;" /></a></div>
     
-    		<a class="screen-hide" onclick="mode=0; setEditor('../README.md');"><i class="material-icons">menu_book</i></a>
     		<a id="domains-hide" class="screen-hide" href="#!" data-target="domain"><i class="material-icons right">view_list</i></a>
-    		<a class="screen-hide" onclick="mode=0; setEditor('../doc/MATTDOWN.md');"><i class="material-icons right">edit</i></a>
+		<a id="artifacts-hide" class="screen-hide" href="#!" data-target="domain"><i class="material-icons right">view_list</i></a>
     		<a class="screen-hide" onclick="searchSwitch();"><i class="material-icons right">search</i></a>
 		
     		<ul class="hide-on-med-and-down" >
-      			<li><a onclick="mode=0; setEditor('../README.md');">GET STARTED</a></li>
       			<li><a id="domains" href="#!" data-target="domain">DOMAINS<i class="material-icons right">arrow_drop_down</i></a></li>
-      			<li><a onclick="mode=1; setEditor('../doc/MATTDOWN.md');">EDITOR</a></li>
+			<li><a id="domains" href="#!" data-target="domain">ARTIFACTS<i class="material-icons right">arrow_drop_down</i></a></li>
       			<li style="height:64px;">
         			<a style="height:inherit; padding-right:0;"><i onclick="$('#search').focus();" style="height:inherit; padding-right:4;" class="material-icons">search</i><span onclick="$('#search').focus();" class="badge blue">1865</span>
         			<div id="search-box" class="input-field" style="height:inherit;">
@@ -44,14 +42,18 @@
           				<label class="label-icon" for="search" ></label>
           				<i class="material-icons" onclick="searchClear()">close</i></div></a></li></ul>
 	
-      		<div style="display:flex;"><a class="modal-trigger" href="#user-modal" onclick="$('#user-setting').sidenav('close');" style="justify-items: center;display: flex;align-items: center;"><i class="material-icons">account_box</i></a>
-			<a id="slider2" href="#" data-target="user-setting" class="sidenav-trigger" style="margin: 0;padding: 18;justify-items: center;display: flex;align-items: center;"><i class="material-icons">settings</i></a></div></div></nav>
+      		<div style="display:flex;"><a class="modal-trigger" href="#user-modal" onclick="$('#user-setting').sidenav('close');" style="justify-items: center;display: flex;align-items: center;"><i class="material-icons">account_box</i></a></div></div></nav>
 
 <!-- domains -->
 <ul id="domain" class="dropdown-content loader" style="visibility:hidden;">
-	<li><a onclick="mode=5; setEditor('');"><i class="material-icons">map</i>Explore Map</a></li>
-  	<li><a onclick="mode=3; setEditor('');"><i class="material-icons">view_list</i>View Listings</a></li>
-  	<li><a onclick="mode=4; setEditor('');"><i class="material-icons">equalizer</i>Show Historicals</a></li></ul>
+	<li><a onclick="mode=0; setEditor(mode);"><i class="material-icons">map</i>Explore Map</a></li>
+  	<li><a onclick="mode=1; setEditor(mode);"><i class="material-icons">view_list</i>View Listings (Land)</a></li>
+	<li><a onclick="mode=2; setEditor(mode);"><i class="material-icons">view_list</i>View Listings (Tribe)</a></li>
+  	<li><a onclick="mode=3; setEditor(mode);"><i class="material-icons">equalizer</i>Browse Things</a></li></ul>
+
+<ul id="artifact" class="dropdown-content loader" style="visibility:hidden;">
+	<li><a onclick="mode=4; setEditor(mode);"><i class="material-icons">map</i>View Collectibles</a></li>
+  	<li><a onclick="mode=5; setEditor(mode);"><i class="material-icons">view_list</i>View Artworks</a></li></ul>
 
 <!-- panel (system) -->
 <ul id="user-pane" class="sidenav loader" style="visibility:hidden;">
@@ -60,7 +62,8 @@
     		<span style="font-size: 20;font-weight: bold; color: #000000;">UR.Land</span>
     		<span style="margin-left:4;font-size: 16;font-weight: bold; color: #494646; ">· Deed to Domain</span></a></li>
   	<li style="height:24;"><a class="subheader"></a></li>
-  	<li><a class="waves-effect" onclick="mode=0; setEditor('../README.md'); $('#user-pane').sidenav('close');"><i class="material-icons">menu_book</i>Get Learn Land Domains</a></li>
+  	<li><a class="waves-effect" onclick="mode=0; setEditor('../README.md'); $('#user-pane').sidenav('close');"><i class="material-icons">menu_book</i>Learn Deed Domains</a></li>
+	<li><a class="waves-effect" onclick="mode=0; setEditor('../README.md'); $('#user-pane').sidenav('close');"><i class="material-icons">menu_book</i>Learn Artifacts</a></li>
 	<li><a class="waves-effect" onclick="mode=0; setEditor('../doc/CC.md'); $('#user-pane').sidenav('close');"><i class="material-icons">book</i>Read Civilian's Complex</a></li>
 	<li><a class="waves-effect" onclick="outside('simple test'); $('#user-pane').sidenav('close');"><i class="material-icons">edit</i>Use MarkDown 2.0</a></li>
   	<li><a class="waves-effect" onclick="openInNewTab('https://github.com/nfnth'); $('#user-pane').sidenav('close');"><i class="material-icons">help</i>About Dralun</a></li>
@@ -117,62 +120,20 @@
 
 <!-- home -->
 <div id="home" style="text-align:center;margin-top:64;visibility:hidden; width:100%; z-index:1;" class="content loader">
-  	<input type="text" class="datepicker gone"><input type="text" class="timepicker gone">
 
 <!-- search -->
 <div id="results" style="margin:80; display:none;" class="content loader">search...</div>
-  
-<!-- editor -->
-<div id="tools" class="z-depth-1" style="display:flex;align-items: center;justify-content: flex-end;padding: 12; margin-bottom: 4; width:100%;">
-	<div class="switch" onclick="previewMode();"><label style="display: flex;align-items: center;">Private?<input type="checkbox" id="preview"><span class="lever"></span></label></div>
-	<a onclick="camera();" style="margin: 0;padding: 18;justify-items: center;display: flex;align-items: center;"><i class="material-icons">photo_camera</i></a>
-	<a onclick="getLocation();" style="margin: 0;padding: 18;justify-items: center;display: flex;align-items: center;"><i class="material-icons">gps_fixed</i></a>
-  	<a onclick="exportDoc();" class="btn waves-effect waves-light green tool" style="margin-left:24;"><i class="material-icons right">publish</i>Post</a>
-	<div class="switch" onclick="previewMode();"><label style="display: flex;align-items: center;"><i class="material-icons">chrome_reader_mode</i><input type="checkbox" id="preview"><span class="lever"></span></label></div></div>
+
+<!-- map/store -->
+<div id="map" class="content loader"></div>
 	
-<div id="holder" style=" width:100%; justify-content:center;height: calc(100% - 60px);">
-  	<div id="viewer" style="text-align:left;padding:24;height:100%; overflow-y:auto; width: 85%;float: right;padding-right: 64;"></div>
-  	<div id="code" class="content loader" contentEditable="false" style="width:50%; height:50%; ">
-       		<div contentEditable="true" style="text-align:left; overflow-y: auto; width:100%; height:100%; border: 2px solid aliceblue;box-shadow: 1px 1px beige;padding: 24;"></div></div></div>
-
-<!-- stats/grid/map -->
-<div id="stats" class="content loader">
-<iframe src='https://opensea.io/assets/nfnth?embed=true'
-        width='100%'
-        height='100%'
-        frameborder='0'
-        allowfullscreen></iframe>
-<div class="row">
-
-	
-    	<div id="test1" class="col s12"><ul class="collapsible popout" style="padding-top: 112;">
-    		<li>
-      			<div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
-      			<div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div></li>
-    		<li>
-      			<div class="collapsible-header"><i class="material-icons">place</i>Second</div>
-      			<div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div></li>
-    		<li>
-      			<div class="collapsible-header"><i class="material-icons">place</i>Third</div>
-      			<div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div></li></ul></div></div></div></div>
-
-<div id="toolset" class="z-depth-1 content loader" style="display:flex;align-items: center;justify-content: center;padding: 12; margin-bottom: 4; width:100%;position: fixed;background-color: white; z-index:4; ">
-	<p><label><input type="checkbox" class="filled-in" checked="checked" /><span>Unclaimed Territory</span></label></p>
-
-	<a href="#test1"><i class="material-icons">terrain</i>Share</a><a href="#test1"><i class="material-icons">terrain</i>Embed</a></div>
+<div id="store" class="content loader">
+<iframe id='opensea' src='https://opensea.io/assets/nfnth?embed=true' width='100%' height='100%' frameborder='0' allowfullscreen></iframe></div>
 
 <div id="grid" class="content loader" style="overflow-y: auto; height: 95%;">
-
-    <nft-card
-    contractAddress="0x495f947276749ce646f68ac8c248420045cb7b5e"
-    tokenId="62652367444291733483705976494538757758952482544655308357132039896427673944065">
-    </nft-card>
-    <script src="https://unpkg.com/embeddable-nfts/dist/nft-card.min.js"></script>
 	<div id="registry" class="collection">
 		<a href="#!" class="collection-item active">Alvin</a>
 		<a class="collection-item modal-trigger" href="#modal1">Purcahse</a></div></div>
-
-<div id="map" class="content loader"></div>
 
 <div id="modal1" class="modal bottom-sheet">
     <div class="modal-content"><h4>Modal Header</h4><p>A bunch of text</p></div>
@@ -261,11 +222,6 @@ code { color: gray;line-height: 1;}
  bottom: 0; width: 100%; }
 #marker { background-image: url('https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color2.png'); background-size: cover; width: 24px; height: 24px; border-radius: 50%; cursor: pointer; }
 .mapboxgl-popup { max-width: 200px; }
-	.mapboxgl-canvas-container {
-
-    height: 100vh;
-
-}
 </style>
 
 <script>
@@ -273,27 +229,19 @@ function openInNewTab(url) { window.open(url, '_blank').focus(); }
 	
 function outside(data) {
 		alert('calling outside');
-		
-		$.ajax({                                                                                                                                                                                                        
-    type: 'GET',                                                                                                                                                                                                 
-    url: 'https://ur.land/jsonp?' + data,     
-			jsonp: false,
-jsonpCallback: "my_callback",
-    dataType: 'jsonp',                                                                                                                                                                                                
-    success: function(data) { alert(data); console.log('Success!'); },                                                                                                                                                                                       
-    error: function(data) { alert(data); console.log('Uh Oh!'); }                                                                                                                                             
-}); }
+		$.ajax({ type: 'GET', url: 'https://ur.land/jsonp?' + data,jsonp: false,jsonpCallback: "my_callback", dataType: 'jsonp',
+    success: function(data) { alert(data); console.log('Success!'); },                   
+    error: function(data) { alert(data); console.log('Uh Oh!'); }  }); }
 	
-	function my_callback(dataWeGotViaJsonp){
-		
-		alert(dataWeGotViaJsonp);
-        }
+	function my_callback(dataWeGotViaJsonp){ alert(dataWeGotViaJsonp);  }
 	
 async function initial() {
   $('select').formSelect(); 
   $('#marks').dropdown({ constrainWidth: false } ); 
 	$('#domains').dropdown({ constrainWidth: false } );
 	$('#domains-hide').dropdown({ constrainWidth: false } ); 
+	$('#artifacts').dropdown({ constrainWidth: false } );
+	$('#artifacts-hide').dropdown({ constrainWidth: false } ); 
 	$('#actions').dropdown({ constrainWidth: false } );
 	$('#domains2').dropdown({ constrainWidth: false } ); 
   $('.modal').modal(); $('#user-pane').sidenav(); $('#user-setting').sidenav({ edge: 'right' } );
@@ -343,21 +291,21 @@ function showDomain(index) {
 
 var mode = 0; //0(view), 1(edit), 2(preview), 3(list), 4(map), 5(stat), 7(mail), 8(game)
 function setEditor(doc) {
-   var width = window.innerWidth; var height = window.innerHeight - 48; //menu, footer
+   var width = window.innerWidth; var height = window.innerHeight - 44; //menu, footer
    $("#holder").hide(); $("#viewer").hide(); $("#code").hide(); $("#grid").hide(); $("#map").hide(); $("#stats").hide();
    $("#tools").hide(); $("#toolset").hide(); 
  
    switch(mode) {
    case 0:
      $("#holder").show(); $("#viewer").show(); //$("#viewer").css("width", "100%"); $("#viewer").css("height", "100%");
-     $.get(doc, function (data) { $("#viewer").html(renderMd(data));}); break;
+     ('#opensea').attr('src', 'https://opensea.io/assets/urland?embed=true'); break;
    case 1:
      $("#holder").show(); $("#tools").show(); $("#code").show();
-     //$.get(doc, function (data) { });
+     ('#opensea').attr('src', 'https://opensea.io/assets/dralun?embed=true');
 	     break;
    case 2:
      $("#holder").show(); $("#tools").show(); $("#viewer").css("width", width/2); $("#viewer").css("height", height);
-     $("#viewer").html(renderMd(data)); break;
+    ('#opensea').attr('src', 'https://opensea.io/assets/drhab?embed=true'); break;
    case 3:
     $("#toolset").show();$("#grid").show(); break;
    case 4:
@@ -436,6 +384,4 @@ map.on('load', function (event) { map.loadImage('https://cdn.jsdelivr.net/gh/nfn
 function (error, image) {if (error) throw error; map.addImage('cat', image);
 map.addSource('point', {'type': 'geojson','data': {'type': 'FeatureCollection','features': [{'type': 'Feature','geometry': {'type': 'Point','coordinates': [-77.4144, 25.0759]}}]}});
 map.addLayer({'id': 'points','type': 'symbol','source': 'point', 'layout': {'icon-image': 'cat', 'icon-size': 0.25}}); });
-			   map.resize();
-			   });
-</script>
+map.resize(); });</script>
