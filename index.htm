@@ -1,6 +1,6 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="fortmatic-site-verification" content="XHvcktou4P9Jyc0J" /><title>Nfnth · Deed to Domain</title>
+<meta name="fortmatic-site-verification" content="XHvcktou4P9Jyc0J" /><title>NfNth · Deed to Domain</title>
 
 <!-- resources -->
 <link class="ico" rel="icon" href="https://cdn.jsdelivr.net/gh/nfnth/res@latest/icon/urland/favicon.ico" type="image/x-icon">
@@ -30,7 +30,7 @@
     		<a id="domains-hide" class="screen-hide" href="#!" data-target="domain"><i class="material-icons right">view_list</i></a>
 		<a id="artifacts-hide" class="screen-hide" href="#!" data-target="domain"><i class="material-icons right">view_list</i></a>
 		<a class="screen-hide" onclick="setEditor('map');"><i class="material-icons right">map</i></a>
-    		<a class="screen-hide" onclick="searchSwitch();"><i class="material-icons right">search</i></a>
+    		<a class="screen-hide" onclick="setSearch();"><i class="material-icons right">search</i></a>
 		
     		<ul class="hide-on-med-and-down" >
       			<li><a id="domains" href="#!" data-target="domain">DOMAINS<i class="material-icons right">arrow_drop_down</i></a></li>
@@ -62,10 +62,9 @@
     		<span style="font-size: 20;font-weight: bold; color: #000000;">Nfnth</span>
     		<span style="margin-left:4;font-size: 16;font-weight: bold; color: #494646; ">· Deed to Domain</span></a></li>
   	<li style="height:24;"><a class="subheader"></a></li>
-  	<li><a class="waves-effect" onclick="mode=0; setEditor('../README.md'); $('#user-pane').sidenav('close');"><i class="material-icons">menu_book</i>Learn Deed Domains</a></li>
-	<li><a class="waves-effect" onclick="mode=0; setEditor('../README.md'); $('#user-pane').sidenav('close');"><i class="material-icons">menu_book</i>Learn Artifacts</a></li>
-	<li><a class="waves-effect" onclick="mode=0; setEditor('../doc/CC.md'); $('#user-pane').sidenav('close');"><i class="material-icons">book</i>Read Civilian's Complex</a></li>
-  	<li><a class="waves-effect" onclick="openInNewTab('https://github.com/nfnth'); $('#user-pane').sidenav('close');"><i class="material-icons">help</i>About Dralun</a></li>
+  	<li><a class="waves-effect" onclick="openInNewTab('https://github.com/nfnth'); $('#user-pane').sidenav('close');"><i class="material-icons">menu_book</i>Learn Deed Domains and Artifacts</a></li>
+	<li><a class="waves-effect" onclick="openInNewTab('https://github.com/nfnth/nfnth/blob/master/doc/CC.md'); $('#user-pane').sidenav('close');"><i class="material-icons">book</i>Read Civilian's Complex</a></li>
+  	<li><a class="waves-effect" onclick="openInNewTab('https://github.com/nfnth/nfnth/issues'); $('#user-pane').sidenav('close');"><i class="material-icons">help</i>About Dralun</a></li>
   	<li><div style="margin-top:0;" class="divider"></div></li>
   	<li><a class="subheader"></a></li>
   	<li><div id="header-logo" style="display: flex; flex-flow:column; align-items: center;justify-content: center;align-items: center; display: flex;">
@@ -75,7 +74,7 @@
         		<div style="display: flex;align-items: center;justify-content: center;">
           			<span id="title" style="font-weight: bold; font-size: 25px;">NfNth</span>
           			<i class="material-icons" >copyright</i>2021</div></div>
-        		<div><span style="cursor: pointer;" onclick="mode=0; setEditor('../doc/BROS.md'); $('#user-pane').sidenav('close');" class="new badge green darken-2" data-badge-caption="brOS, v1.02"></span></div>
+        		<div><span style="cursor: pointer;" onclick="openInNewTab('https://github.com/nfnth/nfnth/blob/master/doc/BROS.md'); $('#user-pane').sidenav('close');" class="new badge green darken-2" data-badge-caption="brOS, v1.02"></span></div>
       			<div id="header-title"><span id="phrase" style="font-style: italic;">software on infinitive basis</span></div></div></li></ul>
 
 <!-- dialog -->
@@ -89,7 +88,7 @@
 				<div class="input-field"><i class="material-icons prefix">mail</i><input type="text" id="user-email" name="user-email" class="user-input" placeholder="Enter email" /><label for="user-email">Email</label><span id="user-issue" class="helper-text" data-error="Invalid input" data-success="" >Enter Email</span>
 				<img  width="240" height="120"  src="https://github.com/nfnth/res/raw/main/icon/logo.e302dbb6.svg" /></div></div>
 
-	<div class="modal-footer">
+	<div class="modal-footer content loader">
 	      <button id="button-next" class="btn waves-effect waves-light" onclick="signer();">Sign In<i class="material-icons left">login</i></button><a href="#!" class="modal-close waves-effect waves-gray btn-flat disabled">Cancel</a></div></div></div></div>
 
 <!-- home -->
@@ -216,7 +215,6 @@ code { color: gray;line-height: 1;}
 .btn { overflow: hidden; } .btn:hover:before { opacity:1; }
 .btn:before { content: ''; opacity: 0.5;  background-color: rgba(109, 109, 109, 0.6); position: absolute; width: 100%; height: 100%; left: 0; top: 0; transition: opacity .2s; z-index: -1;}
   
-
 #map { height: 93%; bottom: 0; width: 100%; }
 #marker { background-image: url('https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color2.png'); background-size: cover; width: 24px; height: 24px; border-radius: 50%; cursor: pointer; }
 .mapboxgl-popup { max-width: 200px; }
@@ -271,11 +269,7 @@ initial();
 function searchClear() { $('#search').val(''); }
 function searchResults() { $.post("../search/word", $('#search').val(), function(data, status){ $('#results').html(data); }); }
 
-var manifest; var list = document.getElementById('toolset');
-$.get("../manifest", function (data) { manifest = data.split(/\r?\n/); 
-	for (let i = 0; i < manifest.length - 1; i++) { var fields = manifest[i].split('|'); 
-		//render map dialogs and list?
-		$("#registry").append("<a href='#!' class='collection-item'>" + fields[0] + "</a>"); } }); 
+
 
 var mode = 0; //0(view), 1(edit), 2(preview), 3(list), 4(map), 5(stat), 7(mail), 8(game)
 function setEditor(doc) {
@@ -350,17 +344,28 @@ const account = accounts[0]; alert(account);
  // to: '0x22b05D73097c0a2440D29aF61db4b4eD3803e55E',
  // value: web3.utils.toWei('1', 'ether')
 //})
-	
-	mapboxgl.accessToken = 'pk.eyJ1IjoibmZudGgiLCJhIjoiY2tweW1rNXlsMGFpYzJwcGt1cHh6dmxzcyJ9.ZJaFrGpPDv5froWZMLXXYQ';
-var monument = [-98.5558020753026, 39.80981352007335, ];[-82.99869603364057, 35.64757499700629, ];
-var map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/mapbox/light-v10', center: monument,zoom: 6});
-var popup = new mapboxgl.Popup({ offset: 25 }).setText('Construction on the Washington Monument began in 1848.');
-var el = document.createElement('div'); el.id = 'marker';
-new mapboxgl.Marker(el).setLngLat(monument).setPopup(popup).addTo(map);
+	//var list = document.getElementById('toolset');
+var manifest;  mapboxgl.accessToken = 'pk.eyJ1IjoibmZudGgiLCJhIjoiY2tweW1rNXlsMGFpYzJwcGt1cHh6dmxzcyJ9.ZJaFrGpPDv5froWZMLXXYQ';
+$.get("../manifest", function (data) { manifest = data.split(/\r?\n/); 
+	for (let i = 0; i < manifest.length - 1; i++) { var fields = manifest[i].split('|'); 
+		//render map dialogs and list?
+		//$("#registry").append("<a href='#!' class='collection-item'>" + fields[0] + "</a>"); }
+		var monument = [fields[5], fields[4]]; //-98.5558020753026, 39.80981352007335, ];
+		var popup = new mapboxgl.Popup({ offset: 25 }).setText('<h6>' + fields[1] + '</h6><a href="'+ fields[3] + '">More info...</a>');
+		var el = document.createElement('div'); el.id = 'marker'; //class per icon type...
+		new mapboxgl.Marker(el).setLngLat(monument).setPopup(popup).addTo(map);  }); 
 
-//var map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/mapbox/dark-v10', zoom: 4, center: [-86.99869603364057, 37.64757499700629, ] });
-map.on('load', function (event) { map.loadImage('https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color1.png',
-function (error, image) {if (error) throw error; map.addImage('cat', image);
-map.addSource('point', {'type': 'geojson','data': {'type': 'FeatureCollection','features': [{'type': 'Feature','geometry': {'type': 'Point','coordinates': [-77.4144, 25.0759]}}]}});
-map.addLayer({'id': 'points','type': 'symbol','source': 'point', 'layout': {'icon-image': 'cat', 'icon-size': 0.25}}); });
-map.resize(); });</script>
+//[-82.99869603364057, 35.64757499700629, ];
+var map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/mapbox/light-v10', center: monument,zoom: 6});
+
+//dralun|abenaki.us|0x8a83fbbacb82030ea17179c0403b04e7bce7ba10|wikipedia.org/wiki/Abenaki|44.9196889888506, -69.4998783932573|
+
+				      //var map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/mapbox/dark-v10', zoom: 4, center: [-86.99869603364057, 37.64757499700629, ] });
+map.on('load', function (event) { map.resize(); });
+	
+	//map.loadImage('https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color1.png',
+//function (error, image) {if (error) throw error; map.addImage('cat', image);
+//map.addSource('point', {'type': 'geojson','data': {'type': 'FeatureCollection','features': [{'type': 'Feature','geometry': {'type': 'Point','coordinates': [-77.4144, 25.0759]}}]}});
+//map.addLayer({'id': 'points','type': 'symbol','source': 'point', 'layout': {'icon-image': 'cat', 'icon-size': 0.25}}); });
+ //});
+	</script>
