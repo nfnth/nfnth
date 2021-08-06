@@ -26,6 +26,8 @@ Some notable features, include:
 
 To begin, [sign in]() (or [create an account]()), to recieve a user badge with **Nomad** status.
 
+<a href="https://opensea.io/NfNth" title="Buy on OpenSea" target="_blank"><img style="width:220px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="https://storage.googleapis.com/opensea-static/Logomark/Badge%20-%20Available%20On%20-%20Light.png" alt="Available on OpenSea" /></a>
+
 ### On Deed to Domain
 
 **Dralun** is the concept of the *domain deed*, a differentiaion between control and content.
@@ -100,9 +102,9 @@ For help, [start an issue](https://github.com/nfnth/nfnth/issues), or contact **
 |[Jaspre]()|JAvaScriptPythonstRipE objects|[latest]()|
 |[brOS](https://github.com/nfnth/nfnth/blob/master/doc/BROS.md)|Browser OS (on Arch Linux)|[latest]()|
 
-#### Sponsorship
 
-Only sponsor-enabled GitHub profiles will be considered. To apply, please send your profile information to **matt@sebolt.us**.
+
+#### Sponsorship
 
 All sponsors to be listed here...
 
