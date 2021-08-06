@@ -300,12 +300,6 @@ function setEditor(doc) {
 
 					//div.innerHTML += "<a onclick='showDomain(0);' class='collection-item'>" + fields[0] + '</a>';
 					  //alert(result[0]); 
-		//   break;
- //  case 5:
-	//$("#map").show(); 
-		   
-		//   break;
-  // default:
    $('#'+doc).show(); }
 	
 	if (typeof window.ethereum !== 'undefined') {
@@ -315,7 +309,7 @@ function setEditor(doc) {
 
 			const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
 const account = accounts[0]; alert(account);
-	//	}
+	}
 	
 //	const transactionParameters = {
   //nonce: '0x00', // ignored by MetaMask
