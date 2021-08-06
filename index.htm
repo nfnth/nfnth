@@ -24,15 +24,17 @@
       			<a id="slider" href="#" data-target="user-pane" class="sidenav-trigger" style="background-color: #2f8fff;margin: 0;padding: 18;justify-items: center;display: flex;align-items: center;"><i class="material-icons">menu</i></a>
       			<a style="display: flex; align-items: center; height: 100%; "><img id="menu-logo" class="hide-on-med-and-down" onclick="mode=0; setEditor('../doc/CC.md');" draggable="false" ondragstart="return false;" style="height:48; width:48; cursor: pointer; margin-left: 16;" /></a></div>
     
+		<a class="screen-hide" onclick="setEditor('map');"><i class="material-icons right">map</i></a>
     		<a id="domains-hide" class="screen-hide" href="#!" data-target="domain"><i class="material-icons right">view_list</i></a>
 		<a id="artifacts-hide" class="screen-hide" href="#!" data-target="domain"><i class="material-icons right">view_list</i></a>
-		<a class="screen-hide" onclick="setEditor('map');"><i class="material-icons right">map</i></a>
+		
     		<a class="screen-hide" onclick="setSearch();"><i class="material-icons right">search</i></a>
 		
     		<ul class="hide-on-med-and-down" >
-      			<li><a id="domains" href="#!" data-target="domain">DOMAINS<i class="material-icons right">arrow_drop_down</i></a></li>
-			<li><a id="artifacts" href="#!" data-target="artifact">ARTIFACTS<i class="material-icons right">arrow_drop_down</i></a></li>
 			<li><a onclick="setEditor('map');">MAP</a></li>
+      			<li><a id="domains" href="#!" data-target="domain">LISTINGS<i class="material-icons right">arrow_drop_down</i></a></li>
+			<li><a id="artifacts" href="#!" data-target="artifact">ARTIFACTS<i class="material-icons right">arrow_drop_down</i></a></li>
+			
       			<li style="height:64px;">
         			<a style="height:inherit; padding-right:0;"><i onclick="$('#search').focus();" style="height:inherit; padding-right:4;" class="material-icons">search</i><span onclick="$('#search').focus();" class="badge blue">1865</span>
         			<div id="search-box" class="input-field" style="height:inherit;">
@@ -44,13 +46,16 @@
 
 <!-- drop downs -->
 <ul id="domain" class="dropdown-content loader" style="visibility:hidden;">
-  	<li><a onclick="mode=0; setEditor('land');"><i class="material-icons">landscape</i>Land Deeds</a></li>
-	<li><a onclick="mode=0; setEditor('tribe');"><i class="material-icons">cottage</i>Tribal Nations</a></li>
-  	<li><a onclick="mode=0; setEditor('drhab');"><i class="material-icons">inventory_2</i>Stock and Supply</a></li></ul>
+  	<li><a onclick="mode=0; setEditor('land');"><i class="material-icons">landscape</i>Domain Deed</a></li>
+	<li><a onclick="mode=0; setEditor('tribe');"><i class="material-icons">cottage</i>Virtual Art</a></li>
+  	<li><a onclick="mode=0; setEditor('drhab');"><i class="material-icons">inventory_2</i>Collectible</a></li></ul>
 
 <ul id="artifact" class="dropdown-content loader" style="visibility:hidden;">
-	<li><a onclick="mode=0; setEditor('civilplex');"><i class="material-icons">emoji_objects</i>Collectibles</a></li>
-  	<li><a onclick="mode=0; setEditor('nfnth');"><i class="material-icons">card_membership</i>Artworks</a></li></ul>
+	<li><a onclick="mode=0; setEditor('civilplex');"><i class="material-icons">gps_fixed</i>Location</a></li>
+	<li><a onclick="mode=0; setEditor('nfnth');"><i class="material-icons">photo_camera</i>Camera</a></li>
+
+	<li class="divider" tabindex="-1"></li>
+	<li><a onclick="mode=0; setEditor('nfnth');"><i class="material-icons">attachment</i>Attachment</a></li></ul>
 
 <!-- panel -->
 <ul id="user-pane" class="sidenav loader" style="visibility:hidden;">
@@ -82,8 +87,7 @@
     box-shadow: 2px 2px lightgrey; text-align:center;">   
 				<img width="240" height="120" src="https://github.com/nfnth/res/raw/main/icon/metamask-logo-horizontal.svg" /></div>
 			
-			<div id="console" class="row hover-base" style="text-align:center;">  
-				-OR-</div>
+			<div id="console" class="row hover-base" style="text-align:center;">-OR-</div>
 			<div id="console" class="row hover-base">  
 				<div class="input-field"><i class="material-icons prefix">mail</i><input type="text" id="user-email" name="user-email" class="user-input" placeholder="Enter email" /><label for="user-email">Email</label><span id="user-issue" class="helper-text" data-error="Invalid input" data-success="" >Enter Email</span></div></div>
 				
@@ -104,9 +108,7 @@
 <!-- map/store -->
 <div id="map" ></div>
 	<div class="fixed-action-btn">
-  <a class="btn-floating btn-large red">
-    <i class="large material-icons">mode_edit</i>
-  </a>
+  <a class="btn-floating btn-large red"><i class="large material-icons">mode_edit</i></a>
   <ul>
     <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
     <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
@@ -129,6 +131,8 @@
 	
 <div id="nfnth" class="content loader" style="display:none;"> 
 <iframe id='opensea' src='https://opensea.io/assets/nfnth?embed=true' width='100%' height='100%' frameborder='0' allowfullscreen></iframe></div>-->
+	
+<!-- land deeds (landscape), tribal nations (cottage), stock/supply (inventory_2), collectibles (emoji_objects), artworks (card_membership) -->
 
 <div id="grid" class="content loader" style="overflow-y: auto; height: 95%;">
 	<div id="registry" class="collection">
