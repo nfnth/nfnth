@@ -352,17 +352,19 @@ const account = accounts[0]; alert(account);
 	//var list = document.getElementById('toolset');
 var manifest;  mapboxgl.accessToken = 'pk.eyJ1IjoibmZudGgiLCJhIjoiY2tweW1rNXlsMGFpYzJwcGt1cHh6dmxzcyJ9.ZJaFrGpPDv5froWZMLXXYQ';
 	
-$.get("../manifest", function (data) { manifest = data.split(/\r?\n/); 
-	for (let i = 0; i < manifest.length - 1; i++) { 
-		
-		
-		const settings = {
+			const settings = {
   "async": true, "crossDomain": true, "url":"https://api.opensea.io/api/v1/asset/0x495f947276749Ce646f68AC8c248420045cb7b5e/62652367444291733483705976494538757758952482544655308357132039899726208827393/", "method": "GET", "headers": {} };
 
 $.ajax(settings).done(function (response) {
 	//var obj = JSON.parse(response);
   console.log(response);
 });
+	
+$.get("../manifest", function (data) { manifest = data.split(/\r?\n/); 
+	for (let i = 0; i < manifest.length - 1; i++) { 
+		
+		
+
 		
 		
 		var fields = manifest[i].split('|'); 
