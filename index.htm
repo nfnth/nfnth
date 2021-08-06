@@ -102,7 +102,7 @@
 <div id="results" style="margin:80; display:none;" class="content loader">search...</div>
 
 <!-- map/store -->
-<div id="map" class="content loader"></div>
+<div id="map" ></div>
 	
 <div id="land" class="content loader">
 <iframe id='opensea' src='https://opensea.io/assets/urland?embed=true' width='100%' height='100%' frameborder='0' allowfullscreen></iframe></div>
@@ -148,7 +148,8 @@
 body { margin: 0; top: 0; left: 0; overflow-x: hidden; overflow-y: hidden; padding: 0 0 0 0; font-family: Arial, Helvetica, sans-serif; background-color: white; }
 .hidden { display:none!important; height: 0; padding: 0!important; } .disappear { visibility: hidden; } .load { opacity: 0; } .gone { width:0; height:0; z-index:-400; position:absolute; top:-9999; left:-9999;}
 .fade {-webkit-animation-name: fade;-webkit-animation-duration: 1.5s;animation-name: fade;animation-duration: 1.5s;} @-webkit-keyframes fade {from {opacity: .4}to {opacity: 1}} @keyframes fade {from {opacity: .4}to {opacity: 1}}
-/*.disabled { pointer-events: none; opacity: 0.5; background: #CCC; }*//*div:hover { color: rgba(0, 0, 0, 0.3); }*/
+/*.disabled { pointer-events: none; opacity: 0.5; background: #CCC; }*/
+/*div:hover { color: rgba(0, 0, 0, 0.3); }*/
 
 img { -khtml-user-select: none;-o-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;}
 span {-khtml-user-select: none;-o-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;}
@@ -253,16 +254,17 @@ async function initial() {
 	$('#artifacts').dropdown({ constrainWidth: false } ); $('#artifacts-hide').dropdown({ constrainWidth: false } ); 
 	//$('#actions').dropdown({ constrainWidth: false } );
 	//$('#domains2').dropdown({ constrainWidth: false } ); 
-  $('.modal').modal(); $('#user-pane').sidenav(); 
+  $('.modal').modal();   $('#user-pane').sidenav(); 
 	//$('#user-setting').sidenav({ edge: 'right' } );
 //  $('.collapsible').collapsible(); 
-//mode=0; setEditor('../doc/CC.md');
+//mode=0; 
+	setEditor('map');
 
         // await preloadImage('https://github.com/nfnth/res/raw/main/site/coat.png') // Preload an image
 //	await preloadImage('https://github.com/nfnth/res/raw/main/site/chimi_hi.png') 
 //	await preloadImage('https://github.com/nfnth/res/raw/main/site/chimi_cards.png') 
          //await Promise.all(images.map(x => preloadImage(x.src))) // Preload a bunch of images in parallel 
-  setTimeout(function() {  $(".loader").css("visibility", "visible"); }, 1000);
+  //setTimeout(function() {  $(".loader").css("visibility", "visible"); }, 1000);
  //mermaid.initialize({startOnLoad:true});
   searchClear(); 
 
