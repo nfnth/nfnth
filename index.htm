@@ -75,7 +75,7 @@
       			<div id="header-title"><span id="phrase" style="font-style: italic;">software on infinitive basis</span></div></div></li></ul>
 
 <!-- dialog -->
-<div id="user-modal" class="modal content loader">
+<div id="user-modal" class="modal">
 	<div class="modal-content">
 		<div id="intro" class="row-section">
 			<div id="console" class="row hover-base" onclick="signer();" style="border: solid 1px darkgray;
@@ -224,7 +224,7 @@ code { color: gray;line-height: 1;}
 </style>
 
 <script>
-//	document.addEventListener('DOMContentLoaded', function() { var elems = document.querySelectorAll('.modal'); var instances = M.Modal.init(elems); });
+	
 //		const preloadImage = src => 
   //         new Promise(r => {
     //         const image = new Image()
@@ -264,7 +264,7 @@ async function initial() {
 //	await preloadImage('https://github.com/nfnth/res/raw/main/site/chimi_hi.png') 
 //	await preloadImage('https://github.com/nfnth/res/raw/main/site/chimi_cards.png') 
          //await Promise.all(images.map(x => preloadImage(x.src))) // Preload a bunch of images in parallel 
-  //setTimeout(function() {  $(".loader").css("visibility", "visible"); }, 1000);
+  setTimeout(function() {  $(".loader").css("visibility", "visible"); }, 500);
  //mermaid.initialize({startOnLoad:true});
   searchClear(); 
 
@@ -284,6 +284,7 @@ switch (pathArray.length) {
       break; } }
 	
 initial(); 
+	document.addEventListener('DOMContentLoaded', function() { var elems = document.querySelectorAll('.modal'); var instances = M.Modal.init(elems); });
 //function openInNewTab(url, tab=true) { if (tab) { var win = window.open(url, '_blank'); win.focus(); } else window.open(url, '_self'); }
 function searchClear() { $('#search').val(''); }
 function searchResults() { $.post("../search/word", $('#search').val(), function(data, status){ $('#results').html(data); }); }
