@@ -265,7 +265,7 @@ async function initial() {
 	$('#artifacts').dropdown({ constrainWidth: false } ); $('#artifacts-hide').dropdown({ constrainWidth: false } ); 
 	//$('#actions').dropdown({ constrainWidth: false } );
 	//$('#domains2').dropdown({ constrainWidth: false } ); 
-	$('.fixed-action-btn').floatingActionButton();
+	//$('.fixed-action-btn').floatingActionButton();
   $('.modal').modal();   $('#user-pane').sidenav(); 
 	//$('#user-setting').sidenav({ edge: 'right' } );
 //  $('.collapsible').collapsible(); 
@@ -276,6 +276,11 @@ async function initial() {
 //	await preloadImage('https://github.com/nfnth/res/raw/main/site/chimi_hi.png') 
 //	await preloadImage('https://github.com/nfnth/res/raw/main/site/chimi_cards.png') 
          //await Promise.all(images.map(x => preloadImage(x.src))) // Preload a bunch of images in parallel 
+	var elems = document.querySelectorAll('.fixed-action-btn');
+    var instances = M.FloatingActionButton.init(elems, {
+      hoverEnabled: false
+    });
+	
   setTimeout(function() {  $(".loader").css("visibility", "visible"); }, 500);
  //mermaid.initialize({startOnLoad:true});
   searchClear(); 
@@ -298,10 +303,7 @@ switch (pathArray.length) {
 initial(); 
 	document.addEventListener('DOMContentLoaded', function() { var elems = document.querySelectorAll('.modal'); var instances = M.Modal.init(elems); });
 	document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.fixed-action-btn');
-    var instances = M.FloatingActionButton.init(elems, {
-      hoverEnabled: false
-    });
+    
   });
 	
 //function openInNewTab(url, tab=true) { if (tab) { var win = window.open(url, '_blank'); win.focus(); } else window.open(url, '_self'); }
@@ -379,7 +381,8 @@ var manifest;  mapboxgl.accessToken = 'pk.eyJ1IjoibmZudGgiLCJhIjoiY2tweW1rNXlsMG
 	
 	//$.get("https://api.opensea.io/api/v1/asset/0x495f947276749Ce646f68AC8c248420045cb7b5e/62652367444291733483705976494538757758952482544655308357132039899726208827393/", function(data) { console.log(data); });
 	
-$.get("../manifest", function (data) { alert(data); manifest = data.split(/\r?\n/); 
+$.get("../manifest", function (data) { //alert(data);
+	manifest = data.split(/\r?\n/); 
 	for (let i = 0; i < manifest.length - 1; i++) { 
 		var fields = manifest[i].split('|'); 
 						       			       
