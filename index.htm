@@ -216,7 +216,7 @@ code { color: gray;line-height: 1;}
 .btn:before { content: ''; opacity: 0.5;  background-color: rgba(109, 109, 109, 0.6); position: absolute; width: 100%; height: 100%; left: 0; top: 0; transition: opacity .2s; z-index: -1;}
   
 #map { height: 93%; bottom: 0; width: 100%; }
-#marker { background-image: url('https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color2.png'); background-size: cover; width: 24px; height: 24px; border-radius: 50%; cursor: pointer; }
+#marker { background-image: url('https://github.com/nfnth/res/raw/main/icon/house/house1.png'); background-size: cover; width: 24px; height: 24px; border-radius: 50%; cursor: pointer; }
 .mapboxgl-popup { max-width: 200px; }
 </style>
 
@@ -355,7 +355,7 @@ $.get("../manifest", function (data) { manifest = data.split(/\r?\n/);
 						       
 		var monument = [fields[5], fields[4]]; //-98.5558020753026, 39.80981352007335, ];
 						       
-		var popup = new mapboxgl.Popup({ offset: 25 }).setHTML('<h6>' + fields[1] + '</h6><a href="'+ fields[3] + '">More info...</a>');
+		var popup = new mapboxgl.Popup({ offset: 25 }).setHTML('<div><div><img src="https://github.com/nfnth/res/raw/main/thumb/100058936.jpg"/></div><div><h6>' + fields[1] + '</h6><a href="https://ur.land">Owner Info</a><br/><a href="'+ fields[3] + '">More info...</a></div></div>');
 		var el = document.createElement('div'); el.id = 'marker'; //class per icon type...
 		var map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/mapbox/light-v10', center: monument,zoom: 6});
 		new mapboxgl.Marker(el).setLngLat(monument).setPopup(popup).addTo(map); } });
