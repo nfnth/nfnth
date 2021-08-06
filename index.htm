@@ -361,18 +361,12 @@ var manifest;  mapboxgl.accessToken = 'pk.eyJ1IjoibmZudGgiLCJhIjoiY2tweW1rNXlsMG
   //console.log(response);
 //});
 	
-	$.get("https://api.opensea.io/api/v1/asset/0x495f947276749Ce646f68AC8c248420045cb7b5e/62652367444291733483705976494538757758952482544655308357132039899726208827393/", function(data) { console.log(data); });
+	//$.get("https://api.opensea.io/api/v1/asset/0x495f947276749Ce646f68AC8c248420045cb7b5e/62652367444291733483705976494538757758952482544655308357132039899726208827393/", function(data) { console.log(data); });
 	
 $.get("../manifest", function (data) { manifest = data.split(/\r?\n/); 
 	for (let i = 0; i < manifest.length - 1; i++) { 
-		
-		
-
-		
-		
 		var fields = manifest[i].split('|'); 
-						       
-						       
+						       			       
 		//render map dialogs and list?
 		//$("#registry").append("<a href='#!' class='collection-item'>" + fields[0] + "</a>"); }
 						       
@@ -388,12 +382,6 @@ $.get("../manifest", function (data) { manifest = data.split(/\r?\n/);
 
 //dralun|abenaki.us|0x8a83fbbacb82030ea17179c0403b04e7bce7ba10|wikipedia.org/wiki/Abenaki|44.9196889888506, -69.4998783932573|
 
-				      //var map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/mapbox/dark-v10', zoom: 4, center: [-86.99869603364057, 37.64757499700629, ] });
+//var map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/mapbox/dark-v10', zoom: 4, center: [-86.99869603364057, 37.64757499700629, ] });
 //map.on('load', function (event) { map.resize(); });
-	
-	//map.loadImage('https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color1.png',
-//function (error, image) {if (error) throw error; map.addImage('cat', image);
-//map.addSource('point', {'type': 'geojson','data': {'type': 'FeatureCollection','features': [{'type': 'Feature','geometry': {'type': 'Point','coordinates': [-77.4144, 25.0759]}}]}});
-//map.addLayer({'id': 'points','type': 'symbol','source': 'point', 'layout': {'icon-image': 'cat', 'icon-size': 0.25}}); });
- //});
 	</script>
