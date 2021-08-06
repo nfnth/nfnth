@@ -290,23 +290,20 @@ function searchClear() { $('#search').val(''); }
 function searchResults() { $.post("../search/word", $('#search').val(), function(data, status){ $('#results').html(data); }); }
 
 var mode = 0; //0(view), 1(edit), 2(preview), 3(list), 4(map), 5(stat), 7(mail), 8(game)
-function setEditor(doc) {
-   var width = window.innerWidth; var height = window.innerHeight - 44; //menu, footer
-   $("#holder").hide(); $("#viewer").hide(); $("#code").hide(); $("#grid").hide(); $("#map").hide(); $("#stats").hide();
-   $("#land").hide(); $("#tribe").hide(); $("#drhab").hide(); $("#civilplex").hide(); $("#nfnth").hide(); 
+function setEditor(doc) {  $('#'+doc).show(); }
+  // var width = window.innerWidth; var height = window.innerHeight - 44; //menu, footer
+  // $("#holder").hide(); $("#viewer").hide(); $("#code").hide(); $("#grid").hide(); $("#map").hide(); $("#stats").hide();
+  // $("#land").hide(); $("#tribe").hide(); $("#drhab").hide(); $("#civilplex").hide(); $("#nfnth").hide(); 
  
-  // switch(mode) {
- //  case 4:
 //	$("#stats").show();
 		   //var fields = manifest[0].split('|');
 				//	  var div = document.getElementById('registry');
 
 					//div.innerHTML += "<a onclick='showDomain(0);' class='collection-item'>" + fields[0] + '</a>';
 					  //alert(result[0]); 
-   $('#'+doc).show(); }
+  
 	
-	if (typeof window.ethereum !== 'undefined') {
-  console.log('MetaMask is installed!'); }
+	if (typeof window.ethereum !== 'undefined') {console.log('MetaMask is installed!'); }
 		
 		async function signer() {
 
@@ -333,12 +330,12 @@ const account = accounts[0]; alert(account);
 //  params: [transactionParameters],
 //});
 	
-	const fmPhantom = new Fortmatic.Phantom('pk_live_68F42DEA74EDF831'); 
-	const handleLoginWithMagicLink = async () => {
-    	const email = document.getElementById('user-email').value;
-    	const user = await fmPhantom.loginWithMagicLink({ email });
-    	console.log(await user.isLoggedIn()); // => true
-	console.log((await user.getMetadata()).publicAddress); // You should use this as a unique user Id.
+	//const fmPhantom = new Fortmatic.Phantom('pk_live_68F42DEA74EDF831'); 
+	//const handleLoginWithMagicLink = async () => {
+    	//const email = document.getElementById('user-email').value;
+    	//const user = await fmPhantom.loginWithMagicLink({ email });
+    //	console.log(await user.isLoggedIn()); // => true
+	//console.log((await user.getMetadata()).publicAddress); // You should use this as a unique user Id.
 };
 	//const fmPhantom = new Fortmatic.Phantom('pk_live_68F42DEA74EDF831'); // ✨
 
@@ -363,7 +360,7 @@ var manifest;  mapboxgl.accessToken = 'pk.eyJ1IjoibmZudGgiLCJhIjoiY2tweW1rNXlsMG
 	
 	//$.get("https://api.opensea.io/api/v1/asset/0x495f947276749Ce646f68AC8c248420045cb7b5e/62652367444291733483705976494538757758952482544655308357132039899726208827393/", function(data) { console.log(data); });
 	
-$.get("../manifest", function (data) { manifest = data.split(/\r?\n/); 
+$.get("../manifest", function (data) { alert(data); manifest = data.split(/\r?\n/); 
 	for (let i = 0; i < manifest.length - 1; i++) { 
 		var fields = manifest[i].split('|'); 
 						       			       
