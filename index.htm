@@ -1,6 +1,6 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="fortmatic-site-verification" content="XHvcktou4P9Jyc0J" /><title>NfNth · Deed to Domain</title>
+<meta name="fortmatic-site-verification" content="XHvcktou4P9Jyc0J" /><title>Dralun · Deed to Domain</title>
 
 <!-- resources -->
 <link class="ico" rel="icon" href="https://cdn.jsdelivr.net/gh/nfnth/res@latest/icon/urland/favicon.ico" type="image/x-icon">
@@ -15,10 +15,7 @@
 <script src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=fetch"></script>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.2.0/fabric.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script></head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script></head>
 
 <!-- menu -->
 <nav id="main-menu" style="position: fixed;top:0; z-index:2;visibility:hidden;" class="loader">
@@ -48,31 +45,31 @@
 <!-- drop downs -->
 <ul id="domain" class="dropdown-content loader" style="visibility:hidden;">
   	<li><a onclick="mode=0; setEditor('land');"><i class="material-icons">landscape</i>Land Deeds</a></li>
-	<li><a onclick="mode=0; setEditor('tribe');"><i class="material-icons">cottage</i>Tribal Rights</a></li>
-  	<li><a onclick="mode=0; setEditor('drhab');"><i class="material-icons">emoji_objects</i>Personal Effects</a></li></ul>
+	<li><a onclick="mode=0; setEditor('tribe');"><i class="material-icons">cottage</i>Tribal Nations</a></li>
+  	<li><a onclick="mode=0; setEditor('drhab');"><i class="material-icons">inventory_2</i>Stock and Supply</a></li></ul>
 
 <ul id="artifact" class="dropdown-content loader" style="visibility:hidden;">
-	<li><a onclick="mode=0; setEditor('civilplex');"><i class="material-icons">inventory_2</i>Collectibles</a></li>
+	<li><a onclick="mode=0; setEditor('civilplex');"><i class="material-icons">emoji_objects</i>Collectibles</a></li>
   	<li><a onclick="mode=0; setEditor('nfnth');"><i class="material-icons">card_membership</i>Artworks</a></li></ul>
 
 <!-- panel -->
 <ul id="user-pane" class="sidenav loader" style="visibility:hidden;">
-	<li><div class="user-view z-depth-1" style="background-color: #608396;display: flex;margin: auto; padding: 0;align-items: flex-end;"><img draggable="false" ondragstart="return false;" id="user-pic" style="height: 72;background-color: #a2b9cc; padding: 12;" src="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/shield.png" /></div></li>
+	<li><div class="user-view z-depth-1" style="background-color: #eaf2f7;display: flex;margin: auto; padding: 0;align-items: flex-end;"><img draggable="false" ondragstart="return false;" id="user-pic" style="height: 72;margin-left:18; padding: 12;" src="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/shield.png" /></div></li>
   	<li style="text-align: center;"><a class="subheader">
-    		<span style="font-size: 20;font-weight: bold; color: #000000;">Nfnth</span>
+    		<span style="font-size: 20;font-weight: bold; color: #000000;">Dralun</span>
     		<span style="margin-left:4;font-size: 16;font-weight: bold; color: #494646; ">· Deed to Domain</span></a></li>
   	<li style="height:24;"><a class="subheader"></a></li>
-  	<li><a class="waves-effect" onclick="openInNewTab('https://github.com/nfnth'); $('#user-pane').sidenav('close');"><i class="material-icons">menu_book</i>Learn Deed Domains and Artifacts</a></li>
+  	<li><a class="waves-effect" onclick="openInNewTab('https://github.com/nfnth'); $('#user-pane').sidenav('close');"><i class="material-icons">menu_book</i>How to Use Deed Domains</a></li>
 	<li><a class="waves-effect" onclick="openInNewTab('https://github.com/nfnth/nfnth/blob/master/doc/CC.md'); $('#user-pane').sidenav('close');"><i class="material-icons">book</i>Read Civilian's Complex</a></li>
-  	<li><a class="waves-effect" onclick="openInNewTab('https://github.com/nfnth/nfnth/issues'); $('#user-pane').sidenav('close');"><i class="material-icons">help</i>About Dralun</a></li>
+  	<li><a class="waves-effect" onclick="openInNewTab('https://github.com/nfnth/nfnth/issues'); $('#user-pane').sidenav('close');"><i class="material-icons">help</i>Submit Issues</a></li>
   	<li><div style="margin-top:0;" class="divider"></div></li>
   	<li><a class="subheader"></a></li>
   	<li><div id="header-logo" style="display: flex; flex-flow:column; align-items: center;justify-content: center;align-items: center; display: flex;">
       		<div id="header-logo">
         	<div id="logo" style="text-align:center;">
-          		<img draggable="false" id="leafy" style="width:64;height:48;" src="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/eagle/eagle1.png"/></div>
+          		<img draggable="false" id="eagle-eye" style="width:64;height:48;" src="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/eagle/eagle1.png"/></div>
         		<div style="display: flex;align-items: center;justify-content: center;">
-          			<span id="title" style="font-weight: bold; font-size: 25px;">NfNth</span>
+				<span id="title" style="font-weight: bold; font-size: 25px; color:blue;">Nf</span><span id="title" style="font-weight: bold; font-size: 25px;">Nth</span>
           			<i class="material-icons" >copyright</i>2021</div></div>
         		<div><span style="cursor: pointer;" onclick="openInNewTab('https://github.com/nfnth/nfnth/blob/master/doc/BROS.md'); $('#user-pane').sidenav('close');" class="new badge green darken-2" data-badge-caption="brOS, v1.02"></span></div>
       			<div id="header-title"><span id="phrase" style="font-style: italic;">software on infinitive basis</span></div></div></li></ul>
@@ -81,15 +78,22 @@
 <div id="user-modal" class="modal content loader">
 	<div class="modal-content">
 		<div id="intro" class="row-section">
-			<div id="console" class="row hover-base" onclick="signer();">   
+			<div id="console" class="row hover-base" onclick="signer();" style="border: solid 1px darkgray;
+    box-shadow: 2px 2px lightgrey; text-align:center;">   
 				<img width="240" height="120" src="https://github.com/nfnth/res/raw/main/icon/metamask-logo-horizontal.svg" /></div>
 			
-			<div class="row hover-base" onclick="handleLoginWithMagicLink()">
-				<div class="input-field"><i class="material-icons prefix">mail</i><input type="text" id="user-email" name="user-email" class="user-input" placeholder="Enter email" /><label for="user-email">Email</label><span id="user-issue" class="helper-text" data-error="Invalid input" data-success="" >Enter Email</span>
-				<img  width="240" height="120"  src="https://github.com/nfnth/res/raw/main/icon/logo.e302dbb6.svg" /></div></div>
+			<div id="console" class="row hover-base" style="text-align:center;">  
+				-OR-</div>
+			<div id="console" class="row hover-base">  
+				<div class="input-field"><i class="material-icons prefix">mail</i><input type="text" id="user-email" name="user-email" class="user-input" placeholder="Enter email" /><label for="user-email">Email</label><span id="user-issue" class="helper-text" data-error="Invalid input" data-success="" >Enter Email</span></div>
+				
+			<div class="row hover-base" onclick="handleLoginWithMagicLink()" style="border: solid 1px darkgray;
+    box-shadow: 2px 2px lightgrey; text-align:center;">
+				
+				<img  width="240" height="120" src="https://github.com/nfnth/res/raw/main/icon/logo.e302dbb6.svg" /></div>
 
-	<div class="modal-footer content loader">
-	      <button id="button-next" class="btn waves-effect waves-light" onclick="signer();">Sign In<i class="material-icons left">login</i></button><a href="#!" class="modal-close waves-effect waves-gray btn-flat disabled">Cancel</a></div></div></div></div>
+	<!--<div class="modal-footer content loader">
+	      <button id="button-next" class="btn waves-effect waves-light" onclick="signer();">Sign In<i class="material-icons left">login</i></button><a href="#!" class="modal-close waves-effect waves-gray btn-flat disabled">Cancel</a></div>--></div></div></div>
 
 <!-- home -->
 <div id="home" style="text-align:center;margin-top:68;visibility:hidden; width:100%; z-index:1;" class="content loader">
@@ -140,8 +144,6 @@
     	<a class="waves-effect waves-light btn">Reset</a>
     <div class="modal-footer"><a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a></div></div>
 
-<script src="./nfnth.js"></script>
-
 <style>
 body { margin: 0; top: 0; left: 0; overflow-x: hidden; overflow-y: hidden; padding: 0 0 0 0; font-family: Arial, Helvetica, sans-serif; background-color: white; }
 .hidden { display:none!important; height: 0; padding: 0!important; } .disappear { visibility: hidden; } .load { opacity: 0; } .gone { width:0; height:0; z-index:-400; position:absolute; top:-9999; left:-9999;}
@@ -154,7 +156,8 @@ div {-khtml-user-select: none;-o-user-select: none;-moz-user-select: none;-webki
 
 #slider { opacity: 1; transition: opacity .8s linear; } #slider:hover {opacity:0.5; }
 
-*::-webkit-scrollbar, *::-webkit-scrollbar-thumb {width: 26px;border-radius: 1px;background-clip: padding-box;border: 10px solid transparent;height: 1px;    -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2); box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);} *::-webkit-scrollbar-thumb { box-shadow: inset 0 0 0 10px; }
+	/*
+*::-webkit-scrollbar, *::-webkit-scrollbar-thumb {width: 26px;border-radius: 1px;background-clip: padding-box;border: 10px solid transparent;height: 1px;    -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2); box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);} *::-webkit-scrollbar-thumb { box-shadow: inset 0 0 0 10px; } */
 
 #menu-logo {opacity:1; transition: opacity .8s linear;} #menu-logo:hover { opacity:0.5; }
 .stamp-image { margin-left: 64px; width:64px; height:64px;} .stamp-image:hover {opacity:0.5; cursor: pointer;} 
@@ -185,7 +188,6 @@ nav ul a {display: flex!important; align-items: center; width:100%;}
 
 code { white-space: break-spaces;}
 
-/* form */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
 
 ::backdrop{background-color: white;}
@@ -203,14 +205,14 @@ div.active {opacity: 1;height: auto;}
   
 .form-disable { pointer-events: none; opacity:0.5; }
 
-/* editor */
+/* editor 
 .coder { background-color: whitesmoke;padding: 12;margin: 12;user-select: text; }
 code { color: gray;line-height: 1;}
 
 .note {padding: 48; background-color: aliceblue;width: 75%;display: flex;justify-content: center;border-radius: 12px;margin: auto;position: relative;top: 16;}
-
+*/
 #description { font-family: Roboto; font-size: 15px; font-weight: 300;}
-#infowindow-content .title {  font-weight: bold; } #infowindow-content {  display: none;}  #map #infowindow-content {  display: inline; }
+#infowindow-content .title {  font-weight: bold; } #infowindow-content {  display: none;}  #map #infowindow-content {  display: inline; } 
 
 .btn { overflow: hidden; } .btn:hover:before { opacity:1; }
 .btn:before { content: ''; opacity: 0.5;  background-color: rgba(109, 109, 109, 0.6); position: absolute; width: 100%; height: 100%; left: 0; top: 0; transition: opacity .2s; z-index: -1;}
@@ -221,6 +223,20 @@ code { color: gray;line-height: 1;}
 </style>
 
 <script>
+//	document.addEventListener('DOMContentLoaded', function() { var elems = document.querySelectorAll('.modal'); var instances = M.Modal.init(elems); });
+//		const preloadImage = src => 
+  //         new Promise(r => {
+    //         const image = new Image()
+      //       image.onload = r
+        //     image.onerror = r
+          //   image.src = src })
+
+var current = new Date(); // timestamp, milliseconds since 1970 (?) vs. milliseconds (UTC)
+ var yyyy = current.getFullYear(), MM = current.getMonth(), dd = current.getDate(), hh = current.getHours(), mm = current.getMinutes(), ss = current.getSeconds();
+ var datestamp = yyyy + "." + MM + "." + dd;
+ var timestamp = hh + ":" + mm + ":" + ss;
+ //$.post("../search/ip", "", function (data) { $('#stat-date').html(datestamp); $('#stat-time').html(timestamp); $('#stat-ip').html(data);});
+
 function openInNewTab(url) { window.open(url, '_blank').focus(); }
 	
 function outside(data) {
@@ -232,13 +248,14 @@ function my_callback(dataWeGotViaJsonp){ alert(dataWeGotViaJsonp);  }
 	
 async function initial() {
 	$('select').formSelect(); 
-  	$('#marks').dropdown({ constrainWidth: false } ); 
+  //	$('#marks').dropdown({ constrainWidth: false } ); 
 	$('#domains').dropdown({ constrainWidth: false } ); $('#domains-hide').dropdown({ constrainWidth: false } ); 
 	$('#artifacts').dropdown({ constrainWidth: false } ); $('#artifacts-hide').dropdown({ constrainWidth: false } ); 
 	//$('#actions').dropdown({ constrainWidth: false } );
 	//$('#domains2').dropdown({ constrainWidth: false } ); 
-  $('.modal').modal(); $('#user-pane').sidenav(); $('#user-setting').sidenav({ edge: 'right' } );
-  $('.collapsible').collapsible(); 
+  $('.modal').modal(); $('#user-pane').sidenav(); 
+	//$('#user-setting').sidenav({ edge: 'right' } );
+//  $('.collapsible').collapsible(); 
 //mode=0; setEditor('../doc/CC.md');
 
         // await preloadImage('https://github.com/nfnth/res/raw/main/site/coat.png') // Preload an image
@@ -251,8 +268,8 @@ async function initial() {
 
 var castle = Math.floor(Math.random() * (16 - 1 + 1)) + 1; 
 document.getElementById('menu-logo').src = "https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/castle/castle" + castle.toString() + ".png";
-var eagle = Math.floor(Math.random() * (16 - 1 + 1)) + 1; 
-//document.getElementById('menu-logo').src = "https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/castle/castle" + castle.toString() + ".png";
+var eagle = Math.floor(Math.random() * (4 - 1 + 1)) + 1; 
+document.getElementById('eagle-eye').src = "https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/eagle/eagle" + eagle.toString() + ".png";
 
 domain = window.location.host; if (domain != "dralun.com") { document.title = "UR.Land · " + domain; }
 	
@@ -269,34 +286,26 @@ initial();
 function searchClear() { $('#search').val(''); }
 function searchResults() { $.post("../search/word", $('#search').val(), function(data, status){ $('#results').html(data); }); }
 
-
-
 var mode = 0; //0(view), 1(edit), 2(preview), 3(list), 4(map), 5(stat), 7(mail), 8(game)
 function setEditor(doc) {
    var width = window.innerWidth; var height = window.innerHeight - 44; //menu, footer
    $("#holder").hide(); $("#viewer").hide(); $("#code").hide(); $("#grid").hide(); $("#map").hide(); $("#stats").hide();
    $("#land").hide(); $("#tribe").hide(); $("#drhab").hide(); $("#civilplex").hide(); $("#nfnth").hide(); 
  
-   switch(mode) {
-   case 4:
-	$("#stats").show();
+  // switch(mode) {
+ //  case 4:
+//	$("#stats").show();
 		   //var fields = manifest[0].split('|');
 				//	  var div = document.getElementById('registry');
 
 					//div.innerHTML += "<a onclick='showDomain(0);' class='collection-item'>" + fields[0] + '</a>';
 					  //alert(result[0]); 
-		   break;
-   case 5:
-	$("#map").show(); 
-		   const settings = {
-  "async": true, "crossDomain": true, "url":"https://api.opensea.io/api/v1/asset/0x495f947276749Ce646f68AC8c248420045cb7b5e/62652367444291733483705976494538757758952482544655308357132039899726208827393/", "method": "GET", "headers": {} };
-
-$.ajax(settings).done(function (response) {
-	//var obj = JSON.parse(response);
-  console.log(response);
-});
-		   break;
-   default:
+		//   break;
+ //  case 5:
+	//$("#map").show(); 
+		   
+		//   break;
+  // default:
    $('#'+doc).show(); }}
 	
 	if (typeof window.ethereum !== 'undefined') {
@@ -306,7 +315,7 @@ $.ajax(settings).done(function (response) {
 
 			const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
 const account = accounts[0]; alert(account);
-		}
+	//	}
 	
 //	const transactionParameters = {
   //nonce: '0x00', // ignored by MetaMask
@@ -348,14 +357,27 @@ const account = accounts[0]; alert(account);
 var manifest;  mapboxgl.accessToken = 'pk.eyJ1IjoibmZudGgiLCJhIjoiY2tweW1rNXlsMGFpYzJwcGt1cHh6dmxzcyJ9.ZJaFrGpPDv5froWZMLXXYQ';
 	
 $.get("../manifest", function (data) { manifest = data.split(/\r?\n/); 
-	for (let i = 0; i < manifest.length - 1; i++) { var fields = manifest[i].split('|'); 
+	for (let i = 0; i < manifest.length - 1; i++) { 
+		
+		
+		const settings = {
+  "async": true, "crossDomain": true, "url":"https://api.opensea.io/api/v1/asset/0x495f947276749Ce646f68AC8c248420045cb7b5e/62652367444291733483705976494538757758952482544655308357132039899726208827393/", "method": "GET", "headers": {} };
+
+$.ajax(settings).done(function (response) {
+	//var obj = JSON.parse(response);
+  console.log(response);
+});
+		
+		
+		var fields = manifest[i].split('|'); 
+						       
+						       
 		//render map dialogs and list?
 		//$("#registry").append("<a href='#!' class='collection-item'>" + fields[0] + "</a>"); }
-						      // alert(fields[5]); alert(fields[0]);
 						       
 		var monument = [fields[5], fields[4]]; //-98.5558020753026, 39.80981352007335, ];
 						       
-		var popup = new mapboxgl.Popup({ offset: 25 }).setHTML('<div><div><img widht="48" height="48" src="https://github.com/nfnth/res/raw/main/thumb/100058936.jpg"/></div><div><h6>' + fields[1] + '</h6><a href="https://ur.land">Owner Info</a><br/><a href="'+ fields[3] + '">More info...</a><br/><button>View Deed</button></div></div>');
+		var popup = new mapboxgl.Popup({ offset: 25 }).setHTML('<div><div><img widht="48" height="48" src="https://github.com/nfnth/res/raw/main/thumb/100058936.jpg"/></div><div><h6>' + fields[1] + '</h6><a href="https://ur.land">Owner Info</a><br/><a href="'+ fields[3] + '">More info...</a><br/><a class="waves-effect waves-light btn modal-trigger" href="#modal1">Purchase</a></div></div>');
 		var el = document.createElement('div'); el.id = 'marker'; //class per icon type...
 		var map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/mapbox/light-v10', center: monument,zoom: 6});
 		new mapboxgl.Marker(el).setLngLat(monument).setPopup(popup).addTo(map); } });
