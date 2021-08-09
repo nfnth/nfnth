@@ -3,7 +3,9 @@
   
 ## On [Dralun](https://dralun.com), Land of Deed to Domain
 
-**Dralun** is the land built upon the people and the deeds etched in code.
+**Dralun** is the built upon the need to preserve artifacts of the people with deeds etched in code.
+
+
 
 Nomad and Civilian deeds are domain non-specific and are used to extend UR.Land functionality,
 
