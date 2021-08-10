@@ -1,6 +1,6 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="fortmatic-site-verification" content="XHvcktou4P9Jyc0J" /><title>Dralun · Deed to Domain</title>
+<title>Dralun · Deed to Domain</title>
 
 <!-- resources -->
 <link class="ico" rel="icon" href="https://cdn.jsdelivr.net/gh/nfnth/res@latest/icon/urland/favicon.ico" type="image/x-icon">
@@ -9,10 +9,6 @@
 <link class="ico" rel="icon" sizes="192x192" href="https://cdn.jsdelivr.net/gh/nfnth/res@latest/icon/urland/android-chrome-192x192.png">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>	
-<script src="https://cdn.jsdelivr.net/npm/fortmatic/dist/fortmatic.js"></script>
-<link href="https://api.mapbox.com/mapbox-gl-js/v2.3.0/mapbox-gl.css" rel="stylesheet">
-<script src="https://api.mapbox.com/mapbox-gl-js/v2.3.0/mapbox-gl.js"></script>
-<script src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=fetch"></script>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script></head>
@@ -32,7 +28,7 @@
 		
     		<ul class="hide-on-med-and-down" >
 			<li><a onclick="setEditor('map');">MAP</a></li>
-      			<li><a id="domains" href="#!" data-target="domain">LISTINGS<i class="material-icons right">arrow_drop_down</i></a></li>
+      			<li><a id="domains" href="#!" data-target="domain">BOXES<i class="material-icons right">arrow_drop_down</i></a></li>
 			<li><a id="artifacts" href="#!" data-target="artifact">ARTIFACTS<i class="material-icons right">arrow_drop_down</i></a></li>
 			
       			<li style="height:64px;">
@@ -118,21 +114,7 @@
 </div>
 <!-- map/store 
 <div id="land" class="content loader" style="display:none;">
-<iframe id='opensea' src='https://opensea.io/assets/urland?embed=true' width='100%' height='100%' frameborder='0' allowfullscreen></iframe></div>
-	
-<div id="tribe" class="content loader" style="display:none;">
-<iframe id='opensea' src='https://opensea.io/assets/dralun?embed=true' width='100%' height='100%' frameborder='0' allowfullscreen></iframe></div>
-	
-<div id="drhab" class="content loader" style="display:none;">
-<iframe id='opensea' src='https://opensea.io/assets/drhab?embed=true' width='100%' height='100%' frameborder='0' allowfullscreen></iframe></div>
-
-<div id="civilplex" class="content loader" style="display:none;">
-<iframe id='opensea' src='https://opensea.io/assets/civilplex?embed=true' width='100%' height='100%' frameborder='0' allowfullscreen></iframe></div>
-	
-<div id="nfnth" class="content loader" style="display:none;"> 
-<iframe id='opensea' src='https://opensea.io/assets/nfnth?embed=true' width='100%' height='100%' frameborder='0' allowfullscreen></iframe></div>-->
-	
-<!-- land deeds (landscape), tribal nations (cottage), stock/supply (inventory_2), collectibles (emoji_objects), artworks (card_membership) -->
+	land deeds (landscape), tribal nations (cottage), stock/supply (inventory_2), collectibles (emoji_objects), artworks (card_membership) -->
 
 <div id="grid" class="content loader" style="overflow-y: auto; height: 95%;">
 	<div id="registry" class="collection">
@@ -159,87 +141,9 @@
     	<a class="waves-effect waves-light btn">Reset</a>
     <div class="modal-footer"><a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a></div></div>
 
-<style>
-body { margin: 0; top: 0; left: 0; overflow-x: hidden; overflow-y: hidden; padding: 0 0 0 0; font-family: Arial, Helvetica, sans-serif; background-color: white; }
-.hidden { display:none!important; height: 0; padding: 0!important; } .disappear { visibility: hidden; } .load { opacity: 0; } .gone { width:0; height:0; z-index:-400; position:absolute; top:-9999; left:-9999;}
-.fade {-webkit-animation-name: fade;-webkit-animation-duration: 1.5s;animation-name: fade;animation-duration: 1.5s;} @-webkit-keyframes fade {from {opacity: .4}to {opacity: 1}} @keyframes fade {from {opacity: .4}to {opacity: 1}}
-/*.disabled { pointer-events: none; opacity: 0.5; background: #CCC; }*/
-/*div:hover { color: rgba(0, 0, 0, 0.3); }*/
-
-img { -khtml-user-select: none;-o-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;}
-span {-khtml-user-select: none;-o-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;}
-div {-khtml-user-select: none;-o-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;}
-
-#slider { opacity: 1; transition: opacity .8s linear; } #slider:hover {opacity:0.5; }
-
-	/*
-*::-webkit-scrollbar, *::-webkit-scrollbar-thumb {width: 26px;border-radius: 1px;background-clip: padding-box;border: 10px solid transparent;height: 1px;    -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2); box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);} *::-webkit-scrollbar-thumb { box-shadow: inset 0 0 0 10px; } */
-
-#menu-logo {opacity:1; transition: opacity .8s linear;} #menu-logo:hover { opacity:0.5; }
-.stamp-image { margin-left: 64px; width:64px; height:64px;} .stamp-image:hover {opacity:0.5; cursor: pointer;} 
-
-nav ul a {display: flex!important; align-items: center; width:100%;}
-.badge { margin-right: 12;border-radius: 12px;color: white!important; padding-right: 12px!important;padding-left: 12px!important; padding-bottom: 10px!important;box-shadow: black 0px 0px 2px!important;height: 24px!important;}
-.content div, .content span { transition:opacity 0.2s; -webkit-transition: opacity 0.2; } .hide-item { opacity: 0; }
-.input-field i, .input-field span, .input-field input, .input-field { cursor:pointer!important; } .input-field label { cursor:pointer!important; color:black!important;}
-
-.sidenav .collapsible, .sidenav.fixed .collapsible {border-top: 1px solid #ddd!important; border-right: 1px solid #ddd!important; border-left: 1px solid #ddd!important;margin: .5rem 0 1rem 0;-webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2)!important;box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2)!important; }
-
-/*.pac-container { z-index:1100!important; } .pac-logo::after { display: none!important; }
-.pac-card {   margin: 10px 10px 0 0; border-radius: 2px 0 0 2px;  box-sizing: border-box; -moz-box-sizing: border-box; outline: none;  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);  background-color: #fff; font-family: Roboto;}
-#pac-container { padding-bottom: 12px;  margin-right: 12px; }
-.pac-controls { display: inline-block; padding: 5px 11px; } .pac-controls label {  font-family: Roboto; font-size: 13px; font-weight: 300; }
-#pac-input { background-color: #fff;  font-family: Roboto; font-size: 15px;  font-weight: 300;  margin-left: 12px;  padding: 0 11px 0 13px;  text-overflow: ellipsis;   width: 400px; } #pac-input:focus { border-color: #4d90fe; }*/
-
-.select-dropdown li img { width: 32px; height: 32px; }
-.dropdown-content li { display:flex; align-items: center;}
-
-/* mobile */
-.screen-hide {display:none;}
-@media screen and (max-width: 800px) {.screen-hide {display:block;}}
-@media screen and (max-height: 450px) {.sidenav {padding-top: 15px;}.sidenav a {font-size: 18px;}}
-@media screen and (max-width: 800px) {/* .logo { width: 36px; height:36px; }*/}
-
-@media print {#quick-button { display:none!important}}
-
-code { white-space: break-spaces;}
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
-
-::backdrop{background-color: white;}
-div.active {opacity: 1;height: auto;}
-  
-.row-section {transition: opacity 1s ease-out;overflow: hidden;}
-  
-.hover-base { opacity: 0.8; border: solid 1px rgba(255, 255, 255, 0); transition:all 0.1s; -webkit-transition: all 0.1; cursor: pointer;}
-.hover-base:hover { opacity: 1; color:#26a69a; }
-.hover-base:hover label { color:#26a69a!important } .hover-base:hover input {border-bottom:1px solid #26a69a!important;}
-.hover-base:focus-within label { color:#26a69a!important;}
-.hover-base span { opacity:0; } .hover-select, .hover-select span { opacity: 1!important; }
-  
-.green-notice { color: green;} .red-notice { color:red;}
-  
-.form-disable { pointer-events: none; opacity:0.5; }
-
-/* editor 
-.coder { background-color: whitesmoke;padding: 12;margin: 12;user-select: text; }
-code { color: gray;line-height: 1;}
-
-.note {padding: 48; background-color: aliceblue;width: 75%;display: flex;justify-content: center;border-radius: 12px;margin: auto;position: relative;top: 16;}
-*/
-#description { font-family: Roboto; font-size: 15px; font-weight: 300;}
-#infowindow-content .title {  font-weight: bold; } #infowindow-content {  display: none;}  #map #infowindow-content {  display: inline; } 
-
-.btn { overflow: hidden; } .btn:hover:before { opacity:1; }
-.btn:before { content: ''; opacity: 0.5;  background-color: rgba(109, 109, 109, 0.6); position: absolute; width: 100%; height: 100%; left: 0; top: 0; transition: opacity .2s; z-index: -1;}
-  
-#map { height: 93%; bottom: 0; width: 100%; }
-#marker { background-image: url('https://github.com/nfnth/res/raw/main/icon/house/house1.png'); background-size: cover; width: 24px; height: 24px; border-radius: 50%; cursor: pointer; }
-.mapboxgl-popup { max-width: 200px; }
-</style>
-
 <script>
-	
+	//include embed mode for box/art/domain  
+
 //		const preloadImage = src => 
   //         new Promise(r => {
     //         const image = new Image()
@@ -247,95 +151,83 @@ code { color: gray;line-height: 1;}
         //     image.onerror = r
           //   image.src = src })
 
-var current = new Date(); // timestamp, milliseconds since 1970 (?) vs. milliseconds (UTC)
- var yyyy = current.getFullYear(), MM = current.getMonth(), dd = current.getDate(), hh = current.getHours(), mm = current.getMinutes(), ss = current.getSeconds();
- var datestamp = yyyy + "." + MM + "." + dd;
- var timestamp = hh + ":" + mm + ":" + ss;
- //$.post("../search/ip", "", function (data) { $('#stat-date').html(datestamp); $('#stat-time').html(timestamp); $('#stat-ip').html(data);});
-
 function openInNewTab(url) { window.open(url, '_blank').focus(); }
 	
-function outside(data) {
-	alert('calling outside');
-	$.ajax({ type: 'GET', url: 'https://ur.land/jsonp?' + data,jsonp: false,jsonpCallback: "my_callback", dataType: 'jsonp',
+function service(data) { alert('calling outside');
+    $.ajax({ type: 'GET', url: 'https://ur.land/jsonp?' + data,jsonp: false,jsonpCallback: "my_callback", dataType: 'jsonp',
     success: function(data) { alert(data); console.log('Success!'); }, error: function(data) { alert(data); console.log('Uh Oh!'); }  }); }
-	
-function my_callback(dataWeGotViaJsonp){ alert(dataWeGotViaJsonp);  }
-	
+              
+    function my_callback(dataWeGotViaJsonp){ alert(dataWeGotViaJsonp);  }
+
 async function initial() {
-	$('select').formSelect(); 
-  //	$('#marks').dropdown({ constrainWidth: false } ); 
-	$('#domains').dropdown({ constrainWidth: false } ); $('#domains-hide').dropdown({ constrainWidth: false } ); 
-	$('#artifacts').dropdown({ constrainWidth: false } ); $('#artifacts-hide').dropdown({ constrainWidth: false } ); 
-	//$('#actions').dropdown({ constrainWidth: false } );
-	//$('#domains2').dropdown({ constrainWidth: false } ); 
-	//$('.fixed-action-btn').floatingActionButton();
-  $('.modal').modal();   $('#user-pane').sidenav(); 
-	//$('#user-setting').sidenav({ edge: 'right' } );
-//  $('.collapsible').collapsible(); 
-//mode=0; 
-	setEditor('map');
+              $('select').formSelect(); 
+              $('#domains').dropdown({ constrainWidth: false } ); $('#domains-hide').dropdown({ constrainWidth: false } ); 
+              $('#artifacts').dropdown({ constrainWidth: false } ); $('#artifacts-hide').dropdown({ constrainWidth: false } ); 
+          
+              //$('.fixed-action-btn').floatingActionButton();
+            $('.modal').modal();   $('#user-pane').sidenav(); 
+              //$('#user-setting').sidenav({ edge: 'right' } );
+          //  $('.collapsible').collapsible(); 
+          //mode=0; 
+              setEditor('map');
+          
+                  // await preloadImage('https://github.com/nfnth/res/raw/main/site/coat.png') // Preload an image
+          //	await preloadImage('https://github.com/nfnth/res/raw/main/site/chimi_hi.png') 
+          //	await preloadImage('https://github.com/nfnth/res/raw/main/site/chimi_cards.png') 
+                   //await Promise.all(images.map(x => preloadImage(x.src))) // Preload a bunch of images in parallel 
+              var elems = document.querySelectorAll('.fixed-action-btn');
+              var instances = M.FloatingActionButton.init(elems, {
+                hoverEnabled: false
+              });
+              
+            setTimeout(function() {  $(".loader").css("visibility", "visible"); }, 500);
+           //mermaid.initialize({startOnLoad:true});
+            searchClear(); 
+          
+          var castle = Math.floor(Math.random() * (16 - 1 + 1)) + 1; 
+          document.getElementById('menu-logo').src = "https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/castle/castle" + castle.toString() + ".png";
+          var eagle = Math.floor(Math.random() * (4 - 1 + 1)) + 1; 
+          document.getElementById('eagle-eye').src = "https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/eagle/eagle" + eagle.toString() + ".png";
+          
+          domain = window.location.host; if (domain != "dralun.com") { document.title = "UR.Land · " + domain; }
+              
+          var pathArray = window.location.pathname.split('/'); 
+          switch (pathArray.length) {
+              case 2:
+                address = pathArray[1];// makeEditor();
+                mode=0; //setEditor("../" + address + "/profile");
+                //$.get("../" + address + "/profile", function (data) {  $("#home").html(renderMd(data));});
+                break; } }
+              
+          initial(); 
+              document.addEventListener('DOMContentLoaded', function() { var elems = document.querySelectorAll('.modal'); var instances = M.Modal.init(elems); });
+              document.addEventListener('DOMContentLoaded', function() {
+              
+            });
+              
+          //function openInNewTab(url, tab=true) { if (tab) { var win = window.open(url, '_blank'); win.focus(); } else window.open(url, '_self'); }
+          function searchClear() { $('#search').val(''); }
+          function searchResults() { $.post("../search/word", $('#search').val(), function(data, status){ $('#results').html(data); }); }
+          
+          var mode = 0; //0(view), 1(edit), 2(preview), 3(list), 4(map), 5(stat), 7(mail), 8(game)
+          function setEditor(doc) {  $('#'+doc).show(); }
+            // var width = window.innerWidth; var height = window.innerHeight - 44; //menu, footer
+            // $("#holder").hide(); $("#viewer").hide(); $("#code").hide(); $("#grid").hide(); $("#map").hide(); $("#stats").hide();
+            // $("#land").hide(); $("#tribe").hide(); $("#drhab").hide(); $("#civilplex").hide(); $("#nfnth").hide(); 
+           
+          //	$("#stats").show();
+                     //var fields = manifest[0].split('|');
+                          //	  var div = document.getElementById('registry');
+          
+                              //div.innerHTML += "<a onclick='showDomain(0);' class='collection-item'>" + fields[0] + '</a>';
+                                //alert(result[0]); 
 
-        // await preloadImage('https://github.com/nfnth/res/raw/main/site/coat.png') // Preload an image
-//	await preloadImage('https://github.com/nfnth/res/raw/main/site/chimi_hi.png') 
-//	await preloadImage('https://github.com/nfnth/res/raw/main/site/chimi_cards.png') 
-         //await Promise.all(images.map(x => preloadImage(x.src))) // Preload a bunch of images in parallel 
-	var elems = document.querySelectorAll('.fixed-action-btn');
-    var instances = M.FloatingActionButton.init(elems, {
-      hoverEnabled: false
-    });
-	
-  setTimeout(function() {  $(".loader").css("visibility", "visible"); }, 500);
- //mermaid.initialize({startOnLoad:true});
-  searchClear(); 
+if (typeof window.ethereum !== 'undefined') {console.log('MetaMask is installed!'); }
+	async function signer() {
 
-var castle = Math.floor(Math.random() * (16 - 1 + 1)) + 1; 
-document.getElementById('menu-logo').src = "https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/castle/castle" + castle.toString() + ".png";
-var eagle = Math.floor(Math.random() * (4 - 1 + 1)) + 1; 
-document.getElementById('eagle-eye').src = "https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/eagle/eagle" + eagle.toString() + ".png";
+const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+const account = accounts[0]; alert(account); }
 
-domain = window.location.host; if (domain != "dralun.com") { document.title = "UR.Land · " + domain; }
-	
-var pathArray = window.location.pathname.split('/'); 
-switch (pathArray.length) {
-    case 2:
-      address = pathArray[1];// makeEditor();
-      mode=0; //setEditor("../" + address + "/profile");
-      //$.get("../" + address + "/profile", function (data) {  $("#home").html(renderMd(data));});
-      break; } }
-	
-initial(); 
-	document.addEventListener('DOMContentLoaded', function() { var elems = document.querySelectorAll('.modal'); var instances = M.Modal.init(elems); });
-	document.addEventListener('DOMContentLoaded', function() {
-    
-  });
-	
-//function openInNewTab(url, tab=true) { if (tab) { var win = window.open(url, '_blank'); win.focus(); } else window.open(url, '_self'); }
-function searchClear() { $('#search').val(''); }
-function searchResults() { $.post("../search/word", $('#search').val(), function(data, status){ $('#results').html(data); }); }
-
-var mode = 0; //0(view), 1(edit), 2(preview), 3(list), 4(map), 5(stat), 7(mail), 8(game)
-function setEditor(doc) {  $('#'+doc).show(); }
-  // var width = window.innerWidth; var height = window.innerHeight - 44; //menu, footer
-  // $("#holder").hide(); $("#viewer").hide(); $("#code").hide(); $("#grid").hide(); $("#map").hide(); $("#stats").hide();
-  // $("#land").hide(); $("#tribe").hide(); $("#drhab").hide(); $("#civilplex").hide(); $("#nfnth").hide(); 
- 
-//	$("#stats").show();
-		   //var fields = manifest[0].split('|');
-				//	  var div = document.getElementById('registry');
-
-					//div.innerHTML += "<a onclick='showDomain(0);' class='collection-item'>" + fields[0] + '</a>';
-					  //alert(result[0]); 
-  
-	
-	if (typeof window.ethereum !== 'undefined') {console.log('MetaMask is installed!'); }
-		
-		async function signer() {
-
-			const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
-const account = accounts[0]; alert(account);
-	}
-	
 //	const transactionParameters = {
   //nonce: '0x00', // ignored by MetaMask
   //gasPrice: '0x09184e72a000', // customizable by user during MetaMask confirmation.
@@ -349,62 +241,8 @@ const account = accounts[0]; alert(account);
 //};
 
 // txHash is a hex string
-// As with any RPC call, it may throw an error
 //const txHash = await ethereum.request({
 //  method: 'eth_sendTransaction',
 //  params: [transactionParameters],
 //});
-	
-	//const fmPhantom = new Fortmatic.Phantom('pk_live_68F42DEA74EDF831'); 
-	//const handleLoginWithMagicLink = async () => {
-    	//const email = document.getElementById('user-email').value;
-    	//const user = await fmPhantom.loginWithMagicLink({ email });
-    //	console.log(await user.isLoggedIn()); // => true
-	//console.log((await user.getMetadata()).publicAddress); // You should use this as a unique user Id.
-//};
-	//const fmPhantom = new Fortmatic.Phantom('pk_live_68F42DEA74EDF831'); // ✨
-
-//web3 = new Web3(fmPhantom.getProvider()); // Instantiate web3 object
-
-// Send a transaction using web3
-//web3.eth.sendTransaction({
- // from: web3.eth.accounts[0],
- // to: '0x22b05D73097c0a2440D29aF61db4b4eD3803e55E',
- // value: web3.utils.toWei('1', 'ether')
-//})
-	//var list = document.getElementById('toolset');
-var manifest;  mapboxgl.accessToken = 'pk.eyJ1IjoibmZudGgiLCJhIjoiY2tweW1rNXlsMGFpYzJwcGt1cHh6dmxzcyJ9.ZJaFrGpPDv5froWZMLXXYQ';
-	
-			//const settings = {
-//  "async": true, "crossDomain": true, "url":"https://api.opensea.io/api/v1/asset/0x495f947276749Ce646f68AC8c248420045cb7b5e/62652367444291733483705976494538757758952482544655308357132039899726208827393/", "method": "GET", "headers": {} };
-
-//$.ajax(settings).done(function (response) {
-	//var obj = JSON.parse(response);
-  //console.log(response);
-//});
-	
-	//$.get("https://api.opensea.io/api/v1/asset/0x495f947276749Ce646f68AC8c248420045cb7b5e/62652367444291733483705976494538757758952482544655308357132039899726208827393/", function(data) { console.log(data); });
-	
-$.get("../manifest", function (data) { //alert(data);
-	manifest = data.split(/\r?\n/); 
-	for (let i = 0; i < manifest.length - 1; i++) { 
-		var fields = manifest[i].split('|'); 
-						       			       
-		//render map dialogs and list?
-		//$("#registry").append("<a href='#!' class='collection-item'>" + fields[0] + "</a>"); }
-						       
-		var monument = [fields[5], fields[4]]; //-98.5558020753026, 39.80981352007335, ];
-						       
-		var popup = new mapboxgl.Popup({ offset: 25 }).setHTML('<div><div><img widht="48" height="48" src="https://github.com/nfnth/res/raw/main/thumb/100058936.jpg"/></div><div><h6>' + fields[1] + '</h6><a href="https://ur.land">Owner Info</a><br/><a href="'+ fields[3] + '">More info...</a><br/><a class="waves-effect waves-light btn modal-trigger" href="#modal1">Purchase</a></div></div>');
-		var el = document.createElement('div'); el.id = 'marker'; //class per icon type...
-		var map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/mapbox/light-v10', center: monument,zoom: 6});
-		new mapboxgl.Marker(el).setLngLat(monument).setPopup(popup).addTo(map); } });
-
-//[-82.99869603364057, 35.64757499700629, ];
-
-
-//dralun|abenaki.us|0x8a83fbbacb82030ea17179c0403b04e7bce7ba10|wikipedia.org/wiki/Abenaki|44.9196889888506, -69.4998783932573|
-
-//var map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/mapbox/dark-v10', zoom: 4, center: [-86.99869603364057, 37.64757499700629, ] });
-//map.on('load', function (event) { map.resize(); });
-	</script>
+</script>
