@@ -1,21 +1,13 @@
 
 <p align="center"><img src="https://github.com/nfnth/res/raw/main/site/bird.png" width="280" height="320" /></p>
   
-## On [Dralun](https://dralun.com), Land of Deed to Domain
+### On [Dralun](https://dralun.com), Land of Deed to Domain
 
-**Dralun** is the built upon the need to preserve artifacts of the people with deeds etched in code.
-
-
+Visit **Dralun**, where deed holders can preserve domains using artifacts etched in code.
 
 Nomad and Civilian deeds are domain non-specific and are used to extend UR.Land functionality,
 
-Nomads, Create and post artifiacts
-
-- Civilians, Run scenarios "Live" (and vote) withen any domain (Civilian only)
-- Tenants, control over content only
-- Owner, control over access and content
-
-Some notable features, include:
+Notable features, include:
 
 - access to the [deed regisrty](https://github.com/nfnth/nfnth/blob/master/doc/DEED.md), with options to,
   - [purchase]() as **Owner**, [claim]() as **Tenant**, or [proceed]() as **Civilian**
@@ -26,13 +18,13 @@ Some notable features, include:
 - instruction for the **Jaspre** engine, to setup a custom domain,
   - Run the **brOS** build script, see [gist]()
 
-To begin, [sign in]() (or [create an account]()), to recieve a user badge with **Nomad** status.
+To begin, create an OpenSea account, or browse the world with **Nomad** status.
 
 <a href="https://opensea.io/NfNth" title="Buy on OpenSea" target="_blank"><img style="width:220px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="https://storage.googleapis.com/opensea-static/Logomark/Badge%20-%20Available%20On%20-%20Light.png" alt="Available on OpenSea" /></a>
 
 ### On Deed to Domain
 
-**Dralun** is the concept of the *domain deed*, a differentiaion between control and content.
+**Dralun** is the concept of *domain deed*, a differentiaion between control and content.
 
 This can be used to mean one of the following:
 
@@ -48,9 +40,9 @@ The difference with base domains is that all content is subject to the intent of
 
 Thus a need for *domain deed* to become the representation of both control and content, the said **source** of a digital property.
 
-Dralun uses user groupings to differentiate, and domains can be permenently transferred, or temporarily licensed, depending on the need.
+Dralun uses classes to differentiate, and domains can be permenently transferred, depending on the need.
 
-#### Civilian Class
+#### Domain Class
 
 |**Class** (*ability*)|*Control?*|*Content?*|Description|
 |-|-|-|-|
@@ -83,18 +75,17 @@ To achieve dominion, take the following steps:
 - Control territory, write a land treaty, share strategy
 - View real-time stats on the [UStat.us](https://ustat.us) dashboard
 
-And that's it! May a nomad wander until what is lost is found.
+And that's it! May the nomad wander until what he's lost is found.
 
 <p align="center"><img style="padding-right:120px;position:relative;" src="https://github.com/nfnth/res/raw/main/site/fox.png" width="240" height="240" /></p>
 
-
 ### On Development
 
-**Dralun** is built on brOS, a light-weight, open-source stack, to host our platforms using [Linode](https://cloud.linode.com/linodes) and [GitHub]().
+**Dralun** is built using brOS, a light-weight, open-source stack, to host our platforms using [Linode](https://cloud.linode.com/linodes) and [GitHub]().
 
-For upcoming feaures, go to the [PLANME.md](https://github.com/users/nfnth/projects/3) project page
+For upcoming feaures, see [PLANME.md](https://github.com/users/nfnth/projects/3).
 
-For help, [start an issue](https://github.com/nfnth/nfnth/issues), or contact **matt@sebolt.us**.
+For help, [start an issue](https://github.com/nfnth/nfnth/issues), or contact **m@nfnth.com**.
 
 #### Current Release
 
@@ -104,10 +95,6 @@ For help, [start an issue](https://github.com/nfnth/nfnth/issues), or contact **
 |[Jaspre]()|JAvaScriptPythonstRipE objects|[latest]()|
 |[brOS](https://github.com/nfnth/nfnth/blob/master/doc/BROS.md)|Browser OS (on Arch Linux)|[latest]()|
 
-
-
 #### Sponsorship
 
-All sponsors to be listed here...
-
-image...
+Sponsor NfNth to get listed here...
