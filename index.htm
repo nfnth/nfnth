@@ -13,14 +13,14 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-	<script src="https://github.com/nfnth/nfnth/raw/master/src/map.js"></script></head>
+<script src="https://github.com/nfnth/nfnth/raw/master/src/map.js"></script></head>
 
 <!-- menu -->
 <nav id="main-menu" style="position: fixed;top:0; z-index:2;visibility:hidden;" class="loader">
   	<div class="nav-wrapper header" style="background-color:rgb(33, 124, 185); display:flex; justify-content: space-between;">
     		<div>
       			<a id="slider" href="#" data-target="user-pane" class="sidenav-trigger" style="background-color: #2f8fff;margin: 0;padding: 18;justify-items: center;display: flex;align-items: center;"><i class="material-icons">menu</i></a>
-      			<a style="display: flex; align-items: center; height: 100%; "><img id="menu-logo" class="hide-on-med-and-down" onclick="mode=0; setEditor('../doc/CC.md');" draggable="false" ondragstart="return false;" style="height:48; width:48; cursor: pointer; margin-left: 16;" /></a></div>
+      			<a style="display: flex; align-items: center; height: 100%; "><img id="menu-logo" class="hide-on-med-and-down" onclick="setEditor('../doc/CC.md');" draggable="false" ondragstart="return false;" style="height:48; width:48; cursor: pointer; margin-left: 16;" /></a></div>
     
 		<a class="screen-hide" onclick="setEditor('map');"><i class="material-icons right">map</i></a>
     		<a id="domains-hide" class="screen-hide" href="#!" data-target="domain"><i class="material-icons right">view_list</i></a>
@@ -29,10 +29,9 @@
     		<a class="screen-hide" onclick="setSearch();"><i class="material-icons right">search</i></a>
 		
     		<ul class="hide-on-med-and-down" >
+      			<li><a id="domains" href="#!" data-target="domain">DOMAINS<i class="material-icons right">arrow_drop_down</i></a></li>
+			<li><a id="artifacts" href="#!" data-target="artifact">FILTERS<i class="material-icons right">arrow_drop_down</i></a></li>
 			<li><a onclick="setEditor('map');">MAP</a></li>
-      			<li><a id="domains" href="#!" data-target="domain">BOXES<i class="material-icons right">arrow_drop_down</i></a></li>
-			<li><a id="artifacts" href="#!" data-target="artifact">ARTIFACTS<i class="material-icons right">arrow_drop_down</i></a></li>
-			
       			<li style="height:64px;">
         			<a style="height:inherit; padding-right:0;"><i onclick="$('#search').focus();" style="height:inherit; padding-right:4;" class="material-icons">search</i><span onclick="$('#search').focus();" class="badge blue">1865</span>
         			<div id="search-box" class="input-field" style="height:inherit;">
@@ -51,7 +50,15 @@
 <ul id="artifact" class="dropdown-content loader" style="visibility:hidden;">
 	<li><a onclick="mode=0; setEditor('civilplex');"><i class="material-icons">gps_fixed</i>Location</a></li>
 	<li><a onclick="mode=0; setEditor('nfnth');"><i class="material-icons">photo_camera</i>Camera</a></li>
-
+	<li style="padding:12;">
+      		<select multiple>
+        		<option value="" disabled selected>Select By...</option>
+	      		<option value="1" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color5.png"><a>Land</a></option>
+        		<option value="2" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color1.png">Machine</option>
+        		<option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color2.png">Monument</option>
+        		<option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color3.png">Person</option>
+        		<option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color4.png">Stock</option>
+			<option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color4.png">Tribe</option></select></li>
 	<li class="divider" tabindex="-1"></li>
 	<li><a onclick="mode=0; setEditor('nfnth');"><i class="material-icons">attachment</i>Attachment</a></li></ul>
 
@@ -246,7 +253,7 @@ const account = accounts[0]; alert(account); }
 //  params: [transactionParameters],
 //});
 </script>
-	
+
 <style>
 body { margin: 0; top: 0; left: 0; overflow-x: hidden; overflow-y: hidden; padding: 0 0 0 0; font-family: Arial, Helvetica, sans-serif; background-color: white; }
 .hidden { display:none!important; height: 0; padding: 0!important; } .disappear { visibility: hidden; } .load { opacity: 0; } .gone { width:0; height:0; z-index:-400; position:absolute; top:-9999; left:-9999;}
@@ -288,10 +295,9 @@ nav ul a {display: flex!important; align-items: center; width:100%;}
 @media screen and (max-height: 450px) {.sidenav {padding-top: 15px;}.sidenav a {font-size: 18px;}}
 @media screen and (max-width: 800px) {/* .logo { width: 36px; height:36px; }*/}
 
-@media print {#quick-button { display:none!important}}
+@media print {#quick-button { display:none!important; }}
 
 code { white-space: break-spaces;}
-
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
 
 ::backdrop{background-color: white;}
@@ -306,13 +312,11 @@ div.active {opacity: 1;height: auto;}
 .hover-base span { opacity:0; } .hover-select, .hover-select span { opacity: 1!important; }
   
 .green-notice { color: green;} .red-notice { color:red;}
-  
 .form-disable { pointer-events: none; opacity:0.5; }
 
 /* editor 
 .coder { background-color: whitesmoke;padding: 12;margin: 12;user-select: text; }
 code { color: gray;line-height: 1;}
-
 .note {padding: 48; background-color: aliceblue;width: 75%;display: flex;justify-content: center;border-radius: 12px;margin: auto;position: relative;top: 16;}
 */
 #description { font-family: Roboto; font-size: 15px; font-weight: 300;}
