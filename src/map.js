@@ -4,7 +4,7 @@
 var manifest;  
 //dralun|abenaki.us|0x8a83fbbacb82030ea17179c0403b04e7bce7ba10|wikipedia.org/wiki/Abenaki|44.9196889888506, -69.4998783932573|
 
-$.get("../data/manifest", function (data) { 
+$.get("../manifest", function (data) { 
 	manifest = data.split(/\r?\n/); 
 	for (let i = 0; i < manifest.length - 1; i++) { 
 		var fields = manifest[i].split('|'); 
