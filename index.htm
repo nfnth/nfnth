@@ -13,7 +13,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-<script src="https://github.com/nfnth/nfnth/raw/master/src/map.js"></script></head>
+<script src="https://github.com/nfnth/nfnth/raw/master/src/map.js"></script>
+<script src="https://github.com/nfnth/nfnth/raw/master/src/md.js"></script></head>
 
 <!-- menu -->
 <nav id="main-menu" style="position: fixed;top:0; z-index:2;visibility:hidden;" class="loader">
@@ -21,7 +22,7 @@
     		<div>
       			<a id="slider" href="#" data-target="user-pane" class="sidenav-trigger" style="background-color: #2f8fff;margin: 0;padding: 18;justify-items: center;display: flex;align-items: center;"><i class="material-icons">menu</i></a>
       			<a style="display: flex; align-items: center; height: 100%; "><img id="menu-logo" class="hide-on-med-and-down" onclick="setEditor('../doc/CC.md');" draggable="false" ondragstart="return false;" style="height:48; width:48; cursor: pointer; margin-left: 16;" /></a></div>
-    
+
 		<a class="screen-hide" onclick="setEditor('map');"><i class="material-icons right">map</i></a>
     		<a id="domains-hide" class="screen-hide" href="#!" data-target="domain"><i class="material-icons right">view_list</i></a>
 		<a id="artifacts-hide" class="screen-hide" href="#!" data-target="domain"><i class="material-icons right">view_list</i></a>
@@ -29,9 +30,10 @@
     		<a class="screen-hide" onclick="setSearch();"><i class="material-icons right">search</i></a>
 		
     		<ul class="hide-on-med-and-down" >
-      			<li><a id="domains" href="#!" data-target="domain">DOMAINS<i class="material-icons right">arrow_drop_down</i></a></li>
-			<li><a id="artifacts" href="#!" data-target="artifact">FILTERS<i class="material-icons right">arrow_drop_down</i></a></li>
 			<li><a onclick="setEditor('map');">MAP</a></li>
+      			<li><a id="domains" href="#!" data-target="domain">DOMAINS<i class="material-icons right">arrow_drop_down</i></a></li>
+			<li><a id="artifacts" href="#!" data-target="artifact">ARTIFACTS<i class="material-icons right">arrow_drop_down</i></a></li>
+			
       			<li style="height:64px;">
         			<a style="height:inherit; padding-right:0;"><i onclick="$('#search').focus();" style="height:inherit; padding-right:4;" class="material-icons">search</i><span onclick="$('#search').focus();" class="badge blue">1865</span>
         			<div id="search-box" class="input-field" style="height:inherit;">
@@ -39,7 +41,9 @@
           				<label class="label-icon" for="search" ></label>
           				<i class="material-icons" onclick="searchClear()">close</i></div></a></li></ul>
 	
-      		<div style="display:flex;"><a class="modal-trigger" href="#user-modal" onclick="$('#user-setting').sidenav('close');" style="justify-items: center;display: flex;align-items: center; margin-right:48;"><i class="material-icons">account_box</i></a></div></div></nav>
+      		<div style="display:flex;">
+			<a class="modal-trigger" href="#user-modal" onclick="$('#user-setting').sidenav('close');" style="justify-items: center;display: flex;align-items: center; margin-right:48;"><i class="material-icons">account_box</i></a>
+			<a id="slider2" href="#" data-target="user-pane" class="sidenav-trigger" style="background-color: #2f8fff;margin: 0;padding: 18;justify-items: center;display: flex;align-items: center;"><i class="material-icons">settings</i></a></div></div></nav>
 
 <!-- drop downs -->
 <ul id="domain" class="dropdown-content loader" style="visibility:hidden;">
@@ -48,19 +52,20 @@
   	<li><a onclick="mode=0; setEditor('drhab');"><i class="material-icons">inventory_2</i>Collectible</a></li></ul>
 
 <ul id="artifact" class="dropdown-content loader" style="visibility:hidden;">
-	<li><a onclick="mode=0; setEditor('civilplex');"><i class="material-icons">gps_fixed</i>Location</a></li>
-	<li><a onclick="mode=0; setEditor('nfnth');"><i class="material-icons">photo_camera</i>Camera</a></li>
-	<li style="padding:12;">
-      		<select multiple>
-        		<option value="" disabled selected>Select By...</option>
-	      		<option value="1" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color5.png"><a>Land</a></option>
-        		<option value="2" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color1.png">Machine</option>
-        		<option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color2.png">Monument</option>
-        		<option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color3.png">Person</option>
-        		<option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color4.png">Stock</option>
-			<option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color4.png">Tribe</option></select></li>
+	<li><a onclick="mode=0; setEditor('civilplex');"><i class="material-icons">gps_fixed</i>Person</a></li>
+	<li><a onclick="mode=0; setEditor('civilplex');"><i class="material-icons">gps_fixed</i>Place</a></li>
+	<li><a onclick="mode=0; setEditor('nfnth');"><i class="material-icons">photo_camera</i>Thing</a></li>
 	<li class="divider" tabindex="-1"></li>
-	<li><a onclick="mode=0; setEditor('nfnth');"><i class="material-icons">attachment</i>Attachment</a></li></ul>
+	<li><a onclick="mode=0; setEditor('civilplex');"><i class="material-icons">gps_fixed</i>Land</a></li>
+	<li><a onclick="mode=0; setEditor('civilplex');"><i class="material-icons">gps_fixed</i>Land</a></li>
+	<li><a onclick="mode=0; setEditor('nfnth');"><i class="material-icons">photo_camera</i>Camera</a></li>
+	<li class="divider" tabindex="-1"></li>
+	<li><a onclick="mode=0; setEditor('nfnth');"><i class="material-icons">attachment</i>Clear</a></li></ul>
+
+"person=man/tribe/monster/animal" "place=land/town/exterior/interior" "thing=car/plane/ship/alien/abstract/plant" ... "
+element=red(fire),orange(rock),yellow(city),green(forest),blue(water),purple(air/mountain),black(future),white(past)"
+
+custom= tribes, french-indian war, international, state
 
 <!-- panel -->
 <ul id="user-pane" class="sidenav loader" style="visibility:hidden;">
@@ -84,8 +89,56 @@
         		<div><span style="cursor: pointer;" onclick="openInNewTab('https://github.com/nfnth/nfnth/blob/master/doc/BROS.md'); $('#user-pane').sidenav('close');" class="new badge green darken-2" data-badge-caption="brOS, v1.02"></span></div>
       			<div id="header-title"><span id="phrase" style="font-style: italic;">software on infinitive basis</span></div></div></li></ul>
 
+<!-- panel -->
+<ul id="user-setting" class="sidenav loader" style="visibility:hidden;">
+	<li><div class="user-view z-depth-1" style="background-color: #eaf2f7;display: flex;margin: auto; padding: 0;align-items: flex-end;"><img draggable="false" ondragstart="return false;" id="user-pic" style="height: 72;margin-left:18; padding: 12;" src="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/shield.png" /></div></li>
+  	<li style="text-align: center;"><a class="subheader">
+    		<span style="font-size: 20;font-weight: bold; color: #000000;">Dralun</span>
+    		<span style="margin-left:4;font-size: 16;font-weight: bold; color: #494646; ">· Deed to Domain</span></a></li>
+  	<li style="height:24;"><a class="subheader"></a></li>
+  	<li><a class="waves-effect" onclick="openInNewTab('https://github.com/nfnth'); $('#user-pane').sidenav('close');"><i class="material-icons">menu_book</i>How to Use Deed Domains</a></li>
+	<li><a class="waves-effect" onclick="openInNewTab('https://github.com/nfnth/nfnth/blob/master/doc/CC.md'); $('#user-pane').sidenav('close');"><i class="material-icons">book</i>Read Civilian's Complex</a></li>
+  	<li><a class="waves-effect" onclick="openInNewTab('https://github.com/nfnth/nfnth/issues'); $('#user-pane').sidenav('close');"><i class="material-icons">help</i>Submit Issues</a></li>
+	<li style="padding:12;">
+      		<select multiple>
+        		<option value="" disabled selected>Select By...</option>
+	      		<option value="1" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color5.png"><a>Land</a></option>
+        		<option value="2" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color1.png">Machine</option>
+        		<option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color2.png">Monument</option>
+        		<option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color3.png">Person</option>
+        		<option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color4.png">Stock</option>
+			<option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color4.png">Tribe</option></select></li>
+  	<li style="padding:12;">
+      		<select>
+        		<option value="" disabled selected>Sort By...</option>
+        		<option value="1" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color6.png">Name (Ascending)</option>
+	      		<option value="1" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color6.png">Name (Descending)</option>
+	      		<option value="2">Category</option></select></li>
+  	<li><div style="margin-top:0;" class="divider"></div></li>
+  	<li><a class="subheader"></a></li>
+  	<li><div id="header-logo" style="display: flex; flex-flow:column; align-items: center;justify-content: center;align-items: center; display: flex;">
+      		<div id="header-logo">
+        	<div id="logo" style="text-align:center;">
+          		<img draggable="false" id="eagle-eye" style="width:64;height:48;" src="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/eagle/eagle1.png"/></div>
+        		<div style="display: flex;align-items: center;justify-content: center;">
+				<span id="title" style="font-weight: bold; font-size: 25px; color:blue;">Nf</span><span id="title" style="font-weight: bold; font-size: 25px;">Nth</span>
+          			<i class="material-icons" >copyright</i>2021</div></div>
+        		<div><span style="cursor: pointer;" onclick="openInNewTab('https://github.com/nfnth/nfnth/blob/master/doc/BROS.md'); $('#user-pane').sidenav('close');" class="new badge green darken-2" data-badge-caption="brOS, v1.02"></span></div>
+      			<div id="header-title"><span id="phrase" style="font-style: italic;">software on infinitive basis</span></div></div></li></ul>
+
 <!-- dialog -->
 <div id="user-modal" class="modal">
+	<div class="modal-content">
+		<div id="intro" class="row-section">
+			<div id="console" class="row hover-base" onclick="signer();" style="border: solid 1px darkgray;
+    box-shadow: 2px 2px lightgrey; text-align:center;">   
+				<img width="240" height="120" src="https://github.com/nfnth/res/raw/main/icon/metamask-logo-horizontal.svg" /></div>
+			
+			<div id="console" class="row hover-base" style="text-align:center;"><a>Link to MetaMask</a></div>
+			</div></div></div>
+
+<!-- dialog -->
+<div id="user-setting2" class="modal">
 	<div class="modal-content">
 		<div id="intro" class="row-section">
 			<div id="console" class="row hover-base" onclick="signer();" style="border: solid 1px darkgray;
@@ -102,7 +155,7 @@
 
 	<!--<div class="modal-footer content loader">
 	      <button id="button-next" class="btn waves-effect waves-light" onclick="signer();">Sign In<i class="material-icons left">login</i></button><a href="#!" class="modal-close waves-effect waves-gray btn-flat disabled">Cancel</a></div>-->
-			</div></div></div>
+		</div></div></div>
 
 <!-- home -->
 <div id="home" style="text-align:center;margin-top:68;visibility:hidden; width:100%; z-index:1;" class="content loader">
@@ -130,21 +183,7 @@
 
 <div id="modal1" class="modal bottom-sheet">
     <div class="modal-content"><h4>Modal Header</h4><p>A bunch of text</p></div>
-	<li style="padding:12;">
-      		<select multiple>
-        		<option value="" disabled selected>Select By...</option>
-	      		<option value="1" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color5.png"><a>Land</a></option>
-        		<option value="2" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color1.png">Machine</option>
-        		<option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color2.png">Monument</option>
-        		<option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color3.png">Person</option>
-        		<option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color4.png">Stock</option>
-			<option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color4.png">Tribe</option></select></li>
-  	<li style="padding:12;">
-      		<select>
-        		<option value="" disabled selected>Sort By...</option>
-        		<option value="1" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color6.png">Name (Ascending)</option>
-	      		<option value="1" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/color/color6.png">Name (Descending)</option>
-	      		<option value="2">Category</option></select></li>
+	
     	<a class="waves-effect waves-light btn">Reset</a>
     <div class="modal-footer"><a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a></div></div>
 
@@ -161,7 +200,7 @@
 function openInNewTab(url) { window.open(url, '_blank').focus(); }
 	
 function service(data) { alert('calling outside');
-    $.ajax({ type: 'GET', url: 'https://ur.land/jsonp?' + data,jsonp: false,jsonpCallback: "my_callback", dataType: 'jsonp',
+    $.ajax({ type: 'GET', url: 'https://ur.land/jsonp?' + data,jsonp: false, jsonpCallback: "my_callback", dataType: 'jsonp',
     success: function(data) { alert(data); console.log('Success!'); }, error: function(data) { alert(data); console.log('Uh Oh!'); }  }); }
               
     function my_callback(dataWeGotViaJsonp){ alert(dataWeGotViaJsonp);  }
@@ -172,8 +211,7 @@ async function initial() {
               $('#artifacts').dropdown({ constrainWidth: false } ); $('#artifacts-hide').dropdown({ constrainWidth: false } ); 
           
               //$('.fixed-action-btn').floatingActionButton();
-            $('.modal').modal();   $('#user-pane').sidenav(); 
-              //$('#user-setting').sidenav({ edge: 'right' } );
+            $('.modal').modal();   $('#user-pane').sidenav(); $('#user-setting').sidenav({ edge: 'right' } );
           //  $('.collapsible').collapsible(); 
           //mode=0; 
               setEditor('map');
@@ -183,9 +221,7 @@ async function initial() {
           //	await preloadImage('https://github.com/nfnth/res/raw/main/site/chimi_cards.png') 
                    //await Promise.all(images.map(x => preloadImage(x.src))) // Preload a bunch of images in parallel 
               var elems = document.querySelectorAll('.fixed-action-btn');
-              var instances = M.FloatingActionButton.init(elems, {
-                hoverEnabled: false
-              });
+              var instances = M.FloatingActionButton.init(elems, { hoverEnabled: false  });
               
             setTimeout(function() {  $(".loader").css("visibility", "visible"); }, 500);
            //mermaid.initialize({startOnLoad:true});
