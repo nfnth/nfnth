@@ -1,22 +1,16 @@
 
 <p align="center"><img src="https://github.com/nfnth/res/raw/main/site/bird.png" width="280" height="320" /></p>
   
-### On [Dralun](https://dralun.com), Land of Deed to Domain
+### [Dralun](https://dralun.com), Land of Deed to Domain
 
-Visit **Dralun**, where deed holders can preserve domains using artifacts etched in code.
+Explore **Dralun**, a deed-driven world where domains are built using artifacts etched in code, and land holders can both pass or preserve their domains.
 
+Deeds, include:
+
+- Land domains
+- the tribes of Dralun
+- other peoples and objects
 Nomad and Civilian deeds are domain non-specific and are used to extend UR.Land functionality,
-
-Notable features, include:
-
-- access to the [deed regisrty](https://github.com/nfnth/nfnth/blob/master/doc/DEED.md), with options to,
-  - [purchase]() as **Owner**, [claim]() as **Tenant**, or [proceed]() as **Civilian**
-  - view public records (with historical context) of all purchases, forfeiture, and transfer
-- use of the **Markre** editor, see [nfnth.com](https://nfnth.com), with tools to,
-  - Create *artifacts* (includes text, image, location)
-  - Create *profiles* (in MarkDown 2.0) for user and domains with MarkDown 2.0 constructs, such as treaty and strategy
-- instruction for the **Jaspre** engine, to setup a custom domain,
-  - Run the **brOS** build script, see [gist]()
 
 To begin, create an OpenSea account, or browse the world with **Nomad** status.
 
@@ -57,13 +51,7 @@ Dralun uses classes to differentiate, and domains can be permenently transferred
 
 ### On Demand
 
-**Dralun** is made on the proceeds from citizens.
-
-Included in every Owner (or Tenant) Deed is the **NfNth** survival bag.
-
 For further inspiration, read our manifest, the [Civilian's Complex](https://github.com/nfnth/nfnth/blob/master/doc/CC.md).
-
-Also, available for [purchase]() as Founder's Edition (or Standard Edition).
 
 #### Explore Further
 
