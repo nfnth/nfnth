@@ -13,7 +13,8 @@ $.get("../manifest", function (data) {
 	
 console.log(data); });
 		//render map dialogs and list?
-		//$("#registry").append("<a href='#!' class='collection-item'>" + fields[0] + "</a>"); }
+		//$("#registry").append("<a href='#!' class='collection-item'>" + fields[0] + "</a>"); 
+	}
 						       
 		var monument = [fields[5], fields[4]]; //-98.5558020753026, 39.80981352007335, ];
 
