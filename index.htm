@@ -13,8 +13,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-<script src="https://github.com/nfnth/nfnth/raw/master/src/map.js"></script>
-<script src="https://github.com/nfnth/nfnth/raw/master/src/md.js"></script></head>
+<script src="https://cdn.jsdelivr.net/gh/nfnth/nfnth@latest/src/map.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/nfnth/nfnth@latest/src/md.js"></script></head>
 
 <!-- menu -->
 <nav id="main-menu" style="position: fixed;top:0; z-index:2;visibility:hidden;" class="loader">
@@ -82,7 +82,7 @@ custom= tribes, french-indian war, international, state
   	<li><div id="header-logo" style="display: flex; flex-flow:column; align-items: center;justify-content: center;align-items: center; display: flex;">
       		<div id="header-logo">
         	<div id="logo" style="text-align:center;">
-          		<img draggable="false" id="eagle-eye" style="width:64;height:48;" src="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/eagle/eagle1.png"/></div>
+          		<img draggable="false" id="eagle-eye" style="width:64;height:48;"/></div>
         		<div style="display: flex;align-items: center;justify-content: center;">
 				<span id="title" style="font-weight: bold; font-size: 25px; color:blue;">Nf</span><span id="title" style="font-weight: bold; font-size: 25px;">Nth</span>
           			<i class="material-icons" >copyright</i>2021</div></div>
@@ -102,26 +102,21 @@ custom= tribes, french-indian war, international, state
 	<li style="padding:12;">
       		<select multiple>
         		<option value="" disabled selected>Select By...</option>
-	      		<option value="1" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/object/color/color5.png"><a>Land</a></option>
-        		<option value="2" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/object/color/color1.png">Machine</option>
-        		<option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/object/color/color2.png">Monument</option>
-        		<option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/object/color/color3.png">Person</option>
-        		<option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/object/color/color4.png">Stock</option>
-			<option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/object/color/color4.png">Tribe</option></select></li>
+	      		<option value="1" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/icon/color/color5.png"><a>Land</a></option>
+        		<option value="2" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/icon/color/color1.png">Machine</option>
+        		<option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/icon/color/color2.png">Monument</option>
+        		<option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/icon/color/color3.png">Person</option>
+        		<option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/icon/color/color4.png">Stock</option>
+			<option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/icon/color/color4.png">Tribe</option></select></li>
   	<li style="padding:12;">
       		<select>
         		<option value="" disabled selected>Sort By...</option>
-        		<option value="1" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/object/color/color6.png">Name (Ascending)</option>
-	      		<option value="1" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/object/color/color6.png">Name (Descending)</option>
+        		<option value="1" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/icon/color/color6.png">Name (Ascending)</option>
+	      		<option value="1" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/icon/color/color6.png">Name (Descending)</option>
 	      		<option value="2">Category</option></select></li>
   	<li><div style="margin-top:0;" class="divider"></div></li>
   	<li><a class="subheader"></a></li>
   	<li><div id="header-logo" style="display: flex; flex-flow:column; align-items: center;justify-content: center;align-items: center; display: flex;">
-      		<div id="header-logo">
-        		<div style="display: flex;align-items: center;justify-content: center;">
-				<span id="title" style="font-weight: bold; font-size: 25px; color:blue;">Nf</span><span id="title" style="font-weight: bold; font-size: 25px;">Nth</span>
-          			<i class="material-icons" >copyright</i>2021</div></div>
-        		<div><span style="cursor: pointer;" onclick="openInNewTab('https://github.com/nfnth/nfnth/blob/master/doc/BROS.md'); $('#user-pane').sidenav('close');" class="new badge green darken-2" data-badge-caption="brOS, v1.02"></span></div>
       			<div id="header-title"><span id="phrase" style="font-style: italic;">software on infinitive basis</span></div></div></li></ul>
 
 <!-- dialog -->
@@ -130,7 +125,7 @@ custom= tribes, french-indian war, international, state
 		<div id="intro" class="row-section">
 			<div id="console" class="row hover-base" onclick="signer();" style="border: solid 1px darkgray;
     box-shadow: 2px 2px lightgrey; text-align:center;">
-				<img width="240" height="120" src="https://github.com/nfnth/res/raw/main/user/metamask.svg" /></div>
+				<img width="240" height="120" src="https://github.com/nfnth/res/raw/main/site/user/metamask.svg" /></div>
 			
 			<div id="console" class="row hover-base" style="text-align:center;"><a>Link to MetaMask</a></div>
 			</div></div></div>
@@ -140,8 +135,7 @@ custom= tribes, french-indian war, international, state
 	<div class="modal-content">
 		<div id="intro" class="row-section">
 			<div id="console" class="row hover-base" onclick="signer();" style="border: solid 1px darkgray;
-    box-shadow: 2px 2px lightgrey; text-align:center;">   
-				<img width="240" height="120" src="https://github.com/nfnth/res/raw/main/icon/metamask-logo-horizontal.svg" /></div>
+    box-shadow: 2px 2px lightgrey; text-align:center;"></div>
 			
 			<div id="console" class="row hover-base" style="text-align:center;">-OR-</div>
 			<div id="console" class="row hover-base">  
