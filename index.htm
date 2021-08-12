@@ -21,19 +21,17 @@
   	<div class="nav-wrapper header" style="background-color:rgb(33, 124, 185); display:flex; justify-content: space-between;">
     		<div>
       			<a id="slider" href="#" data-target="user-pane" class="sidenav-trigger" style="background-color: #2f8fff;margin: 0;padding: 18;justify-items: center;display: flex;align-items: center;"><i class="material-icons">menu</i></a>
-      			<a style="display: flex; align-items: center; height: 100%; "><img id="menu-logo" class="hide-on-med-and-down" onclick="setEditor('../doc/CC.md');" draggable="false" ondragstart="return false;" style="height:48; width:48; cursor: pointer; margin-left: 16;" /></a></div>
+      			<a style="display: flex; align-items: center; height: 100%; "><img id="menu-logo" class="hide-on-med-and-down" onclick="setViewer('../doc/CC.md');" draggable="false" ondragstart="return false;" style="height:48; width:48; cursor: pointer; margin-left: 16;" /></a></div>
 
-		<a class="screen-hide" onclick="setEditor('map');"><i class="material-icons right">map</i></a>
     		<a id="domains-hide" class="screen-hide" href="#!" data-target="domain"><i class="material-icons right">view_list</i></a>
 		<a id="artifacts-hide" class="screen-hide" href="#!" data-target="domain"><i class="material-icons right">inventory_2</i></a>
-		
+		<a class="screen-hide" onclick="setEditor('map');"><i class="material-icons right">map</i></a>
     		<a class="screen-hide" onclick="setSearch();"><i class="material-icons right">search</i></a>
 		
     		<ul class="hide-on-med-and-down" >
-			<li><a onclick="setEditor('map');">MAP</a></li>
       			<li><a id="domains" href="#!" data-target="domain">DEEDS<i class="material-icons right">arrow_drop_down</i></a></li>
 			<li><a id="artifacts" href="#!" data-target="artifact">ARTIFACTS<i class="material-icons right">arrow_drop_down</i></a></li>
-			
+			<li><a onclick="setEditor('map');">MAP</a></li>
       			<li style="height:64px;">
         			<a style="height:inherit; padding-right:0;"><i onclick="$('#search').focus();" style="height:inherit; padding-right:4;" class="material-icons">search</i><span onclick="$('#search').focus();" class="badge blue">1865</span>
         			<div id="search-box" class="input-field" style="height:inherit;">
@@ -42,18 +40,17 @@
           				<i class="material-icons" onclick="searchClear()">close</i></div></a></li></ul>
 	
       		<div style="display:flex;">
-			<a class="modal-trigger" href="#user-modal" onclick="$('#user-setting').sidenav('close');" style="justify-items: center;display: flex;align-items: center; margin-right:48;"><i class="material-icons">account_box</i></a>
-			<a id="slider2" href="#" data-target="user-setting" class="sidenav-trigger" style="background-color: #2f8fff;margin: 0;padding: 18;justify-items: center;display: flex;align-items: center;"><i class="material-icons">settings</i></a></div></div></nav>
+			<a id="slider2" href="#" data-target="user-setting" class="sidenav-trigger" style="background-color: #3f9fff;margin: 0;padding: 18;justify-items: center;display: flex;align-items: center;"><i class="material-icons">settings</i></a></div></div></nav>
 
 <!-- drop downs -->
 <ul id="domain" class="dropdown-content loader" style="visibility:hidden;">
-  	<li><a onclick="setView('land');"><i class="material-icons">landscape</i>Land Domains</a></li>
-	<li><a onclick="setView('tribe');"><i class="material-icons">cottage</i>Tribes of Dralun</a></li>
-  	<li><a onclick="setView('drhab');"><i class="material-icons">inventory_2</i>Virtual Items</a></li></ul>
+  	<li><a onclick="setEditor('grid');"><i class="material-icons">landscape</i>Land Domains</a></li>
+	<li><a onclick="setEditor('grid');"><i class="material-icons">cottage</i>Tribes of Dralun</a></li>
+  	<li><a onclick="setEditor('grid');"><i class="material-icons">inventory_2</i>Virtual Items</a></li></ul>
 
 <ul id="artifact" class="dropdown-content loader" style="visibility:hidden;">
-	<li><a onclick="setView('civilplex');"><i class="material-icons">emoji_objects</i>Collectibles</a></li>
-	<li><a onclick="setView('art');"><i class="material-icons">card_membership</i>Artworks</a></li></ul>
+	<li><a onclick="setEditor('grid');"><i class="material-icons">emoji_objects</i>Collectibles</a></li>
+	<li><a onclick="setEditor('grid');"><i class="material-icons">card_membership</i>Artworks</a></li></ul>
 <!--
 "person=man/tribe/monster/animal" "place=land/town/exterior/interior" "thing=car/plane/ship/alien/abstract/plant" ... "
 element=red(fire),orange(rock),yellow(city),green(forest),blue(water),purple(air/mountain),black(future),white(past)"
@@ -87,6 +84,7 @@ custom= tribes, french-indian war, international, state
     		<span style="font-size: 20;font-weight: bold; color: #000000;">Dralun</span>
     		<span style="margin-left:4;font-size: 16;font-weight: bold; color: #494646; ">· Deed to Domain</span></a></li>
   	<li style="height:24;"><a class="subheader"></a></li>
+	<li><a class="modal-trigger" href="#user-modal" onclick="$('#user-setting').sidenav('close');" style="justify-items: center;display: flex;align-items: center; margin-right:48;"><i class="material-icons">account_box</i></a></li>
 	<li style="padding:12;">
       		<select multiple>
         		<option value="" disabled selected>Select By...</option>
@@ -120,16 +118,11 @@ custom= tribes, french-indian war, international, state
 <div id="user-setting2" class="modal">
 	<div class="modal-content">
 		<div id="intro" class="row-section">
-			<div id="console" class="row hover-base" onclick="signer();" style="border: solid 1px darkgray;
-    box-shadow: 2px 2px lightgrey; text-align:center;"></div>
-			
-			<div id="console" class="row hover-base" style="text-align:center;">-OR-</div>
 			<div id="console" class="row hover-base">  
 				<div class="input-field"><i class="material-icons prefix">mail</i><input type="text" id="user-email" name="user-email" class="user-input" placeholder="Enter email" /><label for="user-email">Email</label><span id="user-issue" class="helper-text" data-error="Invalid input" data-success="" >Enter Email</span></div></div>
 
-	<!--<div class="modal-footer content loader">
-	      <button id="button-next" class="btn waves-effect waves-light" onclick="signer();">Sign In<i class="material-icons left">login</i></button><a href="#!" class="modal-close waves-effect waves-gray btn-flat disabled">Cancel</a></div>-->
-		</div></div></div>
+	<div class="modal-footer content loader">
+	      <button id="button-next" class="btn waves-effect waves-light" onclick="signer();">Sign In<i class="material-icons left">login</i></button><a href="#!" class="modal-close waves-effect waves-gray btn-flat disabled">Cancel</a></div></div></div></div>
 
 <!-- home -->
 <div id="home" style="text-align:center;margin-top:68;visibility:hidden; width:100%; z-index:1;" class="content loader">
@@ -137,29 +130,27 @@ custom= tribes, french-indian war, international, state
 <!-- search -->
 <div id="results" style="margin:80; display:none;" class="content loader">search...</div>
 
-<!-- map/store -->
+<!-- list/map/editor -->
 <div id="map" ></div>
-	<div class="fixed-action-btn">
-  <a class="btn-floating btn-large red"><i class="large material-icons">mode_edit</i></a>
-  <ul>
-    <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
-    <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
-    <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
-    <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li></ul></div>
+<div class="fixed-action-btn">
+	<a class="btn-floating btn-large green"><i class="large material-icons">mode_edit</i></a>
+	<ul>
+		<li><a class="btn-floating blue"><i class="material-icons">format_quote</i></a></li>
+		<li><a class="btn-floating green darken-1"><i class="material-icons">photo_camera</i></a></li>
+ 		<li><a class="btn-floating green darken-2"><i class="material-icons">gps_fixed</i></a></li>
+		<li><a class="btn-floating blue darken-1"><i class="material-icons">attach_file</i></a></li></ul></div>
 <!-- map/store 
-<div id="land" class="content loader" style="display:none;">
-	 -->
+<div id="land" class="content loader" style="display:none;"> -->
 
 <div id="grid" class="content loader" style="overflow-y: auto; height: 95%;">
 	<div id="registry" class="collection">
 		<a href="#!" class="collection-item active">Alvin</a>
-		<a class="collection-item modal-trigger" href="#modal1">Purcahse</a></div></div>
+		<a class="collection-item modal-trigger" href="#modal1">Purchase</a></div></div>
 
 <div id="modal1" class="modal bottom-sheet">
     <div class="modal-content"><h4>Modal Header</h4><p>A bunch of text</p></div>
-	
     	<a class="waves-effect waves-light btn">Reset</a>
-    <div class="modal-footer"><a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a></div></div>
+	<div class="modal-footer"><a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a></div></div>
 
 <script>
 	//include embed mode for box/art/domain  
@@ -172,40 +163,38 @@ custom= tribes, french-indian war, international, state
           //   image.src = src })
 
 function openInNewTab(url) { window.open(url, '_blank').focus(); }
-	
 function service(data) { alert('calling outside');
     $.ajax({ type: 'GET', url: 'https://ur.land/jsonp?' + data,jsonp: false, jsonpCallback: "my_callback", dataType: 'jsonp',
     success: function(data) { alert(data); console.log('Success!'); }, error: function(data) { alert(data); console.log('Uh Oh!'); }  }); }
               
-    function my_callback(dataWeGotViaJsonp){ alert(dataWeGotViaJsonp);  }
+function my_callback(dataWeGotViaJsonp){ alert(dataWeGotViaJsonp);  }
 
 async function initial() {
   $('select').formSelect(); 
   $('#domains').dropdown({ constrainWidth: false } ); $('#domains-hide').dropdown({ constrainWidth: false } ); 
   $('#artifacts').dropdown({ constrainWidth: false } ); $('#artifacts-hide').dropdown({ constrainWidth: false } ); 
   $('.modal').modal(); $('#user-pane').sidenav(); $('#user-setting').sidenav({ edge: 'right' } );
-              setEditor('map');
+  var elems = document.querySelectorAll('.fixed-action-btn');
+  var instances = M.FloatingActionButton.init(elems, { hoverEnabled: false });
+  
+  setEditor('map'); searchClear(); setTimeout(function() {  $(".loader").css("visibility", "visible"); }, 500);
           
-                  // await preloadImage('https://github.com/nfnth/res/raw/main/site/coat.png') // Preload an image
-          //	await preloadImage('https://github.com/nfnth/res/raw/main/site/chimi_hi.png') 
-          //	await preloadImage('https://github.com/nfnth/res/raw/main/site/chimi_cards.png') 
-                   //await Promise.all(images.map(x => preloadImage(x.src))) // Preload a bunch of images in parallel 
-              var elems = document.querySelectorAll('.fixed-action-btn');
-              var instances = M.FloatingActionButton.init(elems, { hoverEnabled: false  });
-              
-            setTimeout(function() {  $(".loader").css("visibility", "visible"); }, 500);
-           //mermaid.initialize({startOnLoad:true});
-            searchClear(); 
-          
+// await preloadImage('https://github.com/nfnth/res/raw/main/site/coat.png') // Preload an image
+ //	await preloadImage('https://github.com/nfnth/res/raw/main/site/chimi_hi.png') 
+//	await preloadImage('https://github.com/nfnth/res/raw/main/site/chimi_cards.png') 
+//await Promise.all(images.map(x => preloadImage(x.src))) // Preload a bunch of images in parallel 
+
+//mermaid.initialize({startOnLoad:true});
+
   var castle = Math.floor(Math.random() * (16 - 1 + 1)) + 1; 
   document.getElementById('menu-logo').src = "https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/object/castle/castle" + castle.toString() + ".png";
   var eagle = Math.floor(Math.random() * (4 - 1 + 1)) + 1; 
   document.getElementById('eagle-eye').src = "https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/object/eagle/eagle" + eagle.toString() + ".png";
           
   domain = window.location.host; if (domain != "dralun.com") { document.title = "UR.Land · " + domain; }
-  if (domain == "ur.land") {  }
+  if (domain == "ur.land") { setEditor('map'); }
   if (domain == "ustat.us") {  }
-  if (domain == "nfnth.com") {  }
+  if (domain == "nfnth.com") { setEditor('map'); }
   var pathArray = window.location.pathname.split('/'); 
   switch (pathArray.length) {
     case 2:
@@ -222,19 +211,16 @@ async function initial() {
           //function openInNewTab(url, tab=true) { if (tab) { var win = window.open(url, '_blank'); win.focus(); } else window.open(url, '_self'); }
           function searchClear() { $('#search').val(''); }
           function searchResults() { $.post("../search/word", $('#search').val(), function(data, status){ $('#results').html(data); }); }
-          
-          function setEditor(doc) {  $('#'+doc).show(); }
-            // var width = window.innerWidth; var height = window.innerHeight - 44; //menu, footer
-            // $("#holder").hide(); $("#viewer").hide(); $("#code").hide(); $("#grid").hide(); $("#map").hide(); $("#stats").hide();
+
+function hideAll() {
+$("#holder").hide(); $("#viewer").hide(); $("#code").hide(); $("#grid").hide(); $("#map").hide(); $("#stats").hide();
             // $("#land").hide(); $("#tribe").hide(); $("#drhab").hide(); $("#civilplex").hide(); $("#nfnth").hide(); 
-           
-          //	$("#stats").show();
+}
+function setViewer() {}
+function setEditor(doc) {  hideAll(); $('#'+doc).show(); } // var width = window.innerWidth; var height = window.innerHeight - 44; //menu, footer
 
 if (typeof window.ethereum !== 'undefined') {console.log('MetaMask is installed!'); }
-	async function signer() {
-
-const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
-const account = accounts[0]; alert(account); }
+async function signer() { const accounts = await ethereum.request({ method: 'eth_requestAccounts' }); const account = accounts[0]; alert(account); }
 
 //	const transactionParameters = {
   //nonce: '0x00', // ignored by MetaMask
@@ -248,7 +234,6 @@ const account = accounts[0]; alert(account); }
  // chainId: '0x3', // Used to prevent transaction reuse across blockchains. Auto-filled by MetaMask.
 //};
 
-// txHash is a hex string
 //const txHash = await ethereum.request({
 //  method: 'eth_sendTransaction',
 //  params: [transactionParameters],
