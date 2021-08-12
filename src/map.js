@@ -34,7 +34,7 @@ $.getScript(map_js, function() { mapboxgl.accessToken = map_token; map = new map
 	
 console.log(data); });
 		$("#registry").append("<a href='#!' class='collection-item'>" + fields[0] + "</a>"); 
-		var monument = [fields[5], fields[4]]; 
+		var monument = [fields[4], fields[3]]; 
 			marker(fields[1], fields[2], monument, fields[9]);
 	}});
 				
