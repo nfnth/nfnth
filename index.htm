@@ -47,19 +47,17 @@
 
 <!-- drop downs -->
 <ul id="domain" class="dropdown-content loader" style="visibility:hidden;">
-  	<li><a onclick="mode=0; setEditor('land');"><i class="material-icons">landscape</i>Land Domains</a></li>
-	<li><a onclick="mode=0; setEditor('tribe');"><i class="material-icons">cottage</i>Tribes</a></li>
-  	<li><a onclick="mode=0; setEditor('drhab');"><i class="material-icons">emoji_objects</i>Virtual Items</a></li></ul>
+  	<li><a onclick="setView('land');"><i class="material-icons">landscape</i>Land Domains</a></li>
+	<li><a onclick="setView('tribe');"><i class="material-icons">cottage</i>Tribes of Dralun</a></li>
+  	<li><a onclick="setView('drhab');"><i class="material-icons">inventory_2</i>Virtual Items</a></li></ul>
 
 <ul id="artifact" class="dropdown-content loader" style="visibility:hidden;">
-	<li><a onclick="mode=0; setEditor('civilplex');"><i class="material-icons">inventory_2</i>Collectibles</a></li>
-	<li><a onclick="mode=0; setEditor('civilplex');"><i class="material-icons">card_membership</i>Artworks</a></li></ul>
+	<li><a onclick="setView('civilplex');"><i class="material-icons">emoji_objects</i>Collectibles</a></li>
+	<li><a onclick="setView('art');"><i class="material-icons">card_membership</i>Artworks</a></li></ul>
 <!--
 "person=man/tribe/monster/animal" "place=land/town/exterior/interior" "thing=car/plane/ship/alien/abstract/plant" ... "
 element=red(fire),orange(rock),yellow(city),green(forest),blue(water),purple(air/mountain),black(future),white(past)"
-
 custom= tribes, french-indian war, international, state
-
  panel -->
 <ul id="user-pane" class="sidenav loader" style="visibility:hidden;">
 	<li><div class="user-view z-depth-1" style="background-color: #eaf2f7;display: flex;margin: auto; padding: 0;align-items: flex-end;"><img draggable="false" ondragstart="return false;" id="user-pic" style="height: 72;margin-left:18; padding: 12;" src="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/shield.png" /></div></li>
@@ -82,16 +80,13 @@ custom= tribes, french-indian war, international, state
         		<div><span style="cursor: pointer;" onclick="openInNewTab('https://github.com/nfnth/nfnth/blob/master/doc/BROS.md'); $('#user-pane').sidenav('close');" class="new badge green darken-2" data-badge-caption="brOS, v1.02"></span></div>
       			<div id="header-title"><span id="phrase" style="font-style: italic;">software on infinitive basis</span></div></div></li></ul>
 
-<!-- panel -->
+<!-- settings -->
 <ul id="user-setting" class="sidenav loader" style="visibility:hidden;">
 	<li><div class="user-view z-depth-1" style="background-color: #eaf2f7;display: flex;margin: auto; padding: 0;align-items: flex-end;"><img draggable="false" ondragstart="return false;" id="user-pic" style="height: 72;margin-left:18; padding: 12;" src="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/shield.png" /></div></li>
   	<li style="text-align: center;"><a class="subheader">
     		<span style="font-size: 20;font-weight: bold; color: #000000;">Dralun</span>
     		<span style="margin-left:4;font-size: 16;font-weight: bold; color: #494646; ">· Deed to Domain</span></a></li>
   	<li style="height:24;"><a class="subheader"></a></li>
-  	<li><a class="waves-effect" onclick="openInNewTab('https://github.com/nfnth'); $('#user-pane').sidenav('close');"><i class="material-icons">menu_book</i>How to Use Deed Domains</a></li>
-	<li><a class="waves-effect" onclick="openInNewTab('https://github.com/nfnth/nfnth/blob/master/doc/CC.md'); $('#user-pane').sidenav('close');"><i class="material-icons">book</i>Read Civilian's Complex</a></li>
-  	<li><a class="waves-effect" onclick="openInNewTab('https://github.com/nfnth/nfnth/issues'); $('#user-pane').sidenav('close');"><i class="material-icons">help</i>Submit Issues</a></li>
 	<li style="padding:12;">
       		<select multiple>
         		<option value="" disabled selected>Select By...</option>
@@ -108,11 +103,9 @@ custom= tribes, french-indian war, international, state
 	      		<option value="1" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/icon/color/color6.png">Name (Descending)</option>
 	      		<option value="2">Category</option></select></li>
   	<li><div style="margin-top:0;" class="divider"></div></li>
-  	<li><a class="subheader"></a></li>
-  	<li><div id="header-logo" style="display: flex; flex-flow:column; align-items: center;justify-content: center;align-items: center; display: flex;">
-      			<div id="header-title"><span id="phrase" style="font-style: italic;">software on infinitive basis</span></div></div></li></ul>
+  	<li><a class="subheader"></a></li></ul>
 
-<!-- dialog -->
+<!-- dialog (metamask) -->
 <div id="user-modal" class="modal">
 	<div class="modal-content">
 		<div id="intro" class="row-section">
@@ -123,7 +116,7 @@ custom= tribes, french-indian war, international, state
 			<div id="console" class="row hover-base" style="text-align:center;"><a>Link to MetaMask</a></div>
 			</div></div></div>
 
-<!-- dialog -->
+<!-- dialog (domain) -->
 <div id="user-setting2" class="modal">
 	<div class="modal-content">
 		<div id="intro" class="row-section">
@@ -187,14 +180,10 @@ function service(data) { alert('calling outside');
     function my_callback(dataWeGotViaJsonp){ alert(dataWeGotViaJsonp);  }
 
 async function initial() {
-              $('select').formSelect(); 
-              $('#domains').dropdown({ constrainWidth: false } ); $('#domains-hide').dropdown({ constrainWidth: false } ); 
-              $('#artifacts').dropdown({ constrainWidth: false } ); $('#artifacts-hide').dropdown({ constrainWidth: false } ); 
-          
-              //$('.fixed-action-btn').floatingActionButton();
-            $('.modal').modal();   $('#user-pane').sidenav(); $('#user-setting').sidenav({ edge: 'right' } );
-          //  $('.collapsible').collapsible(); 
-          //mode=0; 
+  $('select').formSelect(); 
+  $('#domains').dropdown({ constrainWidth: false } ); $('#domains-hide').dropdown({ constrainWidth: false } ); 
+  $('#artifacts').dropdown({ constrainWidth: false } ); $('#artifacts-hide').dropdown({ constrainWidth: false } ); 
+  $('.modal').modal(); $('#user-pane').sidenav(); $('#user-setting').sidenav({ edge: 'right' } );
               setEditor('map');
           
                   // await preloadImage('https://github.com/nfnth/res/raw/main/site/coat.png') // Preload an image
@@ -208,16 +197,18 @@ async function initial() {
            //mermaid.initialize({startOnLoad:true});
             searchClear(); 
           
-          var castle = Math.floor(Math.random() * (16 - 1 + 1)) + 1; 
-          document.getElementById('menu-logo').src = "https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/object/castle/castle" + castle.toString() + ".png";
-          var eagle = Math.floor(Math.random() * (4 - 1 + 1)) + 1; 
-          document.getElementById('eagle-eye').src = "https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/object/eagle/eagle" + eagle.toString() + ".png";
+  var castle = Math.floor(Math.random() * (16 - 1 + 1)) + 1; 
+  document.getElementById('menu-logo').src = "https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/object/castle/castle" + castle.toString() + ".png";
+  var eagle = Math.floor(Math.random() * (4 - 1 + 1)) + 1; 
+  document.getElementById('eagle-eye').src = "https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/object/eagle/eagle" + eagle.toString() + ".png";
           
-          domain = window.location.host; if (domain != "dralun.com") { document.title = "UR.Land · " + domain; }
-              
-          var pathArray = window.location.pathname.split('/'); 
-          switch (pathArray.length) {
-              case 2:
+  domain = window.location.host; if (domain != "dralun.com") { document.title = "UR.Land · " + domain; }
+  if (domain == "ur.land") {  }
+  if (domain == "ustat.us") {  }
+  if (domain == "nfnth.com") {  }
+  var pathArray = window.location.pathname.split('/'); 
+  switch (pathArray.length) {
+    case 2:
                 address = pathArray[1];// makeEditor();
                 mode=0; //setEditor("../" + address + "/profile");
                 //$.get("../" + address + "/profile", function (data) {  $("#home").html(renderMd(data));});
@@ -226,25 +217,18 @@ async function initial() {
           initial(); 
               document.addEventListener('DOMContentLoaded', function() { var elems = document.querySelectorAll('.modal'); var instances = M.Modal.init(elems); });
               document.addEventListener('DOMContentLoaded', function() {
-              
             });
               
           //function openInNewTab(url, tab=true) { if (tab) { var win = window.open(url, '_blank'); win.focus(); } else window.open(url, '_self'); }
           function searchClear() { $('#search').val(''); }
           function searchResults() { $.post("../search/word", $('#search').val(), function(data, status){ $('#results').html(data); }); }
           
-          var mode = 0; //0(view), 1(edit), 2(preview), 3(list), 4(map), 5(stat), 7(mail), 8(game)
           function setEditor(doc) {  $('#'+doc).show(); }
             // var width = window.innerWidth; var height = window.innerHeight - 44; //menu, footer
             // $("#holder").hide(); $("#viewer").hide(); $("#code").hide(); $("#grid").hide(); $("#map").hide(); $("#stats").hide();
             // $("#land").hide(); $("#tribe").hide(); $("#drhab").hide(); $("#civilplex").hide(); $("#nfnth").hide(); 
            
           //	$("#stats").show();
-                     //var fields = manifest[0].split('|');
-                          //	  var div = document.getElementById('registry');
-          
-                              //div.innerHTML += "<a onclick='showDomain(0);' class='collection-item'>" + fields[0] + '</a>';
-                                //alert(result[0]); 
 
 if (typeof window.ethereum !== 'undefined') {console.log('MetaMask is installed!'); }
 	async function signer() {
