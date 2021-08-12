@@ -1,6 +1,4 @@
 
-//include, map/list 
-//var list = document.getElementById('toolset');
 var manifest;  
 //dralun|abenaki.us|0x8a83fbbacb82030ea17179c0403b04e7bce7ba10|wikipedia.org/wiki/Abenaki|44.9196889888506, -69.4998783932573|
 
@@ -25,7 +23,7 @@ var map; var middle = [-98.5558020753026, 39.80981352007335, ];
 
 
 $('<link>').appendTo('head').attr({ type: 'text/css', rel: 'stylesheet', href: map_css });
-$.getScript(map_js, function() { mapboxgl.accessToken = map_token; map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/mapbox/light-v10', center: midle,zoom: 6});
+$.getScript(map_js, function() { mapboxgl.accessToken = map_token; map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/mapbox/light-v10', center: middle,zoom: 6});
 			       
 			       $.get("../manifest", function (data) { 
 	manifest = data.split(/\r?\n/); 
@@ -36,8 +34,7 @@ $.getScript(map_js, function() { mapboxgl.accessToken = map_token; map = new map
 	
 console.log(data); });
 		$("#registry").append("<a href='#!' class='collection-item'>" + fields[0] + "</a>"); 
-		var monument = [fields[5], fields[4]]; //-98.5558020753026, 39.80981352007335, ];
-
+		var monument = [fields[5], fields[4]]; 
 			marker(fields[1], fields[2], monument, fields[9]);
 	}});
 				
