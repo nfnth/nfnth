@@ -31,7 +31,7 @@ function marker() {
 		var popup = new mapboxgl.Popup({ offset: 25 }).setHTML('<div><div><img widht="48" height="48" src="https://github.com/nfnth/res/raw/main/thumb/100058936.jpg"/></div><div><h6>' + fields[1] + '</h6><a href="https://ur.land">Owner Info</a><br/><a href="'+ fields[3] + '">More info...</a><br/><a class="waves-effect waves-light btn modal-trigger" href="#modal1">Purchase</a></div></div>');
 		var el = document.createElement('div'); el.id = 'marker'; //class per icon type...
 		var map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/mapbox/light-v10', center: monument,zoom: 6});
-		new mapboxgl.Marker(el).setLngLat(monument).setPopup(popup).addTo(map); } });
+		new mapboxgl.Marker(el).setLngLat(monument).setPopup(popup).addTo(map); 
 
 }
 
