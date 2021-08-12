@@ -1,5 +1,5 @@
 
-"artifact editor"
+//"artifact editor"
 
 var current = new Date(); // timestamp, milliseconds since 1970 (?) vs. milliseconds (UTC)
  var yyyy = current.getFullYear(), MM = current.getMonth(), dd = current.getDate(), hh = current.getHours(), mm = current.getMinutes(), ss = current.getSeconds();
