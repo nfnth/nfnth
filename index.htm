@@ -25,13 +25,13 @@
 
 		<a class="screen-hide" onclick="setEditor('map');"><i class="material-icons right">map</i></a>
     		<a id="domains-hide" class="screen-hide" href="#!" data-target="domain"><i class="material-icons right">view_list</i></a>
-		<a id="artifacts-hide" class="screen-hide" href="#!" data-target="domain"><i class="material-icons right">view_list</i></a>
+		<a id="artifacts-hide" class="screen-hide" href="#!" data-target="domain"><i class="material-icons right">inventory_2</i></a>
 		
     		<a class="screen-hide" onclick="setSearch();"><i class="material-icons right">search</i></a>
 		
     		<ul class="hide-on-med-and-down" >
 			<li><a onclick="setEditor('map');">MAP</a></li>
-      			<li><a id="domains" href="#!" data-target="domain">DOMAINS<i class="material-icons right">arrow_drop_down</i></a></li>
+      			<li><a id="domains" href="#!" data-target="domain">DEEDS<i class="material-icons right">arrow_drop_down</i></a></li>
 			<li><a id="artifacts" href="#!" data-target="artifact">ARTIFACTS<i class="material-icons right">arrow_drop_down</i></a></li>
 			
       			<li style="height:64px;">
@@ -43,31 +43,24 @@
 	
       		<div style="display:flex;">
 			<a class="modal-trigger" href="#user-modal" onclick="$('#user-setting').sidenav('close');" style="justify-items: center;display: flex;align-items: center; margin-right:48;"><i class="material-icons">account_box</i></a>
-			<a id="slider2" href="#" data-target="user-pane" class="sidenav-trigger" style="background-color: #2f8fff;margin: 0;padding: 18;justify-items: center;display: flex;align-items: center;"><i class="material-icons">settings</i></a></div></div></nav>
+			<a id="slider2" href="#" data-target="user-setting" class="sidenav-trigger" style="background-color: #2f8fff;margin: 0;padding: 18;justify-items: center;display: flex;align-items: center;"><i class="material-icons">settings</i></a></div></div></nav>
 
 <!-- drop downs -->
 <ul id="domain" class="dropdown-content loader" style="visibility:hidden;">
-  	<li><a onclick="mode=0; setEditor('land');"><i class="material-icons">landscape</i>Domain Deed</a></li>
-	<li><a onclick="mode=0; setEditor('tribe');"><i class="material-icons">cottage</i>Virtual Art</a></li>
-  	<li><a onclick="mode=0; setEditor('drhab');"><i class="material-icons">inventory_2</i>Collectible</a></li></ul>
+  	<li><a onclick="mode=0; setEditor('land');"><i class="material-icons">landscape</i>Land Domains</a></li>
+	<li><a onclick="mode=0; setEditor('tribe');"><i class="material-icons">cottage</i>Tribes</a></li>
+  	<li><a onclick="mode=0; setEditor('drhab');"><i class="material-icons">emoji_objects</i>Virtual Items</a></li></ul>
 
 <ul id="artifact" class="dropdown-content loader" style="visibility:hidden;">
-	<li><a onclick="mode=0; setEditor('civilplex');"><i class="material-icons">gps_fixed</i>Person</a></li>
-	<li><a onclick="mode=0; setEditor('civilplex');"><i class="material-icons">gps_fixed</i>Place</a></li>
-	<li><a onclick="mode=0; setEditor('nfnth');"><i class="material-icons">photo_camera</i>Thing</a></li>
-	<li class="divider" tabindex="-1"></li>
-	<li><a onclick="mode=0; setEditor('civilplex');"><i class="material-icons">gps_fixed</i>Land</a></li>
-	<li><a onclick="mode=0; setEditor('civilplex');"><i class="material-icons">gps_fixed</i>Land</a></li>
-	<li><a onclick="mode=0; setEditor('nfnth');"><i class="material-icons">photo_camera</i>Camera</a></li>
-	<li class="divider" tabindex="-1"></li>
-	<li><a onclick="mode=0; setEditor('nfnth');"><i class="material-icons">attachment</i>Clear</a></li></ul>
-
+	<li><a onclick="mode=0; setEditor('civilplex');"><i class="material-icons">inventory_2</i>Collectibles</a></li>
+	<li><a onclick="mode=0; setEditor('civilplex');"><i class="material-icons">card_membership</i>Artworks</a></li></ul>
+<!--
 "person=man/tribe/monster/animal" "place=land/town/exterior/interior" "thing=car/plane/ship/alien/abstract/plant" ... "
 element=red(fire),orange(rock),yellow(city),green(forest),blue(water),purple(air/mountain),black(future),white(past)"
 
 custom= tribes, french-indian war, international, state
 
-<!-- panel -->
+ panel -->
 <ul id="user-pane" class="sidenav loader" style="visibility:hidden;">
 	<li><div class="user-view z-depth-1" style="background-color: #eaf2f7;display: flex;margin: auto; padding: 0;align-items: flex-end;"><img draggable="false" ondragstart="return false;" id="user-pic" style="height: 72;margin-left:18; padding: 12;" src="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/shield.png" /></div></li>
   	<li style="text-align: center;"><a class="subheader">
@@ -140,10 +133,6 @@ custom= tribes, french-indian war, international, state
 			<div id="console" class="row hover-base" style="text-align:center;">-OR-</div>
 			<div id="console" class="row hover-base">  
 				<div class="input-field"><i class="material-icons prefix">mail</i><input type="text" id="user-email" name="user-email" class="user-input" placeholder="Enter email" /><label for="user-email">Email</label><span id="user-issue" class="helper-text" data-error="Invalid input" data-success="" >Enter Email</span></div></div>
-				
-			<div class="row hover-base" onclick="handleLoginWithMagicLink()" style="border: solid 1px darkgray;
-    box-shadow: 2px 2px lightgrey; text-align:center;">
-				<img  width="240" height="120" src="https://github.com/nfnth/res/raw/main/icon/logo.e302dbb6.svg" /></div>
 
 	<!--<div class="modal-footer content loader">
 	      <button id="button-next" class="btn waves-effect waves-light" onclick="signer();">Sign In<i class="material-icons left">login</i></button><a href="#!" class="modal-close waves-effect waves-gray btn-flat disabled">Cancel</a></div>-->
@@ -166,7 +155,7 @@ custom= tribes, french-indian war, international, state
     <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li></ul></div>
 <!-- map/store 
 <div id="land" class="content loader" style="display:none;">
-	land deeds (landscape), tribal nations (cottage), stock/supply (inventory_2), collectibles (emoji_objects), artworks (card_membership) -->
+	 -->
 
 <div id="grid" class="content loader" style="overflow-y: auto; height: 95%;">
 	<div id="registry" class="collection">
