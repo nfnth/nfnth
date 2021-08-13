@@ -27,8 +27,8 @@ async def data(request): #track views?
 `   elif action == 'edit':
 	user = await request.post()
         user_data = json2obj(user["data"])
-    elif action == 'delete':
-        return web.FileResponse(DATA + group + name + '/profile')
+    #elif action == 'delete':
+     #   return web.FileResponse(DATA + group + name + '/profile')
     
     return web.Response(text=str("my_callback({['some string 1', '" + name + "', 'whatever data']});"), content_type='text/json')
 
