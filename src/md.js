@@ -54,7 +54,7 @@ for (const match of matches) { console.log(match); console.log(match.index) }
    var myInput = document.getElementById('myFileInput');
    
    //myInput.addEventListener('change', sendPic, false);
- function getLocation() { navigator.geolocation.getCurrentPosition(showPosition); }
+function getLocation() { navigator.geolocation.getCurrentPosition(showPosition); }
 function showPosition(position) { alert(position.coords.latitude); alert(position.coords.longitude); }
   
 function camera() {
