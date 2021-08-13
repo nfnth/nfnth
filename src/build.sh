@@ -161,9 +161,8 @@ deploy() {
         pacman -Sy --overwrite --noconfirm \* ${server}
         pip3 install ${python} -U #pip3 install ${python}
         
-        cat > /etc/haproxy/haproxy.cfg <<EOF
+        cp config/haproxy.cfg /etc/haproxy/haproxy.cfg
 
-EOF
         openssl ecparam -genkey -name secp384r1 | openssl ec -out ecc-privkey.pem
         
         cp /etc/ssl/openssl.cnf /etc/ssl/openssl.cnf.temp
