@@ -1,3 +1,27 @@
+https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz
+
+http://images.cocodataset.org/zips/train2017.zip
+
+http://images.cocodataset.org/zips/val2017.zip
+
+http://images.cocodataset.org/zips/test2017.zip
+
+http://images.cocodataset.org/zips/unlabeled2017.zip
+
+http://images.cocodataset.org/annotations/annotations_trainval2017.zip
+
+http://images.cocodataset.org/annotations/stuff_annotations_trainval2017.zip
+
+http://images.cocodataset.org/annotations/panoptic_annotations_trainval2017.zip
+
+http://images.cocodataset.org/annotations/image_info_test2017.zip
+
+http://images.cocodataset.org/annotations/image_info_unlabeled2017.zip
+
+https://storage.googleapis.com/openimages/web/download.html#download_manually
+
+https://www.onvif.org/onvif/ver20/ptz/wsdl/ptz.wsdl
+
 import numpy
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, FLatten, BatchNormalzation, Activation
