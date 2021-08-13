@@ -2,11 +2,11 @@
 import os, socket, json, types, shutil#, six
 from datetime import datetime
 
-DATA = "/data" #os.pardir
+DATA = "/mnt/data" #os.pardir
 PATH = "/root/nfnth" #os.path.abspath(os.path.dirname(__file__))
 REL = os.getcwd()
 
-key_file = open(DATA + '/key.json', mode='r') #include object map...?
+key_file = open('key.json', mode='r') #include object map...?
 key_template = key_file.read()
 key_file.close()
 
@@ -18,27 +18,25 @@ async def index(request):
     return web.FileResponse(PATH + '/index.htm')
 
 async def data(request): #track views?
-    action = request.match_info.get('action', 'view')
-    group = request.match_info.get('group', 'domain') #domain, user
-    name = request.match_info.get('name', 'arikara.us')
-    doc = request.match_info.get('doc', 'profile') #profile, file
+    action = request.match_info.get('action', 'view') #view, edit, delete
+    domain = request.match_info.get('domain', 'arikara.us')
+    artifact = request.match_info.get('artifact', 'profile') #profile, file
 
-    if not doc == 'profile':
-        return web.FileResponse(DATA + group + name + '/doc/' + doc)
-    else:
+    if action == 'view':
+        return web.FileResponse(DATA + '/' + domain + '/' + artifact)
+`   elif action == 'edit':
+	user = await request.post()
+        user_data = json2obj(user["data"])
+    elif action == 'delete':
         return web.FileResponse(DATA + group + name + '/profile')
     
     return web.Response(text=str("my_callback({['some string 1', '" + name + "', 'whatever data']});"), content_type='text/json')
 
-#post?
-# private (data)
-#import base64
-
-async def stream(request):
+#async def stream(request):
     #check feed's page source contains {"text":" watching"}...
     #if not, check rss, https://www.youtube.com/feeds/videos.xml?channel_id=<channel_id>&orderby=published
     #...for latest feed
-    return web.FileResponse(PATH + '/ur.js') #make "artifact" specific
+#    return web.FileResponse(PATH + '/ur.js') #make "artifact" specific
 
 # mail
 import threading, email, uuid, smtplib, base64, ssl
@@ -165,16 +163,16 @@ except:
 #https://stackoverflow.com/questions/49978705/access-ip-camera-in-python-opencv
 #depth/object detection		
 
-async def user(request):
-    name = request.match_info.get('name', 'matt')
-    action = request.match_info.get('action', 'check')
+#async def user(request):
+#    name = request.match_info.get('name', 'matt')
+#    action = request.match_info.get('action', 'check')
 
-    if action == "check":
-        return web.Response(text=str(os.path.exists(DATA + name)), content_type='text/html')
-    elif action == "create":
-        data = await request.post()
-        user_client = json2obj(data["user"])
-        path = DATA + user_client["name"]
+#    if action == "check":
+#        return web.Response(text=str(os.path.exists(DATA + name)), content_type='text/html')
+#    elif action == "create":
+#        data = await request.post()
+#        user_client = json2obj(data["user"])
+#        path = DATA + user_client["name"]
         #if not os.path.exists(path):
         #    shutil.copy('res/template', path)
         #    key_copy = json2obj(key_template)
@@ -186,19 +184,19 @@ async def user(request):
          #       f.write(obj2json(key_copy))
          #   return web.Response(text=obj2json(await scrub(key_copy)), content_type='text/html')
        # user_file = open(USER_DATA + name + '/key.json', mode='r') #include object map...?
-    user_template = key_file.read()
+#    user_template = key_file.read()
     #user_file.close()
 
-    return json2obj(user_template)
+ #   return json2obj(user_template)
 
-async def data(request):
+#async def data(request):
  #   async def doc(request): 
-    name = request.match_info.get('name', 'matt')
-    doc = request.match_info.get('doc', 'profile')
-    item = request.match_info.get('item', '') #file
+ #   name = request.match_info.get('name', 'matt')
+ #   doc = request.match_info.get('doc', 'profile')
+ #   item = request.match_info.get('item', '') #file
 
-    if item == '':
-        return web.FileResponse(DATA + name + '/doc/' + doc + '/md')
+  #  if item == '':
+  #      return web.FileResponse(DATA + name + '/doc/' + doc + '/md')
     #else:
     #    return web.FileResponse(USER_DATA + name + '/doc/' + doc + '/item/' + item)
     
@@ -271,22 +269,22 @@ async def data(request):
 #
      #   return web.Response(text=obj2josn(await(scrub(user_server)), content_type='text/html'))
 	
-	import stripe
-stripe.api_key = "sk_test_4eC39HqLyjWDarjtT1zdp7dc"
+#	import stripe
+#stripe.api_key = "sk_test_4eC39HqLyjWDarjtT1zdp7dc"
 
-async def bank(request):
+#async def bank(request):
     #data = json.loads(await request.json())
-    intent = stripe.PaymentIntent.create(amount=1499, currency='usd')
-    secret = intent['client_secret']
-    return web.Response(text='{"clientSecret":"'+secret+'"}')
+ #   intent = stripe.PaymentIntent.create(amount=1499, currency='usd')
+ #   secret = intent['client_secret']
+#    return web.Response(text='{"clientSecret":"'+secret+'"}')
 
     #elif action == "pay": #datetime.now().strftime("%d/%m/%Y %H:%M:%S")
      #       transaction = "random" #generate uuid
       #      with open(RECEIPT_DATA + user_client["name"] + transaction, 'wb') as f:
        #         f.write(obj2json(user_client))
 
-import glob, re#, whois
-from random import randrange
+#import glob, re#, whois
+#from random import randrange
 
 #word_path = '/mnt/res/dictionary.txt'
 #with open (word_path, 'r') as f:
