@@ -80,7 +80,7 @@ custom= tribes, french-indian war, international, state
 
 <!-- settings -->
 <ul id="user-setting" class="sidenav loader" style="visibility:hidden;">
-	<li><div class="user-view z-depth-1" style="background-color: #eaf2f7;display: flex;margin: auto; padding: 0;align-items: flex-end;"><img draggable="false" ondragstart="return false;" id="user-pic" style="height: 72;margin-left:18; padding: 12;" src="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/shield.png" /></div></li>
+	<li><div class="user-view z-depth-1" style="background-color: #eaf2f7; display: flex;margin: auto; padding: 0;align-items: flex-end;"><img draggable="false" ondragstart="return false;" id="user-pic" style="height: 72;margin-left:18; padding: 12;" src="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/shield.png" /></div></li>
   	<li style="text-align: center;"><a class="subheader">
     		<span style="font-size: 20;font-weight: bold; color: #000000;">Dralun</span>
     		<span style="margin-left:4;font-size: 16;font-weight: bold; color: #494646; ">· Deed to Domain</span></a></li>
@@ -120,11 +120,7 @@ custom= tribes, french-indian war, international, state
         		<option value="" disabled selected>Sort By...</option>
         		<option value="1" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/icon/color/color6.png">Name (Ascending)</option>
 	      		<option value="1" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/icon/color/color6.png">Name (Descending)</option>
-	      		<option value="2">Category</option></select></li>
-				<img width="240" height="120" src="https://github.com/nfnth/res/raw/main/site/user/metamask.svg" /></div>
-			
-			<div id="console" class="row hover-base" style="text-align:center;"><a>Link to MetaMask</a></div>
-			</div></div></div>
+	      		<option value="2">Category</option></select></li></div></div></div></div>
 
 <!-- dialog (domain) -->
 <div id="user-setting2" class="modal">
@@ -160,13 +156,16 @@ custom= tribes, french-indian war, international, state
 		<a class="collection-item modal-trigger" href="#modal1">Purchase</a></div></div>
 
 <div id="modal1" class="modal bottom-sheet">
-    <div class="modal-content"><h4>Modal Header</h4><p>A bunch of text</p></div>
-    	<a class="waves-effect waves-light btn">Reset</a>
-	<div class="modal-footer"><a href="#!" class="modal-close waves-effect waves-green btn-flat" onclick="openInNewTab('https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/62652367444291733483705976494538757758952482544655308357132039908522301849601')'">Agree</a></div></div>
+    <div class="modal-content">
+    <nft-card
+    contractAddress="0x495f947276749ce646f68ac8c248420045cb7b5e"
+    tokenId="62652367444291733483705976494538757758952482544655308357132039908522301849601">
+    </nft-card>
+    <script src="https://unpkg.com/embeddable-nfts/dist/nft-card.min.js"></script></div>
+	<div class="modal-footer"><a href="#!" class="modal-close waves-effect waves-green btn-flat" onclick="openInNewTab('https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/62652367444291733483705976494538757758952482544655308357132039908522301849601')'">Purchase</a></div></div>
 
 <script>
 	//include embed mode for box/art/domain  
-
 //		const preloadImage = src => 
   //         new Promise(r => {
     //         const image = new Image()
@@ -175,11 +174,18 @@ custom= tribes, french-indian war, international, state
           //   image.src = src })
 
 function openInNewTab(url) { window.open(url, '_blank').focus(); }
+	//function openInNewTab(url, tab=true) { if (tab) { var win = window.open(url, '_blank'); win.focus(); } else window.open(url, '_self'); }
 function service(data) { alert('calling outside');
     $.ajax({ type: 'GET', url: 'https://ur.land/jsonp?' + data,jsonp: false, jsonpCallback: "my_callback", dataType: 'jsonp',
     success: function(data) { alert(data); console.log('Success!'); }, error: function(data) { alert(data); console.log('Uh Oh!'); }  }); }
               
 function my_callback(dataWeGotViaJsonp){ alert(dataWeGotViaJsonp);  }
+	
+function getParameter() {
+	var pathArray = window.location.pathname.split('/'); 
+  	switch (pathArray.length) {
+    	case 2:
+                return pathArray[1]; break; } }
 
 async function initial() {
   $('select').formSelect(); 
@@ -205,29 +211,19 @@ async function initial() {
           
   domain = window.location.host; if (domain != "dralun.com") { document.title = "UR.Land · " + domain; }
   if (domain == "ur.land") { setEditor('map'); }
-  if (domain == "ustat.us") {  }
+  if (domain == "ustat.us") { alert(getParameter()); }
   if (domain == "nfnth.com") { setEditor('map'); }
-  var pathArray = window.location.pathname.split('/'); 
-  switch (pathArray.length) {
-    case 2:
-                address = pathArray[1];// makeEditor();
-                mode=0; //setEditor("../" + address + "/profile");
-                //$.get("../" + address + "/profile", function (data) {  $("#home").html(renderMd(data));});
-                break; } }
+}
               
-          initial(); 
-              document.addEventListener('DOMContentLoaded', function() { var elems = document.querySelectorAll('.modal'); var instances = M.Modal.init(elems); });
-              document.addEventListener('DOMContentLoaded', function() {
-            });
+initial(); 
+document.addEventListener('DOMContentLoaded', function() { var elems = document.querySelectorAll('.modal'); var instances = M.Modal.init(elems); });
+document.addEventListener('DOMContentLoaded', function() { });
               
-          //function openInNewTab(url, tab=true) { if (tab) { var win = window.open(url, '_blank'); win.focus(); } else window.open(url, '_self'); }
+          
           function searchClear() { $('#search').val(''); }
           function searchResults() { $.post("../search/word", $('#search').val(), function(data, status){ $('#results').html(data); }); }
 
-function hideAll() {
-$("#holder").hide(); $("#viewer").hide(); $("#code").hide(); $("#grid").hide(); $("#map").hide(); $("#stats").hide();
-            // $("#land").hide(); $("#tribe").hide(); $("#drhab").hide(); $("#civilplex").hide(); $("#nfnth").hide(); 
-}
+function hideAll() { $("#holder").hide(); $("#viewer").hide(); $("#code").hide(); $("#grid").hide(); $("#map").hide(); $("#stats").hide(); }
 function setViewer() {}
 function setEditor(doc) {  hideAll(); $('#'+doc).show(); } // var width = window.innerWidth; var height = window.innerHeight - 44; //menu, footer
 
