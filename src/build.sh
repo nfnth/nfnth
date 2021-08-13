@@ -190,7 +190,7 @@ deploy() {
                 echo "Continue?"
                 read input </dev/tty
             fi
-        done < domain
+        done < /root/nfnth/manifest
 
         echo $COMMAND
         openssl req -new -sha256 -key ecc-privkey.pem -nodes -outform pem -out ecc-csr.pem -subj /C=US/ST=Washington/L=Seattle/O=Nfnth/OU=House/CN=${fields[0]}
