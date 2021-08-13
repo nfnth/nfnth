@@ -24,7 +24,7 @@ async def data(request): #track views?
 
     if action == 'view':
         return web.FileResponse(DATA + '/' + domain + '/' + artifact)
-`   elif action == 'edit':
+    elif action == 'edit':
 	user = await request.post()
         user_data = json2obj(user["data"])
     #elif action == 'delete':
