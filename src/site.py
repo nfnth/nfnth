@@ -135,8 +135,8 @@ async def site(port):
     app = web.Application(client_max_size=10000000)
 
     app.router.add_static('/static', '/mnt/res')
-    app.add_routes([web.post('/cash', bank)])
-    app.add_routes([web.get('/jsonp', jsonp)])
+    #app.add_routes([web.post('/cash', bank)])
+    #app.add_routes([web.get('/jsonp', jsonp)])
     app.add_routes([web.get('/', index)])
     
     runner = web.AppRunner(app)
