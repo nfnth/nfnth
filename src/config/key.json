@@ -1,19 +1,6 @@
 {
-    "mail":"mario@mush.us",
-    "secret":"temp1234",
-    "status":"unconfirmed",
-    "rank":"nomad",
-    "land":"ur.land",
-    "star":[],
-    "domain":[
-        {
-            "token":"",
-            "datetime":"",
-            "ip":""
-        }
-    ],
-    "share":[{
-        "token":"",
-        "doc":""
-    }]
+    "wallet":"",
+    "backup":"m@nfnth.com",
+    "location":"",
+    "profile":""
 }
