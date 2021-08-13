@@ -104,9 +104,9 @@ custom= tribes, french-indian war, international, state
 <div id="user-filter" class="modal">
 	<div class="modal-content">
 		<div id="intro" class="row-section">
-			<div id="console" class="row hover-base" onclick="signer();" style="border: solid 1px darkgray;
+			<div id="console" class="row hover-base" style="border: solid 1px darkgray;
     box-shadow: 2px 2px lightgrey; text-align:center;">
-				<li style="padding:12;">
+
       		<select multiple>
         		<option value="" disabled selected>Select By...</option>
 	      		<option value="1" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/icon/color/color5.png"><a>Land</a></option>
@@ -114,13 +114,13 @@ custom= tribes, french-indian war, international, state
         		<option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/icon/color/color2.png">Monument</option>
         		<option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/icon/color/color3.png">Person</option>
         		<option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/icon/color/color4.png">Stock</option>
-			<option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/icon/color/color4.png">Tribe</option></select></li>
-  	<li style="padding:12;">
+			<option value="3" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/icon/color/color4.png">Tribe</option></select>
+<br/>
       		<select>
         		<option value="" disabled selected>Sort By...</option>
         		<option value="1" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/icon/color/color6.png">Name (Ascending)</option>
 	      		<option value="1" data-icon="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/icon/color/color6.png">Name (Descending)</option>
-	      		<option value="2">Category</option></select></li></div></div></div></div>
+	      		<option value="2">Category</option></select></div></div></div></div>
 
 <!-- dialog (domain) -->
 <div id="user-setting2" class="modal">
@@ -156,13 +156,8 @@ custom= tribes, french-indian war, international, state
 		<a class="collection-item modal-trigger" href="#modal1">Purchase</a></div></div>
 
 <div id="modal1" class="modal bottom-sheet">
-    <div class="modal-content">
-    <nft-card
-    contractAddress="0x495f947276749ce646f68ac8c248420045cb7b5e"
-    tokenId="62652367444291733483705976494538757758952482544655308357132039908522301849601">
-    </nft-card>
-    <script src="https://unpkg.com/embeddable-nfts/dist/nft-card.min.js"></script></div>
-	<div class="modal-footer"><a href="#!" class="modal-close waves-effect waves-green btn-flat" onclick="openInNewTab('https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/62652367444291733483705976494538757758952482544655308357132039908522301849601')'">Purchase</a></div></div>
+    <div class="modal-content"></div>
+	<div class="modal-footer"><a href="#!" class="modal-close waves-effect waves-green btn-flat" onclick="openInNewTab('https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/62652367444291733483705976494538757758952482544655308357132039908522301849601');">Purchase</a></div></div>
 
 <script>
 	//include embed mode for box/art/domain  
