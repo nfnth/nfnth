@@ -16,7 +16,7 @@ var map; var middle = [-98.5558020753026, 39.80981352007335, ];
 
 $('<link>').appendTo('head').attr({ type: 'text/css', rel: 'stylesheet', href: map_css });
 $.getScript(map_js, function() { mapboxgl.accessToken = map_token; map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/mapbox/light-v10', center: middle,zoom: 6});		       
-  $.get("../manifest", function (data) { 
+  $.get("src/manifest", function (data) { 
     var manifest = data.split(/\r?\n/); 
       for (let i = 0; i < manifest.length - 1; i++) { 
 	var fields = manifest[i].split('|'); 
