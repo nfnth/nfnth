@@ -2,15 +2,22 @@
 import os, socket, json, types, shutil#, six
 from datetime import datetime
 
-DATA = "/root/data" #os.pardir
+DATA = "/data" #os.pardir
 PATH = "/root/nfnth" #os.path.abspath(os.path.dirname(__file__))
 REL = os.getcwd()
+
+key_file = open(DATA + '/key.json', mode='r') #include object map...?
+key_template = key_file.read()
+key_file.close()
+
+def json2obj(data): return json.loads(data, object_hook=lambda d: types.SimpleNamespace(**d))
+def obj2json(data): return json.dumps(data.__dict__, indent=4, sort_keys=True, default=lambda o: o.__dict__)
 
 # public
 async def index(request):
     return web.FileResponse(PATH + '/index.htm')
 
-async def domain(request): #track views?
+async def data(request): #track views?
     action = request.match_info.get('action', 'view')
     group = request.match_info.get('group', 'domain') #domain, user
     name = request.match_info.get('name', 'arikara.us')
@@ -21,18 +28,11 @@ async def domain(request): #track views?
     else:
         return web.FileResponse(DATA + group + name + '/profile')
     
-    return web.Response(text=str("my_callback({['some string 1', '" + name + "', 'whatever data']});"
-), content_type='text/json')
+    return web.Response(text=str("my_callback({['some string 1', '" + name + "', 'whatever data']});"), content_type='text/json')
 
 #post?
 # private (data)
 #import base64
-key_file = open('key.json', mode='r') #include object map...?
-key_template = key_file.read()
-key_file.close()
-
-def json2obj(data): return json.loads(data, object_hook=lambda d: types.SimpleNamespace(**d))
-def obj2json(data): return json.dumps(data.__dict__, indent=4, sort_keys=True, default=lambda o: o.__dict__)
 
 async def stream(request):
     #check feed's page source contains {"text":" watching"}...
@@ -40,6 +40,36 @@ async def stream(request):
     #...for latest feed
     return web.FileResponse(PATH + '/ur.js') #make "artifact" specific
 
+# mail
+import threading, email, uuid, smtplib, base64, ssl
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+
+SMTP_RELAY = "smtp.google.com"
+SMTP_LOGIN = ""
+SMTP_PASSWORD = ""
+SMTP_EMAIL = ""
+TEMPLATES = ""
+
+def sendMail(to, subject, template, parameters):
+    context = ssl.create_default_context()
+
+    with smtplib.SMTP(SMTP_RELAY, 587) as server:
+        server.starttls(context=context)
+        server.login(SMTP_LOGIN, SMTP_PASSWORD)
+        message = MIMEMultipart("alternative")
+        message["Subject"] = subject
+        message["From"] = SMTP_EMAIL
+        message["To"] = to
+        message_template = template #HEADER + template + FOOTER
+        for parameter in parameters:
+            message_template = message_template.replace('####', parameter)
+        part1 = MIMEText(message_template, "plain")
+        part2 = MIMEText(message_template, "html")
+        message.attach(part1)
+        message.attach(part2)
+        server.send_message(message)
+	
 import threading, email, uuid, smtplib, base64, ssl
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
@@ -240,34 +270,37 @@ async def data(request):
  #                   shutil.rmtree(path)
 #
      #   return web.Response(text=obj2josn(await(scrub(user_server)), content_type='text/html'))
+	
+	import stripe
+stripe.api_key = "sk_test_4eC39HqLyjWDarjtT1zdp7dc"
 
-# mail
-import threading, email, uuid, smtplib, base64, ssl
-from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
+async def bank(request):
+    #data = json.loads(await request.json())
+    intent = stripe.PaymentIntent.create(amount=1499, currency='usd')
+    secret = intent['client_secret']
+    return web.Response(text='{"clientSecret":"'+secret+'"}')
 
-SMTP_RELAY = "smtp.google.com"
-SMTP_LOGIN = ""
-SMTP_PASSWORD = ""
-SMTP_EMAIL = ""
-TEMPLATES = ""
+    #elif action == "pay": #datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+     #       transaction = "random" #generate uuid
+      #      with open(RECEIPT_DATA + user_client["name"] + transaction, 'wb') as f:
+       #         f.write(obj2json(user_client))
 
-def sendMail(to, subject, template, parameters):
-    context = ssl.create_default_context()
+import glob, re#, whois
+from random import randrange
 
-    with smtplib.SMTP(SMTP_RELAY, 587) as server:
-        server.starttls(context=context)
-        server.login(SMTP_LOGIN, SMTP_PASSWORD)
-        message = MIMEMultipart("alternative")
-        message["Subject"] = subject
-        message["From"] = SMTP_EMAIL
-        message["To"] = to
-        message_template = template #HEADER + template + FOOTER
-        for parameter in parameters:
-            message_template = message_template.replace('####', parameter)
-        part1 = MIMEText(message_template, "plain")
-        part2 = MIMEText(message_template, "html")
-        message.attach(part1)
-        message.attach(part2)
-        server.send_message(message)
+#word_path = '/mnt/res/dictionary.txt'
+#with open (word_path, 'r') as f:
+#    content = f.read()
 
+#words = re.findall("(\n[A-Z]+[0-9 -]*\n)",content)
+#defs = re.findall("\n[A-Z]+[0-9 -]*\n([\s\S]*?)(?=(\n[A-Z]+[0-9 -]*\n))",content)
+#NUM_WORDS = 116623 #len(defs) print (len(words)) print (len(defs))
+#english = dict()
+
+#i = 0
+#while i < len(defs)-1:
+#    if not words[i].replace('\n', '') in english:
+#        english[words[i].replace('\n', '')] = defs[i][0] #remove dash?
+#    else:
+#        english[words[i].replace('\n', '')] = english[words[i].replace('\n', '')] + defs[i][0] 
+#    i += 1
