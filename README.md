@@ -86,3 +86,9 @@ For help, [start an issue](https://github.com/nfnth/nfnth/issues), or contact **
 #### Sponsorship
 
 Sponsor NfNth to get listed here...
+
+https://en.wikipedia.org/wiki/Roland, https://en.wikipedia.org/wiki/Durendal
+
+- [RegExp online](https://regexr.com/)
+
+For news, see [CSPAN](https://www.c-span.org/), [BBC](http://feeds.bbci.co.uk/news/rss.xml), [Gutenberg](http://www.gutenberg.org/wiki/Main_Page), [Wikipedia](http://www.wikipedia.org/wiki/Special:Random) *virtual news feed... enter name?*
