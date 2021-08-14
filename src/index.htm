@@ -13,6 +13,9 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
+<script type="module">
+  import { Octokit } from "https://cdn.skypack.dev/@octokit/rest";
+	</script>
 <script src="src/map.js"></script>
 <script src="src/md.js"></script></head>
 
@@ -160,7 +163,7 @@ function getParameter() {
   	switch (pathArray.length) {
     	case 2:
                 return pathArray[1]; break; } }
-
+var sample;
 async function initial() {
   $('select').formSelect(); 
   $('#domains').dropdown({ constrainWidth: false } ); $('#domains-hide').dropdown({ constrainWidth: false } ); 
@@ -170,6 +173,9 @@ async function initial() {
   var instances = M.FloatingActionButton.init(elems, { hoverEnabled: false });
   
   setEditor('map'); searchClear(); setTimeout(function() {  $(".loader").css("visibility", "visible"); }, 500);
+	sample = await octokit.request('POST /markdown', {
+  text: '## test<br/><br/>- works<br/>- well'
+})
           
 // await preloadImage('https://github.com/nfnth/res/raw/main/site/coat.png') // Preload an image
  //	await preloadImage('https://github.com/nfnth/res/raw/main/site/chimi_hi.png') 
@@ -199,7 +205,7 @@ document.addEventListener('DOMContentLoaded', function() { });
 
 function hideAll() { $("#holder").hide(); $("#viewer").hide(); $("#code").hide(); $("#docs").hide(); $("#grid").hide(); $("#map").hide(); $("#stats").hide(); }
 function setViewer() {}
-function setEditor(doc) {  hideAll(); $('#'+doc).show(); } // var width = window.innerWidth; var height = window.innerHeight - 44; //menu, footer
+function setEditor(doc) {  alert(sample); hideAll(); $('#'+doc).show(); } // var width = window.innerWidth; var height = window.innerHeight - 44; //menu, footer
 
 if (typeof window.ethereum !== 'undefined') {console.log('MetaMask is installed!'); }
 async function signer() { const accounts = await ethereum.request({ method: 'eth_requestAccounts' }); const account = accounts[0]; alert(account); }
