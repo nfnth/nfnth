@@ -21,7 +21,7 @@
   	<div class="nav-wrapper header" style="background-color:rgb(33, 124, 185); display:flex; justify-content: space-between;">
     		<div>
       			<a id="slider" href="#" data-target="user-pane" class="sidenav-trigger" style="background-color: #2f8fff;margin: 0;padding: 18;justify-items: center;display: flex;align-items: center;"><i class="material-icons">menu</i></a>
-      			<a style="display: flex; align-items: center; height: 100%; "><img id="menu-logo" class="hide-on-med-and-down" onclick="setViewer('../doc/CC.md');" draggable="false" ondragstart="return false;" style="height:48; width:48; cursor: pointer; margin-left: 16;" /></a></div>
+      			<a style="display: flex; align-items: center; height: 100%; "><img id="menu-logo" class="hide-on-med-and-down" onclick="setEditor('docs');" draggable="false" ondragstart="return false;" style="height:48; width:48; cursor: pointer; margin-left: 16;" /></a></div>
 
     		<a id="domains-hide" class="screen-hide" href="#!" data-target="domain"><i class="material-icons right">view_list</i></a>
 		<a class="screen-hide" onclick="setEditor('map');"><i class="material-icons right">map</i></a>
@@ -110,6 +110,9 @@ custom= tribes, french-indian war, international, state
 
 <!-- home -->
 <div id="home" style="text-align:center;margin-top:68;visibility:hidden; width:100%; z-index:1;" class="content loader">
+	
+	<div id="docs">
+		<iframe src="https://nfnth.github.io/nfnth/"></iframe></div>
 
 <!-- search -->
 <div id="results" style="margin:80; display:none;" class="content loader">search...</div>
@@ -194,7 +197,7 @@ document.addEventListener('DOMContentLoaded', function() { });
           function searchClear() { $('#search').val(''); }
           function searchResults() { $.post("../search/word", $('#search').val(), function(data, status){ $('#results').html(data); }); }
 
-function hideAll() { $("#holder").hide(); $("#viewer").hide(); $("#code").hide(); $("#grid").hide(); $("#map").hide(); $("#stats").hide(); }
+function hideAll() { $("#holder").hide(); $("#viewer").hide(); $("#code").hide(); $("#docs").hide(); $("#grid").hide(); $("#map").hide(); $("#stats").hide(); }
 function setViewer() {}
 function setEditor(doc) {  hideAll(); $('#'+doc).show(); } // var width = window.innerWidth; var height = window.innerHeight - 44; //menu, footer
 
