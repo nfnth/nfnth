@@ -13,9 +13,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-<script type="module">
-  import { Octokit } from "https://cdn.skypack.dev/@octokit/rest";
-	</script>
 <script src="src/map.js"></script>
 <script src="src/md.js"></script></head>
 
@@ -36,7 +33,7 @@
 			<li><a onclick="setEditor('map');">MAP</a></li>
 			<li><a onclick="setEditor('editor');">EDITOR</a></li>
       			<li style="height:64px;">
-        			<a style="height:inherit; padding-right:0;"><i onclick="$('#search').focus();" style="height:inherit; padding-right:4;" class="material-icons">search</i><span onclick="$('#search').focus();" class="badge blue">1865</span>
+        			<a style="height:inherit; padding-right:0;"><i onclick="$('#search').focus();" style="height:inherit; padding-right:4;" class="material-icons">search</i><span onclick="$('#search').focus();" class="badge blue">1776</span>
         			<div id="search-box" class="input-field" style="height:inherit;">
           				<input id="search" type="search" onkeyup="searchResults()" style="padding-left:12; width: calc(100% - 1rem);">
           				<label class="label-icon" for="search" ></label>
@@ -47,11 +44,11 @@
 
 <!-- drop downs -->
 <ul id="domain" class="dropdown-content loader" style="visibility:hidden;">
-  	<li><a onclick="setEditor('grid');"><i class="material-icons">landscape</i>Land Deeds</a></li>
-	<li><a onclick="setEditor('grid');"><i class="material-icons">cottage</i>Tribes of Dralun</a></li>
-	<li><a onclick="setEditor('grid');"><i class="material-icons">inventory_2</i>Domain Artifacts</a></li>
-	<li><a onclick="setEditor('grid');"><i class="material-icons">emoji_objects</i>Rare Collectibles</a></li>
-	<li><a onclick="setEditor('grid');"><i class="material-icons">card_membership</i>NfNth Artwork</a></li></ul>
+  	<li><a onclick="setEditor('grid');"><i class="material-icons">landscape</i>Lands</a></li>
+	<li><a onclick="setEditor('grid');"><i class="material-icons">cottage</i>Tribes</a></li>
+	<li><a onclick="setEditor('grid');"><i class="material-icons">inventory_2</i>Artifacts</a></li>
+	<li><a onclick="setEditor('grid');"><i class="material-icons">emoji_objects</i>Relics</a></li>
+	<li><a onclick="setEditor('grid');"><i class="material-icons">card_membership</i>Artworks</a></li></ul>
 
 <!--
 "person=man/tribe/monster/animal" "place=land/town/exterior/interior" "thing=car/plane/ship/alien/abstract/plant" ... "
@@ -101,7 +98,7 @@ custom= tribes, french-indian war, international, state
 			
 			<div id="console" class="row hover-base" style="text-align:center;"><a onclick="openInNewTab('https://metamask.io/download');">Download MetaMask</a></div></div></div></div>
 
-<!-- dialog (domain) -->
+<!-- dialog (editor) -->
 <div id="user-setting2" class="modal">
 	<div class="modal-content">
 		<div id="intro" class="row-section">
@@ -150,8 +147,7 @@ custom= tribes, french-indian war, international, state
         //     image.onerror = r
           //   image.src = src })
 
-function openInNewTab(url) { window.open(url, '_blank').focus(); }
-	//function openInNewTab(url, tab=true) { if (tab) { var win = window.open(url, '_blank'); win.focus(); } else window.open(url, '_self'); }
+function openInNewTab(url) { window.open(url, '_blank').focus(); } //window.open(url, '_self');
 function service(data) { alert('calling outside');
     $.ajax({ type: 'GET', url: 'https://ur.land/jsonp?' + data,jsonp: false, jsonpCallback: "my_callback", dataType: 'jsonp',
     success: function(data) { alert(data); console.log('Success!'); }, error: function(data) { alert(data); console.log('Uh Oh!'); }  }); }
