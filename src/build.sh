@@ -200,6 +200,7 @@ deploy() {
 
         sudo -E bash -c 'cat ecc-privkey.pem >> alldomains.pem'
         cp alldomains.pem /etc/haproxy/cert/alldomains.pem
+        #sudo certbot certonly --standalone --preferred-challenges http -d example.com
     elif [[ "${mode}" == "deploy" ]]
     then
         killall -9 run.py
