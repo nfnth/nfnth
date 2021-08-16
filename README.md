@@ -1,17 +1,17 @@
 
 ### Explore [Dralun](https://dralun.com), the [UR.Land](https://ur.land) of Deed to Domain
 
-<a href="https://opensea.io/NfNth" title="Buy on OpenSea" target="_blank"><img style="width:220px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="https://storage.googleapis.com/opensea-static/Logomark/Badge%20-%20Available%20On%20-%20Light.png" alt="Available on OpenSea" /></a>
-  
 **Dralun**, inspired by the legendary sword [Durendal](https://en.wikipedia.org/wiki/Durendal), is an Ethereum-powered deed-driven world that revolves around domains and artifacts. Purchased NFTs provides ownership and can be used as a key to customize land domains using artifacts. Selling the NFT land holders can both pass or preserve their domains.
 
-Deeds, include:
+<a href="https://opensea.io/NfNth" title="Buy on OpenSea" target="_blank"><img style="width:220px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="https://storage.googleapis.com/opensea-static/Logomark/Badge%20-%20Available%20On%20-%20Light.png" alt="Available on OpenSea" /></a>
+
+Deed examples, include:
 
 - Land domains
 - the peoples and tribes of Dralun
 - Various objects and ancient relics
-
-Also included, are time-locked object deeds and artworks with limited access.
+- Time-locked objects
+- Digital artworks
 
 To begin, create an OpenSea account, or browse the world with **Nomad** status.
 
@@ -29,15 +29,19 @@ This can be used to mean one of the following:
 
 Thus a need for *domain deed* to become the representation of both control and content, the said **source** of a digital property.
 
-Dralun uses classes to differentiate, and domains can be permenently transferred, depending on the need.
+Dralun uses classes to differentiate and all domains can be permenently transferred.
 
 #### Deed Types
 
-|**Class** (*ability*)|*Categories*|Description|
+|**Type** (*ability*)|*Categories*|Description|
 |-|-|-|-|
-|**Person** (*vote*)|no|no|Vote|
-|**Place** (*claim*)|no|yes|Tenent deeds (Domain licenses) must be renewed same as with domain registrations. |
-|**Thing** (*hold*)|yes|no|Controller has control access, source content is not guaranteed.|
+|**Person** (*vote*)|historical, tribe||
+|**Place** (*claim*)|land, town, mountain, river, island, monument||
+|**Thing** (*hold*)|ancient, machine||
+|Object|||
+|Artwork|||
+
+Deeds also carry special labels to denote properties such as state, serial, and informational links.
 
 ### On Demand
 
@@ -45,9 +49,9 @@ For further inspiration, read our manifest, the [Civilian's Complex](https://git
 
 #### Explore Further
 
-Use the [UR.Land](https://ur.land) map to visit a continent filled with amazing peoples and lands. Follow in the footsteps of [Roland](https://en.wikipedia.org/wiki/Roland)...
+Use the [UR.Land](https://ur.land) map to visit a continent filled with amazing peoples and lands. 
 
-Achieve dominion, take the following steps:
+Follow in the footsteps of [Roland](https://en.wikipedia.org/wiki/Roland) to achieve dominion,
 
 - Store and collect artifacts to showcase (or keep private and share with key)
 - Create the ultimate profile with links to your personal site
