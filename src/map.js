@@ -1,4 +1,10 @@
 
+<!--
+"person=man/tribe/monster/animal" "place=land/town/exterior/interior" "thing=car/plane/ship/alien/abstract/plant" ... "
+element=red(fire),orange(rock),yellow(city),green(forest),blue(water),purple(air/mountain),black(future),white(past)"
+custom= tribes, french-indian war, international, state
+ panel -->
+
 function marker(name, link, place, image) {   
   var popup = new mapboxgl.Popup({ offset: 25 }).setHTML('<div><div><img widht="48" height="48" src="https://github.com/nfnth/res/raw/main/thumb/'+image+'.jpg"/></div><div><h6>' + name + '</h6><a href="https://ur.land">Owner Info</a><br/><a href="https://'+ link + '">More info...</a><br/><a class="waves-effect waves-light btn modal-trigger" href="#modal1">Purchase</a></div></div>');
   var el = document.createElement('div'); el.id = 'marker'; //class per icon type...
