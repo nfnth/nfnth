@@ -302,3 +302,33 @@ except:
 #    else:
 #        english[words[i].replace('\n', '')] = english[words[i].replace('\n', '')] + defs[i][0] 
 #    i += 1
+
+    if name == "public":
+        startpath = os.path.dirname(REL) + '/data'
+        terms = "term="
+    else:
+        startpath = os.path.dirname(REL) + '/data/' + name
+
+    for root, dirs, files in os.walk(startpath):
+        for f in files:
+            path = os.path.join(root, f)
+            if name == 'public' and not '.' in path and 'public' in path:
+                search = open(path, "r")
+                searchlines = search.readlines()
+                search.close()
+                for i, line in enumerate(searchlines):
+                    if term in line:
+                        terms = terms + path + " at " + str(i) + "|"
+            else:
+                folder = folder + path
+                if not term == "root":
+                    search = open(path, "r")
+                    searchlines = search.readlines()
+                    search.close()
+                    for i, line in enumerate(searchlines):
+                        if term in line:
+                            terms = terms + path + " at " + str(i) + "|"
+                else:
+                    terms = terms + folder + " at |"
+    return terms
+
