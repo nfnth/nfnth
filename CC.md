@@ -84,3 +84,81 @@ joker of red, black, white
 https://www.myidentifiers.com/identify-protect-your-book/barcode
 
 built-in scenarios/battles
+
+Grill
+...large stick butter
+Eggs, carrots, scallions/onions, peppers/spinach (all shredded)
+Square scoop onto skillet, long flat spatula to cut and flip into squares
+Toast bread (extra butter), fry ham slices
+Assemble sandwiches with cheese slice
+Top with slaw, Red spicy sauce, seasonings,  finish sandwich
+
+... additional sauce?  White creme?
+... replace bread with crepe?
+... sweet glaze? other veggies like corn?
+
+Glazed/marinated Chicken
+... to flour to batter to deep fry
+With salsa/parsley with lemon/lime and cheese sauce
+
+Boil, peel? mash, potatos
+...salt, pepper, paprika, garlic, parsley, egg
+...cheese in middle...
+...flour to egg/salt to bread crumbs
+...fry, dipping sauce
+
+Fresh bread
+
+Stir fry with seasonings, broth
+... eggs, milk, baking , flour
+Use special grater to add to boiling soup
+...cream
+
+Drink
+... add nootropics
+Ginseng and citrus peels (boil)
+...sugar, caffeine, taurine
+...ginko biloba, oleo saccharum (from citrus peels fermenting in sugar)
+... add to pear cider
+
+Bubbles, ice, candy syrup (or chocolate, etc.), milk, with cotton candy on top
+
+Cooked potatoes with barley, warm, add yeast, ferment for week
+...boil and distill repeatedly
+
+reward registry...
+...drug shower
+...food truck feast
+
+Whiskey, honey, lemon juice, peppermint candy
+... cane sugar, vanilla, seltzer water
+
+- current state
+
+Richard Matt
+May 18, 2017 Lake Erie Plane Crash
+Mackinac "Drowning Pool"
+
+# strack to ship
+
+Vapor barrier, insulation, Driveway seal, Gravel/concrete crawl space studio
+https://www.homedepot.com/p/Sika-50-lbs-Self-Leveling-Underlayment-517004/207086698
+
+Bathroom remodel
+
+http://www.keyfobprogram.com/2020-buick-enclave-remote-programming/
+
+Capacitor (super)
+
+neoprene suit, 
+
+"visor" kit for Far Cry 6 (collectors), Battlefield 2042, WAMI games 
+...special day/dose with theme?
+
+**Matthew Sebolt, Technical Editor**<br/>
+**Dralun** at Microsoft **|** Content + Learning<br/>
+Cloud + AI Developer Relations<br/>
+[Dralun technical content authoring managed service](https://dralun.com)<br/><br/>
+*DRALUN and | are colored dark orange above*
+
+https://www.google.com/search?q=fix+ge+ice+maker&oq=fix+ge+ice+maker&aqs=chrome..69i57.7832j0j7&client=ms-android-samsung-gn-rev1&sourceid=chrome-mobile&ie=UTF-8#scso=_V8UFYaj7O9Pz-gSztbqwDw8:1852.952392578125
