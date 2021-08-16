@@ -96,7 +96,7 @@ custom= tribes, french-indian war, international, state
     box-shadow: 2px 2px lightgrey; text-align:center;">
 				<img width="240" height="120" src="https://github.com/nfnth/res/raw/main/site/user/metamask.svg" /></div>
 			
-			<div id="console" class="row hover-base" style="text-align:center;"><a onclick="openInNewTab('https://metamask.io/download');">Download MetaMask</a></div></div></div></div>
+			<div id="console" class="row hover-base" style="text-align:center;"><a onclick="openInNewTab('https://metamask.io/download');">Download MetaMask</a><a href="https://metamask.app.link/dapp/dralun.com">Open In MetaMask (mobile)</a></div></div></div></div>
 
 <!-- dialog (editor) -->
 <div id="user-setting2" class="modal">
@@ -133,6 +133,9 @@ custom= tribes, french-indian war, international, state
 	<div id="registry" class="collection">
 		<a href="#!" class="collection-item active">Alvin</a>
 		<a class="collection-item modal-trigger" href="#modal1">Purchase</a></div></div>
+	
+<!-- editor -->
+
 
 <div id="modal1" class="modal bottom-sheet">
     <div class="modal-content"></div>
@@ -169,9 +172,6 @@ async function initial() {
   var instances = M.FloatingActionButton.init(elems, { hoverEnabled: false });
   
   setEditor('map'); searchClear(); setTimeout(function() {  $(".loader").css("visibility", "visible"); }, 500);
-	sample = await octokit.request('POST /markdown', {
-  text: '## test<br/><br/>- works<br/>- well'
-})
           
 // await preloadImage('https://github.com/nfnth/res/raw/main/site/coat.png') // Preload an image
  //	await preloadImage('https://github.com/nfnth/res/raw/main/site/chimi_hi.png') 
@@ -185,23 +185,23 @@ async function initial() {
   var eagle = Math.floor(Math.random() * (4 - 1 + 1)) + 1; 
   document.getElementById('eagle-eye').src = "https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/object/eagle/eagle" + eagle.toString() + ".png";
           
-  domain = window.location.host; if (domain != "dralun.com") { document.title = "UR.Land · " + domain; }
-  if (domain == "ur.land") { setEditor('map'); }
-  if (domain == "ustat.us") { alert(getParameter()); }
-  if (domain == "nfnth.com") { setEditor('map'); }
+  domain = window.location.host; 
+  if (domain != "dralun.com") { document.title = "UR.Land · " + domain; }
+  else if (domain == "ur.land") { setEditor('map'); }
+  else if (domain == "ustat.us") { alert(getParameter()); }
+  else if (domain == "nfnth.com") { setEditor('map'); }
+  else {  }
 }
               
 initial(); 
 document.addEventListener('DOMContentLoaded', function() { var elems = document.querySelectorAll('.modal'); var instances = M.Modal.init(elems); });
-document.addEventListener('DOMContentLoaded', function() { });
               
-          
-          function searchClear() { $('#search').val(''); }
-          function searchResults() { $.post("../search/word", $('#search').val(), function(data, status){ $('#results').html(data); }); }
+function searchClear() { $('#search').val(''); }
+function searchResults() { $.post("../search/word", $('#search').val(), function(data, status){ $('#results').html(data); }); }
 
 function hideAll() { $("#holder").hide(); $("#viewer").hide(); $("#code").hide(); $("#docs").hide(); $("#grid").hide(); $("#map").hide(); $("#stats").hide(); }
 function setViewer() {}
-function setEditor(doc) {  alert(sample); hideAll(); $('#'+doc).show(); } // var width = window.innerWidth; var height = window.innerHeight - 44; //menu, footer
+function setEditor(doc) {  hideAll(); $('#'+doc).show(); } // var width = window.innerWidth; var height = window.innerHeight - 44; //menu, footer
 
 if (typeof window.ethereum !== 'undefined') {console.log('MetaMask is installed!'); }
 async function signer() { const accounts = await ethereum.request({ method: 'eth_requestAccounts' }); const account = accounts[0]; alert(account); }
