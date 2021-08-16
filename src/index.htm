@@ -14,7 +14,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 <script src="src/map.js"></script>
-<script src="src/md.js"></script></head>
+<script src="src/md.js"></script>
+<script src="src/user.js"</script></head>
 
 <!-- menu -->
 <nav id="main-menu" style="position: fixed;top:0; z-index:2;visibility:hidden;" class="loader">
@@ -29,7 +30,7 @@
     		<a class="screen-hide" onclick="setSearch();"><i class="material-icons right">search</i></a>
 		
     		<ul class="hide-on-med-and-down" >
-      			<li><a id="domains" href="#!" data-target="domain">DOMAINS<i class="material-icons right">arrow_drop_down</i></a></li>
+      			<li><a id="domains" href="#!" data-target="domain">DEEDS<i class="material-icons right">arrow_drop_down</i></a></li>
 			<li><a onclick="setEditor('map');">MAP</a></li>
 			<li><a onclick="setEditor('editor');">EDITOR</a></li>
       			<li style="height:64px;">
@@ -44,17 +45,13 @@
 
 <!-- drop downs -->
 <ul id="domain" class="dropdown-content loader" style="visibility:hidden;">
-  	<li><a onclick="setEditor('grid');"><i class="material-icons">landscape</i>Lands</a></li>
-	<li><a onclick="setEditor('grid');"><i class="material-icons">cottage</i>Tribes</a></li>
-	<li><a onclick="setEditor('grid');"><i class="material-icons">inventory_2</i>Artifacts</a></li>
-	<li><a onclick="setEditor('grid');"><i class="material-icons">emoji_objects</i>Relics</a></li>
-	<li><a onclick="setEditor('grid');"><i class="material-icons">card_membership</i>Artworks</a></li></ul>
+  	<li><a onclick="setDisplay('land'); setEditor('grid');"><i class="material-icons">landscape</i>Land Domains</a></li>
+	<li><a onclick="setDisplay('people'); setEditor('grid');"><i class="material-icons">cottage</i>Peoples of Dralun</a></li>
+	<li><a onclick="setDisplay('relic'); setEditor('grid');"><i class="material-icons">emoji_objects</i>Ancient Relics</a></li>
+	<li><a onclick="setDisplay('object'); setEditor('grid');"><i class="material-icons">inventory_2</i>Time-Sealed Collections</a></li>
+	<li><a onclick="setDisplay('art'); setEditor('grid');"><i class="material-icons">card_membership</i>Artworks</a></li></ul>
 
-<!--
-"person=man/tribe/monster/animal" "place=land/town/exterior/interior" "thing=car/plane/ship/alien/abstract/plant" ... "
-element=red(fire),orange(rock),yellow(city),green(forest),blue(water),purple(air/mountain),black(future),white(past)"
-custom= tribes, french-indian war, international, state
- panel -->
+
 <ul id="user-pane" class="sidenav loader" style="visibility:hidden;">
 	<li><div class="user-view z-depth-1" style="background-color: #eaf2f7;display: flex;margin: auto; padding: 0;align-items: flex-end;"><img draggable="false" ondragstart="return false;" id="user-pic" style="height: 72;margin-left:18; padding: 12;" src="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/shield.png" /></div></li>
   	<li style="text-align: center;"><a class="subheader">
@@ -203,25 +200,7 @@ function hideAll() { $("#holder").hide(); $("#viewer").hide(); $("#code").hide()
 function setViewer() {}
 function setEditor(doc) {  hideAll(); $('#'+doc).show(); } // var width = window.innerWidth; var height = window.innerHeight - 44; //menu, footer
 
-if (typeof window.ethereum !== 'undefined') {console.log('MetaMask is installed!'); }
-async function signer() { const accounts = await ethereum.request({ method: 'eth_requestAccounts' }); const account = accounts[0]; alert(account); }
 
-//	const transactionParameters = {
-  //nonce: '0x00', // ignored by MetaMask
-  //gasPrice: '0x09184e72a000', // customizable by user during MetaMask confirmation.
-  //gas: '0x2710', // customizable by user during MetaMask confirmation.
-  //to: '0x0000000000000000000000000000000000000000', // Required except during contract publications.
-  //from: ethereum.selectedAddress, // must match user's active address.
-  //value: '0x00', // Only required to send ether to the recipient from the initiating external account.
-  //data:
-  //  '0x7f7465737432000000000000000000000000000000000000000000000000000000600057', // Optional, but used for defining smart contract creation and interaction.
- // chainId: '0x3', // Used to prevent transaction reuse across blockchains. Auto-filled by MetaMask.
-//};
-
-//const txHash = await ethereum.request({
-//  method: 'eth_sendTransaction',
-//  params: [transactionParameters],
-//});
 </script>
 
 <style>
