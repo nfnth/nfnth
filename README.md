@@ -1,8 +1,8 @@
 
-<a href="https://opensea.io/NfNth" title="Buy on OpenSea" target="_blank"><img style="width:220px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="https://storage.googleapis.com/opensea-static/Logomark/Badge%20-%20Available%20On%20-%20Light.png" alt="Available on OpenSea" /></a>
-  
 ### Explore [Dralun](https://dralun.com), the [UR.Land](https://ur.land) of Deed to Domain
 
+<a href="https://opensea.io/NfNth" title="Buy on OpenSea" target="_blank"><img style="width:220px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="https://storage.googleapis.com/opensea-static/Logomark/Badge%20-%20Available%20On%20-%20Light.png" alt="Available on OpenSea" /></a>
+  
 **Dralun**, inspired by the legendary sword [Durendal](https://en.wikipedia.org/wiki/Durendal), is an Ethereum-powered deed-driven world that revolves around domains and artifacts. Purchased NFTs provides ownership and can be used as a key to customize land domains using artifacts. Selling the NFT land holders can both pass or preserve their domains.
 
 Deeds, include:
@@ -65,18 +65,14 @@ For upcoming feaures, read the [PLANME.md](https://github.com/nfnth/nfnth/blob/m
 
 For issues, see [issues](https://github.com/nfnth/nfnth/issues), or contact **m@nfnth.com**.
 
-#### Latest Release
-
-|**File**|*description*|
-|-|-|
-|build.sh||
-|[site.py]()||
-|[md.js](https://github.com/nfnth/nfnth/blob/master/doc/MATTDOWN.md)|JavaScript MarkDown renderer|
-|[map.js]()|JAvaScriptPythonstRipE objects|
-|[user.js](https://github.com/nfnth/nfnth/blob/master/doc/BROS.md)|Browser OS (on Arch Linux)|
+See [brOS]() **1.01** for steps on how to implement your own.
 
 #### Sponsorship
 
 Sponsor NfNth to get listed here...
 
-For news, see [CSPAN](https://www.c-span.org/), [BBC](http://feeds.bbci.co.uk/news/rss.xml), [Gutenberg](http://www.gutenberg.org/wiki/Main_Page), [Wikipedia](http://www.wikipedia.org/wiki/Special:Random) *virtual news feed... enter name?*
+For news, see [CSPAN](https://www.c-span.org/), [BBC](http://feeds.bbci.co.uk/news/rss.xml), [Gutenberg](http://www.gutenberg.org/wiki/Main_Page), [Wikipedia](http://www.wikipedia.org/wiki/Special:Random) *virtual news feed (statue)... enter name?*
+
+donate?
+https://metamask.app.link/send/pay-0x8a83fbBAcB82030Ea17179c0403B04e7Bce7bA10?value=1e16
+...0.01 ETH
