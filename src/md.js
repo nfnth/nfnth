@@ -6,6 +6,22 @@ var datestamp = yyyy + "." + MM + "." + dd;
 var timestamp = hh + ":" + mm + ":" + ss;
  //$.post("../search/ip", "", function (data) { $('#stat-date').html(datestamp); $('#stat-time').html(timestamp); $('#stat-ip').html(data);});
 
+// add share...
+var editBox = '<div id="tools" class="z-depth-1" style="display:flex;align-items: center;justify-content: flex-end;padding: 12; margin-bottom: 4; width:100%;">
+	<div class="switch" onclick="previewMode();"><label style="display: flex;align-items: center;">Private?<input type="checkbox" id="preview"><span class="lever"></span></label></div>
+	<a onclick="camera();" style="margin: 0;padding: 18;justify-items: center;display: flex;align-items: center;"><i class="material-icons">photo_camera</i></a>
+	<a onclick="getLocation();" style="margin: 0;padding: 18;justify-items: center;display: flex;align-items: center;"><i class="material-icons">gps_fixed</i></a>
+  	<a onclick="exportDoc();" class="btn waves-effect waves-light green tool" style="margin-left:24;"><i class="material-icons right">publish</i>Attachment</a>
+	<div class="switch" onclick="previewMode();"><label style="display: flex;align-items: center;"><i class="material-icons">chrome_reader_mode</i><input type="checkbox" id="preview"><span class="lever"></span></label></div></div>
+	
+<div id="holder" style=" width:100%; justify-content:center;height: calc(100% - 60px);">
+  	<div id="viewer" style="text-align:left;padding:24;height:100%; overflow-y:auto; width: 85%;float: right;padding-right: 64;"></div>
+  	<div id="code" class="content loader" contentEditable="false" style="width:50%; height:50%; ">
+       		<div contentEditable="true" style="text-align:left; overflow-y: auto; width:100%; height:100%; border: 2px solid aliceblue;box-shadow: 1px 1px beige;padding: 24;"></div></div></div>
+		
+<div id="toolset" class="z-depth-1 content loader" style="display:flex;align-items: center;justify-content: center;padding: 12; margin-bottom: 4; width:100%;position: fixed;background-color: white; z-index:4; ">
+	<p><label><input type="checkbox" class="filled-in" checked="checked" /><span>Unclaimed Territory</span></label></p>"
+
 function renderMd(text) { 
   //$('#mermaid').html(""); var mermaidEx = /<textarea[\s\S]*?>([\s\S]*?)(?=<\/textarea>)/gi;
  
