@@ -1,8 +1,4 @@
 
-<p align="center">
-<img src="https://github.com/nfnth/res/raw/main/site/chimi_hi.png" width="200" height="240" />
-</p>
-
 ### Try brOS (with Jaspre and Markre)
 
 Features include,
@@ -20,14 +16,15 @@ Use Jaspre to:
 
 - Transfer/store JSON objects between client (JavaScript) and serve (Python)
 
-Use the Markre editor to:
-
-- Create a profile
-- Write a treaty (trade)
-- Develop strategy
-- Campaign (with mail)
-
 The Markre editor uses JavaScript regex rendering to confirm conform to [MattDown](https://github.com/nfnth/nfnth/wiki/Mattdown), or MarkDown 2.0.
+
+|**File**|*description*|
+|-|-|
+|build.sh||
+|[site.py]()||
+|[md.js](https://github.com/nfnth/nfnth/blob/master/doc/MATTDOWN.md)|JavaScript MarkDown renderer|
+|[map.js]()|JAvaScriptPythonstRipE objects|
+|[user.js](https://github.com/nfnth/nfnth/blob/master/doc/BROS.md)|Browser OS (on Arch Linux)|
 
 
 ## brOS, simplistic speed, *v1.04*
@@ -61,6 +58,8 @@ That's it. Enjoy!
 <p align="center"><img src="https://github.com/nfnth/res/raw/main/site/chimi_cards.png" width="200" height="200" /></p>
 
 ### Additional info
+
+fullscreen/file folder text editor/terminal/keyboard
 
 - Script parameters:
 
@@ -185,4 +184,4 @@ https://xmr.llcoins.net/addresstests.html
 
  https://www.bitaddress.org/bitaddress.org-v3.3.0-SHA256-dec17c07685e1870960903d8f58090475b25af946fe95a734f88408cef4aa194.html
 				
-
+http://remix.ethereum.org/#optimize=false&runs=200&evmVersion=null&version=soljson-v0.4.26+commit.4563c3fc.js
