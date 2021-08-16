@@ -15,7 +15,50 @@ def obj2json(data): return json.dumps(data.__dict__, indent=4, sort_keys=True, d
 
 # public
 async def index(request):
-    return web.FileResponse(PATH + '/index.htm')
+    return web.FileResponse(PATH + '/src/index.htm')
+
+async def user(request):
+    action = request.match_info.get('action', 'salt') #sign validate
+    if action == "salt":
+        #set secure cookie with salt 1, send salt 2 datetime...
+    elif action == "sign":
+	#take signature, compare with generated
+
+async def domain(request):
+    domain = request.match_info.get('domain', 'arikara.us')
+    action = request.match_info.get('action', 'dir') #search private
+	
+    if action == "private":
+	#check signature
+	startpath = DATA + '/domain/' + domain + '/private'
+    else:
+	startpath = DATA + '/domain/' + domain + '/public'
+
+    if action == "search":
+        terms = "term="
+
+    for root, dirs, files in os.walk(startpath):
+        for f in files:
+            path = os.path.join(root, f)
+            if not '.' in path:
+                search = open(path, "r")
+                searchlines = search.readlines()
+                search.close()
+                for i, line in enumerate(searchlines):
+                    if term in line:
+                        terms = terms + path + " at " + str(i) + "|"
+            else:
+                folder = folder + path
+                if not term == "root":
+                    search = open(path, "r")
+                    searchlines = search.readlines()
+                    search.close()
+                    for i, line in enumerate(searchlines):
+                        if term in line:
+                            terms = terms + path + " at " + str(i) + "|"
+                else:
+                    terms = terms + folder + " at |"
+    return terms
 
 async def data(request): #track views?
     action = request.match_info.get('action', 'view') #view, edit, delete
@@ -302,33 +345,4 @@ except:
 #    else:
 #        english[words[i].replace('\n', '')] = english[words[i].replace('\n', '')] + defs[i][0] 
 #    i += 1
-
-    if name == "public":
-        startpath = os.path.dirname(REL) + '/data'
-        terms = "term="
-    else:
-        startpath = os.path.dirname(REL) + '/data/' + name
-
-    for root, dirs, files in os.walk(startpath):
-        for f in files:
-            path = os.path.join(root, f)
-            if name == 'public' and not '.' in path and 'public' in path:
-                search = open(path, "r")
-                searchlines = search.readlines()
-                search.close()
-                for i, line in enumerate(searchlines):
-                    if term in line:
-                        terms = terms + path + " at " + str(i) + "|"
-            else:
-                folder = folder + path
-                if not term == "root":
-                    search = open(path, "r")
-                    searchlines = search.readlines()
-                    search.close()
-                    for i, line in enumerate(searchlines):
-                        if term in line:
-                            terms = terms + path + " at " + str(i) + "|"
-                else:
-                    terms = terms + folder + " at |"
-    return terms
 
