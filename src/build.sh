@@ -1,6 +1,68 @@
 #!/bin/bash
 #live feed/file attachment/user profile back to index...
 #add image maker ISO download...
+ #ip link set $(echo $(ls -d /sys/class/net/w*) | sed 's/\/sys\/class\/net\///g') down
+#systemctl set-default graphical.target
+
+#ln -sT /usr/share/zoneinfo/${timezone} /etc/localtime # -sf ?
+    #timedatectl set-timezone ${timezone}
+    #timedatectl set-ntp true 
+    #    cat > /etc/systemd/system/getty@tty1.service.d/skip-prompt.conf <<EOF
+#[Service]
+#ExecStart=
+#ExecStart=-/usr/bin/agetty --skip-login --nonewline --noissue --autologin username --noclear %I $TERM
+#EOF
+    #boot menu still shows?
+    #amixer sset Headphone unmute
+
+    #cat /boot/loader/loader.conf ...set timeout to 0...
+#Run systemctl edit getty@tty1 and replace the contents with:
+
+#[Service]
+#ExecStart=
+#ExecStart=-/usr/bin/agetty --skip-login --login-options "-f usernamehere" %I 38400 linux
+
+#xenv="env DISPLAY=:0 XAUTHORITY=/home/my_name/.Xauthority"
+    # button map before
+    #$xenv /usr/bin/xinput
+
+script scrap...
+    #pacman-key --init
+    #pacman-key --populate archlinux # pacman -S archlinux-keyring for bad keys...
+
+    # fbida ipw2100-fw ipw2200-fw dnsmasq mozilla-common
+    # gptfdisk
+    #  noto-fonts noto-fonts-extra noto-fonts-emoji
+    #minimize above packages...?
+    # not used anymore... firefox intel-ucode base base-devel amd-ucode memtest86+ tor vi vim-minimal 
+
+	pip install...
+	#object-mapper webkit pywebview pyotp tensorflow pytorch aiohttp_session numpy-stl
+
+	printer() {
+    echo "printer"
+    #systemctl enable org.cups.cupsd.service #https://localhost:631, user: root, password: root password, use lp or lpr?
+    #cnijfilter-ip110 ... from aur.archlinux.org
+    #cups cups-filters ghostscript
+}
+
+lsof -i -P -n
+
+    #add to /etc/modprobe.d/blacklist.conf
+    #blacklist wdat_wdt
+    #blacklist iTCO_wdt?
+    #blacklist iTCO_vendor_support?
+
+    #add ssh support?
+        #tar -czvf archive.tar.gz /path/of/directory
+        #tar -xzvf archive.tar.gz
+        #scp localmachine/path_to_the_file username@server_ip:/path_to_remote_directory #-r for folder
+        #add key support?
+        
+        xset -dpms; xset s off &https://wiki.archlinux.org/index.php/DPMS
+        
+        env MOZ_USE_XINPUT2=1 firefox
+...about settings? 
 
 source="on" #on|off
 boot="disk" #iso|disk
