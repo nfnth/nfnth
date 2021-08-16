@@ -108,3 +108,81 @@ That's it. Enjoy!
    ```
    
 https://gist.github.com/nfnth/ef98bc2ade9286b240eac846ff52bcce
+
+XMR node with XUR (deed domain with stats)
+
+https://supportxmr.com/
+
+https://www.getmonero.org/resources/developer-guides/wallet-rpc.html
+
+git clone https://github.com/xmrig/xmrig.git
+cd xmrig
+Configure and compile XMRig:
+
+cmake -Bbuild
+make -Cbuild -j$(nproc)
+Copy binary and example configuration to your home directory:
+
+cp build/xmrig ~/
+cp src/config.json ~/
+https://github.com/xmrig/xmrig
+https://www.getmonero.org/downloads/#cli
+tar -xvjf guitar_songs.tar.bz2
+./monerod --prune-blockchain
+
+https://moneroaddress.org/
+
+file:///root/xmr.llcoins.net/site/sign.html
+
+The blockchain is stored in $HOME/.bitmonero
+For testnet, it'll be in $HOME/.bitmonero/testnet
+You can select a different directory with the --data-dir option if needed, eg:
+./monerod --data-dir /var/tmp/monero
+
+https://xmr.llcoins.net/addresstests.html
+
+#https://monerodocs.org/interacting/monerod-reference/#transactions
+#https://monerodocs.org/interacting/monero-wallet-rpc-reference/#verify
+#https://monerodocs.org/interacting/monero-wallet-cli-reference/#balance
+
+ https://www.bitaddress.org/bitaddress.org-v3.3.0-SHA256-dec17c07685e1870960903d8f58090475b25af946fe95a734f88408cef4aa194.html
+ 
+ XMR node with XUR (deed domain with stats)
+
+https://supportxmr.com/
+
+https://www.getmonero.org/resources/developer-guides/wallet-rpc.html
+
+git clone https://github.com/xmrig/xmrig.git
+cd xmrig
+Configure and compile XMRig:
+
+cmake -Bbuild
+make -Cbuild -j$(nproc)
+Copy binary and example configuration to your home directory:
+
+cp build/xmrig ~/
+cp src/config.json ~/
+https://github.com/xmrig/xmrig
+https://www.getmonero.org/downloads/#cli
+tar -xvjf guitar_songs.tar.bz2
+./monerod --prune-blockchain
+
+https://moneroaddress.org/
+
+file:///root/xmr.llcoins.net/site/sign.html
+
+The blockchain is stored in $HOME/.bitmonero
+For testnet, it'll be in $HOME/.bitmonero/testnet
+You can select a different directory with the --data-dir option if needed, eg:
+./monerod --data-dir /var/tmp/monero
+
+https://xmr.llcoins.net/addresstests.html
+
+#https://monerodocs.org/interacting/monerod-reference/#transactions
+#https://monerodocs.org/interacting/monero-wallet-rpc-reference/#verify
+#https://monerodocs.org/interacting/monero-wallet-cli-reference/#balance
+
+ https://www.bitaddress.org/bitaddress.org-v3.3.0-SHA256-dec17c07685e1870960903d8f58090475b25af946fe95a734f88408cef4aa194.html
+				
+
