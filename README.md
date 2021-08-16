@@ -1,9 +1,9 @@
 
 <p align="center"><img src="https://github.com/nfnth/res/raw/main/site/bird.png" width="280" height="320" /></p>
   
-### [Dralun](https://dralun.com), Land of Deed to Domain
+### Explore [Dralun](https://dralun.com), the [UR.Land](https://ur.land) of Deed to Domain
 
-Explore **Dralun**, a deed-driven world where domains are built using artifacts etched in code, and land holders can both pass or preserve their domains.
+**Dralun** is an Ethereum-powered deed-driven world that revolves around domains and artifacts. Purchased NFTs provides ownership and can be used as a key to customize land domains using artifacts. Selling the NFT land holders can both pass or preserve their domains.
 
 Deeds, include:
 
@@ -18,7 +18,7 @@ To begin, create an OpenSea account, or browse the world with **Nomad** status.
 
 ### On Deed to Domain
 
-**Dralun** is the concept of *domain deed*, a differentiaion between control and content.
+**Dralun** is the concept of *domain deed*, control over both access and content.
 
 This can be used to mean one of the following:
 
