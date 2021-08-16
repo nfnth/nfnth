@@ -1,4 +1,12 @@
 
+var User = { //constructor(token) { this.token = token; } view update
+  action: '', domain: '', address: '', message: '', signature: '', data: '', docs: [],
+  formData: new FormData()
+     //update: function() { this.action = 'update';
+      // $.ajax({ url: "/data", type: 'post', success: function (data) { alert(data); this.data = data; this.//build(); }, data: JSON.stringify(this) }); },
+ //    build: function() { currentUser = JSON.parse(this.data);
+   }
+
 if (typeof window.ethereum !== 'undefined') {console.log('MetaMask is installed!'); }
 async function signer() { const accounts = await ethereum.request({ method: 'eth_requestAccounts' }); const account = accounts[0]; alert(account); }
 
@@ -44,3 +52,26 @@ signTypedDataV4Button.addEventListener('click', function (event) {
                                                                                      //send dynamic message and signature to server to process...
                                                                                     } 
    else {alert('Failed to verify signer when comparing ' + result + ' to ' + from); } });});
+
+ async function submitUser() { let hash = await genEncryptionKey($("#user-password").val()); }
+   
+ async function genEncryptionKey (password) { 
+     var algo = {name: 'PBKDF2',hash: 'SHA-256',salt: new TextEncoder().encode('a-different-salt-string'),iterations: 1000}, derived = { name: 'AES-GCM', length: 256 }, encoded = new TextEncoder().encode(password), key = await crypto.subtle.importKey('raw', encoded, { name: 'PBKDF2' }, false, ['deriveKey']);
+     var temp = await crypto.subtle.deriveKey(algo, key, derived, true, ['encrypt', 'decrypt']);
+     var exports = await crypto.subtle.exportKey('jwk', temp);
+     return JSON.stringify(exports); } 
+
+var action, domain, address, message, signature, data, docs; //array?
+var data = new FormData();
+
+ //var logoImg = $('input[name="logoImg"]').get(0).files[0];
+ //formData.append('logo', logoImg);
+ //formData.append('id', id);
+ //formData.append('name', userName);
+ 
+ //$.ajax({type: "POST", url: url, data: formData, contentType: false,processData: false,cache: false, complete: function(data) {alert("success");}});
+ 
+ function setUser() { formdata = new FormData();
+   if($("#default_file").prop('files').length > 0) { file = $("#default_file").prop('files')[0]; formdata.append("file1", file); }
+   $.ajax({ url: site + "/upload", type: "POST", data: formdata, processData: false, contentType: false, success: function(data) { alert('uploaded'); } }); }
+ 
