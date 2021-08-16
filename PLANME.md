@@ -42,3 +42,29 @@ output, error = process.communicate()
 		     
 async def search(request): # user badge with word/definition, domain search
     return web.FileResponse(PATH + '/ur.js') #make "artifact" specific
+    
+curl -u 'username:token' 'https://api.dev.name.com/v4/domains/example.org/url/forwarding' -X POST -H 'Content-Type: application/json' --data '{"host":"www.example.org","forwardsTo":"https:\/\/www.example.net","type":"redirect"}'
+
+curl -u 'username:token' 'https://api.dev.name.com/v4/domains/example.org/url/forwarding/www.example.org' -X PUT -H 'Content-Type: application/json' --data '{"forwardsTo":"https:\/\/www.example.net","type":"redirect"}'
+
+curl -u 'username:token' 'https://api.dev.name.com/v4/domains/example.org/url/forwarding/www' -X DELETE
+
+curl -u 'username:token' 'https://api.dev.name.com/v4/domains/example.org/email/forwarding' -X POST -H 'Content-Type: application/json' --data '{"emailBox":"admin","emailTo":"webmaster@example.net"}'
+
+curl -u 'username:token' 'https://api.dev.name.com/v4/domains/example.org/email/forwarding/admin' -X PUT -H 'Content-Type: application/json' --data '{"emailTo":"webmaster@example.net"}'
+
+curl -u 'username:token' 'https://api.dev.name.com/v4/domains/example.org/email/forwarding/admin' -X DELETE
+
+
+let str = "Visit W3Schools!";
+str.search("W3Schools")   // Returns 6
+
+https://www.name.com/api-docs/EmailForwardings#CreateEmailForwarding
+
+https://etherscan.io/token/0x36950b34fE79C4AE047c646D2800e91a198b70fB
+
+https://bscscan.com/tokentxns
+
+https://app.uniswap.org/#/pool/103894
+
+https://www.unrealengine.com/marketplace/en-US/product/low-poly-fps-pack
