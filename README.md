@@ -5,9 +5,9 @@
 
 Explore [UR.Land](https://ur.land), the [Land of Dralun](https://dralun.com), inspired by the legendary sword of [Durendal](https://en.wikipedia.org/wiki/Durendal), an *Ethereum-powered* world designed around the concept of **deeds**, **domains**, and **artifacts**.
 
-Dralun uses the concept of the **domain deed**, a **NFT** used to provide ownership, access to a domain, and control over a domain's artifacts. Upon transfer of the **domain deed (NFT)**, all ownership, access, and artifacts, are also transferred.  
+Dralun uses the concept of the **domain deed**, a **NFT** used to provide ownership, access to a domain, and control over a domain's artifacts. Upon transfer of the domain deed (NFT), all ownership, access, and artifacts, are also transferred.  
 
-This includes,
+The domain deed (NFT) includes,
 
 - rights to access the domain
 - rights to the NFT properties
@@ -20,7 +20,7 @@ A custom NFT is minted per transfer as *proof of purchase* to be recorded in the
 
 <p align="center"><img src="https://github.com/nfnth/res/raw/main/site/other/chimi_hi.png" width="140" height="220" /></p>
 
-To begin, [visit us on OpenSea](https://opensea.io), or [wander the world](https://dralun.com) *(note that access to [UR.Land]() requires [MetaMask]())* as **Nomad**. 
+To begin, [visit us on OpenSea](https://opensea.io), or [wander the world](https://dralun.com) as **Nomad** *(note that access to [UR.Land]() requires [MetaMask]())*. 
 
 <a href="https://opensea.io/NfNth" title="Buy on OpenSea" target="_blank"><img style="width:220px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="https://storage.googleapis.com/opensea-static/Logomark/Badge%20-%20Available%20On%20-%20Light.png" alt="Available on OpenSea" /></a>
 
@@ -34,9 +34,13 @@ The **domain deed** grants control over both the access and content, to allow,
 
 Note that when the **domain deed** (**NFT**) is transferred, all rights granted to the previous owner are revoked.
 
-Types and labels are used to differentiate and classify domains. Deeds also use labels to denote properties such as state, serial, and informational links.
-
 #### Domain Collections
+
+The primary set of **domain deeds** listed on [UR.Land](https://ur.land) is limited to 1776 in the spirit of *.us* and to preserve fair trade value. 
+
+An additional 776 **domain deeds** are reserved as limited edition to celebrate [Roland](https://en.wikipedia.org/wiki/Roland), in honor of [dralun]().
+
+Time-locked objects and standard art-based are excluded from these limitations. 
 
 |Collection|example|description|
 |-|-|-|
@@ -46,13 +50,9 @@ Types and labels are used to differentiate and classify domains. Deeds also use 
 |[Time-locked objects]()| the [Gunslinger]()||
 |[Artwork]()|[Chimi mascot]()||
 
-The primary set of **domain deeds** listed on [UR.Land](https://ur.land) is limited to 1776 in the spirit of *.us* and to preserve fair trade value. 
-
-An additional 776 **domain deeds** are reserved as limited edition to celebrate [Roland](https://en.wikipedia.org/wiki/Roland), in honor of [dralun]().
-
-Time-locked objects and standard art-based are excluded from these limitations. 
-
 #### Domain Types and Labels
+
+Types and labels are used to differentiate and classify domains. Deeds also use labels to denote properties such as state, serial, and informational links.
 
 |**Type**|Categories|Labels|
 |-|-|-|
@@ -92,16 +92,14 @@ May the nomad wander until what's lost is found.
 
 ### On Development
 
-Dralun runs on [brOS](), an Arch Linux distro, hosted on [Linode](https://cloud.linode.com/linodes).
+Dralun runs on [brOS](), an Arch Linux distro hosted on [Linode](https://cloud.linode.com/linodes).
 
-For a list of upcoming feaures, read the [PLANME.md](https://github.com/nfnth/nfnth/blob/master/PLANME.md).
+- For a list of upcoming feaures, read the [PLANME.md](https://github.com/nfnth/nfnth/blob/master/PLANME.md).
 
-For technical issues, use [GitHub](https://github.com/nfnth/nfnth/issues), or email **m@nfnth.com**.
+- For technical issues, use [GitHub](https://github.com/nfnth/nfnth/issues), or email **m@nfnth.com**.
 
 #### Sponsorship
 
-To donate to preserving our national lands, use [MetaMask](https://metamask.app.link/send/pay-0x8a83fbBAcB82030Ea17179c0403B04e7Bce7bA10?value=1e16).
-
-For other news, see [CSPAN](https://www.c-span.org/), [BBC](http://feeds.bbci.co.uk/news/rss.xml), [Gutenberg](http://www.gutenberg.org/wiki/Main_Page), and [random Wikipedia](http://www.wikipedia.org/wiki/Special:Random).
+To donate to preserving our national lands, use [MetaMask](https://metamask.app.link/send/pay-0x8a83fbBAcB82030Ea17179c0403B04e7Bce7bA10?value=1e16). For other news, see [CSPAN](https://www.c-span.org/), [BBC](http://feeds.bbci.co.uk/news/rss.xml), [Gutenberg](http://www.gutenberg.org/wiki/Main_Page), and [random Wikipedia](http://www.wikipedia.org/wiki/Special:Random).
 
 Sponsor **NfNth** to get listed here...
