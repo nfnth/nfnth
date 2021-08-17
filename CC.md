@@ -77,99 +77,20 @@ Suffering from the prisoner's dilemna, a person is alone and confused now fallen
 beer/bread Tartoogas revival with picnics, renditions of American classics with exotic cash crops (peppers/willow/mint/gum), menu abstract simple vs. detailed
 
 - "crafted" snacks to feasts (cooked beef stew, fried chicken/potato salad/bread/cheese/brownies, crackers, meat, spices, knoephla bacon) fry/spice meat, (potato)salad/bread/cheese/brownies/soup/crackers
-- jelly jar drink alchemy tonic/elixir (water, coffee, tea, vitamins, shakes, wine, spirits, sparkling juice)
-
-screen shock headache powder
+- jelly jar drink alchemy tonic/elixir (water, coffee, tea, vitamins, shakes, wine, spirits, sparkling juice), screen shock headache powder
 
 *the "American Archetype", Matthew Tin, from the food truck diner menu* household order...
+
+**Richard Matt, Technical Editor**<br/>
+**Dralun** at Microsoft **|** Content + Learning<br/>
+Cloud + AI Developer Relations<br/>
+[Dralun technical content authoring managed service](https://dralun.com)<br/><br/>
+*DRALUN and | are colored dark orange above*
+May 18, 2017 Lake Erie Plane Crash
+Mackinac "Drowning Pool"
 
 climb/dive/fly, be Mr. Happy and own a mountain, beach "model" island sanctuary in sustainable [boat](https://www.boattrader.com/boat/2005-catamaran-cruisers-35-vagabond-7311908/) cabin with hawks/whales in Edmonds with bio toilet as a isolationist outpost (land)
 coast with Canada and Mexico by 41, expeditions for artifacts/relics, nomad/forager, maps/charts for geocaching/geotagging, freedom to roam, Silver dollars, victory gin
 Metal gear
 online food truck (electric van) with "hot" delivery
-psy op fish biosynthesis
-
-spade of swords, heart of cups, diamond of pentacles, club of wands
-jack the valet, Bube, Unter, Page, fante (instruments, one eye for hearts/spades)
-queen the Dame, Konigin, regina (flowers, sceptre for for spades)
-king the roi, Konig, re (swords, ax for diamonds)
-knight the chevalier, Ober, Ritter, cavall, cavliere
-joker of red, black, white
-
-[ship](https://www.usps.com/business/web-tools-apis/documentation-updates.htm)
-[game](https://www.cgtrader.com/items/2040926/download-page) 
-
-https://www.myidentifiers.com/identify-protect-your-book/barcode
-
-built-in scenarios/battles
-
-Grill
-...large stick butter
-Eggs, carrots, scallions/onions, peppers/spinach (all shredded)
-Square scoop onto skillet, long flat spatula to cut and flip into squares
-Toast bread (extra butter), fry ham slices
-Assemble sandwiches with cheese slice
-Top with slaw, Red spicy sauce, seasonings,  finish sandwich
-
-... additional sauce?  White creme?
-... replace bread with crepe?
-... sweet glaze? other veggies like corn?
-
-Glazed/marinated Chicken
-... to flour to batter to deep fry
-With salsa/parsley with lemon/lime and cheese sauce
-
-Boil, peel? mash, potatos
-...salt, pepper, paprika, garlic, parsley, egg
-...cheese in middle...
-...flour to egg/salt to bread crumbs
-...fry, dipping sauce
-
-Fresh bread
-
-Stir fry with seasonings, broth... eggs, milk, baking , flour
-Use special grater to add to boiling soup...cream
-
-Drink... add nootropics
-Ginseng and citrus peels (boil)...sugar, caffeine, taurine
-...ginko biloba, oleo saccharum (from citrus peels fermenting in sugar)
-... add to pear cider
-
-Bubbles, ice, candy syrup (or chocolate, etc.), milk, with cotton candy on top
-
-Cooked potatoes with barley, warm, add yeast, ferment for week
-...boil and distill repeatedly
-
-reward registry...
-...drug shower...food truck feast
-
-Whiskey, honey, lemon juice, peppermint candy
-... cane sugar, vanilla, seltzer water
-
-Richard Matt
-May 18, 2017 Lake Erie Plane Crash
-Mackinac "Drowning Pool"
-
- strack to ship
-
-Vapor barrier, insulation, Driveway seal, Gravel/concrete crawl space studio
-https://www.homedepot.com/p/Sika-50-lbs-Self-Leveling-Underlayment-517004/207086698
-
-Bathroom remodel
-
-http://www.keyfobprogram.com/2020-buick-enclave-remote-programming/
-
-Capacitor (super)
-
-neoprene suit, 
-
-"visor" kit for Far Cry 6 (collectors), Battlefield 2042, WAMI games 
-...special day/dose with theme?
-
-**Matthew Sebolt, Technical Editor**<br/>
-**Dralun** at Microsoft **|** Content + Learning<br/>
-Cloud + AI Developer Relations<br/>
-[Dralun technical content authoring managed service](https://dralun.com)<br/><br/>
-*DRALUN and | are colored dark orange above*
-
-https://www.google.com/search?q=fix+ge+ice+maker&oq=fix+ge+ice+maker&aqs=chrome..69i57.7832j0j7&client=ms-android-samsung-gn-rev1&sourceid=chrome-mobile&ie=UTF-8#scso=_V8UFYaj7O9Pz-gSztbqwDw8:1852.952392578125
+psy op fish biosynthesis, reward registry...drug shower...food truck feast
