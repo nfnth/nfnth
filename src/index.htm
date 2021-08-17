@@ -130,15 +130,15 @@
 	<div id="registry" class="collection">
 		<a href="#!" class="collection-item active">Alvin</a>
 		<a class="collection-item modal-trigger" href="#modal1">Purchase</a></div></div>
-	
+
 <!-- editor -->
-
-
 <div id="modal1" class="modal bottom-sheet">
     <div class="modal-content"></div>
 	<div class="modal-footer"><a href="#!" class="modal-close waves-effect waves-green btn-flat" onclick="openInNewTab('https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/62652367444291733483705976494538757758952482544655308357132039908522301849601');">Purchase</a></div></div>
 
 <script>
+let str = "Visit W3Schools!";
+str.search("W3Schools")   // Returns 6
 	//include embed mode for box/art/domain  
 //		const preloadImage = src => 
   //         new Promise(r => {
@@ -149,7 +149,7 @@
 
 function openInNewTab(url) { window.open(url, '_blank').focus(); } //window.open(url, '_self');
 function service(data) { alert('calling outside');
-    $.ajax({ type: 'GET', url: 'https://ur.land/jsonp?' + data,jsonp: false, jsonpCallback: "my_callback", dataType: 'jsonp',
+    $.ajax({ type: 'GET', url: 'https://ur.land/jsonp?' + data, jsonp: false, jsonpCallback: "my_callback", dataType: 'jsonp',
     success: function(data) { alert(data); console.log('Success!'); }, error: function(data) { alert(data); console.log('Uh Oh!'); }  }); }
               
 function my_callback(dataWeGotViaJsonp){ alert(dataWeGotViaJsonp);  }
