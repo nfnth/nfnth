@@ -3,11 +3,13 @@
 
 ### On Deed to Domain
 
-Explore [UR.Land](https://ur.land), the [Land of Dralun](https://dralun.com), inspired by the legendary sword of [Durendal](https://en.wikipedia.org/wiki/Durendal), an *Ethereum-powered* world designed around the concept of **deeds**, **domains**, and **artifacts**.
+Explore [UR.Land](https://ur.land), the [Land of Dralun](https://dralun.com), inspired by the legendary sword of [Durendal](https://en.wikipedia.org/wiki/Durendal), an **Ethereum**-powered world designed around the concept of *deeds*, *domains*, and *artifacts*.
 
-Dralun uses the concept of the **domain deed**, a **NFT** used to provide ownership, access to a domain, and control over a domain's artifacts. Upon transfer of the NFT, all ownership, access, and artifacts, are also transferred.  
+Dralun uses the concept of the *domain deed*, a **NFT** used to provide ownership, access to a domain, and control over a domain's artifacts. Upon transfer of the NFT, all ownership, access, and artifacts, are also transferred.  
 
-The **domain deed (NFT)** includes,
+<p align="center"><img style="padding-right:120px;position:relative;" src="https://github.com/nfnth/res/raw/main/site/scroll.png" width="120" height="120" /></p>
+
+The *domain deed (NFT)* includes,
 
 - rights to access the domain
 - rights to the NFT properties
@@ -26,15 +28,13 @@ To begin, [visit us on OpenSea](https://opensea.io), or [wander the world](https
 
 ### On Domains and Artifacts
 
-The **domain deed** grants control over both the access and content, to allow,
+The *domain deed* grants control over both the access and content, to allow,
 
 - access to domain properties
 - access to domain artifacts (both *public* and *private*)
 - ability to create, edit, and share artifacts (both *public* and *private*)
 
 Note that when the NFT is transferred, all rights granted to the previous owner are revoked.
-
-<p align="center"><img style="padding-right:120px;position:relative;" src="https://github.com/nfnth/res/raw/main/site/scroll.png" width="120" height="120" /></p>
 
 #### Domain Collections
 
