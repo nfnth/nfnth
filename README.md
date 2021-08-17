@@ -5,27 +5,28 @@
 
 Explore [UR.Land](https://ur.land), the [Land of Dralun](https://dralun.com), inspired by the legendary sword of [Durendal](https://en.wikipedia.org/wiki/Durendal), an *Ethereum-powered* world designed around the concept of **deeds**, **domains**, and **artifacts**.
 
-Dralun uses the concept of *domain deed*, a **NFT** used to provide ownership, access to the **domain**, and control over a domain's **artifacts**. Upon transfer of the *domain deed*, all ownership, access, and artifacts, are transferred to whomever holds the **NFT**.  
+Dralun uses the concept of the *domain deed*, a **NFT** used to provide ownership, access to a **domain**, and control over a domain's **artifacts**. Upon transfer of the *domain deed* (**NFT**), all ownership, access, and artifacts, are also transferred.  
 
 This includes,
 
-- rights to access **domain**
+- rights to **domain** access
 - rights to **NFT** properties
-  - profile
   - stock image
-  - map icon and placement
+  - map icon, placement, and profile
   - link to historical record
-- rights to domain artifacts (accessed on [UR.Land](https://ur.land))
+- rights to domain **artifacts** (accessed on [UR.Land](https://ur.land))
 
-A custom NFT is minted per transfer as proof of purchase to be recorded in the [deed registry](). 
+A custom NFT is minted per transfer as *proof of purchase* to be recorded in the [deed registry](). 
 
 <a href="https://opensea.io/NfNth" title="Buy on OpenSea" target="_blank"><img style="width:220px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="https://storage.googleapis.com/opensea-static/Logomark/Badge%20-%20Available%20On%20-%20Light.png" alt="Available on OpenSea" /></a>
 
-To begin, [visit us on OpenSea](https://opensea.io), or [wander the world](https://dralun.com) as **Nomad**. *Please note that access to [UR.Land]() requires [MetaMask]().*
+To begin, [visit us on OpenSea](https://opensea.io), or [wander the world](https://dralun.com) as **Nomad**. *(note that access to [UR.Land]() requires [MetaMask]())*
 
 <p align="center"><img src="https://github.com/nfnth/res/raw/main/site/other/chimi_hi.png" width="140" height="220" /></p>
 
-### On Deeds
+### On Deeds, Domains, and Artifacts
+
+#### Deeds
 
 There are five (5) types (collections) of **NFT** available.
 
@@ -37,7 +38,7 @@ There are five (5) types (collections) of **NFT** available.
 |[Time-locked objects]()| the [Gunslinger]()||
 |[Artwork]()|[Chimi mascot]()||
 
-#### Limited Availability
+##### Limited Availability
 
 The primary set of **domain deeds** listed on [UR.Land](https://ur.land) is limited to 1776 in the spirit of *.us* and to preserve fair trade value. 
 
@@ -45,7 +46,7 @@ An additional 776 **domain deeds** are reserved as limited edition to celebrate 
 
 Time-locked objects and standard art-based are excluded from these limitations. 
 
-### On Domains and Artifacts
+#### Domains
 
 The **domain deed** grants control over both the access and content, to allow,
 
@@ -55,7 +56,7 @@ The **domain deed** grants control over both the access and content, to allow,
 
 Note that when the **domain deed** (**NFT**) is transferred, all rights granted to the previous owner are revoked.
 
-#### Domain Types and Labels
+##### Domain Types and Labels
 
 Types and labels are used to differentiate and classify domains. 
 
@@ -69,7 +70,7 @@ Types and labels are used to differentiate and classify domains.
 
 Deeds also use labels to denote properties such as state, serial, and informational links.
 
-#### Artifact Editor
+#### Artifacts
 
 Artifacts are records (text, image/file, location) posted to a domain. 
 
