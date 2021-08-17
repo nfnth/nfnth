@@ -7,28 +7,29 @@ Explore [UR.Land](https://ur.land), the [Land of Dralun](https://dralun.com), in
 
 Dralun uses the concept of a *domain deed*, an **NFT** to provide ownership, access to the **domain**, and control over a domain's **artifacts**. Upon transfer of the *domain deed*, all ownership, access, and artifacts, are transferred to whomever holds the **NFT**.  
 
-Included in a *domain deed* are,
+Included with a *domain deed*,
 
-- right to access and modify **domain** properties
-- right to **NFT** properties
+- rights to access **domain**
+- rights to **NFT** properties
+  - profile
   - stock image
   - map icon and placement
   - link to historical record
-- right to domain artifacts (accessed on [UR.Land](https://ur.land))
+- rights to domain artifacts (accessed on [UR.Land](https://ur.land))
 
-A custom NFT is also minted as proof of purchase to be recorded in the [deed registry](). 
-
-To begin, [visit us on OpenSea](https://opensea.io), or [wander the world](https://dralun.com) as **Nomad**.
-
-Please note that access to [UR.Land]() requires [MetaMask]().
+A custom NFT is minted per transfer as proof of purchase to be recorded in the [deed registry](). 
 
 <a href="https://opensea.io/NfNth" title="Buy on OpenSea" target="_blank"><img style="width:220px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="https://storage.googleapis.com/opensea-static/Logomark/Badge%20-%20Available%20On%20-%20Light.png" alt="Available on OpenSea" /></a>
 
+To begin, [visit us on OpenSea](https://opensea.io), or [wander the world](https://dralun.com) as **Nomad**. *Please note that access to [UR.Land]() requires [MetaMask]().*
+
+<p align="center"><img src="https://github.com/nfnth/res/raw/main/site/other/chimi_hi.png" width="140" height="220" /></p>
+
 ### On Deeds
 
-There are five (5) collections of **NFT** available, see table below.
+There are five (5) types (collections) of **NFT** available.
 
-|Collection|Domain|Description|
+|Collection|example|description|
 |-|-|-|
 |[Lands]()|[acebasin.us]()||
 |[People](), [tribes]()|[arikawa.us]()||
@@ -36,7 +37,13 @@ There are five (5) collections of **NFT** available, see table below.
 |[Time-locked objects]()| the [Gunslinger]()||
 |[Artwork]()|[Chimi mascot]()||
 
-<p align="center"><img src="https://github.com/nfnth/res/raw/main/site/other/chimi_hi.png" width="140" height="220" /></p>
+#### Limited Availability
+
+The primary set of **domain deeds** listed on [UR.Land](https://ur.land) is limited to 1776 in the spirit of *.us* and to preserve fair trade value. 
+
+An additional 776 **domain deeds** are reserved as limited edition to celebrate [Roland](https://en.wikipedia.org/wiki/Roland), in honor of [dralun]().
+
+Time-locked objects and standard art-based are excluded from these limitations. 
 
 ### On Domains and Artifacts
 
@@ -48,19 +55,7 @@ There are five (5) collections of **NFT** available, see table below.
 
 If the **domain deed** (**NFT**) is transferred, the previous owner will lose all rights previous granted. 
 
-#### Domain Features
-
-
-
-##### Limited Availability
-
-The primary set of **domain deeds** listed on [UR.Land](https://ur.land) is limited to 1776 in the spirit of *.us* and to preserve fair trade value. 
-
-An additional 776 **domain deeds** are reserved as limited edition to celebrate [Roland](https://en.wikipedia.org/wiki/Roland), in honor of [dralun]().
-
-Time-locked objects and standard art-based are excluded from these limitations. 
-
-#### Domain Types and Labels
+#### Domains
 
 Types and labels are used to differentiate and classify all domains. 
 
