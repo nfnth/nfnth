@@ -1,4 +1,29 @@
 
+import subprocess
+
+command = 'sudo add-apt-repository ppa:ondrej/php'
+process = subprocess.Popen(command.split(), stdout=subprocess.PIPE)
+output, error = process.communicate()
+		     
+async def search(request): # user badge with word/definition, domain search
+    return web.FileResponse(PATH + '/ur.js') #make "artifact" specific
+
+```
+curl -u 'username:token' 'https://api.dev.name.com/v4/domains/example.org/url/forwarding' -X POST -H 'Content-Type: application/json' --data '{"host":"www.example.org","forwardsTo":"https:\/\/www.example.net","type":"redirect"}'
+
+curl -u 'username:token' 'https://api.dev.name.com/v4/domains/example.org/url/forwarding/www.example.org' -X PUT -H 'Content-Type: application/json' --data '{"forwardsTo":"https:\/\/www.example.net","type":"redirect"}'
+
+curl -u 'username:token' 'https://api.dev.name.com/v4/domains/example.org/url/forwarding/www' -X DELETE
+
+curl -u 'username:token' 'https://api.dev.name.com/v4/domains/example.org/email/forwarding' -X POST -H 'Content-Type: application/json' --data '{"emailBox":"admin","emailTo":"webmaster@example.net"}'
+
+curl -u 'username:token' 'https://api.dev.name.com/v4/domains/example.org/email/forwarding/admin' -X PUT -H 'Content-Type: application/json' --data '{"emailTo":"webmaster@example.net"}'
+
+curl -u 'username:token' 'https://api.dev.name.com/v4/domains/example.org/email/forwarding/admin' -X DELETE
+```
+
+#py torch?
+
 key_file = open('key.json', mode='r') #include object map...?
 key_template = key_file.read()
 key_file.close()
