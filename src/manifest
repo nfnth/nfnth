@@ -3,8 +3,8 @@ alagnak.us|Alagnak River|wikipedia.org/wiki/Alagnak_River|59.005008703625464|-15
 chebeague.us|Chebeague Island|wikipedia.org/wiki/Chebeague_Island,_Maine|43.744791664296905|-70.10702818733033|ME|place|island|1312119698|62652367444291733483705976494538757758952482544655308357132039910721325105153|island1
 abder.us|Abderus|wikipedia.org/wiki/Abderus|39.433412107639384|22.464134224044734|IT|person|ancient|
 ahupua.us|wikipedia.org/wiki/Ahupua%CA%BBa|21.900803778260563|-160.12579455267664|HA|thing|ancient
-aloalo.us|wikipedia.org/wiki/Aloalo
-ananias.us|wikipedia.org/wiki/Ananias_of_Damascus
+aloalo.us|wikipedia.org/wiki/Aloalo|-21.146858183094164|46.04366402888903|IT|thing|ancient
+ananias.us|wikipedia.org/wiki/Ananias_of_Damascus|33.51448383755012|36.27774518854793|IT|person|ancient
 anthropy.us|wikipedia.org/wiki/Anthropic_principle
 bowfin.us|wikipedia.org/wiki/Bowfin
 burgesses.us|wikipedia.org/wiki/House_of_Burgesses
@@ -13,10 +13,10 @@ capoppy.us|wikipedia.org/wiki/Eschscholzia_californica
 catholepistemiad.us|wikipedia.org/wiki/History_of_the_University_of_Michigan
 cornhusker.us|wikipedia.org/wiki/Nebraska
 dismal.us
-lushootseed.us|language|https://en.wikipedia.org/wiki/Lushootseed
+lushootseed.us|wikipedia.org/wiki/Lushootseed|||
 mant.us
 michigania.us
-muskogean.us|language|https://en.wikipedia.org/wiki/Muskogean_languages
+muskogean.us|https://en.wikipedia.org/wiki/Muskogean_languages|||language
 servi.us
 tactician.us
 albermarle.us|?
@@ -24,7 +24,7 @@ alibate.us
 alphons.us
 angolabay.us
 appiah.us
-arequipa.us
+arequipa.us|https://en.wikipedia.org/wiki/Arequipa
 arikaras.us
 arver.us
 arzberger.us
