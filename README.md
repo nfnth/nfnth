@@ -9,9 +9,29 @@ Explore [UR.Land](https://ur.land), the [Land of Dralun](https://dralun.com), in
 - Store, collect, and share artifacts (with private key-based option)
 - View real-time stats on [UStat.us](https://ustat.us) dashboard
 
+
+
+<p align="center"><img src="https://github.com/nfnth/res/raw/main/site/other/chimi_hi.png" width="140" height="220" /></p>
+
+To begin, [visit us on OpenSea](https://opensea.io), or [wander the world](https://dralun.com) as **Nomad** *(note that access to [UR.Land]() requires [MetaMask]())*. 
+
+<a href="https://opensea.io/NfNth" title="Buy on OpenSea" target="_blank"><img style="width:220px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="https://storage.googleapis.com/opensea-static/Logomark/Badge%20-%20Available%20On%20-%20Light.png" alt="Available on OpenSea" /></a>
+
+### On Domains and Artifacts
+
 <p align="center"><img style="padding-right:120px;position:relative;" src="https://github.com/nfnth/res/raw/main/site/scroll.png" width="120" height="120" /></p>
 
 Dralun uses the concept of the *domain deed*, a **NFT** used to provide ownership, access to a domain, and control over a domain's artifacts. Upon transfer of the NFT, all ownership, access, and artifacts, are also transferred.  
+
+The *domain deed* grants control over both the access and content, to allow,
+
+- access to domain properties
+- access to domain artifacts (both *public* and *private*)
+- ability to create, edit, and share artifacts (both *public* and *private*)
+
+Note that when the NFT is transferred, all rights granted to the previous owner are revoked.
+
+
 
 The *domain deed (NFT)* includes,
 
@@ -23,22 +43,6 @@ The *domain deed (NFT)* includes,
 - rights to the domain artifacts (accessed on [UR.Land](https://ur.land))
 
 A custom NFT is minted per transfer as *proof of purchase* to be recorded in the [deed registry](). 
-
-<p align="center"><img src="https://github.com/nfnth/res/raw/main/site/other/chimi_hi.png" width="140" height="220" /></p>
-
-To begin, [visit us on OpenSea](https://opensea.io), or [wander the world](https://dralun.com) as **Nomad** *(note that access to [UR.Land]() requires [MetaMask]())*. 
-
-<a href="https://opensea.io/NfNth" title="Buy on OpenSea" target="_blank"><img style="width:220px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="https://storage.googleapis.com/opensea-static/Logomark/Badge%20-%20Available%20On%20-%20Light.png" alt="Available on OpenSea" /></a>
-
-### On Domains and Artifacts
-
-The *domain deed* grants control over both the access and content, to allow,
-
-- access to domain properties
-- access to domain artifacts (both *public* and *private*)
-- ability to create, edit, and share artifacts (both *public* and *private*)
-
-Note that when the NFT is transferred, all rights granted to the previous owner are revoked.
 
 #### Domain Collections
 
