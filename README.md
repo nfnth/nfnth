@@ -43,7 +43,7 @@ The primary set of **Lands** is limited to 1776 in the spirit of *.us* and to pr
 
 #### Types and Labels
 
-Types and labels are used to differentiate and classify domains. Deeds use labels to denote additional properties such as state, serial, and informational links.
+Types and labels are used to differentiate and classify domains. 
 
 |**Type**|Categories|Labels|
 |-|-|-|
@@ -53,17 +53,17 @@ Types and labels are used to differentiate and classify domains. Deeds use label
 |**Object**|||
 |**Artwork**|||
 
+Deeds can also include additional properties such as location, serial, and informational links.
+
 <p align="center"><img style="padding-right:120px;position:relative;" src="https://github.com/nfnth/res/raw/main/site/scroll.png" width="80" height="80" /></p>
 
 ### On Artifacts
 
-Artifacts are records (text, image/file, location) posted to a domain. 
+Artifacts are records (text, image/file, location) stored per domain, created with the [editor](). 
 
-Public artifacts can be viewed by everyone, private artifacts can only be viewed by the domain holder or with key. 
-
-Use the [editor]() for an example. 
-
-Domain space is limited to 1GB (*subject to change*).
+- Public artifacts can be viewed by everyone
+- Private artifacts can be viewed by domain holder or with key
+- Domain space is limited to 1GB (*subject to change*)
 
 <p align="center"><img style="padding-right:120px;position:relative;" src="https://github.com/nfnth/res/raw/main/site/shutterstock_1160780425.png" width="120" height="120" /></p>
 
@@ -82,12 +82,11 @@ May the nomad wander until what's lost is found.
 Dralun runs on [brOS](), an Arch Linux distro hosted on [Linode](https://cloud.linode.com/linodes).
 
 - For a list of upcoming feaures, read the [PLANME.md](https://github.com/nfnth/nfnth/blob/master/PLANME.md).
-
 - For technical issues, use [GitHub](https://github.com/nfnth/nfnth/issues), or email **m@nfnth.com**.
 
 #### Sponsorship
 
-To donate to preserving our national lands, use [MetaMask](https://metamask.app.link/send/pay-0x8a83fbBAcB82030Ea17179c0403B04e7Bce7bA10?value=1e16). For other news, see [CSPAN](https://www.c-span.org/), [BBC](http://feeds.bbci.co.uk/news/rss.xml), [Gutenberg](http://www.gutenberg.org/wiki/Main_Page), and [random Wikipedia](http://www.wikipedia.org/wiki/Special:Random).
+To donate to preserving our national lands, use [MetaMask](https://metamask.app.link/send/pay-0x8a83fbBAcB82030Ea17179c0403B04e7Bce7bA10?value=1e16), for other news, see [CSPAN](https://www.c-span.org/), [BBC](http://feeds.bbci.co.uk/news/rss.xml), [Gutenberg](http://www.gutenberg.org/wiki/Main_Page), and [random Wikipedia](http://www.wikipedia.org/wiki/Special:Random).
 
 Sponsors to **NfNth** get listed here...
 
