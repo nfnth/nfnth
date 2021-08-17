@@ -18,11 +18,11 @@ This includes,
 
 A custom NFT is minted per transfer as *proof of purchase* to be recorded in the [deed registry](). 
 
-<a href="https://opensea.io/NfNth" title="Buy on OpenSea" target="_blank"><img style="width:220px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="https://storage.googleapis.com/opensea-static/Logomark/Badge%20-%20Available%20On%20-%20Light.png" alt="Available on OpenSea" /></a>
+<p align="center"><img src="https://github.com/nfnth/res/raw/main/site/other/chimi_hi.png" width="140" height="220" /></p>
 
 To begin, [visit us on OpenSea](https://opensea.io), or [wander the world](https://dralun.com) *(note that access to [UR.Land]() requires [MetaMask]())* as **Nomad**. 
 
-<p align="center"><img src="https://github.com/nfnth/res/raw/main/site/other/chimi_hi.png" width="140" height="220" /></p>
+<a href="https://opensea.io/NfNth" title="Buy on OpenSea" target="_blank"><img style="width:220px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="https://storage.googleapis.com/opensea-static/Logomark/Badge%20-%20Available%20On%20-%20Light.png" alt="Available on OpenSea" /></a>
 
 ### On Domains and Artifacts
 
@@ -34,7 +34,9 @@ The **domain deed** grants control over both the access and content, to allow,
 
 Note that when the **domain deed** (**NFT**) is transferred, all rights granted to the previous owner are revoked.
 
-There are five (5) types (collections) of **NFT** available.
+Types and labels are used to differentiate and classify domains. Deeds also use labels to denote properties such as state, serial, and informational links.
+
+#### Domain Collections
 
 |Collection|example|description|
 |-|-|-|
@@ -44,8 +46,6 @@ There are five (5) types (collections) of **NFT** available.
 |[Time-locked objects]()| the [Gunslinger]()||
 |[Artwork]()|[Chimi mascot]()||
 
-#### Limited Availability
-
 The primary set of **domain deeds** listed on [UR.Land](https://ur.land) is limited to 1776 in the spirit of *.us* and to preserve fair trade value. 
 
 An additional 776 **domain deeds** are reserved as limited edition to celebrate [Roland](https://en.wikipedia.org/wiki/Roland), in honor of [dralun]().
@@ -54,17 +54,13 @@ Time-locked objects and standard art-based are excluded from these limitations.
 
 #### Domain Types and Labels
 
-Types and labels are used to differentiate and classify domains. 
-
-|**Type**|Categories|Description|
+|**Type**|Categories|Labels|
 |-|-|-|
 |**Person**|historical, tribe||
 |**Place**|land, town, mountain, river, island, monument||
 |**Thing**|ancient, machine||
 |**Object**|||
 |**Artwork**|||
-
-Deeds also use labels to denote properties such as state, serial, and informational links.
 
 #### Artifacts
 
@@ -80,7 +76,7 @@ Domain space is limited to 1GB (*subject to change*).
 
 ### Explore Further
 
-For further inspiration, read our manifest, in the [Civilian's Complex](https://github.com/nfnth/nfnth/blob/master/doc/CC.md).
+For further inspiration, read our manifest, the [Civilian's Complex](https://github.com/nfnth/nfnth/blob/master/doc/CC.md).
 
 Use the map to visit a continent filled with amazing peoples and lands. 
 
@@ -96,7 +92,7 @@ May the nomad wander until what's lost is found.
 
 ### On Development
 
-**Dralun** runs on [brOS](), a stack based on Arch Linux, hosted on [Linode](https://cloud.linode.com/linodes).
+Dralun runs on [brOS](), an Arch Linux distro, hosted on [Linode](https://cloud.linode.com/linodes).
 
 For a list of upcoming feaures, read the [PLANME.md](https://github.com/nfnth/nfnth/blob/master/PLANME.md).
 
