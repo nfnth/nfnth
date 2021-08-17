@@ -1,3 +1,34 @@
+
+key_file = open('key.json', mode='r') #include object map...?
+key_template = key_file.read()
+key_file.close()
+
+def json2obj(data): return json.loads(data, object_hook=lambda d: types.SimpleNamespace(**d))
+def obj2json(data): return json.dumps(data.__dict__, indent=4, sort_keys=True, default=lambda o: o.__dict__)
+
+    for root, dirs, files in os.walk(startpath):
+        for f in files:
+            path = os.path.join(root, f)
+            if not '.' in path:
+                search = open(path, "r")
+                searchlines = search.readlines()
+                search.close()
+                for i, line in enumerate(searchlines):
+                    if term in line:
+                        terms = terms + path + " at " + str(i) + "|"
+            else:
+                folder = folder + path
+                if not term == "root":
+                    search = open(path, "r")
+                    searchlines = search.readlines()
+                    search.close()
+                    for i, line in enumerate(searchlines):
+                        if term in line:
+                            terms = terms + path + " at " + str(i) + "|"
+                else:
+                    terms = terms + folder + " at |"
+    return terms
+
 https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz
 
 http://images.cocodataset.org/zips/train2017.zip
