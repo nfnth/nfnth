@@ -3,13 +3,13 @@
 
 ### On Deed to Domain
 
-Explore [UR.Land](https://ur.land), the [Land of Dralun](https://dralun.com), inspired by the legendary sword of [Durendal](https://en.wikipedia.org/wiki/Durendal), an **Ethereum**-powered world designed around the concept of *deeds*, *domains*, and *artifacts*.
+Explore [UR.Land](https://ur.land), the [Land of Dralun](https://dralun.com), inspired by the legendary sword of [Durendal](https://wikipedia.org/wiki/Durendal), an **Ethereum**-powered world designed around the concept of *deeds*, *domains*, and *artifacts*.
 
 - Create the ultimate domain with links to your personal profile
 - Store, collect, and share artifacts (with private key-based option)
 - View real-time stats on [UStat.us](https://ustat.us) dashboard
 
-To begin, [visit us on OpenSea](https://opensea.io), or [wander the world](https://dralun.com) as **Nomad**, *note that access to [UR.Land]() requires [MetaMask]()*. 
+To begin, [visit us on OpenSea](https://opensea.io/NfNth), or [wander the world](https://dralun.com) as **Nomad**, *note that access to UR.Land requires [MetaMask]()*. 
 
 <a href="https://opensea.io/NfNth" title="Buy on OpenSea" target="_blank"><img style="width:220px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="https://storage.googleapis.com/opensea-static/Logomark/Badge%20-%20Available%20On%20-%20Light.png" alt="Available on OpenSea" /></a>
 
@@ -25,7 +25,7 @@ The *domain deed* grants control over both the access and content, to allow,
 
 Note that when the NFT is transferred, all rights granted to the previous owner are revoked.
 
-Custom NFTs are minted per user as *proof of purchase* to be recorded in the [deed registry]().
+Custom NFTs are minted per user as *proof of purchase* to be recorded in the [deed registry](https://nfnth.github.io/nfnth/src/manifest).
 
 <p align="center"><img style="padding-right:120px;position:relative;" src="https://github.com/nfnth/res/raw/main/site/scroll.png" width="80" height="90" /></p>
 
@@ -33,7 +33,7 @@ Custom NFTs are minted per user as *proof of purchase* to be recorded in the [de
 
 The primary set of **UR.Land** domains is limited to `1776` in spirit of *.us* and to preserve fair trade value. 
 
-An additional set `776` **Tribes of Dralun** are reserved in honor of [Roland](https://en.wikipedia.org/wiki/Roland).
+An additional set `776` **Tribes of Dralun** are reserved in honor of [Roland](https://wikipedia.org/wiki/Roland).
 
 |Collection|Example|Description|
 |-|-|-|
@@ -61,7 +61,7 @@ Domains can also include additional properties such as location, serial, and inf
 
 ### On Artifacts
 
-Artifacts are records (text, image/file, location) stored per domain, to be used with the [editor](). 
+Artifacts are records (text, image/file, location) stored per domain, to be used with the [editor](https://dralun.com/editor). 
 
 - Public artifacts can be viewed by everyone
 - Private artifacts can be viewed by domain holder or with key
@@ -73,7 +73,7 @@ Artifacts are records (text, image/file, location) stored per domain, to be used
 
 Use the map to visit a continent filled with amazing peoples and lands, to follow in the footsteps of history and achieve dominion.
 
-For further inspiration, read our manifest, the [Civilian's Complex](https://github.com/nfnth/nfnth/blob/master/CC.md).
+For further inspiration, read our manifest, the [Civilian's Complex](https://nfnth.github.io/nfnth/CC).
 
 May the nomad wander until what's lost is found.
 
@@ -81,9 +81,9 @@ May the nomad wander until what's lost is found.
 
 ### On Development
 
-Dralun runs on [brOS](https://github.com/nfnth/nfnth/blob/master/BROS.md), an Arch Linux distro hosted on [Linode](https://cloud.linode.com/linodes).
+Dralun runs on [brOS](https://nfnth.github.io/nfnth/BROS), an Arch Linux distro hosted on [Linode](https://cloud.linode.com/linodes).
 
-- For a list of upcoming feaures, read the [PLANME.md](https://github.com/nfnth/nfnth/blob/master/PLANME.md).
+- For a list of upcoming feaures, read the [PLANME.md](https://nfnth.github.io/nfnth/PLANME).
 - For technical issues, use [GitHub](https://github.com/nfnth/nfnth/issues), or email **m@nfnth.com**.
 
 #### Sponsorship
