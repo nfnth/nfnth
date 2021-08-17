@@ -3,6 +3,8 @@
 
 - [!CONTACT] // message? comment? emoji to labels?
 
+*virtual news feed (statue)... enter name?*
+
 HDMI to/with Android with Vulkan 3D (missing head tracking)...JoyCon...
 Video (promotional), scheduled live stream?...2D/3D fish feed also?
 
