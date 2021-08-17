@@ -31,17 +31,17 @@ Custom NFTs are minted per user as *proof of purchase* to be recorded in the [de
 
 #### Collections
 
-The primary set of **Lands** is limited to `1776` in the spirit of *.us* and to preserve fair trade value. 
+The primary set of **UR.Land** domains is limited to `1776` in spirit of *.us* and to preserve fair trade value. 
 
-An additional set `776` **Tribes** is reserved to celebrate [Roland](https://en.wikipedia.org/wiki/Roland) in honor of **Dralun**.
+An additional set `776` **Tribes of Dralun** are reserved in honor of [Roland](https://en.wikipedia.org/wiki/Roland).
 
-|Collection|example|description|
+|Collection|Example|Description|
 |-|-|-|
-|[Lands]()|[acebasin.us]()||
-|[Tribes]()|[arikawa.us]()||
-|[People]() and [Things]()|[zanos.us]()||
-|[Time-locked objects]()| the [Gunslinger]()||
-|[Artwork]()|[Chimi mascot]()||
+|[UR.Land](https://opensea.io/collection/urland)|[absaroka.us](https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/62652367444291733483705976494538757758952482544655308357132039908522301849601)|Land domains|
+|[Tribes of Dralun](https://opensea.io/collection/dralun)|[abenaki.us](https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/62652367444291733483705976494538757758952482544655308357132039899726208827393)|Tribe domains|
+|[Personal Tactician](https://opensea.io/collection/tact)|[Fleet Map](https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/62652367444291733483705976494538757758952482544655308357132039900825720455169)|Objects to use in UR.Land|
+|[Civilian's Complex](https://opensea.io/collection/civilplex)|the [Gunslinger](https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/62652367444291733483705976494538757758952482544655308357132039897527185571841)|Time-locked objects|
+|[NfNth's Artwork](https://opensea.io/collection/nfnth)|[Chimi mascot](https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/62652367444291733483705976494538757758952482544655308357132039904124255338497)|Standard NFT|
 
 *People and Things, Time-locked objects, and standard art-based are excluded from these limitations.*
 
@@ -49,13 +49,13 @@ An additional set `776` **Tribes** is reserved to celebrate [Roland](https://en.
 
 Types and labels are used to differentiate and classify domains. 
 
-|**Type**|Categories|Labels|
+|Type|Labels|Extra|
 |-|-|-|
 |**Person**|historical, tribe||
-|**Place**|land, town, mountain, river, island, monument||
-|**Thing**|ancient, machine||
-|**Object**|||
-|**Artwork**|||
+|**Place**|land, town, mountain, river, island, monument|state, international|
+|**Thing**|ancient, machine|past, present, future|
+|**Object**|game||
+|**Artwork**|urland||
 
 Domains can also include additional properties such as location, serial, and informational links.
 
@@ -71,7 +71,7 @@ Artifacts are records (text, image/file, location) stored per domain, to be used
 
 ### Explore Further
 
-Use the map to visit a continent filled with amazing peoples and lands, follow in the footsteps of history to achieve dominion.
+Use the map to visit a continent filled with amazing peoples and lands, to follow in the footsteps of history and achieve dominion.
 
 For further inspiration, read our manifest, the [Civilian's Complex](https://github.com/nfnth/nfnth/blob/master/CC.md).
 
