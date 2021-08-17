@@ -3,34 +3,38 @@
 
 ### On Deed to Domain
 
-Explore [UR.Land](https://ur.land), the [Land of Dralun](https://dralun.com), inspired by the legendary sword of [Durendal](https://en.wikipedia.org/wiki/Durendal), an *Ethereum-driven* world designed around the concept of **deeds**, **domains**, and **artifacts**.
+Explore [UR.Land](https://ur.land), the [Land of Dralun](https://dralun.com), inspired by the legendary sword of [Durendal](https://en.wikipedia.org/wiki/Durendal), an *Ethereum-driven* world designed around the concept of **deed**, **domain**, and **artifact**.
 
-**Dralun** holds the concept of *domain deed*, an **NFT** used to provide ownership and access to a particular **domain**, along with the ability to control said domain's **artifacts**. Upon transfer of *domain deed*, all ownership, access, and artifacts, are also transferred to whomever holds the **NFT**.  
+**Dralun** uses the concept of *domain deed*, an **NFT** to provide ownership and access to a **domain**, along with control over a domain's **artifacts**. Upon transfer of *domain deed*, all ownership, access, and artifacts, are transferred to whomever holds the **NFT**.  
 
-The *domain deed* includes,
+Included in the *domain deed* are,
 
-- rights to access and modify domain properties
-- rights to **NFT** properties
+- right to access and modify **domain** properties
+- right to **NFT** properties
   - stock image
   - map icon and placement
   - link to historical record
-- rights to domain artifacts (accessed on [UR.Land](https://ur.land))
+- right to domain artifacts (accessed on [UR.Land](https://ur.land))
 
-A custom NFT is minted as proof of purchase to be recorded in the [deed registry](). 
-
-|Collection|Domain|Description|
-|-|-|-|
-|[Lands]|[acebasin.us]()||
-|[People](), [tribes]()|[arikawa.us]()||
-|[Machines](), [relics]()|[zanos.us]()||
-|[Time-locked objects]()| the [Gunslinger]()||
-|[Artwork]()|[Chimi mascot]()||
-
-<p align="center"><img src="https://github.com/nfnth/res/raw/main/site/other/chimi_hi.png" width="140" height="220" /></p>
+A custom NFT is also minted as proof of purchase to be recorded in the [deed registry](). 
 
 To begin, [visit us on OpenSea](https://opensea.io), or [wander the world](https://dralun.com) as **Nomad**.
 
 Please note that access to [UR.Land]() requires [MetaMask]().
+
+<p align="center"><img src="https://github.com/nfnth/res/raw/main/site/other/chimi_hi.png" width="140" height="220" /></p>
+
+### On Deeds
+
+There are five (5) collections of **NFT** available, see table below.
+
+|Collection|Domain|Description|
+|-|-|-|
+|[Lands]()|[acebasin.us]()||
+|[People](), [tribes]()|[arikawa.us]()||
+|[Machines](), [relics]()|[zanos.us]()||
+|[Time-locked objects]()| the [Gunslinger]()||
+|[Artwork]()|[Chimi mascot]()||
 
 <a href="https://opensea.io/NfNth" title="Buy on OpenSea" target="_blank"><img style="width:220px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="https://storage.googleapis.com/opensea-static/Logomark/Badge%20-%20Available%20On%20-%20Light.png" alt="Available on OpenSea" /></a>
 
@@ -80,7 +84,7 @@ Use the [editor]() for an example.
 
 Domain space is limited to 1GB (*subject to change*).
 
-<p align="center"><img src="https://github.com/nfnth/res/raw/main/site/other/chimi_cards.png" width="140" height="220" /></p>
+<p align="center"><img src="https://github.com/nfnth/res/raw/main/site/other/chimi_cards.png" width="120" height="180" /></p>
 
 ### Explore Further
 
