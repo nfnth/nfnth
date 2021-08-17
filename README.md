@@ -5,9 +5,13 @@
 
 Explore [UR.Land](https://ur.land), the [Land of Dralun](https://dralun.com), inspired by the legendary sword of [Durendal](https://en.wikipedia.org/wiki/Durendal), an **Ethereum**-powered world designed around the concept of *deeds*, *domains*, and *artifacts*.
 
-Dralun uses the concept of the *domain deed*, a **NFT** used to provide ownership, access to a domain, and control over a domain's artifacts. Upon transfer of the NFT, all ownership, access, and artifacts, are also transferred.  
+- Create the ultimate domain with links to your personal profile
+- Store, collect, and share artifacts (with private key-based option)
+- View real-time stats on [UStat.us](https://ustat.us) dashboard
 
 <p align="center"><img style="padding-right:120px;position:relative;" src="https://github.com/nfnth/res/raw/main/site/scroll.png" width="120" height="120" /></p>
+
+Dralun uses the concept of the *domain deed*, a **NFT** used to provide ownership, access to a domain, and control over a domain's artifacts. Upon transfer of the NFT, all ownership, access, and artifacts, are also transferred.  
 
 The *domain deed (NFT)* includes,
 
@@ -83,10 +87,6 @@ For further inspiration, read our manifest, the [Civilian's Complex](https://git
 Use the map to visit a continent filled with amazing peoples and lands. 
 
 Follow in the footsteps of history to achieve dominion,
-
-- Create the ultimate domain with links to your personal profile
-- Store, collect, and share artifacts (with private key-based option)
-- View real-time stats on [UStat.us](https://ustat.us) dashboard
 
 May the nomad wander until what's lost is found.
 
