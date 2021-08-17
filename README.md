@@ -25,38 +25,25 @@ The *domain deed* grants control over both the access and content, to allow,
 
 Note that when the NFT is transferred, all rights granted to the previous owner are revoked.
 
-
-
-The *domain deed (NFT)* includes,
-
-- rights to access the domain
-- rights to the NFT properties
-  - stock image
-  - map icon, placement, and profile
-  - link to historical record
-- rights to the domain artifacts (accessed on [UR.Land](https://ur.land))
-
 Custom NFTs are minted per user as *proof of purchase* to be recorded in the [deed registry](). 
 
-#### Domain Collections
+#### Collections
 
-The primary set of **domain deeds** listed on [UR.Land](https://ur.land) is limited to 1776 in the spirit of *.us* and to preserve fair trade value. 
-
-An additional 776 **domain deeds** are reserved as limited edition to celebrate [Roland](https://en.wikipedia.org/wiki/Roland), in honor of [dralun]().
-
-Time-locked objects and standard art-based are excluded from these limitations. 
+The primary set of **Lands** is limited to 1776 in the spirit of *.us* and to preserve fair trade value. An additional set of **Tribes** is limited to 776 reserved to celebrate [Roland](https://en.wikipedia.org/wiki/Roland) in honor of **Dralun**.
 
 |Collection|example|description|
 |-|-|-|
 |[Lands]()|[acebasin.us]()||
-|[People](), [tribes]()|[arikawa.us]()||
-|[Machines](), [relics]()|[zanos.us]()||
+|[Tribes]()|[arikawa.us]()||
+|[People]() and [Things]()|[zanos.us]()||
 |[Time-locked objects]()| the [Gunslinger]()||
 |[Artwork]()|[Chimi mascot]()||
 
-#### Domain Types and Labels
+*People and Things, Time-locked objects, and standard art-based are excluded from these limitations.*
 
-Types and labels are used to differentiate and classify domains. Deeds also use labels to denote properties such as state, serial, and informational links.
+#### Types and Labels
+
+Types and labels are used to differentiate and classify domains. Deeds use labels to denote additional properties such as state, serial, and informational links.
 
 |**Type**|Categories|Labels|
 |-|-|-|
@@ -66,7 +53,7 @@ Types and labels are used to differentiate and classify domains. Deeds also use 
 |**Object**|||
 |**Artwork**|||
 
-<p align="center"><img style="padding-right:120px;position:relative;" src="https://github.com/nfnth/res/raw/main/site/scroll.png" width="120" height="120" /></p>
+<p align="center"><img style="padding-right:120px;position:relative;" src="https://github.com/nfnth/res/raw/main/site/scroll.png" width="80" height="80" /></p>
 
 ### On Artifacts
 
