@@ -196,3 +196,8 @@ model.add(BatchNormalization())
 #        english[words[i].replace('\n', '')] = english[words[i].replace('\n', '')] + defs[i][0] 
 #    i += 1
 
+#async def stream(request):
+    #check feed's page source contains {"text":" watching"}...
+    #if not, check rss, https://www.youtube.com/feeds/videos.xml?channel_id=<channel_id>&orderby=published
+    #...for latest feed
+#    return web.FileResponse(PATH + '/ur.js') #make "artifact" specific
