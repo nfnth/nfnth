@@ -26,3 +26,13 @@
 - add owner/citizens, deeds with views/stars
 
 - access to name records, ie. A, AAAA, CNAME, etc. https://www.name.com/api-docs/EmailForwardings#CreateEmailForwarding
+
+#### Embed
+
+```
+function service(data) { alert('calling outside');
+    $.ajax({ type: 'GET', url: 'https://ur.land/jsonp?' + data, jsonp: false, jsonpCallback: "my_callback", dataType: 'jsonp',
+    success: function(data) { alert(data); console.log('Success!'); }, error: function(data) { alert(data); console.log('Uh Oh!'); }  }); }
+              
+function my_callback(dataWeGotViaJsonp){ alert(dataWeGotViaJsonp);  }
+```
