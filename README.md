@@ -1,5 +1,7 @@
 
-<p align="center"><img src="https://github.com/nfnth/res/raw/main/site/bird.png" width="200" height="240" /></p>
+<p align="center"><img src="https://github.com/nfnth/res/raw/main/site/other/chimi_hi.png" width="140" height="220" /></p>
+
+
 
 ### On Deed to Domain
 
@@ -11,7 +13,7 @@ Explore [UR.Land](https://ur.land), the [Land of Dralun](https://dralun.com), in
 
 
 
-<p align="center"><img src="https://github.com/nfnth/res/raw/main/site/other/chimi_hi.png" width="140" height="220" /></p>
+
 
 To begin, [visit us on OpenSea](https://opensea.io), or [wander the world](https://dralun.com) as **Nomad** *(note that access to [UR.Land]() requires [MetaMask]())*. 
 
@@ -40,7 +42,7 @@ The *domain deed (NFT)* includes,
   - link to historical record
 - rights to the domain artifacts (accessed on [UR.Land](https://ur.land))
 
-A custom NFT is minted per transfer as *proof of purchase* to be recorded in the [deed registry](). 
+Custom NFTs are minted per user as *proof of purchase* to be recorded in the [deed registry](). 
 
 <p align="center"><img style="padding-right:120px;position:relative;" src="https://github.com/nfnth/res/raw/main/site/scroll.png" width="120" height="120" /></p>
 
@@ -83,7 +85,7 @@ Use the [editor]() for an example.
 
 Domain space is limited to 1GB (*subject to change*).
 
-<p align="center"><img src="https://github.com/nfnth/res/raw/main/site/other/chimi_cards.png" width="120" height="180" /></p>
+<p align="center"><img style="padding-right:120px;position:relative;" src="https://github.com/nfnth/res/raw/main/site/shutterstock_1160780425.png" width="120" height="120" /></p>
 
 ### Explore Further
 
@@ -95,7 +97,7 @@ Follow in the footsteps of history to achieve dominion,
 
 May the nomad wander until what's lost is found.
 
-<p align="center"><img style="padding-right:120px;position:relative;" src="https://github.com/nfnth/res/raw/main/site/shutterstock_1160780425.png" width="120" height="120" /></p>
+<p align="center"><img src="https://github.com/nfnth/res/raw/main/site/other/chimi_cards.png" width="120" height="180" /></p>
 
 ### On Development
 
@@ -110,3 +112,5 @@ Dralun runs on [brOS](), an Arch Linux distro hosted on [Linode](https://cloud.l
 To donate to preserving our national lands, use [MetaMask](https://metamask.app.link/send/pay-0x8a83fbBAcB82030Ea17179c0403B04e7Bce7bA10?value=1e16). For other news, see [CSPAN](https://www.c-span.org/), [BBC](http://feeds.bbci.co.uk/news/rss.xml), [Gutenberg](http://www.gutenberg.org/wiki/Main_Page), and [random Wikipedia](http://www.wikipedia.org/wiki/Special:Random).
 
 Sponsor **NfNth** to get listed here...
+
+<p align="center"><img src="https://github.com/nfnth/res/raw/main/site/bird.png" width="200" height="240" /></p>
