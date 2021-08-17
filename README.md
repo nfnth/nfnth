@@ -1,13 +1,11 @@
 
 <p align="center"><img src="https://github.com/nfnth/res/raw/main/site/bird.png" width="200" height="240" /></p>
 
-### [UR.Land](https://ur.land) From Deed to Domain
+### On Deed to Domain
 
-Explore the [Land of Dralun](https://dralun.com), inspired by the legendary sword of [Durendal](https://en.wikipedia.org/wiki/Durendal), the first **Ethereum-powered** world to revolve around the concept of *deeds*, *domains*, and *artifacts*.
+Explore [UR.Land](https://ur.land), the [Land of Dralun](https://dralun.com), inspired by the legendary sword of [Durendal](https://en.wikipedia.org/wiki/Durendal), an **Ethereum-driven** world designed to revolve around the concept of *deeds*, *domains*, and *artifacts*.
 
-A **domain deed** is defined as a **NFT** used to provide ownership and access, to build a *domain* and create *artifacts*, to share with others. 
-
-The **domain deed** (**NFT**) can also be transferred, with said ownership and access,  to others.  
+**Dralun** is based on the concept of a **domain deed**, defined as an **NFT** used to provide ownership and access to a *domain*, including the ability to create *artifacts*. Upon transfer of **domain deed**, all said ownership, access, and artifacts, are transferred to whomever owns the **NFT**.  
 
 Example **domain deeds** include,
 
@@ -15,7 +13,7 @@ Example **domain deeds** include,
 - [People](), [tribes](), e.g. [arikawa.us]()
 - [Machines](), [relics](), e.g. [zanos.us]()
 
-Additional **NFTs** include, 
+Additional **NFTs** available include, 
 
 - [Time-locked objects](), e.g. the [Gunslinger]()
 - [Artwork](), e.g. [Chimi mascot]()
