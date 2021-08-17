@@ -3,11 +3,11 @@
 
 ### On Deed to Domain
 
-Explore [UR.Land](https://ur.land), the [Land of Dralun](https://dralun.com), inspired by the legendary sword of [Durendal](https://en.wikipedia.org/wiki/Durendal), an *Ethereum-driven* world designed around the concept of **deed**, **domain**, and **artifact**.
+Explore [UR.Land](https://ur.land), the [Land of Dralun](https://dralun.com), inspired by the legendary sword of [Durendal](https://en.wikipedia.org/wiki/Durendal), an *Ethereum-powered* world designed around the concept of **deed**, **domain**, and **artifact**.
 
-**Dralun** uses the concept of *domain deed*, an **NFT** to provide ownership and access to a **domain**, along with control over a domain's **artifacts**. Upon transfer of *domain deed*, all ownership, access, and artifacts, are transferred to whomever holds the **NFT**.  
+Dralun uses the concept of a *domain deed*, an **NFT** to provide ownership, access to the **domain**, and control over a domain's **artifacts**. Upon transfer of the *domain deed*, all ownership, access, and artifacts, are transferred to whomever holds the **NFT**.  
 
-Included in the *domain deed* are,
+Included in a *domain deed* are,
 
 - right to access and modify **domain** properties
 - right to **NFT** properties
@@ -22,7 +22,7 @@ To begin, [visit us on OpenSea](https://opensea.io), or [wander the world](https
 
 Please note that access to [UR.Land]() requires [MetaMask]().
 
-<p align="center"><img src="https://github.com/nfnth/res/raw/main/site/other/chimi_hi.png" width="140" height="220" /></p>
+<a href="https://opensea.io/NfNth" title="Buy on OpenSea" target="_blank"><img style="width:220px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="https://storage.googleapis.com/opensea-static/Logomark/Badge%20-%20Available%20On%20-%20Light.png" alt="Available on OpenSea" /></a>
 
 ### On Deeds
 
@@ -36,7 +36,7 @@ There are five (5) collections of **NFT** available, see table below.
 |[Time-locked objects]()| the [Gunslinger]()||
 |[Artwork]()|[Chimi mascot]()||
 
-<a href="https://opensea.io/NfNth" title="Buy on OpenSea" target="_blank"><img style="width:220px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="https://storage.googleapis.com/opensea-static/Logomark/Badge%20-%20Available%20On%20-%20Light.png" alt="Available on OpenSea" /></a>
+<p align="center"><img src="https://github.com/nfnth/res/raw/main/site/other/chimi_hi.png" width="140" height="220" /></p>
 
 ### On Domains and Artifacts
 
