@@ -27,6 +27,8 @@
 
 - access to name records, ie. A, AAAA, CNAME, etc. https://www.name.com/api-docs/EmailForwardings#CreateEmailForwarding
 
+- teleprompt with audio?
+
 #### Embed
 
 ```
