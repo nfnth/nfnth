@@ -27,11 +27,13 @@ Note that when the NFT is transferred, all rights granted to the previous owner 
 
 Custom NFTs are minted per user as *proof of purchase* to be recorded in the [deed registry]().
 
-<p align="center"><img style="padding-right:120px;position:relative;" src="https://github.com/nfnth/res/raw/main/site/scroll.png" width="80" height="100" /></p>
+<p align="center"><img style="padding-right:120px;position:relative;" src="https://github.com/nfnth/res/raw/main/site/scroll.png" width="80" height="90" /></p>
 
 #### Collections
 
-The primary set of **Lands** is limited to `1776` in the spirit of *.us* and to preserve fair trade value. An additional set of **Tribes** is limited to `776` reserved to celebrate [Roland](https://en.wikipedia.org/wiki/Roland) in honor of **Dralun**.
+The primary set of **Lands** is limited to `1776` in the spirit of *.us* and to preserve fair trade value. 
+
+An additional set `776` **Tribes** is reserved to celebrate [Roland](https://en.wikipedia.org/wiki/Roland) in honor of **Dralun**.
 
 |Collection|example|description|
 |-|-|-|
@@ -55,11 +57,11 @@ Types and labels are used to differentiate and classify domains.
 |**Object**|||
 |**Artwork**|||
 
-Deeds can also include additional properties such as location, serial, and informational links.
+Domains can also include additional properties such as location, serial, and informational links.
 
 ### On Artifacts
 
-Artifacts are records (text, image/file, location) stored per domain, created with the [editor](). 
+Artifacts are records (text, image/file, location) stored per domain, to be used with the [editor](). 
 
 - Public artifacts can be viewed by everyone
 - Private artifacts can be viewed by domain holder or with key
@@ -69,9 +71,9 @@ Artifacts are records (text, image/file, location) stored per domain, created wi
 
 ### Explore Further
 
-For further inspiration, read our manifest, the [Civilian's Complex](https://github.com/nfnth/nfnth/blob/master/CC.md).
-
 Use the map to visit a continent filled with amazing peoples and lands, follow in the footsteps of history to achieve dominion.
+
+For further inspiration, read our manifest, the [Civilian's Complex](https://github.com/nfnth/nfnth/blob/master/CC.md).
 
 May the nomad wander until what's lost is found.
 
