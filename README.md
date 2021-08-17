@@ -9,7 +9,7 @@ Explore [UR.Land](https://ur.land), the [Land of Dralun](https://dralun.com), in
 - Store, collect, and share artifacts (with private key-based option)
 - View real-time stats on [UStat.us](https://ustat.us) dashboard
 
-To begin, [visit us on OpenSea](https://opensea.io), or [wander the world](https://dralun.com) as **Nomad** *(note that access to [UR.Land]() requires [MetaMask]())*. 
+To begin, [visit us on OpenSea](https://opensea.io), or [wander the world](https://dralun.com) as **Nomad**, *note that access to [UR.Land]() requires [MetaMask]()*. 
 
 <a href="https://opensea.io/NfNth" title="Buy on OpenSea" target="_blank"><img style="width:220px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="https://storage.googleapis.com/opensea-static/Logomark/Badge%20-%20Available%20On%20-%20Light.png" alt="Available on OpenSea" /></a>
 
@@ -25,11 +25,13 @@ The *domain deed* grants control over both the access and content, to allow,
 
 Note that when the NFT is transferred, all rights granted to the previous owner are revoked.
 
-Custom NFTs are minted per user as *proof of purchase* to be recorded in the [deed registry](). 
+Custom NFTs are minted per user as *proof of purchase* to be recorded in the [deed registry]().
+
+<p align="center"><img style="padding-right:120px;position:relative;" src="https://github.com/nfnth/res/raw/main/site/scroll.png" width="80" height="100" /></p>
 
 #### Collections
 
-The primary set of **Lands** is limited to 1776 in the spirit of *.us* and to preserve fair trade value. An additional set of **Tribes** is limited to 776 reserved to celebrate [Roland](https://en.wikipedia.org/wiki/Roland) in honor of **Dralun**.
+The primary set of **Lands** is limited to `1776` in the spirit of *.us* and to preserve fair trade value. An additional set of **Tribes** is limited to `776` reserved to celebrate [Roland](https://en.wikipedia.org/wiki/Roland) in honor of **Dralun**.
 
 |Collection|example|description|
 |-|-|-|
@@ -55,8 +57,6 @@ Types and labels are used to differentiate and classify domains.
 
 Deeds can also include additional properties such as location, serial, and informational links.
 
-<p align="center"><img style="padding-right:120px;position:relative;" src="https://github.com/nfnth/res/raw/main/site/scroll.png" width="80" height="80" /></p>
-
 ### On Artifacts
 
 Artifacts are records (text, image/file, location) stored per domain, created with the [editor](). 
@@ -69,7 +69,7 @@ Artifacts are records (text, image/file, location) stored per domain, created wi
 
 ### Explore Further
 
-For further inspiration, read our manifest, the [Civilian's Complex](https://github.com/nfnth/nfnth/blob/master/doc/CC.md).
+For further inspiration, read our manifest, the [Civilian's Complex](https://github.com/nfnth/nfnth/blob/master/CC.md).
 
 Use the map to visit a continent filled with amazing peoples and lands, follow in the footsteps of history to achieve dominion.
 
@@ -79,7 +79,7 @@ May the nomad wander until what's lost is found.
 
 ### On Development
 
-Dralun runs on [brOS](), an Arch Linux distro hosted on [Linode](https://cloud.linode.com/linodes).
+Dralun runs on [brOS](https://github.com/nfnth/nfnth/blob/master/BROS.md), an Arch Linux distro hosted on [Linode](https://cloud.linode.com/linodes).
 
 - For a list of upcoming feaures, read the [PLANME.md](https://github.com/nfnth/nfnth/blob/master/PLANME.md).
 - For technical issues, use [GitHub](https://github.com/nfnth/nfnth/issues), or email **m@nfnth.com**.
