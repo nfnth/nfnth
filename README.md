@@ -19,8 +19,6 @@ To begin, [visit us on OpenSea](https://opensea.io), or [wander the world](https
 
 ### On Domains and Artifacts
 
-<p align="center"><img style="padding-right:120px;position:relative;" src="https://github.com/nfnth/res/raw/main/site/scroll.png" width="120" height="120" /></p>
-
 Dralun uses the concept of the *domain deed*, a **NFT** used to provide ownership, access to a domain, and control over a domain's artifacts. Upon transfer of the NFT, all ownership, access, and artifacts, are also transferred.  
 
 The *domain deed* grants control over both the access and content, to allow,
@@ -43,6 +41,9 @@ The *domain deed (NFT)* includes,
 - rights to the domain artifacts (accessed on [UR.Land](https://ur.land))
 
 A custom NFT is minted per transfer as *proof of purchase* to be recorded in the [deed registry](). 
+
+<p align="center"><img style="padding-right:120px;position:relative;" src="https://github.com/nfnth/res/raw/main/site/scroll.png" width="120" height="120" /></p>
+
 
 #### Domain Collections
 
