@@ -3,20 +3,28 @@
 
 ### On Deed to Domain
 
-Explore [UR.Land](https://ur.land), the [Land of Dralun](https://dralun.com), inspired by the legendary sword of [Durendal](https://en.wikipedia.org/wiki/Durendal), an **Ethereum-driven** world designed to revolve around the concept of *deeds*, *domains*, and *artifacts*.
+Explore [UR.Land](https://ur.land), the [Land of Dralun](https://dralun.com), inspired by the legendary sword of [Durendal](https://en.wikipedia.org/wiki/Durendal), an *Ethereum-driven* world designed around the concept of **deeds**, **domains**, and **artifacts**.
 
-**Dralun** is based on the concept of a **domain deed**, defined as an **NFT** used to provide ownership and access to a *domain*, including the ability to create *artifacts*. Upon transfer of **domain deed**, all said ownership, access, and artifacts, are transferred to whomever owns the **NFT**.  
+**Dralun** holds the concept of *domain deed*, an **NFT** used to provide ownership and access to a particular **domain**, along with the ability to control said domain's **artifacts**. Upon transfer of *domain deed*, all ownership, access, and artifacts, are also transferred to whomever holds the **NFT**.  
 
-Example **domain deeds** include,
+The *domain deed* includes,
 
-- [Lands](), e.g. [acebasin.us]()
-- [People](), [tribes](), e.g. [arikawa.us]()
-- [Machines](), [relics](), e.g. [zanos.us]()
+- rights to access and modify domain properties
+- rights to **NFT** properties
+  - stock image
+  - map icon and placement
+  - link to historical record
+- rights to domain artifacts (accessed on [UR.Land](https://ur.land))
 
-Additional **NFTs** available include, 
+A custom NFT is minted as proof of purchase to be recorded in the [deed registry](). 
 
-- [Time-locked objects](), e.g. the [Gunslinger]()
-- [Artwork](), e.g. [Chimi mascot]()
+|Collection|Domain|Description|
+|-|-|-|
+|[Lands]|[acebasin.us]()||
+|[People](), [tribes]()|[arikawa.us]()||
+|[Machines](), [relics]()|[zanos.us]()||
+|[Time-locked objects]()| the [Gunslinger]()||
+|[Artwork]()|[Chimi mascot]()||
 
 <p align="center"><img src="https://github.com/nfnth/res/raw/main/site/other/chimi_hi.png" width="140" height="220" /></p>
 
@@ -38,13 +46,7 @@ If the **domain deed** (**NFT**) is transferred, the previous owner will lose al
 
 #### Domain Features
 
-- rights to access and modify domain
-- NFT properties, 
-  - stock image
-  - map icon and placement
-  - links to historical record
 
-All domain holders get a custom NFT minted as record in the deed transfer registry. 
 
 ##### Limited Availability
 
