@@ -1,26 +1,24 @@
 
 ### brOS, simplistic speed, *v1.04*
 
-BrOS is a light, browser-based yet dev-focused, stack based on being easy to use, based on [Arch Linux](https://archlinux.org/).
+A browser-based, dev-focused, light weight distro, based on [Arch Linux](https://archlinux.org/).
 
 Features include,
 
-- Browser-only, lightweight distro (Arch-based)
+- Site to game development
 - Web-based admin console, 
     - Command-line access
     - Folder/file browser
     - Text editor
 - Remote deployment
 
-Use Jaspre to:
+Transfer/store JSON objects between client (JavaScript) and serve (Python)
 
-- Transfer/store JSON objects between client (JavaScript) and serve (Python)
+Editor uses JavaScript regex rendering with MarkDown.
 
-The Markre editor uses JavaScript regex rendering to confirm conform to [MattDown](https://github.com/nfnth/nfnth/wiki/Mattdown), or MarkDown 2.0.
+To get started, download the [brOS ISO](http://mirror.rackspace.com/archlinux/iso/2021.06.01/archlinux-2021.06.01-x86_64.iso).
 
-To get started, download the [Arch Linux ISO](http://mirror.rackspace.com/archlinux/iso/2021.06.01/archlinux-2021.06.01-x86_64.iso).
-
-- To run, download the [brOS ISO](), image, then reboot:
+- To build from scratch, download the [Arch Linux ISO](http://mirror.rackspace.com/archlinux/iso/2021.06.01/archlinux-2021.06.01-x86_64.iso), image, then reboot:
 
    ```
    wget http://mirror.rackspace.com/archlinux/iso/2021.06.01/archlinux-2021.06.01-x86_64.iso
@@ -42,8 +40,6 @@ After booting into brOS, to use the site application, run `nfnth/build.sh deploy
 
 That's it. Enjoy!
 
-<p align="center"><img src="https://github.com/nfnth/res/raw/main/site/chimi_cards.png" width="200" height="200" /></p>
-
 ### Additional info
 
 |**File**|*description*|
@@ -53,7 +49,6 @@ That's it. Enjoy!
 |[md.js](https://github.com/nfnth/nfnth/blob/master/doc/MATTDOWN.md)|JavaScript MarkDown renderer|
 |[map.js]()|JAvaScriptPythonstRipE objects|
 |[user.js](https://github.com/nfnth/nfnth/blob/master/doc/BROS.md)|Browser OS (on Arch Linux)|
-
 
 fullscreen/file folder text editor/terminal/keyboard
 
@@ -110,6 +105,7 @@ https://supportxmr.com/
 
 https://www.getmonero.org/resources/developer-guides/wallet-rpc.html
 
+```
 git clone https://github.com/xmrig/xmrig.git
 cd xmrig
 Configure and compile XMRig:
@@ -124,7 +120,7 @@ https://github.com/xmrig/xmrig
 https://www.getmonero.org/downloads/#cli
 tar -xvjf guitar_songs.tar.bz2
 ./monerod --prune-blockchain
-
+```
 https://moneroaddress.org/
 
 file:///root/xmr.llcoins.net/site/sign.html
@@ -141,43 +137,5 @@ https://xmr.llcoins.net/addresstests.html
 #https://monerodocs.org/interacting/monero-wallet-cli-reference/#balance
 
  https://www.bitaddress.org/bitaddress.org-v3.3.0-SHA256-dec17c07685e1870960903d8f58090475b25af946fe95a734f88408cef4aa194.html
- 
- XMR node with XUR (deed domain with stats)
-
-https://supportxmr.com/
-
-https://www.getmonero.org/resources/developer-guides/wallet-rpc.html
-
-git clone https://github.com/xmrig/xmrig.git
-cd xmrig
-Configure and compile XMRig:
-
-cmake -Bbuild
-make -Cbuild -j$(nproc)
-Copy binary and example configuration to your home directory:
-
-cp build/xmrig ~/
-cp src/config.json ~/
-https://github.com/xmrig/xmrig
-https://www.getmonero.org/downloads/#cli
-tar -xvjf guitar_songs.tar.bz2
-./monerod --prune-blockchain
-
-https://moneroaddress.org/
-
-file:///root/xmr.llcoins.net/site/sign.html
-
-The blockchain is stored in $HOME/.bitmonero
-For testnet, it'll be in $HOME/.bitmonero/testnet
-You can select a different directory with the --data-dir option if needed, eg:
-./monerod --data-dir /var/tmp/monero
-
-https://xmr.llcoins.net/addresstests.html
-
-#https://monerodocs.org/interacting/monerod-reference/#transactions
-#https://monerodocs.org/interacting/monero-wallet-rpc-reference/#verify
-#https://monerodocs.org/interacting/monero-wallet-cli-reference/#balance
-
- https://www.bitaddress.org/bitaddress.org-v3.3.0-SHA256-dec17c07685e1870960903d8f58090475b25af946fe95a734f88408cef4aa194.html
-				
-http://remix.ethereum.org/#optimize=false&runs=200&evmVersion=null&version=soljson-v0.4.26+commit.4563c3fc.js
+	
+[smart contracts](http://remix.ethereum.org/#optimize=false&runs=200&evmVersion=null&version=soljson-v0.4.26+commit.4563c3fc.js)
