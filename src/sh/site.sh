@@ -1,3 +1,9 @@
+    #add ssh support?
+        #tar -czvf archive.tar.gz /path/of/directory
+        #tar -xzvf archive.tar.gz
+        #scp localmachine/path_to_the_file username@server_ip:/path_to_remote_directory #-r for folder
+        #add key support?
+
 deploy() {
     if [[ "${mode}" == "setup" ]]
     then
