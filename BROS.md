@@ -1,5 +1,7 @@
 
-### Try brOS (with Jaspre and Markre)
+### brOS, simplistic speed, *v1.04*
+
+BrOS is a light, browser-based yet dev-focused, stack based on being easy to use, based on [Arch Linux](https://archlinux.org/).
 
 Features include,
 
@@ -10,26 +12,11 @@ Features include,
     - Text editor
 - Remote deployment
 
-Learn to code using our stack, see [brOS](https://github.com/nfnth/nfnth/wiki/Bit-OS). For code specifics, see the [repo](), download the [script](https://gist.github.com/nfnth/ef98bc2ade9286b240eac846ff52bcce), or view the demo at [drhab.com](https://drhab.com).
-
 Use Jaspre to:
 
 - Transfer/store JSON objects between client (JavaScript) and serve (Python)
 
 The Markre editor uses JavaScript regex rendering to confirm conform to [MattDown](https://github.com/nfnth/nfnth/wiki/Mattdown), or MarkDown 2.0.
-
-|**File**|*description*|
-|-|-|
-|build.sh||
-|[site.py]()||
-|[md.js](https://github.com/nfnth/nfnth/blob/master/doc/MATTDOWN.md)|JavaScript MarkDown renderer|
-|[map.js]()|JAvaScriptPythonstRipE objects|
-|[user.js](https://github.com/nfnth/nfnth/blob/master/doc/BROS.md)|Browser OS (on Arch Linux)|
-
-
-## brOS, simplistic speed, *v1.04*
-
-BrOS is a light, browser-based yet dev-focused, stack based on being easy to use, based on [Arch Linux](https://archlinux.org/).
 
 To get started, download the [Arch Linux ISO](http://mirror.rackspace.com/archlinux/iso/2021.06.01/archlinux-2021.06.01-x86_64.iso).
 
@@ -58,6 +45,15 @@ That's it. Enjoy!
 <p align="center"><img src="https://github.com/nfnth/res/raw/main/site/chimi_cards.png" width="200" height="200" /></p>
 
 ### Additional info
+
+|**File**|*description*|
+|-|-|
+|build.sh||
+|[site.py]()||
+|[md.js](https://github.com/nfnth/nfnth/blob/master/doc/MATTDOWN.md)|JavaScript MarkDown renderer|
+|[map.js]()|JAvaScriptPythonstRipE objects|
+|[user.js](https://github.com/nfnth/nfnth/blob/master/doc/BROS.md)|Browser OS (on Arch Linux)|
+
 
 fullscreen/file folder text editor/terminal/keyboard
 
@@ -106,7 +102,7 @@ fullscreen/file folder text editor/terminal/keyboard
    #sed 's/.*six.*/fault/' file     # check all lines
    ```
    
-https://gist.github.com/nfnth/ef98bc2ade9286b240eac846ff52bcce
+### On Crypto
 
 XMR node with XUR (deed domain with stats)
 
