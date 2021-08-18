@@ -58,7 +58,7 @@ const pulsingDot = { width: size, height: size, data: new Uint8Array(size * size
 												
         map.addLayer({ 'id': 'layer-with-pulsing-dot', 'type': 'symbol', 'source': 'dot-point', 'layout': { 'icon-image': 'pulsing-dot' }  });  });
 
-    const marker = new mapboxgl.Marker({ color: '#F84C4C' });
+  //  const marker = new mapboxgl.Marker({ color: '#F84C4C' });
     function animateMarker(timestamp) {
         const radius = 20;
         marker.setLngLat([  Math.cos(timestamp / 1000) * radius, Math.sin(timestamp / 1000) * radius ]);vmarker.addTo(map);
@@ -66,7 +66,7 @@ const pulsingDot = { width: size, height: size, data: new Uint8Array(size * size
 
     requestAnimationFrame(animateMarker);
 
-<title>Attach a popup to a marker instance</title>
+//<title>Attach a popup to a marker instance</title>
 
     var popup = new AnimatedPopup({ offset: 25,openingAnimation: {duration: 1000, easing: 'easeOutElastic'},closingAnimation: { duration: 300, easing: 'easeInBack' } }).setText('Construction on the Washington Monument began in 1848.');
 
