@@ -82,16 +82,16 @@ window.onresize = function(event) { setEditor(); }
    mermaid.render("merman"+i.toString(), text, insert);}
 
 		
-var canvas = document.getElementById('canvas'); var context = canvas.getContext('2d'); var video = document.getElementById('video');
-context.drawImage(video, 0, 0, 640, 480);
+//var canvas = document.getElementById('canvas'); var context = canvas.getContext('2d'); var video = document.getElementById('video');
+//context.drawImage(video, 0, 0, 640, 480);
 
- var canvas = new fabric.Canvas('c');
- canvas.isDrawingMode = !canvas.isDrawingMode;
- canvas.on('path:created', function() {updateComplexity();});
+ //var canvas = new fabric.Canvas('c');
+ //canvas.isDrawingMode = !canvas.isDrawingMode;
+ //canvas.on('path:created', function() {updateComplexity();});
  
-   var canvas = document.getElementById('canvas'), context = canvas.getContext('2d'), video = document.getElementById('video');
+  // var canvas = document.getElementById('canvas'), context = canvas.getContext('2d'), video = document.getElementById('video');
      
-   function takeShot() { context.drawImage(video, 0, 0, 640, 480); };
+  // function takeShot() { context.drawImage(video, 0, 0, 640, 480); };
    
    var regex = new RegExp("[a-z0-9]{5,}");
    //if(!(regex.test(input.value))){ userSet(false);}
