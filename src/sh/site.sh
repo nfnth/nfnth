@@ -1,22 +1,28 @@
-    #add ssh support?
-        #tar -czvf archive.tar.gz /path/of/directory
-        #tar -xzvf archive.tar.gz
-        #scp localmachine/path_to_the_file username@server_ip:/path_to_remote_directory #-r for folder
-        #add key support?
+server="haproxy certbot python python-pip git"
+python="aiohttp asyncio aiosmtpd" #av aiortc opencv-python object-mapper webkit pywebview pyotp tensorflow pytorch aiohttp_session numpy-stl 
 
 deploy() {
-    if [[ "${mode}" == "setup" ]]
-    then
+        cd /root/nfnth
+        git pull origin master
+
         pacman -Sy --overwrite --noconfirm \* ${server}
         pip3 install ${python} -U #pip3 install ${python}
         
-        cp config/haproxy.cfg /etc/haproxy/haproxy.cfg
+        cp /root/nfnth/src/sh/haproxy.cfg /etc/haproxy/haproxy.cfg
+        cp /root/nfnth/src/sh/brs.service /etc/systemd/system/brs.service
+    
+        if [[ "$1" == "domain" ]]
+        then
+            domain
+        fi
 
+        systemctl restart haproxy
+        systemctl restart brs.service
+}
+
+domain() {
         openssl ecparam -genkey -name secp384r1 | openssl ec -out ecc-privkey.pem
-        
-        cp /etc/ssl/openssl.cnf /etc/ssl/openssl.cnf.temp
-        #sed '/[ v3_req ]/asubjectAltName = @alt_names' /etc/ssl/openssl.cnf
-        sed -i '$ d' /etc/ssl/openssl.cnf
+        cp /root/nfnth/src/sh/openssl.cnf /etc/ssl/openssl.cnf
 
         COUNTER=0
         COMMAND=""
@@ -33,13 +39,12 @@ deploy() {
                 sudo -E bash -c 'cat 0000_cert.pem >> alldomains.pem'
                 COMMAND=""
                 rm 0000_cert.pem
-                cp /etc/ssl/openssl.cnf.temp /etc/ssl/openssl.cnf
-                sed -i '$ d' /etc/ssl/openssl.cnf
+                cp /root/nfnth/src/sh/openssl.cnf /etc/ssl/openssl.cnf
 
                 echo "Continue?"
                 read input </dev/tty
             fi
-        done < /root/nfnth/manifest
+        done < /root/nfnth/src/manifest
 
         echo $COMMAND
         openssl req -new -sha256 -key ecc-privkey.pem -nodes -outform pem -out ecc-csr.pem -subj /C=US/ST=Washington/L=Seattle/O=Nfnth/OU=House/CN=${fields[0]}
@@ -50,26 +55,17 @@ deploy() {
         sudo -E bash -c 'cat ecc-privkey.pem >> alldomains.pem'
         cp alldomains.pem /etc/haproxy/cert/alldomains.pem
         #sudo certbot certonly --standalone --preferred-challenges http -d example.com
-    elif [[ "${mode}" == "deploy" ]]
-    then
-        killall -9 run.py
-        systemctl stop haproxy
-    fi
-
-    #tar -czvf name-of-archive.tar.gz /path/to/directory-or-file
-    #scp file.txt username@to_host:/remote/directory/
-    #ssh-agent bash -c 'ssh-add /somewhere/yourkey; /root/build.sh server' tar -xzvf archive.tar.gz
-    
-    systemctl start haproxy
-    #nohup python /root/nfnth/run.py > /dev/null 2>&1 & disown & #exec?
 }
 
-if [[ "$1" == "install" ]]
-then
-    install
-elif [[ "$1" == "deploy" ]]
+if [[ "$1" == "domain" ]]
 then
     deploy
 else
-    base
+    deploy
 fi
+
+#tar -xzvf archive.tar.gz
+#scp localmachine/path_to_the_file username@server_ip:/path_to_remote_directory #-r for folder
+#tar -czvf name-of-archive.tar.gz /path/to/directory-or-file
+#scp file.txt username@to_host:/remote/directory/
+#ssh-agent bash -c 'ssh-add /somewhere/yourkey; /root/build.sh server' tar -xzvf archive.tar.gz
