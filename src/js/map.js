@@ -1,4 +1,17 @@
 
+// await preloadImage('https://github.com/nfnth/res/raw/main/site/coat.png') // Preload an image
+ //	await preloadImage('https://github.com/nfnth/res/raw/main/site/chimi_hi.png') 
+//	await preloadImage('https://github.com/nfnth/res/raw/main/site/chimi_cards.png') 
+//await Promise.all(images.map(x => preloadImage(x.src))) // Preload a bunch of images in parallel 
+
+	//include embed mode for box/art/domain  
+//		const preloadImage = src => 
+  //         new Promise(r => {
+    //         const image = new Image()
+      //       image.onload = r
+        //     image.onerror = r
+          //   image.src = src })
+
 function marker(name, link, place, image) {   
   var popup = new mapboxgl.Popup({ offset: 25 }).setHTML('<div><div><img widht="48" height="48" src="https://github.com/nfnth/res/raw/main/thumb/'+image+'.jpg"/></div><div><h6>' + name + '</h6><a href="https://ur.land">Owner Info</a><br/><a href="https://'+ link + '">More info...</a><br/><a class="waves-effect waves-light btn modal-trigger" href="#modal1">Purchase</a></div></div>');
   var el = document.createElement('div'); el.id = 'marker'; //class per icon type... unique icon, state, color
