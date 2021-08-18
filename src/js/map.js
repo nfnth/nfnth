@@ -51,23 +51,23 @@ const pulsingDot = { width: size, height: size, data: new Uint8Array(size * size
 
     this.data = context.getImageData( 0, 0, this.width, this.height).data; map.triggerRepaint(); return true; } };
 
-    map.on('load', () => {
-        map.addImage('pulsing-dot', pulsingDot, { pixelRatio: 2 });
-        map.addSource('dot-point', { 'type': 'geojson',
-            'data': { 'type': 'FeatureCollection', 'features': [ { 'type': 'Feature', 'geometry': { 'type': 'Point', 'coordinates': [0, 0] } } ] } }); // icon position [lng, lat]
+//    map.on('load', () => {
+ //       map.addImage('pulsing-dot', pulsingDot, { pixelRatio: 2 });
+ //       map.addSource('dot-point', { 'type': 'geojson',
+//            'data': { 'type': 'FeatureCollection', 'features': [ { 'type': 'Feature', 'geometry': { 'type': 'Point', 'coordinates': [0, 0] } } ] } }); // icon position [lng, lat]
 												
-        map.addLayer({ 'id': 'layer-with-pulsing-dot', 'type': 'symbol', 'source': 'dot-point', 'layout': { 'icon-image': 'pulsing-dot' }  });  });
+ //       map.addLayer({ 'id': 'layer-with-pulsing-dot', 'type': 'symbol', 'source': 'dot-point', 'layout': { 'icon-image': 'pulsing-dot' }  });  });
 
   //  const marker = new mapboxgl.Marker({ color: '#F84C4C' });
-    function animateMarker(timestamp) {
-        const radius = 20;
-        marker.setLngLat([  Math.cos(timestamp / 1000) * radius, Math.sin(timestamp / 1000) * radius ]);vmarker.addTo(map);
-        requestAnimationFrame(animateMarker); }
+//    function animateMarker(timestamp) {
+  //      const radius = 20;
+ //       marker.setLngLat([  Math.cos(timestamp / 1000) * radius, Math.sin(timestamp / 1000) * radius ]);vmarker.addTo(map);
+ //       requestAnimationFrame(animateMarker); }
 
-    requestAnimationFrame(animateMarker);
+  //  requestAnimationFrame(animateMarker);
 
 //<title>Attach a popup to a marker instance</title>
 
-    var popup = new AnimatedPopup({ offset: 25,openingAnimation: {duration: 1000, easing: 'easeOutElastic'},closingAnimation: { duration: 300, easing: 'easeInBack' } }).setText('Construction on the Washington Monument began in 1848.');
+//    var popup = new AnimatedPopup({ offset: 25,openingAnimation: {duration: 1000, easing: 'easeOutElastic'},closingAnimation: { duration: 300, easing: 'easeInBack' } }).setText('Construction on the Washington Monument began in 1848.');
 
-    var el = document.createElement('div'); el.id = 'marker'; new mapboxgl.Marker(el).setLngLat(monument).setPopup(popup).addTo(map);
+  //  var el = document.createElement('div'); el.id = 'marker'; new mapboxgl.Marker(el).setLngLat(monument).setPopup(popup).addTo(map);
