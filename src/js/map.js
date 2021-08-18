@@ -54,7 +54,8 @@ const pulsingDot = { width: size, height: size, data: new Uint8Array(size * size
     map.on('load', () => {
         map.addImage('pulsing-dot', pulsingDot, { pixelRatio: 2 });
         map.addSource('dot-point', { 'type': 'geojson',
-            'data': { 'type': 'FeatureCollection', 'features': [ { 'type': 'Feature', 'geometry': { 'type': 'Point', 'coordinates': [0, 0] // icon position [lng, lat] } } ] } });
+            'data': { 'type': 'FeatureCollection', 'features': [ { 'type': 'Feature', 'geometry': { 'type': 'Point', 'coordinates': [0, 0] } } ] } }); // icon position [lng, lat]
+												
         map.addLayer({ 'id': 'layer-with-pulsing-dot', 'type': 'symbol', 'source': 'dot-point', 'layout': { 'icon-image': 'pulsing-dot' }  });  });
 
     const marker = new mapboxgl.Marker({ color: '#F84C4C' });
