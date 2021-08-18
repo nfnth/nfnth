@@ -83,7 +83,7 @@ window.onresize = function(event) { setEditor(); }
 
 		
 var canvas = document.getElementById('canvas'); var context = canvas.getContext('2d'); var video = document.getElementById('video');
-context.drawImage(video, 0, 0, 640, 480);}
+context.drawImage(video, 0, 0, 640, 480);
 
  var canvas = new fabric.Canvas('c');
  canvas.isDrawingMode = !canvas.isDrawingMode;
