@@ -1,5 +1,14 @@
 
 //"artifact editor", - [RegExp online](https://regexr.com/)
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.2.0/fabric.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+var poly = "https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=fetch";
+$.getScript(poly, function() {  });
+
+//mermaid.initialize({startOnLoad:true});
 var current = new Date(); // timestamp, milliseconds since 1970 (?) vs. milliseconds (UTC)
 var yyyy = current.getFullYear(), MM = current.getMonth(), dd = current.getDate(), hh = current.getHours(), mm = current.getMinutes(), ss = current.getSeconds();
 var datestamp = yyyy + "." + MM + "." + dd;
@@ -7,20 +16,6 @@ var timestamp = hh + ":" + mm + ":" + ss;
  //$.post("../search/ip", "", function (data) { $('#stat-date').html(datestamp); $('#stat-time').html(timestamp); $('#stat-ip').html(data);});
 
 // add share...
-var editBox = '<div id="tools" class="z-depth-1" style="display:flex;align-items: center;justify-content: flex-end;padding: 12; margin-bottom: 4; width:100%;">
-	<div class="switch" onclick="previewMode();"><label style="display: flex;align-items: center;">Private?<input type="checkbox" id="preview"><span class="lever"></span></label></div>
-	<a onclick="camera();" style="margin: 0;padding: 18;justify-items: center;display: flex;align-items: center;"><i class="material-icons">photo_camera</i></a>
-	<a onclick="getLocation();" style="margin: 0;padding: 18;justify-items: center;display: flex;align-items: center;"><i class="material-icons">gps_fixed</i></a>
-  	<a onclick="exportDoc();" class="btn waves-effect waves-light green tool" style="margin-left:24;"><i class="material-icons right">publish</i>Attachment</a>
-	<div class="switch" onclick="previewMode();"><label style="display: flex;align-items: center;"><i class="material-icons">chrome_reader_mode</i><input type="checkbox" id="preview"><span class="lever"></span></label></div></div>
-	
-<div id="holder" style=" width:100%; justify-content:center;height: calc(100% - 60px);">
-  	<div id="viewer" style="text-align:left;padding:24;height:100%; overflow-y:auto; width: 85%;float: right;padding-right: 64;"></div>
-  	<div id="code" class="content loader" contentEditable="false" style="width:50%; height:50%; ">
-       		<div contentEditable="true" style="text-align:left; overflow-y: auto; width:100%; height:100%; border: 2px solid aliceblue;box-shadow: 1px 1px beige;padding: 24;"></div></div></div>
-		
-<div id="toolset" class="z-depth-1 content loader" style="display:flex;align-items: center;justify-content: center;padding: 12; margin-bottom: 4; width:100%;position: fixed;background-color: white; z-index:4; ">
-	<p><label><input type="checkbox" class="filled-in" checked="checked" /><span>Unclaimed Territory</span></label></p>"
 
 function renderMd(text) { 
   //$('#mermaid').html(""); var mermaidEx = /<textarea[\s\S]*?>([\s\S]*?)(?=<\/textarea>)/gi;
@@ -81,26 +76,14 @@ if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) { // Not addin
 
 window.onresize = function(event) { setEditor(); }
 
-
  function tester(text, i) { 
    text = text.toString();text = text.replace('<textarea class="merma">', '').trim();
    let insert = function (code) { $('#mermaid').append('<div>' + code + '</div>');};
    mermaid.render("merman"+i.toString(), text, insert);}
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.2.0/fabric.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 		
 var canvas = document.getElementById('canvas'); var context = canvas.getContext('2d'); var video = document.getElementById('video');
 context.drawImage(video, 0, 0, 640, 480);}
-
-
-<!--
-<span class="badge blue">18 views</span><span class="badge green">public</span>
-<span class="badge yellow">2 edits</span><span class="badge red">private</span>
-    random?
-    <div id="test4" class="col s12"><input type="file" multiple>
-      <a class="waves-effect waves-light btn-large" onclick="$('#file-input').trigger('click');"><i class="material-icons right">folder</i>Document</a><input id="file-input" type="file" webkitdirectory mozdirectory style="display:none;"/></div></div></div></div></div>
 
  var canvas = new fabric.Canvas('c');
  canvas.isDrawingMode = !canvas.isDrawingMode;
@@ -112,17 +95,3 @@ context.drawImage(video, 0, 0, 640, 480);}
    
    var regex = new RegExp("[a-z0-9]{5,}");
    //if(!(regex.test(input.value))){ userSet(false);}
- 
-  <input id="imagepick" type="file" value="" accept="image/*;capture=camera" />
-  <canvas id="canvas"></canvas>
-  <canvas style="border: 2px solid; " height="485" width="632" id="c"></canvas>
-  <div id="mermaid"></div>
-  
-    <form action="/upload" method="post" accept-charset="utf-8" enctype="multipart/form-data">
-    <input id="mp3" name="mp3" type="file" value="" accept="image/*;capture=camera" /><button onclick="sendPic()">Send</button>
-    <input type="submit" value="submit" /></form>
-<video id="video2" playsinline autoplay muted></video>
-<video id="audio2"></video>
-
-<!--//use UTC option...
-//media? teleprompt? with audio? -->
