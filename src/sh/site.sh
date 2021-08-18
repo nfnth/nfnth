@@ -3,7 +3,8 @@ python="aiohttp asyncio aiosmtpd" #av aiortc opencv-python object-mapper webkit 
 
 deploy() {
         cd /root/nfnth
-        git pull origin master
+        git reset --hard HEAD
+        git pull
 
         pacman -Sy --overwrite --noconfirm ${server}
         pip3 install ${python} -U #pip3 install ${python}
