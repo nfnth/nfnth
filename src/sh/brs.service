@@ -1,5 +1,5 @@
 [Unit]
-Description=brS
+Description=brs
 [Service]
 ExecStart=/usr/bin/python3 /root/nfnth/src/py/site.py
 Type=idle
