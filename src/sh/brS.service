@@ -1,12 +1,7 @@
 [Unit]
-Description=brOS Site
-After=multi-user.target
-Conflicts=getty@tty1.service
-
+Description=brS
 [Service]
-Type=simple
-ExecStart=/usr/bin/python3 /usr/bin/site.py
-StandardInput=tty-force
-
+ExecStart=/usr/bin/python3 /root/nfnth/src/py/site.py
+Type=idle
 [Install]
 WantedBy=multi-user.target
