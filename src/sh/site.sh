@@ -5,7 +5,7 @@ deploy() {
         cd /root/nfnth
         git pull origin master
 
-        pacman -Sy --overwrite --noconfirm \* ${server}
+        pacman -Sy --overwrite --noconfirm ${server}
         pip3 install ${python} -U #pip3 install ${python}
         
         cp /root/nfnth/src/sh/haproxy.cfg /etc/haproxy/haproxy.cfg
