@@ -28,7 +28,9 @@ function checkSignature (event) {
       if (ethUtil.toChecksumAddress(recovered) === ethUtil.toChecksumAddress(from)) { alert('Successfully recovered signer as ' + from); 
                                                                                      //send dynamic message and signature to server to process...
                                                                                     } 
-   else {alert('Failed to verify signer when comparing ' + result + ' to ' + from); } });});
+   else {alert('Failed to verify signer when comparing ' + result + ' to ' + from); } 
+  
+  }); //});
 
 function uploadArtifact() {
   var data = new FormData();
