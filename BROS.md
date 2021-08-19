@@ -1,20 +1,21 @@
 
-### brOS, simplistic speed, *v1.04*
+### boomBox, simplistic speed, *v1.04*
 
 A browser-based, dev-focused, light weight distro, based on [Arch Linux](https://archlinux.org/).
 
 Features include,
 
-- Site to game development
-- Web-based admin console, 
-    - Command-line access
-    - Folder/file browser
-    - Text editor
-- Remote deployment
-
-Transfer/store JSON objects between client (JavaScript) and serve (Python)
-
-Editor uses JavaScript regex rendering with MarkDown.
+- Server
+  - Site hosting
+  - Mail client/server
+  - JSON object data store
+  - Media streaming
+- Chromium Embedded Framework (CEF) browser console
+  - Web browser
+  - Command-line
+  - Folder/file explorer
+  - Text editor
+- Vulkan startup application
 
 To get started, download the [brOS ISO](http://mirror.rackspace.com/archlinux/iso/2021.06.01/archlinux-2021.06.01-x86_64.iso).
 
@@ -64,7 +65,6 @@ fullscreen/file folder text editor/terminal/keyboard
    |**password**|`temp1234`|root password|
    |**user_name**|`bit`|Default user|
    |**user_password**|`temp1234`|user password|
-   |**mode**||client or server deployment|
    |**domain**|bit.com|Default site|
    |**ip**|`192.168.1.111`|IP used to assign(client) or deploy(server)|
    |**wifi_id**|||
