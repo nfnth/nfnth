@@ -1,207 +1,1001 @@
-<head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Dralun · Deed to Domain</title>
+<!DOCTYPE html>
+<html lang="en">
+<head><title>URLand · Deed Domain  🏴🏳</title>
+
+<meta http-equiv="Content-Language" content="en-US">
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="deed domains for sale, from deed to domain, collectible domains" />
+<meta name="keywords" content="domain, deed, nft, crypto, url, urland" />
+<meta name="author" content="urland" />
 
 <!-- resources -->
-<link class="ico" rel="icon" href="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/icon/fav/favicon.ico" type="image/x-icon">
-<link class="ico" rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/icon/fav/favicon.ico" type="image/x-icon">
-<link class="ico" rel="apple-touch-icon" sizes="128x128" href="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/icon/fav/apple-touch-icon.png">
-<link class="ico" rel="icon" sizes="192x192" href="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/icon/fav/android-chrome-192x192.png">
+<script src="res/htm/all.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1077761610516109" crossorigin="anonymous"></script><link rel="stylesheet" href="res/htm/all.css"></head>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>	
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
-<script src="src/js/map.js"></script><script src="src/js/md.js"></script><script src="src/js/user.js"></script></head>
+<body style="overflow:overlay; background-color:ghostwhite;" >
 
 <!-- menu -->
 <nav id="main-menu" style="position: fixed;top:0; z-index:2;visibility:hidden;" class="loader">
-  	<div class="nav-wrapper header" style="background-color:rgb(33, 124, 185); display:flex; justify-content: space-between;">
-    		<div>
-      			<a id="slider" href="#" data-target="user-pane" class="sidenav-trigger" style="background-color: #2f8fff;margin: 0;padding: 18;justify-items: center;display: flex;align-items: center;"><i class="material-icons">menu</i></a>
-      			<a style="display: flex; align-items: center; height: 100%; "><img id="menu-logo" class="hide-on-med-and-down" onclick="setEditor('start');" draggable="false" ondragstart="return false;" style="height:48; width:48; cursor: pointer; margin-left: 16;" /></a></div>
+    <div id="panel-menu" class="nav-wrapper header" style="display:flex; justify-content: space-between;">
+    	<div><a style="display: flex; align-items: center; height: 100%; "><img id="menu-logo" onclick="showView('news');" style="height:48px; cursor: pointer; margin-left: 12px;" /></a></div>
 
-    		<a class="screen-hide" id="domains-hide" href="#!" data-target="domain"><i class="material-icons right">view_list</i></a>
-		<a class="screen-hide" onclick="setEditor('map');"><i class="material-icons right">map</i></a>
-		<a class="screen-hide" onclick="setEditor('md');"><i class="material-icons right">edit</i></a>
-    		<a class="screen-hide" onclick="setEditor('search');"><i class="material-icons right">search</i></a>
-		
-    		<ul class="hide-on-med-and-down" >
-      			<li><a id="domains" href="#!" data-target="domain">DEEDS<i class="material-icons right">arrow_drop_down</i></a></li>
-			<li><a onclick="setEditor('map');">MAP</a></li>
-			<li><a onclick="setEditor('md');">EDITOR</a></li>
-      			<li style="height:64px;">
-        			<a style="height:inherit; padding-right:0;"><i onclick="$('#search').focus();" style="height:inherit; padding-right:4;" class="material-icons">search</i><span id="search-results" onclick="$('#search').focus();" class="badge blue">1776</span>
+    <!-- media -->
+        <a class="screen-hide" onclick="showView('map'); map.resize(); showIntro();"><i class="material-icons right">map</i></a>
+        <a id="docs-hide" class="screen-hide" href="#!" data-target="doc"><i class="material-icons right">menu_book</i></a>
+
+		<a id="domains-hide" class="screen-hide" href="#!" data-target="domain"><i class="material-icons right">view_list</i></a>
+    	<a class="screen-hide" onclick="showView('search');"><i class="material-icons right">search</i></a>
+
+    <!-- desktop -->
+    	<ul class="hide-on-med-and-down" >
+    	<li><a onclick="showView('map'); map.resize(); showIntro();">MAP</a></li>
+            <li><a id="docs" href="#!" data-target="doc">GUIDE<i class="material-icons right">arrow_drop_down</i></a></li>
+
+            <li><a id="domains" href="#!" data-target="domain">CATALOG<i class="material-icons right">arrow_drop_down</i></a></li>
+            <li style="height:64px;">
+                <a style="height:inherit; padding-right:0;"><i onclick="$('#search').focus();" style="height:inherit; padding-right:4px;" class="material-icons">search</i><span id="search-results" onclick="$('#search').focus();" class="badge blue" style="margin-right:12px;"></span>
         			<div id="search-box" class="input-field" style="height:inherit;">
-          				<input id="search" type="search" onkeyup="searchResults()" style="padding-left:12; width: calc(100% - 1rem);">
-          				<label class="label-icon" for="search" ></label>
-          				<i class="material-icons" onclick="searchClear()">close</i></div></a></li></ul>
-	
-      		<div style="display:flex;">
-			<a class="modal-trigger" href="#user-modal" style="justify-items: center;display: flex;align-items: center; margin-right:48;"><i class="material-icons">account_box</i></a></div></div></nav>
+          				<input id="search" type="search" onkeyup="searchResults()" style="padding-left:12px; width: calc(100% - 1rem);">
+          				<label class="label-icon" for="search" ></label><i class="material-icons" onclick="searchClear()">close</i></div></a></li></ul>
+
+    <!-- user -->
+        <div style="display:flex;" onclick="$('#user-pane').sidenav('open');">
+            <ul><li id="setting-wallet" style="background-color: rgb(201, 201, 201, 0.6);" class="z-depth-1"><a i href="#" style="margin: 0;justify-items: center;display: flex;align-items: center;" ><i class="material-icons">account_balance_wallet</i></a></li></ul></div></div></nav>
+
+<!-- dropdown -->
+<ul id="doc" class="dropdown-content loader" style="visibility:hidden;">
+    <li><a onclick="showDoc('manifesto');"><i class="material-icons">backpack</i>Explore Free</a></li>
+    <li><a onclick="showDoc('PLANME');"><i class="material-icons"><span class="material-icons-outlined">gite</span></i>About URLand</a></li>
+    <li class="divider"></li>
+    <li><a onclick="showDoc('README');"><i class="material-icons">computer</i>Install urOS&nbsp;&nbsp;<span class="badge green accent-4">v1.0.4</span></a></li>
+    <li class="divider"></li>
+    <li><a onclick="showDoc('url');"><i class="material-icons">token</i>Trade URL</a></li>
+	<li><a onclick="showDoc('donation');"><i class="material-icons"><span class="material-icons-outlined">park</span></i>Make Donation</a></li>
+	<li class="divider"></li>
+    <li><a onclick="openInNewTab('https://tactician.us');"><i class="material-icons">explore</i>Visit tactician.us...</a></li>
+	</ul>
 
 <ul id="domain" class="dropdown-content loader" style="visibility:hidden;">
-  	<li><a onclick="setDisplay('place'); setEditor('list');"><i class="material-icons">landscape</i>Land Domains</a></li>
-	<li><a onclick="setDisplay('person'); setEditor('list');"><i class="material-icons">cottage</i>Tribes of Dralun</a></li>
-	<li><a onclick="setDisplay('thing'); setEditor('list');"><i class="material-icons">emoji_objects</i>Ancient Relics</a></li>
-	<li><a onclick="setDisplay('object'); setEditor('list');"><i class="material-icons">inventory_2</i>Time-Sealed Vaults</a></li>
-	<li><a onclick="setDisplay('art'); setEditor('list');"><i class="material-icons">card_membership</i>Artworks</a></li></ul>
+    <li><a onclick="showView('list'); showList('manifest');"><i class="material-icons"><span class="material-icons-outlined">landscape</span></i>Domain Manifest<span id="domain-count" class="badge green">0</span></a></li>
+    <li><a onclick="showView('list'); showList('registry');"><i class="material-icons"><span class="material-icons-outlined">inventory_2</span></i>Artifact Registry<span id="artifact-count" class="badge yellow">0</span></a></li>
+	<li class="divider"></li>
+	<li><a onclick="showView('list'); showList('open');"><i class="material-icons">sailing</i>OpenSea Collection<span id="domain-count" class="badge blue">12</span></a></li>
+	<li><a onclick="openInNewTab('https://twitter.com/civplex');"><i class="material-icons">collections</i>Civplex Custodian...</a></li>
+	<li class="divider"></li>
+	<li><a onclick="showView('list'); showList('archive');"><i class="material-icons">dns</i>urOS Archive<span id="build-count" class="badge red">0</span></a></li></ul>
 
+<!-- panel -->
 <ul id="user-pane" class="sidenav loader" style="visibility:hidden;">
-	<li><div class="user-view z-depth-1" style="background-color: #eaf2f7;display: flex;margin: auto; padding: 0;align-items: flex-end;"><img draggable="false" ondragstart="return false;" id="user-pic" style="height: 72;margin-left:18; padding: 12;" src="https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/shield.png" /></div></li>
-  	<li style="text-align: center;"><a class="subheader">
-    		<span style="font-size: 20;font-weight: bold; color: #000000;">Dralun</span>
-    		<span style="margin-left:4;font-size: 16;font-weight: bold; color: #494646; ">· Deed to Domain</span></a></li>
-  	<li style="height:24;"><a class="subheader"></a></li>
-  	<li><a class="waves-effect" onclick="openInNewTab('https://github.com/nfnth'); $('#user-pane').sidenav('close');"><i class="material-icons">menu_book</i>How to Use Deed Domains</a></li>
-	<li><a class="waves-effect" onclick="openInNewTab('https://github.com/nfnth/nfnth/blob/master/CC.md'); $('#user-pane').sidenav('close');"><i class="material-icons">book</i>Read Civilian's Complex</a></li>
-  	<li><a class="waves-effect" onclick="openInNewTab('https://github.com/nfnth/nfnth/issues'); $('#user-pane').sidenav('close');"><i class="material-icons">help</i>Submit Issues</a></li>
+	<li><div class="user-view z-depth-1" style="background-color: #eaf2f7;display: flex;margin: auto; padding: 0;align-items: flex-end; padding-left:12px;"><span style="font-size: 20;font-weight: bold; color: #000000;">URLand</span><span style="margin-left:4px;font-size: 16;font-weight: bold; color: #494646; ">· dApp</span>
+        <img id="user-pic" style="height: 72px;margin-left:18px; padding: 12px;" src="img/shield.png" />
+        <div><span style="cursor: pointer;margin:auto;margin-bottom:12px;" onclick="showDoc('README'); $('#user-pane').sidenav('close');" class="new badge green darken-2" data-badge-caption="urOS | v1.02"></span></div></div></li>
+  	<li><a class="subheader"></a></li>
+  	<li><a id="wallet-setup" class="waves-effect waves-light light-blue darken-3 z-depth-1" style="width: 240px;margin: auto;border-radius: 8px; margin-bottom:12px;" onclick="setup();"><i class="material-icons left">account_balance_wallet</i>Connect Wallet</a></li>
+  	<li><a class="waves-effect" onclick="if (walletAddress != '') {copyClip(walletAddress);} else { M.toast({html: 'No wallet connected.'}); }"><i class="material-icons">alternate_email</i><span id="myAdd">My Wallet</span></a></li>
+  	<li><a class="waves-effect" onclick="M.toast({html: 'No wallet found.'});"><i class="material-icons">account_balance</i><span id="myETH">My ETH</span></a></li>
+  	<li><div style="margin-top:0;" class="divider"></div></li>
+	<li><a class="waves-effect" onclick="M.toast({html: 'No wallet found.'});"><i class="material-icons">toll</i><span id="myURL">My URL</span></a></li>
+	<li><a class="waves-effect" onclick="M.toast({html: 'No wallet found.'});"><i class="material-icons">inventory_2</i><span id="myArtifacts">My Artifacts</span></a></li>
   	<li><div style="margin-top:0;" class="divider"></div></li>
   	<li><a class="subheader"></a></li>
-  	<li><div id="header-logo" style="display: flex; flex-flow:column; align-items: center;justify-content: center;align-items: center; display: flex;">
-      		<div id="header-logo">
-        	<div id="logo" style="text-align:center;">
-          		<img draggable="false" id="eagle-eye" style="width:64;height:48;"/></div>
-        		<div style="display: flex;align-items: center;justify-content: center;">
-				<span id="title" style="font-weight: bold; font-size: 25px; color:green;">Nf</span><span id="title" style="font-weight: bold; font-size: 25px;">Nth</span>
-          			<i class="material-icons" >copyright</i>2021</div></div>
-        		<div><span style="cursor: pointer;" onclick="openInNewTab('https://github.com/nfnth/nfnth/blob/master/BROS.md'); $('#user-pane').sidenav('close');" class="new badge green darken-2" data-badge-caption="brOS, v1.02"></span></div>
-      			<div id="header-title"><span id="phrase" style="font-style: italic;">software on infinitive basis</span></div></div></li></ul>
+  	<li><a class="waves-effect waves-light light-blue darken-1 z-depth-1" style="width: 240px;margin: auto;border-radius: 8px;" onclick="showView('editor'); $('#user-pane').sidenav('close');"><i class="material-icons left">architecture</i>Post Artifact</a></li>
+  	<li><a class="waves-effect waves-light light-blue darken-1 z-depth-1" style="width: 240px;margin: auto;border-radius: 8px;" onclick="showView('editor'); $('#user-pane').sidenav('close');"><i class="material-icons left">architecture</i>Post Artifact</a></li>
+  	<li><a class="subheader"></a></li>
+  	<!-- <i class="material-icons left">directions</i><i class="material-icons left">picture_as_pdf</i><i class="material-icons left">calculate</i>-->
+  	<li style="display: flex;align-items: center;justify-content: center;"><select id="domain-template" class="sider">
+        <option value="1">No domain selected</option><option value="2">300zx.us</option></select></li></ul>
+
+<!-- view -->
+<div id="home" style="text-align:center;visibility:hidden; width:100%; z-index:1; padding-top: 54px;" class="content loader print-help">
+
+    <!-- world -->
+    <div id="world" class="content loader pane blue-grey lighten-5" style="width:100%;background-color:darkgrey;">
+        <img src="img/world-min.jpg" class="z-depth-2" style="width:100%; margin-bottom:-6px; " />
+        <div style="position: relative; width: 100%; height: 0"><div style="cursor:pointer; position:absolute; color:white; font-size:24px;bottom: 24px;text-align: center;align-items: center;justify-content: center;width: 100%;  " onclick="showDoc('PLANME');"><span style="color:dodgerblue; font-weight:bold; font-size:28px;background-color: rgb(164, 194, 224,0.8);border-radius: 6px;padding-left: 6px;">URLand&nbsp;</span><span style="color:aliceblue; font-size:26px; font-weight:bold;vertical-align:super;">  // dApp</span>&nbsp;&nbsp;<img src="img/pattern-min.png" style="width:48px;"/><br/><span style="font-size:18px;">deed. domain. </span><span style="font-size:18px; font-weight:bold;">decentralized.</span></div></div></div>
+
+    <!-- list -->
+    <div id="list" class="content loader pane" style="overflow-y: auto; height: 95%;">
+        <div id="waiter" class="pane" style="z-index:999;"><img id="list-wait" class="image"/><img id="list-wait2" class="image"/></div>
+        <div class="z-depth-1" style="display:flex;    justify-content: space-evenly; padding-top: 16px;background-color: aliceblue; margin-bottom: -6px;">
+            <select id="select-collection" multiple style="z-index:1; width:180px;" onchange="filter();" class="icons">
+                <option value="" disabled selected>Filter...</option>
+                <!--<option value="tact" data-icon="img/icon/key/red.png" class="left">Tactician</option>
+                <option value="patric" data-icon="img/icon/key/orange.png" class="left">Patrician</option>
+                <option value="electrician" data-icon="img/icon/key/yellow.png" class="left">Electrician</option>
+                <option value="sect" data-icon="img/icon/key/green.png" class="left">Sectarian</option>
+                <option value="civilplex" data-icon="img/icon/key/blue.png" class="left">Civilian</option>
+                <option value="logician" data-icon="img/icon/key/purple.png" class="left">Logician</option>
+                <option value="technic" data-icon="img/icon/key/white.png" class="left">Technician</option>
+                <option value="custo" data-icon="img/icon/key/gray.png" class="left">Custodian</option>
+                <option value="util" data-icon="img/icon/key/black.png" class="left">Utilitarian</option>
+                <option value="nfnth" data-icon="img/icon/key/tan.png" class="left">Librarian</option>
+                <option value="agar" data-icon="img/icon/key/brown.png" class="left">Agrarian</option>
+                <option value="clinician" data-icon="img/icon/key/pink.png" class="left">Clinician</option>--></select>
+            <select id="select-sort" style="z-index:1; width:180px;" onchange="sorter();">
+                <option value="" disabled selected>Sort...</option>
+                <option value="az">Alpha (A to Z)</option>
+                <option value="za">Alpha (Z to A)</option>
+                <option value="09">Price (High to Low)</option>
+                <option value="90">Price (Low to High)</option>
+                <option value="!)">Serial (Asc)</option>
+                <option value=")!">Serial (Desc)</option></select></div>
+        <div id="registry" class="collection"></div></div>
+
+    <!-- search -->
+    <div id="results" style="margin:80; display:none;" class="content loader pane">search...</div>
+
+    <!-- map -->
+    <div id="map" class="content loader pane" style="width:100%;"></div>
+        <div id="actions" class="content loader pane fixed-action-btn" >
+            <a class="btn-floating btn-large blue-grey lighten-1"><i class="large material-icons">apps</i></a>
+            <ul>
+                <li><a class="btn-floating green" onclick="addArtifact();"><i class="material-icons">add</i></a></li>
+                <li><a class="btn-floating yellow lighten-1" onclick="editArtifact();"><i class="material-icons">edit</i></a></li>
+                <li><a class="btn-floating red lighten-1" onclick="deleteArtifact();"><i class="material-icons">delete</i></a></li>
+                <li><a class="btn-floating blue lighten-2" onclick="showNext();"><i class="material-icons">arrow_upward</i></a></li>
+                <li><a class="btn-floating blue lighten-2" onclick="showPrev();"><i class="material-icons">arrow_downward</i></a></li>
+                <li><a class="btn-floating blue" onclick="showHome();"><i class="material-icons">gite</i></a></li></ul></div>
+
+    <!-- message -->
+    <div id="message" class="content loader pane"><div id="encrypted"></div><div id="decrypted"></div><div id="reader" width="600px"></div></div>
+
+    <!-- editor -->
+    <div id="editor" class="content loader pane">
+        <p><label><input type="checkbox" class="filled-in" checked="checked" /><span>Home?</span></label></p>
+        <div style="display:flex;  align-items: center; justify-content: center; margin:auto; ">
+                <div class="input-field col s6"><i class="material-icons prefix">title</i>
+                    <input id="icon_prefix" type="text" class="validate"><label for="icon_prefix">Enter name...</label></div></div>
+
+                <div style="display:flex;  align-items: center; justify-content: center; margin:12px;">
+                    <i class="material-icons prefix">source</i>
+                        <select id="editor-template">
+                            <optgroup label="Basic">
+                                <option value="1">Empty</option><option value="2">Profile</option></optgroup>
+                            <optgroup label="Template">
+                                <option value="3">Recipe</option><option value="4">Instructions</option><option value="5">Sequence</option><option value="6">Graph</option></optgroup></select></div>
+                <div id="pad" contentEditable="true" style="text-align:left; overflow-y: auto; width:100%; border: 2px solid aliceblue;box-shadow: 1px 1px beige; border-radius: 8px;height: 48px;padding: 12px;"></div><br/>
+                <div style="display:flex;justify-content:space-between;">
+
+                <div style="display:flex;  justify-content: left; margin-left:20%;  align-items:center;">
+                <div class="chip z-depth-1 waves-effect waves-blue blue-grey lighten-2" style="display:flex; color:white; width:120px; margin-right:12px;" onclick="$('#fileinput').trigger('click');"><i class="material-icons" style="margin:auto;margin-left:12px;">attach_file</i>File</div>
+            <div class="hiddenfile"><input name="upload" type="file" id="fileinput"/></div>
+                    <div class="chip">file1.png<i class="close material-icons">close</i></div></div>
+            </div>
+
+                <div style="display:flex; justify-content:space-between;">
+                    <div>
+                        <a onclick="showPreview();" class="waves-effect waves-grey btn-flat"><i class="material-icons left">web_asset</i>Preview</a>
+                        <a onclick="clearEditor();" class="waves-effect waves-grey btn-flat"><i class="material-icons left">refresh</i>Clear</a></div><div>
+                        <a onclick="postArtifact();" class="waves-effect waves-green green btn"><i class="material-icons right">publish</i>Post</a></div>
+                <div id="show-progress" class="progress" style="display:none;"><div class="indeterminate"></div></div></div></div>
+
+    <!-- news -->
+<footer id="stamper" class="page-footer pane" style=" color:black; padding-top: 0px; background-color:ghostwhite;">
+    <div id="news" class="container pane" style="display:flex;margin: auto;width:100%; background-color:white; max-width: 2400px!important;">
+        <div class="carousel carousel-slider center">
+            <div class="carousel-item red white-text" href="#one!">
+                <img style="display:none;" class="activator" src="img/icon/island/2-min.png" height="200" width="200" style="margin:auto; margin-top:12px;">
+                <span class="card-title activator grey-text text-darken-4">
+                <img onclick="showView('list');" src="img/hamlet-min.png" height="75" width="75" />&nbsp;&nbsp;<span onclick="showView('list');" style="color:darkred;font-weight:bold;font-size:24px;">urOS</span> <span onclick="showView('list');" style="color:black; font-size: 22px;vertical-align: sub;">Archives</span><span onclick="showDoc('README');" class="red badge">v0.8.8</span></span>
+                <p><a style="cursor:pointer;color:white;font-weight:bold;" onclick="showDoc('land');">Learn more</a> about how to use urOS</a></p>
+                <p>Develop on <span style="font-weight:bold;">urOS</span> to get your dApp "strack" up and running.</p>
+                <div style="text-align:center;  margin:auto;">
+                    <a onclick="downloadBuild();" style="width:210px;" class="waves-effect waves-light red btn"><i class="material-icons right">download</i>Download ISO</a></div></div>
+            <div class="carousel-item amber white-text" href="#two!">
+                <img style="display:none;" class="activator" src="img/icon/island/2-min.png" height="200" width="200" style="margin:auto; margin-top:12px;">
+                <span class="card-title activator grey-text text-darken-4">
+                <img onclick="showView('list');" src="img/scroll-min.png" height="75" width="48" />&nbsp;&nbsp;<span onclick="showView('list');" style="color:yellow;font-weight:bold;font-size:24px;">Artifact</span> <span onclick="showView('list');" style="color:black; font-size: 22px;vertical-align: sub;">Registry</span></span>
+                <p><a style="cursor:pointer;color:white;font-weight:bold;" onclick="showDoc('land');">Learn more</a> about how to build artifact</a></p>
+                <p>Register items on the <span style="font-weight:bold;">Registry</span> to promote and trade.</p>
+                <div style="text-align:center;  margin:auto;">
+                    <a onclick="showView('list');" style="width:210px;" class="waves-effect waves-light yellow btn"><i class="material-icons right">inventory_2</i>View Registry</a></div></div>
+            <div class="carousel-item green white-text" href="#three!">
+                <img style="display:none;" class="activator" src="img/icon/island/8-min.png" height="200" width="150" style="margin:auto; margin-top:12px;">
+                <span class="card-title activator grey-text text-darken-4"><img onclick="$('#user-pane').sidenav('open');" src="img/dragon-min.png" width="45" />&nbsp;&nbsp;<span onclick="$('#user-pane').sidenav('open');" style="color:green; font-weight:bold;font-size:24px;">URLand</span> <span onclick="$('#user-pane').sidenav('open');" style="color:darkgreen;font-size: 22px;vertical-align: sub;">dApp</span><span onclick="showDoc('README');" class="green badge">v0.9.8</span></span>
+                <p><a style="cursor:pointer; color:white;font-weight:bold;" onclick="showDoc('land');">Learn more</a> on how to geocache</a></p>
+                <p>Use the dApp for geocache, messaging, and <span style="font-weight:bold;">NFT domain</span> sign-in.</p>
+                <div style="text-align:center; margin:auto; ">
+                    <a onclick="$('#user-pane').sidenav('open');" style="width:210px;" class="waves-effect waves-green green btn"><i class="material-icons right">web_asset</i>Launch DApp</a></div></div>
+            <div class="carousel-item blue white-text" href="#four!">
+                <img style="display:none;" class="activator" src="img/icon/island/6-min.png" height="200" width="150" style="margin:auto; margin-top:12px;">
+                <span class="card-title activator grey-text text-darken-4"><img onclick="openInNewTab('https://opensea.io/collection/cus');" src="https://storage.googleapis.com/opensea-static/Logomark/OpenSea-Full-Logo%20(dark).png" width="160" /> <a style="color:black;font-size:24px;" onclick="openInNewTab('https://opensea.io/collection/cus');">Custodian</a></span>
+                <p><a style="cursor:pointer;color:white;font-weight:bold;" onclick="showDoc('land');">Learn more</a> about object-based NFTs</p>
+                <p>Combines real-world objects, collectible domains, and authentic artwork, all in a single package.</p>
+                <div style="text-align:center; margin:auto;">
+                    <a onclick="openInNewTab('https://opensea.io/collection/cus');" style="width:210px;" class="waves-effect waves-blue blue btn"><i class="material-icons right">sailing</i>Visit OpenSea...</a></div></div></div></div>
+
+        <div id="pager" class="container loader pane">
+            <div class="row" style="display:flex;">
+                <div class="col l6 s12" style="width:100%; text-align:center;">
+                    <ul class="pagination">
+                        <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+                        <li class="active"><a href="#!">1</a></li>
+                        <li class="waves-effect"><a href="#!">2</a></li>
+                        <li class="waves-effect"><a href="#!">3</a></li>
+                        <li class="waves-effect"><a href="#!">4</a></li>
+                        <li class="waves-effect"><a href="#!">5</a></li>
+                        <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li></ul></div></div></div></footer>
 
 <!-- dialog -->
-<div id="user-modal" class="modal">
-	<div class="modal-content">
-		<div id="intro" class="row-section">
-			<div id="console" class="row hover-base" onclick="signer();" style="border: solid 1px darkgray;
-    box-shadow: 2px 2px lightgrey; text-align:center;">
-				<img width="240" height="120" src="https://github.com/nfnth/res/raw/main/site/user/metamask.svg" /></div>
-			
-			<div id="console" class="row hover-base" style="text-align:center;"><a onclick="openInNewTab('https://metamask.io/download');">Download MetaMask</a><a href="https://metamask.app.link/dapp/dralun.com">Open In MetaMask (mobile)</a></div></div></div></div>
+<div id="modal1" class="modal bottom-sheet content loader"><div id="domain-info" class="modal-content"></div></div>
 
-<div id="user-setting2" class="modal">
-	<div class="modal-content">
-		<div id="intro" class="row-section">
-			<div id="console" class="row hover-base">  
-				<div class="input-field"><i class="material-icons prefix">mail</i><input type="text" id="user-email" name="user-email" class="user-input" placeholder="Enter email" /><label for="user-email">Email</label><span id="user-issue" class="helper-text" data-error="Invalid input" data-success="" >Enter Email</span></div></div>
-
-	<div class="modal-footer content loader">
-	      <button id="button-next" class="btn waves-effect waves-light" onclick="signer();">Sign In<i class="material-icons left">login</i></button><a href="#!" class="modal-close waves-effect waves-gray btn-flat disabled">Cancel</a></div></div></div></div>
-
-<!-- home -->
-<div id="home" style="text-align:center;margin-top:68;visibility:hidden; width:100%; z-index:1;" class="content loader">
-
-<div id="results" style="margin:80; display:none;" class="content loader">search...</div><!-- search -->
-
-<div id="map" ></div>
-<div class="fixed-action-btn">
-	<a class="btn-floating btn-large blue" onclick="setDisplay('place');"><i class="large material-icons">filter_list</i></a>
-	<ul>
-		<li><a class="btn-floating blue" onclick="setDisplay('cottage');"><i class="material-icons">terrain</i></a></li>
-		<li><a class="btn-floating blue" onclick="setDisplay('cottage');"><i class="material-icons">cottage</i></a></li>
-		<li><a class="btn-floating green darken-1"><i class="material-icons">emoji_objects</i></a></li>
-		<li><a class="btn-floating green"><i class="material-icons">sell</i></a></li>
-		<li><a class="btn-floating green darken-1"><i class="material-icons">badge</i></a></li>
-		<li><a class="btn-floating red"><i class="material-icons">clear</i></a></li></ul></div>
-
-<div id="list" class="content loader" style="overflow-y: auto; height: 95%;">
-	<div id="registry" class="collection">
-		<a href="#!" class="collection-item active">Alvin</a>
-		<a class="collection-item modal-trigger" href="#modal1">Purchase</a></div></div>
-
-<!-- editor 
-<span class="badge blue">18 views</span><span class="badge green">public</span>
-<span class="badge yellow">2 edits</span><span class="badge red">private</span>
-    random?
-    <div id="test4" class="col s12"><input type="file" multiple>
-      <a class="waves-effect waves-light btn-large" onclick="$('#file-input').trigger('click');"><i class="material-icons right">folder</i>Document</a><input id="file-input" type="file" webkitdirectory mozdirectory style="display:none;"/></div></div></div></div></div>
-      
-  <input id="imagepick" type="file" value="" accept="image/*;capture=camera" />
-  <canvas id="canvas"></canvas>
-  <canvas style="border: 2px solid; " height="485" width="632" id="c"></canvas>
-  <div id="mermaid"></div>
-  
-    <form action="/upload" method="post" accept-charset="utf-8" enctype="multipart/form-data">
-    <input id="mp3" name="mp3" type="file" value="" accept="image/*;capture=camera" /><button onclick="sendPic()">Send</button>
-    <input type="submit" value="submit" /></form>
-<video id="video2" playsinline autoplay muted></video>
-<video id="audio2"></video>
-
-<div id="tools" class="z-depth-1" style="display:flex;align-items: center;justify-content: flex-end;padding: 12; margin-bottom: 4; width:100%;">
-	<div class="switch" onclick="previewMode();"><label style="display: flex;align-items: center;">Private?<input type="checkbox" id="preview"><span class="lever"></span></label></div>
-	<a onclick="camera();" style="margin: 0;padding: 18;justify-items: center;display: flex;align-items: center;"><i class="material-icons">photo_camera</i></a>
-	<a onclick="getLocation();" style="margin: 0;padding: 18;justify-items: center;display: flex;align-items: center;"><i class="material-icons">gps_fixed</i></a>
-  	<a onclick="exportDoc();" class="btn waves-effect waves-light green tool" style="margin-left:24;"><i class="material-icons right">publish</i>Attachment</a>
-	<div class="switch" onclick="previewMode();"><label style="display: flex;align-items: center;"><i class="material-icons">chrome_reader_mode</i><input type="checkbox" id="preview"><span class="lever"></span></label></div></div>
-	
-	<i class="material-icons">attach_file</i></a>
-	
-<div id="holder" style=" width:100%; justify-content:center;height: calc(100% - 60px);">
-  	<div id="viewer" style="text-align:left;padding:24;height:100%; overflow-y:auto; width: 85%;float: right;padding-right: 64;"></div>
-  	<div id="code" class="content loader" contentEditable="false" style="width:50%; height:50%; ">
-       		<div contentEditable="true" style="text-align:left; overflow-y: auto; width:100%; height:100%; border: 2px solid aliceblue;box-shadow: 1px 1px beige;padding: 24;"></div></div></div>
-		
-<div id="toolset" class="z-depth-1 content loader" style="display:flex;align-items: center;justify-content: center;padding: 12; margin-bottom: 4; width:100%;position: fixed;background-color: white; z-index:4; ">
-	<p><label><input type="checkbox" class="filled-in" checked="checked" /><span>Unclaimed Territory</span></label></p>
--->
-<div id="modal1" class="modal bottom-sheet">
-    <div class="modal-content"></div>
-	<div class="modal-footer"><a href="#!" class="modal-close waves-effect waves-green btn-flat" onclick="openInNewTab('https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/62652367444291733483705976494538757758952482544655308357132039908522301849601');">Purchase</a></div></div>
+<div id="somedialog2" class="dialog print-help" style="z-index:99;display:none;">
+	<div class="dialog__overlay"></div>
+    <div class="dialog__content print-help" style="width: 80%; height:80%; text-align:left;overflow:auto;">
+        <div class="morph-shape" data-morph-open="M0,0h80c0,0,0,9.977,0,29.834c0,19.945,0,30.249,0,30.249H0c0,0,0-10.055,0-30.332C0,8.219,0,0,0,0z" data-morph-close="M0,29.75h80c0,0-3.083,0.014-3.083,0.041c0,0.028,3.083,0.042,3.083,0.042H0c0,0,3.084-0.014,3.084-0.042
+											C3.084,29.762,0,29.75,0,29.75z">
+            <svg id='test-svg' xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 80 60" preserveAspectRatio="none">
+                <path d="M0,29.75h80c0,0-3.083,0.014-3.083,0.041c0,0.028,3.083,0.042,3.083,0.042H0c0,0,3.084-0.014,3.084-0.042
+											C3.084,29.762,0,29.75,0,29.75z"></path></svg></div>
+        <div id="dialog-inner2" class="dialog-inner print-help fire-scroll" style="overflow:auto;height:75%;"><div><button class="action" data-dialog-close>Close</button></div></div></div></div>
 
 <script>
-function openInNewTab(url) { window.open(url, '_blank').focus(); } //window.open(url, '_self');
-function getParameter() { var pathArray = window.location.pathname.split('/'); switch (pathArray.length) { case 2: return pathArray[1]; break; } }
+var keySize = 256; var ivSize = 128; var iterations = 100;
+var message = "Hello World"; var password = "Secret Password";
 
-var sample;
+function encrypt (msg, pass) {
+  //var salt = CryptoJS.lib.WordArray.random(128/8);
+//  var key = CryptoJS.PBKDF2(pass, salt, { keySize: keySize/32, iterations: iterations });
+//alert(key);
+//  var iv = CryptoJS.lib.WordArray.random(128/8);
+
+//  var encrypted = CryptoJS.AES.encrypt(msg, key, { iv: iv, padding: CryptoJS.pad.Pkcs7, mode: CryptoJS.mode.CBC });
+
+  // salt, iv will be hex 32 in length // append them to the ciphertext for use  in decryption
+//  var transitmessage = salt.toString()+ iv.toString() + encrypted.toString();
+ // return transitmessage;
+ }
+
+function decrypt (transitmessage, pass) {
+ // var salt = CryptoJS.enc.Hex.parse(transitmessage.substr(0, 32));
+//  var iv = CryptoJS.enc.Hex.parse(transitmessage.substr(32, 32))
+ // var encrypted = transitmessage.substring(64);
+
+ // var key = CryptoJS.PBKDF2(pass, salt, {keySize: keySize/32,iterations: iterations});
+
+ // var decrypted = CryptoJS.AES.decrypt(encrypted, key, {iv: iv,padding: CryptoJS.pad.Pkcs7,mode: CryptoJS.mode.CBC})
+ // return decrypted;
+  }
+
+var encrypted = encrypt(message, password);
+var decrypted = decrypt(encrypted, password);
+
+$('#encrypted').text("Encrypted: "+encrypted);
+//$('#decrypted').text("Decrypted: "+ decrypted.toString(CryptoJS.enc.Utf8) );
+
+function onScanSuccess(decodedText, decodedResult) {
+  // handle the scanned code as you like, for example:
+  console.log(`Code matched = ${decodedText}`, decodedResult);
+}
+
+function onScanFailure(error) {
+  // handle scan failure, usually better to ignore and keep scanning.
+  // for example:
+  console.warn(`Code scan error = ${error}`);
+}
+
+//let html5QrcodeScanner = new Html5QrcodeScanner(
+//  "reader",
+//  { fps: 10, qrbox: {width: 250, height: 250} },
+//  /* verbose= */ false);
+//html5QrcodeScanner.render(onScanSuccess, onScanFailure);
+
+
+// This method will trigger user permissions
+
+
+//const html5QrCode = new Html5Qrcode(/* element id */ "reader");
+
+function startQR() {
+
+//Html5Qrcode.getCameras().then(devices => { if (devices && devices.length) { var cameraId = devices[0].id; } }).catch(err => { });
+
+//html5QrCode.start(
+ // cameraId,
+ // {
+ //   fps: 10,    // Optional, frame per seconds for qr code scanning
+//    qrbox: { width: 250, height: 250 }  // Optional, if you want bounded box UI
+//  },
+ // (decodedText, decodedResult) => {
+    // do something when code is read
+//  },
+ // (errorMessage) => { })
+//.catch((err) => { });
+}
+
+function datetimeStart() {
+    var current = new Date(); // timestamp, milliseconds since 1970 (?) vs. milliseconds (UTC)
+    var yyyy = current.getFullYear(), MM = current.getMonth() + 1; if (MM < 10) { MM = "0" + MM.toString(); }
+    var dd = current.getDate(), hh = current.getHours(), mm = current.getMinutes(), ss = current.getSeconds();
+    var datestamp = yyyy + "." + MM + "." + dd; var timestamp = hh + ":" + mm + ":" + ss; // calendar?
+    $("#defavlt").html(datestamp + " - " + timestamp); }
+function colorStart() { document.getElementById("favcolor").focus(); //document.getElementById("c").value = "#FFCC00";
+    document.getElementById("favcolor").click(); }
+function ipStart() { $.get("key", function(data) { $("#defavlt3").html(" @ " + data); }); }
+function videoStart() { }
+function mapStart() { }
+function randomStart() { }
+
+//let preview = document.getElementById("preview"), recording = document.getElementById("recording"), startButton = document.getElementById("startButton"), stopButton = document.getElementById("stopButton"), downloadButton = document.getElementById("downloadButton"), recordingTimeMS = 5000;
+
+//function wait(delayInMS) { return new Promise(resolve => setTimeout(resolve, delayInMS)); }
+//function startRecording(stream, lengthInMS) { let recorder = new MediaRecorder(stream); let data = [];
+ //   recorder.ondataavailable = event => data.push(event.data); recorder.start();
+  //  let stopped = new Promise((resolve, reject) => { recorder.onstop = resolve; recorder.onerror = event => reject(event.name); });
+  //  let recorded = wait(lengthInMS).then( () => recorder.state == "recording" && recorder.stop() );
+  //  return Promise.all([ stopped, recorded]).then(() => data); }
+//function stop(stream) { stream.getTracks().forEach(track => track.stop()); }
+//function starterButton() {
+  //  navigator.mediaDevices.getUserMedia({video: true,audio: true}).then(stream => {
+  //      preview.srcObject = stream; downloadButton.href = stream; preview.captureStream = preview.captureStream || preview.mozCaptureStream;
+  //      return new Promise(resolve => preview.onplaying = resolve);
+ //   }).then(() => startRecording(preview.captureStream(), recordingTimeMS)).then (recordedChunks => {
+  //      let recordedBlob = new Blob(recordedChunks, { type: "video/webm" });
+  //      recording.src = URL.createObjectURL(recordedBlob); downloadButton.href = recording.src; downloadButton.download = "RecordedVideo.webm";
+ //       }).catch(log);}
+//function stoperButton() { stop(preview.srcObject); }
+//function cameraStart() { var video = document.getElementById('video');
+   // if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) { navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) { video.srcObject = stream; video.play();}); } }
+
+//var canvas = document.getElementById('canvas'); var context = canvas.getContext('2d');
+//function snap() { context.drawImage(video, 0, 0, 640, 480); }
+
+function locationStart() { if(navigator.geolocation) { navigator.geolocation.getCurrentPosition(geoSuccess, geoError); } else { alert("Geolocation is not supported by this browser.");} }
+function geoSuccess(position) { var lat = position.coords.latitude;var lng = position.coords.longitude; $("#defavlt2").html("[" + lat + " ," + lng + "]"); }
+function geoError() { alert('No location'); }
+
+var nes; function pushStopButton() { nes.stop(); NESstopped(); }
+
+function gameStart() {
+    $.getScript("https://cdn.rawgit.com/takahirox/nes-js/v0.0.1/build/nes.min.js", function() {
+        var url = 'doc/domain/tactician.us/file/zelda.nes'; var request = new XMLHttpRequest();
+        request.responseType = 'arraybuffer'; request.onload = function() {
+            var buffer = request.response; nes = new NesJs.Nes();
+            nes.setRom(new NesJs.Rom(buffer)); nes.setDisplay(new NesJs.Display(document.getElementById('gameCanvas'))); nes.setAudio(new NesJs.Audio());
+            window.onkeydown = function(e) { nes.handleKeyDown(e); }; window.onkeyup = function(e) { nes.handleKeyUp(e); };
+            nes.bootup(); nes.run(); };
+        request.open('GET', url, true); request.send(null); }); }
+
+ // <input accept="image/*" type='file' id="imgInp" /> <img id="blah" src="#" alt="your image" />
+//imgInp.onchange = evt => { const [file] = imgInp.files; if (file) { blah.src = URL.createObjectURL(file)  }}
+//https://docs.mapbox.com/mapbox-gl-js/example/mapbox-gl-directions/
+//"//style: 'mapbox://styles/mapbox/dark-v10'"
+//https://imagecompressor.com/ //- Stryker font, dad's artitect... //- teleprompt with audio?
+
+var width = window.innerWidth; var height = window.innerHeight + 48;
+
+function showView(view) { $('.pane').hide(); window.scrollTo(0, 0); $('#'+view).show();
+    switch (view) {
+        case 'news': $("#stamper").show(); $("#world").show(); break;
+        case 'map': $("#actions").show(); break; } }
+function openInNewTab(url) { window.open(url, '_blank').focus(); } //window.location.href = url;
+
+function showFav(site) {
+    $('<link>').appendTo('head').attr({ class: 'ico', type: 'image/x-icon', rel: 'icon', href: "img/icon/" + site + "/favicon.ico" });
+    $('<link>').appendTo('head').attr({ class: 'ico', type: 'image/x-icon', rel: 'shortcut icon', href: "img/icon/" + site + "/favicon.ico" });
+    $('<link>').appendTo('head').attr({ class: 'ico', type: 'image/x-icon', rel: 'icon', sizes: "192x192", href: "img/icon/" + site + "/android-chrome-192x192.png" });
+    $('<link>').appendTo('head').attr({ class: 'ico', type: 'image/x-icon', rel: 'apple-touch-icon', sizes: "128x128", href: "img/icon/" + site + "/apple-touch-icon.png" }); }
+
+function adjustSize(img) {
+    if (img.height >= img.width) { adjustment = (img.height - img.width) / 48; shim = 'padding-right'; img.height = "48"; }
+    else {adjustment = (img.width - img.height) / 48; shim = 'padding-top'; img.width = "48";}
+    img.style.setProperty(shim,adjustment+'px'); img.style.setProperty('display','block');}
+
+function copyClip(text) { navigator.clipboard.writeText(text);M.toast({html: 'Address copied.'}); }
+
 async function initial() {
-  $('select').formSelect(); 
-  $('#domains').dropdown({ constrainWidth: false } ); $('#domains-hide').dropdown({ constrainWidth: false } ); 
-  $('.modal').modal(); $('#user-pane').sidenav();
-  var elems = document.querySelectorAll('.fixed-action-btn'); var instances = M.FloatingActionButton.init(elems, { hoverEnabled: false });
-  
-  var castle = Math.floor(Math.random() * (16 - 1 + 1)) + 1; 
-  document.getElementById('menu-logo').src = "https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/object/castle/castle" + castle.toString() + ".png";
-  var eagle = Math.floor(Math.random() * (4 - 1 + 1)) + 1; 
-  document.getElementById('eagle-eye').src = "https://cdn.jsdelivr.net/gh/nfnth/res@latest/site/object/eagle/eagle" + eagle.toString() + ".png";
-          
-  domain = window.location.host; document.title = "UR.Land · " + domain;
-  if (domain == "dralun.com") {  }
-  else if (domain == "ur.land") { setEditor('map'); }
-  else if (domain == "ustat.us") { alert(getParameter()); }
-  else if (domain == "nfnth.com") { setEditor('map'); }
-  else { setEditor('map'); } //pull and set domain...
-  
-  searchClear(); setTimeout(function() {  $(".loader").css("visibility", "visible"); }, 500); }
-              
-initial(); 
-document.addEventListener('DOMContentLoaded', function() { var elems = document.querySelectorAll('.modal'); var instances = M.Modal.init(elems); });
+    $('select').formSelect(); $('.modal').modal(); $('#dialog-inner2').css("height", window.innerHeight - 280);
 
-let str = "Visit W3Schools!"; str.search("W3Schools")  
-function searchClear() { $('#search').val(''); }
-function searchResults() { $.post("../search/word", $('#search').val(), function(data, status){ $('#results').html(data); }); }
+    var gear = Math.floor(Math.random() * (42 - 1 + 1)) + 1; document.getElementById('list-wait').src = "img/object/user/gear/gear" + gear.toString() + ".png";
+    var gear2 = Math.floor(Math.random() * (42 - 1 + 1)) + 1; document.getElementById('list-wait2').src = "img/object/user/gear/gear" + gear2.toString() + ".png";
 
-function hideAll() { $("#holder").hide(); $("#viewer").hide(); $("#code").hide(); $("#docs").hide(); $("#grid").hide(); $("#map").hide(); $("#stats").hide(); }
-function setDisplay(filter) { showAll(); }
-function setEditor(doc) {  hideAll(); $('#'+doc).show(); } // var width = window.innerWidth; var height = window.innerHeight - 44; //menu, footer
-</script>
+    $("#map").css("height",height + "px"); //set editor?
+
+     showFav('urland'); //showView('map'); $("#plane").show(); //$("#app").hide();
+    var castle = Math.floor(Math.random() * (16 - 1 + 1)) + 1;
+    document.getElementById('menu-logo').src = "img/object/castle/castle" + castle.toString() + ".png";
+
+    // materialize
+    $('#docs').dropdown({ constrainWidth: false } ); $('#docs-hide').dropdown({ constrainWidth: false } );
+    $('#domains').dropdown({ constrainWidth: false } ); $('#domains-hide').dropdown({ constrainWidth: false } );
+    $('.carousel.carousel-slider').carousel({ fullWidth: true, indicators: true });
+    $('#user-pane').sidenav({ edge: 'right' });
+    // ... map + editor
+    $('.fixed-action-btn').floatingActionButton({ hoverEnabled: false });
+    $('#pad').css("height", window.innerHeight - 360);
+        //showFav('dralun'); //  showFav('paper');
+    showView('news');
+    $("#panel-menu").addClass("blue-grey"); $("#panel-menu").addClass("lighten-2"); //$("#panel-menu").css("border-bottom", "solid cornflowerblue");
+    //searchClear();
+    setTimeout(function() {
+
+
+    $(".loader").css("visibility", "visible"); $('img').on('dragstart', function(evt) { return false; });}  , 500); }
+
+initial();
+//document.addEventListener('DOMContentLoaded', function() { if (window.location.host == "ur.land") { flyTo(center); } });
+//var elems = document.querySelectorAll('.modal'); var instances = M.Modal.init(elems); });
+
+// wallet (user)
+//const disconnectWallet = async (web3Modal: any) => { await web3Modal.clearCachedProvider(); }
+var web3; var wallet = ""; var eth = ""; var url = ""; var profile = "No user info found."; var setup, account, getURL, signer, artifact; var contract;
+var walletAddress = '';
+var disconnectButton = '<i class="material-icons left">logout</i>Disconnect Wallet';
+var connectButton = '<i class="material-icons left">account_balance_wallet</i>Connect Wallet'
+setup = async function () {
+    if (window.ethereum) { //web3 = new Web3(window.ethereum); //await account();
+        const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' }); walletAddress = accounts[0]; //console.log(account);
+        $("#myAdd").html(walletAddress.toLowerCase().substring(0,16) + "...");
+        $.get("api/"+walletAddress, async function(data) { //alert(data);
+
+            var fields = data.split('|'); //alert(fields[0]); //alert(fields[1]);
+            var ether = JSON.parse(fields[0]).result; var urler = fields[1];
+            $("#myETH").html(ether); $("#myURL").html(urler); //getExchange(); // round amounts...?
+            $("#wallet-setup").removeClass("light-blue");  $("#wallet-setup").removeClass("darken-3"); $("#wallet-setup").addClass("green");
+            $("#wallet-setup").html(disconnectButton); } );} else { M.toast({html: 'No wallet found.'}); }
+            $("#myMess").html('0&nbsp;<span class="badge blue">0</span>'); $("#myArt").html('0');
+            findDeeds();
+            }
+
+function findDeeds() {
+for (let i = 0; i < domains.length; i++) { //alert(domains[0][8]); alert(walletAddress);
+        if (domains[i][8] == walletAddress) { //alert(place);
+            alert('found');
+        }
+
+        }
+
+}
+var info;
+signer = async function (item, content) {
+    wallet = web3.utils.toChecksumAddress(addr[0]); console.log(wallet);
+    $.get("key", async function(data) { message = data; var hex = ''; for(var i=0;i<message.length;i++) { hex += ''+message.charCodeAt(i).toString(16); }
+    var hexMessage = "0x" + hex; hash = hexMessage;
+    await web3.eth.personal.sign(hexMessage, wallet).then(async(signature) => { await web3.eth.personal.ecRecover(hash, signature).then(stamp => {
+    // artifact(message, signature, hash, item, content);
+}); } ); });  }
+
+artifact = function (message, signature, hash, item, content) {
+    var formdata = new FormData(); var pic = $('input[name="pic"]').get(0).files[0]; formData.append('file', pic); console.log(message);
+    formdata.append('wallet', wallet);formdata.append('message', message);formdata.append('signature', signature);formdata.append('hash', hash);formdata.append('content', content);
+    for (var a=0;a<$("#default_file").prop('files').length;a++) { file = $("#default_file").prop('files')[0]; formdata.append("file1", file); }
+
+   // if //field.name == 'message':
+           // message = (await field.read()).decode()
+         //   pass
+       // i//f field.name == 'hash':
+          //  hasher = (await field.read()).decode()
+         ///   pass
+       // if field.name == 'signature':
+      //      signature = (await field.read()).decode()
+    //        pass
+     //   if field.name == 'ref':
+     //       ref = (await field.read()).decode()
+      //      pass
+      //  if field.name == 'content':
+     //       content = (await field.read()).decode()
+    //        pass
+    //    if field.name == 'file':
+
+
+    $.ajax({ url: "data/"+wallet+"/"+item+"/"+action, type: "POST", data: formdata, processData: false, contentType: false, success: function(data) { alert(data); } }); }
+
+// markdown render
+var setStatus;
+function setNotice(text) {
+    setTimeout( function() {
+        var notification = new NotificationFx({
+            message : text, //'<span class="icon icon-megaphone"></span><p>You have some interesting news in your inbox. Go <a href="#">check it out</a> now.</p>',
+            layout : 'bar', effect : 'slidetop', type : 'notice', // notice, warning or error
+            onClose : function() {   }}); notification.show();	}, 1200 ); }
+
+setStatus = function (text) { //- year.day of year-time (hover to show month/day of week)
+    setTimeout( function() {
+        var notification = new NotificationFx({
+            message : '<br/><i class="material-icons">dns</i>&nbsp;&nbsp;Console<br/><br/>' + datestamp + '@' + timestamp + '<br/>' + info, //'<span class="icon icon-calendar"></span><p>The event was added to your calendar. Check out all your events in your <a href="#">event overview</a>.</p>',
+            layout : 'attached', effect : 'bouncyflip', type : 'notice', // notice, warning or error
+            onClose : function() { }	}); notification.show(); }, 1200 ); }
+
+function setDialog(text) {  $("#dialog-inner2").html(text);
+    var myDiv = document.getElementById('dialog-inner2'); myDiv.scrollTop = 0;
+    somedialog = document.getElementById( 'somedialog2' ); morphEl = somedialog.querySelector( '.morph-shape' );
+    s = Snap( morphEl.querySelector( 'svg' ) ); path = s.select( 'path' );
+    steps = { open : morphEl.getAttribute( 'data-morph-open' ), close : morphEl.getAttribute( 'data-morph-close' )};
+    dlg2 = new DialogFx( somedialog, {
+        onOpenDialog : function( instance ) { path.stop().animate( { 'path' : steps.open }, 400, mina.easeinout );},
+        onCloseDialog : function( instance ) { path.stop().animate( { 'path' : steps.close }, 400, mina.easeinout );	}	} ); dlg2.toggle(dlg2); }
+$('#somedialog2').attr('style','z-index:99;');
+
+var renderMd, renderMr, renderMt; // https://regexr.com
+renderMd = function (text) {
+    var mermaidEx = /\[!MERMAID\]\|([^|]*)/gi; matches = mermaidEx.exec(text); // text.match(mermaidEx);
+    //var match = myRegexp.exec(myString); //console.log(match[1]); // abc
+    if (matches != null) { temp_match = renderMr(matches[1]); text = text.replace(mermaidEx, temp_match); }
+    //var mathEx = /\[!MATH\]\|(.*)\|/gi; text = text.replace(mathEx, renderMt('$1'));
+    var imageEx = /\[!IMAGE\]\((.*),(.*),(.*)\)/gi; text = text.replace(imageEx, "<div style='text-align:center;'><img src='$1' height='$2' width='$3' /></div>");
+    var headEx4 = /#### (.*)/gi; var headEx3 = /### (.*)/gi; var headEx2 = /## (.*)/gi; text = text.replace(headEx4, '<div><h6>$1</h6></div>'); text = text.replace(headEx3, '<div style="text-align:center;"><h5>$1</h5></div>'); text = text.replace(headEx2, '<div><h4>$1</h4></div>');
+    var linkEx = /\[([^\]]+)\]\(([^\)]+)\)/gi; text = text.replace(linkEx, "<span style='cursor:pointer;color:blue;' onclick='openInNewTab(\"$2\");'>$1</span>");
+    var boldEx = /\*\*([^\*]+)\*\*/gi; text = text.replace(boldEx, "<span style='font-weight:bold;'>$1</span>");
+    var italicEx = /\*([^\*]+)\*/gi; text = text.replace(italicEx, "<span style='font-style:italic;'>$1</span>");
+    var bulletStart = /\n\n(- .*)/gi; var bulletEx = /- (.*)/gi; var bulletEnd = /(- .*)\n\n/gi; text = text.replace(bulletStart, '<div><ul class="browser-default">$1'); text = text.replace(bulletEnd, '$1</ul></div>\n\n'); text = text.replace(bulletEx, '<li class="browser-default">$1</li>');
+    var listStartEnd = /(1\. ((?!\n\n\n).)*)/gis; var listEx = /1\. (((?!\n\n).)*)/gis; text = text.replace(listStartEnd, '<div><ol>$1</ol></div>'); text = text.replace(listEx, '<li>$1</li>');
+    var codeEx = /```\n([^`]+)```/gi; text = text.replace(codeEx, "<div class='coder'><code>$1</code></div>");
+    var tableStart = /(\|(?:(?!\n\n)[\s\S])*)/;
+    var tableRow = /\|(((?!\|\n)[\s\S])*)\|/gi;
+    var tableCell = /\|([^\|\n]+)/gi; text = text.replace(tableStart, '<div><table><tr><td>$1</td></tr></table></div>').replaceAll("|", "</td><td>").replaceAll("<td>\n</td>","</tr><tr>").replaceAll("<td>-</td>","").replaceAll("<td></td>",""); text = text.replace(tableRow, '<tr>$1</tr>'); text = text.replace(tableCell, '<td>$1</td><td>$2</td>');
+    var lineEx = /\n\n/gi; text = text.replace(lineEx, '<br/><br/>');
+    var paragraphEx;
+    //const string = "something format_abc"; //const regexp = /(?:^|\s)format_(.*?)(?:\s|$)/g; //const matches = string.matchAll(regexp); //for (const match of matches) { console.log(match); console.log(match.index) }
+    $('#dialog-inner2').find('li').addClass('browser-default'); $('#start').find('*').addClass('browser-default');
+
+    return text;}
+
+renderMr = function (text) { const code = text.trim().replace('|',''); // alert(code);
+    let insert = function (code) { return code; }; return mermaid.render("preparedScheme", code, insert); }
+
+renderMt = function (text) { MathJax.texReset();
+    var output = document.getElementById('mather'); var options = MathJax.getMetricsFor(output); //options.display = display.checked;
+    MathJax.tex2svgPromise(text.trim(), options).then(function (node) {
+    $("#mather").html(node);
+    MathJax.startup.document.clear(); MathJax.startup.document.updateDocument(); return $("#mather").html(); }); }
+
+if (window.location.href == "https://ur.land/?action=about") { showDoc('land'); }
+
+// markdown generator...
+function getCollect(value) {
+    switch(value) {
+        case 'librar': return 'tan.png';
+        case 'patric': return 'orange.png';
+        case 'clini': return 'pink.png';
+        case 'sect': return 'green.png';
+        case 'technic': return 'white.png';
+        case 'utili': return 'gray.png';
+        case 'civilia': return 'blue.png';
+        case 'tact': return 'red.png';
+        case 'elect': return 'yellow.png';
+        case 'agrar': return 'brown.png';
+        case 'logicia': return 'purple.png';
+        case 'custo': return 'black.png';
+        default: return 'blue_swords.png'; }}
+
+function getColor(value) {
+    switch(value) {
+        case 'librar': return 'brown lighten-4';
+        case 'patric': return 'orange';
+        case 'clini': return 'pink';
+        case 'sect': return 'green';
+        case 'technic': return 'white';
+        case 'utili': return 'gray';
+        case 'civilia': return 'blue';
+        case 'tact': return 'red';
+        case 'elect': return 'yellow';
+        case 'agrar': return 'brown';
+        case 'logicia': return 'purple';
+        case 'custo': return 'black';
+        default: return 'blue_swords.png'; }}
+
+function getClass (value) {
+    switch(value) {
+        case 'site': return 'green';
+        case 'art': return 'blue';
+        case 'machine': return 'gray';
+        case 'stock': return 'green';
+        case 'river': return getColor('water') + ' lighten-2';
+        case 'island': return getColor('water') + ' darken-1';
+        case 'monument': return getColor('town') + ' darken-3';
+        case 'mountain': return getColor('air');
+        default: return 'blue_swords.png';}}
+
+function addOpen(i){
+    $("#registry").append("<a class='collection-item modal-trigger' href='#modal1' onclick='addOpenDetail(" + i + ");'><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;'>" + opens[i][0] + "</div><div style='display:flex; justify-content:space-between;align-items:center;'><div style='display:flex; flex-direction:column;'><div style='width:160px; ' class='z-depth-1 chip " + getColor(opens[i][4])  + "'><img src='img/icon/key/" + getCollect(opens[i][4]) + "'><div style='border-radius:12px; width:100px;color:black;background-color:rgb(245, 246, 247,0.75); font-size:16px;' class='z-depth-1'><span style='font-weight:bold;' id='" + opens[i][4] + "-count'>" + opens[i][5] + "</span></div></div></div></div></div></a>");
+
+
+    }
+
+function addOpenDetail(index) {
+     $("#domain-info").html('<div style="display:flex;justify-content:space-evenly;align-items:center;"><div style="display: flex;flex-direction: column;text-align: left;align-items:center;"><div style="display:flex; justify-content:center;"><img style="margin-bottom:24px;" class="materialboxed z-depth-2" width="180" height="120" src="' + opens[index][2] + '"/></div><div>' + opens[index][0] + '&nbsp;&nbsp · &nbsp;&nbsp<a style="cursor:pointer;" onclick="openInNewTab(\'https://opensea.io/collection/' + opens[index][4] + '\');">' + opens[index][4] + '</a></div><br/><div style="display:flex;"><a onclick="addOpenDeed(' + index +');" class="modal-close waves-effect waves-light waves-blue btn blue" ><i class="material-icons">sticky_note_2</i></a>&nbsp;&nbsp;<a onclick="showMark(\'' + domains[index][4] + '\'); showView(\'map\'); map.resize();" class="modal-close waves-effect waves-blue btn blue lighten-2" ><i class="material-icons">map</i></a>&nbsp;&nbsp;<a onclick="showDomain('+index+');" class="modal-close waves-effect waves-light waves-blue btn blue lighten-2" ><i class="material-icons">list</i></a></div><br/></div></div><div class="modal-footer"><div style="    display: flex; justify-content: right;    margin-top: 12px;"><a onclick="openInNewTab(\'https://opensea.io/collection/' + opens[index][4] + '\');" class="waves-effect waves-green green btn deed-btn">View Collection...</a></div></div>'); $('.materialboxed').materialbox(); }
+
+function addOpenDeed(index) {
+    setDialog("<div style='text-align:center;'><p><span style='font-weight:16px'>" + opens[index][0] + "</span>&nbsp;&nbsp; · &nbsp;&nbsp;<a href='https://opensea.io/collection/" + opens[index][4] + "'>" + opens[index][4] + "</a><span class='" + getColor(opens[index][4]) + " badge'>" + opens[index][5] + "</span></p></div><br/><div style='text-align:center;'><img style='max-width:80%;' src='" + opens[index][2] + "' /></div><br/><br/><div style='display: flex;align-items: center;justify-content: center;'><img onclick='openInNewTab(\"https://opensea.io/collection/" + opens[index][4] + "\");' style='cursor:pointer; margin-right:12px;display:none;' onload='adjustSize(this);' src='img/icon/key/" + getCollect(opens[index][4]) + "' />&nbsp;&nbsp;" + renderMd(opens[index][3]) + "</div><br/><br/>");}
+
+function addList(i){
+    $("#registry").append("<a class='collection-item modal-trigger' href='#modal1' onclick='addListDetail(" + i + ");'><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;'>" + domains[i][4] + "</div><div style='display:flex; justify-content:space-between;align-items:center;'><div style='display:flex; flex-direction:column;'><div style='width:160px; ' class='z-depth-1 chip " +  getClass(domains[i][9])  + "'><img src='img/icon/key/" + getCollect(domains[i][15]) + "'><div style='border-radius:12px; width:100px;background-color:" + getColor(domains[i][15]) + ";color:black;font-size:16px;' class='z-depth-1'>" + domains[i][16] + "</div></div></div></div></div></a>"); }
+
+function addListDetail(index) {
+     $("#domain-info").html('<div style="display:flex;justify-content:space-evenly;align-items:center;"><div style="display: flex;flex-direction: column;text-align: left;align-items:center;"><div style="display:flex; justify-content:center;"><img style="margin-bottom:24px;" class="materialboxed z-depth-2" width="120" height="120" src="' + domains[index][3] + '"/></div><div>' + domains[index][14] + '&nbsp;&nbsp · &nbsp;&nbsp<a href="https://' + domains[index][4] + '">' + domains[index][4] + '</a></div><br/><div style="display:flex;"><a onclick="addListDeed(' + index +');" class="modal-close waves-effect waves-light waves-blue btn blue" ><i class="material-icons">sticky_note_2</i></a>&nbsp;&nbsp;<a onclick="showMark(\'' + domains[index][4] + '\'); showView(\'map\'); map.resize();" class="modal-close waves-effect waves-blue btn blue lighten-2" ><i class="material-icons">map</i></a>&nbsp;&nbsp;<a onclick="showDomain('+index+');" class="modal-close waves-effect waves-light waves-blue btn blue lighten-2" ><i class="material-icons">inventory_2</i></a>&nbsp;&nbsp;<a class="modal-close waves-effect waves-light waves-blue btn green lighten-2" onclick="openInNewTab(\'https://' + domains[index][9] + '\');"><i class="material-icons">chat_bubble</i></a></div><br/></div></div><div class="modal-footer"><div style="    display: flex; justify-content: space-between;    margin-top: 12px;"><a class="waves-effect waves-blue btn-flat modal-close" onclick="showOwner('+tempWallet +');">Owner Info</a><a onclick="openInNewTab(\'' + domains[index][10] + '\');" class="waves-effect waves-green green btn deed-btn">View Deed Info...</a></div></div>'); $('.materialboxed').materialbox(); }
+
+function addListDeed(index) {
+    setDialog("<div style='text-align:center;'><p><span style='font-weight:16px'>" + domains[index][14] + "</span>&nbsp;&nbsp; · &nbsp;&nbsp;<a href='https://" + domains[index][4] + "'>" + domains[index][4] + "</a></p></div><br/>" + "<div style='text-align:center;'><img src='" + domains[index][3] + "' /></div><br/><br/><a href='https://" + domains[index][9] + "'>Wikipedia...</a><br/><br/>" + "<div style='display:flex; justify-content:space-evenly;align-items:center;'><div><img style='margin-right:12px;display:none;' onload='adjustSize(this);' src='img/icon/key/" + getCollect(domains[index][15]) + "' /></div><div style='display:flex; align-items: center;margin-top: 12px;margin-top: 12px;margin-right: 12px;'><br/><div onclick='showDoc(\"key/collection\");' style='text-align:center; width:160px; ' class='z-depth-1 chip " + getClass(domains[index][9]) + "'><img src='img/icon/key/" + getCollect(domains[index][15]) + "'><div class='" + getColor(domains[index][15]) + "' style='border-radius:12px; width:100px;color:black;font-size:16px;'>" + domains[index][2] + "</div></div><div><img class='modal-close' onclick='showDoc(\"key/state\");' style='cursor:pointer; width:48px; height:48px;' src='img/icon/state/" + domains[index][11] + ".png' /></div></div></div></div>" + "<br/><br/>" + "UR Value = " + domains[index][11] + "<br/>UR Rate = " + domains[index][12] + "<br/><br/>" + addWallet(domains[index][8]));}
+
+function addWallet(id) {stamp = '<div onclick="copyClip(\'' + id + '\');"><img src="https://chart.googleapis.com/chart?chs=120x120&cht=qr&chl=' + id + '&choe=UTF-8" /></div>';
+    return "<div>Owner Info</div><br/>" + stamp; }
+
+
+function addBadge(i) { //with export...
+    return ; }
+
+var listCount = 0;
+
+function addContent(content) {
+    $("#registry").append("<a class='collection-item modal-trigger' href='#modal1'><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;'>" + content + "</div></div></a>"); }
+
+
+var tempWallet = "0x88294023402578275257298";
+
+
+var popups = [];
+function addMark(id, loc, folder, icon, color, html, index) {
+    var ela = document.createElement('div'); ela.id = 'marker' + id; var marker = new mapboxgl.Marker(ela).setLngLat(loc).addTo(map);
+
+    $('#marker'+id).addClass('markre'); var style =$('#marker'+id).attr('style');
+    if (folder == "color") { style += ";background-color:"+ icon + ";"; }
+    else {style += ";background-image:url('img/icon/domain/"+folder + "/" +icon+".png'); background-color:" + color + ";";}
+    $('#marker'+id).attr('style',style); currentMarkers.push(marker);
+
+    currentMarkers[index].setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(html)); }
+
+function showOwner(address) {
+    var snippet = '<div><img src="https://chart.googleapis.com/chart?chs=120x120&cht=qr&chl=' + address + '&choe=UTF-8" /><br/><span class="badge green">' + address + '...</span></div><a class="modal-close waves-effect waves-green btn green" onclick="openEditor();"><i class="material-icons">mail</i></a>';
+    setDialog(snippet); }
+function showDoc(doc) {$.get('res/doc/'+doc, function(data) { setDialog(renderMd(data)); }); }
+
+
+
+function showDomain(domain) { $.get("doc/domain/"+domain, function(data) {setDialog(renderMd(data));}).fail(function(){setDialog('No domain info found.');});}
+
+function showPreview(){
+    setDialog('<div id="viewer" style="text-align:left;padding:24; overflow-y:auto; width: 85%;float: right;padding-right: 64;"></div>');
+    var text = document.getElementById('pad').textContent; $("#viewer").html(renderMd(text));}
+
+function showList(area) { $("#registry").html(''); $("#registry").hide();
+    switch (area) {
+        case "manifest": sortSet = [area,domains,0,18,16]; for (let i=0;i<domains.length;i++) { addList(i); } break;
+        case "registry": sortSet = [area,artifacts,0,18,16]; for (let i=0;i<artifacts.length;i++) { addContent(artifacts[i][0]); } break;
+        case "archive": sortSet = [area,builds,0,18,16]; for (let i=0;i<builds.length;i++) { addContent(builds[i][0]); } break;
+        case "open": sortSet = [area,opens,0,18,16]; for (let i=0;i<opens.length;i++) {
+
+        //pullCollection(opens[i][4]);
+        addOpen(i); } break; }
+
+    //$("#registry").css("height",height + "px");
+    $("#registry").show(); $('img').on('dragstart', function(evt) { return false; }); }
+
+function showMark(place) {   if (place == "") place = window.location.host;
+    clearMap(); for (let a=0;a<currentMarkers.length;a++){currentMarkers[a].remove(); } currentMarkers = [];
+    for (let i = 0; i < domains.length; i++) {
+        if (domains[i][4] == place) { //alert(place);
+            var place2 = [domains[i][12].substring(domains[i][12].indexOf(', ')+1,domains[i][12].indexOf(']')-1), domains[i][12].substring(domains[i][12].indexOf('[')+1,domains[i][12].indexOf(',')-1)];//[domains[i][7], domains[i][6]]; //showDomain();
+            //alert(place2);
+            var html = '<div><div style="display:flex; justify-content:center;"><img style="margin-bottom:24px;" class="materialboxed" width="60" height="60" src="'+domains[i][1]+'"/></div><div><h6>' + domains[i][4] + '</h6><a class="waves-effect waves-blue btn blue" onclick="pullRecord(\''+ domains[i][4] + '\');"><i class="material-icons">inventory_2</i></a>&nbsp;&nbsp;<a class="waves-effect waves-green btn green" onclick="showProfile('+i +');"><i class="material-icons">description</i></a></div></div>';
+
+            addMark(i+99,place2,domains[i][9],domains[i][10],getClass(domains[i][9]), html, 0); $('.materialboxed').materialbox();
+            startUp = function() {currentMarkers[0].togglePopup(); };  fly(place2);} } }
+
+function removeMarkers() { if (currentMarkers!==null) { for (var i = currentMarkers.length - 1; i >= 0; i--) { currentMarkers[i].remove(); } currentMarkers = []; } }
+
+// ui
+function setMenu(index) {
+    $("#other-info").addClass(getColor(domains[index][15]));
+    $("#other-info").html("<img style='margin:16px;height:48px;' src='img/icon/" + domains[index][15] + "/" + domains[index][16] + ".png' />");
+    $("#panel-menu").css("border-bottom", "solid " + getClass(domains[index][9]));
+    $("#other-title").html("· " + domains[index][14]);
+    $("#other-pic").attr("src","img/icon/" + domains[index][15] + "/" + domains[index][16] + ".png");
+    $("#other-address").html(domains[index][8].substring(0,16) + "..."); }
+
+function setDomains(direction) {
+    if (!(direction)) { $('#editor-domain').prop("disabled", false); } else { $('#editor-domain').prop('disabled', 'disabled'); }
+    collections = [];
+    var selection = $('#select-collection').val().toString(); var collect = selection.split(',');
+    for (let i = 0; i < collect.length; i++){collections.push(collect[i]);} pullCollections();
+
+    var elems = document.querySelectorAll('#editor-domain'); var instances = M.FormSelect.init(elems); }
+
+function setTemplate() { //alert($('#editor-template').find(":selected").text());
+    switch($('#editor-template').find(":selected").text()) {
+        case "Basic":$("#pad").html(profileBasic); break;
+        case "Advanced":$("#pad").html(profileAdvanced); break;
+        case "Sequence":$("#pad").html(artifactSequence); break;
+        case "Graph":$("#pad").html(artifactGraph); break;}}
+
+function setDeeds(disable) {
+    for (let i = 0; i < domains.length; i++) {
+        if (domains[i][8] == wallet.toLowerCase()) { $('#editor-domain').append($('<option>', { value: 1, text: domains[i][4] })); } }
+    if (disable) { $('#editor-domain').prop('disabled', 'disabled'); } $('select').formSelect(); }
+
+function setArtifact() { var contenteditable = document.getElementById('pad'); text = contenteditable.textContent; signer('wallet', text); M.toast({html: 'Artifact created.'}); }
+
+var searchMatch = []; function setClear() { $('#search').val(''); }
+function setResults() { searchMatch = []; searchResult = "";
+    for(var i = 0;i < domains.length;i++) { if (domains[i][4].search($('#search').val()) != -1) { searchMatch.push(domains[i][4]);
+        searchResult += "<div><a href='https://'" + domains[i][4] + "'>" + domains[i][4] + "</a></div><br/>"; } }
+    $('#results').html(searchResult); showView('results'); }
+
+var holder; var sortItem; var sortSet = ['manifest',domains,0,18,16];
+function setFilter(collect) { collections = []; collections.push(collect); pullCollections(); }
+function sorter() { var sort = $('#select-sort').val().toString(); //holder = domains;
+    switch(sort) {
+        case 'az': sortItem = sortSet[2]; sortSet[1].sort(sortAZ); break;
+        case 'za': sortItem = sortSet[2]; sortSet[1].sort(sortZA); break;
+        case '09': sortItem = sortSet[3]; sortSet[1].sort(sortAZ); break;
+        case '90': sortItem = sortSet[3]; sortSet[1].sort(sortZA); break;
+        case '!)': sortItem = sortSet[4]; sortSet[1].sort(sortAZ); break;
+        case ')!': sortItem = sortSet[4]; sortSet[1].sort(sortZA); break; } showList(sortSet[0]); }
+function sortAZ(a, b) { if (a[sortItem] === b[sortItem]) {  return 0; } else { return (a[sortItem] < b[sortItem]) ? -1 : 1; } }
+function sortZA(a, b) { if (a[sortItem] === b[sortItem]) {  return 0; } else { return (a[sortItem] > b[sortItem]) ? -1 : 1; } }
+
+// data
+//300zx.us|0
+//Nissan 300ZX|1
+//1|2
+//util|3
+//machine|4
+//auto|5
+//35.4572644873|6
+//139.61815323147|7
+//JP|8
+//wikipedia.org/wiki/Nissan_300ZX|9
+//https://opensea.io/assets/matic/0x2953399124f0cbb46d2cbacd8a89cf0599974963/2901177343021120686293362760887210656350873910927328021299573288954843103233|10
+//30000|11
+//2|12
+//0token_id,1image_url,2image_thumbnail_url,3image_preview_url,4name,5description,6external_link,7permalink,8owner/creator.address,9class,10icon,11state,12/17location,14title,16(serial),15collection,13price, 18sub, 19reference
+
+//4/domain
+
+var collections = [];
+var opens = [];
+var manifest = []; var docs; var status; var domainJSON; var deeds = [], domains = [], artifacts = [], archives = [], seas = [], builds = [];
+function pullInfo() {
+    $.get('doc/me', function(data) {
+        var lines = data.split(/\r?\n/); $("#artifact-count").html(lines.length - 1);
+        for (let i = 0; i < lines.length - 1; i++) {
+            var fields = lines[i].split('|');
+            artifacts.push([fields[0],fields[1]]); } } );
+    $.get('doc/mo', function(data) {
+        var lines = data.split(/\r?\n/); $("#build-count").html(lines.length - 1);
+        for (let i = 0; i < lines.length - 1; i++) {
+            var fields = lines[i].split('|');
+            builds.push([fields[0],fields[1]]); } } ); }
+
+function pullOpen() { $("#waiter").show();
+    const options = {method: 'GET'};
+    fetch('https://api.opensea.io/api/v1/collections?asset_owner=0x8a83fbbacb82030ea17179c0403b04e7bce7ba10&offset=0&limit=300', options)
+      .then(response => response.json()).then(response => {  $("#open-count").html(response.length);
+        for (let i = 0; i < response.length; i++) { var asset = response[i];
+            if (asset.name == "NfNth Collection" || asset.name == "Rarible" || asset.name == "Uniswap V3 Positions") { continue; }
+            collections.push(asset.slug); var tmp = new Array(6);
+            tmp[0] = asset.name; tmp[1] = asset.image_url; tmp[2] = asset.banner_image_url; tmp[3] = asset.description; tmp[4] = asset.slug;
+            opens.push(tmp); } } ).then(response => {  $("#waiter").hide(); pullCollections();
+
+
+            }).catch(err => console.error(err)); }
+
+
+function pullCollections() { domains = []; for (let i=0;i<collections.length;i++) { pullCollection(collections[i]); } }
+function pullCollection(name) { $("#waiter").show();
+    const options = {method: 'GET'};
+    fetch('https://api.opensea.io/api/v1/assets?limit=50&collection='+name, options)
+      .then(response => response.json()) //.then(response => assets = response)
+      .then(response => { for (let a = 0; a < opens.length; a++) { if (opens[a][4] == name) { opens[a][5] = response.assets.length; a = opens.length; } }
+        for (let i = 0; i < response.assets.length; i++) {
+          var tmp = new Array(20); var asset = response.assets[i]; var traits = asset.traits;
+          for (let a = 0; a < traits.length; a++) {
+            switch(traits[a].trait_type.toLowerCase()) {
+              case 'name': tmp[14] = traits[a].value.toString(); break;
+              case 'coord': tmp[12] = traits[a].value.toString(); break;
+              //case 'long': tmp[17] = traits[a].value.toString(); break;
+              case 'class': tmp[9] = traits[a].value.toString(); break;
+              case 'ur': tmp[10] = traits[a].value.toString(); break;
+              case 'state': tmp[11] = traits[a].value.toString(); break;
+              case 'serial': tmp[16] = traits[a].value.toString(); break;
+              //case 'ur': tmp[18] = traits[a].value.toString(); break;
+              case 'ref': tmp[19] = traits[a].value.toString(); break;
+              default: break; } }
+
+          tmp[0] = asset.token_id; tmp[1] = asset.image_url; tmp[2] = asset.image_thumbnail_url; tmp[3] = asset.image_preview_url; tmp[4] = asset.name; tmp[5] = asset.description; tmp[6] = asset.external_link; tmp[7] = asset.permalink; tmp[8] = asset.creator.address; tmp[15] = name;
+          //tmp[13] = parseFloat(asset.sell_orders[0].base_price)/1000000000000000000;
+          domains.push(tmp);
+          pullAsset(asset.token_id);
+          } } )
+      .then(response => { holder = domains.slice(); $("#waiter").hide(); $("#domain-count").html(domains.length);
+      var domainName = window.location.host; if (domainName != "ur.land") { showFav('dralun'); showView('map'); map.resize(); showMark(''); }
+    }).catch(err => console.error(err)); }
+
+function pullAsset(asset) {
+    //https://api.opensea.io/api/v1/asset/0x495f947276749ce646f68ac8c248420045cb7b5e/62652367444291733483705976494538757758952482544655308357132039895328162316289
+    "top_ownerships": [
+        {
+            "owner": {
+                "user": null,
+                "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/24.png",
+                "address": "0xb0d39cd2a5acc510529444b45a3aca189d971c49",
+}
+
+function pullWallet(address) { $.get('path/wallet/' + address, function(data) { }); }
+function pullDomain(domain) { $.get('path/domain/' + domain, function(data) { }); }
+
+pullInfo(); pullOpen();
+
+
+function showHome() {
+    pullWallet('8803');
+}
+// map
+var map; var map_token = "pk.eyJ1IjoibmZudGgiLCJhIjoiY2tweW1rNXlsMGFpYzJwcGt1cHh6dmxzcyJ9.ZJaFrGpPDv5froWZMLXXYQ";
+var base = [-98.59236473214004, 39.82998211920899, ]; var landlord = [-101.59236473214004, 42.82998211920899, ]; var art = [-96.59236473214004, 37.82998211920899, ]; var center = [-0.4510253658899336, 43.91338997020656];
+var fr = [-0.6187045799411647, 45.13824627199055]; var fr2 = [-3.7643573392266596, 48.02359499120687]; var fr3 = [1.5266131055501075, 43.706742350484916];
+
+var baseContent = '<div><div><img width="48" height="48" src="img/deed-min.png"/></div><div><h6>About Deeds</h6><a class="waves-effect waves-light btn" onclick="showDoc(\'learn/deed\');">Learn...</a>&nbsp;&nbsp;<a class="waves-effect waves-light btn blue lighten-3" onclick="clearMap(); showLandlord();"><i class="material-icons">navigate_next</i></a></div></div>';
+var landContent = '<div><div><img width="48" height="48" src="img/castle-min.png"/></div><div><h6>About Domains</h6><a class="waves-effect waves-light btn" onclick="showDoc(\'learn/domain\');">Learn...</a>&nbsp;&nbsp;<a class="waves-effect waves-light btn blue lighten-3" onclick="clearMap(); showArt();"><i class="material-icons">navigate_next</i></a></div></div>';
+var artContent = '<div><div><img width="48" height="48" src="img/artifact-min.png"/></div><div><h6>About Artifacts</h6><a class="waves-effect waves-light btn" onclick="showDoc(\'learn/artifact\');">Learn...</a>&nbsp;&nbsp;<a class="waves-effect waves-light btn blue lighten-3" onclick="clearMap(); showBase();"><i class="material-icons">restart_alt</i></a</div></div>';
+
+var editContent = '<div id="header-logo" style="display: flex;justify-content: center;align-items: center; display: flex;"><div class="z-depth-1" onclick="datetimeStart();" style="cursor:pointer; margin-bottom:8px; display: flex;width: 100%;justify-content: space-between;    background-color: aliceblue;padding-right: 12px;padding-left: 12px;border-radius: 8px;"><div id="defavlt"></div><div style="cursor:pointer;display:flex;align-items:center;" ><i class="material-icons">schedule</i></div></div><div class="z-depth-1" onclick="map();" style="cursor:pointer; margin-bottom:8px; display: flex;width: 100%;justify-content: space-between;    background-color: aliceblue;padding-right: 12px;padding-left: 12px;border-radius: 8px;"><div id="defavlt2"></div><span><i class="material-icons">place</i></span><span style="cursor:pointer;" onclick="locationStart();"><i class="material-icons">gps_fixed</i></span></div><div class="z-depth-1" onclick="ipStart();" style="cursor:pointer; margin-bottom:8px; display: flex;width: 100%;justify-content: space-between;    background-color: aliceblue;padding-right: 12px;padding-left: 12px;border-radius: 8px;"><div id="defavlt3"></div><div><i class="material-icons">dns</i></div></div><div class="z-depth-1" onclick="colorStart();" style="cursor:pointer; margin-bottom:8px; display: flex;width: 100%;justify-content: space-between;    background-color: aliceblue;padding-right: 12px;padding-left: 12px;border-radius: 8px;"><input type="color" id="favcolor" name="favcolor" value="#ff0000" style="width:1px; height:1px;" /><div id="defavlt4"></div><div><i class="material-icons">palette</i></div></div><div style="display: flex;width: 100%;justify-content: space-between;"><video id="video" width="120" height="120" autoplay></video><span style="cursor:pointer;" onclick="cameraStart();"><i class="material-icons">attach_file</i></span><span style="cursor:pointer;" onclick="cameraStart();"><i class="material-icons">photo_camera</i></span><span style="cursor:pointer;" onclick="videoStart();"><i class="material-icons">videocam</i></span><div style="visibility:hidden;width:0;"><input id="mp3" name="mp3" type="file" value="" accept="image/*;capture=camera" /></div></div><div style="display:flex;align-items: baseline;justify-content: space-between;width: 100%;"><span style="cursor:pointer;" onclick="refreshStart();"><i class="material-icons">refresh</i></span></div><button id="snap">Snap Photo</button><canvas id="canvas" width="240" height="240"></canvas><div id="startButton" class="button">Start</div><video id="preview" width="160" height="120" autoplay muted></video><div id="stopButton" class="button">Stop</div><video id="recording" width="160" height="120" controls></video><a id="downloadButton" class="button">Download</a></div>';
+
+var currentMarkers=[]; //var introMark;//43.706742350484916, 1.5266131055501075
+var showIntro; var addMark; var coordinates; var artFlag = false;
+//$('<link>').appendTo('head').attr({ type: 'text/css', rel: 'stylesheet', href: "https://api.mapbox.com/mapbox-gl-js/v2.3.0/mapbox-gl.css" });
+mapboxgl.accessToken = map_token; zoom = 5;
+map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/mapbox/light-v10', center: center, zoom: zoom, buffer_size: 0.2});
+map.on('load', function (event) { $("head").append('<style type="text/css">.markre{visibility:visible!important;}</style>');
+    map.on('click', function(e) { coordinates = e.lngLat; if(artFlag) { addArt(); artFlag = false; } }); });
+
+function addArtifact() { M.toast({html: 'Select location...'}); artFlag = true; }
+
+function addArt() { clearMap(); for (let a=0;a<currentMarkers.length;a++){currentMarkers[a].remove(); } currentMarkers = []; addMark('a',coordinates,'fire','1','indianred', editContent, 0); currentMarkers[0].togglePopup(); }
+
+// template
+var meta = `
+//name=Max Hamish|image=default.png|icon=river1.png|location=56,-32|link=https://nfnth.com|description=
+`
+var profileBasic = `
+## Welcome to my profile
+
+- Start coding...
+`
+var profileAdvanced = `
+
+`
+var sample = `
+[!MATH]|
+\begin{align}
+\dot{x} & = \sigma(y-x) \\
+\dot{y} & = \rho x - y - xz \\
+\dot{z} & = -\beta z + xy
+\end{align}
+|
+`
+var artifactSequence = `
+[!MERMAID]|
+sequenceDiagram
+    participant Alice
+    participant Bob
+    Alice->>John: Hello John, how are you?
+    loop Healthcheck
+        John->>John: Fight against hypochondria
+    end
+    Note right of John: Rational thoughts <br/>prevail!
+    John-->>Alice: Great!
+    John->>Bob: How about you?
+    Bob-->>John: Jolly good!
+|`
+var artifactGraph = `
+[!MERMAID]|
+graph TB
+    sq[Square shape] --> ci((Circle shape))
+
+    subgraph A
+        od>Odd shape]-- Two line<br/>edge comment --> ro
+        di{Diamond with <br/> line break} -.-> ro(Rounded<br>square<br>shape)
+        di==>ro2(Rounded square shape)
+    end
+
+    %% Notice that no text in shape are added here instead that is appended further down
+    e --> od3>Really long text with linebreak<br>in an Odd shape]
+
+    %% Comments after double percent signs
+    e((Inner / circle<br>and some odd <br>special characters)) --> f(,.?!+-*ز)
+
+    cyr[Cyrillic]-->cyr2((Circle shape Начало));
+
+     classDef green fill:#9f6,stroke:#333,stroke-width:2px;
+     classDef orange fill:#f96,stroke:#333,stroke-width:4px;
+     class sq,e green
+     class di orange
+|`;
+
+// intro
+var beacon = false; var pather = false; var introMark; var nomadPath; var artifactPath; var setDomain;
+showIntro = function () { //http://www.kansastravel.org/geographicalcenter.htm
+        clearMap(); for (let a=0;a<currentMarkers.length;a++){currentMarkers[a].remove(); } currentMarkers = [];
+        addMark('a',fr,'fire','1','indianred', baseContent, 0);
+        addMark('b',fr2,'island','1','green', landContent, 1);
+        addMark('c',fr3,'monument','1','skyblue', artContent, 2); //map.flyTo({center: base});
+        //addPop(0,baseContent);
+        currentMarkers[0].togglePopup(); //startUp = function() { currentMarkers[0].togglePopup(); }; fly(center);
+    }
+
+function showPath(color) { addLine(color); nomadPath = requestAnimationFrame(drawLine); }
+function showLandlord() { startPoint = fr; endPoint = fr2; showPath('green'); currentMarkers[0].togglePopup(); currentMarkers[1].togglePopup(); pather = true; }
+function showArt() { addBeacon(fr3); currentMarkers[1].togglePopup(); currentMarkers[2].togglePopup(); beacon = true; }
+function showBase() { currentMarkers[2].togglePopup(); currentMarkers[0].togglePopup(); }
+
+function clearMap() { cancelAnimationFrame(nomadPath); if (pather) { removeLine(); } if (beacon) { removeBeacon(); } pather = false; beacon = false; }
+    const geojsonDraw = { "type": "FeatureCollection","features": [{"type": "Feature", "geometry": { "type": "LineString", "coordinates": [] } }] };
+var startPoint; var endPoint;
+var framesPerSecond = 20; var initialOpacity = 1; var opacity = initialOpacity; var initialRadius = 4; var radius = initialRadius; var maxRadius = 15; var speedFactor = 100; var animation; var lineCoordinates=[]; var animationCounter=0;
+function addLine(color) {
+    var diffX = endPoint[0] - startPoint[0];  var diffY = endPoint[1] - startPoint[1]; var sfX = diffX / speedFactor; var sfY = diffY / speedFactor; var i=0; var j=0;
+    while (Math.abs(i) < Math.abs(diffX) || Math.abs(j) < Math.abs(diffY)) { lineCoordinates.push([startPoint[0] + i, startPoint[1] + j]);
+        if (Math.abs(i) < Math.abs(diffX)) {i += sfX; } if (Math.abs(j) < Math.abs(diffY)) { j += sfY; } }
+
+    map.addSource('point1', {"type": "geojson", "data": { "type": "Point", "coordinates": [ startPoint[0], startPoint[1] ]  } });
+    map.addLayer({ "id": "circle1", "source": "point1", "type": "circle", "paint": {"circle-radius": initialRadius, "circle-radius-transition": { duration: 0 }, "circle-opacity-transition": {   duration: 0}, "circle-color": 'black' } });
+    map.addLayer({"id": "point1", "source": "point1","type": "circle","paint": {   "circle-radius": initialRadius, "circle-color": 'black' } });
+    map.addSource('point2', {"type": "geojson", "data": { "type": "Point", "coordinates": [ endPoint[0], endPoint[1] ]  } });
+    map.addLayer({"id": "circle2", "source": "point2", "type": "circle", "paint": {  "circle-radius": initialRadius,"circle-radius-transition": {  duration: 0}, "circle-opacity-transition": {   duration: 0 }, "circle-color": 'black' } });
+    map.addLayer({ "id": "point2", "source": "point2","type": "circle", "paint": { "circle-radius": initialRadius, "circle-color": 'black' }  });
+    map.addLayer({'id': 'line-draw','type': 'line', 'source': { 'type': 'geojson', 'data': geojsonDraw },'layout': { 'line-cap': 'round', 'line-join': 'round' }, 'paint': {'line-color': color,'line-width': 2, 'line-dasharray': [2, 1]} });  }
+
+function removeLine() {
+    map.removeLayer('line-draw'); map.removeLayer('point2'); map.removeLayer('circle2');map.removeLayer('point1'); map.removeLayer('circle1'); map.removeSource('point2'); map.removeSource('point1');  map.removeSource('line-draw');
+    geojsonDraw.features[0].geometry.coordinates = []; }
+
+function drawLine(i) {
+    if (animationCounter < lineCoordinates.length) {
+        geojsonDraw.features[0].geometry.coordinates.push(lineCoordinates[animationCounter]);
+        map.getSource('line-draw').setData(geojsonDraw);
+        nomadPath = requestAnimationFrame(drawLine);
+        animationCounter++;}
+    else { var coord = geojsonDraw.features[0].geometry.coordinates;
+        if (coord.length > 0) {
+            geojsonDraw.features[0].geometry.coordinates = coord;
+            map.getSource('line-draw').setData(geojsonDraw);
+            nomadPath = requestAnimationFrame(drawLine); }} }
+
+const size = 200;
+const pulsingDot = { width: size, height: size, data: new Uint8Array(size * size * 4),
+    onAdd: function () { const canvas = document.createElement('canvas'); canvas.width = this.width; canvas.height = this.height; this.context = canvas.getContext('2d'); },
+    render: function () { const duration = 1000; const t = (performance.now() % duration) / duration; const radius = (size / 2) * 0.3; const outerRadius = (size / 2) * 0.7 * t + radius; const context = this.context;
+        context.clearRect(0, 0, this.width, this.height); context.beginPath(); context.arc( this.width / 2, this.height / 2, outerRadius, 0, Math.PI * 2 ); context.fillStyle = `rgba(3, 111, 252, ${1 - t})`; context.fill();
+        context.beginPath(); context.arc( this.width / 2, this.height / 2, radius, 0, Math.PI * 2 ); context.fillStyle = 'rgba(68, 140, 235, 1)'; context.strokeStyle = 'white'; context.lineWidth = 2 + 4 * (1 - t); context.fill(); context.stroke();
+        this.data = context.getImageData( 0, 0, this.width, this.height).data; map.triggerRepaint(); return true; } };
+
+function addBeacon(place) {
+    map.addImage('pulsing-dot', pulsingDot, { pixelRatio: 2 });
+    map.addSource('dot-point', { 'type': 'geojson', 'data': { 'type': 'FeatureCollection', 'features': [ { 'type': 'Feature', 'geometry': { 'type': 'Point', 'coordinates': place } } ] } });
+    map.addLayer({'id': 'layer-with-pulsing-dot', 'type': 'symbol', 'source': 'dot-point', 'layout': { 'icon-image': 'pulsing-dot' }  }); }
+function removeBeacon() {map.removeLayer('layer-with-pulsing-dot');map.removeSource('dot-point');map.removeImage('pulsing-dot'); }
+
+var flying; var startUp;
+function fly(dest) {
+    const nowhere = [-75.10664162497726, 45.741025518671464];
+    map.fire('click', { latLng: nowhere, point: map.project(nowhere), originalEvent: {} }); flying = true;
+    map.on('moveend', function(e){ if(flying){ flying = false; startUp(); } });
+    map.flyTo({ center: dest, zoom: 5, bearing: 0, speed: 0.8,  curve: 1,  easing: (t) => t, essential: true }); }</script>
 
 <style>
-body { margin: 0; top: 0; left: 0; overflow-x: hidden; overflow-y: hidden; padding: 0 0 0 0; font-family: Arial, Helvetica, sans-serif; background-color: white; }
+main {flex: 1 0 auto;}
+body { display: flex;min-height: 100vh;flex-direction: column; -webkit-tap-highlight-color: transparent; margin: 0; top: 0; left: 0; overflow-x: hidden; overflow-y: hidden; padding: 0 0 0 0; font-family: Arial, Helvetica, sans-serif; background-color: white; }
 .hidden { display:none!important; height: 0; padding: 0!important; } .disappear { visibility: hidden; } .load { opacity: 0; } .gone { width:0; height:0; z-index:-400; position:absolute; top:-9999; left:-9999;}
 .fade {-webkit-animation-name: fade;-webkit-animation-duration: 1.5s;animation-name: fade;animation-duration: 1.5s;} @-webkit-keyframes fade {from {opacity: .4}to {opacity: 1}} @keyframes fade {from {opacity: .4}to {opacity: 1}}
-/*.disabled { pointer-events: none; opacity: 0.5; background: #CCC; }*/
-/*div:hover { color: rgba(0, 0, 0, 0.3); }*/
 
 img { -khtml-user-select: none;-o-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;}
 span {-khtml-user-select: none;-o-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;}
 div {-khtml-user-select: none;-o-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;}
 
-#slider { opacity: 1; transition: opacity .8s linear; } #slider:hover {opacity:0.5; }
+/*.temp-hide { display:none; } */
+a:focus { outline: 0; }
 
-	/*
-*::-webkit-scrollbar, *::-webkit-scrollbar-thumb {width: 26px;border-radius: 1px;background-clip: padding-box;border: 10px solid transparent;height: 1px;    -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2); box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);} *::-webkit-scrollbar-thumb { box-shadow: inset 0 0 0 10px; } */
+/*#slider { opacity: 1; transition: opacity .8s linear; } #slider:hover {opacity:0.5; } */
+
+*::-webkit-scrollbar, *::-webkit-scrollbar-thumb {width: 26px;border-radius: 1px;background-clip: padding-box;border: 10px solid transparent;height: 1px;    -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2); box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);} *::-webkit-scrollbar-thumb { box-shadow: inset 0 0 0 10px; }
+body {
+   scrollbar-width: none;
+}
 
 #menu-logo {opacity:1; transition: opacity .8s linear;} #menu-logo:hover { opacity:0.5; }
-.stamp-image { margin-left: 64px; width:64px; height:64px;} .stamp-image:hover {opacity:0.5; cursor: pointer;} 
+.stamp-image { margin-left: 64px; width:64px; height:64px;} .stamp-image:hover {opacity:0.5; cursor: pointer;}
 
 nav ul a {display: flex!important; align-items: center; width:100%;}
 .badge { margin-right: 12;border-radius: 12px;color: white!important; padding-right: 12px!important;padding-left: 12px!important; padding-bottom: 10px!important;box-shadow: black 0px 0px 2px!important;height: 24px!important;}
@@ -210,12 +1004,14 @@ nav ul a {display: flex!important; align-items: center; width:100%;}
 
 .sidenav .collapsible, .sidenav.fixed .collapsible {border-top: 1px solid #ddd!important; border-right: 1px solid #ddd!important; border-left: 1px solid #ddd!important;margin: .5rem 0 1rem 0;-webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2)!important;box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2)!important; }
 
-.select-dropdown li img { width: 32px; height: 32px; }
-.dropdown-content li { display:flex; align-items: center;}
+.select-dropdown li img { width: 32px; height: 32px;float: right;margin: auto;bottom: 0;top: 0;margin-top: 12px;right: 0;margin-right: 12px;}
+.select-wrapper { width:45%; max-width:240px; }
+
+.hiddenfile { width: 0px;height: 0px;overflow: hidden;}
 
 /* mobile */
 .screen-hide {display:none;}
-@media screen and (max-width: 800px) {.screen-hide {display:block;}}
+@media screen and (max-width: 999px) {.screen-hide {display:block;} #news {flex-direction:column; } .card {width:100%!important;}}
 @media screen and (max-height: 450px) {.sidenav {padding-top: 15px;}.sidenav a {font-size: 18px;}}
 @media screen and (max-width: 800px) {/* .logo { width: 36px; height:36px; }*/}
 @media print { .breaker{break-after:always;} }
@@ -226,27 +1022,35 @@ code { white-space: break-spaces;}
 
 ::backdrop{background-color: white;}
 div.active {opacity: 1;height: auto;}
-  
-.row-section {transition: opacity 1s ease-out;overflow: hidden;}
-  
-.hover-base { opacity: 0.8; border: solid 1px rgba(255, 255, 255, 0); transition:all 0.1s; -webkit-transition: all 0.1; cursor: pointer;}
-.hover-base:hover { opacity: 1; color:#26a69a; }
-.hover-base:hover label { color:#26a69a!important } .hover-base:hover input {border-bottom:1px solid #26a69a!important;}
-.hover-base:focus-within label { color:#26a69a!important;}
-.hover-base span { opacity:0; } .hover-select, .hover-select span { opacity: 1!important; }
-  
+
 .form-disable { pointer-events: none; opacity:0.5; }
 
-/* editor 
-.coder { background-color: whitesmoke;padding: 12;margin: 12;user-select: text; } code { color: gray;line-height: 1;}
-.note {padding: 48; background-color: aliceblue;width: 75%;display: flex;justify-content: center;border-radius: 12px;margin: auto;position: relative;top: 16;}
-*/
+/*
 #description { font-family: Roboto; font-size: 15px; font-weight: 300;}
-#infowindow-content .title {  font-weight: bold; } #infowindow-content {  display: none;}  #map #infowindow-content {  display: inline; } 
+#infowindow-content .title {  font-weight: bold; } #infowindow-content {  display: none;}  #map #infowindow-content {  display: inline; }*/
 
-.btn { overflow: hidden; } .btn:hover:before { opacity:1; }
-.btn:before { content: ''; opacity: 0.5;  background-color: rgba(109, 109, 109, 0.6); position: absolute; width: 100%; height: 100%; left: 0; top: 0; transition: opacity .2s; z-index: -1;}
-  
-#map { height: 93%; bottom: 0; width: 100%; }
-#marker { background-image: url('https://github.com/nfnth/res/raw/main/site/icon/house/house1.png'); background-size: cover; width: 24px; height: 24px; border-radius: 50%; cursor: pointer; }
-.mapboxgl-popup { max-width: 200px; }</style>
+.btn { overflow: hidden; } .btn:hover:before { opacity:1; } .btn:before { content: ''; opacity: 0.5;  background-color: rgba(109, 109, 109, 0.6); position: absolute; width: 100%; height: 100%; left: 0; top: 0; transition: opacity .2s; z-index: -1;}
+
+.markre {     background-color: indianred; background-size: cover; width: 24px; height: 24px; border-radius: 50%; cursor: pointer; }
+.mapboxgl-popup { max-width: 200px; }
+
+*::-webkit-scrollbar-track {-webkit-box-shadow: inset 0 0 0px rgba(0, 0, 0, 0.0);background-color: transparent;} *::-webkit-scrollbar {width: 6px;background-color: transparent;} *::-webkit-scrollbar-thumb {background-color: #000000;}
+
+@media print { body, .print-help {display: block !important;position: relative !important;width: auto !important;height: auto !important;overflow: visible !important;margin-left: 0 !important;}}
+
+.image {position: absolute;top: 50%;left: 50%;width: 120px;height: 120px;margin:-60px 0 0 -60px;-webkit-animation:spin 4s linear infinite;-moz-animation:spin 4s linear infinite;animation:spin 4s linear infinite;opacity: 0.5;}
+@-moz-keyframes spin {100% { -moz-transform: rotate(360deg); }} @-webkit-keyframes spin {100% { -webkit-transform: rotate(360deg); }} @keyframes spin {100% {-webkit-transform: rotate(360deg);transform:rotate(360deg);}}
+
+.carousel { max-height: 400px; } .carousel-item { display: flex; flex-direction: column; padding: 24px; }
+
+.select-wrapper { width:100%!important; }
+
+.hide-scrollbar
+{
+    overflow: auto;
+    -ms-overflow-style: none; /* IE 11 */
+    scrollbar-width: none; /* Firefox 64 */
+}
+
+
+.dropdown-content li>a>i { margin:0 12px 0 0; } .dropdown-content li>a, .dropdown-content li>span { color:darkslategray!important; }</style></body></html>
