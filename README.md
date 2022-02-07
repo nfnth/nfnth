@@ -92,4 +92,6 @@ To donate to preserving our national lands, use [MetaMask](https://metamask.app.
 
 Sponsors to **NfNth** get listed here...
 
+[msebolt](https://github.com/msebolt)
+
 <p align="center"><img src="https://github.com/nfnth/res/raw/main/site/bird.png" width="200" height="240" /></p>
