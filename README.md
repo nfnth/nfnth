@@ -84,7 +84,7 @@ May the nomad wander until what's lost is found.
 Dralun runs on [brOS](https://nfnth.github.io/nfnth/BROS), an Arch Linux distro hosted on [Linode](https://cloud.linode.com/linodes).
 
 - For a list of upcoming feaures, read the [PLANME.md](https://nfnth.github.io/nfnth/PLANME).
-- For technical issues, use [GitHub](https://github.com/nfnth/nfnth/issues), or email **m@nfnth.com**.
+- For technical issues, use [GitHub](https://github.com/nfnth/nfnth/issues), or email **m@att@sebolt.us**.
 
 #### Sponsorship
 
