@@ -1,6 +1,4 @@
 
-<p align="center"><img src="https://github.com/nfnth/res/raw/main/site/other/chimi_hi.png" width="140" height="220" /></p>
-
 ### On Deed to Domain
 
 Explore [UR.Land](https://ur.land), the [Land of Dralun](https://dralun.com), inspired by the legendary sword of [Durendal](https://wikipedia.org/wiki/Durendal), an **Ethereum**-powered world designed around the concept of *deeds*, *domains*, and *artifacts*.
