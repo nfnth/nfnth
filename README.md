@@ -75,8 +75,6 @@ For further inspiration, read our manifest, the [Civilian's Complex](https://nfn
 
 May the nomad wander until what's lost is found.
 
-<p align="center"><img src="https://github.com/nfnth/res/raw/main/site/other/chimi_cards.png" width="120" height="180" /></p>
-
 ### On Development
 
 Dralun runs on [brOS](https://nfnth.github.io/nfnth/BROS), an Arch Linux distro hosted on [Linode](https://cloud.linode.com/linodes).
