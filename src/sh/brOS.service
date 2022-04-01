@@ -1,7 +1,0 @@
-[Unit]
-Description=bros
-[Service]
-ExecStart=/usr/bin/bros -n
-Type=idle
-[Install]
-WantedBy=graphical.target
