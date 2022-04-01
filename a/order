@@ -1,0 +1,58 @@
+
+## Order Page
+
+
+#network...
+#xrandr --output DSI-1 --rotate right
+dimensions=$(xdpyinfo | grep dimensions | sed -r 's/^[^0-9]*([0-9]+x[0-9]+).*$/\1/')
+x1=$(echo $dimensions | sed 's/[0-9]\+x//')
+x2=$(xdpyinfo | grep dimensions | sed -r 's/^[^0-9]*([0-9]+).*$/\1/')
+x3=$((1 + $RANDOM % 19))
+#xterm -geometry "$x1"x"$x2"+0+0
+
+#exec xterm -geometry ${x1}x${x2}+0+0
+#nohup xterm -geometry ${x1}x${x2}+0+0 -e 'chromium "https://dralun.com" --no-sandbox  --start-fullscreen' > /dev/null 2>&1 & disown &
+#nohup chromium "http://localhost:5001" --start-fullscreen --disable-web-security --user-data-dir=~ --no-sandbox > /dev/null 2>&1 &
+#XXXX
+#xrandr --output eDP-1 --rotate right #adjust display
+#nohup chromium "http://localhost:5001" --test-type --start-fullscreen --disable-web-security --user-data-dir=~ --no-sandbox > /dev/null 2>&1 & disown & #start browser
+
+feh --bg-center /root/config/logo.png --image-bg black #splash screen
+picom -b
+#xinput --map-to-output "pointer:Goodix Capacitive TouchScreen" "eDP-1"
+
+exec nohup xterm -geometry 200x200+200+200 &
+exec xrandr --output eDP-1 --rotate right &
+#exec nohup xterm -geometry 1200x1920+0+0 -e 'chromium "http://localhost:4444" --no-sandbox' > /dev/null 2>&1 & disown &
+#exec xterm -geometry 1200x1920+0+0 &
+#exec dimensions=$(xdpyinfo | grep dimensions | sed -r 's/^[^0-9]*([0-9]+x[0-9]+).*$/\1/') &
+#exec x1=$(echo $dimensions | sed 's/[0-9]\+x//') &
+#exec x2=$(xdpyinfo | grep dimensions | sed -r 's/^[^0-9]*([0-9]+).*$/\1/') &
+#xterm -geometry "$x1"x"$x2"+0+0
+
+#exec xterm -geometry ${x1}x${x2}+0+0
+#exec nohup xterm -geometry ${x2}x${x1}+0+0 -e 'chromium "https://dralun.com" --no-sandbox' > /dev/null 2>&1 & disown &
+
+# xrandr --output eDP1 --auto --pos 0x0 --primary --output DP1 --auto --pos 3840x0
+#exec xrandr --output DSI1 --rotate right &
+#exec xrandr --outpu DSI1 --auto --pos 0x0 --primary --output HDMI1 --auto --pos 1920x0 &
+# xrandr --auto
+#exec xinput --map-to-output "pointer:Goodix Capacitive TouchScreen" "DSI1" &
+# sed -i 's/geteuid/getppid/' /usr/bin/vlc
+
+#exec feh --bg-center /root/splash.png --image-bg gray &
+#exec ntpd -qg & #hwclock --systohc
+#exec xinput --map-to-output "pointer:Goodix Capacitive TouchScreen" "DSI1" &
+
+#exec nohup xterm -geometry 800x600+0+0 -e 'chromium "http://localhost:4444" --no-sandbox' > /dev/null 2>&1 & disown &
+#exec nohup python /root/dralun/site/run.py > /dev/null 2>&1 & disown &
+
+#exec nohup chromium "http://localhost:5001" --start-fullscreen --disable-web-security --user-data-dir=~ --no-sandbox > /dev/null 2>&1 & disown & #use chrome://flags
+#exec nohup firefox -url "https://boxb.in" & xdotool search --sync --onlyvisible --class "Firefox" windowactivate key F11 &
+#exec startlxde
+#exec xinput --map-to-output "pointer:Goodix Capacitive TouchScreen" "DSI1"
+
+
+#wifi_adapter=$(echo $(ls -d /sys/class/net/w*) | sed 's/\/sys\/class\/net\///g')
+wifi_id=""
+wifi_password=""

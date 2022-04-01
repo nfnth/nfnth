@@ -1,0 +1,30 @@
+
+### How to Trade URL
+
+**Dralun · URLand** uses [**URL**](https://etherscan.io/token/0x36950b34fE79C4AE047c646D2800e91a198b70fB), a standard ERC-20 ETH token, as its company's stock.
+<br/><br/>
+
+
+**URL** has a *fixed market-cap*, and is distributed as:
+<br/><br/>
+|**Pool**|**URL** Available|
+|-|-|
+|*public* investment pool (available for trade)|900,000|
+|*private* equity pool (reserved)|80,000|
+|*charity* land preservation pool (unavailable)|20,000|
+|&nbsp;|&nbsp;|
+|**TOTAL**|1,000,000|
+
+<br/>
+Please note that **URL** is not the same as **UR**, the *de-facto* currency of UR.Land, used by the deed domains.
+<br/><br/>
+**To trade URL**, go to [Uniswap](https://app.uniswap.org/#/pool/103894), and enter the following token,
+
+
+<div style="text-align:center;">
+**0x36950b34fE79C4AE047c646D2800e91a198b70fB**&nbsp;&nbsp;
+<a onclick="navigator.clipboard.writeText('0x36950b34fE79C4AE047c646D2800e91a198b70fB');M.toast({html: 'Address copied.'});" class="waves-effect waves-light btn"><i class="material-icons right">content_copy</i>Copy</a></div>
+
+
+To view your **URL** balance, go to the dApp <i class="material-icons">account_balance_wallet</i> and select **Connect Wallet**.
+<br/>

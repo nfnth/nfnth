@@ -1,0 +1,46 @@
+
+
+
+<div class="input-field col s12 m6">
+    <select id="collection-filter" class="icons" multiple>
+      <option value="" disabled selected>Select collection...</option>
+      <option value="" >All Collections</option>
+      <option value="" data-icon="img/icon/key/red.png">Tactician</option>
+      <option value="" data-icon="img/icon/key/orange.png">Patrician</option>
+      <option value="" data-icon="img/icon/key/yellow.png">Electrician</option>
+      <option value="" data-icon="img/icon/key/green.png">Sectarian</option>
+      <option value="" data-icon="img/icon/key/blue.png">Civilian</option>
+      <option value="" data-icon="img/icon/key/purple.png">Logician</option>
+      <option value="" data-icon="img/icon/key/gray.png">Utilitarian</option>
+      <option value="" data-icon="img/icon/key/white.png">Technician</option>
+      <option value="" data-icon="img/icon/key/black.png">Custodian</option>
+      <option value="" data-icon="img/icon/key/tan.png">Librarian</option>
+      <option value="" data-icon="img/icon/key/pink.png">Clinician</option>
+      <option value="" data-icon="img/icon/key/brown.png">Agrarian</option>
+    </select>
+    <label>OpenSea Collections</label>
+  </div>
+
+
+  <select id="select-sort" style="z-index:1;" onchange="sorter();">
+                <option value="" selected disabled>Sort...</option>
+                <option value="az">Alpha &#8595;</option>
+                <option value="za">Alpha &#8593;</option>
+                <option value="09">Price &#8593;</option>
+                <option value="90">Price &#8595;</option>
+                <option value="!)">Serial &#8595;</option>
+                <option value=")!">Serial &#8593;</option></select>
+
+
+
+                <p>
+      <label>
+        <input type="checkbox" class="filled-in" checked="checked" />
+        <span>Filled in</span>
+      </label>
+    </p>
+<script>$('select').formSelect();
+$("#collection-filter").on("change", function(event) {
+    alert('changed');
+} ); $('select').formSelect();
+</script>
