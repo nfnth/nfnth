@@ -445,7 +445,7 @@ switch (doc) {
         $("#doc-hide").css("color","lightgreen!important");break;
         }
 
-document.getElementById('dialog-inner2').scrollTo(0, 0); $.get('res/doc/'+doc, function(data) { setDialog(renderMd(data)); }); }
+document.getElementById('dialog-inner2').scrollTo(0, 0); $.get('a/'+doc, function(data) { setDialog(renderMd(data)); }); }
 
 function adjustSort(full) { //$("option[value='09']").attr("disabled", "disabled");
     $('#select-sort').empty();
