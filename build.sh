@@ -1,4 +1,9 @@
-#!/bin/bash
+title   urOS
+linux   /vmlinuz-linux
+initrd  /intel-ucode.img
+initrd  /amd-ucode.img
+initrd  /initramfs-linux.img
+options root=XXXX quiet vga=current audit=0 loglevel=1 nowatchdog rd.systemd.show_status=0 rd.udev.log_priority=3 vt.global_cursor_default=0#!/bin/bash
 # script to run as client, server, and/or deploy
 
 scratch="yes" #[yes|no], build from scratch?
@@ -230,9 +235,179 @@ then
     systemctl enable haproxy
     systemctl start haproxy
 fi
-#elif [[ "$1" == "client" ]]
-#then
-#    install
-#else
-#    base
-#fi
+elif [[ "$1" == "client" ]]
+then
+    install
+else
+    base
+fi
+
+global
+  daemon
+  log 127.0.0.1 local0
+  log 127.0.0.1 local1 notice
+  maxconn 4096
+  tune.ssl.default-dh-param 2048
+
+defaults
+  log global
+  retries 3
+  maxconn 2000
+  timeout connect 5s
+  timeout client 50s
+  timeout server 50s
+  option forwardfor
+
+frontend site
+  bind *:80
+  bind *:443 ssl crt /etc/haproxy/cert
+  acl hack path_sub php
+  http-request deny if hack
+  http-request set-header X-Client-IP %[src]
+  redirect scheme https if !{ ssl_fc }
+  acl app0 hdr(Host) -i ustat.us
+  use_backend index if app0
+  mode http
+  default_backend direct
+
+config() {
+cat > /root/config/haproxy.cfg <<EOF
+    global
+    daemon
+    log 127.0.0.1 local0
+    log 127.0.0.1 local1 notice
+    maxconn 4096
+    tune.ssl.default-dh-param 2048
+  
+    defaults
+    log global
+    retries 3
+    maxconn 2000
+    timeout connect 5s
+    timeout client 50s
+    timeout server 50s
+    option forwardfor
+  
+    frontend site
+    bind *:80
+    bind *:443 ssl crt /etc/haproxy/cert
+    #bind *:443 ssl crt /etc/haproxy/alldomains.pem
+    acl hack path_sub php
+    http-request deny if hack
+    http-request set-header X-Client-IP %[src]
+    redirect scheme https if !{ ssl_fc }
+    mode http
+    default_backend index
+  
+    backend index
+    mode http
+    balance roundrobin
+    server app1 localhost:5001
+  
+    #frontend mail
+    #bind *:25
+    #  bind *:587 ssl crt /etc/haproxy/cert/alldomains.pem
+    #  mode tcp
+    #  default_backend box
+  
+    #backend box
+    #  mode tcp
+    #  server app2 localhost:5002
+    
+defaults
+  log global
+  retries 3
+  maxconn 2000
+  timeout connect 5s
+  timeout client 50s
+  timeout server 50s
+  option forwardfor
+
+frontend site
+  bind *:80
+  acl hack path_sub php
+  http-request deny if hack
+  http-request set-header X-Client-IP %[src]
+  #redirect scheme https if !{ ssl_fc }
+  mode http
+  default_backend index
+
+backend index
+  mode http
+  balance roundrobin
+  server app1 localhost:5001
+ 
+global
+  daemon
+  log 127.0.0.1 local0
+  log 127.0.0.1 local1 notice
+  maxconn 4096
+  tune.ssl.default-dh-param 2048
+
+defaults
+  log global
+  retries 3
+  maxconn 2000
+  timeout connect 5s
+  timeout client 50s
+  timeout server 50s
+  option forwardfor
+
+frontend site
+  bind *:80
+  bind *:443 ssl crt /etc/haproxy/cert
+  acl hack path_sub php
+  http-request deny if hack
+  http-request set-header X-Client-IP %[src]
+  redirect scheme https if !{ ssl_fc }
+  acl app0 hdr(Host) -i ustat.us
+  use_backend index if app0
+  mode http
+  default_backend direct
+
+backend index
+  mode http
+  balance roundrobin
+  server app1 localhost:5001
+
+backend direct
+  mode http
+  http-request redirect code 301 location https://ustat.us/%[hdr(host)]
+  
+global
+  daemon
+  log 127.0.0.1 local0
+  log 127.0.0.1 local1 notice
+  maxconn 4096
+  tune.ssl.default-dh-param 2048
+
+defaults
+  log global
+  retries 3
+  maxconn 2000
+  timeout connect 5s
+  timeout client 50s
+  timeout server 50s
+  option forwardfor
+
+frontend site
+  bind *:80
+  bind *:443 ssl crt /etc/haproxy/cert
+  acl hack path_sub php
+  http-request deny if hack
+  http-request set-header X-Client-IP %[src]
+  redirect scheme https if !{ ssl_fc }
+  acl app0 hdr(Host) -i ustat.us
+  use_backend index if app0
+  mode http
+  default_backend direct
+EOF
+
+cat > 
+title   urOS
+linux   /vmlinuz-linux
+initrd  /intel-ucode.img
+initrd  /amd-ucode.img
+initrd  /initramfs-linux.img
+options root=XXXX quiet vga=current audit=0 loglevel=1 nowatchdog rd.systemd.show_status=0 rd.udev.log_priority=3 vt.global_cursor_default=0
+}
