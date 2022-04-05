@@ -216,10 +216,10 @@ for (var a = 0; a < files.files.length; a++)
 function openInNewTab(url) { window.open(url, '_blank').focus(); } //window.location.href = url;
 
 function showFav(site) {
-    $('<link>').appendTo('head').attr({ class: 'ico', type: 'image/x-icon', rel: 'icon', href: "img/icon/" + site + "/favicon.ico" });
-    $('<link>').appendTo('head').attr({ class: 'ico', type: 'image/x-icon', rel: 'shortcut icon', href: "img/icon/" + site + "/favicon.ico" });
-    $('<link>').appendTo('head').attr({ class: 'ico', type: 'image/x-icon', rel: 'icon', sizes: "192x192", href: "img/icon/" + site + "/android-chrome-192x192.png" });
-    $('<link>').appendTo('head').attr({ class: 'ico', type: 'image/x-icon', rel: 'apple-touch-icon', sizes: "128x128", href: "img/icon/" + site + "/apple-touch-icon.png" }); }
+    $('<link>').appendTo('head').attr({ class: 'ico', type: 'image/x-icon', rel: 'icon', href: "res/favicon.ico" });
+    $('<link>').appendTo('head').attr({ class: 'ico', type: 'image/x-icon', rel: 'shortcut icon', href: "res/favicon.ico" });
+    $('<link>').appendTo('head').attr({ class: 'ico', type: 'image/x-icon', rel: 'icon', sizes: "192x192", href: "res/android-chrome-192x192.png" });
+    $('<link>').appendTo('head').attr({ class: 'ico', type: 'image/x-icon', rel: 'apple-touch-icon', sizes: "128x128", href: "res/apple-touch-icon.png" }); }
 
 function adjustSize(img) {
     if (img.height >= img.width) { adjustment = (img.height - img.width) / 48; shim = 'padding-right'; img.height = "48"; }
