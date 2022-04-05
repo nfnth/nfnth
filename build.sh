@@ -1,9 +1,4 @@
-title   urOS
-linux   /vmlinuz-linux
-initrd  /intel-ucode.img
-initrd  /amd-ucode.img
-initrd  /initramfs-linux.img
-options root=XXXX quiet vga=current audit=0 loglevel=1 nowatchdog rd.systemd.show_status=0 rd.udev.log_priority=3 vt.global_cursor_default=0#!/bin/bash
+#!/bin/bash
 # script to run as client, server, and/or deploy
 
 scratch="yes" #[yes|no], build from scratch?
@@ -271,6 +266,15 @@ frontend site
   default_backend direct
 
 config() {
+cat > /roo.. <<EOF
+title   urOS
+linux   /vmlinuz-linux
+initrd  /intel-ucode.img
+initrd  /amd-ucode.img
+initrd  /initramfs-linux.img
+options root=XXXX quiet vga=current audit=0 loglevel=1 nowatchdog rd.systemd.show_status=0 rd.udev.log_priority=3 vt.global_cursor_default=0
+EOF
+
 cat > /root/config/haproxy.cfg <<EOF
     global
     daemon
