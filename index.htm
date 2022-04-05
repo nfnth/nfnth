@@ -10,10 +10,6 @@
 <meta name="keywords" content="domain, deed, nft, crypto, url, urland" />
 <meta name="author" content="urland" />
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5827375595551722" crossorigin="anonymous"></script>
-<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
-<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css" type="text/css">
-
 <!-- resources -->
 <script src="all.js"></script><link rel="stylesheet" href="all.css"></head>
 
@@ -22,19 +18,19 @@
 <!-- menu -->
 <nav id="main-menu" style="position: fixed;top:0; z-index:2;visibility:hidden;" class="loader">
     <div id="panel-menu" class="nav-wrapper header green z-depth-3" style="border-bottom:solid 3px green; display:flex; justify-content: space-between;">
-    	<div class="z-depth-1"><a style="display: flex; align-items: center; height: 100%; padding-right: 10px; background-color: rgb(201, 201, 201, 0.6); color: darkgreen;font-weight: bold;font-size: 20px;"><img id="menu-logo" onclick="showView('news');" style="height:48px; cursor: pointer; margin-left: 12px;" src="res/scroll_logo.png" /><span class="mobile-hide">&nbsp;&nbsp;</span></a></div>
+    	<div class="z-depth-1"><a style="display: flex; align-items: center; height: 100%; padding-right: 10px; background-color: rgb(201, 201, 201, 0.6); color: darkgreen;font-weight: bold;font-size: 20px;"><img id="menu-logo" onclick="showView('news');" style="height:48px; cursor: pointer; margin-left: 12px;" /><span class="mobile-hide">&nbsp;</span></a></div>
     <!-- media -->
+	<a id="doc-hide" class="screen-hide" href="#!" data-target="doc"><i class="material-icons">menu_book</i></a>
         <a id="box-hide" class="screen-hide" href="#!" data-target="doc"><i class="material-icons">radio</i></a>
         <a id="map-hide" class="screen-hide" onclick="showView('map'); map.resize(); showIntro();"><i class="material-icons">map</i></a>
-		<a id="list-hide" class="screen-hide" href="#!" data-target="domain"><i class="material-icons">view_list</i></a>
-		<a id="doc-hide" class="screen-hide" href="#!" data-target="doc"><i class="material-icons">menu_book</i></a>
+	<a id="list-hide" class="screen-hide" href="#!" data-target="domain"><i class="material-icons">view_list</i></a>
     	<a id="search-hide" class="screen-hide" onclick="showView('search');"><i class="material-icons">search</i></a>
 
     <!-- desktop -->
     	<ul class="hide-on-med-and-down" >
+	    <li id="doc-list"><a id="docs" href="#!" data-target="doc"><i class="material-icons left">menu_book</i>READ<i class="material-icons right">arrow_drop_down</i></a></li>
             <li id="map-list"><a onclick="showView('map'); map.resize();"><i class="material-icons left">map</i>EXPLORE</a></li>
             <li id="list-list"><a id="lists" href="#!" data-target="domain"><i class="material-icons left">class</i>VIEW<i class="material-icons right">arrow_drop_down</i></a></li>
-            <li id="doc-list"><a id="docs" href="#!" data-target="doc"><i class="material-icons left">menu_book</i>READ<i class="material-icons right">arrow_drop_down</i></a></li>
             <li style="height:64px;" id="search-list">
                 <a style="height:inherit; padding-right:0;"><i onclick="$('#search').focus();" style="height:inherit; padding-right:4px;" class="material-icons">search</i>
         			<div id="search-box" class="input-field" style="height:inherit;">
@@ -42,7 +38,7 @@
 
     <!-- user -->
         <div id="wallet-area" class="z-depth-1" style="display:flex;" onclick="setup(); $('#user-pane').sidenav('open');">
-            <ul><li id="setting-wallet" style="background-color: rgb(175, 175, 175, 0.9);" class="z-depth-1"><a id="wallet-icon" href="#" style="margin: 0;justify-items: center;display: flex;align-items: center;" ><i class="material-icons">account_balance_wallet</i><span class="mobile-hide">&nbsp;CONNECT</span></a></li></ul></div></div></nav>
+            <ul><li id="setting-wallet" style="background-color: rgb(175, 175, 175, 0.9); height:99%;" class="z-depth-1"><a id="wallet-icon" href="#" style="margin: 0;justify-items: center;display: flex;align-items: center;" ><i class="material-icons">account_balance_wallet</i><span class="mobile-hide">&nbsp;CONNECT</span></a></li></ul></div></div></nav>
 
 <!-- dropdown -->
 <ul id="doc" class="dropdown-content loader" style="visibility:hidden;">
@@ -59,7 +55,6 @@
     <li><a onclick="showView('list'); showList('domain');"><i class="material-icons"><span class="material-icons-outlined">landscape</span></i>Domain Manifest</a></li>
     <li><a onclick="showView('list'); showList('artifact');"><i class="material-icons"><span class="material-icons-outlined">inventory_2</span></i>Artifact Listing</a></li>
 	<li class="divider"></li>
-
 	<li><a onclick="openInNewTab('https://ustat.us');"><i class="material-icons">toll</i>UR Exchange...</a></li>
 	<li><a onclick="showView('list'); showList('open');"><i class="material-icons">sailing</i>OpenSea Collections</a></li></ul>
 
@@ -89,7 +84,7 @@
     <!-- world -->
     <div id="world" class="content loader pane blue-grey lighten-5" style="width:100%;background-color:darkgrey;">
         <img src="res/world-min.jpg" class="z-depth-2" style="width:100%; margin-bottom:-6px; " />
-        <div style="position: absolute; margin-top:240px; width: 100%; top:0; height: 0"><div style="cursor:pointer; position:absolute; color:white; font-size:24px;background-color: rgba(118, 218, 71, 0.5);padding-bottom: 48px;padding-top: 36px;text-align: center;align-items: center;justify-content: center;width: 100%;  " onclick="showDoc('PLANME');"><span style="color:dodgerblue; font-weight:bold; font-size:28px;background-color: rgb(164, 194, 224,0.8);border-radius: 6px;padding-left: 6px;">DRALUN&nbsp;</span><span style="color:aliceblue; font-size:26px; font-weight:bold;vertical-align:super;">  // ur.land </span>&nbsp;&nbsp;<img src="img/pattern-min.png" style="width:48px;"/><br/><span style="font-size:18px;">deed. domain. </span><span style="font-size:18px; font-weight:bold;">decentralized.</span></div></div>
+        <div style="position: absolute; margin-top:240px; width: 100%; top:0; height: 0"><div style="cursor:pointer; position:absolute; color:white; font-size:24px;background-color: rgba(118, 218, 71, 0.5);padding-bottom: 48px;padding-top: 36px;text-align: center;align-items: center;justify-content: center;width: 100%;  " onclick="showDoc('PLANME');"><span style="color:dodgerblue; font-weight:bold; font-size:28px;background-color: rgb(164, 194, 224,0.8);border-radius: 6px;padding-left: 6px;">OCURIOUS&nbsp;</span><span style="color:aliceblue; font-size:26px; font-weight:bold;vertical-align:super;">  // ocur.io </span>&nbsp;&nbsp;<img src="img/pattern-min.png" style="width:48px;"/><br/><span style="font-size:18px;">deed. domain. </span><span style="font-size:18px; font-weight:bold;">decentralized.</span></div></div>
 
         </div>
 
@@ -237,8 +232,8 @@ async function initial() {
 
     var gear = Math.floor(Math.random() * (42 - 1 + 1)) + 1; document.getElementById('list-wait').src = "img/object/user/gear/gear" + gear.toString() + ".png";
     var gear2 = Math.floor(Math.random() * (42 - 1 + 1)) + 1; document.getElementById('list-wait2').src = "img/object/user/gear/gear" + gear2.toString() + ".png";
-    //var castle = Math.floor(Math.random() * (16 - 1 + 1)) + 1;
-    //document.getElementById('menu-logo').src = "img/object/castle/castle" + castle.toString() + ".png";
+    var leaf = Math.floor(Math.random() * (16 - 1 + 1)) + 1;
+    document.getElementById('menu-logo').src = "res/leaf/leaf" + leaf.toString() + ".png";
 $('.tooltipped').tooltip();
     // materialize
     $('#docs').dropdown({ constrainWidth: false, coverTrigger: false, hover: true } ); $('#doc-hide').dropdown({ constrainWidth: false, coverTrigger: false } );
