@@ -11,7 +11,7 @@
 <meta name="author" content="urland" />
 
 <!-- resources -->
-<script src="all.js"></script><link rel="stylesheet" href="all.css"></head>
+<script src="res/all.js"></script><link rel="stylesheet" href="res/all.css"></head>
 
 <body style="overflow:overlay; background-color:ghostwhite;" >
 
@@ -41,11 +41,11 @@
 
 <!-- dropdown -->
 <ul id="doc" class="dropdown-content loader" style="visibility:hidden;">
-    <li><a onclick="showDoc('PLANME');"><i class="material-icons">backpack</i>How to Use Ocurious</a></li>
-    <li><a onclick="showDoc('manifesto');"><i class="material-icons">home</i>About ocur.io</a></li>
+    <li><a onclick="showDoc('doc/PLANME');"><i class="material-icons">backpack</i>How to Use Ocurious</a></li>
+    <li><a onclick="showDoc('doc/manifesto');"><i class="material-icons">home</i>About ocur.io</a></li>
     <li class="divider"></li>
-    <li><a onclick="showDoc('url');"><i class="material-icons">token</i>Trade OCUR</a></li>
-	<li><a onclick="showDoc('donation');"><i class="material-icons"><span class="material-icons-outlined">park</span></i>Make Donation</a></li>
+    <li><a onclick="showDoc('doc/url');"><i class="material-icons">token</i>Trade OCUR</a></li>
+	<li><a onclick="showDoc('doc/donation');"><i class="material-icons"><span class="material-icons-outlined">park</span></i>Make Donation</a></li>
 	<li class="divider"></li>
     <li><a onclick="openInNewTab('https://nfnth.com');"><i class="material-icons">explore</i>Explore Civilian...</a></li></ul>
 
@@ -58,7 +58,7 @@
 
 <!-- panel -->
 <ul id="user-pane" class="sidenav loader blue-grey lighten-5" style="visibility:hidden;">
-	<li><div class="user-view z-depth-1" style="background-color: #eaf2f7;display: flex;margin: auto; padding: 0;align-items: center; padding-left:12px;"><span style="cursor: pointer;margin:auto;" onclick="showDoc('README'); $('#user-pane').sidenav('close');" class="new badge green darken-2" data-badge-caption="brOS | v1.02"></span>
+	<li><div class="user-view z-depth-1" style="background-color: #eaf2f7;display: flex;margin: auto; padding: 0;align-items: center; padding-left:12px;"><span style="cursor: pointer;margin:auto;" onclick="showDoc('doc/README'); $('#user-pane').sidenav('close');" class="new badge green darken-2" data-badge-caption="brOS | v1.02"></span>
         <img id="user-pic" style="height: 72px;margin-left:18px; padding: 12px;" src="img/shield.png" /></div></li>
     <li><a class="subheader">Wallet Information</a></li>
   	<li><a class="waves-effect" onclick="if (walletAddress != '') {copyClip(walletAddress);}"><i class="material-icons">alternate_email</i><span id="myAdd">Wallet Address</span></a></li>
@@ -82,7 +82,7 @@
     <!-- world -->
     <div id="world" class="content loader pane blue-grey lighten-5" style="width:100%;background-color:darkgrey;">
         <img src="res/world-min.jpg" class="z-depth-2" style="width:100%; margin-bottom:-6px; " />
-        <div style="position: absolute; margin-top:240px; width: 100%; top:0; height: 0"><div style="cursor:pointer; position:absolute; color:white; font-size:24px;background-color: rgba(118, 218, 71, 0.5);padding-bottom: 48px;padding-top: 36px;text-align: center;align-items: center;justify-content: center;width: 100%;  " onclick="showDoc('PLANME');"><span style="color:dodgerblue; font-weight:bold; font-size:28px;background-color: rgb(164, 194, 224,0.8);border-radius: 6px;padding-left: 6px;">OCURIOUS&nbsp;</span><span style="color:aliceblue; font-size:26px; font-weight:bold;vertical-align:super;">  // ocur.io </span>&nbsp;&nbsp;<img src="img/pattern-min.png" style="width:48px;"/><br/><span style="font-size:18px;">deed. domain. </span><span style="font-size:18px; font-weight:bold;">decentralized.</span></div></div>
+        <div style="position: absolute; margin-top:240px; width: 100%; top:0; height: 0"><div style="cursor:pointer; position:absolute; color:white; font-size:24px;background-color: rgba(118, 218, 71, 0.5);padding-bottom: 48px;padding-top: 36px;text-align: center;align-items: center;justify-content: center;width: 100%;  " onclick="showDoc('doc/PLANME');"><span style="color:dodgerblue; font-weight:bold; font-size:28px;background-color: rgb(164, 194, 224,0.8);border-radius: 6px;padding-left: 6px;">OCUR.IO&nbsp;</span><span style="color:aliceblue; font-size:26px; font-weight:bold;vertical-align:super;">  // build domain </span>&nbsp;&nbsp;<img src="img/pattern-min.png" style="width:48px;"/><br/><span style="font-size:18px;">deed. domain. </span><span style="font-size:18px; font-weight:bold;">decentralized.</span></div></div>
 
         </div>
 
@@ -137,9 +137,6 @@
     <!-- news -->
 <footer id="stamper" class="page-footer pane" style=" color:black; padding-top: 0px; background-color:ghostwhite;">
     <div id="news" class="container pane loader" style="display:flex;margin: auto;width:100%; background-color:white; max-width: 2400px!important;">
-
-
-
             <div class="row">
               <div class="col l6 s12">
                 <h5 class="white-text">Footer Content</h5>
@@ -798,9 +795,9 @@ function setTemplate() {
 var map; var map_token = "pk.eyJ1IjoibmZudGgiLCJhIjoiY2tweW1rNXlsMGFpYzJwcGt1cHh6dmxzcyJ9.ZJaFrGpPDv5froWZMLXXYQ";
 var base = [-98.59236473214004, 39.82998211920899, ]; var landlord = [-101.59236473214004, 42.82998211920899, ]; var art = [-96.59236473214004, 37.82998211920899, ]; var center = [-0.4510253658899336, 43.91338997020656];
 var fr = [-0.6187045799411647, 45.13824627199055]; var fr2 = [-3.7643573392266596, 48.02359499120687]; var fr3 = [1.5266131055501075, 43.706742350484916];
-var baseContent = '<div><div><img width="48" height="48" src="res/deed.png"/></div><div><h6>About Deed</h6><a class="waves-effect waves-light btn" onclick="showDoc(\'learn/deed\');">Learn...</a>&nbsp;&nbsp;<a class="waves-effect waves-light btn blue lighten-3" onclick="clearMap(); showLandlord();"><i class="material-icons">navigate_next</i></a></div></div>';
-var landContent = '<div><div><img width="48" height="48" src="res/domain.png"/></div><div><h6>About Domain</h6><a class="waves-effect waves-light btn" onclick="showDoc(\'learn/domain\');">Learn...</a>&nbsp;&nbsp;<a class="waves-effect waves-light btn blue lighten-3" onclick="clearMap(); showArt();"><i class="material-icons">navigate_next</i></a></div></div>';
-var artContent = '<div><div><img width="48" height="48" src="res/barrel.png"/></div><div><h6>About Artifact</h6><a class="waves-effect waves-light btn" onclick="showDoc(\'learn/artifact\');">Learn...</a>&nbsp;&nbsp;<a class="waves-effect waves-light btn blue lighten-3" onclick="clearMap(); showBase();"><i class="material-icons">restart_alt</i></a</div></div>';
+var baseContent = '<div><div><img width="48" height="48" src="img/deed.png"/></div><div><h6>About Deed</h6><a class="waves-effect waves-light btn" onclick="showDoc(\'learn/deed\');">Learn...</a>&nbsp;&nbsp;<a class="waves-effect waves-light btn blue lighten-3" onclick="clearMap(); showLandlord();"><i class="material-icons">navigate_next</i></a></div></div>';
+var landContent = '<div><div><img width="48" height="48" src="img/domain.png"/></div><div><h6>About Domain</h6><a class="waves-effect waves-light btn" onclick="showDoc(\'learn/domain\');">Learn...</a>&nbsp;&nbsp;<a class="waves-effect waves-light btn blue lighten-3" onclick="clearMap(); showArt();"><i class="material-icons">navigate_next</i></a></div></div>';
+var artContent = '<div><div><img width="48" height="48" src="img/barrel.png"/></div><div><h6>About Artifact</h6><a class="waves-effect waves-light btn" onclick="showDoc(\'learn/artifact\');">Learn...</a>&nbsp;&nbsp;<a class="waves-effect waves-light btn blue lighten-3" onclick="clearMap(); showBase();"><i class="material-icons">restart_alt</i></a</div></div>';
 
 var currentMarkers=[]; //var introMark;//43.706742350484916, 1.5266131055501075
 var showIntro; var addMark; var coordinates; var artFlag = false;
