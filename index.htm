@@ -212,10 +212,10 @@ async function initial() {
     $('select').formSelect(); $('.modal').modal(); //$('#dialog-inner2').css("height", window.innerHeight - 375);
     $("#map").css("height",height + "px"); $("#registry").css("height",height + "px"); showFav('scroller');
 
-    var gear = Math.floor(Math.random() * (42 - 1 + 1)) + 1; document.getElementById('list-wait').src = "img/object/user/gear/gear" + gear.toString() + ".png";
-    var gear2 = Math.floor(Math.random() * (42 - 1 + 1)) + 1; document.getElementById('list-wait2').src = "img/object/user/gear/gear" + gear2.toString() + ".png";
+    var gear = Math.floor(Math.random() * (42 - 1 + 1)) + 1; document.getElementById('list-wait').src = "img/gear/gear" + gear.toString() + ".png";
+    var gear2 = Math.floor(Math.random() * (42 - 1 + 1)) + 1; document.getElementById('list-wait2').src = "img/gear/gear" + gear2.toString() + ".png";
     var leaf = Math.floor(Math.random() * (16 - 1 + 1)) + 1;
-    document.getElementById('menu-logo').src = "img/leaf/leaf" + leaf.toString() + ".png";
+    document.getElementById('menu-logo').src = gear; //"img/leaf/leaf" + leaf.toString() + ".png";
 $('.tooltipped').tooltip();
     // materialize
     $('#docs').dropdown({ constrainWidth: false, coverTrigger: false, hover: true } ); $('#doc-hide').dropdown({ constrainWidth: false, coverTrigger: false } );
