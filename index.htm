@@ -17,8 +17,8 @@
 
 <!-- menu -->
 <nav id="main-menu" style="position: fixed;top:0; z-index:2;visibility:hidden;" class="loader">
-    <div id="panel-menu" class="nav-wrapper header green z-depth-3" style="border-bottom:solid 3px blue; display:flex; justify-content: space-between;">
-    	<div class="z-depth-1"><a style="display: flex; align-items: center; height: 100%; padding-right: 10px; background-color: rgb(38, 184, 251, 0.6); color: darkgreen;font-weight: bold;font-size: 20px;"><img id="menu-logo" onclick="showView('news');" style="height:48px; cursor: pointer; margin-left: 12px; margin-right:4px;" /></a></div>
+    <div id="panel-menu" class="nav-wrapper header blue z-depth-3" style="border-bottom:solid 3px blue; display:flex; justify-content: space-between;">
+    	<div class="z-depth-1"><a style="display: flex; align-items: center; height: 100%; padding-right: 10px; background-color: rgb(38, 184, 251, 0.6); color: darkblue;font-weight: bold;font-size: 20px;"><img id="menu-logo" onclick="showView('news');" style="height:48px; cursor: pointer; margin-left: 12px; margin-right:4px;" /></a></div>
     <!-- media -->
 	<a id="doc-hide" class="screen-hide" href="#!" data-target="doc"><i class="material-icons">menu_book</i></a>
         <a id="map-hide" class="screen-hide" onclick="showView('map'); map.resize(); showIntro();"><i class="material-icons">map</i></a>
@@ -41,11 +41,11 @@
 
 <!-- dropdown -->
 <ul id="doc" class="dropdown-content loader" style="visibility:hidden;">
-    <li><a onclick="showDoc('doc/PLANME');"><i class="material-icons">backpack</i>How to Use Ocurious</a></li>
-    <li><a onclick="showDoc('doc/manifesto');"><i class="material-icons">home</i>About ocur.io</a></li>
+    <li><a onclick="showDoc('PLANME');"><i class="material-icons">backpack</i>How to Use Ocurious</a></li>
+    <li><a onclick="showDoc('manifesto');"><i class="material-icons">home</i>About ocur.io</a></li>
     <li class="divider"></li>
-    <li><a onclick="showDoc('doc/url');"><i class="material-icons">token</i>Trade OCUR</a></li>
-	<li><a onclick="showDoc('doc/donation');"><i class="material-icons"><span class="material-icons-outlined">park</span></i>Make Donation</a></li>
+    <li><a onclick="showDoc('url');"><i class="material-icons">token</i>Trade OCUR</a></li>
+	<li><a onclick="showDoc('donation');"><i class="material-icons"><span class="material-icons-outlined">park</span></i>Make Donation</a></li>
 	<li class="divider"></li>
     <li><a onclick="openInNewTab('https://nfnth.com');"><i class="material-icons">explore</i>Explore Civilian...</a></li></ul>
 
@@ -58,22 +58,22 @@
 
 <!-- panel -->
 <ul id="user-pane" class="sidenav loader blue-grey lighten-5" style="visibility:hidden;">
-	<li><div class="user-view z-depth-1" style="background-color: #eaf2f7;display: flex;margin: auto; padding: 0;align-items: center; padding-left:12px;"><span style="cursor: pointer;margin:auto;" onclick="showDoc('doc/README'); $('#user-pane').sidenav('close');" class="new badge green darken-2" data-badge-caption="brOS | v1.02"></span>
+	<li><div class="user-view z-depth-1" style="background-color: #eaf2f7;display: flex;margin: auto; padding: 0;align-items: center; padding-left:12px;"><span style="cursor: pointer;margin:auto;" onclick="showDoc('README'); $('#user-pane').sidenav('close');" class="new badge green darken-2" data-badge-caption="brOS | v1.02"></span>
         <img id="user-pic" style="height: 72px;margin-left:18px; padding: 12px;" src="img/shield.png" /></div></li>
     <li><a class="subheader">Wallet Information</a></li>
-  	<li><a class="waves-effect" onclick="if (walletAddress != '') {copyClip(walletAddress);}"><i class="material-icons">alternate_email</i><span id="myAdd">Wallet Address</span></a></li>
-  	<li><a class="waves-effect tooltipped" data-position="left" data-tooltip="Wallet address"><i class="material-icons">account_balance</i><span id="myETH">ETH Balance</span></a></li>
-	<li><a class="waves-effect"><i class="material-icons">toll</i><span id="myURL">URL Balance</span></a></li>
-	<li id="maker" style="margin-top:16px;margin-bottom:12px;"><a class="waves-effect waves-light blue-grey z-depth-1 lighten-3" style="width: 240px;margin: auto;border-radius: 8px;" onclick="if (walletAddress != '') {showView('map'); map.resize(); addArtifact(); $('#user-pane').sidenav('close');} else { M.toast({html: 'No wallet connected.'}); }"><i class="material-icons left"><span class="material-icons-outlined">upload_file</span></i>Publish Deed</a></li>
+  	<li><a class="waves-effect tooltipped" data-position="left" data-tooltip="Wallet Address" onclick="if (walletAddress != '') {copyClip(walletAddress);}"><i class="material-icons">alternate_email</i><span id="myAdd">Wallet Address</span></a></li>
+  	<li><a class="waves-effect tooltipped" data-position="left" data-tooltip="Ethereum Balance"><i class="material-icons">account_balance</i><span id="myETH">ETH Balance</span></a></li>
+	<li><a class="waves-effect tooltipped" data-position="left" data-tooltip="OCUR Balance"><i class="material-icons">toll</i><span id="myURL">OCUR Balance</span></a></li>
+	<li id="maker" style="margin-top:16px;margin-bottom:12px;"><a class="waves-effect waves-light blue-grey z-depth-1 lighten-3" style="width: 240px;margin: auto;border-radius: 8px;" onclick="if (walletAddress != '') {showView('map'); map.resize(); addArtifact(); $('#user-pane').sidenav('close');} else { M.toast({html: 'No wallet connected.'}); }"><i class="material-icons left"><span class="material-icons-outlined">logout</span></i>Disconnect Wallet</a></li>
   	<li><div style="margin-top:0;" class="divider"></div></li>
   	<!-- <i class="material-icons left">directions</i><i class="material-icons left">picture_as_pdf</i><i class="material-icons left">calculate</i>-->
   	<li><a class="subheader">Domain Information</a></li>
-  	<li><a class="waves-effect"><i class="material-icons">gite</i><span id="myURL">Domain Info</span></a></li>
-    <li><a class="waves-effect"><i class="material-icons">token</i><span id="myURL">UR Balance</span></a></li>
+  	<li><a class="waves-effect tooltipped" data-position="left" data-tooltip="Domain Stats"><i class="material-icons">gite</i><span id="myURL">Domain Stats</span></a></li>
+    <li><a class="waves-effect tooltipped" data-position="left" data-tooltip="Domain Balance (OCUR)"><i class="material-icons">token</i><span id="myURL">OCUR Balance</span></a></li>
   	<li style="margin-top:12px; display: flex;align-items: center;justify-content: center;margin-bottom:16px;"><select id="domain-template" class="sider" onchange="domainSelect();">
         <option selected="selected">No domain selected</option><option>tactician.us (demo)</option></select></li>
 
-    <li id="poster" style="margin-top:12px;"><a class="waves-effect waves-light blue-grey z-depth-1 lighten-3" style="width: 240px;margin: auto;border-radius: 8px;margin-bottom:12px;" onclick="M.toast({html: 'No domain selected.'});"><i class="material-icons left">publish</i>Publish Artifact</a></li>
+    <li id="poster" style="margin-top:12px;"><a class="waves-effect waves-light blue-grey z-depth-1 lighten-3" style="width: 240px;margin: auto;border-radius: 8px;margin-bottom:12px;" onclick="M.toast({html: 'No domain selected.'});"><i class="material-icons left">upload_file</i>Publish Deed</a></li>
   	<li><div style="margin-top:0;" class="divider"></div></li></ul>
 
 <!-- view -->
@@ -215,7 +215,7 @@ async function initial() {
     var gear = Math.floor(Math.random() * (42 - 1 + 1)) + 1; document.getElementById('list-wait').src = "img/object/user/gear/gear" + gear.toString() + ".png";
     var gear2 = Math.floor(Math.random() * (42 - 1 + 1)) + 1; document.getElementById('list-wait2').src = "img/object/user/gear/gear" + gear2.toString() + ".png";
     var leaf = Math.floor(Math.random() * (16 - 1 + 1)) + 1;
-    document.getElementById('menu-logo').src = "res/leaf/leaf" + leaf.toString() + ".png";
+    document.getElementById('menu-logo').src = "img/leaf/leaf" + leaf.toString() + ".png";
 $('.tooltipped').tooltip();
     // materialize
     $('#docs').dropdown({ constrainWidth: false, coverTrigger: false, hover: true } ); $('#doc-hide').dropdown({ constrainWidth: false, coverTrigger: false } );
@@ -422,7 +422,7 @@ switch (doc) {
         $("#doc-hide").css("color","lightgreen!important");break;
         }
 
-document.getElementById('dialog-inner2').scrollTo(0, 0); $.get('a/'+doc, function(data) { setDialog(renderMd(data)); }); }
+document.getElementById('dialog-inner2').scrollTo(0, 0); $.get('doc/'+doc, function(data) { setDialog(renderMd(data)); }); }
 
 function adjustSort(full) { //$("option[value='09']").attr("disabled", "disabled");
     $('#select-sort').empty();
