@@ -193,10 +193,10 @@ for (var a = 0; a < files.files.length; a++)
 function openInNewTab(url) { window.open(url, '_blank').focus(); } //window.location.href = url;
 
 function showFav(site) {
-    $('<link>').appendTo('head').attr({ class: 'ico', type: 'image/x-icon', rel: 'icon', href: "res/favicon.ico" });
-    $('<link>').appendTo('head').attr({ class: 'ico', type: 'image/x-icon', rel: 'shortcut icon', href: "res/favicon.ico" });
-    $('<link>').appendTo('head').attr({ class: 'ico', type: 'image/x-icon', rel: 'icon', sizes: "192x192", href: "res/android-chrome-192x192.png" });
-    $('<link>').appendTo('head').attr({ class: 'ico', type: 'image/x-icon', rel: 'apple-touch-icon', sizes: "128x128", href: "res/apple-touch-icon.png" }); }
+    $('<link>').appendTo('head').attr({ class: 'ico', type: 'image/x-icon', rel: 'icon', href: "img/favicon.ico" });
+    $('<link>').appendTo('head').attr({ class: 'ico', type: 'image/x-icon', rel: 'shortcut icon', href: "img/favicon.ico" });
+    $('<link>').appendTo('head').attr({ class: 'ico', type: 'image/x-icon', rel: 'icon', sizes: "192x192", href: "img/android-chrome-192x192.png" });
+    $('<link>').appendTo('head').attr({ class: 'ico', type: 'image/x-icon', rel: 'apple-touch-icon', sizes: "128x128", href: "img/apple-touch-icon.png" }); }
 
 function adjustSize(img) {
     if (img.height >= img.width) { adjustment = (img.height - img.width) / 48; shim = 'padding-right'; img.height = "48"; }
@@ -395,11 +395,11 @@ function showView(view) {  hideView(); $('#'+view).show();
 
     switch (view) {
         case 'editor': $("#editor").addClass("scale-in"); break;
-        case 'list': $("#list-list").css("background-color","green");$("#list-list").css("color","lightgreen!important");
-        $("#list-hide").css("color","lightgreen!important");break;
+        case 'list': $("#list-list").css("background-color","tan");$("#list-list").css("color","brown!important");
+        $("#list-hide").css("color","brown!important");break;
         case 'news': $("#stamper").show(); $("#world").show(); break;
-        case 'map': $("#actions").show(); $("#map-list").css("background-color","green");$("#map-list").children('a').eq(0).css("color","lightgreen");
-        $("#map-hide").css("color","lightgreen!important");
+        case 'map': $("#actions").show(); $("#map-list").css("background-color","tan");$("#map-list").children('a').eq(0).css("color","brown");
+        $("#map-hide").css("color","brown!important");
             if (mapSwitch) { currentMarkers[0].togglePopup(); mapSwitch = false; }
 
         break; } }
