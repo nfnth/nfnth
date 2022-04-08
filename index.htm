@@ -377,7 +377,7 @@ function showHome() { pullWallet('8803'); }
 
 var mapSwitch = true;
 
-function hideView() { $('.modal').modal('close'); $('#somedialog2').click(); $('.pane').hide(); window.scrollTo(0, 0);
+function hideView() { $('.modal').modal('close'); $('#somedialog2').trigger( "click" ); $('.pane').hide(); window.scrollTo(0, 0);
 $("#doc-list").css("background-color","");$("#doc-list").children('a').eq(0).css("color","");
 $("#box-list").css("background-color","");$("#box-list").children('a').eq(0).css("color","");
 $("#map-list").css("background-color","");$("#map-list").children('a').eq(0).css("color","");
