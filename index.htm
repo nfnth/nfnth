@@ -19,7 +19,7 @@
 <nav id="main-menu" style="position: fixed;top:0; z-index:2;visibility:hidden;" class="loader">
     <div id="panel-menu" class="nav-wrapper header amber lighten-4 z-depth-3" style="border-bottom:solid 3px tan; display:flex; justify-content: space-between; color:black;">
     	<div class="z-depth-1"><a style="display: flex; align-items: center; height: 100%; padding-right: 10px; background-color: rgb(239, 225, 173, 0.6); color: tan;font-weight: bold;font-size: 20px;">
-		<div id="waiter" class="pane" onclick="showView('news');" style="height:48px; width:48px; cursor: pointer; margin-left: 12px;"><img id="list-wait" class="image"/><img id="list-wait2" class="image"/></div></a></div>
+		<div id="waiter" onclick="showView('news');" style="height:48px; width:48px; cursor: pointer; margin-left: 12px;"><img id="list-wait" class="image"/><img id="list-wait2" class="image"/></div></a></div>
     <!-- media -->
 	<a id="doc-hide" class="screen-hide" href="#!" data-target="doc"><i class="material-icons">menu_book</i></a>
         <a id="map-hide" class="screen-hide" onclick="showView('map'); map.resize(); showIntro();"><i class="material-icons">map</i></a>
@@ -795,9 +795,9 @@ function setTemplate() {
 var map; var map_token = "pk.eyJ1IjoibmZudGgiLCJhIjoiY2tweW1rNXlsMGFpYzJwcGt1cHh6dmxzcyJ9.ZJaFrGpPDv5froWZMLXXYQ";
 var base = [-98.59236473214004, 39.82998211920899, ]; var landlord = [-101.59236473214004, 42.82998211920899, ]; var art = [-96.59236473214004, 37.82998211920899, ]; var center = [-0.4510253658899336, 43.91338997020656];
 var fr = [-0.6187045799411647, 45.13824627199055]; var fr2 = [-3.7643573392266596, 48.02359499120687]; var fr3 = [1.5266131055501075, 43.706742350484916];
-var baseContent = '<div><div><img width="48" height="48" src="img/deed.png"/></div><div><h6>About Deed</h6><a class="waves-effect waves-light btn" onclick="showDoc(\'learn/deed\');">Learn...</a>&nbsp;&nbsp;<a class="waves-effect waves-light btn blue lighten-3" onclick="clearMap(); showLandlord();"><i class="material-icons">navigate_next</i></a></div></div>';
-var landContent = '<div><div><img width="48" height="48" src="img/domain.png"/></div><div><h6>About Domain</h6><a class="waves-effect waves-light btn" onclick="showDoc(\'learn/domain\');">Learn...</a>&nbsp;&nbsp;<a class="waves-effect waves-light btn blue lighten-3" onclick="clearMap(); showArt();"><i class="material-icons">navigate_next</i></a></div></div>';
-var artContent = '<div><div><img width="48" height="48" src="img/barrel.png"/></div><div><h6>About Artifact</h6><a class="waves-effect waves-light btn" onclick="showDoc(\'learn/artifact\');">Learn...</a>&nbsp;&nbsp;<a class="waves-effect waves-light btn blue lighten-3" onclick="clearMap(); showBase();"><i class="material-icons">restart_alt</i></a</div></div>';
+var baseContent = '<div><div><img width="48" height="48" src="img/deed.png"/></div><div><h6>Purchase Deed</h6><a class="waves-effect waves-light btn" onclick="showDoc(\'learn/deed\');">Read...</a>&nbsp;&nbsp;<a class="waves-effect waves-light btn blue lighten-3" onclick="clearMap(); showLandlord();"><i class="material-icons">navigate_next</i></a></div></div>';
+var landContent = '<div><div><img width="48" height="48" src="img/domain.png"/></div><div><h6>Build Domain</h6><a class="waves-effect waves-light btn" onclick="showDoc(\'learn/domain\');">Read...</a>&nbsp;&nbsp;<a class="waves-effect waves-light btn blue lighten-3" onclick="clearMap(); showArt();"><i class="material-icons">navigate_next</i></a></div></div>';
+var artContent = '<div><div><img width="48" height="48" src="img/barrel.png"/></div><div><h6>Mine OCUR</h6><a class="waves-effect waves-light btn" onclick="showDoc(\'learn/artifact\');">Read...</a>&nbsp;&nbsp;<a class="waves-effect waves-light btn blue lighten-3" onclick="clearMap(); showBase();"><i class="material-icons">restart_alt</i></a</div></div>';
 
 var currentMarkers=[]; //var introMark;//43.706742350484916, 1.5266131055501075
 var showIntro; var addMark; var coordinates; var artFlag = false;
