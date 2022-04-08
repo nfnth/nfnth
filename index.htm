@@ -167,7 +167,7 @@
 <div id="modal1" class="modal bottom-sheet content loader blue-grey lighten-5"><div id="domain-info" class="modal-content"></div></div>
 
 <div id="somedialog2" class="dialog print-help hide-scrollbar" style="z-index:99;display:none;">
-	<div class="dialog__overlay hide-scrollbar" onclick="hideView();"></div>
+	<div id="someoverlay" class="dialog__overlay hide-scrollbar" onclick="hideView();"></div>
     <div class="dialog__content print-help hide-scrollbar" style="width: 80%; height:80%; text-align:left;overflow:auto;">
         <div class="morph-shape" data-morph-open="M0,0h80c0,0,0,9.977,0,29.834c0,19.945,0,30.249,0,30.249H0c0,0,0-10.055,0-30.332C0,8.219,0,0,0,0z" data-morph-close="M0,29.75h80c0,0-3.083,0.014-3.083,0.041c0,0.028,3.083,0.042,3.083,0.042H0c0,0,3.084-0.014,3.084-0.042
 											C3.084,29.762,0,29.75,0,29.75z">
@@ -377,7 +377,7 @@ function showHome() { pullWallet('8803'); }
 
 var mapSwitch = true;
 
-function hideView() { $('.modal').modal('close'); $('#somedialog2').trigger( "click" ); $('.pane').hide(); window.scrollTo(0, 0);
+function hideView() { $('.modal').modal('close'); $('#someoverlay').trigger( "click" ); $('.pane').hide(); window.scrollTo(0, 0);
 $("#doc-list").css("background-color","");$("#doc-list").children('a').eq(0).css("color","");
 $("#box-list").css("background-color","");$("#box-list").children('a').eq(0).css("color","");
 $("#map-list").css("background-color","");$("#map-list").children('a').eq(0).css("color","");
