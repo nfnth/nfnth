@@ -597,8 +597,6 @@ function setDomains(direction) {
 
     var elems = document.querySelectorAll('#editor-domain'); var instances = M.FormSelect.init(elems); }
 
-
-
 function setDeeds(disable) {
     for (let i = 0; i < domains.length; i++) {
         if (domains[i][8] == wallet.toLowerCase()) { $('#editor-domain').append($('<option>', { value: 1, text: domains[i][4] })); } }
@@ -984,15 +982,9 @@ div.active {opacity: 1;height: auto;}
 	nav ul a { color:black; }
 nav ul a:hover { color:darkgoldenrod; }
 
-  body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-  }
+  body {display: flex;min-height: 100vh;flex-direction: column; }
 
-  main {
-    flex: 1 0 auto;
-  }
+  main {flex: 1 0 auto;}
 
 .hide-scrollbar { overflow: auto; -ms-overflow-style: none; /* IE 11 */ scrollbar-width: none; /* Firefox 64 */ }
 .dropdown-content li>a>i { margin:0 12px 0 0; } .dropdown-content li>a, .dropdown-content li>span { color:darkslategray!important; }</style></body></html>
