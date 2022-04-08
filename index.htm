@@ -53,8 +53,8 @@
 <ul id="domain" class="dropdown-content loader" style="visibility:hidden;">
 	<li><a onclick="showView('list'); showList('open');"><i class="material-icons">sailing</i>OpenSea Collection</a></li>
 	<li class="divider"></li>
+	<li><a onclick="showView('list'); showList('domain');"><i class="material-icons"><span class="material-icons-outlined">landscape</span></i>Domain Manifest</a></li>
 	<li><a onclick="showView('list'); showList('deed');"><i class="material-icons"><span class="material-icons-outlined">class</span></i>Deed Registry</a></li>
-    	<li><a onclick="showView('list'); showList('domain');"><i class="material-icons"><span class="material-icons-outlined">landscape</span></i>Domain Manifest</a></li>
     	<li class="divider"></li>
 	<li><a onclick="openInNewTab('https://ustat.us');"><i class="material-icons">toll</i>OCUR Exchange...</a></li></ul>
 
@@ -71,11 +71,10 @@
   	<!-- <i class="material-icons left">directions</i><i class="material-icons left">picture_as_pdf</i><i class="material-icons left">calculate</i>-->
   	<li><a class="subheader">Domain Information</a></li>
   	<li><a class="waves-effect tooltipped" data-position="left" data-tooltip="Domain Stats"><i class="material-icons">gite</i><span id="myURL">Domain Stats</span></a></li>
-    <li><a class="waves-effect tooltipped" data-position="left" data-tooltip="Domain Balance (OCUR)"><i class="material-icons">token</i><span id="myURL">OCUR Balance</span></a></li>
+    	<li><a class="waves-effect tooltipped" data-position="left" data-tooltip="Domain Balance (OCUR)"><i class="material-icons">token</i><span id="myURL">Domain Balance (OCUR)</span></a></li>
   	<li style="margin-top:12px; display: flex;align-items: center;justify-content: center;margin-bottom:16px;"><select id="domain-template" class="sider" onchange="domainSelect();">
         <option selected="selected">No domain selected</option><option>tactician.us (demo)</option></select></li>
-
-    <li id="poster" style="margin-top:12px;"><a class="waves-effect waves-light blue-grey z-depth-1 lighten-3" style="width: 240px;margin: auto;border-radius: 8px;margin-bottom:12px;" onclick="M.toast({html: 'No domain selected.'});"><i class="material-icons left">upload_file</i>Publish Deed</a></li>
+    	<li id="poster" style="margin-top:12px;"><a class="waves-effect waves-light blue-grey z-depth-1 lighten-3" style="width: 240px;margin: auto;border-radius: 8px;margin-bottom:12px;" onclick="M.toast({html: 'No domain selected.'});"><i class="material-icons left">upload_file</i>Publish Deed</a></li>
   	<li><div style="margin-top:0;" class="divider"></div></li></ul>
 
 <!-- view -->
@@ -84,16 +83,15 @@
     <!-- world -->
     <div id="world" class="content loader pane blue-grey lighten-5" style="width:100%;background-color:darkgrey;">
         <img src="img/world-min.jpg" class="z-depth-2" style="width:100%; margin-bottom:-6px; " />
-        <div style="position: absolute; margin-top:240px; width: 100%; top:0; height: 0"><div style="cursor:pointer; position:absolute; color:white; font-size:24px;background-color: rgba(245, 245, 245, 0.8);padding-bottom: 48px;padding-top: 36px;text-align: center;align-items: center;justify-content: center;width: 100%;  " onclick="showDoc('PLANME');"><span style="color:darkgoldenrod; font-weight:bold; font-size:28px; background-color: rgb(230, 230, 230, 0.8);border-radius: 6px;padding-left: 6px;">OCUR.IO&nbsp;</span><span style="color:darkgrey; font-size:26px; font-weight:bold;vertical-align:super;">  // own build trade </span><br/><span style="font-size:18px;color:white;">deed. domain. </span><span style="font-size:18px; color:white; font-weight:bold;">decentralized.</span></div></div></div>
+        <div style="position: absolute; margin-top:240px; width: 100%; top:0; height: 0"><div style="cursor:pointer; position:absolute; color:white; font-size:24px;background-color: rgba(245, 245, 245, 0.8);padding-bottom: 48px;padding-top: 36px;text-align: center;align-items: center;justify-content: center;width: 100%;  " onclick="showDoc('PLANME');"><span style="color:darkgoldenrod; font-weight:bold; font-size:28px; background-color: rgb(230, 230, 230, 0.8);border-radius: 6px;padding-left: 6px;">OCUR.IO&nbsp;</span><span style="color:ghostwhite; font-size:26px; font-weight:bold;vertical-align:super;">  // own build trade </span><br/><span style="font-size:18px;color:black;">deed. domain. </span><span style="font-size:18px; color:black; font-weight:bold;">decentralized.</span></div></div></div>
 
     <!-- list -->
     <div id="list" class="content loader pane" style="overflow-y: auto; height: 95%;">
         <div class="z-depth-1" style="display:flex; justify-content: space-evenly; padding-top: 24px; padding-bottom:12px; margin-bottom: -6px; align-items:center;">
         <div class="switch">
             <label style="display:flex; align-items:center;"><i class="material-icons">view_list</i>
-            <input type="checkbox"><span class="lever"></span><i class="material-icons">grid_view</i></label></div>
-            <div><a class="waves-effect waves-light waves-green btn green" onclick="showDoc('filter'); setFilter();"><i class="material-icons left">filter_list</i>Filter/Sort</a></div>
-            </div>
+            <input type="checkbox" onclick="changeView();"><span class="lever"></span><i class="material-icons">grid_view</i></label></div>
+            <div><a class="waves-effect waves-light waves-green btn green" onclick="showDoc('filter'); setFilter();"><i class="material-icons left">filter_list</i>Filter/Sort</a></div></div>
         <div id="registry" class="collection" style="overflow:auto;"></div></div>
 
     <!-- search -->
@@ -149,10 +147,7 @@
 <script>
 function checkFile() {
 var files = document.getElementById("fileinput");
-for (var a = 0; a < files.files.length; a++)
-{
-    alert(files.files[a].name);
-}
+for (var a = 0; a < files.files.length; a++) { alert(files.files[a].name); }
 //document.getElementById("fileinput").files[0];
 }
 
@@ -193,7 +188,7 @@ $('.tooltipped').tooltip();
     setTimeout(function() { $(".loader").css("visibility", "visible"); $('img').on('dragstart', function(evt) { return false; }); }  , 500); }
 
 initial();
-document.addEventListener('DOMContentLoaded', function() { showIntro(); if (window.location.href == "https://ur.land/?action=about") { showDoc('land'); } });
+document.addEventListener('DOMContentLoaded', function() { showIntro(); if (window.location.href == "https://ocur.io/?action=about") { showDoc('land'); } });
 
 function domainFind() {
     var domainName = window.location.host; var pathName = window.location.pathname.replaceAll('/',''); var searchName = window.location.search.replaceAll('?domain=','');
@@ -201,7 +196,6 @@ function domainFind() {
 //var elems = document.querySelectorAll('.modal'); var instances = M.Modal.init(elems); });
 
 // wallet (user)
-//var web3; var wallet = ""; var eth = ""; var url = ""; var profile = "No user info found."; var account, getURL; var contract;
 var walletAddress = '';
 var connectButton = '<i class="material-icons left">account_balance_wallet</i>Connect Wallet', disconnectButton = '<i class="material-icons left">logout</i>Disconnect Wallet';
 var setup = async function () {
@@ -305,8 +299,7 @@ function pullOpen(name) {
             domains.push(tmp);  }  updateCount(name, response.assets.length); } ).then(response => {
             if (domains.length > 180) { holder = domains.slice(); domainFind(); } }).catch(err => console.error(err)); }
 
-function updateCount(name, count) {
-for (let i=0;i<opens.length;i++) { if (opens[i].core.slug == name) { opens[i].count = count; break;} } }
+function updateCount(name, count) { for (let i=0;i<opens.length;i++) { if (opens[i].core.slug == name) { opens[i].count = count; break;} } }
 
 function pullClaims(name) {
     fetch('https://api.opensea.io/api/v1/assets?limit=10&owner='+name, options)
@@ -318,12 +311,6 @@ function pullClaims(name) {
       .then(response => { findDeeds(); }).catch(err => console.error(err)); }
 
 function pullInfo() {
-    $.get('path/domain', function(data) { //alert(data);
-        var lines = data.split(/\r?\n/); //$("#artifact-count").html(lines.length - 1);
-        for (let i = 0; i < lines.length; i++) {
-            var fields = lines[i].split('|');
-            for (let j = 0; j < fields.length; j++) {
-                artifacts.push(fields[j].replace('/mnt/deed/','')); } } } );
     $.get('path/wallet', function(data) { //alert(data);
         var lines = data.split(/\r?\n/); //$("#manifest-count").html(lines.length - 1);
         for (let i = 0; i < lines.length; i++) {
@@ -331,20 +318,14 @@ function pullInfo() {
             for (let j = 0; j < fields.length; j++) {
                 deeds.push(fields[j].replace('/mnt/deed/','')); } } } ); }
 
-var current
-function pullDoc(address) {
-$.get('deed/' + address + '/doc', function(data) { setDialog(renderMd(data)); }); }
-
+var current;
 function pullDomain(domain) { $.get('deed/domain/' + domain, function(data) { showDoc(data); }); }
 
 pullInfo(); pullOpens(); //pullAsset(asset.token_id);
 
-function showHome() { pullWallet('8803'); }
-
-
 var mapSwitch = true;
 
-function hideView() { $('.modal').modal('close');  $('.pane').hide(); window.scrollTo(0, 0); if (openDoc) { openDoc = false; }
+function hideView() { $('.modal').modal('close');  $('.pane').hide(); window.scrollTo(0, 0); if (openDoc) { openDoc = false; $('#news').show(); }
 $("#doc-list").css("background-color","");$("#doc-list").children('a').eq(0).css("color","");
 $("#box-list").css("background-color","");$("#box-list").children('a').eq(0).css("color","");
 $("#map-list").css("background-color","");$("#map-list").children('a').eq(0).css("color","");
@@ -425,7 +406,7 @@ function addList(i){
     $("#registry").append("<a class='collection-item modal-trigger' href='#modal1' onclick='addListDetail(" + i + ");'><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;'>" + domains[i].core.name + "</div><div style='display:flex; justify-content:space-between;align-items:center;'><div style='display:flex; flex-direction:column;'><div style='width:160px; ' class='z-depth-1 chip " +  getClass(domains[i].core.collection.slug)  + "'><img src='img/key/" + getCollect(domains[i].core.collection.slug) + "'><div style='border-radius:12px; width:100px;background-color:rgb(245, 246, 247,0.75);color:black;font-size:16px;font-weight:bold;' class='z-depth-1'>" + padSerial(domains[i].serial) + "</div></div></div></div></div></a>"); }
 
 function addListDetail(i) {
-     $("#domain-info").html('<div style="display:flex;justify-content:space-evenly;align-items:center;"><div style="display: flex;flex-direction: column;text-align: left;align-items:center;"><div style="display:flex; justify-content:center;"><img style="margin-bottom:12px;" class="materialboxed z-depth-2" width="120" height="120" src="' + domains[i].core.image_preview_url + '"/></div><div style="margin-bottom:16px;">' + domains[i].name + '&nbsp;&nbsp · &nbsp;&nbsp<a onclick="openInNewTab(\'' + domains[i].core.external_link + '\');">' + domains[i].core.external_link + '</a></div><br/><div style="display:flex;"><a onclick="addListDeed(' + i +');" class="waves-effect waves-light waves-blue btn blue" ><i class="material-icons">sticky_note_2</i></a>&nbsp;&nbsp;<a onclick="showMark(\'' + domains[i][4] + '\'); showView(\'map\'); map.resize();" class="modal-close waves-effect waves-blue btn blue lighten-2" ><i class="material-icons">map</i></a>&nbsp;&nbsp;<a onclick="openInNewTab(\'' + domains[i][7] + '\');" class="waves-effect waves-light waves-blue btn green lighten-2" ><i class="material-icons">sailing</i></a>&nbsp;&nbsp;<a onclick="openInNewTab(\'' + domains[i][7] + '\');" class="waves-effect waves-light waves-blue btn green" ><i class="material-icons">payment</i></a></div><br/></div></div>'); $('.materialboxed').materialbox(); }
+     $("#domain-info").html('<div style="display:flex;justify-content:space-evenly;align-items:center;"><div style="display: flex;flex-direction: column;text-align: left;align-items:center;"><div style="display:flex; justify-content:center;"><img style="margin-bottom:12px;" class="materialboxed z-depth-2" width="120" height="120" src="' + domains[i].core.image_preview_url + '"/></div><div style="margin-bottom:16px;">' + domains[i].name + '&nbsp;&nbsp · &nbsp;&nbsp<a onclick="openInNewTab(\'' + domains[i].core.external_link + '\');">' + domains[i].core.external_link + '</a></div><br/><div style="display:flex;"><a onclick="addListDeed(' + i +');" class="waves-effect waves-light waves-blue btn green" ><i class="material-icons">sticky_note_2</i></a>&nbsp;&nbsp;<a onclick="openInNewTab(\'' + domains[i][7] + '\');" class="waves-effect waves-light waves-blue btn green lighten-2" ><i class="material-icons">payment</i></a>&nbsp;&nbsp;<a onclick="openInNewTab(\'' + domains[i][7] + '\');" class="waves-effect waves-light waves-blue btn blue lighten-2" ><i class="material-icons">account_wallet_balance</i></a>&nbsp;&nbsp;<a onclick="showMark(\'' + domains[i][4] + '\'); showView(\'map\'); map.resize();" class="modal-close waves-effect waves-blue btn blue lighten-2" ><i class="material-icons">map</i></a></div><br/></div></div>'); $('.materialboxed').materialbox(); }
 
 function addListDeed(i) {
     $("#somedialog2").css("z-index",1004);
