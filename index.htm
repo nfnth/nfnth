@@ -377,7 +377,7 @@ function showHome() { pullWallet('8803'); }
 
 var mapSwitch = true;
 
-function hideView() { $('.modal').modal('close'); $('#someoverlay').trigger( "click" ); $('.pane').hide(); window.scrollTo(0, 0);
+function hideView() { $('.modal').modal('close');  $('.pane').hide(); window.scrollTo(0, 0);
 $("#doc-list").css("background-color","");$("#doc-list").children('a').eq(0).css("color","");
 $("#box-list").css("background-color","");$("#box-list").children('a').eq(0).css("color","");
 $("#map-list").css("background-color","");$("#map-list").children('a').eq(0).css("color","");
@@ -391,7 +391,7 @@ $("#list-hide").css("background-color","");$("#list-hide").css("color","");
 $("#search-hide").css("background-color","");$("#search-hide").css("color","");
 
 }
-function showView(view) {  hideView(); $('#'+view).show();
+function showView(view) {  $('#someoverlay').trigger( "click" ); $('#'+view).show();
 
     switch (view) {
         case 'editor': $("#editor").addClass("scale-in"); break;
