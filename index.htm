@@ -215,7 +215,7 @@ async function initial() {
     var gear = Math.floor(Math.random() * (42 - 1 + 1)) + 1; document.getElementById('list-wait').src = "img/gear/gear" + gear.toString() + ".png";
     var gear2 = Math.floor(Math.random() * (42 - 1 + 1)) + 1; document.getElementById('list-wait2').src = "img/gear/gear" + gear2.toString() + ".png";
     var leaf = Math.floor(Math.random() * (16 - 1 + 1)) + 1;
-    document.getElementById('menu-logo').src = gear; //"img/leaf/leaf" + leaf.toString() + ".png";
+    document.getElementById('menu-logo').src = "img/gear/gear" + gear.toString() + ".png";
 $('.tooltipped').tooltip();
     // materialize
     $('#docs').dropdown({ constrainWidth: false, coverTrigger: false, hover: true } ); $('#doc-hide').dropdown({ constrainWidth: false, coverTrigger: false } );
@@ -416,10 +416,10 @@ function showList(area) { $("#registry").html(''); $("#registry").hide();
 
 function showDoc(doc) { hideView();
 switch (doc) {
-        case 'box': $("#box-list").css("background-color","green");$("#box-list").children('a').eq(0).css("color","lightgreen");
-        $("#box-hide").css("color","lightgreen!important"); break;
-        default: $("#doc-list").css("background-color","green");$("#doc-list").children('a').eq(0).css("color","lightgreen");
-        $("#doc-hide").css("color","lightgreen!important");break;
+        case 'box': $("#box-list").css("background-color","tan");$("#box-list").children('a').eq(0).css("color","brown");
+        $("#box-hide").css("color","brown!important"); break;
+        default: $("#doc-list").css("background-color","tan");$("#doc-list").children('a').eq(0).css("color","brown");
+        $("#doc-hide").css("color","brown!important");break;
         }
 
 document.getElementById('dialog-inner2').scrollTo(0, 0); $.get('doc/'+doc, function(data) { setDialog(renderMd(data)); }); }
