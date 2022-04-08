@@ -60,7 +60,7 @@
 <!-- panel -->
 <ul id="user-pane" class="sidenav loader blue-grey lighten-5" style="visibility:hidden;">
 	<li><div class="user-view z-depth-1" style="background-color: #eaf2f7;display: flex;margin: auto; padding: 0;align-items: center; padding-left:12px;"><span style="cursor: pointer;margin:auto;" onclick="showDoc('README'); $('#user-pane').sidenav('close');" class="new badge green darken-2" data-badge-caption="ocurOS | v1.02"></span>
-        <img id="user-pic" style="height: 72px;margin-left:18px; padding: 12px;" src="img/left.png" /></div></li>
+        <img id="user-pic" style="height: 72px;margin-left:18px; padding: 12px;" src="img/left.jpg" /></div></li>
     <li><a class="subheader">Wallet Information</a></li>
   	<li><a class="waves-effect tooltipped" data-position="left" data-tooltip="Wallet Address" onclick="if (walletAddress != '') {copyClip(walletAddress);}"><i class="material-icons">alternate_email</i><span id="myAdd">Wallet Address</span></a></li>
   	<li><a class="waves-effect tooltipped" data-position="left" data-tooltip="Ethereum Balance"><i class="material-icons">account_balance</i><span id="myETH">ETH Balance</span></a></li>
@@ -132,36 +132,6 @@
             <div>
                 <a onclick="if (walletAddress != '') {signer('domain','test domain...','add');} else { M.toast({html: 'No wallet connected.'}); }" class="waves-effect waves-green green btn"><i class="material-icons right">publish</i>Post</a></div>
             <div id="show-progress" class="progress" style="display:none;"><div class="indeterminate"></div></div></div></div>
-
-    <!-- news -->
-<footer id="stamper" class="page-footer pane" style=" color:black; padding-top: 0px; background-color:ghostwhite;">
-    <div id="news" class="container pane loader" style="display:flex;margin: auto;width:100%; background-color:white; max-width: 2400px!important;">
-            <div class="row">
-              <div class="col l6 s12">
-                <h5 class="white-text">Footer Content</h5>
-                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-              </div>
-              <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Links</h5>
-                <ul>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li></ul></div></div></div>
-          <div class="footer-copyright">
-            <div class="container">© 2022 NFNth Corp<a class="grey-text text-lighten-4 right" href="#!">More Links</a></div></div>
-
-        <div id="pager" class="container loader pane">
-            <div class="row" style="display:flex;">
-                <div class="col l6 s12" style="width:100%; text-align:center;">
-                    <ul class="pagination">
-                        <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-                        <li class="active"><a href="#!">1</a></li>
-                        <li class="waves-effect"><a href="#!">2</a></li>
-                        <li class="waves-effect"><a href="#!">3</a></li>
-                        <li class="waves-effect"><a href="#!">4</a></li>
-                        <li class="waves-effect"><a href="#!">5</a></li>
-                        <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li></ul></div></div></div></footer>
 
 <!-- dialog -->
 <div id="modal1" class="modal bottom-sheet content loader blue-grey lighten-5"><div id="domain-info" class="modal-content"></div></div>
@@ -370,7 +340,7 @@ $.get('deed/' + address + '/doc', function(data) { setDialog(renderMd(data)); })
 
 function pullDomain(domain) { $.get('deed/domain/' + domain, function(data) { showDoc(data); }); }
 
-pullInfo(); pullOpen(); //pullAsset(asset.token_id);
+pullInfo(); pullOpens(); //pullAsset(asset.token_id);
 
 function showHome() { pullWallet('8803'); }
 
