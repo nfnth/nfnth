@@ -38,7 +38,7 @@
 
     <!-- user -->
         <div id="wallet-area" class="z-depth-1" style="display:flex;" onclick="setup(); $('#user-pane').sidenav('open');">
-            <ul><li id="setting-wallet" style="background-color: rgb(110, 110, 110, 0.7); height:100%;" class="z-depth-1"><a id="wallet-icon" href="#" style="margin: 0;justify-items: center;display: flex;align-items: center;" ><i class="material-icons">account_balance_wallet</i><span class="mobile-hide">&nbsp;CONNECT</span></a></li></ul></div></div></nav>
+            <ul><li id="setting-wallet" style="background-color: rgb(225, 225, 225, 0.7); height:101%;" class="z-depth-1"><a id="wallet-icon" href="#" style="margin: 0;justify-items: center;display: flex;align-items: center;" ><i class="material-icons">account_balance_wallet</i><span class="mobile-hide">&nbsp;CONNECT</span></a></li></ul></div></div></nav>
 
 <!-- dropdown -->
 <ul id="doc" class="dropdown-content loader" style="visibility:hidden;">
@@ -46,7 +46,7 @@
     <li><a onclick="showDoc('manifesto');"><i class="material-icons">home</i>About ocur.io</a></li>
     <li class="divider"></li>
     <li><a onclick="showDoc('url');"><i class="material-icons">token</i>Trade OCUR</a></li>
-Market of 	<li><a onclick="showDoc('donation');"><i class="material-icons"><span class="material-icons-outlined">park</span></i>Make Donation</a></li>
+	<li><a onclick="showDoc('donation');"><i class="material-icons"><span class="material-icons-outlined">park</span></i>Make Donation</a></li>
 	<li class="divider"></li>
     <li><a onclick="openInNewTab('https://nfnth.com');"><i class="material-icons">explore</i>Explore Civilian...</a></li></ul>
 
@@ -83,7 +83,7 @@ Market of 	<li><a onclick="showDoc('donation');"><i class="material-icons"><span
     <!-- world -->
     <div id="world" class="content loader pane blue-grey lighten-5" style="width:100%;background-color:darkgrey;">
         <img src="img/world-min.jpg" class="z-depth-2" style="width:100%; margin-bottom:-6px; " />
-        <div style="position: absolute; margin-top:240px; width: 100%; top:0; height: 0"><div style="cursor:pointer; position:absolute; color:white; font-size:24px;background-color: rgba(233, 225, 197, 0.5);padding-bottom: 48px;padding-top: 36px;text-align: center;align-items: center;justify-content: center;width: 100%;  " onclick="showDoc('PLANME');"><span style="color:brown; font-weight:bold; font-size:28px; background-color: rgb(230, 208, 129, 0.8);border-radius: 6px;padding-left: 6px;">OCUR.IO&nbsp;</span><span style="color:aliceblue; font-size:26px; font-weight:bold;vertical-align:super;">  // build domain </span><br/><span style="font-size:18px;">deed. domain.</span><span style="font-size:18px; font-weight:bold;">decentralized.</span></div></div></div>
+        <div style="position: absolute; margin-top:240px; width: 100%; top:0; height: 0"><div style="cursor:pointer; position:absolute; color:white; font-size:24px;background-color: rgba(245, 245, 245, 0.8);padding-bottom: 48px;padding-top: 36px;text-align: center;align-items: center;justify-content: center;width: 100%;  " onclick="showDoc('PLANME');"><span style="color:blue; font-weight:bold; font-size:28px; background-color: rgb(230, 230, 230, 0.8);border-radius: 6px;padding-left: 6px;">OCUR.IO&nbsp;</span><span style="color:white; font-size:26px; font-weight:bold;vertical-align:super;">  // build domain </span><br/><span style="font-size:18px;">deed. domain. </span><span style="font-size:18px; font-weight:bold;">decentralized.</span></div></div></div>
 
     <!-- list -->
     <div id="list" class="content loader pane" style="overflow-y: auto; height: 95%;">
@@ -220,7 +220,7 @@ $('.tooltipped').tooltip();
     // materialize
     $('#docs').dropdown({ constrainWidth: false, coverTrigger: false, hover: true } ); $('#doc-hide').dropdown({ constrainWidth: false, coverTrigger: false } );
     $('#lists').dropdown({ constrainWidth: false, coverTrigger: false, hover: true } ); $('#list-hide').dropdown({ constrainWidth: false, coverTrigger: false } );
-    $('.carousel.carousel-slider').carousel({ fullWidth: true, indicators: true });
+    //$('.carousel.carousel-slider').carousel({ fullWidth: true, indicators: true });
     $('#user-pane').sidenav({ edge: 'right' });
     $('.fixed-action-btn').floatingActionButton({ hoverEnabled: false });
     $('#pad').css("height", window.innerHeight - 560);//showFav('dralun'); //  showFav('paper');
@@ -609,15 +609,12 @@ function showOwner(address) {
     var snippet = '<div><img src="https://chart.googleapis.com/chart?chs=120x120&cht=qr&chl=' + address + '&choe=UTF-8" /><br/><span class="badge green">' + address + '...</span></div><a class="modal-close waves-effect waves-green btn green" onclick="openEditor();"><i class="material-icons">mail</i></a>';
     setDialog(snippet); }
 
-
 function showDomain(domain) { $.get("doc/domain/"+domain, function(data) {setDialog(renderMd(data));}).fail(function(){setDialog('No domain info found.');});}
 
 function showPreview(){
     setDialog('<div id="viewer" style="text-align:left;padding:24; overflow-y:auto; width: 85%;float: right;padding-right: 64;"></div>');
     var text = document.getElementById('pad').textContent; $("#viewer").html(renderMd(text));}
 //document.getElementById('select-sort').getElementsByTagName('option')[0].selected = 'selected';
-
-
 
 function setDomains(direction) {
     if (!(direction)) { $('#editor-domain').prop("disabled", false); } else { $('#editor-domain').prop('disabled', 'disabled'); }
@@ -918,24 +915,6 @@ function locationStart() { if(navigator.geolocation) { navigator.geolocation.get
 var tempCoord = [0,0];
 function geoSuccess(position) {tempCoord[1] = position.coords.latitude;tempCoord[0] = position.coords.longitude; fly(tempCoord);   }
 function geoError() { alert('No location'); }
-
-var nes; function pushStopButton() { nes.stop(); NESstopped(); }
-function gameStart() {
-    $.getScript("https://cdn.rawgit.com/takahirox/nes-js/v0.0.1/build/nes.min.js", function() {
-        var url = 'res/doc/tactic/art/file/zelda.nes'; var request = new XMLHttpRequest();
-        request.responseType = 'arraybuffer'; request.onload = function() {
-            var buffer = request.response; nes = new NesJs.Nes();
-            nes.setRom(new NesJs.Rom(buffer)); nes.setDisplay(new NesJs.Display(document.getElementById('gameCanvas'))); nes.setAudio(new NesJs.Audio());
-            window.onkeydown = function(e) { nes.handleKeyDown(e); }; window.onkeyup = function(e) { nes.handleKeyUp(e); };
-            nes.bootup(); nes.run(); };
-        request.open('GET', url, true); request.send(null); }); }
-
-
-        var Notifications = {
-    requestPermission: function(callback) {
-        window.webkitNotifications.requestPermission(callback);
-    }
-};
 
 //$(function() {
 //    $('#click-me').click(function() {
