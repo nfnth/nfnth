@@ -29,8 +29,7 @@ class sdSync {
 		var codes = [];
 		function UniqueTest( c ) {
 			if ( codes.indexOf( c ) === -1 ) { codes.push( c ); return c; }
-			else
-			throw new Error('sdSync: Code "'+c+'" is in use'); }
+			else throw new Error('sdSync: Code "'+c+'" is in use'); }
 			
 		sdSync.COMMAND_CHARACTER_STATE = UniqueTest('c');
 		//sdSync.COMMAND_VISIBLE_BLOCKS = UniqueTest('v');
@@ -46,8 +45,7 @@ class sdSync {
 		sdSync.COMMAND_I_RESSURECT = UniqueTest('u');
 		sdSync.COMMAND_I_SAY = UniqueTest('y');
 		sdSync.COMMAND_I_RELOAD = UniqueTest('l');
-		sdSync.COMMAND_I_BUILD = UniqueTest('i');
-	}
+		sdSync.COMMAND_I_BUILD = UniqueTest('i'); }
 	
 	static MP_SendEvent( command, ... args ) {
 		for ( var i = 0; i < sdNet.match_dataConnections.length; i++ )
@@ -58,43 +56,32 @@ class sdSync {
 	static SendMyCommands( GSPEED ) {
 		// Some update data send there. In this game's case it is for character state and bullet state
 		if ( main.my_character !== null )
-		if ( main.my_character.hea > 0 )
-		sdSync.MP_SendEvent( sdSync.COMMAND_CHARACTER_STATE );
+			if ( main.my_character.hea > 0 ) sdSync.MP_SendEvent( sdSync.COMMAND_CHARACTER_STATE );
 		
-		for ( var i = 0; i < sdBullet.bullets.length; i++ ) {
-			var b = sdBullet.bullets[ i ];
-			if ( b.owner === main.my_character )
-			sdSync.MP_SendEvent( sdSync.COMMAND_I_MOVE_BULLET, b ); }
+		for ( var i = 0; i < sdBullet.bullets.length; i++ ) { var b = sdBullet.bullets[ i ];
+			if ( b.owner === main.my_character ) sdSync.MP_SendEvent( sdSync.COMMAND_I_MOVE_BULLET, b ); }
 		
 		// Some "Player # has left the match" logic
 		for ( var i = 0; i < sdNet.match_dataConnections.length; i++ )
-		if ( sdNet.match_dataConnections[ i ] !== null )
-		{
-			if ( !sdNet.match_dataConnections[ i ].open )
-			{
-				if ( sdNet.match_dataConnections[ i ].sd_connected )
-				{
+		if ( sdNet.match_dataConnections[ i ] !== null ) {
+			if ( !sdNet.match_dataConnections[ i ].open ) {
+				if ( sdNet.match_dataConnections[ i ].sd_connected ) {
 					sdNet.match_dataConnections[ i ].sd_connected_timeout_timer += GSPEED;
 					if ( sdNet.match_dataConnections[ i ].sd_connected_timeout_timer < 60 ) { }
-					else
-					{
+					else {
 						sdNet.match_dataConnections[ i ].sd_connected = false;
 						main.onChatMessage( '', ('Player #'+sdNet.match_dataConnections[ i ].user_uid + ' has left the match').split('<').join('&lt;').split('>').join('&gt;'), null );
 					} } }
 			else {
 				sdNet.match_dataConnections[ i ].sd_connected_timeout_timer = 0;
-				if ( !sdNet.match_dataConnections[ i ].sd_connected )
-				{
+				if ( !sdNet.match_dataConnections[ i ].sd_connected ) {
 					sdNet.match_dataConnections[ i ].sd_connected = true;
 					main.onChatMessage( '', ('Player #'+sdNet.match_dataConnections[ i ].user_uid + ' has been reconnected').split('<').join('&lt;').split('>').join('&gt;'), null );
 				} } } }
 	
-	static ThinkNow( GSPEED ) {
-		sdSync.update_timer -= GSPEED;
+	static ThinkNow( GSPEED ) { sdSync.update_timer -= GSPEED;
 		
-		if ( sdSync.update_timer <= 0 ) {
-			sdSync.update_timer = sdSync.update_delay;
-			
+		if ( sdSync.update_timer <= 0 ) { sdSync.update_timer = sdSync.update_delay;
 			if ( sdSync.update_delay > GSPEED ) GSPEED *= sdSync.update_delay;
 		
 			sdSync.SendMyCommands( GSPEED );
@@ -102,8 +89,5 @@ class sdSync {
 			for ( var i = 0; i < sdNet.match_dataConnections.length; i++ )
 			if ( sdNet.match_dataConnections[ i ] !== null )
 			if ( sdNet.match_dataConnections[ i ].sd_connected_timeout_timer < sdSync.keep_and_send_data_for_disconnected_players_duration || sdNet.match_dataConnections[ i ].open )
-			sdNet.match_dataConnections[ i ].byte_shifter.SendData( GSPEED );
-		}
-	}
-}
+			sdNet.match_dataConnections[ i ].byte_shifter.SendData( GSPEED ); } } }
 sdSync.init_class();
