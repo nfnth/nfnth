@@ -38,7 +38,7 @@
 
     <!-- user -->
         <div id="wallet-area" class="z-depth-1" style="display:flex;" onclick="setup(); $('#user-pane').sidenav('open');">
-            <ul><li id="setting-wallet" style="background-color: rgb(203, 190, 141, 0.9); height:99%;" class="z-depth-1"><a id="wallet-icon" href="#" style="margin: 0;justify-items: center;display: flex;align-items: center;" ><i class="material-icons">account_balance_wallet</i><span class="mobile-hide">&nbsp;CONNECT</span></a></li></ul></div></div></nav>
+            <ul><li id="setting-wallet" style="background-color: rgb(110, 110, 110, 0.7); height:100%;" class="z-depth-1"><a id="wallet-icon" href="#" style="margin: 0;justify-items: center;display: flex;align-items: center;" ><i class="material-icons">account_balance_wallet</i><span class="mobile-hide">&nbsp;CONNECT</span></a></li></ul></div></div></nav>
 
 <!-- dropdown -->
 <ul id="doc" class="dropdown-content loader" style="visibility:hidden;">
@@ -398,7 +398,7 @@ function showView(view) {  hideView(); $('#'+view).show();
         case 'list': $("#list-list").css("background-color","darkgrey");$("#list-list").css("color","darkgoldenrod!important");
         $("#list-hide").css("color","darkgoldenrod!important"); break;
         case 'news': $("#stamper").show(); $("#world").show(); break;
-        case 'map': $("#actions").show(); $("#map-list").css("background-color","darkgrey");$("#map-list").children('a').eq(0).css("color","darkgoldenrod");
+        case 'map': $("#actions").show(); $("#map-list").css("background-color","darkgrey"); $("#map-list").children('a').eq(0).css("color","darkgoldenrod");
         $("#map-hide").css("color","darkgoldenrod!important");
             if (mapSwitch) { currentMarkers[0].togglePopup(); mapSwitch = false; }
 
@@ -416,10 +416,10 @@ function showList(area) { $("#registry").html(''); $("#registry").hide();
 
 function showDoc(doc) { hideView();
 switch (doc) {
-        case 'box': $("#box-list").css("background-color","tan");$("#box-list").children('a').eq(0).css("color","brown");
-        $("#box-hide").css("color","brown!important"); break;
-        default: $("#doc-list").css("background-color","tan");$("#doc-list").children('a').eq(0).css("color","brown");
-        $("#doc-hide").css("color","brown!important");break;
+        case 'box': $("#box-list").css("background-color","darkgrey");$("#box-list").children('a').eq(0).css("color","darkgoldenrod");
+        $("#box-hide").css("color","darkgoldenrod!important"); break;
+        default: $("#doc-list").css("background-color","darkgrey");$("#doc-list").children('a').eq(0).css("color","darkgoldenrod");
+        $("#doc-hide").css("color","darkgoldenrod!important");break;
         }
 
 document.getElementById('dialog-inner2').scrollTo(0, 0); $.get('doc/'+doc, function(data) { setDialog(renderMd(data)); }); }
