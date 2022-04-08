@@ -16,33 +16,21 @@
 
 /* global sdNet, main, sdBullet */
 
-class sdSync
-{
-	static init_class()
-	{
+class sdSync {
+	static init_class() {
 		//sdSync.update_delay = 30; // hack
 		//sdSync.update_delay = 0.5;
 		//sdSync.update_delay = 1;
 		//sdSync.update_delay = 10;
-		sdSync.update_delay = 5;
-		
-		sdSync.update_timer = 0;
-		
-		
+		sdSync.update_delay = 5; sdSync.update_timer = 0;
 		//sdSync.keep_and_send_data_for_disconnected_players = false;
 		sdSync.keep_and_send_data_for_disconnected_players_duration = 15 * 30;
 		
 		var codes = [];
-		function UniqueTest( c )
-		{
-			if ( codes.indexOf( c ) === -1 )
-			{
-				codes.push( c );
-				return c;
-			}
+		function UniqueTest( c ) {
+			if ( codes.indexOf( c ) === -1 ) { codes.push( c ); return c; }
 			else
-			throw new Error('sdSync: Code "'+c+'" is in use');
-		}
+			throw new Error('sdSync: Code "'+c+'" is in use'); }
 			
 		sdSync.COMMAND_CHARACTER_STATE = UniqueTest('c');
 		//sdSync.COMMAND_VISIBLE_BLOCKS = UniqueTest('v');
@@ -61,27 +49,22 @@ class sdSync
 		sdSync.COMMAND_I_BUILD = UniqueTest('i');
 	}
 	
-	static MP_SendEvent( command, ... args )
-	{
+	static MP_SendEvent( command, ... args ) {
 		for ( var i = 0; i < sdNet.match_dataConnections.length; i++ )
 		if ( sdNet.match_dataConnections[ i ] !== null )
 		if ( sdNet.match_dataConnections[ i ].sd_connected_timeout_timer < sdSync.keep_and_send_data_for_disconnected_players_duration || sdNet.match_dataConnections[ i ].open )
-		sdNet.match_dataConnections[ i ].byte_shifter.AddEvent( command, ... args );
-	}
+		sdNet.match_dataConnections[ i ].byte_shifter.AddEvent( command, ... args ); }
 	
-	static SendMyCommands( GSPEED )
-	{
+	static SendMyCommands( GSPEED ) {
 		// Some update data send there. In this game's case it is for character state and bullet state
 		if ( main.my_character !== null )
 		if ( main.my_character.hea > 0 )
 		sdSync.MP_SendEvent( sdSync.COMMAND_CHARACTER_STATE );
 		
-		for ( var i = 0; i < sdBullet.bullets.length; i++ )
-		{
+		for ( var i = 0; i < sdBullet.bullets.length; i++ ) {
 			var b = sdBullet.bullets[ i ];
 			if ( b.owner === main.my_character )
-			sdSync.MP_SendEvent( sdSync.COMMAND_I_MOVE_BULLET, b );
-		}
+			sdSync.MP_SendEvent( sdSync.COMMAND_I_MOVE_BULLET, b ); }
 		
 		// Some "Player # has left the match" logic
 		for ( var i = 0; i < sdNet.match_dataConnections.length; i++ )
@@ -92,38 +75,27 @@ class sdSync
 				if ( sdNet.match_dataConnections[ i ].sd_connected )
 				{
 					sdNet.match_dataConnections[ i ].sd_connected_timeout_timer += GSPEED;
-					if ( sdNet.match_dataConnections[ i ].sd_connected_timeout_timer < 60 )
-					{
-					}
+					if ( sdNet.match_dataConnections[ i ].sd_connected_timeout_timer < 60 ) { }
 					else
 					{
 						sdNet.match_dataConnections[ i ].sd_connected = false;
 						main.onChatMessage( '', ('Player #'+sdNet.match_dataConnections[ i ].user_uid + ' has left the match').split('<').join('&lt;').split('>').join('&gt;'), null );
-					}
-				}
-			}
-			else
-			{
+					} } }
+			else {
 				sdNet.match_dataConnections[ i ].sd_connected_timeout_timer = 0;
 				if ( !sdNet.match_dataConnections[ i ].sd_connected )
 				{
 					sdNet.match_dataConnections[ i ].sd_connected = true;
 					main.onChatMessage( '', ('Player #'+sdNet.match_dataConnections[ i ].user_uid + ' has been reconnected').split('<').join('&lt;').split('>').join('&gt;'), null );
-				}
-			}
-		}
-	}
+				} } } }
 	
-	static ThinkNow( GSPEED )
-	{
+	static ThinkNow( GSPEED ) {
 		sdSync.update_timer -= GSPEED;
 		
-		if ( sdSync.update_timer <= 0 )
-		{
+		if ( sdSync.update_timer <= 0 ) {
 			sdSync.update_timer = sdSync.update_delay;
 			
-			if ( sdSync.update_delay > GSPEED )
-			GSPEED *= sdSync.update_delay;
+			if ( sdSync.update_delay > GSPEED ) GSPEED *= sdSync.update_delay;
 		
 			sdSync.SendMyCommands( GSPEED );
 		
