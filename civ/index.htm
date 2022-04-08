@@ -5,9 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <!--<link rel="shortcut icon" sizes="196x196" href="assets/icon-196x196.png">
-    <link rel="apple-touch-icon" sizes="196x196" href="assets/icon-196x196.png">
-    <link rel="icon" sizes="196x196" href="assets/icon-196x196.png">-->
+
     <link rel="apple-touch-icon" sizes="128x128" href="assets/icon-128x128.png">
 	<script src="js/three.js-dev/build/three.js"></script>
 	<script src="js/three.js-dev/examples/js/shaders/CopyShader.js"></script>
@@ -58,12 +56,9 @@ div, img, span, th, td, input, select
 	    td.mid  {text-align: center;}
 	    span.team_score
 	    {color:rgb(255,255,255);text-shadow: 0px 0px 2vh rgba(0,0,0,1);margin-left:1vh;
-		margin-right:1vh;display:inline-block;width:3vh;font-size:3vh;vertical-align: middle;
-	    }
-	    tr:nth-last-child(1) td:nth-child(1)
-	    {border-radius:0 0 0 1vh; }
-	    tr:nth-last-child(1) td:nth-last-child(1)
-	    {border-radius:0 0 1vh 0;  }
+		margin-right:1vh;display:inline-block;width:3vh;font-size:3vh;vertical-align: middle;}
+	    tr:nth-last-child(1) td:nth-child(1){border-radius:0 0 0 1vh; }
+	    tr:nth-last-child(1) td:nth-last-child(1){border-radius:0 0 1vh 0;  }
 	    .listplayer {display:block;width:100%;
 		padding:0.5vh;box-sizing: border-box;border-radius:0.5vh;font-size:1.6vh; }
 	    .listplayer:hover {background-color:rgba(0,0,0,0.2);}
@@ -72,14 +67,10 @@ div, img, span, th, td, input, select
 		border-radius:0.5vh;background-color:rgba(255,255,0,0.2);}
 	    #chat_box div {margin: 1vh;}
 	    .slider {
-		-webkit-appearance: none;  /* Override default CSS styles */
-		appearance: none;width: 100%; /* Full-width */
-		/*height: 20px; */
-		height: 1vh; /* Specified height */background: #000000;
-		outline: none; /* Remove outline */
-		opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
-		-webkit-transition: .2s; /* 0.2 seconds transition on hover */
-		transition: opacity .2s;padding: 0;  }
+		-webkit-appearance: none;  /* Override default CSS styles */appearance: none;width: 100%; /* Full-width */
+		/*height: 20px; */height: 1vh; /* Specified height */background: #000000;
+		outline: none; /* Remove outline */opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+		-webkit-transition: .2s; /* 0.2 seconds transition on hover */transition: opacity .2s;padding: 0;  }
 
 	    /* Mouse-over effects */
 	    .slider:hover {opacity: 1; /* Fully shown on mouse-over */ }
@@ -95,10 +86,8 @@ div, img, span, th, td, input, select
 		width: 0.5vh; /* Set a specific slider handle width */
 		height: 2vh; /* Slider handle height */background: #FFFFFF; cursor: pointer;  }
 	    
-	    option  {background-color: #000; }
-	    
-	    #hakase  {transition: filter 1s;filter: brightness(85%) contrast(85%);}
-	    
+	    option  {background-color: #000; }    
+	    #hakase  {transition: filter 1s;filter: brightness(85%) contrast(85%);}   
 	    #hakase:hover {filter: brightness(100%) contrast(100%); }
 	    #message_of_the_day{opacity:0;  }
 	    #message_of_the_day:before {content: "";position: absolute;top: 100%;width: 0;border-top: 15px solid white;border-left: 10px solid transparent;border-right: 10px solid transparent;right: calc( 50% - 10px ); }
@@ -117,23 +106,16 @@ div, img, span, th, td, input, select
 	<script src="js/sdSound.js"></script>
 	<script src="js/pb2HighRangeColor.js"></script>
 	<script src="js/sdChunk.js"></script>
-	
 	<script src="js/main.js"></script>
-	
 	<script src="js/sdNet.js"></script>
 	<script src="js/sdSprite.js"></script>
 	<script src="js/sdAI.js"></script>
-	
 	<script src="js/Guns/sdGun.js"></script>
 	<script src="js/Guns/sdGunClass.js"></script>
-	
 	<div id="ingame_hud">
-    
 	    <div id="mobile_ui">
-        
         	<span id="mobile_move_button" class="r_conteiner" style="   position: fixed;   left: 5vh; width: 30vh;   height:50vh; background-color: #ffffff0d; bottom: 5vh; border-radius: 20vh; text-align: center; line-height: 30vh;margin: 0px;  padding: 0px; font-size: 3vh; color: #ffffff24;
             ">Move</span>
-
 <span id="mobile_jump_button" class="r_conteiner" style="    position: fixed;
                 left: 36vh;  width: 14vh;  height: 14vh;  background-color: #ffffff0d;   bottom: 24vh;   border-radius: 20vh;  text-align: center;
                 line-height: 14vh;  margin: 0px; padding: 0px;   font-size: 3vh; color: #ffffff24; ">Jump</span>
@@ -151,94 +133,28 @@ div, img, span, th, td, input, select
 <span id="mobile_reload_button" class="r_conteiner" style="
                 position: fixed; right: 40%;  width: 14vh; height: 14vh;
                 background-color: #ffffff0d;  bottom: 6vh;   border-radius: 20vh;  text-align: center;
-                line-height: 14vh;  margin: 0px; padding: 0px;font-size: 3vh;   color: #ffffff24;
-            ">Reload</span>
+                line-height: 14vh;  margin: 0px; padding: 0px;font-size: 3vh;   color: #ffffff24;">Reload</span>
 
 <span id="mobile_1_button" class="r_conteiner" style="
                 position: fixed;right: 49vh; width: 14vh;  height: 14vh;
                 background-color: #ffffff0d; bottom: 6vh;  border-radius: 20vh; text-align: center;  line-height: 14vh;
-                margin: 0px; padding: 0px;   font-size: 3vh;  color: #ffffff24;
-            ">Rifle</span>
+                margin: 0px; padding: 0px;   font-size: 3vh;  color: #ffffff24;">Rifle</span>
 <span id="mobile_2_button" class="r_conteiner" style="  position: fixed;  right: 49vh;
                 width: 14vh; height: 14vh; background-color: #ffffff0d;  bottom: 24vh; border-radius: 20vh;
                 text-align: center;  line-height: 14vh;   margin: 0px;
-                padding: 0px;  font-size: 3vh;   color: #ffffff24;
-            ">Spark</span>
+                padding: 0px;  font-size: 3vh;   color: #ffffff24;">Spark</span>
 
-<span id="mobile_3_button" class="r_conteiner" style="
-                position: fixed;
-                right: 41vh;  width: 14vh;  height: 14vh;
-                background-color: #ffffff0d;  bottom: 40vh;  border-radius: 20vh;  text-align: center;   line-height: 14vh;   margin: 0px;
-                padding: 0px;
-                font-size: 3vh;
-                color: #ffffff24;
-            ">Shogtun</span>
+<span id="mobile_3_button" class="r_conteiner" style="position: fixed;right: 41vh;  width: 14vh;  height: 14vh;background-color: #ffffff0d;  bottom: 40vh;  border-radius: 20vh;  text-align: center;   line-height: 14vh;   margin: 0px;padding: 0px;font-size: 3vh;color: #ffffff24;">Shogtun</span>
 
-<span id="mobile_4_button" class="r_conteiner" style="
-                position: fixed;
-                right: 24vh;
-                width: 14vh;
-                height: 14vh;
-                background-color: #ffffff0d;
-                bottom: 49vh;
-                border-radius: 20vh;
-                text-align: center;
-                line-height: 14vh;
-                margin: 0px;
-                padding: 0px;
-                font-size: 3vh;
-                color: #ffffff24;
-            ">Sniper</span>
+<span id="mobile_4_button" class="r_conteiner" style="position: fixed;right: 24vh;width: 14vh;height: 14vh;background-color: #ffffff0d;bottom: 49vh;border-radius: 20vh;text-align: center;line-height: 14vh;margin: 0px;padding: 0px;font-size: 3vh;color: #ffffff24;">Sniper</span>
 
-<span id="mobile_5_button" class="r_conteiner" style="
-                position: fixed;
-                right: 5vh;
-                width: 14vh;
-                height: 14vh;
-                background-color: #ffffff0d;
-                bottom: 48vh;
-                border-radius: 20vh;
-                text-align: center;
-                line-height: 14vh;
-                margin: 0px;
-                padding: 0px;
-                font-size: 3vh;
-                color: #ffffff24;
-            ">RL</span>
+<span id="mobile_5_button" class="r_conteiner" style="position: fixed; right: 5vh;width: 14vh;height: 14vh;background-color: #ffffff0d;bottom: 48vh;border-radius: 20vh;text-align: center;line-height: 14vh;margin: 0px;padding: 0px;font-size: 3vh;color: #ffffff24;">RL</span>
 
-            <span id="mobile_shoot_button" class="r_conteiner" style="
-                position: fixed;
-                right: 5vh;
-                width: 40vh;
-                height: 40vh;
-                background-color: #ffffff0d;
-                bottom: 5vh;
-                border-radius: 20vh;
-                text-align: center;
-                line-height: 40vh;
-                margin: 0px;
-                padding: 0px;
-                font-size: 3vh;
-                color: #ffffff24;
+            <span id="mobile_shoot_button" class="r_conteiner" style="position: fixed;right: 5vh;width: 40vh;height: 40vh; background-color: #ffffff0d;  bottom: 5vh; border-radius: 20vh; text-align: center;line-height: 40vh; margin: 0px;  padding: 0px; font-size: 3vh;color: #ffffff24;
             ">Shoot</span>
             
-            <span id="mobile_x_button" class="r_conteiner" style="
-                position: fixed;
-                right: 5vh;
-                width: 8vh;
-                height: 8vh;
-                background-color: #ffffff0d;
-                top: 5vh;
-                border-radius: 20vh;
-                text-align: center;
-                line-height: 8vh;
-                margin: 0px;
-                padding: 0px;
-                font-size: 3vh;
-                color: #ffffff24;
-            ">x</span>
-        	
-        </div>
+            <span id="mobile_x_button" class="r_conteiner" style=" position: fixed;right: 5vh; width: 8vh; height: 8vh; background-color: #ffffff0d; top: 5vh;border-radius: 20vh; text-align: center;line-height: 8vh; margin: 0px;padding: 0px;font-size: 3vh;color: #ffffff24;
+            ">x</span></div>
 	    <!-- Crosshair -->
 	    <!--<img src="assets/crosshair.png" style="position: fixed;left:50%;margin-left: -8px;margin-top: -8px;top: 50%;">-->
 	    <img id="crosshair" src="assets/crosshair.png" style="position: fixed;left:50%;margin-left: -6px;margin-top: -6px;top: 50%;width:89px;height:89px;/*image-rendering: pixelated;*/">
