@@ -90,7 +90,7 @@
         <div class="z-depth-1" style="display:flex; justify-content: space-evenly; padding-top: 24px; padding-bottom:12px; margin-bottom: -6px; align-items:center;">
         <div class="switch">
             <label style="display:flex; align-items:center;"><i class="material-icons">view_list</i>
-            <input type="checkbox" onclick="changeView();"><span class="lever"></span><i class="material-icons">grid_view</i></label></div>
+            <input id="lister" type="checkbox" onclick="changeView();"><span class="lever"></span><i class="material-icons">grid_view</i></label></div>
             <div><a class="waves-effect waves-light waves-green btn green" onclick="showDoc('filter'); setFilter();"><i class="material-icons left">filter_list</i>Filter/Sort</a></div></div>
         <div id="registry" class="collection" style="overflow:auto;"></div></div>
 
@@ -145,9 +145,9 @@
         <div id="dialog-inner2" class="dialog-inner print-help hide-scrollbar" style="overflow:auto;"><div><button class="action" data-dialog-close>Close</button></div></div></div></div>
 
 <script>
-var grid = false;
-function changeView() { if (grid) { grid = false; } else { grid = true; }
-	if (grid) { showView('list'); showList('grid'); } else { showView('list'); showList('domain'); }
+
+function changeView() { 
+	if (document.getElementById('lister').checked) { showView('list'); showList('grid'); } else { showView('list'); showList('domain'); }
 }
 function checkFile() {
 var files = document.getElementById("fileinput");
@@ -301,7 +301,7 @@ function pullOpen(name) {
                     case 'ref': tmp.ref = traits[a].value.toString(); break;
                     default: break; } }
             domains.push(tmp);  }  updateCount(name, response.assets.length); } ).then(response => {
-            if (domains.length > 180) { holder = domains.slice(); domainFind(); } }).catch(err => console.error(err)); }
+            	if (domains.length > 180) { holder = domains.slice(); domainFind(); } }).catch(err => console.error(err)); }
 
 function updateCount(name, count) { for (let i=0;i<opens.length;i++) { if (opens[i].core.slug == name) { opens[i].count = count; break;} } }
 
@@ -418,7 +418,9 @@ function addListDeed(i) {
     setDialog("<div style='text-align:center;'><p><span style='font-weight:16px'>" + domains[i].name + "</span>&nbsp;&nbsp; · &nbsp;&nbsp;<a onclick='openInNewTab(\"" + domains[i].core.external_link + "\");'>" + domains[i].core.name + "</a></p></div><br/>" + "<div style='text-align:center;'><img style='width:80%;' src='" + domains[i].core.image_url + "' /></div><br/><br/><p>" + domains[i].core.description + "</p><a onclick='openInNewTab(\"" + domains[i].ref + "\");'>Read more...</a><br/><div style='text-align:center;'><img src='" + domains[i].img + "' /></div><br/><br/>" + "<div style='display:flex; justify-content:space-evenly;align-items:center;'><div style='display:flex; align-items: center;margin-top: 12px;margin-top: 12px;margin-right: 12px;'><br/><div onclick='showDoc(\"key/collection\");' style='text-align:center; width:160px; ' class='z-depth-1 chip " + getClass(domains[i].core.collection.slug) + "'><img src='img/icon/key/" + getCollect(domains[i].core.collection.slug) + "'><div style='background-color:rgb(245, 246, 247,0.75); border-radius:12px; width:100px;color:black;font-size:16px;'>" + domains[i][16] + "</div></div><div><img class='modal-close' onclick='showDoc(\"key/state\");' style='cursor:pointer; width:48px; height:48px;' src='img/state/" + domains[i].place + ".png' /></div></div></div></div>" + "<br/><br/>" + "UR Value/Rate = " + domains[i].ur);}
 
 function addGrid(i) { //card-panel?
+	if (i%4 == 0) { $("#registry").append('<div style="display:flex;">'); }
     $("#registry").append('<div class="card sticky-action hoverable"><div class="card-image waves-effect waves-block waves-light"><img class="activator" src="images/office.jpg"></div><div class="card-content"><span class="card-title activator grey-text text-darken-4">' + domains[i].core.name + '<i class="material-icons right">more_vert</i></span><p><a href="#">This is a link</a></p></div><div class="card-reveal"><span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span><p>Here is some more information about this product that is only revealed once clicked on.</p></div></div>');
+	if (i%3 == 0) { $("#registry").append('</div>'); }
 }
 
 function addContent(content) {
