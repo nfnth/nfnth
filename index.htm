@@ -377,7 +377,7 @@ function showHome() { pullWallet('8803'); }
 
 var mapSwitch = true;
 
-function hideView() { $('.modal').modal('close'); $('.pane').hide(); window.scrollTo(0, 0);
+function hideView() { $('.modal').modal('close'); $('.dialog').modal('close'); $('.pane').hide(); window.scrollTo(0, 0);
 $("#doc-list").css("background-color","");$("#doc-list").children('a').eq(0).css("color","");
 $("#box-list").css("background-color","");$("#box-list").children('a').eq(0).css("color","");
 $("#map-list").css("background-color","");$("#map-list").children('a').eq(0).css("color","");
@@ -792,9 +792,9 @@ function setTemplate() {
 var map; var map_token = "pk.eyJ1IjoibmZudGgiLCJhIjoiY2tweW1rNXlsMGFpYzJwcGt1cHh6dmxzcyJ9.ZJaFrGpPDv5froWZMLXXYQ";
 var base = [-98.59236473214004, 39.82998211920899, ]; var landlord = [-101.59236473214004, 42.82998211920899, ]; var art = [-96.59236473214004, 37.82998211920899, ]; var center = [-0.4510253658899336, 43.91338997020656];
 var fr = [-0.6187045799411647, 45.13824627199055]; var fr2 = [-3.7643573392266596, 48.02359499120687]; var fr3 = [1.5266131055501075, 43.706742350484916];
-var baseContent = '<div><div><img width="48" height="48" src="img/deed.png"/></div><div><h6>Purchase Deed</h6><a class="waves-effect waves-light btn" onclick="showDoc(\'deed\');">Read...</a>&nbsp;&nbsp;<a class="waves-effect waves-light btn blue lighten-3" onclick="clearMap(); showLandlord();"><i class="material-icons">navigate_next</i></a></div></div>';
-var landContent = '<div><div><img width="48" height="48" src="img/domain.png"/></div><div><h6>Build Domain</h6><a class="waves-effect waves-light btn" onclick="showDoc(\'domain\');">Read...</a>&nbsp;&nbsp;<a class="waves-effect waves-light btn blue lighten-3" onclick="clearMap(); showArt();"><i class="material-icons">navigate_next</i></a></div></div>';
-var artContent = '<div><div><img width="48" height="48" src="img/barrel.png"/></div><div><h6>Mine OCUR</h6><a class="waves-effect waves-light btn" onclick="showDoc(\'artifact\');">Read...</a>&nbsp;&nbsp;<a class="waves-effect waves-light btn blue lighten-3" onclick="clearMap(); showBase();"><i class="material-icons">restart_alt</i></a</div></div>';
+var baseContent = '<div><div><img width="48" height="48" src="img/deed.png"/></div><div style="margin-bottom:16px;"><h6>Purchase Deed</h6><a class="waves-effect waves-light btn" onclick="showDoc(\'deed\');">About...</a>&nbsp;&nbsp;<a class="waves-effect waves-light btn blue lighten-3" onclick="clearMap(); showLandlord();"><i class="material-icons">navigate_next</i></a></div></div>';
+var landContent = '<div><div><img width="48" height="48" src="img/domain.png"/></div><div style="margin-bottom:16px;"><h6>Build Domain</h6><a class="waves-effect waves-light btn" onclick="showDoc(\'domain\');">About...</a>&nbsp;&nbsp;<a class="waves-effect waves-light btn blue lighten-3" onclick="clearMap(); showArt();"><i class="material-icons">navigate_next</i></a></div></div>';
+var artContent = '<div><div><img width="48" height="48" src="img/barrel.png"/></div><div style="margin-bottom:16px;"><h6>Trade OCUR</h6><a class="waves-effect waves-light btn" onclick="showDoc(\'artifact\');">About...</a>&nbsp;&nbsp;<a class="waves-effect waves-light btn blue lighten-3" onclick="clearMap(); showBase();"><i class="material-icons">restart_alt</i></a</div></div>';
 
 var currentMarkers=[]; //var introMark;//43.706742350484916, 1.5266131055501075
 var showIntro; var addMark; var coordinates; var artFlag = false;
@@ -994,7 +994,7 @@ div.active {opacity: 1;height: auto;}
 
 .btn { overflow: hidden; } .btn:hover:before { opacity:1; } .btn:before { content: ''; opacity: 0.5;  background-color: rgba(109, 109, 109, 0.6); position: absolute; width: 100%; height: 100%; left: 0; top: 0; transition: opacity .2s; z-index: -1;}
 
-.markre {  border: 3px solid ghostwhite;   background-color: indianred; background-size: cover; width: 48px; height: 48px; border-radius: 50%; cursor: pointer; }
+.markre {  border: 3px solid ghostwhite; background-color: indianred; background-size: cover; width: 48px; height: 48px; border-radius: 50%; cursor: pointer; }
 .mapboxgl-popup { max-width: 200px; }
 
 *::-webkit-scrollbar-track {-webkit-box-shadow: inset 0 0 0px rgba(0, 0, 0, 0.0);background-color: transparent;} *::-webkit-scrollbar {width: 6px;background-color: transparent;} *::-webkit-scrollbar-thumb {background-color: #000000;}
