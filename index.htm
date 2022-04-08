@@ -42,7 +42,7 @@
 
 <!-- dropdown -->
 <ul id="doc" class="dropdown-content loader" style="visibility:hidden;">
-    <li><a onclick="showDoc('PLANME');"><i class="material-icons">backpack</i>How to Use Deed Domain</a></li>
+	<li><a onclick="showDoc('PLANME');"><i class="material-icons">backpack</i>Use Deed Domain</a></li>
     <li><a onclick="showDoc('manifesto');"><i class="material-icons">home</i>About ocur.io</a></li>
     <li class="divider"></li>
     <li><a onclick="showDoc('url');"><i class="material-icons">token</i>Trade OCUR</a></li>
@@ -51,16 +51,16 @@
     <li><a onclick="openInNewTab('https://nfnth.com');"><i class="material-icons">explore</i>Explore Civilian...</a></li></ul>
 
 <ul id="domain" class="dropdown-content loader" style="visibility:hidden;">
-	<li><a onclick="showView('list'); showList('domain');"><i class="material-icons"><span class="material-icons-outlined">class</span></i>Deed Registry</a></li>
+	<li><a onclick="showView('list'); showList('deed');"><i class="material-icons"><span class="material-icons-outlined">class</span></i>Deed Registry</a></li>
     	<li><a onclick="showView('list'); showList('domain');"><i class="material-icons"><span class="material-icons-outlined">landscape</span></i>Domain Manifest</a></li>
     	<li class="divider"></li>
 	<li><a onclick="openInNewTab('https://ustat.us');"><i class="material-icons">toll</i>OCUR Exchange...</a></li>
-	<li><a onclick="showView('list'); showList('open');"><i class="material-icons">sailing</i>OpenSea Collection...</a></li></ul>
+	<li><a onclick="showView('list'); showList('open');"><i class="material-icons">sailing</i>OpenSea Collection</a></li></ul>
 
 <!-- panel -->
 <ul id="user-pane" class="sidenav loader blue-grey lighten-5" style="visibility:hidden;">
-	<li><div class="user-view z-depth-1" style="background-color: #eaf2f7;display: flex;margin: auto; padding: 0;align-items: center; padding-left:12px;"><span style="cursor: pointer;margin:auto;" onclick="showDoc('README'); $('#user-pane').sidenav('close');" class="new badge green darken-2" data-badge-caption="brOS | v1.02"></span>
-        <img id="user-pic" style="height: 72px;margin-left:18px; padding: 12px;" src="img/shield.png" /></div></li>
+	<li><div class="user-view z-depth-1" style="background-color: #eaf2f7;display: flex;margin: auto; padding: 0;align-items: center; padding-left:12px;"><span style="cursor: pointer;margin:auto;" onclick="showDoc('README'); $('#user-pane').sidenav('close');" class="new badge green darken-2" data-badge-caption="ocurOS | v1.02"></span>
+        <img id="user-pic" style="height: 72px;margin-left:18px; padding: 12px;" src="img/left.png" /></div></li>
     <li><a class="subheader">Wallet Information</a></li>
   	<li><a class="waves-effect tooltipped" data-position="left" data-tooltip="Wallet Address" onclick="if (walletAddress != '') {copyClip(walletAddress);}"><i class="material-icons">alternate_email</i><span id="myAdd">Wallet Address</span></a></li>
   	<li><a class="waves-effect tooltipped" data-position="left" data-tooltip="Ethereum Balance"><i class="material-icons">account_balance</i><span id="myETH">ETH Balance</span></a></li>
@@ -377,7 +377,7 @@ function showHome() { pullWallet('8803'); }
 
 var mapSwitch = true;
 
-function hideView() { $('.modal').modal('close');  $('.pane').hide(); window.scrollTo(0, 0);
+function hideView() { $('.modal').modal('close');  $('.pane').hide(); window.scrollTo(0, 0); if (openDoc) { openDoc = false; }
 $("#doc-list").css("background-color","");$("#doc-list").children('a').eq(0).css("color","");
 $("#box-list").css("background-color","");$("#box-list").children('a').eq(0).css("color","");
 $("#map-list").css("background-color","");$("#map-list").children('a').eq(0).css("color","");
@@ -391,7 +391,7 @@ $("#list-hide").css("background-color","");$("#list-hide").css("color","");
 $("#search-hide").css("background-color","");$("#search-hide").css("color","");
 
 }
-function showView(view) {  $('#someoverlay').trigger( "click" ); $('#'+view).show();
+function showView(view) { if (openDoc) { $('#someoverlay').trigger( "click" ); } else { hideView();} $('#'+view).show();
 
     switch (view) {
         case 'editor': $("#editor").addClass("scale-in"); break;
@@ -414,7 +414,8 @@ function showList(area) { $("#registry").html(''); $("#registry").hide();
     //$("#registry").css("height",height + "px");
     $("#registry").show(); $('img').on('dragstart', function(evt) { return false; }); }
 
-function showDoc(doc) { hideView();
+var openDoc = false;
+function showDoc(doc) { hideView(); openDoc = true;
 switch (doc) {
         case 'box': $("#box-list").css("background-color","darkgrey");$("#box-list").children('a').eq(0).css("color","darkgoldenrod");
         $("#box-hide").css("color","darkgoldenrod!important"); break;
