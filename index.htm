@@ -395,11 +395,11 @@ function showView(view) {  hideView(); $('#'+view).show();
 
     switch (view) {
         case 'editor': $("#editor").addClass("scale-in"); break;
-        case 'list': $("#list-list").css("background-color","tan");$("#list-list").css("color","brown!important");
-        $("#list-hide").css("color","brown!important");break;
+        case 'list': $("#list-list").css("background-color","darkgrey");$("#list-list").css("color","darkgoldenrod!important");
+        $("#list-hide").css("color","darkgoldenrod!important"); break;
         case 'news': $("#stamper").show(); $("#world").show(); break;
-        case 'map': $("#actions").show(); $("#map-list").css("background-color","tan");$("#map-list").children('a').eq(0).css("color","brown");
-        $("#map-hide").css("color","brown!important");
+        case 'map': $("#actions").show(); $("#map-list").css("background-color","darkgrey");$("#map-list").children('a').eq(0).css("color","darkgoldenrod");
+        $("#map-hide").css("color","darkgoldenrod!important");
             if (mapSwitch) { currentMarkers[0].togglePopup(); mapSwitch = false; }
 
         break; } }
