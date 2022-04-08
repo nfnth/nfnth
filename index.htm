@@ -27,7 +27,7 @@
     	<a id="search-hide" class="screen-hide" onclick="showView('search');"><i class="material-icons">search</i></a>
 
     <!-- desktop -->
-    	<ul class="hide-on-med-and-down" style="color:black;">
+    	<ul class="hide-on-med-and-down">
 	    <li id="doc-list"><a id="docs" href="#!" data-target="doc"><i class="material-icons left">menu_book</i>LEARN<i class="material-icons right">arrow_drop_down</i></a></li>
             <li id="map-list"><a onclick="showView('map'); map.resize();"><i class="material-icons left">map</i>EXPLORE</a></li>
             <li id="list-list"><a id="lists" href="#!" data-target="domain"><i class="material-icons left">summarize</i>CATALOG<i class="material-icons right">arrow_drop_down</i></a></li>
@@ -54,8 +54,8 @@
 	<li><a onclick="showView('list'); showList('deed');"><i class="material-icons"><span class="material-icons-outlined">class</span></i>Deed Registry</a></li>
     	<li><a onclick="showView('list'); showList('domain');"><i class="material-icons"><span class="material-icons-outlined">landscape</span></i>Domain Manifest</a></li>
     	<li class="divider"></li>
-	<li><a onclick="openInNewTab('https://ustat.us');"><i class="material-icons">toll</i>OCUR Exchange...</a></li>
-	<li><a onclick="showView('list'); showList('open');"><i class="material-icons">sailing</i>OpenSea Collection</a></li></ul>
+	<li><a onclick="showView('list'); showList('open');"><i class="material-icons">sailing</i>OpenSea Collection</a></li>
+	<li><a onclick="openInNewTab('https://ustat.us');"><i class="material-icons">toll</i>OCUR Exchange...</a></li></ul>
 
 <!-- panel -->
 <ul id="user-pane" class="sidenav loader blue-grey lighten-5" style="visibility:hidden;">
@@ -83,11 +83,10 @@
     <!-- world -->
     <div id="world" class="content loader pane blue-grey lighten-5" style="width:100%;background-color:darkgrey;">
         <img src="img/world-min.jpg" class="z-depth-2" style="width:100%; margin-bottom:-6px; " />
-        <div style="position: absolute; margin-top:240px; width: 100%; top:0; height: 0"><div style="cursor:pointer; position:absolute; color:white; font-size:24px;background-color: rgba(245, 245, 245, 0.8);padding-bottom: 48px;padding-top: 36px;text-align: center;align-items: center;justify-content: center;width: 100%;  " onclick="showDoc('PLANME');"><span style="color:blue; font-weight:bold; font-size:28px; background-color: rgb(230, 230, 230, 0.8);border-radius: 6px;padding-left: 6px;">OCUR.IO&nbsp;</span><span style="color:white; font-size:26px; font-weight:bold;vertical-align:super;">  // build domain </span><br/><span style="font-size:18px;">deed. domain. </span><span style="font-size:18px; font-weight:bold;">decentralized.</span></div></div></div>
+        <div style="position: absolute; margin-top:240px; width: 100%; top:0; height: 0"><div style="cursor:pointer; position:absolute; color:white; font-size:24px;background-color: rgba(245, 245, 245, 0.8);padding-bottom: 48px;padding-top: 36px;text-align: center;align-items: center;justify-content: center;width: 100%;  " onclick="showDoc('PLANME');"><span style="color:darkgoldenrod; font-weight:bold; font-size:28px; background-color: rgb(230, 230, 230, 0.8);border-radius: 6px;padding-left: 6px;">OCUR.IO&nbsp;</span><span style="color:white; font-size:26px; font-weight:bold;vertical-align:super;">  // build domain </span><br/><span style="font-size:18px;">deed. domain. </span><span style="font-size:18px; font-weight:bold;">decentralized.</span></div></div></div>
 
     <!-- list -->
     <div id="list" class="content loader pane" style="overflow-y: auto; height: 95%;">
-        
         <div class="z-depth-1" style="display:flex; justify-content: space-evenly; padding-top: 24px; padding-bottom:12px; margin-bottom: -6px; align-items:center;">
         <div class="switch">
             <label style="display:flex; align-items:center;"><i class="material-icons">view_list</i>
@@ -416,7 +415,7 @@ alert('changed');
 }
 
 function addOpen(i){
-    $("#registry").append("<a class='collection-item modal-trigger' href='#modal1' onclick='addOpenDetail(" + i + ");'><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;'>" + opens[i].core.name + "</div><div style='display:flex; justify-content:space-between;align-items:center;'><div style='display:flex; flex-direction:column;'><div style='width:160px; ' class='z-depth-1 chip " + getColor(opens[i].core.slug)  + "'><img src='img/icon/key/" + getCollect(opens[i].core.slug) + "'><div style='border-radius:8px; width:100px;color:black;background-color:rgb(245, 246, 247,0.75); font-size:16px;' class='z-depth-1'><span style='font-weight:bold;' id='" + opens[i].core.slug + "-count'>" + opens[i].count + "</span></div></div></div></div></div></a>");}
+    $("#registry").append("<a class='collection-item modal-trigger' href='#modal1' onclick='addOpenDetail(" + i + ");'><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;'>" + opens[i].core.name + "</div><div style='display:flex; justify-content:space-between;align-items:center;'><div style='display:flex; flex-direction:column;'><div style='width:160px; ' class='z-depth-1 chip " + getColor(opens[i].core.slug)  + "'><img src='img/key/" + getCollect(opens[i].core.slug) + "'><div style='border-radius:8px; width:100px;color:black;background-color:rgb(245, 246, 247,0.75); font-size:16px;' class='z-depth-1'><span style='font-weight:bold;' id='" + opens[i].core.slug + "-count'>" + opens[i].count + "</span></div></div></div></div></div></a>");}
 
 function addOpenDetail(i) {
      $("#domain-info").html('<div style="display:flex;justify-content:space-evenly;align-items:center;"><div style="display: flex;flex-direction: column;text-align: left;align-items:center;"><div style="display:flex; justify-content:center;"><img style="margin-bottom:24px;" class="materialboxed z-depth-2" width="180" height="120" src="' + opens[i].core.banner_image_url + '"/></div><div style="margin-bottom:12px;">' + opens[i].core.name + '&nbsp;&nbsp · &nbsp;&nbsp<a style="cursor:pointer;" onclick="openInNewTab(\'https://opensea.io/collection/' + opens[i].core.slug + '\');">' + opens[i].core.slug + '</a></div><br/><br/><div style="display:flex;"><a onclick="addOpenDeed(' + i +');" class="waves-effect waves-light waves-blue btn blue" ><i class="material-icons">sticky_note_2</i></a>&nbsp;&nbsp;<a onclick="showView(\'map\'); map.resize(); filterMap(\''+opens[i].core.slug+'\');" class="modal-close waves-effect waves-light waves-blue btn blue lighten-2" ><i class="material-icons">map</i></a>&nbsp;&nbsp;<a onclick="filterList(\'' + opens[i].core.slug + '\'); " class="modal-close waves-effect waves-blue btn blue lighten-2" ><i class="material-icons">list</i></a></div><br/></div></div>'); $('.materialboxed').materialbox(); }
