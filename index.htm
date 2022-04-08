@@ -287,9 +287,9 @@ function pullOpens() { //$("#waiter").show();
       .then(response => response.json()).then(response => {
         for (let i = 0; i < response.length; i++) { var asset = response[i];
             if (asset.name == "NfNth Collection" || asset.name == "Rarible" || asset.name == "Uniswap V3 Positions") { continue; }
-            var tmp = new Open; tmp.core = asset; opens.push(tmp); } } ).then(response => {  $("#waiter").hide(); for (let i=0;i<opens.length;i++) { opens[i].count = pullOpen(opens[i].core.slug); } }).catch(err => console.error(err)); }
+            var tmp = new Open; tmp.core = asset; opens.push(tmp); } } ).then(response => { for (let i=0;i<opens.length;i++) { opens[i].count = pullOpen(opens[i].core.slug); } }).catch(err => console.error(err)); }
 
-function pullOpen(name) { $("#waiter").show();
+function pullOpen(name) {
     fetch('https://api.opensea.io/api/v1/assets?limit=50&collection='+name, options)
       .then(response => response.json()) //.then(response => assets = response)
       .then(response => { for (let i = 0; i < response.assets.length; i++) {
@@ -308,7 +308,7 @@ function pullOpen(name) { $("#waiter").show();
                     case 'ref': tmp.ref = traits[a].value.toString(); break;
                     default: break; } }
             domains.push(tmp);  }  return response.assets.length; } ).then(response => {
-            if (domains.length > 180) { holder = domains.slice(); domainFind(); $("#waiter").hide(); } }).catch(err => console.error(err)); }
+            if (domains.length > 180) { holder = domains.slice(); domainFind(); } }).catch(err => console.error(err)); }
 
 function pullClaims(name) {
     fetch('https://api.opensea.io/api/v1/assets?limit=10&owner='+name, options)
