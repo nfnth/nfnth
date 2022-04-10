@@ -1,12 +1,11 @@
 <html>
-    <head>
-	<title>Civilian</title>
+	<head><title>ocur.io · Ocurian</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+    	<meta name="mobile-web-app-capable" content="yes">
+    	<meta name="apple-mobile-web-app-capable" content="yes">
 
-    <link rel="apple-touch-icon" sizes="128x128" href="assets/icon-128x128.png">
+    	<link rel="apple-touch-icon" sizes="128x128" href="..img/fav/icon-128x128.png">
 	<script src="js/three.js-dev/build/three.js"></script>
 	<script src="js/three.js-dev/examples/js/shaders/CopyShader.js"></script>
 	<script src="js/three.js-dev/examples/js/postprocessing/EffectComposer.js"></script>
@@ -14,7 +13,6 @@
 	<script src="js/three.js-dev/examples/js/postprocessing/RenderPass.js"></script>
 	<script src="js/three.js-dev/examples/js/renderers/Projector.js"></script>
    	<script src="js/three.js-dev/examples/js/DeviceOrientationControls.js"></script>
-    
 	<script src="js/THREE_addon.js"></script>
 	<script src="js/BitmapData.js"></script>
 	<script src="js/ftscroller.js"></script>
@@ -26,72 +24,43 @@
 	</script>
 <style>
 body { pointer-events: none;user-select: none;}
-div, img, span, th, td, input, select
-	    {
-		pointer-events: inherit;color: white;font-family: Arial;font-size: 1.75vh;font-weight: bold;box-sizing: border-box;user-select: none;
-	    }
-	    canvas
-	    {pointer-events: auto;user-select: auto; }
-	    a, a:link, a:visited
-	    {text-decoration: none;color: white;pointer-events: auto;user-select: none;  }
-	    a:hover  {color:yellow; }
-	    a:active  {color:red;  }
-	    .hakase_links:link, .hakase_links:visited  {color: #7777ff;   }
-	    .hakase_links:hover,  .hakase_links:active {color: #1db384; }
-	    .clickable {pointer-events: auto;  }
-	    .r_conteiner, input, select {
-		display:block;padding:1vh;background-color:rgba(0,0,0,0.35); /* 0.2 */border-radius:1vh;vertical-align: middle;border:0px;   }
-	    table {width:100%;border:0px;padding:0px;margin:0px;background-color:rgba(0,0,0,0.6);border-radius:1vh;border-collapse: collapse;
-	    }
-	    tr.red {background-color:rgba(70,0,0,0.6); }
-	    tr.blue {background-color:rgba(0,0,150,0.6); }
-	    tr.red:nth-child(odd)  {background-color:rgba(90,0,0,0.6); }
-	    tr.blue:nth-child(odd) {background-color:rgba(0,0,200,0.6); }
-	    th, td {padding: 1vh; }
-	    td {border-right: 1px solid rgba(0,0,0,0.25); }
-	    td:nth-last-child(1) {border-right:none; }
-	    th {background-color:rgba(100,120,150,0.6);border-right: 1px solid rgba(0,0,0,0.25);width: 14%;}
-	    th:nth-child(1) {border-radius:1vh 0 0 0;  }
-	    th:nth-last-child(1)  {border-radius:0 1vh 0 0;border-right:none;  }
-	    td.mid  {text-align: center;}
-	    span.team_score
-	    {color:rgb(255,255,255);text-shadow: 0px 0px 2vh rgba(0,0,0,1);margin-left:1vh;
-		margin-right:1vh;display:inline-block;width:3vh;font-size:3vh;vertical-align: middle;}
-	    tr:nth-last-child(1) td:nth-child(1){border-radius:0 0 0 1vh; }
-	    tr:nth-last-child(1) td:nth-last-child(1){border-radius:0 0 1vh 0;  }
-	    .listplayer {display:block;width:100%;
-		padding:0.5vh;box-sizing: border-box;border-radius:0.5vh;font-size:1.6vh; }
-	    .listplayer:hover {background-color:rgba(0,0,0,0.2);}
-	    .listplayer_me, .listplayer_me:hover{background-color:rgba(32, 255, 32, 0.41);}
-	    .listplayer_invite {display:block;width:calc( 100% - 2vh );padding:1vh;margin:1vh;margin-top:2vh;box-sizing: border-box;
-		border-radius:0.5vh;background-color:rgba(255,255,0,0.2);}
-	    #chat_box div {margin: 1vh;}
-	    .slider {
-		-webkit-appearance: none;  /* Override default CSS styles */appearance: none;width: 100%; /* Full-width */
-		/*height: 20px; */height: 1vh; /* Specified height */background: #000000;
-		outline: none; /* Remove outline */opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
-		-webkit-transition: .2s; /* 0.2 seconds transition on hover */transition: opacity .2s;padding: 0;  }
-
-	    /* Mouse-over effects */
-	    .slider:hover {opacity: 1; /* Fully shown on mouse-over */ }
+div, img, span, th, td, input, select {pointer-events: inherit;color: white;font-family: Arial;font-size: 1.75vh;font-weight: bold;box-sizing: border-box;user-select: none; }
+canvas {pointer-events: auto;user-select: auto; }
+a, a:link, a:visited {text-decoration: none;color: white;pointer-events: auto;user-select: none;  }
+a:hover  {color:yellow; } a:active  {color:red;  }
+.hakase_links:link, .hakase_links:visited  {color: #7777ff;   } .hakase_links:hover,  .hakase_links:active {color: #1db384; }
+.clickable {pointer-events: auto;  }
+.r_conteiner, input, select { display:block;padding:1vh;background-color:rgba(0,0,0,0.35); /* 0.2 */border-radius:1vh;vertical-align: middle;border:0px;   }
+table {width:100%;border:0px;padding:0px;margin:0px;background-color:rgba(0,0,0,0.6);border-radius:1vh;border-collapse: collapse; }
+tr.red {background-color:rgba(70,0,0,0.6); } tr.blue {background-color:rgba(0,0,150,0.6); }
+tr.red:nth-child(odd)  {background-color:rgba(90,0,0,0.6); } tr.blue:nth-child(odd) {background-color:rgba(0,0,200,0.6); }
+th, td {padding: 1vh; }
+td {border-right: 1px solid rgba(0,0,0,0.25); }
+td:nth-last-child(1) {border-right:none; }
+th {background-color:rgba(100,120,150,0.6);border-right: 1px solid rgba(0,0,0,0.25);width: 14%;}
+th:nth-child(1) {border-radius:1vh 0 0 0;  } th:nth-last-child(1)  {border-radius:0 1vh 0 0;border-right:none;  }
+td.mid  {text-align: center;}
+span.team_score {color:rgb(255,255,255);text-shadow: 0px 0px 2vh rgba(0,0,0,1);margin-left:1vh; margin-right:1vh;display:inline-block;width:3vh;font-size:3vh;vertical-align: middle;}
+tr:nth-last-child(1) td:nth-child(1){border-radius:0 0 0 1vh; }
+tr:nth-last-child(1) td:nth-last-child(1){border-radius:0 0 1vh 0;  }
+.listplayer {display:block;width:100%; padding:0.5vh;box-sizing: border-box;border-radius:0.5vh;font-size:1.6vh; }
+.listplayer:hover {background-color:rgba(0,0,0,0.2);}
+.listplayer_me, .listplayer_me:hover{background-color:rgba(32, 255, 32, 0.41);}
+.listplayer_invite {display:block;width:calc( 100% - 2vh );padding:1vh;margin:1vh;margin-top:2vh;box-sizing: border-box; border-radius:0.5vh;background-color:rgba(255,255,0,0.2);}
+#chat_box div {margin: 1vh;}
+.slider { -webkit-appearance: none;  /* Override default CSS styles */appearance: none;width: 100%; /* Full-width */ /*height: 20px; */height: 1vh; /* Specified height */background: #000000; outline: none; /* Remove outline */opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */ -webkit-transition: .2s; /* 0.2 seconds transition on hover */transition: opacity .2s;padding: 0;  }
+/* Mouse-over effects */
+.slider:hover {opacity: 1; /* Fully shown on mouse-over */ }
 	    /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */ 
-	    .slider::-webkit-slider-thumb {
-		-webkit-appearance: none; /* Override default look */
-		appearance: none;
-		width: 0.5vh; /* Set a specific slider handle width */
-		height: 2vh; /* Slider handle height */
-		background: #FFFFFF;cursor: pointer; /* Cursor on hover */ }
+	    .slider::-webkit-slider-thumb { -webkit-appearance: none; /* Override default look */ appearance: none; width: 0.5vh; /* Set a specific slider handle width */ height: 2vh; /* Slider handle height */ background: #FFFFFF;cursor: pointer; /* Cursor on hover */ }
 
-	    .slider::-moz-range-thumb {
-		width: 0.5vh; /* Set a specific slider handle width */
-		height: 2vh; /* Slider handle height */background: #FFFFFF; cursor: pointer;  }
+.slider::-moz-range-thumb { width: 0.5vh; /* Set a specific slider handle width */ height: 2vh; /* Slider handle height */background: #FFFFFF; cursor: pointer;  }
 	    
-	    option  {background-color: #000; }    
-	    #hakase  {transition: filter 1s;filter: brightness(85%) contrast(85%);}   
-	    #hakase:hover {filter: brightness(100%) contrast(100%); }
-	    #message_of_the_day{opacity:0;  }
-	    #message_of_the_day:before {content: "";position: absolute;top: 100%;width: 0;border-top: 15px solid white;border-left: 10px solid transparent;border-right: 10px solid transparent;right: calc( 50% - 10px ); }
-	</style> </head>
+option  {background-color: #000; }    
+#hakase  {transition: filter 1s;filter: brightness(85%) contrast(85%);}   
+#hakase:hover {filter: brightness(100%) contrast(100%); }
+#message_of_the_day{opacity:0;  }
+#message_of_the_day:before {content: "";position: absolute;top: 100%;width: 0;border-top: 15px solid white;border-left: 10px solid transparent;border-right: 10px solid transparent;right: calc( 50% - 10px ); }</style></head>
     <body style="margin:0px;overflow:hidden" ondragstart="return false;" ondrop="return false;">
 	<script src="js/sdShaderMaterial.js"></script>
 	<script src="js/sdRandomPattern.js"></script>
