@@ -67,7 +67,7 @@
   	<li><a class="waves-effect tooltipped" data-position="left" data-tooltip="Wallet Address" onclick="if (walletAddress != '') {copyClip(walletAddress);}"><i class="material-icons">alternate_email</i><span id="myAdd">Wallet Address</span></a></li>
   	<li><a class="waves-effect tooltipped" data-position="left" data-tooltip="Ethereum Balance"><i class="material-icons">account_balance</i><span id="myETH">ETH Balance</span></a></li>
 	<li><a class="waves-effect tooltipped" data-position="left" data-tooltip="OCUR Balance"><i class="material-icons">toll</i><span id="myURL">OCUR Balance</span></a></li>
-	<li id="maker" style="margin-top:16px;margin-bottom:12px;"><a class="waves-effect waves-light blue-grey z-depth-1 lighten-3" style="width: 240px;margin: auto;border-radius: 8px;" onclick="if (walletAddress != '') {showView('map'); map.resize(); addArtifact(); $('#user-pane').sidenav('close');}"><i class="material-icons left"><span class="material-icons-outlined">logout</span></i>Disconnect Wallet</a></li>
+	<li style="margin-top:16px;margin-bottom:12px;"><a id="maker" class="waves-effect waves-light blue-grey z-depth-1 lighten-3" style="width: 240px;margin: auto;border-radius: 8px;" onclick="if (walletAddress != '') {desetup(); $('#user-pane').sidenav('close');}"><i class="material-icons left"><span class="material-icons-outlined">logout</span></i>Disconnect Wallet</a></li>
   	<li><div style="margin-top:0;" class="divider"></div></li>
   	<!-- <i class="material-icons left">directions</i><i class="material-icons left">picture_as_pdf</i><i class="material-icons left">calculate</i>-->
   	<li><a class="subheader">Domain Information</a></li>
@@ -75,7 +75,7 @@
     	<li><a class="waves-effect tooltipped" data-position="left" data-tooltip="Domain Balance (OCUR)"><i class="material-icons">token</i><span id="myURL">Domain Balance (OCUR)</span></a></li>
   	<li style="margin-top:12px; display: flex;align-items: center;justify-content: center;margin-bottom:16px;"><select id="domain-template" class="sider" onchange="domainSelect();">
         <option selected="selected">No domain selected</option><option>tactician.us (demo)</option></select></li>
-    	<li id="poster" style="margin-top:12px;"><a class="waves-effect waves-light blue-grey z-depth-1 lighten-3" style="width: 240px;margin: auto;border-radius: 8px;margin-bottom:12px;" onclick="if (walletAddress != '') {showView('map'); map.resize(); addArtifact(); $('#user-pane').sidenav('close');}"><i class="material-icons left">architecture</i>Build Domain</a></li>
+    	<li style="margin-top:12px;"><a id="poster" class="waves-effect waves-light blue-grey z-depth-1 lighten-3" style="width: 240px;margin: auto;border-radius: 8px;margin-bottom:12px;" onclick="if (walletAddress != '') {showView('map'); map.resize(); addArtifact(); $('#user-pane').sidenav('close');}"><i class="material-icons left">architecture</i>Build Domain</a></li>
   	<li><div style="margin-top:0;" class="divider"></div></li></ul>
 
 <!-- view -->
@@ -200,7 +200,6 @@ function domainFind() {
 
 // wallet (user)
 var walletAddress = '';
-var connectButton = '<i class="material-icons left">account_balance_wallet</i>Connect Wallet', disconnectButton = '<i class="material-icons left">logout</i>Disconnect Wallet';
 var setup = async function () {
     if (window.ethereum) { //web3 = new Web3(window.ethereum); //await account();
         const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' }); walletAddress = accounts[0];
@@ -208,19 +207,17 @@ var setup = async function () {
         $.get("api/"+walletAddress, async function(data) {
             var fields = data.split('|'); var ether = JSON.parse(fields[0]).result; var urler = fields[1];
             $("#myETH").html(ether); $("#myURL").html(urler);
-            $("#wallet-setup").removeClass("light-blue");  $("#wallet-setup").removeClass("darken-3"); $("#wallet-setup").addClass("green");
-            $("#wallet-setup").html(disconnectButton); $('#wallet-setup').off('click'); $("#wallet-setup").click(desetup);
-            $("#maker").html("<a class='waves-effect waves-light green z-depth-1' style='width: 240px;margin: auto;border-radius: 8px;' onclick='if (walletAddress != \"\") {showView(\"map\"); map.resize(); addArtifact(); $(\"#user-pane\").sidenav(\"close\");} else { M.toast({html: \"No wallet connected.\"}); }'><i class='material-icons left'>upload_file</i>Create Deed</a>");
-            $("#wallet-area").css("background-color","green"); $("#wallet-icon").css("color","green");
+            $("#maker").removeClass("blue-grey");  $("#maker").removeClass("darken-3"); $("#maker").addClass("green");
+            //$("#wallet-setup").html(disconnectButton); $('#wallet-setup').off('click'); $("#wallet-setup").click(desetup);
+            //$("#maker").html("<a class='waves-effect waves-light green z-depth-1' style='width: 240px;margin: auto;border-radius: 8px;' onclick='if (walletAddress != \"\") {showView(\"map\"); map.resize(); addArtifact(); $(\"#user-pane\").sidenav(\"close\");} else { M.toast({html: \"No wallet connected.\"}); }'><i class='material-icons left'>upload_file</i>Create Deed</a>");
+            //$("#maker").removeClass("blue-grey");  $("#maker").removeClass("darken-3"); $("#maker").addClass("green");
             pullAssets(walletAddress); } ); }
     else { M.toast({html: 'No wallet found.'}); } }; $("#wallet-setup").click(setup);
 
 function desetup() {
     $("#myAdd").html('My Wallet Address'); $("#wallet-area").css("background-color","");$("#wallet-icon").css("color","white");
     $("#myETH").html('My ETH Balance'); $("#myURL").html('My URL Balance');
-    $("#wallet-setup").addClass("light-blue");  $("#wallet-setup").addClass("darken-3"); $("#wallet-setup").removeClass("green");
-    $("#wallet-setup").html(connectButton); $('#wallet-setup').off('click'); $("#wallet-setup").click(setup);
-    $("#maker").html('<a class="waves-effect waves-light blue-grey lighten-3 z-depth-1" style="width: 240px;margin: auto;border-radius: 8px;" onclick="if (walletAddress != \'\') {showView("map"); map.resize(); addArtifact(); $("#user-pane").sidenav("close");} else { M.toast({html: \'No wallet connected.\'}); }"><i class="material-icons leftt">upload_file</i>Create Deed</a>');
+    $("#maker").addClass("blue-grey");  $("#maker").addClass("darken-3"); $("#maker").removeClass("green");
     emptyDeeds(); domainSelect(); }
 
 function findDeeds() { //getExchange();
