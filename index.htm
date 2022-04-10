@@ -497,7 +497,7 @@ function filterMap(slug) { domains = [];
     startUp = function() {currentMarkers[0].togglePopup(); };  setZoom = 2; fly(middle); }
 
 var popups = [];
-function showMark(place) {   //if (place == "") place = window.location.host;
+function showMark(i) {   //if (place == "") place = window.location.host;
     clearMap(); for (let a=0;a<currentMarkers.length;a++){currentMarkers[a].remove(); } currentMarkers = [];
     //for (let i = 0; i < domains.length; i++) {
       //  if (domains[i][4] == place) {
