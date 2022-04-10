@@ -20,7 +20,8 @@
     <div id="panel-menu" class="nav-wrapper header blue-grey lighten-3 z-depth-3" style="border-bottom:solid 3px darkgrey; display:flex; justify-content: space-between; color:black;">
     	<div class="z-depth-1"><a class="blue-grey lighten-1" style="display: flex; align-items: center; height: 105%; padding-right: 10px; color: brown;font-weight: bold;font-size: 20px;">
 		<div id="waiter" onclick="showView('news');" style="height:48px; width:48px; cursor: pointer; margin-left: 12px;"><img id="list-wait" class="image"/><img id="list-wait2" class="image"/></div></a></div>
-    <!-- media -->
+
+<!-- media -->
 	<a id="doc-hide" class="screen-hide" href="#!" data-target="doc"><i class="material-icons">menu_book</i></a>
         <a id="map-hide" class="screen-hide" onclick="showView('map'); map.resize(); showIntro();"><i class="material-icons">map</i></a>
 	<a id="list-hide" class="screen-hide" href="#!" data-target="domain"><i class="material-icons">summarize</i></a>
@@ -45,10 +46,10 @@
 	<li><a onclick="showDoc('PLANME');"><i class="material-icons">backpack</i>Use Deed Domain</a></li>
     	<li><a onclick="showDoc('manifesto');"><i class="material-icons">home</i>About ocur.io</a></li>
     	<li class="divider"></li>
-    	<li><a onclick="showDoc('url');"><i class="material-icons">token</i>Trade OCUR</a></li>
+    	<li><a onclick="showDoc('url');"><i class="material-icons">toll</i>Trade OCUR</a></li>
 	<li><a onclick="showDoc('donation');"><i class="material-icons"><span class="material-icons-outlined">park</span></i>Make Donation</a></li>
 	<li class="divider"></li>
-    	<li><a onclick="openInNewTab('https://ocur.io/civ/index.htm');"><i class="material-icons">explore</i>Play Civilian...</a></li></ul>
+    	<li><a onclick="openInNewTab('https://ocur.io/civ/index.htm');"><i class="material-icons">explore</i>Play Ocurian...</a></li></ul>
 
 <ul id="domain" class="dropdown-content loader" style="visibility:hidden;">
 	<li><a onclick="showView('list'); showList('deed');"><i class="material-icons"><span class="material-icons-outlined">class</span></i>Deed Registry</a></li>
@@ -83,14 +84,14 @@
     <!-- world -->
     <div id="world" class="content loader pane blue-grey lighten-5" style="width:100%;background-color:darkgrey;">
         <img src="img/world-min.jpg" class="z-depth-2" style="width:100%; margin-bottom:-6px; " />
-        <div style="position: absolute; margin-top:240px; width: 100%; top:0; height: 0"><div style="cursor:pointer; position:absolute; color:white; font-size:24px;background-color: rgba(245, 245, 245, 0.8);padding-bottom: 48px;padding-top: 36px;text-align: center;align-items: center;justify-content: center;width: 100%;  " onclick="showDoc('PLANME');"><span style="color:darkgoldenrod; font-weight:bold; font-size:28px; background-color: rgb(230, 230, 230, 0.8);border-radius: 6px;padding-left: 6px;">OCUR.IO&nbsp;</span><span style="color:goldenrod; font-size:26px; font-weight:bold;vertical-align:super;">  // own build trade </span><br/><span style="font-size:18px;color:black;">deed. domain. </span><span style="font-size:18px; color:black; font-weight:bold;">decentralized.</span></div></div></div>
+        <div style="position: absolute; margin-top:240px; width: 100%; top:0; height: 0"><div style="cursor:pointer; position:absolute; color:white; font-size:24px;background-color: rgba(245, 245, 245, 0.8);padding-bottom: 48px;padding-top: 36px;text-align: center;align-items: center;justify-content: center;width: 100%;  " onclick="showDoc('PLANME');"><span style="color:goldenrod; font-weight:bold; font-size:28px; background-color: rgb(230, 230, 230, 0.8);border-radius: 6px;padding-left: 6px;">OCUR.IO&nbsp;</span><span style="color:darkgoldenrod; font-size:26px; font-weight:bold;vertical-align:super;">  // *own [build] $trade </span><br/><span style="font-size:22px;color:black;">deed. domain. </span><span style="font-size:22px; color:black; font-weight:bold;">decentralized.</span></div></div></div>
 
     <!-- list -->
     <div id="list" class="content loader pane" style="overflow-y: auto; height: 95%;">
         <div class="z-depth-1" style="display:flex; justify-content: space-evenly; padding-top: 24px; padding-bottom:12px; margin-bottom: -6px; align-items:center;">
         <div class="switch">
             <label style="display:flex; align-items:center;"><i class="material-icons">view_list</i>
-            <input id="lister" type="checkbox" onclick="changeView();"><span class="lever"></span><i class="material-icons">grid_view</i></label></div>
+            <input id="lister" type="checkbox" onclick="changeView(); checked"><span class="lever"></span><i class="material-icons">grid_view</i></label></div>
             <div><a class="waves-effect waves-light waves-green btn green" onclick="showDoc('filter'); setFilter();"><i class="material-icons left">filter_list</i>Filter/Sort</a></div></div>
         <div id="registry" class="collection" style="overflow:auto;"></div></div>
 
@@ -100,13 +101,12 @@
     <!-- map -->
     <div id="map" class="content loader pane" style="width:100%;"></div>
         <div id="actions" class="content loader pane fixed-action-btn" >
-            <a class="btn-floating btn-large green lighten-1 waves-effect waves-light"><i class="large material-icons">web_asset</i></a>
+            <a class="btn-floating btn-large green lighten-1 waves-effect waves-light"><i class="large material-icons">apps</i></a>
             <ul>
                 <li><a id="map-gps" class="btn-floating grey" onclick="changeMap();"><i class="material-icons">satellite_alt</i></a></li>
-                <li><a id="map-deed" class="btn-floating grey lighten-1" onclick="if (walletAddress != '') {showMap('deed');} else { M.toast({html: 'No wallet connected.'}); }"><i class="material-icons">class</i></a></li>
-                <li><a id="map-domain" class="btn-floating grey lighten-1" onclick="if (walletAddress != '') {showMap('domain');} else { M.toast({html: 'No wallet connected.'}); }"><i class="material-icons">landscape</i></a></li>
-                <li><a id="map-deed" class="btn-floating grey lighten-1" onclick="if (walletAddress != '') {showMap('deed');} else { M.toast({html: 'No wallet connected.'}); }"><i class="material-icons">inventory_2</i></a></li>
-                <li><a id="map-deed" class="btn-floating grey lighten-1" onclick="if (walletAddress != '') {showMap('deed');} else { M.toast({html: 'No wallet connected.'}); }"><i class="material-icons">account_balance_wallet</i></a></li></ul></div>
+                <li><a id="map-deed" class="btn-floating grey lighten-1" onclick="if (walletAddress != '') {showMap('deed');} else { M.toast({html: 'No wallet connected.'}); }"><i class="material-icons">shuffle</i></a></li>
+                <li><a id="map-domain" class="btn-floating grey lighten-1" onclick="if (walletAddress != '') {showMap('domain');} else { M.toast({html: 'No wallet connected.'}); }"><i class="material-icons">gps_fixed</i></a></li>
+		<li><a id="map-domain" class="btn-floating grey lighten-1" onclick="if (walletAddress != '') {showMap('domain');} else { M.toast({html: 'No wallet connected.'}); }"><i class="material-icons">book</i></a></li></ul></div>
 
     <!-- editor -->
     <div id="editor" class="content loader pane scale-transition scale-out">
@@ -183,7 +183,6 @@ $('.tooltipped').tooltip();
     // materialize
     $('#docs').dropdown({ constrainWidth: false, coverTrigger: false, hover: true } ); $('#doc-hide').dropdown({ constrainWidth: false, coverTrigger: false } );
     $('#lists').dropdown({ constrainWidth: false, coverTrigger: false, hover: true } ); $('#list-hide').dropdown({ constrainWidth: false, coverTrigger: false } );
-    //$('.carousel.carousel-slider').carousel({ fullWidth: true, indicators: true });
     $('#user-pane').sidenav({ edge: 'right' });
     $('.fixed-action-btn').floatingActionButton({ hoverEnabled: false });
     $('#pad').css("height", window.innerHeight - 560);//showFav('dralun'); //  showFav('paper');
@@ -254,21 +253,6 @@ var artifact = function (message, signature, hash, item, content, action) {
     //for (var a=0;a<$("#default_file").prop('files').length;a++) { file = $("#default_file").prop('files')[0]; formdata.append("file1", file); }
    // if field.name == 'ref'://   if field.name == 'file':
     $.ajax({ url: "data/"+walletAddress+"/"+item+"/"+action, type: "POST", data: formdata, processData: false, contentType: false, success: function(data) { alert(data); } }); }
-
-function payment() {
-ethereum.request({method: 'eth_sendTransaction',
-      params: [{from: accounts[0],to: '0x2f318C334780961FB129D2a6c30D0763d9a5C970',
-          value: '0x29a2241af62c0000',gasPrice: '0x09184e72a000',gas: '0x2710',},],})
-    .then((txHash) => console.log(txHash)).catch((error) => console.error);}
-
-function message() {
-ethereum.request({method: 'eth_sendTransaction',
-      params: [{from: accounts[0],to: '0x2f318C334780961FB129D2a6c30D0763d9a5C970',
-          value: '0',data: web3.toHex('a sample message sent'),
-          gasPrice: '0x09184e72a000',gas: '0x2710',},],})
-    .then((txHash) => console.log(txHash)).catch((error) => console.error);
-//web3.toHex('John Doe sent you a message'
-}
 
 // data
 var opens = [], deeds = [], domains = [], artifacts = [], claims = []; const options = {method: 'GET'};
@@ -408,19 +392,17 @@ function addOpenDeed(i) {
     setDialog("<div style='text-align:center;'><p><span style='font-weight:16px'>" + opens[i].core.name + "</span>&nbsp;&nbsp; · &nbsp;&nbsp;<a style='cursor:pointer;' onclick='openInNewTab(\"https://opensea.io/collection/" + opens[i].core.slug + "\");'>" + opens[i].core.slug + "</a></p></div><br/><div style='text-align:center;'><img style='width:80%;' src='" + opens[i].core.image_url + "' /></div><br/><br/><div style='text-align:center;'><div style='display:flex;align-items:center;justify-content:center;'><img class='z-depth-2' onclick='openInNewTab(\"https://opensea.io/collection/" + opens[i].core.slug + "\");' style='cursor:pointer; margin-right:12px;display:none;' onload='adjustSize(this);' src='img/key/" + getCollect(opens[i].core.slug) + "' /><span class='blue-grey lighten-3 badge z-depth-1' style='color:black!important;font-weight:bold;'>" + opens[i].count + "</span></div><br/><br/>" + renderMd(opens[i].core.description) + "</div><br/><br/>");}
 
 function addList(i){
-    $("#registry").append("<a class='collection-item modal-trigger' href='#modal1' onclick='addListDetail(" + i + ");'><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;'>" + domains[i].core.name + "</div><div style='display:flex; justify-content:space-between;align-items:center;'><div style='display:flex; flex-direction:column;'><div style='width:160px; ' class='z-depth-1 chip " +  getClass(domains[i].core.collection.slug)  + "'><img src='img/key/" + getCollect(domains[i].core.collection.slug) + "'><div style='border-radius:12px; width:100px;background-color:rgb(245, 246, 247,0.75);color:black;font-size:16px;font-weight:bold;' class='z-depth-1'>" + padSerial(domains[i].serial) + "</div></div></div></div></div></a>"); }
+    $("#registry").append("<a class='collection-item modal-trigger' href='#modal1' onclick='addListDetail(" + i + ");'><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;'>" + domains[i].core.name + "</div><div style='display:flex; justify-content:space-between;align-items:center;'><div style='display:flex; flex-direction:column;'><div style='width:160px; ' class='z-depth-1 chip " +  getClass(domains[i].sub)  + "'><img src='img/key/" + getCollect(domains[i].core.collection.slug) + "'><div style='border-radius:12px; width:100px;background-color:rgb(245, 246, 247,0.75);color:black;font-size:16px;font-weight:bold;' class='z-depth-1'>" + padSerial(domains[i].serial) + "</div></div></div></div></div></a>"); }
 
 function addListDetail(i) {
-     $("#domain-info").html('<div style="display:flex;justify-content:space-evenly;align-items:center;"><div style="display: flex;flex-direction: column;text-align: left;align-items:center;"><div style="display:flex; justify-content:center;"><img style="margin-bottom:12px;" class="materialboxed z-depth-2" width="120" height="120" src="' + domains[i].core.image_preview_url + '"/></div><div style="margin-bottom:16px;">' + domains[i].name + '&nbsp;&nbsp · &nbsp;&nbsp<a onclick="openInNewTab(\'' + domains[i].core.external_link + '\');">' + domains[i].core.name + '</a></div><br/><div style="display:flex;"><a onclick="addListDeed(' + i +');" class="waves-effect waves-light waves-blue btn green lighten-2" ><i class="material-icons">sticky_note_2</i></a>&nbsp;&nbsp;<a onclick="openInNewTab(\'' + domains[i].token + '\');" class="waves-effect waves-light waves-blue btn green lighten-3" ><i class="material-icons">payment</i></a>&nbsp;&nbsp;<a onclick="openInNewTab(\'' + domains[i][7] + '\');" class="waves-effect waves-light waves-blue btn blue lighten-2" ><i class="material-icons">account_balance_wallet</i></a>&nbsp;&nbsp;<a onclick="showMark(\'' + domains[i][4] + '\'); showView(\'map\'); map.resize();" class="modal-close waves-effect waves-blue btn blue lighten-3" ><i class="material-icons">map</i></a></div><br/></div></div>'); $('.materialboxed').materialbox(); }
+     $("#domain-info").html('<div style="display:flex;justify-content:space-evenly;align-items:center;"><div style="display: flex;flex-direction: column;text-align: left;align-items:center;"><div style="display:flex; justify-content:center;"><img style="margin-bottom:12px;" class="materialboxed z-depth-2" width="120" height="120" src="' + domains[i].core.image_preview_url + '"/></div><div style="margin-bottom:16px;">' + domains[i].name + '&nbsp;&nbsp · &nbsp;&nbsp<a onclick="openInNewTab(\'' + domains[i].core.external_link + '\');">' + domains[i].core.name + '</a></div><br/><div style="display:flex;"><a onclick="addListDeed(' + i +');" class="waves-effect waves-light waves-blue btn blue lighten-2" ><i class="material-icons">sticky_note_2</i></a>&nbsp;&nbsp;<a onclick="showMark(\'' + domains[i][4] + '\'); showView(\'map\'); map.resize();" class="modal-close waves-effect waves-blue btn blue lighten-3" ><i class="material-icons">map</i></a>&nbsp;&nbsp;<a onclick="openInNewTab(\'' + domains[i][7] + '\');" class="waves-effect waves-light waves-blue btn gree lighten-3" ><i class="material-icons">account_balance_wallet</i></a>&nbsp;&nbsp;<a onclick="openInNewTab(\'' + domains[i].token + '\');" class="waves-effect waves-light waves-blue btn green lighten-2" ><i class="material-icons">payment</i></a></div><br/></div></div>'); $('.materialboxed').materialbox(); }
 
 function addListDeed(i) {
     $("#somedialog2").css("z-index",1004);
     setDialog("<div style='text-align:center;'><p><span style='font-weight:16px'>" + domains[i].name + "</span>&nbsp;&nbsp; · &nbsp;&nbsp;<a onclick='openInNewTab(\"" + domains[i].core.external_link + "\");'>" + domains[i].core.name + "</a></p></div><br/>" + "<div style='text-align:center;'><img style='width:80%;' src='" + domains[i].core.image_url + "' /></div><br/><br/><p>" + domains[i].core.description + "</p><a onclick='openInNewTab(\"" + domains[i].ref + "\");'>Read more...</a><br/><div style='text-align:center;'><img src='" + domains[i].img + "' /></div><br/><br/>" + "<div style='display:flex; justify-content:space-evenly;align-items:center;'><div style='display:flex; align-items: center;margin-top: 12px;margin-top: 12px;margin-right: 12px;'><br/><div onclick='showDoc(\"key/collection\");' style='text-align:center; width:160px; ' class='z-depth-1 chip " + getClass(domains[i].core.collection.slug) + "'><img src='img/icon/key/" + getCollect(domains[i].core.collection.slug) + "'><div style='background-color:rgb(245, 246, 247,0.75); border-radius:12px; width:100px;color:black;font-size:16px;'>" + domains[i][16] + "</div></div><div><img class='modal-close' onclick='showDoc(\"key/state\");' style='cursor:pointer; width:48px; height:48px;' src='img/state/" + domains[i].place + ".png' /></div></div></div></div>" + "<br/><br/>" + "UR Value/Rate = " + domains[i].ur);}
 
 function addGrid(i) { //alert((i%4));//card-panel?
-	
-
-    return '<div style="width:240px;height:240px;" class="card sticky-action hoverable"><div class="card-image waves-effect waves-block waves-light"><img class="activator" src="' + domains[i].core.image_preview_url + '"></div><div class="card-content"><span class="card-title activator grey-text text-darken-4">' + domains[i].core.name + '<i class="material-icons right">more_vert</i></span><p><a href="#">' + domains[i].name + '</a></p></div><div class="card-reveal"><span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span><p>Here is some more information about this product that is only revealed once clicked on.</p></div></div>';
+    return '<div style="width:240px;height:240px;margin:24px;" class="card sticky-action hoverable"><div class="card-image waves-effect waves-block waves-light"><img class="activator" src="' + domains[i].core.image_preview_url + '"></div><div class="card-content"><span class="card-title activator grey-text text-darken-4">' + domains[i].core.name + '<i class="material-icons right">more_vert</i></span></div><div class="card-reveal"><span class="card-title grey-text text-darken-4">' + domains[i].name + '<i class="material-icons right">close</i></span><p>Here is some more information about this product that is only revealed once clicked on.</p></div></div>';
 	
 	//alert(((i+1)%4));
 	//if (((i+1)%4) == 0) { $("#registry").append('</div>'); }
