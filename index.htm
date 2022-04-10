@@ -37,36 +37,36 @@
           			<input id="search" type="search" onkeyup="searchResults()" style="padding-left:12px; width: calc(100% - 1rem);"><label class="label-icon" for="search" ></label><i class="material-icons" onclick="searchClear()">close</i></div></a></li></ul>
 
     <!-- user -->
-        <div id="wallet-area" class="z-depth-1" style="display:flex;" onclick="setup(); $('#user-pane').sidenav('open');">
-            <ul><li id="setting-wallet" style="background-color: rgb(225, 225, 225, 0.7); height:101%;" class="z-depth-1"><a id="wallet-icon" href="#" style="margin: 0;justify-items: center;display: flex;align-items: center;" ><i class="material-icons">account_balance_wallet</i><span class="mobile-hide">&nbsp;CONNECT</span></a></li></ul></div></div></nav>
+        <div id="wallet-area" class="z-depth-1 blue-grey lighten-2" style="display:flex;" onclick="setup(); $('#user-pane').sidenav('open');">
+            <ul><li id="setting-wallet" style="height:101%;" class="z-depth-1"><a id="wallet-icon" href="#" style="margin: 0;justify-items: center;display: flex;align-items: center;" ><i class="material-icons">account_balance_wallet</i><span class="mobile-hide">&nbsp;CONNECT</span></a></li></ul></div></div></nav>
 
 <!-- dropdown -->
 <ul id="doc" class="dropdown-content loader" style="visibility:hidden;">
 	<li><a onclick="showDoc('PLANME');"><i class="material-icons">backpack</i>Use Deed Domain</a></li>
-    <li><a onclick="showDoc('manifesto');"><i class="material-icons">home</i>About ocur.io</a></li>
-    <li class="divider"></li>
-    <li><a onclick="showDoc('url');"><i class="material-icons">token</i>Trade OCUR</a></li>
+    	<li><a onclick="showDoc('manifesto');"><i class="material-icons">home</i>About ocur.io</a></li>
+    	<li class="divider"></li>
+    	<li><a onclick="showDoc('url');"><i class="material-icons">token</i>Trade OCUR</a></li>
 	<li><a onclick="showDoc('donation');"><i class="material-icons"><span class="material-icons-outlined">park</span></i>Make Donation</a></li>
 	<li class="divider"></li>
-    <li><a onclick="openInNewTab('https://ocur.io/civ/index.htm');"><i class="material-icons">explore</i>Play Civilian...</a></li></ul>
+    	<li><a onclick="openInNewTab('https://ocur.io/civ/index.htm');"><i class="material-icons">explore</i>Play Civilian...</a></li></ul>
 
 <ul id="domain" class="dropdown-content loader" style="visibility:hidden;">
-	<li><a onclick="showView('list'); showList('open');"><i class="material-icons">sailing</i>OpenSea Collection</a></li>
-	<li class="divider"></li>
-	<li><a onclick="showView('list'); showList('domain');"><i class="material-icons"><span class="material-icons-outlined">landscape</span></i>Domain Manifest</a></li>
 	<li><a onclick="showView('list'); showList('deed');"><i class="material-icons"><span class="material-icons-outlined">class</span></i>Deed Registry</a></li>
+	<li><a onclick="showView('list'); showList('domain');"><i class="material-icons"><span class="material-icons-outlined">landscape</span></i>Domain Manifest</a></li>
+	<li class="divider"></li>
+	<li><a onclick="showView('list'); showList('open');"><i class="material-icons">sailing</i>OpenSea Collection</a></li>
     	<li class="divider"></li>
 	<li><a onclick="openInNewTab('https://ustat.us');"><i class="material-icons">toll</i>OCUR Exchange...</a></li></ul>
 
 <!-- panel -->
 <ul id="user-pane" class="sidenav loader blue-grey lighten-5" style="visibility:hidden;">
 	<li><div class="user-view z-depth-1" style="background-color: #eaf2f7;display: flex;margin: auto; padding: 0;align-items: center; padding-left:12px;"><span style="cursor: pointer;margin:auto;" onclick="showDoc('README'); $('#user-pane').sidenav('close');" class="new badge green darken-2" data-badge-caption="ocurOS | v1.02"></span>
-        <img id="user-pic" style="height: 72px;margin-left:18px; padding: 12px;" src="img/left.png" /></div></li>
+        <img id="user-pic" style="height: 72px;margin-left:18px; padding: 12px;" src="img/seal3.png" /></div></li>
     <li><a class="subheader">Wallet Information</a></li>
   	<li><a class="waves-effect tooltipped" data-position="left" data-tooltip="Wallet Address" onclick="if (walletAddress != '') {copyClip(walletAddress);}"><i class="material-icons">alternate_email</i><span id="myAdd">Wallet Address</span></a></li>
   	<li><a class="waves-effect tooltipped" data-position="left" data-tooltip="Ethereum Balance"><i class="material-icons">account_balance</i><span id="myETH">ETH Balance</span></a></li>
 	<li><a class="waves-effect tooltipped" data-position="left" data-tooltip="OCUR Balance"><i class="material-icons">toll</i><span id="myURL">OCUR Balance</span></a></li>
-	<li id="maker" style="margin-top:16px;margin-bottom:12px;"><a class="waves-effect waves-light blue-grey z-depth-1 lighten-3" style="width: 240px;margin: auto;border-radius: 8px;" onclick="if (walletAddress != '') {showView('map'); map.resize(); addArtifact(); $('#user-pane').sidenav('close');} else { M.toast({html: 'No wallet connected.'}); }"><i class="material-icons left"><span class="material-icons-outlined">logout</span></i>Disconnect Wallet</a></li>
+	<li id="maker" style="margin-top:16px;margin-bottom:12px;"><a class="waves-effect waves-light blue-grey z-depth-1 lighten-3" style="width: 240px;margin: auto;border-radius: 8px;" onclick="if (walletAddress != '') {showView('map'); map.resize(); addArtifact(); $('#user-pane').sidenav('close');}"><i class="material-icons left"><span class="material-icons-outlined">logout</span></i>Disconnect Wallet</a></li>
   	<li><div style="margin-top:0;" class="divider"></div></li>
   	<!-- <i class="material-icons left">directions</i><i class="material-icons left">picture_as_pdf</i><i class="material-icons left">calculate</i>-->
   	<li><a class="subheader">Domain Information</a></li>
@@ -74,7 +74,7 @@
     	<li><a class="waves-effect tooltipped" data-position="left" data-tooltip="Domain Balance (OCUR)"><i class="material-icons">token</i><span id="myURL">Domain Balance (OCUR)</span></a></li>
   	<li style="margin-top:12px; display: flex;align-items: center;justify-content: center;margin-bottom:16px;"><select id="domain-template" class="sider" onchange="domainSelect();">
         <option selected="selected">No domain selected</option><option>tactician.us (demo)</option></select></li>
-    	<li id="poster" style="margin-top:12px;"><a class="waves-effect waves-light blue-grey z-depth-1 lighten-3" style="width: 240px;margin: auto;border-radius: 8px;margin-bottom:12px;" onclick="M.toast({html: 'No domain selected.'});"><i class="material-icons left">upload_file</i>Publish Deed</a></li>
+    	<li id="poster" style="margin-top:12px;"><a class="waves-effect waves-light blue-grey z-depth-1 lighten-3" style="width: 240px;margin: auto;border-radius: 8px;margin-bottom:12px;" onclick="if (walletAddress != '') {showView('map'); map.resize(); addArtifact(); $('#user-pane').sidenav('close');}"><i class="material-icons left">upload_file</i>Publish Deed</a></li>
   	<li><div style="margin-top:0;" class="divider"></div></li></ul>
 
 <!-- view -->
@@ -420,7 +420,7 @@ function addListDeed(i) {
 function addGrid(i) { //alert((i%4));//card-panel?
 	
 
-    return '<div style="width:20%;" class="card sticky-action hoverable"><div class="card-image waves-effect waves-block waves-light"><img class="activator" src="' + domains[i].core.image_preview_url + '"></div><div class="card-content"><span class="card-title activator grey-text text-darken-4">' + domains[i].core.name + '<i class="material-icons right">more_vert</i></span><p><a href="#">' + domains[i].name + '</a></p></div><div class="card-reveal"><span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span><p>Here is some more information about this product that is only revealed once clicked on.</p></div></div>';
+    return '<div style="width:240px;height:240px;" class="card sticky-action hoverable"><div class="card-image waves-effect waves-block waves-light"><img class="activator" src="' + domains[i].core.image_preview_url + '"></div><div class="card-content"><span class="card-title activator grey-text text-darken-4">' + domains[i].core.name + '<i class="material-icons right">more_vert</i></span><p><a href="#">' + domains[i].name + '</a></p></div><div class="card-reveal"><span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span><p>Here is some more information about this product that is only revealed once clicked on.</p></div></div>';
 	
 	//alert(((i+1)%4));
 	//if (((i+1)%4) == 0) { $("#registry").append('</div>'); }
@@ -949,7 +949,7 @@ div.active {opacity: 1;height: auto;}
 
 .btn { overflow: hidden; } .btn:hover:before { opacity:1; } .btn:before { content: ''; opacity: 0.5;  background-color: rgba(109, 109, 109, 0.6); position: absolute; width: 100%; height: 100%; left: 0; top: 0; transition: opacity .2s; z-index: -1;}
 
-.markre {  border: 3px solid ghostwhite; background-color: indianred; background-size: cover; width: 48px; height: 48px; border-radius: 50%; cursor: pointer; }
+.markre {  border: 3px solid ghostwhite; background-color: indianred; background-size: cover; width: 36px; height: 36px; border-radius: 50%; cursor: pointer; }
 .mapboxgl-popup { max-width: 200px; }
 
 *::-webkit-scrollbar-track {-webkit-box-shadow: inset 0 0 0px rgba(0, 0, 0, 0.0);background-color: transparent;} *::-webkit-scrollbar {width: 6px;background-color: transparent;} *::-webkit-scrollbar-thumb {background-color: #000000;}
