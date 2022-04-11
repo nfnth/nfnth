@@ -18,3 +18,5 @@ python site.py
 ```
 
 View demo at [dev.ocur.io](https://dev.ocur.io).
+
+<script src="https://gist.github.com/nfnth/bec05f3737fc42acf70eda4071c1f6af.js"></script>
