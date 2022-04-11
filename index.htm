@@ -103,10 +103,10 @@
         <div id="actions" class="content loader pane fixed-action-btn" >
             <a class="btn-floating btn-large green lighten-2 waves-effect waves-light"><i class="large material-icons">apps</i></a>
             <ul>
-		<li><a id="map-gps" class="btn-floating grey" onclick="changeMap();"><i class="material-icons">satellite_alt</i></a></li>
-		<li><a id="map-gps" class="btn-floating grey lighten-1" onclick="changeMap();"><i class="material-icons">gps_fixed</i></a></li>
-                <li><a id="map-deed" class="btn-floating grey lighten-1" onclick="if (walletAddress != '') {showMap('deed');} else { M.toast({html: 'No wallet connected.'}); }"><i class="material-icons">shuffle</i></a></li>
-		<li><a id="map-deed" class="btn-floating grey lighten-1" onclick="if (walletAddress != '') {showMap('deed');} else { M.toast({html: 'No wallet connected.'}); }"><i class="material-icons">route</i></a></li>
+		<li><a id="map-sat" class="btn-floating grey" onclick="changeMap();"><i class="material-icons">satellite_alt</i></a></li>
+		<li><a id="map-gps" class="btn-floating grey lighten-1" onclick="showLocation();"><i class="material-icons">gps_fixed</i></a></li>
+                <li><a id="map-deed" class="btn-floating grey lighten-1" onclick="showRandom();"><i class="material-icons">shuffle</i></a></li>
+		<li><a id="map-deed" class="btn-floating grey lighten-1" onclick="showRoute();"><i class="material-icons">route</i></a></li>
 		<li><a id="map-domain" class="btn-floating grey lighten-1" onclick="showIntro();"><i class="material-icons">book</i></a></li></ul></div>
 
     <!-- editor -->
@@ -129,7 +129,7 @@
                 <a onclick="clearEditor();" class="waves-effect waves-grey btn-flat"><i class="material-icons left">refresh</i>Clear</a>
                 <a onclick="showPreview();" class="waves-effect waves-grey btn-flat"><i class="material-icons left">web_asset</i>Preview</a></div>
             <div>
-                <a onclick="if (walletAddress != '') {signer('domain','test domain...','add');} else { M.toast({html: 'No wallet connected.'}); }" class="waves-effect waves-green green btn"><i class="material-icons right">publish</i>Post</a></div>
+                <a onclick="if (walletAddress != '') {signer('domain','test domain...','add');} else { M.toast({html: 'No wallet connected.'}); }" class="waves-effect waves-green green btn"><i class="material-icons right">publish</i>Save</a></div>
             <div id="show-progress" class="progress" style="display:none;"><div class="indeterminate"></div></div></div></div>
 
 <!-- dialog -->
@@ -234,9 +234,9 @@ function emptyDeeds() {
 
 function domainSelect() { var d = document.getElementById("domain-template"); var dt = d.options[d.selectedIndex].text;
     if (dt == 'No domain selected') {
-        $("#poster").html('<a class="waves-effect waves-light blue z-depth-1" style="width: 240px;margin: auto;border-radius: 8px;margin-bottom:12px;" onclick="M.toast({html: \'No domain selected.\'});"><i class="material-icons left">publish</i>Post Artifact</a>'); }
+        $("#poster").addClass("blue-grey");  $("#poster").addClass("darken-3"); $("#poster").removeClass("green"); }
     else {
-        $("#poster").html('<a class="waves-effect waves-light green z-depth-1" style="width: 240px;margin: auto;border-radius: 8px;margin-bottom:12px;" onclick="showView(\'map\'); map.resize(); addArtifact(); $(\'#user-pane\').sidenav(\'close\');"><i class="material-icons left">publish</i>Post Artifact</a>'); } }
+        $("#poster").removeClass("blue-grey");  $("#poster").removeClass("darken-3"); $("#poster").addClass("green"); } }
 var info;
 var signer = async function (item, content, action) {
     var messager = '{"domain":{"name":"UR.Land"},"message":{"contents":"Hello, key value for UR.Land"},"primaryType":"Mail","types":{"EIP712Domain":[{"name":"name","type":"string"}],"Mail":[{"name":"contents","type":"string"}]}}';
@@ -312,19 +312,17 @@ pullInfo(); pullOpens(); //pullAsset(asset.token_id);
 var mapSwitch = true;
 
 function hideView() { $('.modal').modal('close');  $('.pane').hide(); window.scrollTo(0, 0); if (openDoc) { openDoc = false; $('#news').show(); }
-$("#doc-list").css("background-color","");$("#doc-list").children('a').eq(0).css("color","");
-$("#box-list").css("background-color","");$("#box-list").children('a').eq(0).css("color","");
-$("#map-list").css("background-color","");$("#map-list").children('a').eq(0).css("color","");
-$("#list-list").css("background-color","");$("#list-list").children('a').eq(0).css("color","");
-$("#search-list").css("background-color","");$("#search-list").children('a').eq(0).css("color","");
+	$("#doc-list").css("background-color","");$("#doc-list").children('a').eq(0).css("color","");
+	$("#box-list").css("background-color","");$("#box-list").children('a').eq(0).css("color","");
+	$("#map-list").css("background-color","");$("#map-list").children('a').eq(0).css("color","");
+	$("#list-list").css("background-color","");$("#list-list").children('a').eq(0).css("color","");
+	$("#search-list").css("background-color","");$("#search-list").children('a').eq(0).css("color","");
 
-$("#doc-hide").css("background-color","");$("#doc-hide").css("color","");
-$("#box-hide").css("background-color","");$("#box-hide").css("color","");
-$("#map-hide").css("background-color","");$("#map-hide").css("color","");
-$("#list-hide").css("background-color","");$("#list-hide").css("color","");
-$("#search-hide").css("background-color","");$("#search-hide").css("color","");
-
-}
+	$("#doc-hide").css("background-color","");$("#doc-hide").css("color","");
+	$("#box-hide").css("background-color","");$("#box-hide").css("color","");
+	$("#map-hide").css("background-color","");$("#map-hide").css("color","");
+	$("#list-hide").css("background-color","");$("#list-hide").css("color","");
+	$("#search-hide").css("background-color","");$("#search-hide").css("color","");  }
 function showView(view) { if (openDoc) { $('#someoverlay').trigger( "click" ); } else { hideView();} $('#'+view).show();
 
     switch (view) {
@@ -408,9 +406,6 @@ function addGrid(i) { //alert((i%4));//card-panel?
 }
 
 function addContent(content) {
-    $("#registry").append("<a class='collection-item' ><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;'>" + content + "</div><div><span onclick='pullDoc(\"" + content + "\");' class='waves-effect waves-light waves-blue btn blue' ><i class='material-icons'>sticky_note_2</i></span><span class='waves-effect waves-light waves-blue btn blue lighten-2' ><i class='material-icons'>map</i></span><span class='waves-effect waves-light waves-green btn green lighten-2' ><i class='material-icons'>content_copy</i></span></div></div></a>"); }
-
-function addContentArtifact(content) {
     $("#registry").append("<a class='collection-item' ><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;'>" + content + "</div><div><span onclick='pullDoc(\"" + content + "\");' class='waves-effect waves-light waves-blue btn blue' ><i class='material-icons'>sticky_note_2</i></span><span class='waves-effect waves-light waves-blue btn blue lighten-2' ><i class='material-icons'>map</i></span><span class='waves-effect waves-light waves-green btn green lighten-2' ><i class='material-icons'>forest</i></span></div></div></a>"); }
 
 function padSerial(serial) { if (serial != null) { if (serial.length == 1) { return '0' + serial; } else { return serial; } } }
@@ -732,9 +727,9 @@ function setTemplate() {
 var map; var map_token = "pk.eyJ1IjoibmZudGgiLCJhIjoiY2tweW1rNXlsMGFpYzJwcGt1cHh6dmxzcyJ9.ZJaFrGpPDv5froWZMLXXYQ";
 var base = [-98.59236473214004, 39.82998211920899, ]; var landlord = [-101.59236473214004, 42.82998211920899, ]; var art = [-96.59236473214004, 37.82998211920899, ]; var center = [-0.4510253658899336, 43.91338997020656];
 var fr = [-0.6187045799411647, 45.13824627199055]; var fr2 = [-3.7643573392266596, 48.02359499120687]; var fr3 = [1.5266131055501075, 43.706742350484916];
-var baseContent = '<div><div><img width="48" height="48" src="img/deed.png"/></div><div style="margin-bottom:16px;"><h6>Purchase Deed</h6><a class="waves-effect waves-light btn" onclick="showDoc(\'deed\');">About...</a>&nbsp;&nbsp;<a class="waves-effect waves-light btn blue lighten-3" onclick="clearMap(); showLandlord();"><i class="material-icons">navigate_next</i></a></div></div>';
-var landContent = '<div><div><img width="48" height="48" src="img/domain.png"/></div><div style="margin-bottom:16px;"><h6>Build Domain</h6><a class="waves-effect waves-light btn" onclick="showDoc(\'domain\');">About...</a>&nbsp;&nbsp;<a class="waves-effect waves-light btn blue lighten-3" onclick="clearMap(); showArt();"><i class="material-icons">navigate_next</i></a></div></div>';
-var artContent = '<div><div><img width="48" height="48" src="img/barrel.png"/></div><div style="margin-bottom:16px;"><h6>Trade OCUR</h6><a class="waves-effect waves-light btn" onclick="showDoc(\'artifact\');">About...</a>&nbsp;&nbsp;<a class="waves-effect waves-light btn blue lighten-3" onclick="clearMap(); showBase();"><i class="material-icons">restart_alt</i></a</div></div>';
+var baseContent = '<div><div><img width="48" height="48" src="img/deed.png"/></div><div><h6>Purchase Deed</h6><br/><a class="waves-effect waves-light btn" onclick="showDoc(\'deed\');">Read...</a>&nbsp;&nbsp;<a class="waves-effect waves-light btn blue lighten-3" onclick="clearMap(); showLandlord();"><i class="material-icons">navigate_next</i></a></div></div>';
+var landContent = '<div><div><img width="48" height="48" src="img/domain.png"/></div><div><h6>Build Domain</h6><br/><a class="waves-effect waves-light btn" onclick="showDoc(\'domain\');">Read...</a>&nbsp;&nbsp;<a class="waves-effect waves-light btn blue lighten-3" onclick="clearMap(); showArt();"><i class="material-icons">navigate_next</i></a></div></div>';
+var artContent = '<div><div><img width="48" height="48" src="img/barrel.png"/></div><div><h6>Trade OCUR</h6><br/><a class="waves-effect waves-light btn" onclick="showDoc(\'artifact\');">Read...</a>&nbsp;&nbsp;<a class="waves-effect waves-light btn blue lighten-3" onclick="clearMap(); showBase();"><i class="material-icons">restart_alt</i></a</div></div>';
 
 var currentMarkers=[]; //var introMark;//43.706742350484916, 1.5266131055501075
 var showIntro; var addMark; var coordinates; var artFlag = false;
@@ -746,18 +741,20 @@ map.on('load', function (event) { $("head").append('<style type="text/css">.mark
 
 var satSwitch = true;
 function changeMap() {
-if (satSwitch) { mapStyle = 'mapbox://styles/mapbox/satellite-streets-v11'; satSwitch = false; $("#map-gps").removeClass("grey"); $("#map-gps").addClass("blue"); } else { mapStyle = 'mapbox://styles/mapbox/light-v10'; satSwitch = true; $("#map-gps").removeClass("blue"); $("#map-gps").addClass("grey");}
+if (satSwitch) { mapStyle = 'mapbox://styles/mapbox/satellite-streets-v11'; satSwitch = false; $("#map-sat").removeClass("grey"); $("#map-sat").addClass("blue"); } else { mapStyle = 'mapbox://styles/mapbox/light-v10'; satSwitch = true; $("#map-sat").removeClass("blue"); $("#map-sat").addClass("grey");}
 map = new mapboxgl.Map({container: 'map', style: mapStyle, center: center, zoom: zoom, buffer_size: 0.2});  }
 
 function addArtifact() { M.toast({html: 'Select location...'}); artFlag = true; }
 function clearMarkers() { clearMap(); for (let a=0;a<currentMarkers.length;a++){ currentMarkers[a].remove(); } currentMarkers = []; }
 function addArt() { clearMarkers(); addMark('a',coordinates,'snake','1','green', editContent, 0); currentMarkers[0].togglePopup(); }
 var beacon = false; var pather = false; var introMark; var nomadPath; var artifactPath; var setDomain;
-showIntro = function () { satSwitch = false; changeMap(); startUp = function() { currentMarkers[0].togglePopup(); }; clearMarkers(); fly(fr);
+showIntro = function () { satSwitch = false; changeMap(); startUp = function() { //currentMarkers[0].togglePopup(); 
+}; clearMarkers(); fly(fr);
     addMark('a',fr,'fire','1','indianred', baseContent, 0);
     addMark('b',fr2,'island','1','green', landContent, 1);
     addMark('c',fr3,'monument','1','skyblue', artContent, 2); //map.flyTo({center: base});
-    currentMarkers[0].togglePopup();  }
+    currentMarkers[0].togglePopup(); 
+			}
 
 var mapDeed = false; var mapDomain = false; var mapArtifact = false;
 function showMap(area) {
@@ -766,9 +763,6 @@ function showMap(area) {
         case "domain": break;
         case "artifact": break; } }
 
-function showWallet() {
-
-}
 function showMarkers(area) {
 
 }
@@ -855,23 +849,6 @@ var tempCoord = [0,0];
 function geoSuccess(position) {tempCoord[1] = position.coords.latitude;tempCoord[0] = position.coords.longitude; fly(tempCoord);   }
 function geoError() { alert('No location'); }
 
-//$(function() {
-//    $('#click-me').click(function() {
-//        Notifications.requestPermission(function() {
-//            alert('Permissão concedida');
-//        })
-//    });
-//});
-
-//window.webkitNotifications.checkPermission();
-
-//var popup = window.webkitNotifications.createNotification(url, title, body);
-//            popup.show();
-//            setTimeout(function(){
- //               popup.cancel();
-   //         }, 5000);
-
-
 //  <input type="text" class="datepicker">
  // $('.datepicker').datepicker(); setDefaultDate: true
 
@@ -947,12 +924,7 @@ div.active {opacity: 1;height: auto;}
 
 .select-wrapper { width:100%!important; }
 
-	nav ul a { color:black; } nav ul a:hover { color:darkgoldenrod!important; }
-nav ul a:hover { color:darkgoldenrod; }
-
-  body {display: flex;min-height: 100vh;flex-direction: column; }
-
-  main {flex: 1 0 auto;}
+nav ul a { color:black; } nav ul a:hover { color:darkgoldenrod!important; } nav ul a:hover { color:darkgoldenrod; }
 
 .hide-scrollbar { overflow: auto; -ms-overflow-style: none; /* IE 11 */ scrollbar-width: none; /* Firefox 64 */ }
 .dropdown-content li>a>i { margin:0 12px 0 0; } .dropdown-content li>a, .dropdown-content li>span { color:darkslategray!important; }</style></body></html>
