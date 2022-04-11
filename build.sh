@@ -44,7 +44,7 @@ base() {
 
     genfstab -U /mnt >> /mnt/etc/fstab
     
-    #cp -r /root/nfnth /mnt/root/nfnth
+    cp -r res /mnt/root/res
     #cp -r config /mnt/root
     cp "$0" /mnt/root/build.sh
 
@@ -103,16 +103,16 @@ install() {
 
 boot() {
     hostnamectl set-hostname ${host}
-    mkdir /etc/systemd/system/getty@tty1.service.d
-    cp /root/config/skip-prompt.conf /etc/systemd/system/getty@tty1.service.d/skip-prompt.conf
+    #mkdir /etc/systemd/system/getty@tty1.service.d
+    #cp /root/res/skip-prompt.conf /etc/systemd/system/getty@tty1.service.d/skip-prompt.conf
     
-    mv /boot/loader/entries/archiso-x86_64-linux.conf /boot/loader/entries/archiso-x86_64-linux.conf.old
-    mv /boot/syslinux/syslinux.cfg /boot/syslinux/syslinux.cfg.old
-    mv /etc/mkinitcpio.conf /etc/mkinitcpio.conf.old
+    #mv /boot/loader/entries/archiso-x86_64-linux.conf /boot/loader/entries/archiso-x86_64-linux.conf.old
+    #mv /boot/syslinux/syslinux.cfg /boot/syslinux/syslinux.cfg.old
+    #mv /etc/mkinitcpio.conf /etc/mkinitcpio.conf.old
     
-    cp /root/config/linux.conf /boot/loader/entries/archiso-x86_64-linux.conf
-    cp /root/config/syslinux.cfg /boot/syslinux/syslinux.cfg
-    cp /root/config/mkinitcpio.conf /etc/mkinitcpio.conf
+    cp /root/res/linux.conf /boot/loader/entries/archiso-x86_64-linux.conf
+    cp /root/res/syslinux.cfg /boot/syslinux/syslinux.cfg
+    #cp /root/config/mkinitcpio.conf /etc/mkinitcpio.conf
     
     sed -i "s/root=XXXX/root=${partuuid}/g" /boot/loader/entries/archiso-x86_64-linux.conf
     sed -i "s/root=XXXX/root=${partuuid}/g" /boot/syslinux/syslinux.cfg
