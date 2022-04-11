@@ -1,8 +1,8 @@
 #!/bin/bash
 # script to install server
 
-server="gcc haproxy certbot python python-pip" #git glibc
-python="aiohttp asyncio aiosmtpd web3 acme certbot"
+server="gcc haproxy certbot python python-pip glibc" #git glibc
+python="aiohttp asyncio aiosmtpd web3" # acme certbot"
 #av aiortc #opencv-python object-mapper #pip install --upgrade pip
 domain="ocur.io"
 
