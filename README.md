@@ -1,5 +1,5 @@
 
-###  ⚙⚙ ocur.io · Ocurious
+###  [⚙⚙ ocur.io · Ocurious](https://ocur.io)
 
 [view](https://etherscan.io/token/0x36950b34fE79C4AE047c646D2800e91a198b70fB) · [trade](https://app.uniswap.org/#/pool/103894) **OCUR** *ETH ERC-20* token 
 
