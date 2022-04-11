@@ -2,13 +2,13 @@
 # script to install server
 
 server="gcc haproxy certbot python python-pip glibc" #git glibc
-python="aiohttp asyncio aiosmtpd web3" # acme certbot"
-#av aiortc #opencv-python object-mapper #pip install --upgrade pip
+python="aiohttp asyncio" #web3 aiosmtpd acme certbot" #av aiortc #opencv-python object-mapper
 domain="ocur.io"
 
 server() {
     pacman --noconfirm -Sy --overwrite ${server}
     curl -sS https://bootstrap.pypa.io/get-pip.py | sudo python3
+    pip install --upgrade pip
     pip3 install ${python} -U
 
     cp res/ocur.service /etc/systemd/system/ocur.service
