@@ -283,7 +283,7 @@ function pullOpen(name) {
                     case 'ref': tmp.ref = traits[a].value.toString(); break;
                     default: break; } }
             domains.push(tmp);  }  updateCount(name, response.assets.length); } ).then(response => {
-            	if (domains.length > 180) { holder = domains.slice(); domainFind(); } }).catch(err => console.error(err)); }
+            	if (domains.length > 180) { complete = domains.slice(); domainFind(); } }).catch(err => console.error(err)); }
 
 function updateCount(name, count) { for (let i=0;i<opens.length;i++) { if (opens[i].core.slug == name) { opens[i].count = count; break;} } }
 
@@ -343,7 +343,7 @@ function showList(area) { $("#registry").html(''); $("#registry").hide();
     switch (area) {
         case "deed": sortSet = [area,deeds,0,18,16]; for (let i=0;i<deeds.length;i++) { addContent(deeds[i]); } break;
 	    case "grid": sortSet = [area,domains,0,18,16]; var snip; for (let i=0;i<domains.length;i++) { if ((i%4) == 0) { snip = '<div style="display:flex;width:100%;justify-content:center;">'; } snip += addGrid(i); if (((i+1)%4) == 0) { snip += '</div>'; $("#registry").append(snip); } } adjustSort(true); break;
-        case "domain": sortSet = [area,domains,0,18,16]; for (let i=0;i<domains.length;i++) { addList(i); } adjustSort(true); break;
+        case "domain": domains = complete; sortSet = [area,domains,0,18,16]; for (let i=0;i<domains.length;i++) { addList(i); } adjustSort(true); break;
         case "filter": sortSet = [area,domains,0,18,16]; domains = holder; for (let i=0;i<domains.length;i++) { addList(i); } adjustSort(true); break;
         case "open": sortSet = [area,opens,0,18,16]; for (let i=0;i<opens.length;i++) { addOpen(i); } adjustSort(false); break; }
     //$("#registry").css("height",height + "px");
@@ -494,8 +494,9 @@ var middle = [-100.90328686441276, 39.68714979898309];
 function filterMap(slug) { holder = [];
     for (var a = 0; a < domains.length; a++) { if (domains[a].core.collection.slug == slug) { holder.push(domains[a]); } }
     clearMap(); for (let a=0;a<currentMarkers.length;a++){currentMarkers[a].remove(); } currentMarkers = [];
+domains = holder;
     for (let i=0;i<domains.length;i++) { showMark2(i); }
-    var place2 = [domains[0][12].substring(domains[0][12].indexOf(', ')+1,domains[0][12].indexOf(']')-1), domains[0][12].substring(domains[0][12].indexOf('[')+1,domains[0][12].indexOf(',')-1)];
+    var place2 = [domains[0].coord.substring(domains[0].coord.indexOf(', ')+1,domains[0].coord.indexOf(']')-1), domains[0].coord.substring(domains[0].coord.indexOf('[')+1,domains[0].coord.indexOf(',')-1)];
     startUp = function() {currentMarkers[0].togglePopup(); };  setZoom = 2; fly(middle); }
 
 var popups = [];
