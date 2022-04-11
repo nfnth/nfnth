@@ -19,14 +19,13 @@ import eth_account.messages
 #from shutil import copyfile
 #from distutils.dir_util import copy_tree
 
-DATA="/mnt/deed/" #os.pardir
-PATH="/root/nfnth" #os.path.abspath(os.path.dirname(__file__))
-GUIDE="/mnt/guide"
+DATA="/mnt/" #os.pardir
+PATH="/root/nfnth/" #os.path.abspath(os.path.dirname(__file__))
 REL=os.getcwd()
 
 # client
 async def index(request): #request.remote_addr #if not request.host == "dralun.com" and not request.host == "ur.land":
-    return web.FileResponse(PATH + '/res/index.htm')
+    return web.FileResponse(PATH + 'index.htm')
 
 async def key(request): #secret hash?
     hostname = socket.gethostname()
@@ -37,7 +36,7 @@ async def key(request): #secret hash?
 async def api(request):
     account = request.match_info.get('account', '')
     url = 'https://api.etherscan.io/api?module=account&action=balance&address=' + account + '&tag=latest&apikey=PFWQFWU33EZPEAYGHQH7YBCSQ45NCUYU7G'
-    token = 'https://api.etherscan.io/api?module=account&action=tokenbalance&contractaddress=0x36950b34fE79C4AE047c646D2800e91a198b70fB&address=' + account + '&tag=latest&apikey=PFWQFWU33EZPEAYGHQH7YBCSQ45NCUYU7G'
+    token = 'https://api.etherscan.io/api?module=account&action=tokenbalance&contractaddress=0xCcaB679860B1017589239BCeEEabe5CD45965aFc&address=' + account + '&tag=latest&apikey=PFWQFWU33EZPEAYGHQH7YBCSQ45NCUYU7G'
     r = requests.get(url)
     token_balance = requests.get(token).json().get("result")
     #r2 = request.get(token)
@@ -158,13 +157,14 @@ def run(part, *args):
 async def site(port):
     app = web.Application(client_max_size=10000000)
 
-    app.router.add_static('/res', PATH + '/res')
-    app.router.add_static('/img', '/mnt/img/img')
-    app.router.add_static('/domain', PATH + '/domain')
+    app.router.add_static('/res', PATH + 'res')
+    app.router.add_static('/img', PATH + 'img')
+    app.router.add_static('/domain', DATA + 'domain')
 
     app.add_routes([web.get('/', index)])
     app.add_routes([web.get('/api/{wallet}', api)])
     app.add_routes([web.get('/key', key)]) #auth/anti-bot
+    app.add_routes([web.get('/{domain}', index)])
 
     app.add_routes([web.post('/data/{wallet}/{domain}', data)])
     
