@@ -101,11 +101,12 @@
     <!-- map -->
     <div id="map" class="content loader pane" style="width:100%;"></div>
         <div id="actions" class="content loader pane fixed-action-btn" >
-            <a class="btn-floating btn-large amber lighten-2 waves-effect waves-light"><i class="large material-icons">apps</i></a>
+            <a class="btn-floating btn-large green lighten-2 waves-effect waves-light"><i class="large material-icons">apps</i></a>
             <ul>
 		<li><a id="map-gps" class="btn-floating grey" onclick="changeMap();"><i class="material-icons">satellite_alt</i></a></li>
 		<li><a id="map-gps" class="btn-floating grey lighten-1" onclick="changeMap();"><i class="material-icons">gps_fixed</i></a></li>
                 <li><a id="map-deed" class="btn-floating grey lighten-1" onclick="if (walletAddress != '') {showMap('deed');} else { M.toast({html: 'No wallet connected.'}); }"><i class="material-icons">shuffle</i></a></li>
+		<li><a id="map-deed" class="btn-floating grey lighten-1" onclick="if (walletAddress != '') {showMap('deed');} else { M.toast({html: 'No wallet connected.'}); }"><i class="material-icons">route</i></a></li>
 		<li><a id="map-domain" class="btn-floating grey lighten-1" onclick="showIntro();"><i class="material-icons">book</i></a></li></ul></div>
 
     <!-- editor -->
@@ -337,12 +338,13 @@ function showView(view) { if (openDoc) { $('#someoverlay').trigger( "click" ); }
 
         break; } }
 
+var complete;
 function showList(area) { $("#registry").html(''); $("#registry").hide();
     switch (area) {
         case "deed": sortSet = [area,deeds,0,18,16]; for (let i=0;i<deeds.length;i++) { addContent(deeds[i]); } break;
 	    case "grid": sortSet = [area,domains,0,18,16]; var snip; for (let i=0;i<domains.length;i++) { if ((i%4) == 0) { snip = '<div style="display:flex;width:100%;justify-content:center;">'; } snip += addGrid(i); if (((i+1)%4) == 0) { snip += '</div>'; $("#registry").append(snip); } } adjustSort(true); break;
         case "domain": sortSet = [area,domains,0,18,16]; for (let i=0;i<domains.length;i++) { addList(i); } adjustSort(true); break;
-        case "filter": sortSet = [area,domains,0,18,16]; for (let i=0;i<domains.length;i++) { addList(i); } adjustSort(true); break;
+        case "filter": sortSet = [area,domains,0,18,16]; domains = holder; for (let i=0;i<domains.length;i++) { addList(i); } adjustSort(true); break;
         case "open": sortSet = [area,opens,0,18,16]; for (let i=0;i<opens.length;i++) { addOpen(i); } adjustSort(false); break; }
     //$("#registry").css("height",height + "px");
     $("#registry").show(); $('img').on('dragstart', function(evt) { return false; }); }
@@ -382,7 +384,7 @@ function addOpen(i){
     $("#registry").append("<a class='collection-item modal-trigger' href='#modal1' onclick='addOpenDetail(" + i + ");'><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;'>" + opens[i].core.name + "</div><div style='display:flex; justify-content:space-between;align-items:center;'><div style='display:flex; flex-direction:column;'><div style='width:160px; ' class='z-depth-1 chip " + getColor(opens[i].core.slug)  + "'><img src='img/key/" + getCollect(opens[i].core.slug) + "'><div style='border-radius:8px; width:100px;color:black;background-color:rgb(245, 246, 247,0.75); font-size:16px;' class='z-depth-1'><span style='font-weight:bold;' id='" + opens[i].core.slug + "-count'>" + opens[i].count + "</span></div></div></div></div></div></a>");}
 
 function addOpenDetail(i) {
-     $("#domain-info").html('<div style="display:flex;justify-content:space-evenly;align-items:center;"><div style="display: flex;flex-direction: column;text-align: left;align-items:center;"><div style="display:flex; justify-content:center;"><img style="margin-bottom:24px;" class="materialboxed z-depth-2" width="180" height="120" src="' + opens[i].core.banner_image_url + '"/></div><div style="margin-bottom:12px;">' + opens[i].core.name + '&nbsp;&nbsp · &nbsp;&nbsp<a style="cursor:pointer;" onclick="openInNewTab(\'https://opensea.io/collection/' + opens[i].core.slug + '\');">' + opens[i].core.slug + '</a></div><br/><br/><div style="display:flex;"><a onclick="addOpenDeed(' + i +');" class="waves-effect waves-light waves-blue btn green lighten-2" ><i class="material-icons">sticky_note_2</i></a>&nbsp;&nbsp;<a onclick="filterList(\'' + opens[i].core.slug + '\'); " class="modal-close waves-effect waves-blue btn blue lighten-2" ><i class="material-icons">list</i></a>&nbsp;&nbsp;<a onclick="showView(\'map\'); map.resize(); filterMap(\''+opens[i].core.slug+'\');" class="modal-close waves-effect waves-light waves-blue btn blue lighten-3" ><i class="material-icons">map</i></a></div><br/></div></div>'); $('.materialboxed').materialbox(); }
+     $("#domain-info").html('<div style="display:flex;justify-content:space-evenly;align-items:center;"><div style="display: flex;flex-direction: column;text-align: left;align-items:center;"><div style="display:flex; justify-content:center;"><img style="margin-bottom:24px;" class="materialboxed z-depth-2" width="180" height="120" src="' + opens[i].core.banner_image_url + '"/></div><div style="margin-bottom:12px;">' + opens[i].core.name + '&nbsp;&nbsp · &nbsp;&nbsp<a style="cursor:pointer;" onclick="openInNewTab(\'https://opensea.io/collection/' + opens[i].core.slug + '\');">' + opens[i].core.slug + '</a></div><br/><br/><div style="display:flex;"><a onclick="addOpenDeed(' + i +');" class="waves-effect waves-light waves-blue btn green lighten-2" ><i class="material-icons">sticky_note_2</i></a>&nbsp;&nbsp;<a onclick="showView(\'map\'); map.resize(); filterMap(\''+opens[i].core.slug+'\');" class="modal-close waves-effect waves-light waves-blue btn blue lighten-3" ><i class="material-icons">map</i></a>&nbsp;&nbsp;<a onclick="filterList(\'' + opens[i].core.slug + '\'); " class="modal-close waves-effect waves-blue btn blue lighten-2" ><i class="material-icons">list</i></a></div><br/></div></div>'); $('.materialboxed').materialbox(); }
 
 function addOpenDeed(i) {
     $("#somedialog2").css("z-index",1004);
@@ -486,11 +488,11 @@ function sortZA(a, b) { if (a[sortItem] === b[sortItem]) {  return 0; } else { r
 function sort09(a, b) { if (a[sortItem] === b[sortItem]) {  return 0; } else { return (parseInt(a[sortItem]) < parseInt(b[sortItem])) ? -1 : 1; } }
 function sort90(a, b) { if (a[sortItem] === b[sortItem]) {  return 0; } else { return (parseInt(a[sortItem]) > parseInt(b[sortItem])) ? -1 : 1; } }
 
-function filterList(slug) { domains = []; for (var a = 0; a < holder.length; a++) { if (holder[a][15] == slug) { domains.push(holder[a]); } } showList('filter'); sorter(); }
+function filterList(slug) { holder = []; for (var a = 0; a < domains.length; a++) { if (domains[a].core.collection.slug == slug) { holder.push(domains[a]); } } showList('filter'); sorter(); }
 
 var middle = [-100.90328686441276, 39.68714979898309];
-function filterMap(slug) { domains = [];
-    for (var a = 0; a < holder.length; a++) { if (holder[a][15] == slug) { domains.push(holder[a]); } }
+function filterMap(slug) { holder = [];
+    for (var a = 0; a < domains.length; a++) { if (domains[a].core.collection.slug == slug) { holder.push(domains[a]); } }
     clearMap(); for (let a=0;a<currentMarkers.length;a++){currentMarkers[a].remove(); } currentMarkers = [];
     for (let i=0;i<domains.length;i++) { showMark2(i); }
     var place2 = [domains[0][12].substring(domains[0][12].indexOf(', ')+1,domains[0][12].indexOf(']')-1), domains[0][12].substring(domains[0][12].indexOf('[')+1,domains[0][12].indexOf(',')-1)];
