@@ -129,6 +129,7 @@ async def site(port):
 
     app.router.add_static('/res', PATH + 'res')
     app.router.add_static('/img', PATH + 'img')
+    app.router.add_static('/doc', PATH + 'doc')
     app.router.add_static('/domain', DATA + 'domain')
 
     app.add_routes([web.get('/', index)])
