@@ -7,18 +7,20 @@
 
 #### How to run dApp
 
-We recommend using Arch Linux on [Linode](https://linode.com), see [here]() to download client ISO.
+We recommend using Arch Linux on [Linode](https://linode.com), download client ISO [here]().
 
 To install and/or run, 
 
 ```
 pacman -S git # install git
-git clone https://github.com/nfnth/nfnth 
+git clone https://github.com/nfnth/nfnth  # clone repo
 
-chmod +x nfnth/install.sh #option 1, install (be sure to add your domain to /nfnth/res/domain)
+# option 1, install (and add your domain to /nfnth/res/domain)
+chmod +x nfnth/install.sh 
 ./nfnth/install.sh
 
-pip install aiohttp #option 2, run stand-alone
+# option 2, run stand-alone
+pip install aiohttp 
 python nfnth/site.py 
 ```
 
