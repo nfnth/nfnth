@@ -9,21 +9,27 @@ Licensed as **NfNth Corp** in the State of Washington
 
 #### How to run dApp
 
-Requires Python and packages, below install is for Arch Linux running on [Linode](https://linode.com):
+To run stand-alone:
+
+```
+git clone https://github.com/nfnth/nfnth
+python nfnth/site.py
+```
+
+To install and run, using Arch Linux on [Linode](https://linode.com):
 
 ```
 pacman -S git
 git clone https://github.com/nfnth/nfnth
 chmod +x nfnth/install.sh
-./nfnth/install.sh # domain (optional)
+./nfnth/install.sh
 ```
 
-To run on any machine without install:
+To run client:
 
 ```
-git clone https://github.com/nfnth/nfnth
-cd nfnth
-python site.py
+wget ocuros.iso
+dd if=ocuros.iso of=/dev/sda status=progress
 ```
 
 View demo at [dev.ocur.io](https://dev.ocur.io).
