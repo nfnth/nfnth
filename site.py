@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import os, socket, json, types#, shutil#, six
+import os, socket, json, types, shutil#, six
 import requests, random
 
 from web3.auto import w3
@@ -12,16 +12,16 @@ import uuid
 from hexbytes import HexBytes
 #from web3 import Web3
 #from hexbytes import HexBytes
+import eth_account.messages
 from eth_account.messages import encode_defunct
 from eth_account.messages import defunct_hash_message
 from eth_account import Account, messages
-import eth_account.messages
+
 #from shutil import copyfile
 #from distutils.dir_util import copy_tree
 
 DATA="/mnt/" #os.pardir
-PATH="/root/nfnth/" #os.path.abspath(os.path.dirname(__file__))
-REL=os.getcwd()
+PATH="/root/nfnth/" #os.path.abspath(os.path.dirname(__file__))  #REL=os.getcwd()
 
 # client
 async def index(request): #request.remote_addr #if not request.host == "dralun.com" and not request.host == "ur.land":
@@ -52,9 +52,6 @@ async def data(request):
         print (field.name)
         if field.name == 'message':
             message = (await field.read()).decode()
-            pass
-        if field.name == 'domain':
-            domain = (await field.read()).decode()
             pass
         if field.name == 'signature':
             signature = (await field.read()).decode()
@@ -95,44 +92,17 @@ async def data(request):
         print (api_url)
         x = requests.get(api_url).json().get("top_ownerships")[0].get("owner").get("address")
         print (x)
-        if x.upper() == wallet.upper():
-            owner = True
-            #alltransactions = x.json().get("assets")
-            #for t in alltransactions:
-            #    name = t.get("name")
-            #    print (name)
-            #    if name == domain:
-            #        contract = t.get("asset_contract").get("address")
-            #        asset = t.get("token_id")
-            #        asset_url = "https://api.opensea.io/api/v1/asset/" + contract + "/" + asset
-            #        y = requests.get(asset_url).json().get("top_ownerships")[0].get("owner").get("address")
-            #        print (y)
-            #        if y == wallet.lower():
-            #            owner = True
-
-        if owner == True:
+        if x.upper() == wallet.upper(): #owner authenticated
             if not os.path.exists(location):
                 os.mkdir(location)
-
-            if action == "add":
-                ref = str(uuid.uuid4())
-                os.mkdir(location + '/' + ref)
-                with open(location + '/' + ref + '/doc', 'w+') as fp:
-                    fp.write(content)
-                    pass
-                #write files...
-                return web.Response(text='doc sent',content_type="text/html")
-            elif action == "edit" or action == "delete":
-                shutil.rmtree(location + ref)
-                if action == "update":
-                    os.mkdir(location + ref)
-                    with open(location + ref + '/doc', 'w+') as fp:
-                        fp.write(content)
-                        pass
-                #write files...
-                return web.Response(text='content update',content_type="text/html")
             else:
-                return web.Response(text='invalid action',content_type="text/html")
+                shutil.rmtree(location)
+
+            with open(location + '/doc', 'w+') as fp:
+                fp.write(content)
+                pass
+                #write files...
+                return web.Response(text='content uploaded',content_type="text/html")
         else:
             return web.Response(text='invalid owner',content_type="text/html")
     else:
