@@ -1,0 +1,7 @@
+[Unit]
+Description=ocur
+[Service]
+ExecStart=/usr/bin/python3 /root/nfnth/site.py
+Type=idle
+[Install]
+WantedBy=multi-user.target
