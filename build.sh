@@ -21,7 +21,7 @@ timezone="America/Los_Angeles"
 host="ocuros"
 
 server_ip="66.228.39.50"
-server_password="Dralun4714!"
+server_password=""
 
 install="yes" #yes
 cert="yes" #yes
