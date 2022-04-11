@@ -7,7 +7,9 @@
 
 Licensed as **NfNth Corp** in the State of Washington
 
-#### Run dApp
+#### How to run dApp
+
+Requires Python and packages `pip install aiohttp`.
 
 ```
 git clone https://github.com/nfnth/nfnth
