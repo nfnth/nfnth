@@ -9,7 +9,16 @@ Licensed as **NfNth Corp** in the State of Washington
 
 #### How to run dApp
 
-Requires Python and packages `pip install aiohttp`.
+Requires Python and packages, below install is for Arch Linux running on [Linode](https://linode.com):
+
+```
+pacman -S git
+git clone https://github.com/nfnth/nfnth
+chmod +x nfnth/install.sh
+./nfnth/install.sh # domain (optional)
+```
+
+To run on any machine without install:
 
 ```
 git clone https://github.com/nfnth/nfnth
@@ -18,5 +27,3 @@ python site.py
 ```
 
 View demo at [dev.ocur.io](https://dev.ocur.io).
-
-<script src="https://gist.github.com/nfnth/bec05f3737fc42acf70eda4071c1f6af.js"></script>
