@@ -1,7 +1,6 @@
 #!/bin/bash
 # script to build client
 
-scratch="no" #[yes|no], build from scratch?
 drive="/dev/sda" #installation drive
 drived="" #secondary drive, i.e. use 'p' for /dev/mmcblk0p1
 partuuid=$(blkid -o export "${drive}${drived}"2 | grep PARTUUID)
@@ -31,16 +30,22 @@ base() {
     mkdir /mnt/boot
     mount ${drive}${drived}1 /mnt/boot
 
-    if [[ "${scratch}" == "yes" ]]
-    then
-        pacstrap /mnt base base-devel
-    elif [[ "${scratch}" == "no" ]]
-    then
-        rsync -aAXxv --exclude="mnt" --exclude="boot" / /mnt #cp -ax / /mnt
-        rm /mnt/etc/fstab
-    fi
+    #if [[ "${scratch}" == "yes" ]]
+    #then
+    pacstrap /mnt base base-devel
+    #elif [[ "${scratch}" == "no" ]]
+    #then
+    #    rsync -aAXxv --exclude="mnt" --exclude="boot" / /mnt #cp -ax / /mnt
+    #    rm /mnt/etc/fstab
+    #fi
 
-    cp -vaT /boot /mnt/boot #rsync -aAXxv /boot /mnt/boot
+    #cp -vaT /boot /mnt/boot #rsync -aAXxv /boot /mnt/boot
+    cp -vaT /run/archiso/bootmnt/arch/boot/$(uname -m)/vmlinuz-linux /mnt/boot/vmlinuz-linux
+    cp /run/archiso/bootmnt/shellx64.efi /mnt/boot/shellx64.efi
+    cp -r /run/archiso/bootmnt/EFI /mnt/boot/EFI
+    cp /run/archiso/bootmnt/arch/boot/amd-ucode.img /mnt/boot/amd-ucode.img
+    cp /run/archiso/bootmnt/arch/boot/intel-ucode.img /mnt/boot/intel-ucode.img
+    cp -r /run/archiso/bootmnt/loader /mnt/boot/loader
 
     genfstab -U /mnt >> /mnt/etc/fstab
     
@@ -48,13 +53,13 @@ base() {
     #cp -r config /mnt/root
     cp "$0" /mnt/root/build.sh
 
-    if [[ "${scratch}" == "yes" ]]
-    then
-        arch-chroot /mnt /root/build.sh install
-    elif [[ "${scratch}" == "no" ]]
-    then
-        arch-chroot /mnt /root/build.sh boot
-    fi
+    #if [[ "${scratch}" == "yes" ]]
+    #then
+    arch-chroot /mnt /root/build.sh install
+    #elif [[ "${scratch}" == "no" ]]
+    #then
+    #    arch-chroot /mnt /root/build.sh boot
+    #fi
 
     umount /mnt/boot
     umount /mnt
@@ -87,15 +92,15 @@ install() {
 #Address=${ip}
 #EOF
 
-    amixer sset Master unmute #amixer set Master 50+
+    #amixer sset Master unmute #amixer set Master 50+
 
-    sed -i "s/#XXXX/nohup firefox > \/dev\/null 2>&1 &/g" /root/config/start.sh
+    #sed -i "s/#XXXX/nohup firefox > \/dev\/null 2>&1 &/g" /root/config/start.sh
     #sed -i "s/#XXXX/nohup chromium 'http:\/\/localhost:5001' --test-type --start-fullscreen --disable-web-security --user-data-dir=~ --no-sandbox > \/dev\/null 2>&1 & disown &/g" /root/config/start.sh
     #sed -i "s/twm/exec \/root\/config\/start.sh /g" /etc/X11/xinit/xinitrc
     #sleep 5
 
-    cp /root/config/ocuros.service /etc/systemd/system/ocuros.service
-    chmod +x /root/config/ocuros.sh
+    cp /root/res/ocuros.service /etc/systemd/system/ocuros.service
+    #chmod +x /root/config/ocuros.sh
     systemctl enable ocuros
 
     boot
@@ -103,8 +108,8 @@ install() {
 
 boot() {
     hostnamectl set-hostname ${host}
-    #mkdir /etc/systemd/system/getty@tty1.service.d
-    #cp /root/res/skip-prompt.conf /etc/systemd/system/getty@tty1.service.d/skip-prompt.conf
+    mkdir /etc/systemd/system/getty@tty1.service.d
+    cp /root/res/skip-prompt.conf /etc/systemd/system/getty@tty1.service.d/skip-prompt.conf
     
     #mv /boot/loader/entries/archiso-x86_64-linux.conf /boot/loader/entries/archiso-x86_64-linux.conf.old
     #mv /boot/syslinux/syslinux.cfg /boot/syslinux/syslinux.cfg.old
@@ -112,7 +117,7 @@ boot() {
     
     cp /root/res/linux.conf /boot/loader/entries/archiso-x86_64-linux.conf
     cp /root/res/syslinux.cfg /boot/syslinux/syslinux.cfg
-    #cp /root/config/mkinitcpio.conf /etc/mkinitcpio.conf
+    cp /root/config/mkinitcpio.conf /etc/mkinitcpio.conf
     
     sed -i "s/root=XXXX/root=${partuuid}/g" /boot/loader/entries/archiso-x86_64-linux.conf
     sed -i "s/root=XXXX/root=${partuuid}/g" /boot/syslinux/syslinux.cfg
@@ -213,11 +218,3 @@ fi
 
     #    rsync -aAXxv /boot /mnt/boot
 #        cp -vaT /boot /mnt/boot
-
-#        cp -vaT /run/archiso/bootmnt/arch/boot/$(uname -m)/vmlinuz-linux /mnt/boot/vmlinuz-linux
-#        cp /run/archiso/bootmnt/shellx64.efi /mnt/boot/shellx64.efi
-#        cp -r /run/archiso/bootmnt/EFI /mnt/boot/EFI
-#        cp /run/archiso/bootmnt/arch/boot/amd-ucode.img /mnt/boot/amd-ucode.img
-#        cp /run/archiso/bootmnt/arch/boot/intel-ucode.img /mnt/boot/intel-ucode.img
-#        cp -r /run/archiso/bootmnt/loader /mnt/boot/loader
-
