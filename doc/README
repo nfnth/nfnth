@@ -1,61 +1,22 @@
 
-### OpenSea Collections
+### Grant ownership
 
-|**Collection**|**Description**|
-|-|-|
-|[Tactician](https://opensea.io/collection/tact)|<span style='background-color:red;width:16px;margin-right:8px;'>&nbsp;&nbsp;</span>Battles, forts, generals, and chieftains|
-|[Patrician](https://opensea.io/collection/patric)|<span style='background-color:orange;width:16px;margin-right:8px;'>&nbsp;&nbsp;</span>Tribes|
-|[Electrician](https://opensea.io/collection/elect)|<span style='background-color:yellow;width:16px;margin-right:8px;'>&nbsp;&nbsp;</span>Towns and cities|
-|[Sectarian](https://opensea.io/collection/sect)|<span style='background-color:green;width:16px;margin-right:8px;'>&nbsp;&nbsp;</span>International|
-|[Civilian](https://opensea.io/collection/civilia)|<span style='background-color:blue;width:16px;margin-right:8px;'>&nbsp;&nbsp;</span>Parks and landmarks|
-|[Logician](https://opensea.io/collection/logicia)|<span style='background-color:purple;width:16px;margin-right:8px;'>&nbsp;&nbsp;</span>Sites and monuments|
-|[Technician](https://opensea.io/collection/technic)|<span style='background-color:whitesmoke;width:16px;margin-right:8px;'>&nbsp;&nbsp;</span>Persona|
-|[Custodian](https://opensea.io/collection/custo)|<span style='background-color:grey;width:16px;margin-right:8px;'>&nbsp;&nbsp;</span>Real-world collectibles|
-|[Utilitarian](https://opensea.io/collection/utili)|<span style='background-color:black;width:16px;margin-right:8px;'>&nbsp;&nbsp;</span>Machines|
-|[Librarian](https://opensea.io/collection/librar)|<span style='background-color:tan;width:16px;margin-right:8px;'>&nbsp;&nbsp;</span>Artwork|
-|[Agarian](https://opensea.io/collection/agrar)|<span style='background-color:brown;width:16px;margin-right:8px;'>&nbsp;&nbsp;</span>Food, drink, plants, and animals|
-|[Clinician](https://opensea.io/collection/clini)|<span style='background-color:pink;width:16px;margin-right:8px;'>&nbsp;&nbsp;</span>Miscellaneous|
+The NFT (deed domain) is stored in your wallet granting you exclusive access to the domain. Not only is your wallet profiled with the domain, but you're also granted the ability to build the domain's profile. 
 
-All items include the following properties: name
-coord
-ref
-class
-sub
-state
-img
-ur
-serial?
+### Build domain
 
-NFB...
+Each domain has a history and NFT, but also included is a customizable profile that only the owner can create/edit/delete. The profile can include text-bases content along with location and/or images and files. 
 
-#### OpenSea Custodian
+### Generate OCUR
+
+Each deed domain has both an OCUR value/rate associated with it in the meta properties.
+
+Use OCUR for fun in the world simulation or save it to earn dividends on annual payouts.
+
+### Collectible
 
 Same as NFT only includes a Stripe link to transfer associated property.
 
-Each item is a deed domain and can be used to:
+Deed domains also include a one-time redeemable collectible that requires $0.99 Stripe payment for shipping.
 
-· grant ownership rights · generate UR · unlock auth code · redeem US dollar coin
-
-Coin requires $0.99 Stripe payment for shipping.
-
-To redeem the US dollar coin, use [this link](https://buy.stripe.com/fZe5nBdsearXegU5kq) to place your order and be sure to use the code under **Add promotion code**.
-
-### urOS <span class="badge green">v0.8.1</span>
-
-
-- tech agnostic version now available *replaces Google with Firefox and Presearch*
-
-(chromium) google.com with YouTube/Stadia
-(firefox) Presearch with media/threejs
-
-- build library now available, includes build script for download
-
-
-### tactician.us
-
-Learn how to craft energy drinks and survive in the great outdoors.
-
-
-### Artifact Registry
-
-List geocached artifacts in the site registry, higher ranks based on UR
+Anyone can purchase a collectible, use [this link](https://buy.stripe.com/fZe5nBdsearXegU5kq) to place your order.
