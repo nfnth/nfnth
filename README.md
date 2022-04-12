@@ -5,8 +5,6 @@
 
 <a href="https://opensea.io/ocurio" title="Buy on OpenSea" target="_blank"><img style="margin-left:24px; width:220px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="https://storage.googleapis.com/opensea-static/Logomark/Badge%20-%20Available%20On%20-%20Light.png" alt="Available on OpenSea" /></a>
 
-Located at 19500 130th AV NE, Woodinville, WA 98072
-
-Licensed as **NfNth Corp** in the State of Washington
+Located at 19500 130th AV NE, Woodinville, WA 98072. Licensed as **NfNth Corp** in the State of Washington.
 
 [C-SPAN](https://www.c-span.org) · [BBC](http://feeds.bbci.co.uk/news/rss.xml) · [Gutenberg](http://www.gutenberg.org) · [Wikipedia](http://www.wikipedia.org/wiki/Special:Random)
