@@ -44,12 +44,12 @@
 <!-- dropdown -->
 <ul id="doc" class="dropdown-content loader" style="visibility:hidden;">
 	<li><a onclick="showDoc('PLANME');"><i class="material-icons">backpack</i>Use Deed Domain</a></li>
-    	<li><a onclick="showDoc('manifesto');"><i class="material-icons">home</i>About ocur.io</a></li>
+    	<li><a onclick="openInNewTab('https://github.com/nfnth');"><i class="material-icons">home</i>About ocur.io</a></li>
     	<li class="divider"></li>
-    	<li><a onclick="showDoc('url');"><i class="material-icons">toll</i>Trade OCUR</a></li>
+    	<li><a onclick="showDoc('ocur');"><i class="material-icons">toll</i>Trade OCUR</a></li>
 	<li><a onclick="showDoc('donation');"><i class="material-icons"><span class="material-icons-outlined">park</span></i>Make Donation</a></li>
 	<li class="divider"></li>
-    	<li><a onclick="openInNewTab('https://ocur.io/civ/index.htm');"><i class="material-icons">explore</i>Play Ocurian...</a></li></ul>
+    	<li><a onclick="openInNewTab('https://ocur.io/res/civ/index.htm');"><i class="material-icons">explore</i>Play Ocurian...</a></li></ul>
 
 <ul id="domain" class="dropdown-content loader" style="visibility:hidden;">
 	<li><a onclick="showView('list'); showList('deed');"><i class="material-icons"><span class="material-icons-outlined">class</span></i>Deed Registry</a></li>
@@ -205,7 +205,7 @@ var setup = async function () {
     if (window.ethereum) { //web3 = new Web3(window.ethereum); //await account();
         const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' }); walletAddress = accounts[0];
         $("#myAdd").html(walletAddress.toLowerCase().substring(0,16) + "...");
-        $.get("api/"+walletAddress, async function(data) {
+        $.get("api/"+walletAddress, async function(data) { alert(data);
             var fields = data.split('|'); var ether = JSON.parse(fields[0]).result; var urler = fields[1];
             $("#myETH").html(ether); $("#myURL").html(urler);
             $("#maker").removeClass("blue-grey");  $("#maker").removeClass("darken-3"); $("#maker").addClass("green");
@@ -860,8 +860,8 @@ function geoError() { alert('No location'); }
 //</video>
 
 // add calculator...
-	#video/audio?
-replace youtube with html5 video?
+//	#video/audio?
+//replace youtube with html5 video?
 
    // $.get("path" , function(data) { docs = data.replaceAll('/root/nfnth/data/domain/'+domain+'/','').split('|doc'); ///root/nfnth/data/domain/dralun.com/doc|manifest|/root/nfnth/data/domain/dralun.com/doc/sample|artifact
     //var lines = data.split(/\r?\n/); //for (let i = 0; i < lines.length; i++) { // var fields = lines[i].split('|');
@@ -870,10 +870,10 @@ replace youtube with html5 video?
 
       //manifest.push(fields);
 
-var formSample = '<div id="intro" class="row-section"><div id="console" class="row hover-base"><div class="input-field"><i class="material-icons prefix">mail</i><input type="text" id="user-email" name="user-email" class="user-input" placeholder="Enter email" /><label for="user-email">Email</label><span id="user-issue" class="helper-text" data-error="Invalid input" data-success="" >Enter Email</span></div></div><div class="modal-footer content loader"><button id="button-next" class="btn waves-effect waves-light" onclick="signer();">Sign In<i class="material-icons left">login</i></button><a href="#!" class="modal-close waves-effect waves-gray btn-flat disabled">Cancel</a></div></div>';
+//var formSample = '<div id="intro" class="row-section"><div id="console" class="row hover-base"><div class="input-field"><i class="material-icons prefix">mail</i><input type="text" id="user-email" name="user-email" class="user-input" placeholder="Enter email" /><label for="user-email">Email</label><span id="user-issue" class="helper-text" data-error="Invalid input" data-success="" >Enter Email</span></div></div><div class="modal-footer content loader"><button id="button-next" class="btn waves-effect waves-light" onclick="signer();">Sign In<i class="material-icons left">login</i></button><a href="#!" class="modal-close waves-effect waves-gray btn-flat disabled">Cancel</a></div></div>';
 
 //window.open(url, '_self');
-function getParameter() { var pathArray = window.location.pathname.split('/'); switch (pathArray.length) { case 2: return pathArray[1]; break; } }
+//function getParameter() { var pathArray = window.location.pathname.split('/'); switch (pathArray.length) { case 2: return pathArray[1]; break; } }
 
 //let preview = document.getElementById("preview"), recording = document.getElementById("recording"), startButton = document.getElementById("startButton"), stopButton = document.getElementById("stopButton"), downloadButton = document.getElementById("downloadButton"), recordingTimeMS = 5000;
 
