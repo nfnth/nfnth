@@ -1,0 +1,7 @@
+[Unit]
+Description=ocurOS
+[Service]
+ExecStart=startx
+Type=idle
+[Install]
+WantedBy=multi-user.target
