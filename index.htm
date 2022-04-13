@@ -22,16 +22,16 @@
 		<div id="waiter" onclick="showView('news');" style="height:48px; width:48px; cursor: pointer; margin-left: 12px;"><img id="list-wait" class="image"/><img id="list-wait2" class="image2"/></div></a></div>
 
 <!-- media -->
+	<a id="doc-hide" class="screen-hide" href="#!" data-target="doc"><i class="material-icons">menu_book</i></a>
         <a id="map-hide" class="screen-hide" onclick="showView('map'); map.resize();"><i class="material-icons">map</i></a>
 	<a id="list-hide" class="screen-hide" href="#!" data-target="domain"><i class="material-icons">list</i></a>
-	<a id="doc-hide" class="screen-hide" href="#!" data-target="doc"><i class="material-icons">menu_book</i></a>
     	<a id="search-hide" class="screen-hide" onclick="showView('search');"><i class="material-icons">search</i></a>
 
     <!-- desktop -->
     	<ul class="hide-on-med-and-down">
+	    <li id="doc-list"><a id="docs" href="#!" data-target="doc"><i class="material-icons left">menu_book</i>LEARN<i class="material-icons right">arrow_drop_down</i></a></li>
             <li id="map-list"><a onclick="showView('map'); map.resize();"><i class="material-icons left">map</i>EXPLORE</a></li>
             <li id="list-list"><a id="lists" href="#!" data-target="domain"><i class="material-icons left">list</i>CATALOG<i class="material-icons right">arrow_drop_down</i></a></li>
-	    <li id="doc-list"><a id="docs" href="#!" data-target="doc"><i class="material-icons left">menu_book</i>LEARN<i class="material-icons right">arrow_drop_down</i></a></li>
             <li style="height:64px;" id="search-list">
                 <a style="height:inherit; padding-right:0;"><i onclick="$('#search').focus();" style="height:inherit; padding-right:16px;" class="material-icons">search</i>
         		<div id="search-box" class="input-field" style="height:inherit;">
@@ -124,7 +124,7 @@
         <div id="pad" class="z-depth-2" contentEditable="true" style="text-align:left; overflow-y: auto; width:90%; border:1px solid darkgrey; box-shadow: 1px 1px beige; border-radius: 8px;height: 48px;padding: 12px;margin:auto;font-size:20px;">...enter content here...</div><br/>
         <div style="display:flex;justify-content:space-between;">
             <div style="display:flex;  justify-content: left; margin-left:20%;  align-items:center;">
-                <div class="chip z-depth-1 waves-effect waves-blue blue-grey lighten-2" style="display:flex; color:white; width:60px; justify-content:center; margin-right:12px;" onclick="$('#fileinput').trigger('click');"><div style="display:flex;"><i class="material-icons" style="margin:auto;margin-left:12px;">attach_file</i></div></div>
+                <div class="chip z-depth-1 waves-effect waves-blue blue-grey lighten-2" style="display:flex; color:white; width:60px; justify-content:center; margin-right:12px;" onclick="$('#fileinput').trigger('click');"><div style="display:flex;"><i class="material-icons" style="margin:auto;">attach_file</i></div></div>
                 <div class="hiddenfile"><input name="upload" type="file" id="fileinput" onchange="checkFile();" multiple="multiple"/></div>
                 <div class="chip">file1.png<i class="close material-icons">close</i></div></div></div>
 
@@ -133,7 +133,7 @@
                 <a onclick="clearEditor();" class="waves-effect waves-grey btn-flat"><i class="material-icons left">refresh</i>Clear</a>
                 <a onclick="showPreview();" class="waves-effect waves-grey btn-flat"><i class="material-icons left">web_asset</i>Preview</a></div>
             <div>
-                <a onclick="showView('map');" class="waves-effect waves-green green btn"><i class="material-icons right">right</i>Next</a></div>
+                <a onclick="showView('map');" class="waves-effect waves-green green btn"><i class="material-icons right">east</i>Next</a></div>
             <div id="show-progress" class="progress" style="display:none;"><div class="indeterminate"></div></div></div></div>
 
 <!-- dialog -->
@@ -581,7 +581,7 @@ function setResults() { searchMatch = []; searchResult = "";
         searchResult += "<div><a href='https://'" + domains[i][4] + "'>" + domains[i][4] + "</a></div><br/>"; } }
     $('#results').html(searchResult); showView('results'); }
 
-var editContent = '<div id="header-logo" style="display: flex;justify-content: center;align-items: center; display: flex;flex-direction:column;padding:12px;"><div style="border-radius:12px; padding:12px;" class="z-depth-1 input-field col s6"><img width="48" height="48" id="thumb" src="img/shield.png" onclick="$(\'#preview\').trigger(\'click\');" /></div><div class="input-field col s6"><i class="material-icons prefix">edit</i><input id="art_label" type="text" class="validate"><label for="icon_prefix">Enter name...</label></div><div style="display:flex; width:100%;justify-content:space-evenly;"><div id="editThumb" class="chip z-depth-1 waves-effect waves-blue blue-grey lighten-2" style="display:flex; color:white; align-items:center; justify-content:center; width:60px;" ><div style="display:flex;" onclick="showView(\'editor\'); changeFocus();"><i id="press" class="material-icons">note</i></div></div><div id="editColor" class="chip z-depth-1 waves-effect waves-blue blue-grey lighten-2" style="display:flex; color:white; align-items:center; justify-content:center; width:60px; " onclick="colorStart();"><div style="display:flex;"><i id="pal" class="material-icons">palette</i></div></div><div id="editThumb" class="chip z-depth-1 waves-effect waves-blue blue-grey lighten-2" style="display:flex; color:white; align-items:center; justify-content:center; width:60px;" ><div style="display:flex;" onclick="boxStart();"><i id="press" class="material-icons">inventory_2</i></div></div><div id="editThumb" class="chip z-depth-1 waves-effect waves-blue blue-grey lighten-2" style="display:flex; color:white; align-items:center; justify-content:center; width:60px;" ><div style="display:flex;" onclick="locStart();"><i id="press" class="material-icons">place</i></div></div><div style="visibility:hidden;width:0;position:absolute;top:0;"><input type="color" oninput="setColor();" id="favcolor" name="favcolor" value="#ff0000" style="width:0px; height:0px;opacity:0;" /><input id="preview" type="file" value="" accept="image/*;capture=camera" onchange="setPreview();" /><input id="timedate" type="text" class="datepicker"></div></div></div><div style="display:flex;justify-content:center;margin-top:12px;margin-bottom:12px;"><a class="waves-effect waves-light btn green" onclick="showView(\'editor\'); changeFocus();"><i class="material-icons right">upload_file</i>Publish...</a></div></div>';
+var editContent = '<div id="header-logo" style="display: flex;justify-content: center;align-items: center; display: flex;flex-direction:column;padding:12px;"><div style="border-radius:12px; padding:12px;" class="z-depth-1 input-field col s6"><img width="48" height="48" id="thumb" src="img/seal3.png" onclick="$(\'#preview\').trigger(\'click\');" /></div><div class="input-field col s6"><i class="material-icons prefix">edit</i><input id="art_label" type="text" class="validate"><label for="icon_prefix">Enter name...</label></div><div style="display:flex; width:100%;justify-content:space-evenly;"><div id="editThumb" class="chip z-depth-1 waves-effect waves-blue blue-grey lighten-2" style="display:flex; color:white; align-items:center; justify-content:center; width:60px;" ><div style="display:flex;" onclick="showView(\'editor\'); changeFocus();"><i id="press" class="material-icons">note</i></div></div><div id="editColor" class="chip z-depth-1 waves-effect waves-blue blue-grey lighten-2" style="display:flex; color:white; align-items:center; justify-content:center; width:60px; " onclick="colorStart();"><div style="display:flex;"><i id="pal" class="material-icons">palette</i></div></div><div id="editThumb" class="chip z-depth-1 waves-effect waves-blue blue-grey lighten-2" style="display:flex; color:white; align-items:center; justify-content:center; width:60px;" ><div style="display:flex;" onclick="boxStart();"><i id="press" class="material-icons">inventory_2</i></div></div><div id="editThumb" class="chip z-depth-1 waves-effect waves-blue blue-grey lighten-2" style="display:flex; color:white; align-items:center; justify-content:center; width:60px;" ><div style="display:flex;" onclick="locStart();"><i id="press" class="material-icons">place</i></div></div><div style="visibility:hidden;width:0;position:absolute;top:0;"><input type="color" oninput="setColor();" id="favcolor" name="favcolor" value="#ff0000" style="width:0px; height:0px;opacity:0;" /><input id="preview" type="file" value="" accept="image/*;capture=camera" onchange="setPreview();" /><input id="timedate" type="text" class="datepicker"></div></div></div><div style="display:flex;justify-content:center;margin-top:12px;margin-bottom:12px;"><a class="waves-effect waves-light btn green" onclick="showView(\'editor\'); changeFocus();"><i class="material-icons right">upload_file</i>Publish...</a></div></div>';
 
 function setColor() { $("#markera").css("background-color", document.getElementById('favcolor').value); $("#pal").html("done");
 $("#editColor").addClass("green"); $("#editColor").removeClass("blue-grey");
@@ -836,7 +836,7 @@ function datetimeStart() {
     var yyyy = current.getFullYear(), MM = current.getMonth() + 1; if (MM < 10) { MM = "0" + MM.toString(); }
     var dd = current.getDate(), hh = current.getHours(), mm = current.getMinutes(), ss = current.getSeconds();
     var datestamp = yyyy + "." + MM + "." + dd; var timestamp = hh + ":" + mm + ":" + ss; // calendar?
-$("#dater").html(datestamp + "@" + timestamp);
+document.getElementById('dater').value = datestamp + "@" + timestamp;
     //if (dtSet) { dtSet = false; M.toast({html: 'Date and Time removed.'}); $("#dtMark").css('background-color', 'white'); }
     //else { dtSet = true; M.toast({html: 'Date and Time set: ' + datestamp + " @ " + timestamp});  $("#dtMark").css('background-color', 'green'); }
 }
