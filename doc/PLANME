@@ -14,10 +14,10 @@ In **Ocurios**, an NFT is used as *deed domain*, as,
 
 Posts can include information like datetime, location, text, and images and files, to be associated with the domain.
 
-Upon transfer of an NFT (*deed domain*), both *access to the domain* and *all domain posts* are transfered to the new owner.
+Upon transfer of an NFT (*deed domain*), both **access to the domain** and **all domain posts** are transfered to the new owner.
 <br/><br/>
 ### Get Started
 
 To begin, install a *web3-compliant* Ethereum wallet, such as [MetaMask](https://metamask.io/) and/or [Coinbase](https://www.coinbase.com/wallet), and visit [OpenSea <i class="material-icons">sailing</i>](https://opensea.io/urland) to purchase an NFT.
 
-Next, use the <i class="material-icons">account_balance_wallet</i> icon to connect, and select your purchased deed domains to make a post.
+Use the <i class="material-icons">account_balance_wallet</i> icon to connect and select your purchased **deed domain** to make a post.
