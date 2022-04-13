@@ -103,7 +103,7 @@
         <div id="actions" class="content loader pane fixed-action-btn" >
             <a class="btn-floating btn-large green lighten-2 waves-effect waves-light"><i class="large material-icons">apps</i></a>
             <ul>
-		<li><a id="map-sat" class="btn-floating grey" onclick="mapSat();"><i class="material-icons">satellite_alt</i></a></li>
+		<li><a id="map-sat" class="btn-floating blue" onclick="mapSat();"><i class="material-icons">satellite_alt</i></a></li>
 		<li><a id="map-gps" class="btn-floating grey lighten-1" onclick="mapLoc();"><i class="material-icons">gps_fixed</i></a></li>
                 <li><a id="map-shuffle" class="btn-floating grey lighten-1" onclick="mapRand();"><i class="material-icons">shuffle</i></a></li>
 		<li><a id="map-route" class="btn-floating grey lighten-1" onclick="mapRoute();"><i class="material-icons">route</i></a></li>
@@ -731,10 +731,10 @@ function setTemplate() {
 // map
 var map; var map_token = "pk.eyJ1IjoibmZudGgiLCJhIjoiY2tweW1rNXlsMGFpYzJwcGt1cHh6dmxzcyJ9.ZJaFrGpPDv5froWZMLXXYQ";
 var base = [-98.59236473214004, 39.82998211920899, ]; var landlord = [-101.59236473214004, 42.82998211920899, ]; var art = [-96.59236473214004, 37.82998211920899, ]; var center = [-100.4510253658899336, 43.91338997020656];
-var fr = [-0.6187045799411647, 45.13824627199055]; var fr2 = [-3.7643573392266596, 48.02359499120687]; var fr3 = [1.5266131055501075, 43.706742350484916];
-var baseContent = '<div><div><img width="48" height="48" src="img/deed.png"/></div><div><h6>Purchase Deed</h6><br/><a class="waves-effect waves-light btn" onclick="showDoc(\'deed\');">Read...</a>&nbsp;&nbsp;<a class="waves-effect waves-light btn blue lighten-3" onclick="clearMap(); showLandlord();"><i class="material-icons">navigate_next</i></a></div></div>';
-var landContent = '<div><div><img width="48" height="48" src="img/domain.png"/></div><div><h6>Build Domain</h6><br/><a class="waves-effect waves-light btn" onclick="showDoc(\'domain\');">Read...</a>&nbsp;&nbsp;<a class="waves-effect waves-light btn blue lighten-3" onclick="clearMap(); showArt();"><i class="material-icons">navigate_next</i></a></div></div>';
-var artContent = '<div><div><img width="48" height="48" src="img/barrel.png"/></div><div><h6>Trade OCUR</h6><br/><a class="waves-effect waves-light btn" onclick="showDoc(\'artifact\');">Read...</a>&nbsp;&nbsp;<a class="waves-effect waves-light btn blue lighten-3" onclick="clearMap(); showBase();"><i class="material-icons">restart_alt</i></a</div></div>';
+var fr = [12.7883045678751,41.93442311882793]; var fr2 = [8.07516969770356, 46.558348711852574]; var fr3 = [21.698216874889365,37.80485628802554];
+var baseContent = '<div><div><img width="48" height="48" src="img/deed.png"/></div><div><h6>Purchase Deed</h6><br/><a class="waves-effect waves-light btn" onclick="showDoc(\'learn/deed\');">Read...</a>&nbsp;&nbsp;<a class="waves-effect waves-light btn blue lighten-3" onclick="clearMap(); showLandlord();"><i class="material-icons">navigate_next</i></a></div></div>';
+var landContent = '<div><div><img width="48" height="48" src="img/domain.png"/></div><div><h6>Build Domain</h6><br/><a class="waves-effect waves-light btn" onclick="showDoc(\'learn/domain\');">Read...</a>&nbsp;&nbsp;<a class="waves-effect waves-light btn blue lighten-3" onclick="clearMap(); showArt();"><i class="material-icons">navigate_next</i></a></div></div>';
+var artContent = '<div><div><img width="48" height="48" src="img/barrel.png"/></div><div><h6>Trade OCUR</h6><br/><a class="waves-effect waves-light btn" onclick="showDoc(\'learn/artifact\');">Read...</a>&nbsp;&nbsp;<a class="waves-effect waves-light btn blue lighten-3" onclick="clearMap(); showBase();"><i class="material-icons">restart_alt</i></a</div></div>';
 
 var currentMarkers=[]; //var introMark;//43.706742350484916, 1.5266131055501075
 var addMark; var coordinates; var artFlag = false;
