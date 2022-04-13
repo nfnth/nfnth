@@ -39,7 +39,7 @@
 
     <!-- user -->
         <div id="wallet-area" class="z-depth-1 blue-grey lighten-2" style="display:flex;" onclick="setup(); $('#user-pane').sidenav('open');">
-            <ul><li id="setting-wallet" style="height:101%;" class="z-depth-1"><a id="wallet-icon" href="#" style="margin: 0;justify-items: center;display: flex;align-items: center;" ><i class="material-icons">account_balance_wallet</i><span class="mobile-hide">&nbsp;CONNECT</span></a></li></ul></div></div></nav>
+            <ul><li id="setting-wallet" style="height:101%;"><a id="wallet-icon" href="#" style="margin: 0;justify-items: center;display: flex;align-items: center;" ><i class="material-icons">account_balance_wallet</i><span class="mobile-hide">&nbsp;CONNECT</span></a></li></ul></div></div></nav>
 
 <!-- dropdown -->
 <ul id="doc" class="dropdown-content loader" style="visibility:hidden;">
@@ -116,8 +116,8 @@
     <!-- editor -->
     <div id="editor" class="content loader pane scale-transition scale-out">
         <div style="display:flex;  align-items: center; justify-content: space-evenly; margin:12px; margin-top:24px;">
-            <a onclick="showView('map');" class="waves-effect waves-grey btn grey"><i class="material-icons left">event</i><span id="dater"></span></a>
-                <select id="editor-template" onchange="setTemplate();">
+		<div class="input-field col s6"><i class="material-icons prefix">event</i><input id="dater" type="text" class="validate"><label for="dater" >DateTime Stamp</label></div>
+                <select id="editor-template" onchange="setTemplate();" style="width:45%;max-width:240px;">
                     <optgroup label="Basic">
                         <option>Empty</option><option>Profile</option></optgroup>
                         <optgroup label="Advanced"><option>Recipe</option><option>Instruction</option><option>Sequence</option><option>Graph</option></optgroup></select></div>
@@ -133,7 +133,7 @@
                 <a onclick="clearEditor();" class="waves-effect waves-grey btn-flat"><i class="material-icons left">refresh</i>Clear</a>
                 <a onclick="showPreview();" class="waves-effect waves-grey btn-flat"><i class="material-icons left">web_asset</i>Preview</a></div>
             <div>
-                <a onclick="if (walletAddress != '') {signer('domain','test domain...','add');} else { M.toast({html: 'No wallet connected.'}); }" class="waves-effect waves-green green btn"><i class="material-icons right">publish</i>Save</a></div>
+                <a onclick="showView('map');" class="waves-effect waves-green green btn"><i class="material-icons right">right</i>Next</a></div>
             <div id="show-progress" class="progress" style="display:none;"><div class="indeterminate"></div></div></div></div>
 
 <!-- dialog -->
