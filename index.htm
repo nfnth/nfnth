@@ -318,7 +318,7 @@ pullInfo(); pullOpens(); //pullAsset(asset.token_id);
 
 var mapSwitch = true;
 
-function hideView() { $('.modal').modal('close');  $('.pane').hide(); window.scrollTo(0, 0); if (openDoc) { openDoc = false; $('#news').show(); }
+function hideView() { $('.modal').modal('close');   window.scrollTo(0, 0); if (openDoc) { openDoc = false; $('#news').show(); }
 	$("#doc-list").css("background-color","");$("#doc-list").children('a').eq(0).css("color","");
 	$("#box-list").css("background-color","");$("#box-list").children('a').eq(0).css("color","");
 	$("#map-list").css("background-color","");$("#map-list").children('a').eq(0).css("color","");
@@ -330,7 +330,7 @@ function hideView() { $('.modal').modal('close');  $('.pane').hide(); window.scr
 	$("#map-hide").css("background-color","");$("#map-hide").css("color","");
 	$("#list-hide").css("background-color","");$("#list-hide").css("color","");
 	$("#search-hide").css("background-color","");$("#search-hide").css("color","");  }
-function showView(view) { if (openDoc) { $('#someoverlay').trigger( "click" ); } else { hideView();} $('#'+view).show();
+function showView(view) { if (openDoc) { $('#someoverlay').trigger( "click" ); } else { hideView();} $('.pane').hide(); $('#'+view).show();
 
     switch (view) {
         case 'editor': $("#editor").addClass("scale-in"); break;
