@@ -7,7 +7,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="deed domains for sale, from deed to domain, collectible domains" />
-<meta name="keywords" content="domain, deed, nft, crypto, ocur, ocurio, ocuros, ocurious" />
+<meta name="keywords" content="domain, deed, nft, nfnth, crypto, ocur, ocurio, ocuros, ocurious" />
 <meta name="author" content="ocurio" />
 
 <!-- resources -->
@@ -23,7 +23,7 @@
 
 <!-- media -->
 	<a id="doc-hide" class="screen-hide" href="#!" data-target="doc"><i class="material-icons">menu_book</i></a>
-        <a id="map-hide" class="screen-hide" onclick="showView('map'); map.resize();"><i class="material-icons">map</i></a>
+        <a id="map-hide" class="screen-hide" onclick="showView('map'); document.getElementById("map-sat").click(); "><i class="material-icons">map</i></a>
 	<a id="list-hide" class="screen-hide" href="#!" data-target="domain"><i class="material-icons">list</i></a>
     	<a id="search-hide" class="screen-hide" onclick="showView('search');"><i class="material-icons">search</i></a>
 
@@ -104,13 +104,13 @@
             <a class="btn-floating btn-large green lighten-2 waves-effect waves-light"><i class="large material-icons">apps</i></a>
             <ul>
 		<li><a id="map-sat" class="btn-floating grey" onclick="mapSat();"><i class="material-icons">satellite_alt</i></a></li>
-		<li><a id="map-gps" class="btn-floating grey lighten-1" onclick="mapLocation();"><i class="material-icons">gps_fixed</i></a></li>
-                <li><a id="map-shuffle" class="btn-floating grey lighten-1" onclick="mapRandom();"><i class="material-icons">shuffle</i></a></li>
+		<li><a id="map-gps" class="btn-floating grey lighten-1" onclick="mapLoc();"><i class="material-icons">gps_fixed</i></a></li>
+                <li><a id="map-shuffle" class="btn-floating grey lighten-1" onclick="mapRand();"><i class="material-icons">shuffle</i></a></li>
 		<li><a id="map-route" class="btn-floating grey lighten-1" onclick="mapRoute();"><i class="material-icons">route</i></a></li>
-		<li><a id="map-book" class="btn-floating grey lighten-1" onclick="mapIntro();"><i class="material-icons">book</i></a></li>
-		<li><a id="map-add" class="btn-floating grey lighten-1" onclick="addArtifact();"><i class="material-icons">add</i></a></li>
-		<li><a id="map-edit" class="btn-floating grey lighten-1" onclick="mapRoute();"><i class="material-icons">edit</i></a></li>
-		<li><a id="map-delete" class="btn-floating grey lighten-1" onclick="mapIntro();"><i class="material-icons">delete</i></a></li>
+		<li><a id="map-book" class="btn-floating grey lighten-1" onclick="mapBook();"><i class="material-icons">book</i></a></li>
+		<li><a id="map-add" class="btn-floating green lighten-1" onclick="mapAdd();"><i class="material-icons">add</i></a></li>
+		<li><a id="map-edit" class="btn-floating yellow lighten-1" onclick="mapEdit();"><i class="material-icons">edit</i></a></li>
+		<li><a id="map-delete" class="btn-floating red lighten-1" onclick="mapDelete();"><i class="material-icons">delete</i></a></li>
 		</ul></div>
 
     <!-- editor -->
@@ -318,28 +318,30 @@ pullInfo(); pullOpens(); //pullAsset(asset.token_id);
 
 var mapSwitch = true;
 
-function hideView() { $('.modal').modal('close');   window.scrollTo(0, 0); if (openDoc) { openDoc = false; $('#news').show(); }
-	$("#doc-list").css("background-color","");$("#doc-list").children('a').eq(0).css("color","");
-	$("#box-list").css("background-color","");$("#box-list").children('a').eq(0).css("color","");
-	$("#map-list").css("background-color","");$("#map-list").children('a').eq(0).css("color","");
-	$("#list-list").css("background-color","");$("#list-list").children('a').eq(0).css("color","");
-	$("#search-list").css("background-color","");$("#search-list").children('a').eq(0).css("color","");
+function hideView() { $('.modal').modal('close');   window.scrollTo(0, 0); //if (openDoc) { openDoc = false; $('#news').show(); }
+	//$("#doc-list").css("background-color","");$("#doc-list").children('a').eq(0).css("color","");
+	//$("#box-list").css("background-color","");$("#box-list").children('a').eq(0).css("color","");
+	//$("#map-list").css("background-color","");$("#map-list").children('a').eq(0).css("color","");
+	//$("#list-list").css("background-color","");$("#list-list").children('a').eq(0).css("color","");
+	//$("#search-list").css("background-color","");$("#search-list").children('a').eq(0).css("color","");
 
-	$("#doc-hide").css("background-color","");$("#doc-hide").css("color","");
-	$("#box-hide").css("background-color","");$("#box-hide").css("color","");
-	$("#map-hide").css("background-color","");$("#map-hide").css("color","");
-	$("#list-hide").css("background-color","");$("#list-hide").css("color","");
-	$("#search-hide").css("background-color","");$("#search-hide").css("color","");  }
+	//$("#doc-hide").css("background-color","");$("#doc-hide").css("color","");
+	//$("#box-hide").css("background-color","");$("#box-hide").css("color","");
+	//$("#map-hide").css("background-color","");$("#map-hide").css("color","");
+	//$("#list-hide").css("background-color","");$("#list-hide").css("color","");
+	//$("#search-hide").css("background-color","");$("#search-hide").css("color","");  
+		    }
 function showView(view) { if (openDoc) { $('#someoverlay').trigger( "click" ); } else { hideView();} $('.pane').hide(); $('#'+view).show();
 
     switch (view) {
         case 'editor': $("#editor").addClass("scale-in"); break;
-        case 'list': $("#list-list").css("background-color","darkgrey");$("#list-list").css("color","darkgoldenrod!important");
-        $("#list-hide").css("color","darkgoldenrod!important"); break;
+        case 'list': //$("#list-list").css("background-color","darkgrey");$("#list-list").css("color","darkgoldenrod!important");
+        //$("#list-hide").css("color","darkgoldenrod!important"); 
+		    break;
         case 'news': $("#stamper").show(); $("#world").show(); break;
-        case 'map': $("#actions").show(); $("#map-list").css("background-color","darkgrey"); $("#map-list").children('a').eq(0).css("color","darkgoldenrod");
-        $("#map-hide").css("color","darkgoldenrod!important");
-            if (mapSwitch) { currentMarkers[0].togglePopup(); mapSwitch = false; }
+        case 'map': $("#actions").show(); //$("#map-list").css("background-color","darkgrey"); $("#map-list").children('a').eq(0).css("color","darkgoldenrod");
+       // $("#map-hide").css("color","darkgoldenrod!important");
+            //if (mapSwitch) { currentMarkers[0].togglePopup(); mapSwitch = false; }
 
         break; } }
 
@@ -751,19 +753,22 @@ function mapSat() { satCenter = map.getCenter();
 	map = new mapboxgl.Map({container: 'map', style: mapStyle, center: satCenter, zoom: zoom, buffer_size: 0.2});  }
 
 var tempCoord = [0,0];
-function mapLocation() { if(navigator.geolocation) { navigator.geolocation.getCurrentPosition(geoSuccess, geoError); } else { alert("Geolocation is not supported by this browser.");} }
+function mapLoc() { if(navigator.geolocation) { navigator.geolocation.getCurrentPosition(geoSuccess, geoError); } else { alert("Geolocation is not supported by this browser.");} }
 function geoSuccess(position) {tempCoord[1] = position.coords.latitude;tempCoord[0] = position.coords.longitude; fly(tempCoord);   }
 function geoError() { alert('No location'); }
 	
-function mapRandom() { var r = Math.floor(Math.random() * domains.length); showMark(r); }
+function mapRand() { clearMarkers(); var r = Math.floor(Math.random() * domains.length); showMark(r); }
 function mapRoute() { }
+function mapAdd() { }
+function mapEdit() { }
+function mapDelete() { }
 	
 function addArtifact() { M.toast({html: 'Select location...'}); artFlag = true; datetimeStart(); }
 function clearMarkers() { clearMap(); for (let a=0;a<currentMarkers.length;a++){ currentMarkers[a].remove(); } currentMarkers = []; }
 function addArt() { clearMarkers(); addMark('a',coordinates,'snake','1','green', editContent, 0); $('.datepicker').datepicker(); //setDefaultDate: true
 		   currentMarkers[0].togglePopup(); }
 var beacon = false; var pather = false; var introMark; var nomadPath; var artifactPath; var setDomain;
-function mapIntro() { startUp = function() { //currentMarkers[0].togglePopup(); 
+function mapBook() { startUp = function() { //currentMarkers[0].togglePopup(); 
 }; clearMarkers(); fly(fr);
     addMark('a',fr,'fire','1','indianred', baseContent, 0);
     addMark('b',fr2,'island','1','green', landContent, 1);
@@ -872,31 +877,6 @@ function timedateStart() { document.getElementById("timedate").focus(); document
 
 //window.open(url, '_self');
 //function getParameter() { var pathArray = window.location.pathname.split('/'); switch (pathArray.length) { case 2: return pathArray[1]; break; } }
-
-//let preview = document.getElementById("preview"), recording = document.getElementById("recording"), startButton = document.getElementById("startButton"), stopButton = document.getElementById("stopButton"), downloadButton = document.getElementById("downloadButton"), recordingTimeMS = 5000;
-
-//function wait(delayInMS) { return new Promise(resolve => setTimeout(resolve, delayInMS)); }
-//function startRecording(stream, lengthInMS) { let recorder = new MediaRecorder(stream); let data = [];
- //   recorder.ondataavailable = event => data.push(event.data); recorder.start();
-  //  let stopped = new Promise((resolve, reject) => { recorder.onstop = resolve; recorder.onerror = event => reject(event.name); });
-  //  let recorded = wait(lengthInMS).then( () => recorder.state == "recording" && recorder.stop() );
-  //  return Promise.all([ stopped, recorded]).then(() => data); }
-//function stop(stream) { stream.getTracks().forEach(track => track.stop()); }
-//function starterButton() {
-  //  navigator.mediaDevices.getUserMedia({video: true,audio: true}).then(stream => {
-  //      preview.srcObject = stream; downloadButton.href = stream; preview.captureStream = preview.captureStream || preview.mozCaptureStream;
-  //      return new Promise(resolve => preview.onplaying = resolve);
- //   }).then(() => startRecording(preview.captureStream(), recordingTimeMS)).then (recordedChunks => {
-  //      let recordedBlob = new Blob(recordedChunks, { type: "video/webm" });
-  //      recording.src = URL.createObjectURL(recordedBlob); downloadButton.href = recording.src; downloadButton.download = "RecordedVideo.webm";
- //       }).catch(log);}
-//function stoperButton() { stop(preview.srcObject); }
-//function cameraStart() { var video = document.getElementById('video');
-   // if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) { navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) { video.srcObject = stream; video.play();}); } }
-
-//var canvas = document.getElementById('canvas'); var context = canvas.getContext('2d');
-//function snap() { context.drawImage(video, 0, 0, 640, 480); }
-
         </script>
 
 <style>
