@@ -745,7 +745,7 @@ map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/mapbox/satelli
 map.on('load', function (event) { $("head").append('<style type="text/css">.markre{visibility:visible!important;}</style>');
     map.on('click', function(e) { coordinates = e.lngLat; if(artFlag) { addArt(); artFlag = false; } $('.fixed-action-btn').floatingActionButton('close'); }); });
 
-var satSwitch = true; var satCenter;
+var satSwitch = false; var satCenter;
 function mapSat() { satCenter = map.getCenter();
 	if (satSwitch) { mapStyle = 'mapbox://styles/mapbox/satellite-streets-v11'; satSwitch = false; $("#map-sat").removeClass("grey"); $("#map-sat").addClass("blue"); } else { mapStyle = 'mapbox://styles/mapbox/light-v10'; satSwitch = true; $("#map-sat").removeClass("blue"); $("#map-sat").addClass("grey");}
 	map = new mapboxgl.Map({container: 'map', style: mapStyle, center: satCenter, zoom: zoom, buffer_size: 0.2});  }
@@ -763,7 +763,7 @@ function clearMarkers() { clearMap(); for (let a=0;a<currentMarkers.length;a++){
 function addArt() { clearMarkers(); addMark('a',coordinates,'snake','1','green', editContent, 0); $('.datepicker').datepicker(); //setDefaultDate: true
 		   currentMarkers[0].togglePopup(); }
 var beacon = false; var pather = false; var introMark; var nomadPath; var artifactPath; var setDomain;
-function mapIntro() { satSwitch = false; changeMap(); startUp = function() { //currentMarkers[0].togglePopup(); 
+function mapIntro() { startUp = function() { //currentMarkers[0].togglePopup(); 
 }; clearMarkers(); fly(fr);
     addMark('a',fr,'fire','1','indianred', baseContent, 0);
     addMark('b',fr2,'island','1','green', landContent, 1);
