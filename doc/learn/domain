@@ -1,17 +1,13 @@
 
-### About Domain
+### Build Domain
 
-Domains grant ownership and access to create artifacts in UR.Land. They also generate **OCUR** to increase your domain's content visibility in the Deed Registry.
+Post content to build your domain in ocur.io. Domain posts can only be created/edited/deleted by the owner of the **domain**.
 
-To purchase a domain, go to [OpenSea](https://opensea.io/urland) and purchase a NFT.
+
+Posted content is attached to a domain and can consist of text, images, location, and datetimes.
+<br/><br/>
+All posted content is public and can be viewed by anyone.
 
 
 <br/><br/>
-<a href="https://opensea.io/urland" title="Buy on OpenSea" target="_blank"><img style="margin-left:24px; width:220px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="https://storage.googleapis.com/opensea-static/Logomark/Badge%20-%20Available%20On%20-%20Light.png" alt="Available on OpenSea" /></a>
-
-After purchase, revisit [ocur.io](https://ur.land) and select the <i class="material-icons">account_balance_wallet</i>  icon in the upper-right.
-
-
-
-<br/><br/>
-If an **NFT** is transferred to another wallet, access to the domain, generated **UR**, and all the domain's content are transferred to the new owner.
+If an **NFT** is transferred to another wallet, both access to the domain and all the domain's content are transferred to the new owner.
