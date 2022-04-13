@@ -43,13 +43,13 @@
 
 <!-- dropdown -->
 <ul id="doc" class="dropdown-content loader" style="visibility:hidden;">
-	<li><a onclick="showDoc('PLANME');"><i class="material-icons">backpack</i>Use Deed Domain</a></li>
+	<li><a onclick="showDoc('PLANME');"><i class="material-icons">explore</i>Use Deed Domain</a></li>
     	<li><a onclick="openInNewTab('https://github.com/nfnth');"><i class="material-icons">home</i>About ocur.io</a></li>
     	<li class="divider"></li>
     	<li><a onclick="showDoc('ocur');"><i class="material-icons">toll</i>Trade OCUR</a></li>
 	<li><a onclick="showDoc('donation');"><i class="material-icons"><span class="material-icons-outlined">park</span></i>Make Donation</a></li>
 	<li class="divider"></li>
-    	<li><a onclick="openInNewTab('https://ocur.io/res/civ/index.htm');"><i class="material-icons">explore</i>Play Ocurian...</a></li></ul>
+    	<li><a onclick="openInNewTab('https://ocur.io/res/civ/index.htm');"><i class="material-icons">backpack</i>Play Ocurian...</a></li></ul>
 
 <ul id="domain" class="dropdown-content loader" style="visibility:hidden;">
 	<li><a onclick="showView('list'); showList('deed');"><i class="material-icons"><span class="material-icons-outlined">class</span></i>Deed Registry</a></li>
@@ -57,7 +57,7 @@
 	<li class="divider"></li>
 	<li><a onclick="showView('list'); showList('open');"><i class="material-icons">sailing</i>OpenSea Collection</a></li>
     	<li class="divider"></li>
-	<li><a onclick="openInNewTab('https://ustat.us');"><i class="material-icons">toll</i>OCUR Exchange...</a></li></ul>
+	<li><a onclick="openInNewTab('https://ustat.us');"><i class="material-icons">token</i>OCUR Exchange...</a></li></ul>
 
 <!-- panel -->
 <ul id="user-pane" class="sidenav loader blue-grey lighten-5" style="visibility:hidden;">
@@ -316,7 +316,7 @@ function pullDomain(domain) { $.get('deed/domain/' + domain, function(data) { sh
 
 pullInfo(); pullOpens(); //pullAsset(asset.token_id);
 
-var mapSwitch = true;
+var mapSwitch = true; var introSwitch = true;
 
 function hideView() { $('.modal').modal('close');   window.scrollTo(0, 0); //if (openDoc) { openDoc = false; $('#news').show(); }
 	//$("#doc-list").css("background-color","");$("#doc-list").children('a').eq(0).css("color","");
@@ -338,8 +338,10 @@ function showView(view) { if (openDoc) { $('#someoverlay').trigger( "click" ); }
         case 'list': //$("#list-list").css("background-color","darkgrey");$("#list-list").css("color","darkgoldenrod!important");
         //$("#list-hide").css("color","darkgoldenrod!important"); 
 		    break;
-        case 'news': $("#stamper").show(); $("#world").show(); break;
-        case 'map': $("#actions").show(); //$("#map-list").css("background-color","darkgrey"); $("#map-list").children('a').eq(0).css("color","darkgoldenrod");
+        case 'news': $("#stamper").show(); $("#world").show(); introSwitch = true; break;
+        case 'map': $("#actions").show(); if (introSwitch) { mapIntro(); introSwitch = false; }
+		    
+		    //$("#map-list").css("background-color","darkgrey"); $("#map-list").children('a').eq(0).css("color","darkgoldenrod");
        // $("#map-hide").css("color","darkgoldenrod!important");
             //if (mapSwitch) { currentMarkers[0].togglePopup(); mapSwitch = false; }
 
@@ -358,12 +360,6 @@ function showList(area) { $("#registry").html(''); $("#registry").hide();
 
 var openDoc = false;
 function showDoc(doc) { hideView(); openDoc = true;
-switch (doc) {
-        case 'box': $("#box-list").css("background-color","darkgrey");$("#box-list").children('a').eq(0).css("color","darkgoldenrod");
-        $("#box-hide").css("color","darkgoldenrod!important"); break;
-        default: $("#doc-list").css("background-color","darkgrey");$("#doc-list").children('a').eq(0).css("color","darkgoldenrod");
-        $("#doc-hide").css("color","darkgoldenrod!important");break;
-        }
 
 document.getElementById('dialog-inner2').scrollTo(0, 0); $.get('doc/'+doc, function(data) { setDialog(renderMd(data)); }); }
 
@@ -768,7 +764,7 @@ function clearMarkers() { clearMap(); for (let a=0;a<currentMarkers.length;a++){
 function addArt() { clearMarkers(); addMark('a',coordinates,'snake','1','green', editContent, 0); $('.datepicker').datepicker(); //setDefaultDate: true
 		   currentMarkers[0].togglePopup(); }
 var beacon = false; var pather = false; var introMark; var nomadPath; var artifactPath; var setDomain;
-function mapBook() { startUp = function() { //currentMarkers[0].togglePopup(); 
+function mapIntro() { startUp = function() { //currentMarkers[0].togglePopup(); 
 }; clearMarkers(); fly(fr);
     addMark('a',fr,'fire','1','indianred', baseContent, 0);
     addMark('b',fr2,'island','1','green', landContent, 1);
