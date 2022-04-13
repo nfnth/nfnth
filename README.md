@@ -5,7 +5,9 @@
 
 <a href="https://opensea.io/ocurio" title="Buy on OpenSea" target="_blank"><img style="margin-left:24px; width:220px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="https://storage.googleapis.com/opensea-static/Logomark/Badge%20-%20Available%20On%20-%20Light.png" alt="Available on OpenSea" /></a>
 
-<a href="https://buy.stripe.com/5kA4hL5NB6Qv7Ty5kk" target="_blank"><img style="margin-left:24px; width:220px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="img/coin.jpg" alt="Purchase ocur.io Collectible" /></a>
+**Purchase [ocur.io Collectible](https://buy.stripe.com/5kA4hL5NB6Qv7Ty5kk)** - Includes 2021 Native American $1 Coin and a copy of the Ocurious Guide to Deed Domain.
+
+<a href="https://buy.stripe.com/5kA4hL5NB6Qv7Ty5kk" target="_blank"><img style="margin-left:24px; width:110px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="img/coin.jpg" alt="Purchase ocur.io Collectible" /></a>
 
 Licensed as **NfNth Corp** in the State of Washington, 19500 130th AV NE, Woodinville, WA 98072
 
