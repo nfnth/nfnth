@@ -581,7 +581,7 @@ function setResults() { searchMatch = []; searchResult = "";
         searchResult += "<div><a href='https://'" + domains[i][4] + "'>" + domains[i][4] + "</a></div><br/>"; } }
     $('#results').html(searchResult); showView('results'); }
 
-var editContent = '<div id="header-logo" style="display: flex;justify-content: center;align-items: center; display: flex;flex-direction:column;padding:12px;"><div style="border-radius:12px; padding:12px;" class="z-depth-1 input-field col s6"><img width="48" height="48" id="thumb" src="img/shield.png" onclick="$(\'#preview\').trigger(\'click\');" /></div><div class="input-field col s6"><i class="material-icons prefix">note</i><input id="icon_prefix" type="text" class="validate"><label for="icon_prefix">Enter name...</label></div><div style="display:flex; width:100%;justify-content:space-evenly;"><div id="editColor" class="chip z-depth-1 waves-effect waves-blue blue-grey lighten-2" style="display:flex; color:white; align-items:center; justify-content:center; width:60px; " onclick="colorStart();"><div style="display:flex;"><i id="pal" class="material-icons">palette</i></div></div><div id="editThumb" class="chip z-depth-1 waves-effect waves-blue blue-grey lighten-2" style="display:flex; color:white; align-items:center; justify-content:center; width:60px;" ><div style="display:flex;" onclick="showView(\'editor\'); changeFocus();"><i id="press" class="material-icons">edit</i></div></div><div style="visibility:hidden;width:0;position:absolute;top:0;"><input type="color" oninput="setColor();" id="favcolor" name="favcolor" value="#ff0000" style="width:0px; height:0px;opacity:0;" /><input id="preview" type="file" value="" accept="image/*;capture=camera" onchange="setPreview();" /></div></div></div><div style="display:flex;justify-content:center;margin-top:12px;margin-bottom:12px;"><a class="waves-effect waves-light btn green" onclick="showView(\'editor\'); changeFocus();"><i class="material-icons right">upload_file</i>Publish</a></div></div>';
+var editContent = '<div id="header-logo" style="display: flex;justify-content: center;align-items: center; display: flex;flex-direction:column;padding:12px;"><div style="border-radius:12px; padding:12px;" class="z-depth-1 input-field col s6"><img width="48" height="48" id="thumb" src="img/shield.png" onclick="$(\'#preview\').trigger(\'click\');" /></div><div class="input-field col s6"><i class="material-icons prefix">note</i><input id="icon_prefix" type="text" class="validate"><label for="icon_prefix">Enter name...</label></div><div style="display:flex; width:100%;justify-content:space-evenly;"><div id="editColor" class="chip z-depth-1 waves-effect waves-blue blue-grey lighten-2" style="display:flex; color:white; align-items:center; justify-content:center; width:60px; " onclick="colorStart();"><div style="display:flex;"><i id="pal" class="material-icons">palette</i></div></div><div id="editThumb" class="chip z-depth-1 waves-effect waves-blue blue-grey lighten-2" style="display:flex; color:white; align-items:center; justify-content:center; width:60px;" ><div style="display:flex;" onclick="timedateStart();"><i id="press" class="material-icons">event</i></div></div><div id="editThumb" class="chip z-depth-1 waves-effect waves-blue blue-grey lighten-2" style="display:flex; color:white; align-items:center; justify-content:center; width:60px;" ><div style="display:flex;" onclick="showView(\'editor\'); changeFocus();"><i id="press" class="material-icons">place</i></div></div><div id="editThumb" class="chip z-depth-1 waves-effect waves-blue blue-grey lighten-2" style="display:flex; color:white; align-items:center; justify-content:center; width:60px;" ><div style="display:flex;" onclick="showView(\'editor\'); changeFocus();"><i id="press" class="material-icons">edit</i></div></div><div style="visibility:hidden;width:0;position:absolute;top:0;"><input type="color" oninput="setColor();" id="favcolor" name="favcolor" value="#ff0000" style="width:0px; height:0px;opacity:0;" /><input id="preview" type="file" value="" accept="image/*;capture=camera" onchange="setPreview();" /><input id="timedate" type="text" class="datepicker"></div></div></div><div style="display:flex;justify-content:center;margin-top:12px;margin-bottom:12px;"><a class="waves-effect waves-light btn green" onclick="showView(\'editor\'); changeFocus();"><i class="material-icons right">upload_file</i>Publish</a></div></div>';
 
 function setColor() { $("#markera").css("background-color", document.getElementById('favcolor').value); $("#pal").html("done");
 $("#editColor").addClass("green"); $("#editColor").removeClass("blue-grey");
@@ -760,7 +760,8 @@ function mapRoute() { }
 	
 function addArtifact() { M.toast({html: 'Select location...'}); artFlag = true; }
 function clearMarkers() { clearMap(); for (let a=0;a<currentMarkers.length;a++){ currentMarkers[a].remove(); } currentMarkers = []; }
-function addArt() { clearMarkers(); addMark('a',coordinates,'snake','1','green', editContent, 0); currentMarkers[0].togglePopup(); }
+function addArt() { clearMarkers(); addMark('a',coordinates,'snake','1','green', editContent, 0); $('.datepicker').datepicker(); //setDefaultDate: true
+		   currentMarkers[0].togglePopup(); }
 var beacon = false; var pather = false; var introMark; var nomadPath; var artifactPath; var setDomain;
 function mapIntro() { satSwitch = false; changeMap(); startUp = function() { //currentMarkers[0].togglePopup(); 
 }; clearMarkers(); fly(fr);
@@ -839,6 +840,7 @@ function datetimeStart() {
     else { dtSet = true; M.toast({html: 'Date and Time set: ' + datestamp + " @ " + timestamp});  $("#dtMark").css('background-color', 'green'); }}
 
 function colorStart() { document.getElementById("favcolor").focus(); document.getElementById("favcolor").click(); }
+function timedateStart() { document.getElementById("timedate").focus(); document.getElementById("timedate").click(); }
 
 //map.addControl(
 //new MapboxDirections({
@@ -846,9 +848,6 @@ function colorStart() { document.getElementById("favcolor").focus(); document.ge
 //}),
 //'top-left'
 //);
-
-//  <input type="text" class="datepicker">
- // $('.datepicker').datepicker(); setDefaultDate: true
 
 //   <video width="320" height="240" controls>
 //  <source src="movie.mp4" type="video/mp4">webm...
