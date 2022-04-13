@@ -7,8 +7,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="deed domains for sale, from deed to domain, collectible domains" />
-<meta name="keywords" content="domain, deed, nft, crypto, url, urland" />
-<meta name="author" content="urland" />
+<meta name="keywords" content="domain, deed, nft, crypto, ocur, ocurio, ocuros, ocurious" />
+<meta name="author" content="ocurio" />
 
 <!-- resources -->
 <script src="res/all.js"></script><link rel="stylesheet" href="res/all.css"></head>
@@ -116,7 +116,7 @@
     <!-- editor -->
     <div id="editor" class="content loader pane scale-transition scale-out">
         <div style="display:flex;  align-items: center; justify-content: space-evenly; margin:12px; margin-top:24px;">
-            <a onclick="showView('map');" class="waves-effect waves-grey btn grey"><i class="material-icons left">west</i>Back</a>
+            <a onclick="showView('map');" class="waves-effect waves-grey btn grey"><i class="material-icons left">event</i><span id="dater"></span></a>
                 <select id="editor-template" onchange="setTemplate();">
                     <optgroup label="Basic">
                         <option>Empty</option><option>Profile</option></optgroup>
@@ -581,7 +581,7 @@ function setResults() { searchMatch = []; searchResult = "";
         searchResult += "<div><a href='https://'" + domains[i][4] + "'>" + domains[i][4] + "</a></div><br/>"; } }
     $('#results').html(searchResult); showView('results'); }
 
-var editContent = '<div id="header-logo" style="display: flex;justify-content: center;align-items: center; display: flex;flex-direction:column;padding:12px;"><div style="border-radius:12px; padding:12px;" class="z-depth-1 input-field col s6"><img width="48" height="48" id="thumb" src="img/shield.png" onclick="$(\'#preview\').trigger(\'click\');" /></div><div class="input-field col s6"><i class="material-icons prefix">note</i><input id="icon_prefix" type="text" class="validate"><label for="icon_prefix">Enter name...</label></div><div style="display:flex; width:100%;justify-content:space-evenly;"><div id="editColor" class="chip z-depth-1 waves-effect waves-blue blue-grey lighten-2" style="display:flex; color:white; align-items:center; justify-content:center; width:60px; " onclick="colorStart();"><div style="display:flex;"><i id="pal" class="material-icons">palette</i></div></div><div id="editThumb" class="chip z-depth-1 waves-effect waves-blue blue-grey lighten-2" style="display:flex; color:white; align-items:center; justify-content:center; width:60px;" ><div style="display:flex;" onclick="timedateStart();"><i id="press" class="material-icons">event</i></div></div><div id="editThumb" class="chip z-depth-1 waves-effect waves-blue blue-grey lighten-2" style="display:flex; color:white; align-items:center; justify-content:center; width:60px;" ><div style="display:flex;" onclick="showView(\'editor\'); changeFocus();"><i id="press" class="material-icons">place</i></div></div><div id="editThumb" class="chip z-depth-1 waves-effect waves-blue blue-grey lighten-2" style="display:flex; color:white; align-items:center; justify-content:center; width:60px;" ><div style="display:flex;" onclick="showView(\'editor\'); changeFocus();"><i id="press" class="material-icons">edit</i></div></div><div style="visibility:hidden;width:0;position:absolute;top:0;"><input type="color" oninput="setColor();" id="favcolor" name="favcolor" value="#ff0000" style="width:0px; height:0px;opacity:0;" /><input id="preview" type="file" value="" accept="image/*;capture=camera" onchange="setPreview();" /><input id="timedate" type="text" class="datepicker"></div></div></div><div style="display:flex;justify-content:center;margin-top:12px;margin-bottom:12px;"><a class="waves-effect waves-light btn green" onclick="showView(\'editor\'); changeFocus();"><i class="material-icons right">upload_file</i>Publish</a></div></div>';
+var editContent = '<div id="header-logo" style="display: flex;justify-content: center;align-items: center; display: flex;flex-direction:column;padding:12px;"><div style="border-radius:12px; padding:12px;" class="z-depth-1 input-field col s6"><img width="48" height="48" id="thumb" src="img/shield.png" onclick="$(\'#preview\').trigger(\'click\');" /></div><div class="input-field col s6"><i class="material-icons prefix">edit</i><input id="art_label" type="text" class="validate"><label for="icon_prefix">Enter name...</label></div><div style="display:flex; width:100%;justify-content:space-evenly;"><div id="editThumb" class="chip z-depth-1 waves-effect waves-blue blue-grey lighten-2" style="display:flex; color:white; align-items:center; justify-content:center; width:60px;" ><div style="display:flex;" onclick="showView(\'editor\'); changeFocus();"><i id="press" class="material-icons">note</i></div></div><div id="editColor" class="chip z-depth-1 waves-effect waves-blue blue-grey lighten-2" style="display:flex; color:white; align-items:center; justify-content:center; width:60px; " onclick="colorStart();"><div style="display:flex;"><i id="pal" class="material-icons">palette</i></div></div><div id="editThumb" class="chip z-depth-1 waves-effect waves-blue blue-grey lighten-2" style="display:flex; color:white; align-items:center; justify-content:center; width:60px;" ><div style="display:flex;" onclick="boxStart();"><i id="press" class="material-icons">inventory_2</i></div></div><div id="editThumb" class="chip z-depth-1 waves-effect waves-blue blue-grey lighten-2" style="display:flex; color:white; align-items:center; justify-content:center; width:60px;" ><div style="display:flex;" onclick="locStart();"><i id="press" class="material-icons">place</i></div></div><div style="visibility:hidden;width:0;position:absolute;top:0;"><input type="color" oninput="setColor();" id="favcolor" name="favcolor" value="#ff0000" style="width:0px; height:0px;opacity:0;" /><input id="preview" type="file" value="" accept="image/*;capture=camera" onchange="setPreview();" /><input id="timedate" type="text" class="datepicker"></div></div></div><div style="display:flex;justify-content:center;margin-top:12px;margin-bottom:12px;"><a class="waves-effect waves-light btn green" onclick="showView(\'editor\'); changeFocus();"><i class="material-icons right">upload_file</i>Publish...</a></div></div>';
 
 function setColor() { $("#markera").css("background-color", document.getElementById('favcolor').value); $("#pal").html("done");
 $("#editColor").addClass("green"); $("#editColor").removeClass("blue-grey");
@@ -758,7 +758,7 @@ function geoError() { alert('No location'); }
 function mapRandom() { var r = Math.floor(Math.random() * domains.length); showMark(r); }
 function mapRoute() { }
 	
-function addArtifact() { M.toast({html: 'Select location...'}); artFlag = true; }
+function addArtifact() { M.toast({html: 'Select location...'}); artFlag = true; datetimeStart(); }
 function clearMarkers() { clearMap(); for (let a=0;a<currentMarkers.length;a++){ currentMarkers[a].remove(); } currentMarkers = []; }
 function addArt() { clearMarkers(); addMark('a',coordinates,'snake','1','green', editContent, 0); $('.datepicker').datepicker(); //setDefaultDate: true
 		   currentMarkers[0].togglePopup(); }
@@ -836,8 +836,10 @@ function datetimeStart() {
     var yyyy = current.getFullYear(), MM = current.getMonth() + 1; if (MM < 10) { MM = "0" + MM.toString(); }
     var dd = current.getDate(), hh = current.getHours(), mm = current.getMinutes(), ss = current.getSeconds();
     var datestamp = yyyy + "." + MM + "." + dd; var timestamp = hh + ":" + mm + ":" + ss; // calendar?
-    if (dtSet) { dtSet = false; M.toast({html: 'Date and Time removed.'}); $("#dtMark").css('background-color', 'white'); }
-    else { dtSet = true; M.toast({html: 'Date and Time set: ' + datestamp + " @ " + timestamp});  $("#dtMark").css('background-color', 'green'); }}
+$("#dater").html(datestamp + "@" + timestamp);
+    //if (dtSet) { dtSet = false; M.toast({html: 'Date and Time removed.'}); $("#dtMark").css('background-color', 'white'); }
+    //else { dtSet = true; M.toast({html: 'Date and Time set: ' + datestamp + " @ " + timestamp});  $("#dtMark").css('background-color', 'green'); }
+}
 
 function colorStart() { document.getElementById("favcolor").focus(); document.getElementById("favcolor").click(); }
 function timedateStart() { document.getElementById("timedate").focus(); document.getElementById("timedate").click(); }
