@@ -22,16 +22,16 @@
 		<div id="waiter" onclick="showView('news');" style="height:48px; width:48px; cursor: pointer; margin-left: 12px;"><img id="list-wait" class="image"/><img id="list-wait2" class="image2"/></div></a></div>
 
 <!-- media -->
-	<a id="doc-hide" class="screen-hide" href="#!" data-target="doc"><i class="material-icons">menu_book</i></a>
         <a id="map-hide" class="screen-hide" onclick="showView('map'); map.resize();"><i class="material-icons">map</i></a>
-	<a id="list-hide" class="screen-hide" href="#!" data-target="domain"><i class="material-icons">summarize</i></a>
+	<a id="list-hide" class="screen-hide" href="#!" data-target="domain"><i class="material-icons">list</i></a>
+	<a id="doc-hide" class="screen-hide" href="#!" data-target="doc"><i class="material-icons">menu_book</i></a>
     	<a id="search-hide" class="screen-hide" onclick="showView('search');"><i class="material-icons">search</i></a>
 
     <!-- desktop -->
     	<ul class="hide-on-med-and-down">
-	    <li id="doc-list"><a id="docs" href="#!" data-target="doc"><i class="material-icons left">menu_book</i>LEARN<i class="material-icons right">arrow_drop_down</i></a></li>
             <li id="map-list"><a onclick="showView('map'); map.resize();"><i class="material-icons left">map</i>EXPLORE</a></li>
-            <li id="list-list"><a id="lists" href="#!" data-target="domain"><i class="material-icons left">summarize</i>CATALOG<i class="material-icons right">arrow_drop_down</i></a></li>
+            <li id="list-list"><a id="lists" href="#!" data-target="domain"><i class="material-icons left">list</i>CATALOG<i class="material-icons right">arrow_drop_down</i></a></li>
+	    <li id="doc-list"><a id="docs" href="#!" data-target="doc"><i class="material-icons left">menu_book</i>LEARN<i class="material-icons right">arrow_drop_down</i></a></li>
             <li style="height:64px;" id="search-list">
                 <a style="height:inherit; padding-right:0;"><i onclick="$('#search').focus();" style="height:inherit; padding-right:16px;" class="material-icons">search</i>
         		<div id="search-box" class="input-field" style="height:inherit;">
@@ -61,8 +61,8 @@
 
 <!-- panel -->
 <ul id="user-pane" class="sidenav loader blue-grey lighten-5" style="visibility:hidden;">
-	<li><div class="user-view z-depth-1" style="background-color: #eaf2f7;display: flex;margin: auto; padding: 0;align-items: center; padding-left:12px;"><span style="cursor: pointer;margin:auto;" onclick="showDoc('README'); $('#user-pane').sidenav('close');" class="new badge green darken-2" data-badge-caption="ocurOS | v1.02"></span>
-        <img id="user-pic" style="height: 72px;margin-left:18px; padding: 12px;" src="img/seal3.png" /></div></li>
+	<li><div class="user-view z-depth-1" style="background-color: #eaf2f7;display: flex;margin: auto; padding: 0;align-items: center; padding-left:12px;"><span style="cursor: pointer;margin:auto;" onclick="openInNewTab('https://github.com/nfnth/os'); $('#user-pane').sidenav('close');" class="new badge green darken-2" data-badge-caption="ocurOS | v1.02"></span>
+        <img id="user-pic" style="height: 72px;margin-left:18px; padding: 12px;" src="img/seal3.png" onclick="openInNewTab('https://github.com/nfnth/nfnth'); $('#user-pane').sidenav('close');"/></div></li>
     <li><a class="subheader">Wallet Information</a></li>
   	<li><a class="waves-effect tooltipped" data-position="left" data-tooltip="Wallet Address" onclick="if (walletAddress != '') {copyClip(walletAddress);}"><i class="material-icons">alternate_email</i><span id="myAdd">Wallet Address</span></a></li>
   	<li><a class="waves-effect tooltipped" data-position="left" data-tooltip="Ethereum Balance"><i class="material-icons">account_balance</i><span id="myETH">ETH Balance</span></a></li>
@@ -75,7 +75,7 @@
     	<li><a class="waves-effect tooltipped" data-position="left" data-tooltip="Domain Balance (OCUR)"><i class="material-icons">token</i><span id="myURL">Domain Balance (OCUR)</span></a></li>
   	<li style="margin-top:12px; display: flex;align-items: center;justify-content: center;margin-bottom:16px;"><select id="domain-template" class="sider" onchange="domainSelect();">
         <option selected="selected">No domain selected</option><option>tactician.us (demo)</option></select></li>
-    	<li style="margin-top:12px;"><a id="poster" class="waves-effect waves-light blue-grey z-depth-1 lighten-3" style="width: 240px;margin: auto;border-radius: 8px;margin-bottom:12px;" onclick="if (walletAddress != '') {showView('map'); map.resize(); addArtifact(); $('#user-pane').sidenav('close');}"><i class="material-icons left">architecture</i>Build Domain</a></li>
+    	<li style="margin-top:12px;"><a id="poster" class="waves-effect waves-light blue-grey z-depth-1 lighten-3" style="width: 240px;margin: auto;border-radius: 8px;margin-bottom:12px;" onclick="if (walletAddress != '') {showView('map'); map.resize(); addArtifact(); $('#user-pane').sidenav('close');}"><i class="material-icons left">architecture</i>Publish Domain</a></li>
   	<li><div style="margin-top:0;" class="divider"></div></li></ul>
 
 <!-- view -->
@@ -105,9 +105,13 @@
             <ul>
 		<li><a id="map-sat" class="btn-floating grey" onclick="mapSat();"><i class="material-icons">satellite_alt</i></a></li>
 		<li><a id="map-gps" class="btn-floating grey lighten-1" onclick="mapLocation();"><i class="material-icons">gps_fixed</i></a></li>
-                <li><a id="map-deed" class="btn-floating grey lighten-1" onclick="mapRandom();"><i class="material-icons">shuffle</i></a></li>
-		<li><a id="map-deed" class="btn-floating grey lighten-1" onclick="mapRoute();"><i class="material-icons">route</i></a></li>
-		<li><a id="map-domain" class="btn-floating grey lighten-1" onclick="mapIntro();"><i class="material-icons">book</i></a></li></ul></div>
+                <li><a id="map-shuffle" class="btn-floating grey lighten-1" onclick="mapRandom();"><i class="material-icons">shuffle</i></a></li>
+		<li><a id="map-route" class="btn-floating grey lighten-1" onclick="mapRoute();"><i class="material-icons">route</i></a></li>
+		<li><a id="map-book" class="btn-floating grey lighten-1" onclick="mapIntro();"><i class="material-icons">book</i></a></li>
+		<li><a id="map-add" class="btn-floating grey lighten-1" onclick="mapRandom();"><i class="material-icons">add</i></a></li>
+		<li><a id="map-edit" class="btn-floating grey lighten-1" onclick="mapRoute();"><i class="material-icons">edit</i></a></li>
+		<li><a id="map-delete" class="btn-floating grey lighten-1" onclick="mapIntro();"><i class="material-icons">delete</i></a></li>
+		</ul></div>
 
     <!-- editor -->
     <div id="editor" class="content loader pane scale-transition scale-out">
@@ -186,6 +190,7 @@ $('.tooltipped').tooltip();
     $('#lists').dropdown({ constrainWidth: false, coverTrigger: false, hover: true } ); $('#list-hide').dropdown({ constrainWidth: false, coverTrigger: false } );
     $('#user-pane').sidenav({ edge: 'right' });
     $('.fixed-action-btn').floatingActionButton({ hoverEnabled: false });
+	$("#map-add").hide(); $("#map-edit").hide(); $("#map-delete").hide();
     $('#pad').css("height", window.innerHeight - 560);//showFav('dralun'); //  showFav('paper');
     showView('news'); //searchClear();
     if (window.location.hostname == "ustat.us") { document.title = document.title.replace("Deed Domain",window.location.pathname.replace('/',''));   }
@@ -234,8 +239,10 @@ function emptyDeeds() {
 
 function domainSelect() { var d = document.getElementById("domain-template"); var dt = d.options[d.selectedIndex].text;
     if (dt == 'No domain selected') {
+	    $("#map-shuffle").show(); $("#map-route").show(); $("#map-book").show(); $("#map-add").hide(); $("#map-edit").hide(); $("#map-delete").hide();
         $("#poster").addClass("blue-grey");  $("#poster").addClass("darken-3"); $("#poster").removeClass("green"); }
     else {
+	    $("#map-shuffle").hide(); $("#map-route").hide(); $("#map-book").hide(); $("#map-add").show(); $("#map-edit").show(); $("#map-delete").show();
         $("#poster").removeClass("blue-grey");  $("#poster").removeClass("darken-3"); $("#poster").addClass("green"); } }
 var info;
 var signer = async function (item, content, action) {
