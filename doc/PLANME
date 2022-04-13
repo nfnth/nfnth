@@ -5,19 +5,19 @@
 
 Welcome to **ocur.io · Ocurios**, a world inspired by the geocacher's trade and powered by **deed** and **domain**.
 
-In **Ocurios**, an NFT is used as a *deed domain*, as,
+In **Ocurios**, an NFT is used as *deed domain*, as,
 
 
-- **deed** (*token*), to store in an *Ethereum-enabled* wallet for share/trade with others
-- **domain** (*key*), to access a domain and post content
+- **deed**, a *token* to store in an *Ethereum-enabled* wallet to share/trade with others
+- **domain**, a *key* to access a domain and post content
 
 
-Posts can include information such as datetime, location, text, and images and files, and are associated with the domain.
+Posts can include information like datetime, location, text, and images and files, to be associated with the domain.
 
-Upon transfer of the NFT (*deed domain*), both access to the *domain* and all *domain* posts are transfered to the new owner.
+Upon transfer of an NFT (*deed domain*), both *access to the domain* and *all domain posts* are transfered to the new owner.
 <br/><br/>
 ### Get Started
 
-To begin, install a *web3-compliant* Ethereum wallet, such as [MetaMask](https://metamask.io/) and/or [Coinbase](https://www.coinbase.com/wallet), then  visit [OpenSea <i class="material-icons">sailing</i> ...](https://opensea.io/urland) to purchase a NFT.
+To begin, install a *web3-compliant* Ethereum wallet, such as [MetaMask](https://metamask.io/) and/or [Coinbase](https://www.coinbase.com/wallet), and visit [OpenSea <i class="material-icons">sailing</i>](https://opensea.io/urland) to purchase an NFT.
 
-Use the <i class="material-icons">account_balance_wallet</i> icon in the top-right corner to connect, and all deed domains and/or token balances will appear upon successful connection.
+Next, use the <i class="material-icons">account_balance_wallet</i> icon to connect, and select your purchased deed domains to make a post.
