@@ -53,7 +53,7 @@
 
 <ul id="domain" class="dropdown-content loader" style="visibility:hidden;">
 	<li><a onclick="showView('list'); showList('deed');"><i class="material-icons"><span class="material-icons-outlined">inventory_2</span></i>Artifact Registry</a></li>
-	<li><a onclick="showView('list'); showList('domain');"><i class="material-icons"><span class="material-icons-outlined">landscape</span></i>Domain Manifest</a></li>
+	<li><a onclick="reset = true; showView('list'); showList('domain');"><i class="material-icons"><span class="material-icons-outlined">landscape</span></i>Domain Manifest</a></li>
 	<li class="divider"></li>
 	<li><a onclick="showView('list'); showList('open');"><i class="material-icons">sailing</i>OpenSea Collection</a></li>
     	<li class="divider"></li>
@@ -347,12 +347,12 @@ function showView(view) {  $('.pane').hide(); $('#'+view).show();
 
         break; } }
 
-var complete;
+var complete; var reset = false;
 function showList(area) { $("#registry").html(''); $("#registry").hide();
     switch (area) {
         case "deed": sortSet = [area,deeds,0,18,16]; for (let i=0;i<deeds.length;i++) { addContent(deeds[i]); } break;
 	    case "grid": sortSet = [area,domains,0,18,16]; var snip; var carder = 4; if (screen.width < 480) { carder = 1; } for (let i=0;i<domains.length;i++) { if ((i%carder) == 0) { snip = '<div style="display:flex;width:100%;justify-content:center;">'; } snip += addGrid(i); if (((i+1)%carder) == 0) { snip += '</div>'; $("#registry").append(snip); } } adjustSort(true); break;
-        case "domain": domains = complete; sortSet = [area,domains,0,18,16]; for (let i=0;i<domains.length;i++) { addList(i); } adjustSort(true); break;
+        case "domain": if (reset) { domains = complete; reset = false; } sortSet = [area,domains,0,18,16]; for (let i=0;i<domains.length;i++) { addList(i); } adjustSort(true); break;
         case "filter": sortSet = [area,domains,0,18,16]; domains = holder; for (let i=0;i<domains.length;i++) { addList(i); } adjustSort(true); break;
         case "open": sortSet = [area,opens,0,18,16]; for (let i=0;i<opens.length;i++) { addOpen(i); } adjustSort(false); break; }
     //$("#registry").css("height",height + "px");
