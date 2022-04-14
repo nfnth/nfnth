@@ -739,7 +739,7 @@ var artContent = '<div><div><img width="48" height="48" src="img/barrel.png"/></
 var currentMarkers=[]; //var introMark;//43.706742350484916, 1.5266131055501075
 var addMark; var coordinates; var artFlag = false;
 mapboxgl.accessToken = map_token; zoom = 5; mapStyle = 'mapbox://styles/mapbox/satellite-streets-v11';
-map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/mapbox/satellite-streets-v11', center: center, zoom: zoom, buffer_size: 0.2}); //'mapbox://styles/mapbox/light-v10'
+map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/mapbox/satellite-streets-v11', center: fr, zoom: zoom, buffer_size: 0.2}); //'mapbox://styles/mapbox/light-v10'
 map.on('load', function (event) { $("head").append('<style type="text/css">.markre{visibility:visible!important;}</style>');
     map.on('click', function(e) { coordinates = e.lngLat; if(artFlag) { addArt(); artFlag = false; } $('.fixed-action-btn').floatingActionButton('close'); }); });
 
