@@ -507,9 +507,9 @@ function showMark(i) {   //if (place == "") place = window.location.host;
     //for (let i = 0; i < domains.length; i++) {
       //  if (domains[i][4] == place) {
             var place2 = [domains[i].coord.substring(domains[i].coord.indexOf(', ')+1,domains[i].coord.indexOf(']')-1), domains[i].coord.substring(domains[i].coord.indexOf('[')+1,domains[i].coord.indexOf(',')-1)];
-            var html = '<div><div style="display:flex; justify-content:center;"><img style="margin-bottom:24px;" class="materialboxed" width="60" height="60" src="'+domains[i].core.image_preview_url+'"/></div><div><a onclick="openInNewTab(\'' + domains[i].core.external_link + '\');">' + domains[i].core.name + '</a><br/><br/><a class="waves-effect waves-blue btn blue" onclick="addListDeed(' + i +');"><i class="material-icons">description</i></a>&nbsp;&nbsp;<a class="waves-effect waves-blue btn green lighten-1" onclick="showDoc(\'order\');"><i class="material-icons">inventory_2</i></a></div></div>';
+            var html = '<div><div style="display:flex; justify-content:center;"><img style="margin-bottom:24px;" class="materialboxed" width="60" height="60" src="'+domains[i].core.image_preview_url+'"/></div><div style="font-size:16px;"><a onclick="openInNewTab(\'' + domains[i].core.external_link + '\');">' + domains[i].core.name + '</a><br/><br/><a class="waves-effect waves-blue btn blue" onclick="addListDeed(' + i +');"><i class="material-icons">description</i></a>&nbsp;&nbsp;<a class="waves-effect waves-blue btn green lighten-1" onclick="showDoc(\'order\');"><i class="material-icons">inventory_2</i></a></div></div>';
 
-            addMark(i+99,place2,"blue",getClass(domains[i].core.collection.slug),getColor(domains[i].core.collection.slug), html, 0); $('.materialboxed').materialbox();
+            addMark(i+99,place2,"blue",getClass(domains[i].core.collection.slug),getColor(domains[i].core.collection.slug), html, 0); setTimeout( function () { $('.materialboxed').materialbox(); }, 1000);
             setZoom = 9; startUp = function() {currentMarkers[0].togglePopup(); };  fly(place2);
 //} }
 	}
@@ -529,9 +529,9 @@ function showMark3(place) {   if (place == "") place = window.location.host;
 
 function showMark2(i) {
     var place2 = [domains[i].coord.substring(domains[i].coord.indexOf(', ')+1,domains[i].coord.indexOf(']')-1), domains[i].coord.substring(domains[i].coord.indexOf('[')+1,domains[i].coord.indexOf(',')-1)];//[domains[i][7], domains[i][6]]; //showDomain();
-    var html = '<div><div style="display:flex; justify-content:center;"><img style="margin-bottom:24px;" class="materialboxed" width="60" height="60" src="'+domains[i].core.image_preview_url+'"/></div><div><a onclick="openInNewTab(\'' + domains[i].core.external_url + '\');">' + domains[i].core.name + '</a><br/><br/><a class="waves-effect waves-blue btn blue" onclick="addListDeed(' + i +');"><i class="material-icons">description</i></a>&nbsp;&nbsp;<a class="waves-effect waves-blue btn blue lighten-2" onclick="showProfile('+i +');"><i class="material-icons">inventory_2</i></a></div></div>';
+    var html = '<div><div style="display:flex; justify-content:center;"><img style="margin-bottom:24px;" class="materialboxed" width="60" height="60" src="'+domains[i].core.image_preview_url+'"/></div><div style="font-size:16px;"><a onclick="openInNewTab(\'' + domains[i].core.external_url + '\');">' + domains[i].core.name + '</a><br/><br/><a class="waves-effect waves-blue btn blue" onclick="addListDeed(' + i +');"><i class="material-icons">description</i></a>&nbsp;&nbsp;<a class="waves-effect waves-blue btn blue lighten-2" onclick="showProfile('+i +');"><i class="material-icons">inventory_2</i></a></div></div>';
 
-    addMark(i+99,place2,"color",getClass(domains[i].core.collection.slug),getColor(domains[i].core.collection.slug), html, i); $('.materialboxed').materialbox(); }
+    addMark(i+99,place2,"color",getClass(domains[i].core.collection.slug),getColor(domains[i].core.collection.slug), html, i); setTimeout( function () { $('.materialboxed').materialbox(); }, 1000); }
 
 function addMark(id, loc, folder, icon, color, html, index) {
     var ela = document.createElement('div'); ela.id = 'marker' + id; var marker = new mapboxgl.Marker(ela).setLngLat(loc).addTo(map);
