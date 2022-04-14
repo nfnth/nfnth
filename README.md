@@ -5,7 +5,7 @@
 
 Home of **[OcurOS](https://github.com/nfnth/os)** and the [**OCUR**](https://etherscan.io/token/0xCcaB679860B1017589239BCeEEabe5CD45965aFc) *ETH ERC-20* token | [trade on Uniswap](https://app.uniswap.org/#/pool/103894) 
 
-Available now, the [**ocur.io Collectible**](https://buy.stripe.com/5kA4hL5NB6Qv7Ty5kk), includes,
+The [**ocur.io Collectible**](https://buy.stripe.com/5kA4hL5NB6Qv7Ty5kk) is also available, includes,
 
 - 2021 *Native American* **$1 Coin**
 - copy of **Ocurious Guide to Deed Domain**
