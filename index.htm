@@ -744,7 +744,7 @@ map.on('load', function (event) { $("head").append('<style type="text/css">.mark
     map.on('click', function(e) { coordinates = e.lngLat; if(artFlag) { addArt(); artFlag = false; } $('.fixed-action-btn').floatingActionButton('close'); }); });
 
 var satSwitch = false; var satCenter;
-function mapSat() { if (introSwitch) { satCenter = center; } else { satCenter = satCenter = map.getCenter(); }
+function mapSat() { if (introSwitch) { satCenter = fr; } else { satCenter = map.getCenter(); }
 	if (satSwitch) { mapStyle = 'mapbox://styles/mapbox/satellite-streets-v11'; satSwitch = false; $("#map-sat").removeClass("grey"); $("#map-sat").addClass("blue"); } else { mapStyle = 'mapbox://styles/mapbox/light-v10'; satSwitch = true; $("#map-sat").removeClass("blue"); $("#map-sat").addClass("grey");}
 	map = new mapboxgl.Map({container: 'map', style: mapStyle, center: satCenter, zoom: zoom, buffer_size: 0.2});  }
 
