@@ -23,14 +23,14 @@
 
 <!-- media -->
 	<a id="doc-hide" class="screen-hide" href="#!" data-target="doc"><i class="material-icons">menu_book</i></a>
-        <a id="map-hide" class="screen-hide" onclick="showView('map'); map.resize(); "><i class="material-icons">map</i></a>
+        <a id="map-hide" class="screen-hide" onclick="showView('map'); "><i class="material-icons">map</i></a>
 	<a id="list-hide" class="screen-hide" href="#!" data-target="domain"><i class="material-icons">list</i></a>
     	<a id="search-hide" class="screen-hide" onclick="showView('search');"><i class="material-icons">search</i></a>
 
     <!-- desktop -->
     	<ul class="hide-on-med-and-down">
 	    <li id="doc-list"><a id="docs" href="#!" data-target="doc"><i class="material-icons left">menu_book</i>LEARN<i class="material-icons right">arrow_drop_down</i></a></li>
-            <li id="map-list"><a onclick="map.resize(); showView('map');"><i class="material-icons left">map</i>EXPLORE</a></li>
+            <li id="map-list"><a onclick="showView('map');"><i class="material-icons left">map</i>EXPLORE</a></li>
             <li id="list-list"><a id="lists" href="#!" data-target="domain"><i class="material-icons left">list</i>CATALOG<i class="material-icons right">arrow_drop_down</i></a></li>
             <li style="height:64px;" id="search-list">
                 <a style="height:inherit; padding-right:0;"><i onclick="$('#search').focus();" style="height:inherit; padding-right:16px;" class="material-icons">search</i>
@@ -339,7 +339,7 @@ function showView(view) {  $('.pane').hide(); $('#'+view).show();
         //$("#list-hide").css("color","darkgoldenrod!important"); 
 		    break;
         case 'news': $("#stamper").show(); $("#world").show(); introSwitch = true; break;
-        case 'map': $("#actions").show(); if (introSwitch) { mapIntro(); introSwitch = false; }
+        case 'map': $("#actions").show(); map.resize(); if (introSwitch) { mapIntro(); introSwitch = false; }
 		    
 		    //$("#map-list").css("background-color","darkgrey"); $("#map-list").children('a').eq(0).css("color","darkgoldenrod");
        // $("#map-hide").css("color","darkgoldenrod!important");
@@ -770,7 +770,7 @@ function mapIntro() { startUp = function() { currentMarkers[0].togglePopup();
     addMark('b',fr2,'island','1','green', landContent, 1);
     addMark('c',fr3,'monument','1','skyblue', artContent, 2); //map.flyTo({center: base});
     //currentMarkers[0].togglePopup(); 
-		     fly(fr);
+		     setTimeout( function () { fly(fr); }, 1000);
 			}
 function showPath(color) { addLine(color); nomadPath = requestAnimationFrame(drawLine); }
 function showLandlord() { startPoint = fr; endPoint = fr2; showPath('green'); currentMarkers[0].togglePopup(); currentMarkers[1].togglePopup(); pather = true; }
