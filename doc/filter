@@ -1,22 +1,28 @@
 
 
+                <p>
+      <label>
+        <input type="checkbox" class="filled-in" checked="checked" />
+        <span>My Deed Domains Only</span>
+      </label>
+    </p>
 
 <div class="input-field col s12 m6">
     <select id="collection-filter" class="icons" multiple>
       <option value="" disabled selected>Select collection...</option>
       <option value="" >All Collections</option>
-      <option value="" data-icon="img/icon/key/red.png">Tactician</option>
-      <option value="" data-icon="img/icon/key/orange.png">Patrician</option>
-      <option value="" data-icon="img/icon/key/yellow.png">Electrician</option>
-      <option value="" data-icon="img/icon/key/green.png">Sectarian</option>
-      <option value="" data-icon="img/icon/key/blue.png">Civilian</option>
-      <option value="" data-icon="img/icon/key/purple.png">Logician</option>
-      <option value="" data-icon="img/icon/key/gray.png">Utilitarian</option>
-      <option value="" data-icon="img/icon/key/white.png">Technician</option>
-      <option value="" data-icon="img/icon/key/black.png">Custodian</option>
-      <option value="" data-icon="img/icon/key/tan.png">Librarian</option>
-      <option value="" data-icon="img/icon/key/pink.png">Clinician</option>
-      <option value="" data-icon="img/icon/key/brown.png">Agrarian</option>
+      <option value="" data-icon="img/key/red.png">Tactician</option>
+      <option value="" data-icon="img/key/orange.png">Patrician</option>
+      <option value="" data-icon="img/key/yellow.png">Electrician</option>
+      <option value="" data-icon="img/key/green.png">Sectarian</option>
+      <option value="" data-icon="img/key/blue.png">Civilian</option>
+      <option value="" data-icon="img/key/purple.png">Logician</option>
+      <option value="" data-icon="img/key/gray.png">Utilitarian</option>
+      <option value="" data-icon="img/key/white.png">Technician</option>
+      <option value="" data-icon="img/key/black.png">Custodian</option>
+      <option value="" data-icon="img/key/tan.png">Librarian</option>
+      <option value="" data-icon="img/key/pink.png">Clinician</option>
+      <option value="" data-icon="img/key/brown.png">Agrarian</option>
     </select>
     <label>OpenSea Collections</label>
   </div>
@@ -33,12 +39,6 @@
 
 
 
-                <p>
-      <label>
-        <input type="checkbox" class="filled-in" checked="checked" />
-        <span>Filled in</span>
-      </label>
-    </p>
 <script>$('select').formSelect();
 $("#collection-filter").on("change", function(event) {
     alert('changed');
