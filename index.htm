@@ -331,7 +331,7 @@ function hideView() { $('.modal').modal('close');   window.scrollTo(0, 0); //if 
 	//$("#list-hide").css("background-color","");$("#list-hide").css("color","");
 	//$("#search-hide").css("background-color","");$("#search-hide").css("color","");  
 		    }
-function showView(view) { if (openDoc) { $('#someoverlay').trigger( "click" ); } else { hideView();} $('.pane').hide(); $('#'+view).show();
+function showView(view) {  $('.pane').hide(); $('#'+view).show();
 
     switch (view) {
         case 'editor': $("#editor").addClass("scale-in"); break;
