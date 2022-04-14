@@ -7,8 +7,8 @@ Home of **[OcurOS](https://github.com/nfnth/os)** and the [**OCUR**](https://eth
 
 The [**ocur.io Collectible**](https://buy.stripe.com/5kA4hL5NB6Qv7Ty5kk) is also available, includes,
 
-- 2021 *Native American* **$1 Coin**
-- copy of **Civilian Complex** · *Ocurious Guide to Deed Domain*
+- 2021 **Native American** *$1 Coin*
+- copy of **Civilian Complex** · *An Ocurious Guide to Deed Domain*
 
 <a href="https://buy.stripe.com/5kA4hL5NB6Qv7Ty5kk" target="_blank"><img style="margin-left:24px; width:90px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="img/coin.jpg" alt="Purchase ocur.io Collectible" /></a>
 
