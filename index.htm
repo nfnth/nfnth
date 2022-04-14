@@ -151,7 +151,8 @@
 
 <script>
 
-function changeView() { 
+var gridSelect = false;
+function changeView() { gridSelect = document.getElementById('lister').checked;
 	if (document.getElementById('lister').checked) { showView('list'); showList('grid'); } else { showView('list'); showList('domain'); }
 }
 function checkFile() {
@@ -352,7 +353,9 @@ function showList(area) { $("#registry").html(''); $("#registry").hide(); if (fi
     switch (area) {
         case "deed": sortSet = [area,deeds,0,18,16]; for (let i=0;i<deeds.length;i++) { addContent(deeds[i]); } break;
 	    case "grid": sortSet = [area,domains,0,18,16]; var snip; var carder = 4; if (screen.width < 480) { carder = 1; } for (let i=0;i<domains.length;i++) { if ((i%carder) == 0) { snip = '<div style="display:flex;width:100%;justify-content:center;">'; } snip += addGrid(i); if (((i+1)%carder) == 0) { snip += '</div>'; $("#registry").append(snip); } } adjustSort(true); break;
-        case "domain": if (reset) { domains = complete; reset = false; } sortSet = [area,domains,0,18,16]; for (let i=0;i<domains.length;i++) { addList(i); } adjustSort(true); break;
+        case "domain": if (reset) { domains = complete; reset = false; }
+		    if (gridSelect) { showList('grid'); break; }
+		    sortSet = [area,domains,0,18,16]; for (let i=0;i<domains.length;i++) { addList(i); } adjustSort(true); break;
         case "filter": sortSet = [area,domains,0,18,16]; domains = holder; for (let i=0;i<domains.length;i++) { addList(i); } adjustSort(true); break;
         case "open": sortSet = [area,opens,0,18,16]; for (let i=0;i<opens.length;i++) { addOpen(i); } adjustSort(false); break; }
     //$("#registry").css("height",height + "px");
@@ -505,7 +508,7 @@ function showMark(i) {   //if (place == "") place = window.location.host;
     //for (let i = 0; i < domains.length; i++) {
       //  if (domains[i][4] == place) {
             var place2 = [domains[i].coord.substring(domains[i].coord.indexOf(', ')+1,domains[i].coord.indexOf(']')-1), domains[i].coord.substring(domains[i].coord.indexOf('[')+1,domains[i].coord.indexOf(',')-1)];
-            var html = '<div><div style="display:flex; justify-content:center;"><img style="margin-bottom:24px;" class="materialboxed" width="60" height="60" src="'+domains[i].core.image_preview_url+'"/></div><div><a onclick="openInNewTab(\'' + domains[i].core.external_link + '\');">' + domains[i].core.name + '</a><br/><a class="waves-effect waves-blue btn blue" onclick="addListDeed(' + i +');"><i class="material-icons">description</i></a>&nbsp;&nbsp;<a class="waves-effect waves-blue btn green lighten-1" onclick="showDoc(\'order\');"><i class="material-icons">inventory_2</i></a></div></div>';
+            var html = '<div><div style="display:flex; justify-content:center;"><img style="margin-bottom:24px;" class="materialboxed" width="60" height="60" src="'+domains[i].core.image_preview_url+'"/></div><div><a onclick="openInNewTab(\'' + domains[i].core.external_link + '\');">' + domains[i].core.name + '</a><br/><br/><a class="waves-effect waves-blue btn blue" onclick="addListDeed(' + i +');"><i class="material-icons">description</i></a>&nbsp;&nbsp;<a class="waves-effect waves-blue btn green lighten-1" onclick="showDoc(\'order\');"><i class="material-icons">inventory_2</i></a></div></div>';
 
             addMark(i+99,place2,"blue",getClass(domains[i].core.collection.slug),getColor(domains[i].core.collection.slug), html, 0); $('.materialboxed').materialbox();
             setZoom = 9; startUp = function() {currentMarkers[0].togglePopup(); };  fly(place2);
@@ -527,7 +530,7 @@ function showMark3(place) {   if (place == "") place = window.location.host;
 
 function showMark2(i) {
     var place2 = [domains[i].coord.substring(domains[i].coord.indexOf(', ')+1,domains[i].coord.indexOf(']')-1), domains[i].coord.substring(domains[i].coord.indexOf('[')+1,domains[i].coord.indexOf(',')-1)];//[domains[i][7], domains[i][6]]; //showDomain();
-    var html = '<div><div style="display:flex; justify-content:center;"><img style="margin-bottom:24px;" class="materialboxed" width="60" height="60" src="'+domains[i].core.image_preview_url+'"/></div><div><a onclick="openInNewTab(\'' + domains[i].core.external_url + '\');">' + domains[i].core.name + '</a><br/><a class="waves-effect waves-blue btn blue" onclick="addListDeed(' + i +');"><i class="material-icons">description</i></a>&nbsp;&nbsp;<a class="waves-effect waves-blue btn blue lighten-2" onclick="showProfile('+i +');"><i class="material-icons">inventory_2</i></a></div></div>';
+    var html = '<div><div style="display:flex; justify-content:center;"><img style="margin-bottom:24px;" class="materialboxed" width="60" height="60" src="'+domains[i].core.image_preview_url+'"/></div><div><a onclick="openInNewTab(\'' + domains[i].core.external_url + '\');">' + domains[i].core.name + '</a><br/><br/><a class="waves-effect waves-blue btn blue" onclick="addListDeed(' + i +');"><i class="material-icons">description</i></a>&nbsp;&nbsp;<a class="waves-effect waves-blue btn blue lighten-2" onclick="showProfile('+i +');"><i class="material-icons">inventory_2</i></a></div></div>';
 
     addMark(i+99,place2,"color",getClass(domains[i].core.collection.slug),getColor(domains[i].core.collection.slug), html, i); $('.materialboxed').materialbox(); }
 
