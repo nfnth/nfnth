@@ -732,6 +732,7 @@ function setTemplate() {
 var map; var map_token = "pk.eyJ1IjoibmZudGgiLCJhIjoiY2tweW1rNXlsMGFpYzJwcGt1cHh6dmxzcyJ9.ZJaFrGpPDv5froWZMLXXYQ";
 var base = [-98.59236473214004, 39.82998211920899, ]; var landlord = [-101.59236473214004, 42.82998211920899, ]; var art = [-96.59236473214004, 37.82998211920899, ]; var center = [-100.4510253658899336, 43.91338997020656];
 var fr = [12.7883045678751,41.93442311882793]; var fr2 = [8.833226355143738,44.503810689066945]; var fr3 = [15.029515555089539,37.61364223955704];
+	var frc = [12.260960806177584,44.299731972907885]
 var baseContent = '<div><div><img width="48" height="48" src="img/deed.png"/></div><div><h6>Purchase Deed</h6><br/><a class="waves-effect waves-light btn" onclick="showDoc(\'learn/deed\');">Read...</a>&nbsp;&nbsp;<a class="waves-effect waves-light btn blue lighten-3" onclick="clearMap(); showLandlord();"><i class="material-icons">navigate_next</i></a></div></div>';
 var landContent = '<div><div><img width="48" height="48" src="img/domain.png"/></div><div><h6>Build Domain</h6><br/><a class="waves-effect waves-light btn" onclick="showDoc(\'learn/domain\');">Read...</a>&nbsp;&nbsp;<a class="waves-effect waves-light btn blue lighten-3" onclick="clearMap(); showArt();"><i class="material-icons">navigate_next</i></a></div></div>';
 var artContent = '<div><div><img width="48" height="48" src="img/barrel.png"/></div><div><h6>Trade OCUR</h6><br/><a class="waves-effect waves-light btn" onclick="showDoc(\'learn/artifact\');">Read...</a>&nbsp;&nbsp;<a class="waves-effect waves-light btn blue lighten-3" onclick="clearMap(); showBase();"><i class="material-icons">restart_alt</i></a</div></div>';
@@ -770,7 +771,7 @@ function mapIntro() { startUp = function() { currentMarkers[0].togglePopup();
     addMark('b',fr2,'island','1','green', landContent, 1);
     addMark('c',fr3,'monument','1','skyblue', artContent, 2); //map.flyTo({center: base});
     //currentMarkers[0].togglePopup(); 
-		     setTimeout( function () { fly(fr); }, 1000);
+		     setTimeout( function () { fly(frc); }, 1000);
 			}
 function showPath(color) { addLine(color); nomadPath = requestAnimationFrame(drawLine); }
 function showLandlord() { startPoint = fr; endPoint = fr2; showPath('green'); currentMarkers[0].togglePopup(); currentMarkers[1].togglePopup(); pather = true; }
