@@ -1,9 +1,9 @@
 
 ###  [⚙⚙ ocur.io · Ocurious](https://github.com/nfnth/nfnth)
 
-<a href="https://opensea.io/ocurio" title="Buy on OpenSea" target="_blank"><img style="margin-left:24px; width:220px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="https://storage.googleapis.com/opensea-static/Logomark/Badge%20-%20Available%20On%20-%20Light.png" alt="Available on OpenSea" /></a>
-
 Home of **[OcurOS](https://github.com/nfnth/os)** and the [**OCUR**](https://etherscan.io/token/0xCcaB679860B1017589239BCeEEabe5CD45965aFc) *ETH ERC-20* token | [trade on Uniswap](https://app.uniswap.org/#/pool/103894) 
+
+<a href="https://opensea.io/ocurio" title="Buy on OpenSea" target="_blank"><img style="margin-left:24px; width:220px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="https://storage.googleapis.com/opensea-static/Logomark/Badge%20-%20Available%20On%20-%20Light.png" alt="Available on OpenSea" /></a>
 
 The [**ocur.io Collectible**](https://buy.stripe.com/5kA4hL5NB6Qv7Ty5kk) is also available, includes,
 
