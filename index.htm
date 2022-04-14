@@ -347,8 +347,8 @@ function showView(view) {  $('.pane').hide(); $('#'+view).show();
 
         break; } }
 
-var complete; var reset = false;
-function showList(area) { $("#registry").html(''); $("#registry").hide();
+var complete; var reset = false; var first = true;
+function showList(area) { $("#registry").html(''); $("#registry").hide(); if (first) { complete = domains; first = false; }
     switch (area) {
         case "deed": sortSet = [area,deeds,0,18,16]; for (let i=0;i<deeds.length;i++) { addContent(deeds[i]); } break;
 	    case "grid": sortSet = [area,domains,0,18,16]; var snip; var carder = 4; if (screen.width < 480) { carder = 1; } for (let i=0;i<domains.length;i++) { if ((i%carder) == 0) { snip = '<div style="display:flex;width:100%;justify-content:center;">'; } snip += addGrid(i); if (((i+1)%carder) == 0) { snip += '</div>'; $("#registry").append(snip); } } adjustSort(true); break;
@@ -397,7 +397,7 @@ function addList(i){
     $("#registry").append("<a class='collection-item modal-trigger' href='#modal1' onclick='addListDetail(" + i + ");'><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;'>" + domains[i].core.name + "</div><div style='display:flex; justify-content:space-between;align-items:center;'><div style='display:flex; flex-direction:column;'><div style='width:160px; ' class='z-depth-1 chip " +  getClass(domains[i].sub)  + "'><img src='img/key/" + getCollect(domains[i].core.collection.slug) + "'><div style='border-radius:12px; width:100px;background-color:rgb(245, 246, 247,0.75);color:black;font-size:16px;font-weight:bold;' class='z-depth-1'>" + padSerial(domains[i].serial) + "</div></div></div></div></div></a>"); }
 
 function addListDetail(i) {
-     $("#domain-info").html('<div style="display:flex;justify-content:space-evenly;align-items:center;"><div style="display: flex;flex-direction: column;text-align: left;align-items:center;"><div style="display:flex; justify-content:center;"><img style="margin-bottom:12px;" class="materialboxed z-depth-2" width="120" height="120" src="' + domains[i].core.image_preview_url + '"/></div><div style="margin-bottom:16px;">' + domains[i].name + '&nbsp;&nbsp · &nbsp;&nbsp<a onclick="openInNewTab(\'' + domains[i].core.external_link + '\');">' + domains[i].core.name + '</a></div><br/><div style="display:flex;"><a onclick="addListDeed(' + i +');" class="waves-effect waves-light waves-blue btn blue lighten-2" ><i class="material-icons">sticky_note_2</i></a>&nbsp;&nbsp;<a onclick="showMark(\'' + i + '\'); showView(\'map\'); map.resize();" class="modal-close waves-effect waves-blue btn blue lighten-3" ><i class="material-icons">map</i></a>&nbsp;&nbsp;<a onclick="openInNewTab(\'' + domains[i].core.permalink + '\');" class="waves-effect waves-light waves-green btn green lighten-3" ><i class="material-icons">payment</i></a>&nbsp;&nbsp;<a onclick="showDomain(\'' + domains[i].core.external_link + '\');" class="waves-effect waves-light waves-green btn green lighten-2" ><i class="material-icons">account_balance_wallet</i></a></div><br/></div></div>'); $('.materialboxed').materialbox(); }
+     $("#domain-info").html('<div style="display:flex;justify-content:space-evenly;align-items:center;"><div style="display: flex;flex-direction: column;text-align: left;align-items:center;"><div style="display:flex; justify-content:center;"><img style="margin-bottom:12px;" class="materialboxed z-depth-2" width="120" height="120" src="' + domains[i].core.image_preview_url + '"/></div><div style="margin-bottom:16px;">' + domains[i].name + '&nbsp;&nbsp · &nbsp;&nbsp<a onclick="openInNewTab(\'' + domains[i].core.external_link + '\');">' + domains[i].core.name + '</a></div><br/><div style="display:flex;"><a onclick="addListDeed(' + i +');" class="waves-effect waves-light waves-blue btn blue lighten-2" ><i class="material-icons">sticky_note_2</i></a>&nbsp;&nbsp;<a onclick="showMark(\'' + i + '\'); showView(\'map\'); map.resize();" class="modal-close waves-effect waves-blue btn blue lighten-3" ><i class="material-icons">map</i></a>&nbsp;&nbsp;<a onclick="openInNewTab(\'' + domains[i].core.permalink + '\');" class="waves-effect waves-light waves-green btn green lighten-2" ><i class="material-icons right">payment</i>Purchase</a></div><br/></div></div>'); $('.materialboxed').materialbox(); }
 
 function addListDeed(i) {
     $("#somedialog2").css("z-index",1004);
@@ -771,7 +771,7 @@ function mapIntro() { startUp = function() { currentMarkers[0].togglePopup();
     addMark('b',fr2,'island','1','green', landContent, 1);
     addMark('c',fr3,'monument','1','skyblue', artContent, 2); //map.flyTo({center: base});
     //currentMarkers[0].togglePopup(); 
-		frc = fr;     setTimeout( function () { fly(frc); }, 1000);
+		    setTimeout( function () { fly(fr); }, 1000);
 			}
 function showPath(color) { addLine(color); nomadPath = requestAnimationFrame(drawLine); }
 function showLandlord() { startPoint = fr; endPoint = fr2; showPath('green'); currentMarkers[0].togglePopup(); currentMarkers[1].togglePopup(); pather = true; }
