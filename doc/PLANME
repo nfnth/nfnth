@@ -5,19 +5,19 @@
 
 Welcome to **ocur.io · Ocurios**, a world inspired by the geocacher's trade and powered by **deed** and **domain**.
 
-In **Ocurios**, an NFT is used as *deed domain*, as,
+In **Ocurios**, use an NFT as both,
 
 
-- **deed**, a *token* to store in an *Ethereum-enabled* wallet to share/trade with others
-- **domain**, a *key* to access a domain and post content
+- **deed**, the *token* to store in an *Ethereum-enabled* wallet to share/trade with others
+- **domain**, the *key* to access a domain and build its content
 
 
-Posts can include information like datetime, location, text, and images and files, to be associated with the domain.
+Domain content, called **artifact**, can include anything from datetime, location, and text, to images and files, to associate with the domain.
 
-Upon transfer of an NFT (*deed domain*), both **access to the domain** and **all domain posts** are transfered to the new owner.
+Upon transfer of an NFT *deed domain*, both **domain access** and **domain content** are transfered to the new owner.
 <br/><br/>
 ### Get Started
 
 To begin, install a *web3-compliant* Ethereum wallet, such as [MetaMask](https://metamask.io/) and/or [Coinbase](https://www.coinbase.com/wallet), and visit [OpenSea <i class="material-icons">sailing</i>](https://opensea.io/urland) to purchase an NFT.
 
-Use the <i class="material-icons">account_balance_wallet</i> icon to connect and select your purchased **deed domain** to make a post.
+Next, use the <i class="material-icons">account_balance_wallet</i> icon to connect and to view your **deed domain** and build content.
