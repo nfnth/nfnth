@@ -3,17 +3,15 @@
 
 <br/>
 
-<br/>
-
-Each domain generates **OCUR** based on it's OCUR value/rate. Use OCUR to,
+Each domain will generate **OCUR** based on the *ocur* value/rate stored in its meta data. Use OCUR to,
 
 
-- increase your domain's content visibility in the deed registry
-- interact with the world simulation
+- increase the domain's content profile in the **deed registry**
+- interact with the world simulation in UR.Land
 - trade for cash on Uniswap
 
-<br/><br/>
-If an **NFT** is transferred to another wallet, it's current **OCUR** balance is also transferred to the new owner.
+<br/>
+Please note if the **NFT** is transferred to another wallet, access to its **OCUR** balance is transferred to the new owner.
 
 
 ### Explore Further
