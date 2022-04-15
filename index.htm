@@ -298,7 +298,7 @@ function pullPrice(i) {
 	id = domains[i].core.token_id;
 	fetch('https://api.opensea.io/api/v1/asset/0x495f947276749ce646f68ac8c248420045cb7b5e/'+id+'/listings', options)
       .then(response => response.json()) //.then(response => assets = response)
-      .then(response => { if (typeof response.listings[0] !== 'undefined') { domains[i].price = response.listings[0].current_price; } else {domains[i].price = "Unlisted" } updateInfo(i);
+      .then(response => { if (typeof response.listings[0] !== 'undefined') { domains[i].price = parseFloat(response.listings[0].current_price)/1000000000000000000; } else {domains[i].price = "Unlisted" } updateInfo(i);
 			
 			}).catch(err => console.error(err)); }
 
@@ -414,7 +414,7 @@ function addListDetail(i) {
 
 function addListDeed(i) {
     $("#somedialog2").css("z-index",1004); var embedDisplay = "";
-	if (domains[i].core.animation_url != "") { embedDisplay = "<video  style='width:80%;' autoplay controls><source type='video/mp4' src='" + domains[i].core.animation_url + "'></video>" } else { embedDisplay = "<img  style='width:80%;' src='" + domains[i].core.image_url + "' /"; }
+	if (domains[i].core.animation_url != null) { embedDisplay = "<video  style='width:80%;' autoplay controls><source type='video/mp4' src='" + domains[i].core.animation_url + "'></video>" } else { embedDisplay = "<img  style='width:80%;' src='" + domains[i].core.image_url + "' /"; }
     setDialog("<div style='text-align:center;'><p><span style='font-weight:16px'>" + domains[i].name + "</span>&nbsp;&nbsp; · &nbsp;&nbsp;<a onclick='openInNewTab(\"" + domains[i].core.external_link + "\");'>" + domains[i].core.name + "</a></p></div><br/><div style='text-align:center;'>" + embedDisplay + "</div><br/><br/><p>" + domains[i].core.description + "</p><a onclick='openInNewTab(\"" + domains[i].ref + "\");'>Read more...</a><br/><br/><div style='text-align:center;'><img style='max-width:80%;' src='" + domains[i].img + "' /></div><br/><br/>" + "<div style='display:flex; justify-content:space-evenly;align-items:center;'><div style='display:flex; align-items: center;margin-top: 12px;margin-top: 12px;margin-right: 12px;'><br/><div onclick='showDoc(\"key/collection\");' style='text-align:center; width:160px; ' class='z-depth-1 chip " + getClass(domains[i].core.collection.slug) + "'><img src='img/key/" + getCollect(domains[i].core.collection.slug) + "'><div style='background-color:rgb(245, 246, 247,0.75); border-radius:12px; width:100px;color:black;font-size:16px;'>" + domains[i].serial + "</div></div><div><img class='modal-close' onclick='showDoc(\"key/state\");' style='cursor:pointer; width:48px; height:48px;' src='img/flag/" + domains[i].place + ".png' /></div></div></div></div>" + "<br/><br/>" + "UR Value/Rate = " + domains[i].ur);}
 
 function addGrid(i) { //alert((i%4));//card-panel?
