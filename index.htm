@@ -43,13 +43,13 @@
 
 <!-- dropdown -->
 <ul id="doc" class="dropdown-content loader" style="visibility:hidden;">
-	<li><a onclick="showDoc('PLANME');"><i class="material-icons">explore</i>Use Deed Domain</a></li>
+	<li><a onclick="showDoc('PLANME');"><i class="material-icons">backpack</i>On Deed to Domain</a></li>
     	<li><a onclick="openInNewTab('https://github.com/nfnth');"><i class="material-icons">home</i>About ocur.io</a></li>
     	<li class="divider"></li>
     	<li><a onclick="showDoc('ocur');"><i class="material-icons">toll</i>Trade OCUR</a></li>
 	<li><a onclick="showDoc('donation');"><i class="material-icons"><span class="material-icons-outlined">park</span></i>Make Donation</a></li>
 	<li class="divider"></li>
-    	<li><a onclick="openInNewTab('https://ur.land');"><i class="material-icons">backpack</i>Enter UR.Land...</a></li></ul>
+    	<li><a onclick="showDoc('urland');"><i class="material-icons">token</i>Guide to UR.Land</a></li></ul>
 
 <ul id="domain" class="dropdown-content loader" style="visibility:hidden;">
 	<li><a onclick="showView('list'); showList('deed');"><i class="material-icons"><span class="material-icons-outlined">inventory_2</span></i>Artifact Registry</a></li>
@@ -57,7 +57,7 @@
 	<li class="divider"></li>
 	<li><a onclick="showView('list'); showList('open');"><i class="material-icons">sailing</i>OpenSea Collection</a></li>
     	<li class="divider"></li>
-	<li><a onclick="openInNewTab('https://ur.land');"><i class="material-icons">token</i>UR.Land Inventory...</a></li></ul>
+	<li><a onclick="openInNewTab('https://ur.land');"><i class="material-icons">backpack</i>UR.Land Items</a></li></ul>
 
 <!-- panel -->
 <ul id="user-pane" class="sidenav loader blue-grey lighten-5" style="visibility:hidden;">
@@ -103,8 +103,8 @@
             <a class="btn-floating btn-large green lighten-2 waves-effect waves-light"><i class="large material-icons">apps</i></a>
             <ul>
 		<li><a id="map-sat" class="btn-floating blue" onclick="mapSat();"><i class="material-icons">satellite_alt</i></a></li>
-		<li><a id="map-gps" class="btn-floating grey lighten-1" onclick="mapLoc();"><i class="material-icons">gps_fixed</i></a></li>
-                <li><a id="map-shuffle" class="btn-floating grey lighten-1" onclick="mapRand();"><i class="material-icons">shuffle</i></a></li>
+		<li><a id="map-gps" class="btn-floating grey" onclick="mapLoc();"><i class="material-icons">gps_fixed</i></a></li>
+                <li><a id="map-shuffle" class="btn-floating grey" onclick="mapRand();"><i class="material-icons">shuffle</i></a></li>
 		<li><a id="map-route" class="btn-floating grey lighten-1" onclick="mapRoute();"><i class="material-icons">route</i></a></li>
 		<li><a id="map-book" class="btn-floating grey lighten-1" onclick="mapBook();"><i class="material-icons">book</i></a></li>
 		<li><a id="map-add" class="btn-floating green lighten-1" onclick="mapAdd();"><i class="material-icons">add</i></a></li>
@@ -185,11 +185,11 @@ $('.tooltipped').tooltip();
 	$("#map-add").hide(); $("#map-edit").hide(); $("#map-delete").hide();
     $('#pad').css("height", window.innerHeight - 560);//showFav('dralun'); //  showFav('paper');
     showView('news'); //searchClear();
-    if (window.location.hostname == "ustat.us") { document.title = document.title.replace("Deed Domain",window.location.pathname.replace('/',''));   }
+     
     setTimeout(function() { $(".loader").css("visibility", "visible"); $('img').on('dragstart', function(evt) { return false; }); }  , 500); }
 
 initial();
-document.addEventListener('DOMContentLoaded', function() { showIntro(); if (window.location.href == "https://ocur.io/?action=about") { showDoc('land'); } });
+document.addEventListener('DOMContentLoaded', function() { if (window.location.href == "https://ocur.io/?action=about") { showDoc('land'); } });
 
 function domainFind() {
     var domainName = window.location.host; var pathName = window.location.pathname.replaceAll('/',''); var searchName = window.location.search.replaceAll('?domain=','');
@@ -285,7 +285,10 @@ function pullOpen(name) {
             	if (domains.length > 180) { 
 			if (domainFound == false) { var domainPath = getParameter(); 
 				if (domainPath != 'none') { for (let b = 0; b < domains.length; b++) { 
-					if (domains[b].core.external_url == domainPath) { showMark(b); domainFound = true; } } } else { domainFound = true; } }
+					if (domains[b].core.external_url == domainPath) { showMark(b); 
+											 
+											 document.title = document.title.replace("Ocurious",domains[b].core.external_url);  
+											 domainFound = true; } } } else { domainFound = true; } }
 			complete = domains.slice(); domainFind(); } }).catch(err => console.error(err)); }
 
 var domainFound = false;
@@ -323,13 +326,14 @@ function pullClaims(name) {
            for (let j = 0; j < holder.length; j++) { if (holder[j][0] == id) { claims.push(j); } } } } )
       .then(response => { findDeeds(); }).catch(err => console.error(err)); }
 
+var world = [];
 function pullInfo() {
-    $.get('path/wallet', function(data) { //alert(data);
+    $.get('world', function(data) { //alert(data);
         var lines = data.split(/\r?\n/); //$("#manifest-count").html(lines.length - 1);
         for (let i = 0; i < lines.length; i++) {
             var fields = lines[i].split('|');
             for (let j = 0; j < fields.length; j++) {
-                deeds.push(fields[j].replace('/mnt/deed/','')); } } } ); }
+                world.push(fields[j].replace('/mnt/deed/','')); } } } ); }
 
 var current;
 function pullDomain(domain) { $.get('deed/domain/' + domain, function(data) { showDoc(data); }); }
@@ -687,10 +691,7 @@ var meta = `
 //name=Max Hamish|image=default.png|icon=river1.png|location=56,-32|link=https://nfnth.com|description=
 `
 
-//https://docs.mapbox.com/help/tutorials/local-search-geocoding-api/
- // <input accept="image/*" type='file' id="imgInp" /> <img id="blah" src="#" alt="your image" />
-//imgInp.onchange = evt => { const [file] = imgInp.files; if (file) { blah.src = URL.createObjectURL(file)  }}
-//https://docs.mapbox.com/mapbox-gl-js/example/mapbox-gl-directions/
+//https://docs.mapbox.com/help/tutorials/local-search-geocoding-api/ //https://docs.mapbox.com/mapbox-gl-js/example/mapbox-gl-directions/
 //"//style: 'mapbox://styles/mapbox/dark-v10'"
 //https://imagecompressor.com/ //- Stryker font, dad's artitect... //- teleprompt with audio?
 // map
@@ -709,22 +710,27 @@ map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/mapbox/satelli
 map.on('load', function (event) { $("head").append('<style type="text/css">.markre{visibility:visible!important;}</style>');
     map.on('click', function(e) { coordinates = e.lngLat; if(artFlag) { addArt(); artFlag = false; } $('.fixed-action-btn').floatingActionButton('close'); }); });
 
-var satSwitch = false; var satCenter;
+var satSwitch = false; var satCenter; var currentToggle = 0; var gpsSwitch = false; var randSwitch = false;
 function mapSat() { satCenter = map.getCenter();
 	if (satSwitch) { mapStyle = 'mapbox://styles/mapbox/satellite-streets-v11'; satSwitch = false; $("#map-sat").removeClass("grey"); $("#map-sat").addClass("blue"); } else { mapStyle = 'mapbox://styles/mapbox/light-v10'; satSwitch = true; $("#map-sat").removeClass("blue"); $("#map-sat").addClass("grey");}
 	map = new mapboxgl.Map({container: 'map', style: mapStyle, center: satCenter, zoom: zoom, buffer_size: 0.2}); 
 		  clearMarkers();
-		  for (let a=0;a<currentContent.length;a++) { addMark(currentContent[a][0],currentContent[a][1],currentContent[a][2],currentContent[a][3],currentContent[a][4],currentContent[a][5],currentContent[a][6]); }
+		  for (let a=0;a<currentContent.length;a++) { addMark(currentContent[a][0],currentContent[a][1],currentContent[a][2],currentContent[a][3],currentContent[a][4],currentContent[a][5],currentContent[a][6]); } currentMarkers[currentToggle].togglePopup();
 		  
 		  }
 
 var tempCoord = [0,0];
 function mapLoc() { if(navigator.geolocation) { navigator.geolocation.getCurrentPosition(geoSuccess, geoError); } else { alert("Geolocation is not supported by this browser.");} }
-function geoSuccess(position) {tempCoord[1] = position.coords.latitude;tempCoord[0] = position.coords.longitude; fly(tempCoord);   }
+function geoSuccess(position) {tempCoord[1] = position.coords.latitude;tempCoord[0] = position.coords.longitude; fly(tempCoord); 
+			      if (gpsSwitch) { gpsSwitch = false; $("#map-gps").removeClass("grey"); $("#map-gps").addClass("blue"); } else { gpsSwitch = true; $("#map-gps").removeClass("blue"); $("#map-gps").addClass("grey");}
+			      
+			      }
 function geoError() { alert('No location'); }
 
 var selectedMark;
-function mapRand() { clearMarkers(); var r = Math.floor(Math.random() * domains.length); showMark(r); }
+function mapRand() { clearMarkers(); var r = Math.floor(Math.random() * domains.length); showMark(r);
+		   if (randSwitch) { randSwitch = false; $("#map-rand").removeClass("grey"); $("#map-rand").addClass("blue"); } else { randSwitch = true; $("#map-rand").removeClass("blue"); $("#map-rand").addClass("grey");}
+		   }
 function mapRoute() { }
 function mapAdd() { clearMarkers(); addArtifact(); }
 function mapEdit() { alert('Edit ' + domains[selectedMark].core.name); }
@@ -744,9 +750,9 @@ function mapIntro() { startUp = function() { currentMarkers[0].togglePopup();
 		    setTimeout( function () { fly(frc); }, 1000);
 			}
 function showPath(color) { addLine(color); nomadPath = requestAnimationFrame(drawLine); }
-function showLandlord() { startPoint = fr; endPoint = fr2; showPath('green'); currentMarkers[0].togglePopup(); currentMarkers[1].togglePopup(); pather = true; }
-function showArt() { addBeacon(fr3); currentMarkers[1].togglePopup(); currentMarkers[2].togglePopup(); beacon = true; }
-function showBase() { currentMarkers[2].togglePopup(); currentMarkers[0].togglePopup(); }
+function showLandlord() { startPoint = fr; endPoint = fr2; showPath('green'); currentMarkers[0].togglePopup(); currentMarkers[1].togglePopup(); pather = true; currentToggle = 1; }
+function showArt() { addBeacon(fr3); currentMarkers[1].togglePopup(); currentMarkers[2].togglePopup(); beacon = true; currentToggle = 2; }
+function showBase() { currentMarkers[2].togglePopup(); currentMarkers[0].togglePopup(); currentToggle = 0; }
 
 function clearMap() { cancelAnimationFrame(nomadPath); if (pather) { removeLine(); } if (beacon) { removeBeacon(); } pather = false; beacon = false; }
     const geojsonDraw = { "type": "FeatureCollection","features": [{"type": "Feature", "geometry": { "type": "LineString", "coordinates": [] } }] };
