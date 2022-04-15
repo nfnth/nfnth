@@ -104,9 +104,9 @@
             <ul>
 		<li><a id="map-sat" class="btn-floating blue" onclick="mapSat();"><i class="material-icons">satellite_alt</i></a></li>
 		<li><a id="map-gps" class="btn-floating grey" onclick="mapLoc();"><i class="material-icons">gps_fixed</i></a></li>
-                <li><a id="map-shuffle" class="btn-floating grey" onclick="mapRand();"><i class="material-icons">shuffle</i></a></li>
-		<li><a id="map-route" class="btn-floating grey lighten-1" onclick="mapRoute();"><i class="material-icons">route</i></a></li>
-		<li><a id="map-book" class="btn-floating grey lighten-1" onclick="mapBook();"><i class="material-icons">book</i></a></li>
+                <li><a id="map-rand" class="btn-floating grey" onclick="mapRand();"><i class="material-icons">shuffle</i></a></li>
+		<li><a id="map-route" class="btn-floating blue disabled" onclick="mapRoute();"><i class="material-icons">route</i></a></li>
+		<li><a id="map-book" class="btn-floating blue disabled" onclick="mapBook();"><i class="material-icons">book</i></a></li>
 		<li><a id="map-add" class="btn-floating green lighten-1" onclick="mapAdd();"><i class="material-icons">add</i></a></li>
 		<li><a id="map-edit" class="btn-floating yellow lighten-1" onclick="mapEdit();"><i class="material-icons">edit</i></a></li>
 		<li><a id="map-delete" class="btn-floating red lighten-1" onclick="mapDelete();"><i class="material-icons">delete</i></a></li>
@@ -710,26 +710,24 @@ map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/mapbox/satelli
 map.on('load', function (event) { $("head").append('<style type="text/css">.markre{visibility:visible!important;}</style>');
     map.on('click', function(e) { coordinates = e.lngLat; if(artFlag) { addArt(); artFlag = false; } $('.fixed-action-btn').floatingActionButton('close'); }); });
 
-var satSwitch = false; var satCenter; var currentToggle = 0; var gpsSwitch = false; var randSwitch = false;
+var satSwitch = true; var satCenter; var currentToggle = 0; var gpsSwitch = false; var randSwitch = false;
 function mapSat() { satCenter = map.getCenter();
 	if (satSwitch) { mapStyle = 'mapbox://styles/mapbox/satellite-streets-v11'; satSwitch = false; $("#map-sat").removeClass("grey"); $("#map-sat").addClass("blue"); } else { mapStyle = 'mapbox://styles/mapbox/light-v10'; satSwitch = true; $("#map-sat").removeClass("blue"); $("#map-sat").addClass("grey");}
 	map = new mapboxgl.Map({container: 'map', style: mapStyle, center: satCenter, zoom: zoom, buffer_size: 0.2}); 
 		  clearMarkers();
-		  for (let a=0;a<currentContent.length;a++) { addMark(currentContent[a][0],currentContent[a][1],currentContent[a][2],currentContent[a][3],currentContent[a][4],currentContent[a][5],currentContent[a][6]); } currentMarkers[currentToggle].togglePopup();
-		  
-		  }
+		  for (let a=0;a<currentContent.length;a++) { addMark(currentContent[a][0],currentContent[a][1],currentContent[a][2],currentContent[a][3],currentContent[a][4],currentContent[a][5],currentContent[a][6]); } currentMarkers[currentToggle].togglePopup(); }
 
 var tempCoord = [0,0];
 function mapLoc() { if(navigator.geolocation) { navigator.geolocation.getCurrentPosition(geoSuccess, geoError); } else { alert("Geolocation is not supported by this browser.");} }
 function geoSuccess(position) {tempCoord[1] = position.coords.latitude;tempCoord[0] = position.coords.longitude; fly(tempCoord); 
-			      if (gpsSwitch) { gpsSwitch = false; $("#map-gps").removeClass("grey"); $("#map-gps").addClass("blue"); } else { gpsSwitch = true; $("#map-gps").removeClass("blue"); $("#map-gps").addClass("grey");}
+			      if (gpsSwitch) { gpsSwitch = false; $("#map-gps").addClass("grey"); $("#map-gps").removeClass("blue"); } else { gpsSwitch = true; $("#map-gps").addClass("blue"); $("#map-gps").removeClass("grey");}
 			      
 			      }
 function geoError() { alert('No location'); }
 
 var selectedMark;
 function mapRand() { clearMarkers(); var r = Math.floor(Math.random() * domains.length); showMark(r);
-		   if (randSwitch) { randSwitch = false; $("#map-rand").removeClass("grey"); $("#map-rand").addClass("blue"); } else { randSwitch = true; $("#map-rand").removeClass("blue"); $("#map-rand").addClass("grey");}
+		   if (randSwitch) { randSwitch = false; $("#map-rand").addClass("grey"); $("#map-rand").removeClass("blue"); } else { randSwitch = true; $("#map-rand").addClass("blue"); $("#map-rand").removeClass("grey");}
 		   }
 function mapRoute() { }
 function mapAdd() { clearMarkers(); addArtifact(); }
