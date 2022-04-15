@@ -22,14 +22,14 @@
 		<div id="waiter" onclick="showView('news');" style="height:48px; width:48px; cursor: pointer; margin-left: 12px;"><img id="list-wait" class="image"/><img id="list-wait2" class="image2"/></div></a></div>
 
 <!-- media -->
-	<a id="doc-hide" class="screen-hide" href="#!" data-target="doc"><i class="material-icons">menu_book</i></a>
+	<a id="doc-hide" class="screen-hide" href="#!" data-target="doc"><i class="material-icons">sticky_note_2</i></a>
         <a id="map-hide" class="screen-hide" onclick="showView('map'); "><i class="material-icons">map</i></a>
 	<a id="list-hide" class="screen-hide" href="#!" data-target="domain"><i class="material-icons">list</i></a>
     	<a id="search-hide" class="screen-hide" onclick="showView('search');"><i class="material-icons">search</i></a>
 
     <!-- desktop -->
     	<ul class="hide-on-med-and-down">
-	    <li id="doc-list"><a id="docs" href="#!" data-target="doc"><i class="material-icons left">menu_book</i>LEARN<i class="material-icons right">arrow_drop_down</i></a></li>
+	    <li id="doc-list"><a id="docs" href="#!" data-target="doc"><i class="material-icons left">sticky_note_2</i>LEARN<i class="material-icons right">arrow_drop_down</i></a></li>
             <li id="map-list"><a onclick="showView('map');"><i class="material-icons left">map</i>EXPLORE</a></li>
             <li id="list-list"><a id="lists" href="#!" data-target="domain"><i class="material-icons left">list</i>CATALOG<i class="material-icons right">arrow_drop_down</i></a></li>
             <li style="height:64px;" id="search-list">
@@ -83,7 +83,7 @@
     <!-- world -->
     <div id="world" class="content loader pane blue-grey lighten-5" style="width:100%;background-color:darkgrey;">
         <img src="img/world-min.jpg" class="z-depth-2" style="width:100%; margin-bottom:-6px; " />
-        <div style="position: absolute; margin-top:240px; width: 100%; top:0; height: 0"><div style="cursor:pointer; position:absolute; color:white; font-size:24px;background-color: rgba(245, 245, 245, 0.8);padding-bottom: 48px;padding-top: 36px;text-align: center;align-items: center;justify-content: center;width: 100%;cursor:pointer;" onclick="showDoc('PLANME');"><img height="48" width="48" src="img/gear/gear2.png" /><span style="color:darkgoldenrod; font-weight:bold; font-size:28px; background-color: rgb(230, 230, 230, 0.8);border-radius: 6px;padding-left: 6px;">OCUR.IO&nbsp;</span><span style="color:goldenrod; font-size:26px; font-weight:bold;vertical-align:super;">  // *own [build] $trade </span><br/><span style="font-size:22px;color:black;">deed. domain. </span><span style="font-size:22px; color:black; font-weight:bold;">decentralized.</span></div></div></div>
+        <div style="position: absolute; margin-top:360px; width: 100%; top:0; height: 0"><div style="cursor:pointer; position:absolute; color:white; font-size:24px;background-color: rgba(245, 245, 245, 0.8);padding-bottom: 48px;padding-top: 36px;text-align: center;align-items: center;justify-content: center;width: 100%;cursor:pointer;" onclick="showDoc('PLANME');"><img height="48" width="48" src="img/gear/gear2.png" /><span style="color:darkgoldenrod; font-weight:bold; font-size:28px; background-color: rgb(230, 230, 230, 0.8);border-radius: 6px;padding-left: 6px;">OCUR.IO&nbsp;</span><span style="color:goldenrod; font-size:26px; font-weight:bold;vertical-align:super;">  // *own [build] $trade </span><br/><span style="font-size:22px;color:black;">deed. domain. </span><span style="font-size:22px; color:black; font-weight:bold;">decentralized.</span></div></div></div>
 
     <!-- list -->
     <div id="list" class="content loader pane" style="overflow-y: auto; height: 95%;">
@@ -747,9 +747,13 @@ map.on('load', function (event) { $("head").append('<style type="text/css">.mark
     map.on('click', function(e) { coordinates = e.lngLat; if(artFlag) { addArt(); artFlag = false; } $('.fixed-action-btn').floatingActionButton('close'); }); });
 
 var satSwitch = false; var satCenter;
-function mapSat() { if (introSwitch) { satCenter = fr; } else { satCenter = map.getCenter(); }
+function mapSat() { satCenter = map.getCenter();
 	if (satSwitch) { mapStyle = 'mapbox://styles/mapbox/satellite-streets-v11'; satSwitch = false; $("#map-sat").removeClass("grey"); $("#map-sat").addClass("blue"); } else { mapStyle = 'mapbox://styles/mapbox/light-v10'; satSwitch = true; $("#map-sat").removeClass("blue"); $("#map-sat").addClass("grey");}
-	map = new mapboxgl.Map({container: 'map', style: mapStyle, center: satCenter, zoom: zoom, buffer_size: 0.2});  }
+	map = new mapboxgl.Map({container: 'map', style: mapStyle, center: satCenter, zoom: zoom, buffer_size: 0.2}); 
+		  
+		  for (let a=0;a<currentContent.length;a++) { addMark(currentContent[a][0],currentContent[a][1],currentContent[a][2],currentContent[a][3],currentContent[a][4],currentContent[a][5],currentContent[a][6]); }
+		  
+		  }
 
 var tempCoord = [0,0];
 function mapLoc() { if(navigator.geolocation) { navigator.geolocation.getCurrentPosition(geoSuccess, geoError); } else { alert("Geolocation is not supported by this browser.");} }
@@ -764,15 +768,15 @@ function mapEdit() { alert('Edit ' + domains[selectedMark].core.name); }
 function mapDelete() {alert('Delete ' + domains[selectedMark].core.name); }
 	
 function addArtifact() { M.toast({html: 'Select location...'}); artFlag = true; datetimeStart(); }
-function clearMarkers() { clearMap(); for (let a=0;a<currentMarkers.length;a++){ currentMarkers[a].remove(); } currentMarkers = []; }
+function clearMarkers() { clearMap(); currentContent = []; for (let a=0;a<currentMarkers.length;a++){ currentMarkers[a].remove(); } currentMarkers = []; }
 function addArt() { clearMarkers(); addMark('a',coordinates,'snake','1','green', editContent, 0); $('.datepicker').datepicker(); //setDefaultDate: true
 		   currentMarkers[0].togglePopup(); }
-var beacon = false; var pather = false; var introMark; var nomadPath; var artifactPath; var setDomain;
+var beacon = false; var pather = false; var introMark; var nomadPath; var artifactPath; var setDomain; var currentContent = [];
 function mapIntro() { startUp = function() { currentMarkers[0].togglePopup(); 
 }; clearMarkers(); 
-    addMark('a',fr,'fire','1','indianred', baseContent, 0);
-    addMark('b',fr2,'island','1','green', landContent, 1);
-    addMark('c',fr3,'monument','1','skyblue', artContent, 2); //map.flyTo({center: base});
+    addMark('a',fr,'fire','1','indianred', baseContent, 0); currentContent.push(['a',fr,'fire','1','indianred',baseContent,0]);
+    addMark('b',fr2,'island','1','green', landContent, 1); currentContent.push(['b',fr2,'island','1','green',landContent,1]);
+    addMark('c',fr3,'monument','1','skyblue', artContent, 2); currentContent.push(['c',fr3,'monument','1','skyblue',artContent,2]);//map.flyTo({center: base});
     //currentMarkers[0].togglePopup(); 
 		    setTimeout( function () { fly(frc); }, 1000);
 			}
