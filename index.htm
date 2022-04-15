@@ -49,7 +49,7 @@
     	<li><a onclick="showDoc('ocur');"><i class="material-icons">toll</i>Trade OCUR</a></li>
 	<li><a onclick="showDoc('donation');"><i class="material-icons"><span class="material-icons-outlined">park</span></i>Make Donation</a></li>
 	<li class="divider"></li>
-    	<li><a onclick="openInNewTab('https://ocur.io/res/civ/index.htm');"><i class="material-icons">backpack</i>Play Ocurian...</a></li></ul>
+    	<li><a onclick="openInNewTab('https://ocur.io/res/civ/index.htm');"><i class="material-icons">backpack</i>Enter Ocurian...</a></li></ul>
 
 <ul id="domain" class="dropdown-content loader" style="visibility:hidden;">
 	<li><a onclick="showView('list'); showList('deed');"><i class="material-icons"><span class="material-icons-outlined">inventory_2</span></i>Artifact Registry</a></li>
@@ -57,7 +57,7 @@
 	<li class="divider"></li>
 	<li><a onclick="showView('list'); showList('open');"><i class="material-icons">sailing</i>OpenSea Collection</a></li>
     	<li class="divider"></li>
-	<li><a onclick="openInNewTab('https://ustat.us');"><i class="material-icons">token</i>OCUR Exchange...</a></li></ul>
+	<li><a onclick="openInNewTab('https://ur.land');"><i class="material-icons">token</i>UR.Land Map...</a></li></ul>
 
 <!-- panel -->
 <ul id="user-pane" class="sidenav loader blue-grey lighten-5" style="visibility:hidden;">
@@ -71,7 +71,7 @@
   	<li><div style="margin-top:0;" class="divider"></div></li>
   	<!-- <i class="material-icons left">directions</i><i class="material-icons left">picture_as_pdf</i><i class="material-icons left">calculate</i>-->
   	<li><a class="subheader">Domain Information</a></li>
-  	<li><a class="waves-effect tooltipped" data-position="left" data-tooltip="Domain Stats"><i class="material-icons">public</i><span id="myURL">Domain Stats (UR.Land)</span></a></li>
+  	<li><a class="waves-effect tooltipped" data-position="left" data-tooltip="Domain Stats"><i class="material-icons">token</i><span id="myURL">Domain Stats (UR.Land)</span></a></li>
     	<li><a class="waves-effect tooltipped" data-position="left" data-tooltip="Domain Balance (OCUR)"><i class="material-icons">token</i><span id="myURL">Domain Balance (OCUR)</span></a></li>
   	<li style="margin-top:12px; display: flex;align-items: center;justify-content: center;margin-bottom:16px;"><select id="domain-template" class="sider" onchange="domainSelect();">
         <option selected="selected">No domain selected</option><option>tactician.us (demo)</option></select></li>
@@ -750,7 +750,7 @@ var satSwitch = false; var satCenter;
 function mapSat() { satCenter = map.getCenter();
 	if (satSwitch) { mapStyle = 'mapbox://styles/mapbox/satellite-streets-v11'; satSwitch = false; $("#map-sat").removeClass("grey"); $("#map-sat").addClass("blue"); } else { mapStyle = 'mapbox://styles/mapbox/light-v10'; satSwitch = true; $("#map-sat").removeClass("blue"); $("#map-sat").addClass("grey");}
 	map = new mapboxgl.Map({container: 'map', style: mapStyle, center: satCenter, zoom: zoom, buffer_size: 0.2}); 
-		  
+		  clearMarkers();
 		  for (let a=0;a<currentContent.length;a++) { addMark(currentContent[a][0],currentContent[a][1],currentContent[a][2],currentContent[a][3],currentContent[a][4],currentContent[a][5],currentContent[a][6]); }
 		  
 		  }
@@ -768,7 +768,7 @@ function mapEdit() { alert('Edit ' + domains[selectedMark].core.name); }
 function mapDelete() {alert('Delete ' + domains[selectedMark].core.name); }
 	
 function addArtifact() { M.toast({html: 'Select location...'}); artFlag = true; datetimeStart(); }
-function clearMarkers() { clearMap(); currentContent = []; for (let a=0;a<currentMarkers.length;a++){ currentMarkers[a].remove(); } currentMarkers = []; }
+function clearMarkers() { clearMap();  for (let a=0;a<currentMarkers.length;a++){ currentMarkers[a].remove(); } currentMarkers = []; }
 function addArt() { clearMarkers(); addMark('a',coordinates,'snake','1','green', editContent, 0); $('.datepicker').datepicker(); //setDefaultDate: true
 		   currentMarkers[0].togglePopup(); }
 var beacon = false; var pather = false; var introMark; var nomadPath; var artifactPath; var setDomain; var currentContent = [];
