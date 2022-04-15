@@ -49,7 +49,7 @@
     	<li><a onclick="showDoc('ocur');"><i class="material-icons">toll</i>Trade OCUR</a></li>
 	<li><a onclick="showDoc('donation');"><i class="material-icons"><span class="material-icons-outlined">park</span></i>Make Donation</a></li>
 	<li class="divider"></li>
-    	<li><a onclick="openInNewTab('https://ocur.io/res/civ/index.htm');"><i class="material-icons">backpack</i>Enter Ocurian...</a></li></ul>
+    	<li><a onclick="openInNewTab('https://ur.land');"><i class="material-icons">backpack</i>Enter UR.Land...</a></li></ul>
 
 <ul id="domain" class="dropdown-content loader" style="visibility:hidden;">
 	<li><a onclick="showView('list'); showList('deed');"><i class="material-icons"><span class="material-icons-outlined">inventory_2</span></i>Artifact Registry</a></li>
@@ -57,7 +57,7 @@
 	<li class="divider"></li>
 	<li><a onclick="showView('list'); showList('open');"><i class="material-icons">sailing</i>OpenSea Collection</a></li>
     	<li class="divider"></li>
-	<li><a onclick="openInNewTab('https://ur.land');"><i class="material-icons">token</i>UR.Land Map...</a></li></ul>
+	<li><a onclick="openInNewTab('https://ur.land');"><i class="material-icons">token</i>UR.Land Inventory...</a></li></ul>
 
 <!-- panel -->
 <ul id="user-pane" class="sidenav loader blue-grey lighten-5" style="visibility:hidden;">
@@ -115,17 +115,9 @@
     <!-- editor -->
     <div id="editor" class="content loader pane scale-transition scale-out">
         <div style="display:flex;  align-items: center; justify-content: space-evenly; margin:12px; margin-top:24px;">
-		<div class="input-field col s6"><i class="material-icons prefix">event</i><input id="dater" type="text" class="validate"><label for="dater" >DateTime Stamp</label></div>
-                <select id="editor-template" onchange="setTemplate();" style="width:45%;max-width:240px;">
-                    <optgroup label="Basic">
-                        <option>Empty</option><option>Profile</option></optgroup>
-                        <optgroup label="Advanced"><option>Recipe</option><option>Instruction</option><option>Sequence</option><option>Graph</option></optgroup></select></div>
-        <div id="pad" class="z-depth-2" contentEditable="true" style="text-align:left; overflow-y: auto; width:90%; border:1px solid darkgrey; box-shadow: 1px 1px beige; border-radius: 8px;height: 48px;padding: 12px;margin:auto;font-size:20px;">...enter content here...</div><br/>
-        <div style="display:flex;justify-content:space-between;">
-            <div style="display:flex;  justify-content: left; margin-left:20%;  align-items:center;">
-                <div class="chip z-depth-1 waves-effect waves-blue blue-grey lighten-2" style="display:flex; color:white; width:60px; justify-content:center; margin-right:12px;" onclick="$('#fileinput').trigger('click');"><div style="display:flex;"><i class="material-icons" style="margin:auto;">attach_file</i></div></div>
-                <div class="hiddenfile"><input name="upload" type="file" id="fileinput" onchange="checkFile();" multiple="multiple"/></div>
-                <div class="chip">file1.png<i class="close material-icons">close</i></div></div></div>
+		<div class="input-field col s6"><i class="material-icons prefix">event</i><input id="dater" type="text" class="validate"><label for="dater" >DateTime Stamp</label></div></div>
+        <div style="display:flex;  align-items: center; justify-content: space-evenly; margin:12px; margin-top:24px;">
+		<div class="input-field col s6"><i class="material-icons prefix">sailing</i><input id="opener" type="text" class="validate"><label for="dater" >OpenSea ID</label></div></div>
 
         <div style="display:flex; justify-content:space-between; margin:24px;">
             <div>
@@ -262,7 +254,7 @@ var artifact = function (message, signature, hash, item, content, action) {
 // data
 var opens = [], deeds = [], domains = [], artifacts = [], claims = []; const options = {method: 'GET'};
 class Open { core = "api_object"; count = 0; } //asset.name; image_url; banner_image_url; slug;
-class Domain { core = "api_object"; name = "civi"; coord = "key.png"; img = "scene.png"; sub = "City objects."; ur = 1; place = "MI"; serial = 1; ref = "wiki.htm"; } // asset.token_id; image_url; image_thumbnail_url; image_preview_url; name; description; external_link; permalink; creator.address; name; parseFloat(asset.sell_orders[0].base_price)/1000000000000000000;
+class Domain { core = "api_object"; name = "civi"; coord = "key.png"; img = "scene.png"; sub = "City objects."; ur = 1; place = "MI"; serial = 1; ref = "wiki.htm"; owner = "me"; price = "0.1";} // asset.token_id; image_url; image_thumbnail_url; image_preview_url; name; description; external_link; permalink; creator.address; name; parseFloat(asset.sell_orders[0].base_price)/1000000000000000000;
 
 function pullOpens() { //$("#waiter").show();
     fetch('https://api.opensea.io/api/v1/collections?asset_owner=0x8a83fbbacb82030ea17179c0403b04e7bce7ba10&offset=0&limit=300', options)
@@ -294,6 +286,22 @@ function pullOpen(name) {
 
 function updateCount(name, count) { for (let i=0;i<opens.length;i++) { if (opens[i].core.slug == name) { opens[i].count = count; break;} } }
 
+function pullOwner(i) {
+	id = domains[i].core.id;
+	fetch('https://api.opensea.io/api/v1/asset/0x495f947276749ce646f68ac8c248420045cb7b5e/'+id, options)
+      .then(response => response.json()) //.then(response => assets = response)
+      .then(response => { alert(response.top_ownerships[0].owner.address); domains[i].owner = response.top_ownerships[0].owner.address;  
+			//update UI...
+			}).catch(err => console.error(err)); }
+
+function pullPrice(i) {
+	id = domains[i].core.id;
+	fetch('https://api.opensea.io/api/v1/asset/0x495f947276749ce646f68ac8c248420045cb7b5e/'+id+'/listings', options)
+      .then(response => response.json()) //.then(response => assets = response)
+      .then(response => { alert(response.listings[0].current_price); domains[i].price = response.listings[0].current_price; 
+			//update UI...
+			}).catch(err => console.error(err)); }
+	
 function pullClaims(name) {
     fetch('https://api.opensea.io/api/v1/assets?limit=10&owner='+name, options)
       .then(response => response.json())
@@ -396,7 +404,7 @@ function addOpenDeed(i) {
     setDialog("<div style='text-align:center;'><p><span style='font-weight:16px'>" + opens[i].core.name + "</span>&nbsp;&nbsp; · &nbsp;&nbsp;<a style='cursor:pointer;' onclick='openInNewTab(\"https://opensea.io/collection/" + opens[i].core.slug + "\");'>" + opens[i].core.slug + "</a></p></div><br/><div style='text-align:center;'><img style='width:80%;' src='" + opens[i].core.banner_image_url + "' /></div><br/><br/><div style='text-align:center;'><div style='display:flex;align-items:center;justify-content:center;'><img class='z-depth-2' onclick='openInNewTab(\"https://opensea.io/collection/" + opens[i].core.slug + "\");' style='cursor:pointer; margin-right:12px;display:none;' onload='adjustSize(this);' src='img/key/" + getCollect(opens[i].core.slug) + "' /><span class='amber lighten-2 badge z-depth-1' style='color:black!important;font-weight:bold;'>" + opens[i].count + " deed domain</span></div><br/><br/>" + renderMd(opens[i].core.description) + "</div><br/><br/>");}
 
 function addList(i){
-    $("#registry").append("<a class='collection-item modal-trigger' href='#modal1' onclick='addListDetail(" + i + ");'><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;'>" + domains[i].core.name + "</div><div style='display:flex; justify-content:space-between;align-items:center;'><div style='display:flex; flex-direction:column;'><div style='width:160px; ' class='z-depth-1 chip " +  getClass(domains[i].sub)  + "'><img src='img/key/" + getCollect(domains[i].core.collection.slug) + "'><div style='border-radius:12px; width:100px;background-color:rgb(245, 246, 247,0.75);color:black;font-size:16px;font-weight:bold;' class='z-depth-1'>" + padSerial(domains[i].serial) + "</div></div></div></div></div></a>"); }
+    $("#registry").append("<a class='collection-item modal-trigger' href='#modal1' onclick='pullOwner(" + i + "); pullPrice(" + i + "); addListDetail(" + i + ");'><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;'>" + domains[i].core.name + "</div><div style='display:flex; justify-content:space-between;align-items:center;'><div style='display:flex; flex-direction:column;'><div style='width:160px; ' class='z-depth-1 chip " +  getClass(domains[i].sub)  + "'><img src='img/key/" + getCollect(domains[i].core.collection.slug) + "'><div style='border-radius:12px; width:100px;background-color:rgb(245, 246, 247,0.75);color:black;font-size:16px;font-weight:bold;' class='z-depth-1'>" + padSerial(domains[i].serial) + "</div></div></div></div></div></a>"); }
 
 function addListDetail(i) {
      $("#domain-info").html('<div style="display:flex;justify-content:space-evenly;align-items:center;"><div style="display: flex;flex-direction: column;text-align: left;align-items:center;"><div style="display:flex; justify-content:center;"><img style="margin-bottom:12px;" class="materialboxed z-depth-2" width="120" height="120" src="' + domains[i].core.image_preview_url + '"/></div><div style="margin-bottom:16px;">' + domains[i].name + '&nbsp;&nbsp · &nbsp;&nbsp<a onclick="openInNewTab(\'' + domains[i].core.external_link + '\');">' + domains[i].core.name + '</a></div><br/><div style="display:flex;"><a onclick="addListDeed(' + i +');" class="waves-effect waves-light waves-blue btn blue lighten-2" ><i class="material-icons">sticky_note_2</i></a>&nbsp;&nbsp;<a onclick="showMark(\'' + i + '\'); showView(\'map\'); map.resize();" class="modal-close waves-effect waves-blue btn blue lighten-3" ><i class="material-icons">map</i></a>&nbsp;&nbsp;<a onclick="openInNewTab(\'' + domains[i].core.permalink + '\');" class="waves-effect waves-light waves-green btn green lighten-1" ><i class="material-icons right">payment</i>Purchase</a></div><br/></div></div>'); $('.materialboxed').materialbox(); }
@@ -581,7 +589,7 @@ function setResults() { searchMatch = []; searchResult = "";
         searchResult += "<div><a href='https://'" + domains[i][4] + "'>" + domains[i][4] + "</a></div><br/>"; } }
     $('#results').html(searchResult); showView('results'); }
 
-var editContent = '<div id="header-logo" style="display: flex;justify-content: center;align-items: center; display: flex;flex-direction:column;padding:12px;"><div style="border-radius:12px; padding:12px;" class="z-depth-1 input-field col s6"><img width="48" height="48" id="thumb" src="img/seal3.png" onclick="$(\'#preview\').trigger(\'click\');" /></div><div class="input-field col s6"><i class="material-icons prefix">edit</i><input id="art_label" type="text" class="validate"><label for="icon_prefix">Enter name...</label></div><div style="display:flex; width:100%;justify-content:space-evenly;"><div id="editThumb" class="chip z-depth-1 waves-effect waves-blue blue-grey lighten-2" style="display:flex; color:white; align-items:center; justify-content:center; width:60px;" ><div style="display:flex;" onclick="showView(\'editor\'); changeFocus();"><i id="press" class="material-icons">note</i></div></div><div id="editColor" class="chip z-depth-1 waves-effect waves-blue blue-grey lighten-2" style="display:flex; color:white; align-items:center; justify-content:center; width:60px; " onclick="colorStart();"><div style="display:flex;"><i id="pal" class="material-icons">palette</i></div></div><div id="editThumb" class="chip z-depth-1 waves-effect waves-blue blue-grey lighten-2" style="display:flex; color:white; align-items:center; justify-content:center; width:60px;" ><div style="display:flex;" onclick="boxStart();"><i id="press" class="material-icons">inventory_2</i></div></div><div id="editThumb" class="chip z-depth-1 waves-effect waves-blue blue-grey lighten-2" style="display:flex; color:white; align-items:center; justify-content:center; width:60px;" ><div style="display:flex;" onclick="locStart();"><i id="press" class="material-icons">place</i></div></div><div style="visibility:hidden;width:0;position:absolute;top:0;"><input type="color" oninput="setColor();" id="favcolor" name="favcolor" value="#ff0000" style="width:0px; height:0px;opacity:0;" /><input id="preview" type="file" value="" accept="image/*;capture=camera" onchange="setPreview();" /><input id="timedate" type="text" class="datepicker"></div></div></div><div style="display:flex;justify-content:center;margin-top:12px;margin-bottom:12px;"><a class="waves-effect waves-light btn green" onclick="showView(\'editor\'); changeFocus();"><i class="material-icons right">upload_file</i>Publish...</a></div></div>';
+var editContent = '<div id="header-logo" style="display: flex;justify-content: center;align-items: center; display: flex;flex-direction:column;padding:12px;"><div style="border-radius:12px; padding:12px;" class="z-depth-1 input-field col s6"><img width="48" height="48" id="thumb" src="img/seal3.png" onclick="showView(\'editor\'); changeFocus();" /></div><div id="editColor" class="chip z-depth-1 waves-effect waves-blue blue-grey lighten-2" style="display:flex; color:white; align-items:center; justify-content:center; width:60px; " onclick="colorStart();"><div style="display:flex;"><i id="pal" class="material-icons">palette</i></div></div><div id="editThumb" class="chip z-depth-1 waves-effect waves-blue blue-grey lighten-2" style="display:flex; color:white; align-items:center; justify-content:center; width:60px;" ><div style="display:flex;" onclick="boxStart();"><i id="press" class="material-icons">inventory_2</i></div></div><div id="editThumb" class="chip z-depth-1 waves-effect waves-blue blue-grey lighten-2" style="display:flex; color:white; align-items:center; justify-content:center; width:60px;" ><div style="display:flex;" onclick="locStart();"><i id="press" class="material-icons">place</i></div></div><div style="visibility:hidden;width:0;position:absolute;top:0;"><input type="color" oninput="setColor();" id="favcolor" name="favcolor" value="#ff0000" style="width:0px; height:0px;opacity:0;" /><input id="preview" type="file" value="" accept="image/*;capture=camera" onchange="setPreview();" /><input id="timedate" type="text" class="datepicker"></div></div></div><div style="display:flex;justify-content:center;margin-top:12px;margin-bottom:12px;"><a class="waves-effect waves-light btn green" onclick="showView(\'editor\'); changeFocus();"><i class="material-icons right">upload_file</i>Publish...</a></div></div>';
 
 function setColor() { $("#markera").css("background-color", document.getElementById('favcolor').value); $("#pal").html("done");
 $("#editColor").addClass("green"); $("#editColor").removeClass("blue-grey");
