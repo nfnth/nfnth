@@ -287,7 +287,7 @@ function pullOpen(name) {
 function updateCount(name, count) { for (let i=0;i<opens.length;i++) { if (opens[i].core.slug == name) { opens[i].count = count; break;} } }
 
 function pullOwner(i) {
-	id = domains[i].core.id;
+	id = domains[i].core.token_id;
 	fetch('https://api.opensea.io/api/v1/asset/0x495f947276749ce646f68ac8c248420045cb7b5e/'+id, options)
       .then(response => response.json()) //.then(response => assets = response)
       .then(response => { alert(response.top_ownerships[0].owner.address); domains[i].owner = response.top_ownerships[0].owner.address;  
@@ -295,7 +295,7 @@ function pullOwner(i) {
 			}).catch(err => console.error(err)); }
 
 function pullPrice(i) {
-	id = domains[i].core.id;
+	id = domains[i].core.token_id;
 	fetch('https://api.opensea.io/api/v1/asset/0x495f947276749ce646f68ac8c248420045cb7b5e/'+id+'/listings', options)
       .then(response => response.json()) //.then(response => assets = response)
       .then(response => { alert(response.listings[0].current_price); domains[i].price = response.listings[0].current_price; 
