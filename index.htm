@@ -282,7 +282,14 @@ function pullOpen(name) {
                     case 'ref': tmp.ref = traits[a].value.toString(); break;
                     default: break; } }
             domains.push(tmp);  }  updateCount(name, response.assets.length); } ).then(response => {
-            	if (domains.length > 180) { complete = domains.slice(); domainFind(); } }).catch(err => console.error(err)); }
+            	if (domains.length > 180) { 
+			if (domainFound == false) { var domainPath = getParameter(); 
+				if (domainPath != 'none') { for (let b = 0; b < domains.length; b++) { 
+					if (domains[b].core.external_url == domainPath) { showMark(b); domainFound = true; } } } else { domainFound = true; } }
+			complete = domains.slice(); domainFind(); } }).catch(err => console.error(err)); }
+
+var domainFound = false;
+function getParameter() { var pathArray = window.location.pathname.split('/'); switch (pathArray.length) { case 2: return pathArray[1]; break; default: return 'none'; } }
 
 function updateCount(name, count) { for (let i=0;i<opens.length;i++) { if (opens[i].core.slug == name) { opens[i].count = count; break;} } }
 
@@ -428,17 +435,10 @@ function addGrid(i) { //alert((i%4));//card-panel?
 
 	function fullScreen() {
 		var elem = document.getElementById("emDisp");
-if (elem.requestFullscreen) {
-  elem.requestFullscreen();
-} else if (elem.msRequestFullscreen) {
-  elem.msRequestFullscreen();
-} else if (elem.mozRequestFullScreen) {
-  elem.mozRequestFullScreen();
-} else if (elem.webkitRequestFullscreen) {
-  elem.webkitRequestFullscreen();
-}
-
-	}
+if (elem.requestFullscreen) { elem.requestFullscreen();
+} else if (elem.msRequestFullscreen) { elem.msRequestFullscreen();
+} else if (elem.mozRequestFullScreen) { elem.mozRequestFullScreen();
+} else if (elem.webkitRequestFullscreen) { elem.webkitRequestFullscreen(); } }
 function addContent(content) {
     $("#registry").append("<a class='collection-item' ><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;'>" + content + "</div><div><span onclick='pullDoc(\"" + content + "\");' class='waves-effect waves-light waves-blue btn blue' ><i class='material-icons'>sticky_note_2</i></span><span class='waves-effect waves-light waves-blue btn blue lighten-2' ><i class='material-icons'>map</i></span><span class='waves-effect waves-light waves-green btn green lighten-2' ><i class='material-icons'>forest</i></span></div></div></a>"); }
 
@@ -686,70 +686,6 @@ renderMt = function (text) { MathJax.texReset();
 var meta = `
 //name=Max Hamish|image=default.png|icon=river1.png|location=56,-32|link=https://nfnth.com|description=
 `
-var profileBasic = `
-## Welcome to my profile
-
-- Start coding...
-`
-var profileAdvanced = `
-...advanced...
-`
-var artifactRecipe = `
-[!MATH]|
-\begin{align}
-\dot{x} & = \sigma(y-x) \\
-\dot{y} & = \rho x - y - xz \\
-\dot{z} & = -\beta z + xy
-\end{align}
-|
-`
-var artifactSequence = `
-[!MERMAID]|
-sequenceDiagram
-    participant Alice
-    participant Bob
-    Alice->>John: Hello John, how are you?
-    loop Healthcheck
-        John->>John: Fight against hypochondria
-    end
-    Note right of John: Rational thoughts <br/>prevail!
-    John-->>Alice: Great!
-    John->>Bob: How about you?
-    Bob-->>John: Jolly good!
-|`
-var artifactGraph = `
-[!MERMAID]|
-graph TB
-    sq[Square shape] --> ci((Circle shape))
-
-    subgraph A
-        od>Odd shape]-- Two line<br/>edge comment --> ro
-        di{Diamond with <br/> line break} -.-> ro(Rounded<br>square<br>shape)
-        di==>ro2(Rounded square shape)
-    end
-
-    %% Notice that no text in shape are added here instead that is appended further down
-    e --> od3>Really long text with linebreak<br>in an Odd shape]
-
-    %% Comments after double percent signs
-    e((Inner / circle<br>and some odd <br>special characters)) --> f(,.?!+-*ز)
-
-    cyr[Cyrillic]-->cyr2((Circle shape Начало));
-
-     classDef green fill:#9f6,stroke:#333,stroke-width:2px;
-     classDef orange fill:#f96,stroke:#333,stro ke-width:4px;
-     class sq,e green
-     class di orange
-|`;
-
-function setTemplate() {
-    switch($('#editor-template').find(":selected").text()) {
-        case "Empty":$("#pad").html(""); break;
-        case "Profile":$("#pad").html(profileBasic); break;
-        case "Recipe":$("#pad").html(profileAdvanced); break;
-        case "Instruction":$("#pad").html(artifactRecipe); break;
-        case "Sequence":$("#pad").html(artifactSequence); break;
-        case "Graph":$("#pad").html(artifactGraph); break;} changeFocus(); }
 
 //https://docs.mapbox.com/help/tutorials/local-search-geocoding-api/
  // <input accept="image/*" type='file' id="imgInp" /> <img id="blah" src="#" alt="your image" />
@@ -881,21 +817,9 @@ document.getElementById('dater').value = datestamp + "@" + timestamp;
 function colorStart() { document.getElementById("favcolor").focus(); document.getElementById("favcolor").click(); }
 function timedateStart() { document.getElementById("timedate").focus(); document.getElementById("timedate").click(); }
 
-//map.addControl(
-//new MapboxDirections({
-//accessToken: mapboxgl.accessToken
-//}),
-//'top-left'
-//);
-
-//   <video width="320" height="240" controls>
-//  <source src="movie.mp4" type="video/mp4">webm...
-//  <source src="movie.ogg" type="video/ogg">
-//Your browser does not support the video tag.
-//</video>
+//map.addControl(new MapboxDirections({ accessToken: mapboxgl.accessToken }),'top-left');
 
 // add calculator...
-//	#video/audio?
 //replace youtube with html5 video?
 
    // $.get("path" , function(data) { docs = data.replaceAll('/root/nfnth/data/domain/'+domain+'/','').split('|doc'); ///root/nfnth/data/domain/dralun.com/doc|manifest|/root/nfnth/data/domain/dralun.com/doc/sample|artifact
@@ -908,7 +832,6 @@ function timedateStart() { document.getElementById("timedate").focus(); document
 //var formSample = '<div id="intro" class="row-section"><div id="console" class="row hover-base"><div class="input-field"><i class="material-icons prefix">mail</i><input type="text" id="user-email" name="user-email" class="user-input" placeholder="Enter email" /><label for="user-email">Email</label><span id="user-issue" class="helper-text" data-error="Invalid input" data-success="" >Enter Email</span></div></div><div class="modal-footer content loader"><button id="button-next" class="btn waves-effect waves-light" onclick="signer();">Sign In<i class="material-icons left">login</i></button><a href="#!" class="modal-close waves-effect waves-gray btn-flat disabled">Cancel</a></div></div>';
 
 //window.open(url, '_self');
-//function getParameter() { var pathArray = window.location.pathname.split('/'); switch (pathArray.length) { case 2: return pathArray[1]; break; } }
         </script>
 
 <style>
