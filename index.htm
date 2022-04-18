@@ -67,7 +67,7 @@
   	<li><a class="waves-effect tooltipped" data-position="left" data-tooltip="Wallet Address" onclick="if (walletAddress != '') {copyClip(walletAddress);}"><i class="material-icons">alternate_email</i><span id="myAdd">Wallet Address</span></a></li>
   	<li><a class="waves-effect tooltipped" data-position="left" data-tooltip="Ethereum Balance"><i class="material-icons">account_balance</i><span id="myETH">ETH Balance</span></a></li>
 	<li><a class="waves-effect tooltipped" data-position="left" data-tooltip="OCUR Balance"><i class="material-icons">toll</i><span id="myURL">OCUR Balance</span></a></li>
-	<li style="margin-top:16px;margin-bottom:12px;"><a id="maker" class="waves-effect waves-light blue-grey z-depth-1 lighten-3" style="width: 240px;margin: auto;border-radius: 8px;" onclick="if (walletAddress != '') {desetup(); $('#user-pane').sidenav('close');}"><i class="material-icons left"><span class="material-icons-outlined">logout</span></i>Disconnect Wallet</a></li>
+	<li style="margin-top:16px;margin-bottom:12px;"><a id="maker" class="waves-effect waves-light green z-depth-1 lighten-2" style="width: 240px;margin: auto;border-radius: 8px;" onclick="if (walletAddress != '') {desetup(); $('#user-pane').sidenav('close');}"><i class="material-icons left"><span class="material-icons-outlined">logout</span></i>Disconnect Wallet</a></li>
   	<li><div style="margin-top:0;" class="divider"></div></li>
   	<!-- <i class="material-icons left">directions</i><i class="material-icons left">picture_as_pdf</i><i class="material-icons left">calculate</i>-->
   	<li><a class="subheader">Domain Information</a></li>
@@ -75,8 +75,8 @@
     	<li><a class="waves-effect tooltipped" data-position="left" data-tooltip="OCUR Balance (Domain)"><i class="material-icons">toll</i><span id="myURL">OCUR Balance (Domain)</span></a></li>
   	<li style="margin-top:12px; display: flex;align-items: center;justify-content: center;margin-bottom:16px;"><select id="domain-template" class="sider" onchange="domainSelect();">
         <option selected="selected">No domain selected</option><option>tactician.us (demo)</option></select></li>
-	<li style="margin-top:12px;"><a id="mover" class="waves-effect waves-light blue-grey z-depth-1 lighten-3" style="width: 240px;margin: auto;border-radius: 8px;margin-bottom:12px;" onclick="if (walletAddress != '') {showView('map'); map.resize(); addArtifact(); $('#user-pane').sidenav('close');}"><i class="material-icons left">toll</i>Transfer OCUR</a></li>
-    	<li style="margin-top:12px;"><a id="poster" class="waves-effect waves-light blue-grey z-depth-1 lighten-3" style="width: 240px;margin: auto;border-radius: 8px;margin-bottom:12px;" onclick="if (walletAddress != '') {showView('map'); map.resize(); addArtifact(); $('#user-pane').sidenav('close');}"><i class="material-icons left">inventory_2</i>Post Artifact</a></li></ul>
+	<li style="margin-top:12px;"><a id="trader" class="waves-effect waves-light blue-grey z-depth-1 lighten-3" style="width: 240px;margin: auto;border-radius: 8px;margin-bottom:12px;" onclick="if (walletAddress != '') {showView('map'); map.resize(); addArtifact(); $('#user-pane').sidenav('close');}"><i class="material-icons left">toll</i>Trade OCUR</a></li>
+    	<li style="margin-top:12px;"><a id="poster" class="waves-effect waves-light blue-grey z-depth-1 lighten-3" style="width: 240px;margin: auto;border-radius: 8px;margin-bottom:12px;" onclick="if (walletAddress != '') {showView('map'); map.resize(); addArtifact(); $('#user-pane').sidenav('close');}"><i class="material-icons left">inventory_2</i>Build Artifact</a></li></ul>
 
 <!-- view -->
 <div id="home" style="text-align:center;visibility:hidden; width:100%; z-index:1; padding-top: 54px;" class="content loader print-help">
@@ -199,7 +199,7 @@ var setup = async function () {
         $.get("api/"+walletAddress, async function(data) { alert(data);
             var fields = data.split('|'); var ether = JSON.parse(fields[0]).result; var urler = fields[1];
             $("#myETH").html(ether); $("#myURL").html(urler);
-            $("#maker").removeClass("blue-grey");  $("#maker").removeClass("darken-3"); $("#maker").addClass("green");
+            $("#maker").removeClass("disabled"); 
             //$("#wallet-setup").html(disconnectButton); $('#wallet-setup').off('click'); $("#wallet-setup").click(desetup);
             //$("#maker").html("<a class='waves-effect waves-light green z-depth-1' style='width: 240px;margin: auto;border-radius: 8px;' onclick='if (walletAddress != \"\") {showView(\"map\"); map.resize(); addArtifact(); $(\"#user-pane\").sidenav(\"close\");} else { M.toast({html: \"No wallet connected.\"}); }'><i class='material-icons left'>upload_file</i>Create Deed</a>");
             //$("#maker").removeClass("blue-grey");  $("#maker").removeClass("darken-3"); $("#maker").addClass("green");
@@ -209,7 +209,7 @@ var setup = async function () {
 function desetup() {
     $("#myAdd").html('My Wallet Address'); $("#wallet-area").css("background-color","");$("#wallet-icon").css("color","white");
     $("#myETH").html('My ETH Balance'); $("#myURL").html('My URL Balance');
-    $("#maker").addClass("blue-grey");  $("#maker").addClass("darken-3"); $("#maker").removeClass("green");
+    $("#maker").addClass("disabled"); 
     emptyDeeds(); domainSelect(); }
 
 function findDeeds() { //getExchange();
@@ -226,10 +226,12 @@ function emptyDeeds() {
 function domainSelect() { var d = document.getElementById("domain-template"); var dt = d.options[d.selectedIndex].text;
     if (dt == 'No domain selected') {
 	    $("#map-shuffle").show(); $("#map-route").show(); $("#map-book").show(); $("#map-add").hide(); $("#map-edit").hide(); $("#map-delete").hide();
-        $("#poster").addClass("blue-grey");  $("#poster").addClass("darken-3"); $("#poster").removeClass("green"); }
+        $("#poster").addClass("blue-grey");  $("#poster").addClass("darken-3"); $("#poster").removeClass("green"); 
+    $("#trader").addClass("blue-grey");  $("#trader").addClass("darken-3"); $("#trader").removeClass("green");}
     else {
 	    $("#map-shuffle").hide(); $("#map-route").hide(); $("#map-book").hide(); $("#map-add").show(); $("#map-edit").show(); $("#map-delete").show();
-        $("#poster").removeClass("blue-grey");  $("#poster").removeClass("darken-3"); $("#poster").addClass("green"); } }
+        $("#poster").removeClass("blue-grey");  $("#poster").removeClass("darken-3"); $("#poster").addClass("green");
+     $("#trader").removeClass("blue-grey");  $("#trader").removeClass("darken-3"); $("#trader").addClass("green");} }
 var info;
 var signer = async function (item, content, action) {
     var messager = '{"domain":{"name":"UR.Land"},"message":{"contents":"Hello, key value for UR.Land"},"primaryType":"Mail","types":{"EIP712Domain":[{"name":"name","type":"string"}],"Mail":[{"name":"contents","type":"string"}]}}';
@@ -689,11 +691,9 @@ function mapSat() { satCenter = map.getCenter();
 		  for (let a=0;a<currentContent.length;a++) { addMark(currentContent[a][0],currentContent[a][1],currentContent[a][2],currentContent[a][3],currentContent[a][4],currentContent[a][5],currentContent[a][6]); } currentMarkers[currentToggle].togglePopup(); }
 
 var tempCoord = [0,0];
-function mapLoc() { if(navigator.geolocation) { navigator.geolocation.getCurrentPosition(geoSuccess, geoError); } else { alert("Geolocation is not supported by this browser.");} }
-function geoSuccess(position) {tempCoord[1] = position.coords.latitude;tempCoord[0] = position.coords.longitude;  
-			      if (gpsSwitch) { clearMap(); gpsSwitch = false; $("#map-gps").addClass("grey"); $("#map-gps").removeClass("blue"); } else { gpsSwitch = true; $("#map-gps").addClass("blue"); $("#map-gps").removeClass("grey"); setZoom = 8; fly(tempCoord); addBeacon(tempCoord); beacon = true; }
-			      
-			      }
+function mapLoc() { if (gpsSwitch) { clearMap(); gpsSwitch = false; $("#map-gps").addClass("grey"); $("#map-gps").removeClass("blue"); } 
+	else { if(navigator.geolocation) { navigator.geolocation.getCurrentPosition(geoSuccess, geoError); } else { alert("Geolocation is not supported by this browser.");} } }
+function geoSuccess(position) {tempCoord[1] = position.coords.latitude;tempCoord[0] = position.coords.longitude; gpsSwitch = true; $("#map-gps").addClass("blue"); $("#map-gps").removeClass("grey"); setZoom = 8; fly(tempCoord); addBeacon(tempCoord); beacon = true; } }
 function geoError() { alert('No location'); }
 
 var selectedMark;
