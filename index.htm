@@ -39,7 +39,7 @@
 
     <!-- user -->
         <div id="wallet-area" class="z-depth-1 blue-grey lighten-2" style="display:flex;height:101%;" onclick="setup(); $('#user-pane').sidenav('open');">
-            <ul><li id="setting-wallet"><a id="wallet-icon" href="#" style="margin: 0;justify-items: center;display: flex;align-items: center;" ><i class="material-icons">account_balance_wallet</i><span class="mobile-hide">&nbsp;CONNECT</span></a></li></ul></div></div></nav>
+            <ul><li id="setting-wallet" onclick="datetimeStart();"><a id="wallet-icon" href="#" style="margin: 0;justify-items: center;display: flex;align-items: center;" ><i class="material-icons">account_balance_wallet</i><span class="mobile-hide">&nbsp;CONNECT</span></a></li></ul></div></div></nav>
 
 <!-- dropdown -->
 <ul id="doc" class="dropdown-content loader" style="visibility:hidden;">
@@ -52,8 +52,8 @@
 	<li><a onclick="openInNewTab('https://github.com/nfnth');"><i class="material-icons">home</i>About ocur.io</a></li></ul>
 
 <ul id="domain" class="dropdown-content loader" style="visibility:hidden;">
-	<li><a onclick="showView('list'); showList('deed');"><i class="material-icons"><span class="material-icons-outlined">inventory_2</span></i>Artifact Registry</a></li>
 	<li><a onclick="reset = true; showView('list'); showList('domain');"><i class="material-icons"><span class="material-icons-outlined">landscape</span></i>Domain Manifest</a></li>
+	<li><a onclick="showView('list'); showList('deed');"><i class="material-icons"><span class="material-icons-outlined">inventory_2</span></i>Artifact Registry</a></li>
 	<li class="divider"></li>
 	<li><a onclick="openInNewTab('https://ur.land');"><i class="material-icons">backpack</i>UR.Land Items</a></li>
 	<li class="divider"></li>
@@ -61,7 +61,7 @@
 
 <!-- panel -->
 <ul id="user-pane" class="sidenav loader blue-grey lighten-5" style="visibility:hidden;">
-	<li><div class="user-view z-depth-1" style="background-color: #eaf2f7;display: flex;margin: auto; padding: 0;align-items: center; padding-left:12px;"><span style="cursor: pointer;margin:auto;" onclick="openInNewTab('https://github.com/nfnth/os'); $('#user-pane').sidenav('close');" class="new badge green darken-2" data-badge-caption="ocurOS | v1.02"></span>
+	<li><div class="user-view z-depth-1" style="background-color: #eaf2f7;display: flex;margin: auto; padding: 0;align-items: center; padding-left:12px;"><span id="ocuros" style="cursor: pointer;margin:auto;" onclick="openInNewTab('https://github.com/nfnth/os'); $('#user-pane').sidenav('close');" class="new badge green darken-2" data-badge-caption=" | ocurOS"></span>
         <img id="user-pic" style="height: 72px;margin-left:18px; padding: 12px;" src="img/seal3.png" onclick="openInNewTab('https://github.com/nfnth/nfnth'); $('#user-pane').sidenav('close');"/></div></li>
     <li><a class="subheader">Wallet Information</a></li>
   	<li><a class="waves-effect tooltipped" data-position="left" data-tooltip="Wallet Address" onclick="if (walletAddress != '') {copyClip(walletAddress);}"><i class="material-icons">alternate_email</i><span id="myAdd">Wallet Address</span></a></li>
@@ -310,14 +310,12 @@ function pullPrice(i) {
 	fetch('https://api.opensea.io/api/v1/asset/0x495f947276749ce646f68ac8c248420045cb7b5e/'+id+'/listings', options)
       .then(response => response.json()) //.then(response => assets = response)
       .then(response => { if (typeof response.listings[0] !== 'undefined') { domains[i].price = parseFloat(response.listings[0].current_price)/1000000000000000000; } else {domains[i].price = "Unlisted" } updateInfo(i);
-			
 			}).catch(err => console.error(err)); }
 
 function updateInfo(i) { 
 	$("#d"+i).html(domains[i].price); if (domains[i].price != "Unlisted") { $("#d"+i).html($("#d"+i).html() + " ETH"); }
-	
-	$("#o"+i).html(addWallet(domains[i].owner));
-}
+	$("#o"+i).html(addWallet(domains[i].owner)); }
+
 function pullClaims(name) {
     fetch('https://api.opensea.io/api/v1/assets?limit=10&owner='+name, options)
       .then(response => response.json())
@@ -432,7 +430,7 @@ function addListDeed(i) {
     setDialog("<div style='text-align:center;'><p><span style='font-weight:16px'>" + domains[i].name + "</span>&nbsp;&nbsp; · &nbsp;&nbsp;<a onclick='openInNewTab(\"" + domains[i].core.external_link + "\");'>" + domains[i].core.name + "</a></p></div><br/><div id='emDisp' style='text-align:center;'>" + embedDisplay + "</div><br/><br/><p>" + domains[i].core.description + "</p><a onclick='openInNewTab(\"" + domains[i].ref + "\");'>Read more...</a><br/><br/><div style='text-align:center;'><img style='max-width:80%;' src='" + domains[i].img + "' /></div><br/><br/>" + "<div style='display:flex; justify-content:space-evenly;align-items:center;'><div style='display:flex; align-items: center;margin-top: 12px;margin-top: 12px;margin-right: 12px;'><br/><div onclick='showDoc(\"key/collection\");' style='text-align:center; width:160px; ' class='z-depth-1 chip " + getClass(domains[i].core.collection.slug) + "'><img src='img/key/" + getCollect(domains[i].core.collection.slug) + "'><div style='background-color:rgb(245, 246, 247,0.75); border-radius:12px; width:100px;color:black;font-size:16px;'>" + domains[i].serial + "</div></div><div><img class='modal-close' onclick='showDoc(\"key/state\");' style='cursor:pointer; width:48px; height:48px;' src='img/flag/" + domains[i].place + ".png' /></div></div></div></div>" + "<br/><br/>" + "UR Value/Rate = " + domains[i].ur);  }
 
 function addGrid(i) { //alert((i%4));//card-panel?
-    return '<div style="width:360px;height:360px;margin:24px; display:flex;flex-direction:column;justify-content:space-between;" class="card sticky-action hoverable"><div class="card-image waves-effect waves-block waves-light z-depth-3"><img style="max-width:360px; max-height:300px;" class="activator" src="' + domains[i].core.image_preview_url + '"></div><div class="card-content"><span class="card-title activator grey-text text-darken-4">' + domains[i].core.name + '<i class="material-icons right">more_vert</i></span></div><div class="card-reveal"><span class="card-title grey-text text-darken-4">' + domains[i].name + '<i class="material-icons right">close</i></span><p>Here is some more information about this product that is only revealed once clicked on.</p></div></div>';
+    return '<div style="width:360px;height:360px;margin:24px; display:flex;flex-direction:column;justify-content:space-between;" class="card sticky-action hoverable"><div class="card-image waves-effect waves-block waves-light z-depth-3"><img style="max-width:360px; max-height:300px;" class="activator" src="' + domains[i].core.image_preview_url + '"></div><div class="card-content"><span class="card-title activator grey-text text-darken-4">' + domains[i].core.name + '<i class="material-icons right">more_vert</i></span></div><div class="card-reveal"><span class="card-title grey-text text-darken-4">' + domains[i].name + '<i class="material-icons right">close</i></span>&nbsp;&nbsp;<div id="o'+ i + '"></div></div></div>';
 	
 	//alert(((i+1)%4));
 	//if (((i+1)%4) == 0) { $("#registry").append('</div>'); }
@@ -613,7 +611,7 @@ function setResults() { searchMatch = []; searchResult = "";
         searchResult += "<div><a href='https://'" + domains[i][4] + "'>" + domains[i][4] + "</a></div><br/>"; } }
     $('#results').html(searchResult); showView('results'); }
 
-var editContent = '<div id="header-logo" style="display: flex;justify-content: center;align-items: center; display: flex;flex-direction:column;padding:12px;"><div style="border-radius:12px; padding:12px;" class="z-depth-1 input-field col s6"><img width="48" height="48" id="thumb" src="img/seal3.png" onclick="showView(\'editor\'); changeFocus();" /></div><div id="editColor" class="chip z-depth-1 waves-effect waves-blue blue-grey lighten-2" style="display:flex; color:white; align-items:center; justify-content:center; width:60px; " onclick="colorStart();"><div style="display:flex;"><i id="pal" class="material-icons">palette</i></div></div><div id="editThumb" class="chip z-depth-1 waves-effect waves-blue blue-grey lighten-2" style="display:flex; color:white; align-items:center; justify-content:center; width:60px;" ><div style="display:flex;" onclick="boxStart();"><i id="press" class="material-icons">inventory_2</i></div></div><div id="editThumb" class="chip z-depth-1 waves-effect waves-blue blue-grey lighten-2" style="display:flex; color:white; align-items:center; justify-content:center; width:60px;" ><div style="display:flex;" onclick="locStart();"><i id="press" class="material-icons">place</i></div></div><div style="visibility:hidden;width:0;position:absolute;top:0;"><input type="color" oninput="setColor();" id="favcolor" name="favcolor" value="#ff0000" style="width:0px; height:0px;opacity:0;" /><input id="preview" type="file" value="" accept="image/*;capture=camera" onchange="setPreview();" /><input id="timedate" type="text" class="datepicker"></div></div></div><div style="display:flex;justify-content:center;margin-top:12px;margin-bottom:12px;"><a class="waves-effect waves-light btn green" onclick="showView(\'editor\'); changeFocus();"><i class="material-icons right">upload_file</i>Publish...</a></div></div>';
+var editContent = '<div id="header-logo" style="display: flex;justify-content: center;align-items: center; display: flex;flex-direction:column;padding:12px;"><div style="border-radius:12px; padding:12px;" class="z-depth-1 input-field col s6"><img width="48" height="48" id="thumb" src="img/seal3.png" onclick="showView(\'editor\'); changeFocus();" /></div><div id="editColor" class="chip z-depth-1 waves-effect waves-blue blue-grey lighten-2" style="display:flex; color:white; align-items:center; justify-content:center; width:60px; " onclick="colorStart();"><div style="display:flex;"><i id="pal" class="material-icons">palette</i></div></div><div style="visibility:hidden;width:0;position:absolute;top:0;"><input type="color" oninput="setColor();" id="favcolor" name="favcolor" value="#ff0000" style="width:0px; height:0px;opacity:0;" /></div></div></div><div style="display:flex;justify-content:center;margin-top:12px;margin-bottom:12px;"><a class="waves-effect waves-light btn green" onclick="showView(\'editor\'); changeFocus();"><i class="material-icons left">upload_file</i>Publish...</a></div></div>';
 
 function setColor() { $("#markera").css("background-color", document.getElementById('favcolor').value); $("#pal").html("done");
 $("#editColor").addClass("green"); $("#editColor").removeClass("blue-grey");
@@ -812,7 +810,9 @@ function datetimeStart() {
     var yyyy = current.getFullYear(), MM = current.getMonth() + 1; if (MM < 10) { MM = "0" + MM.toString(); }
     var dd = current.getDate(), hh = current.getHours(), mm = current.getMinutes(), ss = current.getSeconds();
     var datestamp = yyyy + "." + MM + "." + dd; var timestamp = hh + ":" + mm + ":" + ss; // calendar?
-document.getElementById('dater').value = datestamp + "@" + timestamp;
+//document.getElementById('dater').value = datestamp + "@" + timestamp;
+	$('#ocuros').data('data-badge-caption', datestamp + "@" + timestamp);
+
     //if (dtSet) { dtSet = false; M.toast({html: 'Date and Time removed.'}); $("#dtMark").css('background-color', 'white'); }
     //else { dtSet = true; M.toast({html: 'Date and Time set: ' + datestamp + " @ " + timestamp});  $("#dtMark").css('background-color', 'green'); }
 }
