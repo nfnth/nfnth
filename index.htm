@@ -88,10 +88,10 @@
 
     <!-- list -->
     <div id="list" class="content loader pane" style="overflow-y: auto; height: 95%;">
-        <div class="z-depth-1" style="display:flex; justify-content: space-evenly; padding-top: 24px; padding-bottom:12px; margin-bottom: -6px; align-items:center;">
+        <div id="list-filter" class="z-depth-1" style="display:flex; justify-content: space-evenly; padding-top: 24px; padding-bottom:12px; margin-bottom: -6px; align-items:center;">
         <div class="switch">
             <label style="display:flex; align-items:center;"><i class="material-icons">view_list</i>
-            <input id="lister" type="checkbox" onclick="changeView(); checked"><span class="lever"></span><i class="material-icons">grid_view</i></label></div>
+            <input id="lister" type="checkbox" onclick="changeView();"><span class="lever"></span><i class="material-icons">grid_view</i></label></div>
             <div><a class="waves-effect waves-light waves-green btn green" onclick="showDoc('filter'); setFilter();"><i class="material-icons left">filter_list</i>Filter/Sort</a></div></div>
         <div id="registry" class="collection" style="overflow:auto;"></div></div>
 
@@ -353,13 +353,13 @@ function showView(view) {  $('.pane').hide(); $('#'+view).show();
 var complete; var reset = false; var first = true;
 function showList(area) { $("#registry").html(''); $("#registry").hide(); if (first) { complete = domains; first = false; }
     switch (area) {
-        case "deed": sortSet = [area,deeds,0,18,16]; for (let i=0;i<deeds.length;i++) { addContent(deeds[i]); } break;
-	    case "grid": sortSet = [area,domains,0,18,16]; var snip; var carder = 4; if (screen.width < 480) { carder = 1; } for (let i=0;i<domains.length;i++) { if ((i%carder) == 0) { snip = '<div style="display:flex;width:100%;justify-content:center;">'; } snip += addGrid(i); if (((i+1)%carder) == 0) { snip += '</div>'; $("#registry").append(snip); } } adjustSort(true); break;
-        case "domain": if (reset) { domains = complete; reset = false; }
+        case "deed":  sortSet = [area,deeds,0,18,16]; for (let i=0;i<deeds.length;i++) { addContent(deeds[i]); } break;
+	    case "grid": $("#list-filter").show(); sortSet = [area,domains,0,18,16]; var snip; var carder = 4; if (screen.width < 480) { carder = 1; } for (let i=0;i<domains.length;i++) { if ((i%carder) == 0) { snip = '<div style="display:flex;width:100%;justify-content:center;">'; } snip += addGrid(i); if (((i+1)%carder) == 0) { snip += '</div>'; $("#registry").append(snip); } } adjustSort(true); break;
+        case "domain": $("#list-filter").show(); if (reset) { domains = complete; reset = false; }
 		    if (gridSelect) { showList('grid'); break; }
 		    sortSet = [area,domains,0,18,16]; for (let i=0;i<domains.length;i++) { addList(i); } adjustSort(true); break;
         case "filter": sortSet = [area,domains,0,18,16]; domains = holder; for (let i=0;i<domains.length;i++) { addList(i); } adjustSort(true); break;
-        case "open": sortSet = [area,opens,0,18,16]; for (let i=0;i<opens.length;i++) { addOpen(i); } adjustSort(false); break; }
+        case "open": $("#list-filter").hide(); sortSet = [area,opens,0,18,16]; for (let i=0;i<opens.length;i++) { addOpen(i); } adjustSort(false); break; }
     //$("#registry").css("height",height + "px");
     $("#registry").show(); $('img').on('dragstart', function(evt) { return false; }); }
 
