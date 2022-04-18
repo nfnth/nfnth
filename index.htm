@@ -71,12 +71,12 @@
   	<li><div style="margin-top:0;" class="divider"></div></li>
   	<!-- <i class="material-icons left">directions</i><i class="material-icons left">picture_as_pdf</i><i class="material-icons left">calculate</i>-->
   	<li><a class="subheader">Domain Information</a></li>
-  	<li><a class="waves-effect tooltipped" data-position="left" data-tooltip="Domain Stats"><i class="material-icons">token</i><span id="myURL">Domain Stats (UR.Land)</span></a></li>
-    	<li><a class="waves-effect tooltipped" data-position="left" data-tooltip="Domain Balance (OCUR)"><i class="material-icons">token</i><span id="myURL">Domain Balance (OCUR)</span></a></li>
+  	<li><a class="waves-effect tooltipped" data-position="left" data-tooltip="UR.Land Status"><i class="material-icons">token</i><span id="myURL">Status (UR.Land)</span></a></li>
+    	<li><a class="waves-effect tooltipped" data-position="left" data-tooltip="OCUR Balance (Domain)"><i class="material-icons">toll</i><span id="myURL">Domain Balance (OCUR)</span></a></li>
   	<li style="margin-top:12px; display: flex;align-items: center;justify-content: center;margin-bottom:16px;"><select id="domain-template" class="sider" onchange="domainSelect();">
         <option selected="selected">No domain selected</option><option>tactician.us (demo)</option></select></li>
-    	<li style="margin-top:12px;"><a id="poster" class="waves-effect waves-light blue-grey z-depth-1 lighten-3" style="width: 240px;margin: auto;border-radius: 8px;margin-bottom:12px;" onclick="if (walletAddress != '') {showView('map'); map.resize(); addArtifact(); $('#user-pane').sidenav('close');}"><i class="material-icons left">file_upload</i>Post Artifact</a></li>
-	<li style="margin-top:12px;"><a id="poster" class="waves-effect waves-light blue-grey z-depth-1 lighten-3" style="width: 240px;margin: auto;border-radius: 8px;margin-bottom:12px;" onclick="if (walletAddress != '') {showView('map'); map.resize(); addArtifact(); $('#user-pane').sidenav('close');}"><i class="material-icons left">file_upload</i>Transfer OCUR</a></li></ul>
+    	<li style="margin-top:12px;"><a id="poster" class="waves-effect waves-light blue-grey z-depth-1 lighten-3" style="width: 240px;margin: auto;border-radius: 8px;margin-bottom:12px;" onclick="if (walletAddress != '') {showView('map'); map.resize(); addArtifact(); $('#user-pane').sidenav('close');}"><i class="material-icons left">inventory_2</i>Post Artifact</a></li>
+	<li style="margin-top:12px;"><a id="mover" class="waves-effect waves-light blue-grey z-depth-1 lighten-3" style="width: 240px;margin: auto;border-radius: 8px;margin-bottom:12px;" onclick="if (walletAddress != '') {showView('map'); map.resize(); addArtifact(); $('#user-pane').sidenav('close');}"><i class="material-icons left">business_center</i>Transfer OCUR</a></li></ul>
 
 <!-- view -->
 <div id="home" style="text-align:center;visibility:hidden; width:100%; z-index:1; padding-top: 54px;" class="content loader print-help">
@@ -142,16 +142,9 @@
         <div id="dialog-inner2" class="dialog-inner print-help hide-scrollbar" style="overflow:auto;"><div><button class="action" data-dialog-close>Close</button></div></div></div></div>
 
 <script>
-
 var gridSelect = false;
 function changeView() { gridSelect = document.getElementById('lister').checked;
-	if (document.getElementById('lister').checked) { showView('list'); showList('grid'); } else { showView('list'); showList('domain'); }
-}
-function checkFile() {
-var files = document.getElementById("fileinput");
-for (var a = 0; a < files.files.length; a++) { alert(files.files[a].name); }
-//document.getElementById("fileinput").files[0];
-}
+	if (document.getElementById('lister').checked) { showView('list'); showList('grid'); } else { showView('list'); showList('domain'); } }
 
 function openInNewTab(url) { window.open(url, '_blank').focus(); } //window.location.href = url;
 
@@ -341,33 +334,14 @@ pullInfo(); pullOpens(); //pullAsset(asset.token_id);
 
 var mapSwitch = true; var introSwitch = true;
 
-function hideView() { $('.modal').modal('close');   window.scrollTo(0, 0); //if (openDoc) { openDoc = false; $('#news').show(); }
-	//$("#doc-list").css("background-color","");$("#doc-list").children('a').eq(0).css("color","");
-	//$("#box-list").css("background-color","");$("#box-list").children('a').eq(0).css("color","");
-	//$("#map-list").css("background-color","");$("#map-list").children('a').eq(0).css("color","");
-	//$("#list-list").css("background-color","");$("#list-list").children('a').eq(0).css("color","");
-	//$("#search-list").css("background-color","");$("#search-list").children('a').eq(0).css("color","");
-
-	//$("#doc-hide").css("background-color","");$("#doc-hide").css("color","");
-	//$("#box-hide").css("background-color","");$("#box-hide").css("color","");
-	//$("#map-hide").css("background-color","");$("#map-hide").css("color","");
-	//$("#list-hide").css("background-color","");$("#list-hide").css("color","");
-	//$("#search-hide").css("background-color","");$("#search-hide").css("color","");  
-		    }
+function hideView() { $('.modal').modal('close');   window.scrollTo(0, 0); }
 function showView(view) {  $('.pane').hide(); $('#'+view).show();
 
     switch (view) {
         case 'editor': $("#editor").addClass("scale-in"); break;
-        case 'list': //$("#list-list").css("background-color","darkgrey");$("#list-list").css("color","darkgoldenrod!important");
-        //$("#list-hide").css("color","darkgoldenrod!important"); 
-		    break;
+        case 'list': break;
         case 'news': $("#stamper").show(); $("#world").show(); introSwitch = true; break;
         case 'map': $("#actions").show(); map.resize(); if (introSwitch) { mapIntro(); introSwitch = false; }
-		    
-		    //$("#map-list").css("background-color","darkgrey"); $("#map-list").children('a').eq(0).css("color","darkgoldenrod");
-       // $("#map-hide").css("color","darkgoldenrod!important");
-            //if (mapSwitch) { currentMarkers[0].togglePopup(); mapSwitch = false; }
-
         break; } }
 
 var complete; var reset = false; var first = true;
@@ -822,8 +796,7 @@ function timedateStart() { document.getElementById("timedate").focus(); document
 
 //map.addControl(new MapboxDirections({ accessToken: mapboxgl.accessToken }),'top-left');
 
-// add calculator...
-//replace youtube with html5 video?
+// add calculator... //replace youtube with html5 video?
 
    // $.get("path" , function(data) { docs = data.replaceAll('/root/nfnth/data/domain/'+domain+'/','').split('|doc'); ///root/nfnth/data/domain/dralun.com/doc|manifest|/root/nfnth/data/domain/dralun.com/doc/sample|artifact
     //var lines = data.split(/\r?\n/); //for (let i = 0; i < lines.length; i++) { // var fields = lines[i].split('|');
