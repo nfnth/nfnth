@@ -329,7 +329,13 @@ function pullInfo() {
 
 var current;
 function pullDomain(domain) { $.get('deed/domain/' + domain, function(data) { showDoc(data); }); }
+   // $.get("path" , function(data) { docs = data.replaceAll('/root/nfnth/data/domain/'+domain+'/','').split('|doc'); ///root/nfnth/data/domain/dralun.com/doc|manifest|/root/nfnth/data/domain/dralun.com/doc/sample|artifact
+    //var lines = data.split(/\r?\n/); //for (let i = 0; i < lines.length; i++) { // var fields = lines[i].split('|');
 
+   // $.get("domain/" + domain + "/manifest", function(data) { domainJSON = JSON.parse(data); status = JSON.parse(data).status; });
+      //manifest.push(fields);
+	
+	
 pullInfo(); pullOpens(); //pullAsset(asset.token_id);
 
 var mapSwitch = true; var introSwitch = true;
@@ -396,7 +402,7 @@ function addList(i){
     $("#registry").append("<a class='collection-item modal-trigger' href='#modal1' onclick='pullOwner(" + i + "); pullPrice(" + i + "); addListDetail(" + i + ");'><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;'>" + domains[i].core.name + "</div><div style='display:flex; justify-content:space-between;align-items:center;'><div style='display:flex; flex-direction:column;'><div style='display:flex;'><div class='z-depth-1 chip " +  getClass(domains[i].sub)  + "'>" + domains[i].sub + "</div><div style='width:120px; ' class='z-depth-1 chip'><img src='img/key/" + getCollect(domains[i].core.collection.slug) + "'><div style='border-radius:12px; width:100px;background-color:rgb(245, 246, 247,0.75);color:black;font-size:16px;font-weight:bold;' class='z-depth-1'>" + padSerial(domains[i].serial) + "</div></div></div></div></div></div></a>"); }
 
 function addListDetail(i) {
-     $("#domain-info").html('<div style="display:flex;justify-content:space-evenly;align-items:center;"><div style="display: flex;flex-direction: column;text-align: left;align-items:center;"><div style="display:flex; justify-content:center;"><img style="margin-bottom:12px;" class="materialboxed z-depth-2" width="140" height="140" src="' + domains[i].core.image_preview_url + '"/>&nbsp;&nbsp;<div id="o'+ i + '"></div></div><div style="margin-bottom:16px;">' + domains[i].name + '&nbsp;&nbsp · &nbsp;&nbsp<a onclick="openInNewTab(\'' + domains[i].core.external_link + '\');">' + domains[i].core.name + '</a></div><br/><div style="display:flex;"><a onclick="addListDeed(' + i +');" class="waves-effect waves-light waves-blue btn blue lighten-2" ><i class="material-icons">sticky_note_2</i></a>&nbsp;&nbsp;<a onclick="showMark(\'' + i + '\'); showView(\'map\'); map.resize();" class="modal-close waves-effect waves-blue btn blue lighten-3" ><i class="material-icons">map</i></a>&nbsp;&nbsp;<a onclick="showMark(\'' + i + '\'); showView(\'map\'); map.resize();" class="modal-close waves-effect waves-green btn green lighten-2" ><i class="material-icons">inventory_2</i></a>&nbsp;&nbsp;<a onclick="openInNewTab(\'' + domains[i].core.permalink + '\');" class="waves-effect waves-light waves-green btn green lighten-3" ><i class="material-icons right">account_balance_wallet</i><span id="d' + i + '"></span></a></div><br/></div></div>'); $('.materialboxed').materialbox(); }
+     $("#domain-info").html('<div style="display:flex;justify-content:space-evenly;align-items:center;"><div style="display: flex;flex-direction: column;text-align: left;align-items:center;"><div style="display:flex; justify-content:center;"><img style="margin-bottom:12px;" class="materialboxed z-depth-2" width="140" height="140" src="' + domains[i].core.image_preview_url + '"/>&nbsp;&nbsp;<div style="cursor:pointer;" id="o'+ i + '"></div></div><div style="margin-bottom:16px;">' + domains[i].name + '&nbsp;&nbsp · &nbsp;&nbsp<a onclick="openInNewTab(\'' + domains[i].core.external_link + '\');">' + domains[i].core.name + '</a></div><br/><div style="display:flex;"><a onclick="addListDeed(' + i +');" class="waves-effect waves-light waves-blue btn blue lighten-2" ><i class="material-icons">sticky_note_2</i></a>&nbsp;&nbsp;<a onclick="showMark(\'' + i + '\'); showView(\'map\'); map.resize();" class="modal-close waves-effect waves-blue btn blue lighten-3" ><i class="material-icons">map</i></a>&nbsp;&nbsp;<a onclick="showMark(\'' + i + '\'); showView(\'map\'); map.resize();" class="modal-close waves-effect waves-green btn green lighten-3" ><i class="material-icons">inventory_2</i></a>&nbsp;&nbsp;<a onclick="openInNewTab(\'' + domains[i].core.permalink + '\');" class="waves-effect waves-light waves-green btn green lighten-2" ><i class="material-icons right">account_balance_wallet</i><span id="d' + i + '"></span></a></div><br/></div></div>'); $('.materialboxed').materialbox(); }
 
 function addListDeed(i) {
     $("#somedialog2").css("z-index",1004); var embedDisplay = "";
@@ -404,7 +410,7 @@ function addListDeed(i) {
     setDialog("<div style='text-align:center;'><p><span style='font-weight:16px'>" + domains[i].name + "</span>&nbsp;&nbsp; · &nbsp;&nbsp;<a onclick='openInNewTab(\"" + domains[i].core.external_link + "\");'>" + domains[i].core.name + "</a></p></div><br/><div id='emDisp' style='text-align:center;'>" + embedDisplay + "</div><br/><br/><p>" + domains[i].core.description + "</p><a onclick='openInNewTab(\"" + domains[i].ref + "\");'>Read more...</a><br/><br/><div style='text-align:center;'><img style='max-width:80%;' src='" + domains[i].img + "' /></div><br/><br/>" + "<div style='display:flex; justify-content:space-evenly;align-items:center;'><div style='display:flex; align-items: center;margin-top: 12px;margin-top: 12px;margin-right: 12px;'><br/><div onclick='showDoc(\"key/collection\");' style='text-align:center; width:160px; ' class='z-depth-1 chip " + getClass(domains[i].core.collection.slug) + "'><img src='img/key/" + getCollect(domains[i].core.collection.slug) + "'><div style='background-color:rgb(245, 246, 247,0.75); border-radius:12px; width:100px;color:black;font-size:16px;'>" + domains[i].serial + "</div></div><div><img class='modal-close' onclick='showDoc(\"key/state\");' style='cursor:pointer; width:48px; height:48px;' src='img/flag/" + domains[i].place + ".png' /></div></div></div></div>" + "<br/><br/>" + "UR Value/Rate = " + domains[i].ur);  }
 
 function addGrid(i) { //alert((i%4));//card-panel?
-    return '<div style="width:360px;height:360px;margin:24px; display:flex;flex-direction:column;justify-content:space-between;" class="card sticky-action hoverable"><div class="card-image waves-effect waves-block waves-light z-depth-3" onclick="pullOwner(' + i + ');"><img style="max-width:360px; max-height:300px;" class="activator" src="' + domains[i].core.image_preview_url + '"></div><div class="card-content" onclick="pullOwner(' + i + ');"><span class="card-title activator grey-text text-darken-4">' + domains[i].core.name + '<i class="material-icons right">more_vert</i></span></div><div class="card-reveal"><span class="card-title grey-text text-darken-4">' + domains[i].name + '<i class="material-icons right">close</i></span>&nbsp;&nbsp;<div id="o'+ i + '"></div></div></div>';
+    return '<div style="width:360px;height:360px;margin:24px; display:flex;flex-direction:column;justify-content:space-between;" class="card sticky-action hoverable"><div class="card-image waves-effect waves-block waves-light z-depth-3" onclick="pullOwner(' + i + ');"><img style="max-width:360px; max-height:300px;" class="activator" src="' + domains[i].core.image_preview_url + '"></div><div class="card-content" onclick="pullOwner(' + i + ');"><span class="card-title activator grey-text text-darken-4">' + domains[i].core.name + '<i class="material-icons right">more_vert</i></span></div><div class="card-reveal"><span class="card-title grey-text text-darken-4">' + domains[i].name + '<i class="material-icons right">close</i></span><div style="width:60%;cursor:pointer;" id="o'+ i + '"></div><div style="display:flex;"><a onclick="addListDeed(' + i +');" class="waves-effect waves-light waves-blue btn blue lighten-2" ><i class="material-icons">sticky_note_2</i></a>&nbsp;&nbsp;<a onclick="showMark(\'' + i + '\'); showView(\'map\'); map.resize();" class="modal-close waves-effect waves-blue btn blue lighten-3" ><i class="material-icons">map</i></a>&nbsp;&nbsp;<a onclick="showMark(\'' + i + '\'); showView(\'map\'); map.resize();" class="modal-close waves-effect waves-green btn green lighten-3" ><i class="material-icons">inventory_2</i></a>&nbsp;&nbsp;<a onclick="openInNewTab(\'' + domains[i].core.permalink + '\');" class="waves-effect waves-light waves-green btn green lighten-2" ><i class="material-icons right">account_balance_wallet</i><span id="d' + i + '"></span></a></div></div></div>';
 	
 	//alert(((i+1)%4));
 	//if (((i+1)%4) == 0) { $("#registry").append('</div>'); }
@@ -772,37 +778,17 @@ function fly(dest) {
     map.flyTo({ center: dest, zoom: setZoom, bearing: 0, speed: 0.8,  curve: 1,  easing: (t) => t, essential: true }); }
 
 // console
-var dtSet = false;
 function datetimeStart() {
-    var current = new Date(); // timestamp, milliseconds since 1970 (?) vs. milliseconds (UTC)
-    var yyyy = current.getFullYear(), MM = current.getMonth() + 1; if (MM < 10) { MM = "0" + MM.toString(); }
-    var dd = current.getDate(), hh = current.getHours(), mm = current.getMinutes(), ss = current.getSeconds();
-    var datestamp = yyyy + "." + MM + "." + dd; var timestamp = hh + ":" + mm + ":" + ss; // calendar?
-//document.getElementById('dater').value = datestamp + "@" + timestamp;
-	$('#ocuros').data('data-badge-caption', datestamp + "@" + timestamp);
-
-    //if (dtSet) { dtSet = false; M.toast({html: 'Date and Time removed.'}); $("#dtMark").css('background-color', 'white'); }
-    //else { dtSet = true; M.toast({html: 'Date and Time set: ' + datestamp + " @ " + timestamp});  $("#dtMark").css('background-color', 'green'); }
-}
+    	var current = new Date(); // timestamp, milliseconds since 1970 (?) vs. milliseconds (UTC)
+    	var yyyy = current.getFullYear(), MM = current.getMonth() + 1; if (MM < 10) { MM = "0" + MM.toString(); }
+    	var dd = current.getDate(), hh = current.getHours(), mm = current.getMinutes(), ss = current.getSeconds();
+    	var datestamp = yyyy + "." + MM + "." + dd; var timestamp = hh + ":" + mm + ":" + ss; // calendar?
+	$('#ocuros').attr('data-badge-caption', datestamp + "@" + timestamp + $('#ocuros').attr('data-badge-caption')); }
 
 function colorStart() { document.getElementById("favcolor").focus(); document.getElementById("favcolor").click(); }
-function timedateStart() { document.getElementById("timedate").focus(); document.getElementById("timedate").click(); }
-
 //map.addControl(new MapboxDirections({ accessToken: mapboxgl.accessToken }),'top-left');
-
 // add calculator... //replace youtube with html5 video?
-
-   // $.get("path" , function(data) { docs = data.replaceAll('/root/nfnth/data/domain/'+domain+'/','').split('|doc'); ///root/nfnth/data/domain/dralun.com/doc|manifest|/root/nfnth/data/domain/dralun.com/doc/sample|artifact
-    //var lines = data.split(/\r?\n/); //for (let i = 0; i < lines.length; i++) { // var fields = lines[i].split('|');
-
-   // $.get("domain/" + domain + "/manifest", function(data) { domainJSON = JSON.parse(data); status = JSON.parse(data).status; });
-
-      //manifest.push(fields);
-
-//var formSample = '<div id="intro" class="row-section"><div id="console" class="row hover-base"><div class="input-field"><i class="material-icons prefix">mail</i><input type="text" id="user-email" name="user-email" class="user-input" placeholder="Enter email" /><label for="user-email">Email</label><span id="user-issue" class="helper-text" data-error="Invalid input" data-success="" >Enter Email</span></div></div><div class="modal-footer content loader"><button id="button-next" class="btn waves-effect waves-light" onclick="signer();">Sign In<i class="material-icons left">login</i></button><a href="#!" class="modal-close waves-effect waves-gray btn-flat disabled">Cancel</a></div></div>';
-
-//window.open(url, '_self');
-        </script>
+</script>
 
 <style>
 main {flex: 1 0 auto;}
@@ -862,8 +848,6 @@ div.active {opacity: 1;height: auto;}
 .image {position: absolute;width: 48px;height: 48px;-webkit-animation:spin 4s linear infinite; -moz-animation:spin 4s linear infinite;animation:spin 4s linear infinite;opacity: 0.5;}
 .image2 {position: absolute;width: 48px;height: 48px;-webkit-animation:spin 8s linear infinite; -moz-animation:spin 8s linear infinite;animation:spin 8s linear infinite;opacity: 0.5;}
 @-moz-keyframes spin {100% { -moz-transform: rotate(360deg); }} @-webkit-keyframes spin {100% { -webkit-transform: rotate(360deg); }} @keyframes spin {100% {-webkit-transform: rotate(360deg);transform:rotate(360deg);}}
-
-#pad:focus { border:2px solid darkgrey!important; }
 
 .select-wrapper { width:100%!important; }
 
