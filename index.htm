@@ -7,7 +7,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="deed domains for sale, from deed to domain, collectible domains" />
-<meta name="keywords" content="domain, deed, nft, nfnth, crypto, ocur, ocurio, ocuros, ocurious" />
+<meta name="keywords" content="domain, deed, nft, nfnth, crypto, ocur, ocurio, ocuros, ocurious, urland" />
 <meta name="author" content="ocurio" />
 
 <!-- resources -->
@@ -83,44 +83,43 @@
     <!-- world -->
     <div id="world" class="content loader pane blue-grey lighten-5" style="width:100%;background-color:darkgrey;">
         <img src="img/world-min.jpg" class="z-depth-2" style="width:100%; margin-bottom:-6px; " />
-        <div style="position: absolute; margin-top:360px; width: 100%; top:0; height: 0; "><div style="cursor:pointer; position:absolute; color:white; font-size:24px;background-color: rgba(245, 245, 245, 0.8);padding-bottom: 48px;padding-top: 36px;text-align: center;align-items: center;justify-content: center;width: 100%;cursor:pointer;display: flex; flex-direction: column;" onclick="showDoc('PLANME');"><div style="display:flex; justify-items:center;"><img height="48" width="48" src="img/gear/gear2.png" /><span style="color:darkgoldenrod; font-weight:bold; font-size:28px; background-color: rgb(230, 230, 230, 0.8);border-radius: 6px;padding-left: 6px;">ocur.io</span></div><div><span style="color:goldenrod; font-size:26px; font-weight:bold;vertical-align:super;">  // *own [build] $explore</span></div><div><span style="font-size:22px;color:black;">deed. domain. </span><span style="font-size:22px; color:black; font-weight:bold;">decentralized.</span></div></div></div></div>
+        <div style="position: absolute; margin-top:360px; width: 100%; top:0; height: 0; "><div style="cursor:pointer; position:absolute; color:white; font-size:24px;background-color: rgba(245, 245, 245, 0.8);padding-bottom: 48px;padding-top: 36px;text-align: center;align-items: center;justify-content: center;width: 100%;cursor:pointer;display: flex; flex-direction: column;" onclick="showDoc('PLANME');"><div style="display:flex; justify-items:center;"><img height="48" width="48" src="img/gear/gear2.png" /><span style="color:darkgoldenrod; font-weight:bold; font-size:28px; background-color: rgb(230, 230, 230, 0.8);border-radius: 6px;padding-left: 6px;">ocur.io</span></div><div><span style="color:goldenrod; font-size:26px; font-weight:bold;vertical-align:super;">//own [build] $explore</span></div><div><span style="font-size:22px;color:black;">deed. domain. </span><span style="font-size:22px; color:black; font-weight:bold;">decentralized.</span></div></div></div></div>
 
     <!-- list -->
     <div id="list" class="content loader pane" style="overflow-y: auto; height: 95%;">
         <div id="list-filter" class="z-depth-1" style="display:flex; justify-content: space-evenly; padding-top: 24px; padding-bottom:12px; margin-bottom: -6px; align-items:center;">
-        <div class="switch">
-            <label style="display:flex; align-items:center;"><i class="material-icons">view_list</i>
-            <input id="lister" type="checkbox" onclick="changeView();"><span class="lever"></span><i class="material-icons">grid_view</i></label></div>
-            <div><a class="waves-effect waves-light waves-green btn green" onclick="showView('filter');"><i class="material-icons left">filter_list</i>Filter/Sort</a></div></div>
-	<div id="list-option" class="content loader pane">
-		
+        	<div class="switch"><label style="display:flex; align-items:center;"><i class="material-icons">view_list</i>
+            		<input id="lister" type="checkbox" onclick="changeView();"><span class="lever"></span><i class="material-icons">grid_view</i></label></div>
+        	<div><a class="waves-effect waves-light waves-green btn green" onclick="showView('filter');"><i class="material-icons left">filter_list</i>Filter/Sort</a></div></div>
         <div id="registry" class="collection" style="overflow:auto;"></div></div>
-<div id="filter" class="content loader pane" style="width:100%;">
-	    <div class="input-field col s12 m6">
-    <select id="collection-filter" class="icons" multiple>
-      <option value="" disabled selected>Select collection...</option>
-      <option value="" >All Collections</option>
-      <option value="" data-icon="img/key/red.png">Tactician</option>
-      <option value="" data-icon="img/key/orange.png">Patrician</option>
-      <option value="" data-icon="img/key/yellow.png">Electrician</option>
-      <option value="" data-icon="img/key/green.png">Sectarian</option>
-      <option value="" data-icon="img/key/blue.png">Civilian</option>
-      <option value="" data-icon="img/key/purple.png">Logician</option>
-      <option value="" data-icon="img/key/gray.png">Utilitarian</option>
-      <option value="" data-icon="img/key/white.png">Technician</option>
-      <option value="" data-icon="img/key/black.png">Custodian</option>
-      <option value="" data-icon="img/key/tan.png">Librarian</option>
-      <option value="" data-icon="img/key/pink.png">Clinician</option>
-      <option value="" data-icon="img/key/brown.png">Agrarian</option></select><label>OpenSea Collections</label></div></div>
 
-  <select id="select-sort" style="z-index:1;" onchange="sorter();">
-                <option value="" selected disabled>Sort...</option>
-                <option value="az">Alpha &#8595;</option>
-                <option value="za">Alpha &#8593;</option>
-                <option value="09">Price &#8593;</option>
-                <option value="90">Price &#8595;</option>
-                <option value="!)">Serial &#8595;</option>
-	  <option value=")!">Serial &#8593;</option></select></div>
+    <!-- filter -->
+	<div id="filter" class="content loader pane" style="width:100%;">
+	    <div class="input-field col s12 m6">
+		    <select id="collection-filter" class="icons" multiple>
+			    <option value="" disabled selected>Select collection...</option>
+			    <option value="" >All Collections</option>
+			    <option value="" data-icon="img/key/red.png">Tactician</option>
+			    <option value="" data-icon="img/key/orange.png">Patrician</option>
+			    <option value="" data-icon="img/key/yellow.png">Electrician</option>
+			    <option value="" data-icon="img/key/green.png">Sectarian</option>
+			    <option value="" data-icon="img/key/blue.png">Civilian</option>
+			    <option value="" data-icon="img/key/purple.png">Logician</option>
+			    <option value="" data-icon="img/key/gray.png">Utilitarian</option>
+			    <option value="" data-icon="img/key/white.png">Technician</option>
+			    <option value="" data-icon="img/key/black.png">Custodian</option>
+			    <option value="" data-icon="img/key/tan.png">Librarian</option>
+			    <option value="" data-icon="img/key/pink.png">Clinician</option>
+			    <option value="" data-icon="img/key/brown.png">Agrarian</option></select><label>OpenSea Collections</label></div>
+		<div class="input-field col s12 m6">
+  			<select id="select-sort" style="z-index:1;" onchange="sorter();">
+				<option value="" selected disabled>Sort...</option>
+				<option value="az">Alpha &#8595;</option>
+				<option value="za">Alpha &#8593;</option>
+				<option value="09">Price &#8593;</option>
+				<option value="90">Price &#8595;</option>
+				<option value="!)">Serial &#8595;</option>
+				<option value=")!">Serial &#8593;</option></select></div></div>
 	
     <!-- search -->
     <div id="results" style="margin:80; display:none;" class="content loader pane">search...</div>
