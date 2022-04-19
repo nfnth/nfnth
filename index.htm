@@ -125,7 +125,7 @@
                 <a onclick="clearEditor();" class="waves-effect waves-grey btn-flat"><i class="material-icons left">refresh</i>Clear</a>
                 <a onclick="showPreview();" class="waves-effect waves-grey btn-flat"><i class="material-icons left">web_asset</i>Preview</a></div>
             <div>
-                <a onclick="showView('map');" class="waves-effect waves-green green btn"><i class="material-icons right">east</i>Next</a></div>
+                <a onclick="pullArtifact($('#opener').val()); showView('map');" class="waves-effect waves-green green btn"><i class="material-icons right">east</i>Next</a></div>
             <div id="show-progress" class="progress" style="display:none;"><div class="indeterminate"></div></div></div></div>
 
 <!-- dialog -->
@@ -163,9 +163,8 @@ function copyClip(text) { navigator.clipboard.writeText(text);M.toast({html: 'Ad
 
 var width = window.innerWidth; var height = window.innerHeight + 48;
 async function initial() {
-    //document.getElementById('select-sort').getElementsByTagName('option')[0].selected = 'selected';
     document.getElementById('domain-template').getElementsByTagName('option')[0].selected = 'selected';
-    $('select').formSelect(); $('.modal').modal(); //$('#dialog-inner2').css("height", window.innerHeight - 375);
+    $('select').formSelect(); $('.modal').modal(); //$('#dialog-inner2').css("height", window.innerHeight - 375); $('#pad').css("height", window.innerHeight - 560);
     $("#map").css("height",height + "px"); $("#registry").css("height",height + "px"); showFav('scroller');
 
     var gear = Math.floor(Math.random() * (42 - 1 + 1)) + 1; document.getElementById('list-wait').src = "img/gear/gear" + gear.toString() + ".png";
@@ -175,9 +174,8 @@ $('.tooltipped').tooltip();
     $('#docs').dropdown({ constrainWidth: false, coverTrigger: false, hover: true } ); $('#doc-hide').dropdown({ constrainWidth: false, coverTrigger: false } );
     $('#lists').dropdown({ constrainWidth: false, coverTrigger: false, hover: true } ); $('#list-hide').dropdown({ constrainWidth: false, coverTrigger: false } );
     $('#user-pane').sidenav({ edge: 'right' });
-    $('.fixed-action-btn').floatingActionButton({ hoverEnabled: false });
-	$("#map-add").hide(); $("#map-edit").hide(); $("#map-delete").hide();
-    $('#pad').css("height", window.innerHeight - 560);//showFav('dralun'); //  showFav('paper');
+    $('.fixed-action-btn').floatingActionButton({ hoverEnabled: false }); $("#map-add").hide(); $("#map-edit").hide(); $("#map-delete").hide();
+    //showFav('dralun'); //  showFav('paper');
     showView('news'); //searchClear();
      
     setTimeout(function() { $(".loader").css("visibility", "visible"); $('img').on('dragstart', function(evt) { return false; }); }  , 500); }
@@ -190,24 +188,22 @@ function domainFind() {
     if (domainName == "ustat.us" && pathName != "") { showView('map'); map.resize(); showMark3(pathName); } }
 //var elems = document.querySelectorAll('.modal'); var instances = M.Modal.init(elems); });
 
-// wallet (user)
+// wallet
 var walletAddress = '';
 var setup = async function () {
     if (window.ethereum) { //web3 = new Web3(window.ethereum); //await account();
         const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' }); walletAddress = accounts[0];
         $("#myAdd").html(walletAddress.toLowerCase().substring(0,16) + "...");
-        $.get("api/"+walletAddress, async function(data) { alert(data);
+        $.get("api/"+walletAddress, async function(data) { 
             var fields = data.split('|'); var ether = JSON.parse(fields[0]).result; var urler = fields[1];
             $("#myETH").html(ether); $("#myURL").html(urler);
             $("#maker").removeClass("disabled"); 
-            //$("#wallet-setup").html(disconnectButton); $('#wallet-setup').off('click'); $("#wallet-setup").click(desetup);
-            //$("#maker").html("<a class='waves-effect waves-light green z-depth-1' style='width: 240px;margin: auto;border-radius: 8px;' onclick='if (walletAddress != \"\") {showView(\"map\"); map.resize(); addArtifact(); $(\"#user-pane\").sidenav(\"close\");} else { M.toast({html: \"No wallet connected.\"}); }'><i class='material-icons left'>upload_file</i>Create Deed</a>");
-            //$("#maker").removeClass("blue-grey");  $("#maker").removeClass("darken-3"); $("#maker").addClass("green");
+            $("#wallet-area").removeClass("blue-grey"); $("#wallet-area").addClass("green"); $("#wallet-icon").css("color","white");
             pullAssets(walletAddress); } ); }
     else { M.toast({html: 'No wallet found.'}); } }; $("#wallet-setup").click(setup);
 
-function desetup() {
-    $("#myAdd").html('My Wallet Address'); $("#wallet-area").css("background-color","");$("#wallet-icon").css("color","white");
+function desetup() { $("#wallet-area").addClass("blue-grey"); $("#wallet-area").removeClass("green"); $("#wallet-icon").css("color","black");
+    $("#myAdd").html('My Wallet Address'); 
     $("#myETH").html('My ETH Balance'); $("#myURL").html('My URL Balance');
     $("#maker").addClass("disabled"); 
     emptyDeeds(); domainSelect(); }
@@ -217,21 +213,16 @@ function findDeeds() { //getExchange();
     for (let i = 0; i < myDomains.length; i++) { $('#domain-template').append('<option selected="selected">' + domains[myDomains[i]][4] + '</option>'); }
     document.getElementById('domain-template').getElementsByTagName('option')[0].selected = 'selected';
     $("#domain-template").formSelect(); $('select').formSelect(); }
-function emptyDeeds() {
-    $('#domain-template').empty();
-    $('#domain-template').append('<option selected="selected">No domain selected</option>');
-    $('#domain-template').append('<option>tactician.us (demo)</option>');
+function emptyDeeds() { $('#domain-template').empty();
+    $('#domain-template').append('<option selected="selected">No domain selected</option>'); $('#domain-template').append('<option>tactician.us (demo)</option>');
     $("#domain-template").formSelect(); }
-
 function domainSelect() { var d = document.getElementById("domain-template"); var dt = d.options[d.selectedIndex].text;
     if (dt == 'No domain selected') {
 	    $("#map-shuffle").show(); $("#map-route").show(); $("#map-book").show(); $("#map-add").hide(); $("#map-edit").hide(); $("#map-delete").hide();
-        $("#poster").addClass("blue-grey");  $("#poster").addClass("darken-3"); $("#poster").removeClass("green"); 
-    $("#trader").addClass("blue-grey");  $("#trader").addClass("darken-3"); $("#trader").removeClass("green");}
+        $("#poster").addClass("disabled"); $("#trader").addClass("disabled"); }
     else {
 	    $("#map-shuffle").hide(); $("#map-route").hide(); $("#map-book").hide(); $("#map-add").show(); $("#map-edit").show(); $("#map-delete").show();
-        $("#poster").removeClass("blue-grey");  $("#poster").removeClass("darken-3"); $("#poster").addClass("green");
-     $("#trader").removeClass("blue-grey");  $("#trader").removeClass("darken-3"); $("#trader").addClass("green");} }
+        $("#poster").removeClass("disabled");  $("#trader").removeClass("disabled");  } }
 var info;
 var signer = async function (item, content, action) {
     var messager = '{"domain":{"name":"UR.Land"},"message":{"contents":"Hello, key value for UR.Land"},"primaryType":"Mail","types":{"EIP712Domain":[{"name":"name","type":"string"}],"Mail":[{"name":"contents","type":"string"}]}}';
@@ -241,10 +232,8 @@ var signer = async function (item, content, action) {
             artifact(messager, result.result, result.result, item, content, action);});}
 
 var artifact = function (message, signature, hash, item, content, action) {
-    var formdata = new FormData(); //var pic = $('input[name="pic"]').get(0).files[0]; formData.append('file', pic); console.log(message);
+    var formdata = new FormData();
     formdata.append('wallet', walletAddress);formdata.append('message', message);formdata.append('signature', signature);formdata.append('domain', 'tactician.us');formdata.append('content', content); formdata.append('ref', '62652367444291733483705976494538757758952482544655308357132039895328162316289');
-    //for (var a=0;a<$("#default_file").prop('files').length;a++) { file = $("#default_file").prop('files')[0]; formdata.append("file1", file); }
-   // if field.name == 'ref'://   if field.name == 'file':
     $.ajax({ url: "data/"+walletAddress+"/"+item+"/"+action, type: "POST", data: formdata, processData: false, contentType: false, success: function(data) { alert(data); } }); }
 
 // data
@@ -264,8 +253,7 @@ function pullOpen(name) {
       .then(response => response.json()) //.then(response => assets = response)
       .then(response => { for (let i = 0; i < response.assets.length; i++) {
             var tmp = new Domain(); var asset = response.assets[i]; var traits = asset.traits;
-            if (asset.name == "absaroka.us" || asset.name == "monocacy.us") { continue; }
-            tmp.core = asset;
+            if (asset.name == "absaroka.us" || asset.name == "monocacy.us") { continue; } tmp.core = asset;
             for (let a = 0; a < traits.length; a++) {
                 switch(traits[a].trait_type.toLowerCase()) {
                     case 'name': tmp.name = traits[a].value.toString(); break;
@@ -282,9 +270,8 @@ function pullOpen(name) {
 			if (domainFound == false) { var domainPath = getParameter(); 
 				if (domainPath != 'none') { for (let b = 0; b < domains.length; b++) { 
 					if (domains[b].core.external_url == domainPath) { showMark(b); 
-											 
-											 document.title = document.title.replace("Ocurious",domains[b].core.external_url);  
-											 domainFound = true; } } } else { domainFound = true; } }
+						document.title = document.title.replace("Ocurious",domains[b].core.external_url);  
+						domainFound = true; } } } else { domainFound = true; } }
 			complete = domains.slice(); domainFind(); } }).catch(err => console.error(err)); }
 
 var domainFound = false;
@@ -292,25 +279,30 @@ function getParameter() { var pathArray = window.location.pathname.split('/'); s
 
 function updateCount(name, count) { for (let i=0;i<opens.length;i++) { if (opens[i].core.slug == name) { opens[i].count = count; break;} } }
 
-function pullOwner(i) {
-	id = domains[i].core.token_id;
+function pullOwner(i) { id = domains[i].core.token_id;
 	fetch('https://api.opensea.io/api/v1/asset/0x495f947276749ce646f68ac8c248420045cb7b5e/'+id, options)
-      .then(response => response.json()) //.then(response => assets = response)
-      .then(response => {  domains[i].owner = response.top_ownerships[0].owner.address;  
-			updateInfo(i);
-			}).catch(err => console.error(err)); }
+      		.then(response => response.json()) //.then(response => assets = response)
+      		.then(response => {  domains[i].owner = response.top_ownerships[0].owner.address; updateInfo(i); }).catch(err => console.error(err)); }
 
-function pullPrice(i) {
-	id = domains[i].core.token_id;
+function pullPrice(i) { id = domains[i].core.token_id;
 	fetch('https://api.opensea.io/api/v1/asset/0x495f947276749ce646f68ac8c248420045cb7b5e/'+id+'/listings', options)
-      .then(response => response.json()) //.then(response => assets = response)
-      .then(response => { if (typeof response.listings[0] !== 'undefined') { domains[i].price = parseFloat(response.listings[0].current_price)/1000000000000000000; } else {domains[i].price = "Unlisted" } updateInfo(i);
-			}).catch(err => console.error(err)); }
+      		.then(response => response.json()) //.then(response => assets = response)
+      		.then(response => { if (typeof response.listings[0] !== 'undefined') { 
+			domains[i].price = parseFloat(response.listings[0].current_price)/1000000000000000000; } else {domains[i].price = "Unlisted" } updateInfo(i); }).catch(err => console.error(err)); }
 
-function updateInfo(i) { 
-	$("#d"+i).html(domains[i].price); if (domains[i].price != "Unlisted") { $("#d"+i).html($("#d"+i).html() + " ETH"); }
+function updateInfo(i) { $("#d"+i).html(domains[i].price); if (domains[i].price != "Unlisted") { $("#d"+i).html($("#d"+i).html() + " ETH"); }
 	$("#o"+i).html(addWallet(domains[i].owner)); }
 
+var tempArtifact;
+function pullArtifact(link) { //https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/62652367444291733483705976494538757758952482544655308357132040202091906465793
+	fetch('https://api.opensea.io/api/v1/asset/'+link.replace('https://opensea.io/assets/',''), options)
+      		.then(response => response.json())
+      		.then(response => {  tempArtifact = response; updatePreview(); }).catch(err => console.error(err)); }
+
+function updatePreview() { 
+	$("#editor-image").attr("src", tempArtifact.image_url);
+	$("#editor-image").attr("onclick", "setDialog(tempArtifact.description);");
+	$("#editor-name").html(tempArtifact.name); }
 function pullClaims(name) {
     fetch('https://api.opensea.io/api/v1/assets?limit=10&owner='+name, options)
       .then(response => response.json())
@@ -398,7 +390,7 @@ function addOpenDetail(i) {
 
 function addOpenDeed(i) {
     $("#somedialog2").css("z-index",1004);
-    setDialog("<div style='text-align:center;'><p><span style='font-weight:16px'>" + opens[i].core.name + "</span>&nbsp;&nbsp; · &nbsp;&nbsp;<a style='cursor:pointer;' onclick='openInNewTab(\"https://opensea.io/collection/" + opens[i].core.slug + "\");'>" + opens[i].core.slug + "</a></p></div><br/><div style='text-align:center;'><img style='width:80%;' src='" + opens[i].core.banner_image_url + "' /></div><br/><br/><div style='text-align:center;'><div style='display:flex;align-items:center;justify-content:center;'><img class='z-depth-2' onclick='openInNewTab(\"https://opensea.io/collection/" + opens[i].core.slug + "\");' style='cursor:pointer; margin-right:12px;display:none;' onload='adjustSize(this);' src='img/key/" + getCollect(opens[i].core.slug) + "' /><span class='amber lighten-2 badge z-depth-1' style='color:black!important;font-weight:bold;'>" + opens[i].count + " domains</span></div><br/><br/>" + renderMd(opens[i].core.description) + "</div><br/><br/>");}
+    setDialog("<div style='text-align:center;'><p><span style='font-weight:16px'>" + opens[i].core.name + "</span>&nbsp;&nbsp; · &nbsp;&nbsp;<a style='cursor:pointer;' onclick='openInNewTab(\"https://opensea.io/collection/" + opens[i].core.slug + "\");'>" + opens[i].core.slug + "</a></p></div><br/><div style='text-align:center;'><img style='width:80%;' src='" + opens[i].core.banner_image_url + "' /></div><br/><br/><div style='text-align:center;'><div style='display:flex;align-items:center;justify-content:center;'><img class='z-depth-2' onclick='openInNewTab(\"https://opensea.io/collection/" + opens[i].core.slug + "\");' style='cursor:pointer; margin-right:12px;display:none;' onload='adjustSize(this);' src='img/key/" + getCollect(opens[i].core.slug) + "' /><span class='amber lighten-2 badge z-depth-1' style='color:black!important;font-weight:bold;'>" + opens[i].count + " available</span></div><br/><br/>" + renderMd(opens[i].core.description) + "</div><br/><br/>");}
 
 function addList(i){
     $("#registry").append("<a class='collection-item modal-trigger' href='#modal1' onclick='pullOwner(" + i + "); pullPrice(" + i + "); addListDetail(" + i + ");'><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;'>" + domains[i].core.name + "</div><div style='display:flex; justify-content:space-between;align-items:center;'><div style='display:flex; flex-direction:column;'><div style='display:flex;'><div class='z-depth-1 chip " +  getClass(domains[i].sub)  + "'>" + domains[i].sub + "</div><div style='width:120px; ' class='z-depth-1 chip " + getColor(domains[i].core.collection.slug) + "'><img src='img/key/" + getCollect(domains[i].core.collection.slug) + "'><div style='border-radius:12px; width:100px;background-color:rgb(245, 246, 247,0.75);color:black;font-size:16px;font-weight:bold;' class='z-depth-1'>" + padSerial(domains[i].serial) + "</div></div></div></div></div></div></a>"); }
@@ -587,7 +579,7 @@ function setResults() { searchMatch = []; searchResult = "";
         searchResult += "<div><a href='https://'" + domains[i][4] + "'>" + domains[i][4] + "</a></div><br/>"; } }
     $('#results').html(searchResult); showView('results'); }
 
-var editContent = '<div id="header-logo" style="display: flex;justify-content: center;align-items: center; display: flex;flex-direction:column;padding:12px;"><div style="border-radius:12px; padding:12px;" class="z-depth-1 input-field col s6"><img width="48" height="48" id="thumb" src="img/seal3.png" onclick="showView(\'editor\'); changeFocus();" /></div><div id="editColor" class="chip z-depth-1 waves-effect waves-blue blue-grey lighten-2" style="display:flex; color:white; align-items:center; justify-content:center; width:60px;" onclick="colorStart();"><div style="display:flex;"><i id="pal" class="material-icons">palette</i></div></div><div style="visibility:hidden;width:0;position:absolute;top:0;"><input type="color" oninput="setColor();" id="favcolor" name="favcolor" value="#ff0000" style="width:0px; height:0px;opacity:0;" /></div></div></div><div style="display:flex;justify-content:center;margin-top:12px;margin-bottom:12px;"><a class="waves-effect waves-light btn green" onclick="showView(\'editor\'); changeFocus();"><i class="material-icons left">upload_file</i>Publish...</a></div></div>';
+var editContent = '<div id="header-logo" style="display: flex;justify-content: center;align-items: center; display: flex;flex-direction:column;padding:12px;"><div style="border-radius:12px; padding:12px; margin-right:12px;" class="z-depth-1 input-field col s6"><img width="48" height="48" id="editor-image" src="img/seal3.png" onclick="showView(\'editor\'); changeFocus();" /></div><div id="editColor" class="chip z-depth-1 waves-effect waves-blue blue-grey lighten-2" style="display:flex; color:white; align-items:center; justify-content:center; width:60px;" onclick="colorStart();"><div style="display:flex;"><i id="pal" class="material-icons">palette</i></div></div><div style="visibility:hidden;width:0;position:absolute;top:0;"><input type="color" oninput="setColor();" id="favcolor" name="favcolor" value="#ff0000" style="width:0px; height:0px;opacity:0;" /></div></div></div><div><span id="editor-name"></span></div><div style="display:flex;justify-content:center;margin-top:12px;margin-bottom:12px;"><a class="waves-effect waves-light btn green" onclick="showView(\'editor\'); changeFocus();"><i class="material-icons left">upload_file</i>Publish...</a></div></div>';
 
 function setColor() { $("#markera").css("background-color", document.getElementById('favcolor').value); $("#pal").html("done");
 $("#editColor").addClass("green"); $("#editColor").removeClass("blue-grey");
