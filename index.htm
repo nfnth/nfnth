@@ -314,7 +314,7 @@ function pullClaims(name) {
 
 var world = [];
 function pullInfo() {
-    $.get('world', function(data) { //alert(data);
+    $.get('manifest', function(data) { //alert(data);
         var lines = data.split(/\r?\n/); //$("#manifest-count").html(lines.length - 1);
         for (let i = 0; i < lines.length; i++) {
             var fields = lines[i].split('|');
