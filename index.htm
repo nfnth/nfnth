@@ -67,7 +67,7 @@
   	<li><a class="waves-effect" onclick="if (walletAddress != '') {copyClip(walletAddress);}"><i class="material-icons">alternate_email</i><span id="myAdd">Wallet Address</span></a></li>
   	<li><a class="waves-effect"><i class="material-icons">account_balance</i><span id="myETH">ETH Balance</span></a></li>
 	<li><a class="waves-effect"><i class="material-icons">toll</i><span id="myURL">OCUR Balance</span></a></li>
-	<li style="margin-top:16px;margin-bottom:12px;"><a id="maker" class="btn waves-effect waves-light green z-depth-1 lighten-2" style="width: 240px;margin: auto;border-radius: 8px;color:black;" onclick="if (walletAddress != '') {desetup(); $('#user-pane').sidenav('close');}"><i class="material-icons right">logout</i>Disconnect</a></li>
+	<li style="margin-top:16px;margin-bottom:12px;"><a id="maker" class="btn waves-effect waves-light green z-depth-1 lighten-2" style="width: 240px;margin: auto;border-radius: 8px;color:black;" onclick="if (walletAddress != '') {desetup(); $('#user-pane').sidenav('close');}"><i class="material-icons left">logout</i>Disconnect</a></li>
   	<li><div style="margin-top:0;" class="divider"></div></li>
   	<!-- <i class="material-icons left">directions</i><i class="material-icons left">picture_as_pdf</i><i class="material-icons left">calculate</i>-->
   	<li><a class="subheader">Domain Information</a></li>
@@ -75,7 +75,7 @@
     	<li><a class="waves-effect"><i class="material-icons">toll</i><span id="myURL">OCUR Balance (Domain)</span></a></li>
   	<li style="margin-top:12px; display: flex;align-items: center;justify-content: center;margin-bottom:16px;"><select id="domain-template" class="sider" onchange="domainSelect();">
         <option selected="selected">No domain selected</option><option>tactician.us (demo)</option></select></li>
-	<li style="margin-top:12px;"><a id="poster" class="btn waves-effect waves-light green z-depth-1 lighten-2 disabled" style="width: 240px;margin: auto;border-radius: 8px;margin-bottom:12px;color:black;" onclick="if (walletAddress != '') {showView('map'); map.resize(); addArtifact(); $('#user-pane').sidenav('close');}"><i class="material-icons right">inventory_2</i>Build Domain</a></li></ul>
+	<li style="margin-top:12px;"><a id="poster" class="btn waves-effect waves-light green z-depth-1 lighten-2 disabled" style="width: 240px;margin: auto;border-radius: 8px;margin-bottom:12px;color:black;" onclick="if (walletAddress != '') {showView('map'); map.resize(); addArtifact(); $('#user-pane').sidenav('close');}"><i class="material-icons left">inventory_2</i>Build Artifact</a></li></ul>
 
 <!-- view -->
 <div id="home" style="text-align:center;visibility:hidden; width:100%; z-index:1; padding-top: 54px;" class="content loader print-help">
@@ -718,9 +718,9 @@ function mapLoc() { if (gpsSwitch) { clearMap(); gpsSwitch = false; $("#map-gps"
 function geoSuccess(position) {tempCoord[1] = position.coords.latitude;tempCoord[0] = position.coords.longitude; gpsSwitch = true; $("#map-gps").addClass("blue"); $("#map-gps").removeClass("grey"); setZoom = 8; fly(tempCoord); addBeacon(tempCoord); beacon = true; } 
 function geoError() { alert('No location'); }
 
-var selectedMark = -1;
-function mapRand() { clearMarkers(); selectedMark = Math.floor(Math.random() * domains.length); showMark(selectedMark); }
-function mapRoute() { clearMarkers(); selectedMark += 1; if (selectedMark == domains.length) { selectedMark = 0; } showMark(selectedMark);  }
+var selectedMark = -1; var mapMark = -1;
+function mapRand() { clearMarkers(); mapMark = Math.floor(Math.random() * domains.length); showMark(mapMark); }
+function mapRoute() { clearMarkers(); mapMark += 1; if (selectedMark == domains.length) { mapMark = 0; } showMark(mapMark);  }
 function mapAdd() { clearMarkers(); addArtifact(); }
 	
 function addArtifact() { M.toast({html: 'Select location...'}); artFlag = true; datetimeStart(); }
