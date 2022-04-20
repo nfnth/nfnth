@@ -129,7 +129,7 @@
         <div id="actions" class="content loader pane fixed-action-btn" >
             <a class="btn-floating btn-large green lighten-2 waves-effect waves-light"><i class="large material-icons">apps</i></a>
             <ul>
-		<li><a id="map-sat" class="btn-floating blue" onclick="mapSat();"><i class="material-icons">satellite_alt</i></a></li>
+		<li><a id="map-sat" class="btn-floating grey" onclick="mapSat();"><i class="material-icons">satellite_alt</i></a></li>
 		<li><a id="map-gps" class="btn-floating grey" onclick="mapLoc();"><i class="material-icons">gps_fixed</i></a></li>
                 <li><a id="map-rand" class="btn-floating grey" onclick="mapRand();"><i class="material-icons">shuffle</i></a></li>
 		<li><a id="map-route" class="btn-floating grey" onclick="mapRoute();"><i class="material-icons">route</i></a></li>
@@ -700,12 +700,12 @@ var artContent = '<div><div><img width="48" height="48" src="img/barrel.png"/></
 
 var currentMarkers=[]; //var introMark;//43.706742350484916, 1.5266131055501075
 var addMark; var coordinates; var artFlag = false;
-mapboxgl.accessToken = map_token; zoom = 5; mapStyle = 'mapbox://styles/mapbox/satellite-streets-v11';
-map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/mapbox/satellite-streets-v11', center: frc, zoom: zoom, buffer_size: 0.2}); //'mapbox://styles/mapbox/light-v10'
+mapboxgl.accessToken = map_token; zoom = 5;
+map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/mapbox/light-v10', center: frc, zoom: zoom, buffer_size: 0.2}); //'mapbox://styles/mapbox/light-v10'
 map.on('load', function (event) { $("head").append('<style type="text/css">.markre{visibility:visible!important;}</style>');
     map.on('click', function(e) { coordinates = e.lngLat; if(artFlag) { addArt(); artFlag = false; } $('.fixed-action-btn').floatingActionButton('close'); }); });
 
-var satSwitch = false; var satCenter; var currentToggle = 0; var gpsSwitch = false; var randSwitch = false;
+var satSwitch = true; var satCenter; var currentToggle = 0; var gpsSwitch = false; var randSwitch = false;
 function mapSat() { satCenter = map.getCenter();
 	if (satSwitch) { mapStyle = 'mapbox://styles/mapbox/satellite-streets-v11'; satSwitch = false; $("#map-sat").removeClass("grey"); $("#map-sat").addClass("blue"); } else { mapStyle = 'mapbox://styles/mapbox/light-v10'; satSwitch = true; $("#map-sat").removeClass("blue"); $("#map-sat").addClass("grey");}
 	map = new mapboxgl.Map({container: 'map', style: mapStyle, center: satCenter, zoom: zoom, buffer_size: 0.2}); 
@@ -724,8 +724,6 @@ function mapRand() { clearMarkers(); var r = Math.floor(Math.random() * domains.
 		   }
 function mapRoute() { }
 function mapAdd() { clearMarkers(); addArtifact(); }
-function mapEdit() { alert('Edit ' + domains[selectedMark].core.name); }
-function mapDelete() {alert('Delete ' + domains[selectedMark].core.name); }
 	
 function addArtifact() { M.toast({html: 'Select location...'}); artFlag = true; datetimeStart(); }
 function clearMarkers() { clearMap();  for (let a=0;a<currentMarkers.length;a++){ currentMarkers[a].remove(); } currentMarkers = []; }
