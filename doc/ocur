@@ -1,7 +1,7 @@
 
 ### How to Trade OCUR
 
-**ocur.io · Ocurious** uses [**OCUR**](https://etherscan.io/token/0xCcaB679860B1017589239BCeEEabe5CD45965aFc), a standard ERC-20 ETH token, as stock.
+**ocur.io · Ocurious** uses [**OCUR**](https://etherscan.io/token/0xCcaB679860B1017589239BCeEEabe5CD45965aFc), a standard ERC-20 ETH token, as both stock and currency.
 <br/><br/>
 
 
@@ -11,8 +11,8 @@
 |-|-|
 |*public* investment (available for trade)|500,000,000,000|
 |*public* domain (distributed to domain owners)|400,000,000|
-|*charity* land preservation (unavailable)|80,000,000,000|
-|*private* equity (reserved)|20,000,000,000|
+|*charity* land preservation (reserved)|80,000,000,000|
+|*private* equity (unavailable)|20,000,000,000|
 |&nbsp;|&nbsp;|
 |**TOTAL**|1,000,000,000,000|
 
@@ -25,7 +25,7 @@
 <a onclick="navigator.clipboard.writeText('0xCcaB679860B1017589239BCeEEabe5CD45965aFc');M.toast({html: 'Address copied.'});" class="waves-effect waves-light btn"><i class="material-icons right">content_copy</i>Copy</a></div>
 
 
-To view your **OCUR** balance, use **Connect Wallet** <i class="material-icons">account_balance_wallet</i> to view personal balance, and/or select a domain to see private balance.
+To view your **OCUR** balance, use **Connect Wallet** <i class="material-icons">account_balance_wallet</i> to view your individual balance, and/or select a domain to the domain's balance.
 <br/>
 
-Domains generate **OCUR** on a recurring basis, with all distributions taken from the public domain pool.
+Domains generate **OCUR** on a scheduled basis, all distributions are taken from the public domain pool, and can be distributed to the owner's wallet by using the distribution form.
