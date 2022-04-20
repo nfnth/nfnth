@@ -564,7 +564,7 @@ function popMark(i) {
 
 function removeMarkers() { if (currentMarkers!==null) { for (var i = currentMarkers.length - 1; i >= 0; i--) { currentMarkers[i].remove(); } currentMarkers = []; } }
 
-function addWallet(id) {return '<div style="cursor:pointer; display: flex; flex-direction: column; text-align: center;" onclick="copyClip(\'' + id + '\');"><img class="z-depth-1" src="https://chart.googleapis.com/chart?chs=120x120&cht=qr&chl=' + id + '&choe=UTF-8" /><span>Owner Address</span></div>';  }
+function addWallet(id) {return '<div style="cursor:pointer; display: flex; flex-direction: column; text-align: center;" onclick="copyClip(\'' + id + '\');"><img class="z-depth-1" src="https://chart.googleapis.com/chart?chs=120x120&cht=qr&chl=' + id + '&choe=UTF-8" /></div>';  }
 
 var listCount = 0;
 
