@@ -1,23 +1,23 @@
 
-<img src="img/seal3.png" style="height:56px; width:56px;" />
+<img src="img/seal3.png" style="height:56px; width:56px;float:right;" />
 <br/>
 ### On Deed to Domain
 
-Welcome to **ocur.io · Ocurios**, a world inspired by the geocacher's trade and powered by **deed** and **domain**.
+Welcome to **ocur.io · Ocurios**, a world inspired by the geocacher's trade, powered by **deed domain**.
 
-In **Ocurios**, use an NFT as both,
-
-
-- **deed**, the *token* to store in an *Ethereum-enabled* wallet to share/trade with others
-- **domain**, the *key* to access a domain and build its content
+A *deed domain* is both,
 
 
-Domain content, called **artifact**, can include anything from datetime, location, and text, to images and files, to associate with the domain.
+- **deed**, a *token* to store in an *Ethereum-enabled* wallet and share/trade with others
+- **domain**, a *key* to access a domain and build content
 
-Upon transfer of an NFT *deed domain*, both **domain access** and **domain content** are transfered to the new owner.
+
+Content, also called **artifact**, can include datetime, location, and additional text, images, and files, to associate with the domain.
+
+Upon transfer of a *deed domain* to another wallet, both *access* and *content* are also transfered to the new owner.
 <br/><br/>
 ### Get Started
 
-To begin, install a *web3-compliant* Ethereum wallet, such as [MetaMask](https://metamask.io/) and/or [Coinbase](https://www.coinbase.com/wallet), and visit [OpenSea <i class="material-icons">sailing</i>](https://opensea.io/urland) to purchase an NFT.
+To begin, install a *web3-compliant* wallet, such as [MetaMask](https://metamask.io/) and/or [Coinbase](https://www.coinbase.com/wallet), and visit [OpenSea <i class="material-icons">sailing</i>](https://opensea.io/urland) to purchase an NFT.
 
-Next, use the <i class="material-icons">account_balance_wallet</i> icon to connect and to view your **deed domain** and build content.
+Then, use the <i class="material-icons">account_balance_wallet</i> icon to connect and to view your **deed domain** and build content.
