@@ -52,12 +52,12 @@
 	<li><a onclick="openInNewTab('https://github.com/nfnth');"><i class="material-icons">home</i>About ocur.io</a></li></ul>
 
 <ul id="domain" class="dropdown-content loader" style="visibility:hidden;">
-	<li><a onclick="showView('list'); showList('open');"><i class="material-icons">sailing</i>OpenSea Collection</a></li>
-	<li class="divider"></li>
 	<li><a onclick="reset = true; showView('list'); showList('domain');"><i class="material-icons"><span class="material-icons-outlined">landscape</span></i>Domain Manifest</a></li>
 	<li><a onclick="showView('list'); showList('deed');"><i class="material-icons"><span class="material-icons-outlined">inventory_2</span></i>Artifact Registry</a></li>
 	<li class="divider"></li>
-	<li><a onclick="openInNewTab('https://ur.land');"><i class="material-icons">backpack</i>UR.Land Items</a></li></ul>
+	<li><a onclick="openInNewTab('https://ur.land');"><i class="material-icons">backpack</i>UR.Land Items</a></li>
+	<li class="divider"></li>
+	<li><a onclick="showView('list'); showList('open');"><i class="material-icons">sailing</i>OpenSea Collection</a></li></ul>
 
 <!-- panel -->
 <ul id="user-pane" class="sidenav loader blue-grey lighten-5" style="visibility:hidden;">
@@ -75,7 +75,7 @@
     	<li><a class="waves-effect"><i class="material-icons">toll</i><span id="myURL">OCUR Balance (Domain)</span></a></li>
   	<li style="margin-top:12px; display: flex;align-items: center;justify-content: center;margin-bottom:16px;"><select id="domain-template" class="sider" onchange="domainSelect();">
         <option selected="selected">No domain selected</option><option>tactician.us (demo)</option></select></li>
-	<li style="margin-top:12px;"><a id="poster" class="btn waves-effect waves-light green z-depth-1 lighten-2 disabled" style="width: 240px;margin: auto;border-radius: 8px;margin-bottom:12px;color:black;" onclick="if (walletAddress != '') {showView('map'); map.resize(); addArtifact(); $('#user-pane').sidenav('close');}"><i class="material-icons right">inventory_2</i>Build</a></li></ul>
+	<li style="margin-top:12px;"><a id="poster" class="btn waves-effect waves-light green z-depth-1 lighten-2 disabled" style="width: 240px;margin: auto;border-radius: 8px;margin-bottom:12px;color:black;" onclick="if (walletAddress != '') {showView('map'); map.resize(); addArtifact(); $('#user-pane').sidenav('close');}"><i class="material-icons right">inventory_2</i>Build Domain</a></li></ul>
 
 <!-- view -->
 <div id="home" style="text-align:center;visibility:hidden; width:100%; z-index:1; padding-top: 54px;" class="content loader print-help">
@@ -138,10 +138,12 @@
     <!-- editor -->
     <div id="editor" class="content loader pane scale-transition scale-out">
         <div style="display:flex;  align-items: center; justify-content: space-evenly; margin:12px; margin-top:24px;">
-		<div class="input-field col s6"><i class="material-icons prefix">sailing</i><input id="opener" type="text" class="validate"><label for="opener" >OpenSea ID</label></div>
-	    <p><label><input type="checkbox" class="filled-in" checked="checked" /><span>Cash OCUR?</span></label></p></div>
+		<div class="input-field col s6"><i class="material-icons prefix">sailing</i><input id="opener" type="text" class="validate"><label for="opener" >OpenSea ID</label></div></div>
+	<div style="display:flex;  align-items: center; justify-content: space-evenly; margin:12px; margin-top:24px;"> 
+	    <p><i class="material-icons prefix">token</i><label><input type="checkbox" class="filled-in" checked="checked" /><span>Promote with OCUR?</span></label><input id="tokener" type="text" class="validate"><label for="tokener" >OCUR Amount</label></p></div>
 	    
-	<div style="display:flex;  align-items: center; justify-content: space-evenly; margin:12px; margin-top:24px;">    
+	<div style="display:flex;  align-items: center; justify-content: space-evenly; margin:12px; margin-top:24px;">
+		<i class="material-icons prefix">console</i>
 	    <select id="select-status" style="z-index:1;" onchange="sorter();">
                 <option value="" selected disabled>Status...</option>
                 <option value="az">Neutral</option>
@@ -153,7 +155,7 @@
                 <a onclick="clearEditor();" class="waves-effect waves-grey btn-flat"><i class="material-icons left">refresh</i>Clear</a>
                 <a onclick="showPreview();" class="waves-effect waves-grey btn-flat"><i class="material-icons left">web_asset</i>Preview</a></div>
             <div>
-                <a onclick="pullArtifact($('#opener').val()); showView('map');" class="waves-effect waves-green green btn"><i class="material-icons right">east</i>Next</a></div>
+                <a onclick="pullArtifact($('#opener').val()); showView('map');" class="waves-effect waves-green green btn"><i class="material-icons right">east</i>Continue</a></div>
             <div id="show-progress" class="progress" style="display:none;"><div class="indeterminate"></div></div></div></div>
 
 <!-- dialog -->
@@ -611,7 +613,7 @@ function setResults() { searchMatch = []; searchResult = "";
         searchResult += "<div><a href='https://'" + domains[i][4] + "'>" + domains[i][4] + "</a></div><br/>"; } }
     $('#results').html(searchResult); showView('results'); }
 
-var editContent = '<div id="header-logo" style="display: flex;justify-content: center;align-items: center; display: flex;flex-direction:column;padding:12px;"><div style="border-radius:12px; padding:12px; margin-right:12px;" class="z-depth-1 input-field col s6"><img width="48" height="48" id="editor-image" src="img/seal3.png" onclick="showView(\'editor\'); changeFocus();" /></div><div style="display:flex;"><div id="editOpen" class="chip z-depth-1 waves-effect waves-blue blue-grey lighten-2" style="display:flex; color:white; align-items:center; justify-content:center; width:60px;" onclick="showView(\'editor\'); changeFocus();"><div style="display:flex;"><i id="pal" class="material-icons">sailing</i></div></div><div id="editColor" class="chip z-depth-1 waves-effect waves-blue blue-grey lighten-2" style="display:flex; color:white; align-items:center; justify-content:center; width:60px;" onclick="colorStart();"><div style="display:flex;"><i id="pal" class="material-icons">palette</i></div></div><div style="visibility:hidden;width:0;position:absolute;top:0;"><input type="color" oninput="setColor();" id="favcolor" name="favcolor" value="#ff0000" style="width:0px; height:0px;opacity:0;" /></div></div></div><div><span id="editor-name"></span></div><div style="display:flex;justify-content:center;margin-top:12px;margin-bottom:12px;"><a class="waves-effect waves-light btn green" onclick="sendArtifact();"><i class="material-icons left">upload_file</i>Publish...</a></div></div>';
+var editContent = '<div id="header-logo" style="display: flex;justify-content: center;align-items: center; display: flex;flex-direction:column;padding:12px;"><div style="border-radius:12px; padding:12px; margin-right:12px;" class="z-depth-1 input-field col s6"><img width="48" height="48" id="editor-image" src="img/seal3.png" onclick="showView(\'editor\'); changeFocus();" /></div><div style="display:flex;"><div id="editOpen" class="chip z-depth-1 waves-effect waves-blue blue-grey lighten-2" style="display:flex; color:white; align-items:center; justify-content:center; width:60px;" onclick="showView(\'editor\'); changeFocus();"><div style="display:flex;"><i id="pal" class="material-icons">edit</i></div></div><div id="editColor" class="chip z-depth-1 waves-effect waves-blue blue-grey lighten-2" style="display:flex; color:white; align-items:center; justify-content:center; width:60px;" onclick="colorStart();"><div style="display:flex;"><i id="pal" class="material-icons">palette</i></div></div><div style="visibility:hidden;width:0;position:absolute;top:0;"><input type="color" oninput="setColor();" id="favcolor" name="favcolor" value="#ff0000" style="width:0px; height:0px;opacity:0;" /></div></div></div><div><span id="editor-name"></span></div><div style="display:flex;justify-content:center;margin-top:12px;margin-bottom:12px;"><a class="waves-effect waves-light btn green" onclick="sendArtifact();"><i class="material-icons right">token</i>Deploy...</a></div></div>';
 
 function setColor() { $("#markera").css("background-color", document.getElementById('favcolor').value); $("#pal").html("done");
 $("#editColor").addClass("green"); $("#editColor").removeClass("blue-grey");
