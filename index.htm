@@ -85,9 +85,8 @@
 
     <!-- list -->
     <div id="list" class="content loader pane" style="overflow-y: auto; height: 95%;">
-        <div id="list-filter" class="z-depth-1" style="display:flex; justify-content: space-evenly; padding-top: 24px; padding-bottom:12px; margin-bottom: -6px; align-items:center;">
-		<a class="waves-effect waves-teal btn-flat"><i class="material-icons left">view_list</i>List</a>
-<!--<i class="material-icons">grid_view</i>-->
+        <div id="list-filter" class="z-depth-1" style="display:flex; justify-content: center; padding-top: 24px; padding-bottom:12px; margin-bottom: -6px; align-items:center;">
+		<a class="waves-effect waves-teal btn-flat" onclick="switchView();"><i id="view-icon" class="material-icons left">view_list</i>List</a>
         	<div><a class="waves-effect waves-amber btn-flat" onclick="showView('list'); showList('open');"><i class="material-icons left">filter_list</i>Filter</a></div><div><a class="waves-effect waves-amber btn-flat" onclick="showView('list'); showList('open');"><i class="material-icons left">sort</i>Sort</a></div><div><a class="waves-effect waves-amber btn-flat" onclick="showView('list'); showList('open');"><i class="material-icons left">deselect</i>Deselect</a></div></div><!--select_all-->
         <div id="registry" class="collection" style="overflow:auto;"></div></div>
 
@@ -357,24 +356,25 @@ function showView(view) {  hideView(); $('#'+view).show();
         case 'editor': $("#editor").addClass("scale-in"); break;
 	case 'filter': $("#filter").addClass("scale-in"); break;
         case 'list': break;
-        case 'news': $("#stamper").show(); $("#world").show(); introSwitch = true; break;
+        case 'news': $("#stamper").show(); $("#world").show(); break;
         case 'map': $("#actions").show(); map.resize(); break; } }
 
 var complete; var reset = false; var first = true;
 function showList(area) { $("#registry").html(''); $("#registry").hide(); if (first) { complete = domains; first = false; }
     switch (area) {
-        case "inventory":   for (let i=0;i<inventory.length;i++) { addContent(inventory[i]); } break;
-	    case "grid": $("#list-filter").show(); sortSet = [area,domains,0,18,16]; var snip; var carder = 4; if (screen.width < 480) { carder = 1; } for (let i=0;i<domains.length;i++) { if ((i%carder) == 0) { snip = '<div style="display:flex;width:100%;justify-content:center;">'; } snip += addGrid(i); if (((i+1)%carder) == 0) { snip += '</div>'; $("#registry").append(snip); } } adjustSort(true); break;
+	    case "grid": sortSet = [area,domains,0,18,16]; var snip; var carder = 4; if (screen.width < 480) { carder = 1; } for (let i=0;i<domains.length;i++) { if ((i%carder) == 0) { snip = '<div style="display:flex;width:100%;justify-content:center;">'; } snip += addGrid(i); if (((i+1)%carder) == 0) { snip += '</div>'; $("#registry").append(snip); } } adjustSort(true); break;
         case "domain": $("#list-filter").show(); if (reset) { domains = complete; reset = false; }
-		    if (gridSelect) { showList('grid'); break; }
+		    if (showGrid) { showList('grid'); break; }
 		    sortSet = [area,domains,0,18,16]; for (let i=0;i<domains.length;i++) { addList(i); } adjustSort(true); break;
-        case "filter": $("#list-filter").show();  sortSet = [area,domains,0,18,16]; domains = holder; for (let i=0;i<domains.length;i++) { addList(i); } adjustSort(true); break;
-        case "open": $("#list-filter").hide(); sortSet = [area,opens,0,18,16]; for (let i=0;i<opens.length;i++) { addOpen(i); } adjustSort(false); break; }
+        case "filter":  sortSet = [area,domains,0,18,16]; domains = holder; for (let i=0;i<domains.length;i++) { addList(i); } adjustSort(true); break;
+        case "open": sortSet = [area,opens,0,18,16]; for (let i=0;i<opens.length;i++) { addOpen(i); } adjustSort(false); break; }
     //$("#registry").css("height",height + "px");
     $("#registry").show(); $('img').on('dragstart', function(evt) { return false; }); }
 
 function showDoc(doc) { document.getElementById('dialog-inner2').scrollTo(0, 0); $.get('doc/'+doc, function(data) { setDialog(renderMd(data)); }); }
 
+var showGrid = false;
+function switchView() { if (showGrid) { showList('grid'); $("#view-icon").html("view_list"); showGrid = false; } else { showList('domain'); $("#view-icon").html("grid_view"); showGrid = true;} }
 function adjustSort(full) { //$("option[value='09']").attr("disabled", "disabled");
     $('#select-sort').empty();
     $('#select-sort').append('<option value="" selected disabled>Sort...</option>');
