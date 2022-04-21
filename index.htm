@@ -47,15 +47,15 @@
     	<li><a onclick="showDoc('urland');"><i class="material-icons">explore</i>Guide to Ocurious</a></li>
     	<li class="divider"></li>
     	<li><a onclick="showDoc('ocur');"><i class="material-icons">toll</i>Trade OCUR</a></li>
-	<li><a onclick="showDoc('donation');"><i class="material-icons"><span class="material-icons-outlined">grass</span></i>Preserve Land</a></li>
+	<li><a onclick="showDoc('donation');"><i class="material-icons"><span class="material-icons-outlined">park</span></i>Preserve Land</a></li>
 	<li class="divider"></li>
-	<li><a onclick="openInNewTab('https://github.com/nfnth');"><i class="material-icons">park</i>About ocur.io</a></li></ul>
+	<li><a onclick="openInNewTab('https://github.com/nfnth');"><i class="material-icons">grass</i>About ocur.io</a></li></ul>
 
 <ul id="domain" class="dropdown-content loader" style="visibility:hidden;">
 	<li><a onclick="reset = true; showView('list'); showList('domain');"><i class="material-icons"><span class="material-icons-outlined">landscape</span></i>Domain Manifest</a></li>
-	<li><a onclick="showView('list'); showList('artifact');"><i class="material-icons"><span class="material-icons-outlined">inventory_2</span></i>Artifact Registry</a></li>
+	<li><a onclick="showView('list'); showList('artifact');"><i class="material-icons"><span class="material-icons-outlined">inventory_2</span></i>Artifact Inventory</a></li>
 	<li class="divider"></li>
-	<li><a onclick="showView('list'); showList('inventory');"><i class="material-icons">receipt</i>Record Inventory</a></li>
+	<li><a onclick="showView('list'); showList('inventory');"><i class="material-icons">receipt</i>Record Registry</a></li>
 	<li class="divider"></li>
 	<li><a onclick="showView('list'); showList('open');"><i class="material-icons">sailing</i>OpenSea Collection</a></li></ul>
 
@@ -690,7 +690,7 @@ map.on('load', function (event) { $("head").append('<style type="text/css">.mark
 	
 function setPopups() {
 	for (let a = 0; a < currentMarkers.length; a++) { var origToggle = currentMarkers[a].togglePopup;
-		currentMarkers[a].togglePopup = function() { origToggle(); $('.materialboxed').materialbox(); } }					 }
+		currentMarkers[a].togglePopup = function(this) { origToggle(this); $('.materialboxed').materialbox(); } }					 }
 
 var satSwitch = true; var satCenter; var currentToggle = 0; var gpsSwitch = false; var randSwitch = false;
 function mapSat() { satCenter = map.getCenter();
