@@ -528,7 +528,7 @@ function filterMap(slug) { holder = [];
     clearMap(); for (let a=0;a<currentMarkers.length;a++){currentMarkers[a].remove(); } currentMarkers = []; domains = holder;
     for (let i=0;i<domains.length;i++) { showMark(i); }
     var place2 = [domains[0].coord.substring(domains[0].coord.indexOf(', ')+1,domains[0].coord.indexOf(']')-1), domains[0].coord.substring(domains[0].coord.indexOf('[')+1,domains[0].coord.indexOf(',')-1)];
-    startUp = function() {currentMarkers[0].togglePopup(); };  setZoom = 2; fly(middle); setPopups(); }
+    startUp = function() {currentMarkers[0].togglePopup(); };  setZoom = 2; fly(middle);  }
 
 function switchWallet(i) {
 	if (walletSwitch) { walletSwitch = false; pullOwner(i);$("#i"+i).html('image'); } else { walletSwitch = true; $("#o"+i).html('<img  class="materialboxed" width="120" height="120" src="'+domains[i].core.image_preview_url+'"/>'); $("#i"+i).html('account_balance_wallet'); } }
@@ -687,10 +687,6 @@ map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/mapbox/light-v
 map.on('load', function (event) { $("head").append('<style type="text/css">.markre{visibility:visible!important;}</style>');
     map.on('click', function(e) { coordinates = e.lngLat; if(artFlag) { addArt(); artFlag = false; } $('.fixed-action-btn').floatingActionButton('close');
 				 }); });
-	
-function setPopups() {
-	//for (let a = 0; a < currentMarkers.length; a++) { var origToggle = currentMarkers[a].togglePopup;
-		//currentMarkers[a].togglePopup = function(this) { origToggle(this); $('.materialboxed').materialbox(); } }					 }
 
 var satSwitch = true; var satCenter; var currentToggle = 0; var gpsSwitch = false; var randSwitch = false;
 function mapSat() { satCenter = map.getCenter();
