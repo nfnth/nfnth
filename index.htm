@@ -689,8 +689,8 @@ map.on('load', function (event) { $("head").append('<style type="text/css">.mark
 				 }); });
 	
 function setPopups() {
-	for (let a = 0; a < currentMarkers.length; a++) { var origToggle = currentMarkers[a].togglePopup;
-		currentMarkers[a].togglePopup = function(this) { origToggle(this); $('.materialboxed').materialbox(); } }					 }
+	//for (let a = 0; a < currentMarkers.length; a++) { var origToggle = currentMarkers[a].togglePopup;
+		//currentMarkers[a].togglePopup = function(this) { origToggle(this); $('.materialboxed').materialbox(); } }					 }
 
 var satSwitch = true; var satCenter; var currentToggle = 0; var gpsSwitch = false; var randSwitch = false;
 function mapSat() { satCenter = map.getCenter();
