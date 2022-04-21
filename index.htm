@@ -43,8 +43,8 @@
 
 <!-- dropdown -->
 <ul id="doc" class="dropdown-content loader" style="visibility:hidden;">
-	<li><a onclick="showDoc('PLANME');"><i class="material-icons">explore</i>On Deed to Domain</a></li>
-    	<li><a onclick="showDoc('urland');"><i class="material-icons">token</i>Guide to Ocurious</a></li>
+	<li><a onclick="showDoc('PLANME');"><i class="material-icons">token</i>On Deed to Domain</a></li>
+    	<li><a onclick="showDoc('urland');"><i class="material-icons">explore</i>Guide to Ocurious</a></li>
     	<li class="divider"></li>
     	<li><a onclick="showDoc('ocur');"><i class="material-icons">toll</i>Trade OCUR</a></li>
 	<li><a onclick="showDoc('donation');"><i class="material-icons"><span class="material-icons-outlined">park</span></i>Preserve Land</a></li>
@@ -61,7 +61,7 @@
 
 <!-- panel -->
 <ul id="user-pane" class="sidenav loader blue-grey lighten-5" style="visibility:hidden;">
-	<li><div class="user-view z-depth-1" style="background-color: #eaf2f7;display: flex;margin: auto; padding: 0;align-items: center; padding-left:12px;"><span id="ocuros" style="cursor: pointer;margin:auto;" onclick="openInNewTab('https://github.com/nfnth/os'); $('#user-pane').sidenav('close');" class="new badge green darken-2" data-badge-caption=""></span>
+	<li><div class="user-view z-depth-1" style="background-color: #eaf2f7;display: flex;margin: auto; padding: 0;align-items: center; padding-left:12px;"><span id="ocuros" style="cursor: pointer;margin:auto;" onclick="openInNewTab('https://github.com/nfnth/os'); $('#user-pane').sidenav('close');" class="new badge green darken-2 tooltipped" data-position="left" data-tooltip="ocurOS | v1.08" data-badge-caption=""></span>
         <img id="user-pic" style="height: 72px;margin-left:18px; padding: 12px;" src="img/seal3.png" onclick="openInNewTab('https://github.com/nfnth/nfnth'); $('#user-pane').sidenav('close');"/></div></li>
     <li><a class="subheader">Wallet Information</a></li>
   	<li><a class="waves-effect" onclick="if (walletAddress != '') {copyClip(walletAddress);}"><i class="material-icons">alternate_email</i><span id="myAdd">Wallet Address</span></a></li>
@@ -71,7 +71,7 @@
   	<li><div style="margin-top:0;" class="divider"></div></li>
   	<!-- <i class="material-icons left">directions</i><i class="material-icons left">picture_as_pdf</i><i class="material-icons left">calculate</i>-->
   	<li><a class="subheader">Domain Information</a></li>
-  	<li><a class="waves-effect"><i class="material-icons">token</i><span id="myURL">UR.Land Status</span></a></li>
+  	<li><a class="waves-effect"><i class="material-icons">token</i><span id="myURL">Ocurious Status</span></a></li>
     	<li><a class="waves-effect"><i class="material-icons">toll</i><span id="myURL">OCUR Balance (Domain)</span></a></li>
   	<li style="margin-top:12px; display: flex;align-items: center;justify-content: center;margin-bottom:16px;"><select id="domain-template" class="sider" onchange="domainSelect();">
         <option selected="selected">No domain selected</option><option>tactician.us (demo)</option></select></li>
@@ -198,7 +198,7 @@ async function initial() {
     $('#lists').dropdown({ constrainWidth: false, coverTrigger: false } ); $('#list-hide').dropdown({ constrainWidth: false, coverTrigger: false } );
     $('#user-pane').sidenav({ edge: 'right' });
     $('.fixed-action-btn').floatingActionButton({ hoverEnabled: false }); $("#map-add").hide(); $("#map-edit").hide(); $("#map-delete").hide();
-    
+    $('.tooltipped').tooltip();
     showView('news'); //searchClear();
      
     setTimeout(function() { $(".loader").css("visibility", "visible"); $('img').on('dragstart', function(evt) { return false; }); }  , 500); }
@@ -591,7 +591,7 @@ function setResults() { searchMatch = []; searchResult = "";
         searchResult += "<div><a href='https://'" + domains[i][4] + "'>" + domains[i][4] + "</a></div><br/>"; } }
     $('#results').html(searchResult); showView('results'); }
 
-var editContent = '<div id="header-logo" style="display: flex;justify-content: center;align-items: center; display: flex;flex-direction:column;padding:12px;"><div style="border-radius:12px; padding:12px; margin-right:12px;" class="z-depth-1 input-field col s6"><img width="48" height="48" id="editor-image" src="img/seal3.png" onclick="showView(\'editor\'); changeFocus();" /></div><div style="display:flex;"><div id="editOpen" class="chip z-depth-1 waves-effect waves-blue blue-grey lighten-2" style="display:flex; color:white; align-items:center; justify-content:center; width:60px;" onclick="showView(\'editor\'); changeFocus();"><div style="display:flex;"><i id="pal" class="material-icons">edit</i></div></div></div></div><div><span id="editor-name"></span></div><div style="display:flex;justify-content:center;margin-top:12px;margin-bottom:12px;"><a class="waves-effect waves-light btn green" onclick="sendArtifact();"><i class="material-icons left">inventory_2</i>Deploy...</a></div></div>';
+var editContent = '<div id="header-logo" style="display: flex;justify-content: center;align-items: center; display: flex;padding:12px;"><div style="border-radius:12px; padding:12px; margin-right:12px;" class="z-depth-1 input-field col s6"><img width="48" height="48" id="editor-image" src="img/seal3.png" onclick="showView(\'editor\'); changeFocus();" /></div><div style="display:flex;"><div id="editOpen" class="chip z-depth-1 waves-effect waves-blue blue-grey lighten-2" style="display:flex; color:white; align-items:center; justify-content:center; width:60px;" onclick="showView(\'editor\'); changeFocus();"><div style="display:flex;"><i id="pal" class="material-icons">edit</i></div></div></div></div><div><span id="editor-name"></span></div><div style="display:flex;justify-content:center;margin-top:12px;margin-bottom:12px;"><a class="waves-effect waves-light btn green" onclick="sendArtifact();"><i class="material-icons left">inventory_2</i>Deploy...</a></div></div>';
 
 function setColor() { $("#markera").css("background-color", document.getElementById('favcolor').value); $("#pal").html("done");
 $("#editColor").addClass("green"); $("#editColor").removeClass("blue-grey");
@@ -783,7 +783,7 @@ function datetimeStart() {
     	var yyyy = current.getFullYear(), MM = current.getMonth() + 1; if (MM < 10) { MM = "0" + MM.toString(); }
     	var dd = current.getDate(), hh = current.getHours(), mm = current.getMinutes(), ss = current.getSeconds();
     	var datestamp = yyyy + "." + MM + "." + dd; var timestamp = hh + ":" + mm + ":" + ss; // calendar?
-	$('#ocuros').attr('data-badge-caption', datestamp + "@" + timestamp + " | ocurOS"); }
+	$('#ocuros').attr('data-badge-caption', datestamp + "@" + timestamp); }
 
 function colorStart() { document.getElementById("favcolor").focus(); document.getElementById("favcolor").click(); }
 //map.addControl(new MapboxDirections({ accessToken: mapboxgl.accessToken }),'top-left');
