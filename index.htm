@@ -47,9 +47,9 @@
     	<li><a onclick="showDoc('urland');"><i class="material-icons">explore</i>Guide to Ocurious</a></li>
     	<li class="divider"></li>
     	<li><a onclick="showDoc('ocur');"><i class="material-icons">toll</i>Trade OCUR</a></li>
-	<li><a onclick="showDoc('donation');"><i class="material-icons"><span class="material-icons-outlined">park</span></i>Preserve Land</a></li>
+	<li><a onclick="showDoc('donation');"><i class="material-icons"><span class="material-icons-outlined">grass</span></i>Preserve Land</a></li>
 	<li class="divider"></li>
-	<li><a onclick="openInNewTab('https://github.com/nfnth');"><i class="material-icons">grass</i>About ocur.io</a></li></ul>
+	<li><a onclick="openInNewTab('https://github.com/nfnth');"><i class="material-icons">park</i>About ocur.io</a></li></ul>
 
 <ul id="domain" class="dropdown-content loader" style="visibility:hidden;">
 	<li><a onclick="reset = true; showView('list'); showList('domain');"><i class="material-icons"><span class="material-icons-outlined">landscape</span></i>Domain Manifest</a></li>
@@ -536,7 +536,7 @@ function switchWallet(i) {
 var popups = []; var walletSwitch = true;
 function showMark(i) { selectedMark = i;  //if (place == "") place = window.location.host;
 	var place2 = [domains[i].coord.substring(domains[i].coord.indexOf(', ')+1,domains[i].coord.indexOf(']')-1), domains[i].coord.substring(domains[i].coord.indexOf('[')+1,domains[i].coord.indexOf(',')-1)];
-        var html = '<div><div id="o'+ i + '" style="display:flex; justify-content:center;"><img class="materialboxed" width="120" height="120" src="'+domains[i].core.image_preview_url+'"/></div><div style="margin-top:16px; font-size:16px;"><a onclick="openInNewTab(\'' + domains[i].core.external_link + '\');">' + domains[i].core.name + '</a><i id="i' + i + '" onclick="switchWallet(' + i + ');" class="material-icons">account_balance_wallet</i><br/><br/><a class="waves-effect waves-blue btn blue lighten-3" onclick="addListDeed(' + i +');"><i class="material-icons">description</i></a>&nbsp;&nbsp<a class="waves-effect waves-light btn amber lighten-4" onclick="showDoc(\'order\');"><i class="material-icons">inventory_2</i></a></div></div>';
+        var html = '<div><div id="o'+ i + '" style="display:flex; justify-content:center;"><img class="materialboxed" width="120" height="120" src="'+domains[i].core.image_preview_url+'"/></div><div style="margin-top:16px; font-size:16px;"><a onclick="openInNewTab(\'' + domains[i].core.external_link + '\');">' + domains[i].core.name + '</a><br/><br/><a class="waves-effect waves-blue btn blue lighten-3" onclick="addListDeed(' + i +');"><i class="material-icons">description</i></a>&nbsp;&nbsp<a class="waves-effect waves-light btn amber lighten-4" onclick="showDoc(\'order\');"><i class="material-icons">inventory_2</i></a></div></div>';
 
             addMark(i+99,place2,"blue",getClass(domains[i].core.collection.slug),getColor(domains[i].core.collection.slug), html, i); //setTimeout( function () { }, 1000);  
 		     }
