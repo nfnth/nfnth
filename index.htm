@@ -127,7 +127,7 @@
     <!-- map -->
     <div id="map" class="content loader pane" style="width:100%;"></div>
         <div id="actions" class="content loader pane fixed-action-btn" >
-            <a class="btn-floating btn-large amber lighten-2 waves-effect waves-light"><i class="large material-icons">apps</i></a>
+            <a class="btn-floating btn-large amber lighten-3 waves-effect waves-light"><i class="large material-icons">apps</i></a>
             <ul>
 		<li><a id="map-sat" class="btn-floating waves-effect waves-light grey" onclick="mapSat();"><i class="material-icons">satellite_alt</i></a></li>
 		<li><a id="map-gps" class="btn-floating waves-effect waves-light grey" onclick="mapLoc();"><i class="material-icons">gps_fixed</i></a></li>
@@ -379,7 +379,7 @@ function showList(area) { $("#registry").html(''); $("#registry").hide(); if (fi
         case "domain": $("#list-filter").show(); if (reset) { domains = complete; reset = false; }
 		    if (gridSelect) { showList('grid'); break; }
 		    sortSet = [area,domains,0,18,16]; for (let i=0;i<domains.length;i++) { addList(i); } adjustSort(true); break;
-        case "filter": sortSet = [area,domains,0,18,16]; domains = holder; for (let i=0;i<domains.length;i++) { addList(i); } adjustSort(true); break;
+        case "filter": $("#list-filter").show();  sortSet = [area,domains,0,18,16]; domains = holder; for (let i=0;i<domains.length;i++) { addList(i); } adjustSort(true); break;
         case "open": $("#list-filter").hide(); sortSet = [area,opens,0,18,16]; for (let i=0;i<opens.length;i++) { addOpen(i); } adjustSort(false); break; }
     //$("#registry").css("height",height + "px");
     $("#registry").show(); $('img').on('dragstart', function(evt) { return false; }); }
@@ -443,7 +443,7 @@ if (elem.requestFullscreen) { elem.requestFullscreen();
 	
 inventory.push('Purchase Collectible'); inventory.push('Promote Domain'); inventory.push('Transfer OCUR');
 function addContent(content) {
-    $("#registry").append("<a class='collection-item' ><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;'>" + content + "</div><div><span onclick='pullDoc(\"" + content + "\");' class='waves-effect waves-light waves-blue btn blue' ><i class='material-icons'>sticky_note_2</i></span><span class='waves-effect waves-light waves-blue btn blue lighten-2' ><i class='material-icons'>map</i></span><span class='waves-effect waves-light waves-green btn green lighten-2' ><i class='material-icons'>forest</i></span></div></div></a>"); }
+    $("#registry").append("<a class='collection-item' ><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;'>" + content + "</div><div><span onclick='pullDoc(\"" + content + "\");' class='waves-effect waves-light waves-blue btn blue' ><i class='material-icons'>help_center</i></span><span class='waves-effect waves-light waves-blue btn blue lighten-2' ><i class='material-icons'>map</i></span><span class='waves-effect waves-light waves-green btn green lighten-2' ><i class='material-icons'>credit_card</i></span></div></div></a>"); }
 
 function padSerial(serial) { if (serial != null) { if (serial.length == 1) { return '0' + serial; } else { return serial; } } }
 
