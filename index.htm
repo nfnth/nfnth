@@ -25,14 +25,14 @@
 <!-- media -->
 	<a id="doc-hide" class="screen-hide" href="#!" data-target="doc"><i class="material-icons">sticky_note_2</i></a>
         <a id="map-hide" class="screen-hide" onclick="showView('map'); "><i class="material-icons">map</i></a>
-	<a id="list-hide" class="screen-hide" href="#!" data-target="domain"><i class="material-icons">list</i></a>
+	<a id="list-hide" class="screen-hide" onclick="showView('list'); showList('domain');"><i class="material-icons">list</i></a>
     	<a id="search-hide" class="screen-hide" onclick="showView('search');"><i class="material-icons">search</i></a>
 
     <!-- desktop -->
     	<ul class="hide-on-med-and-down">
 	    <li id="doc-list"><a id="docs" href="#!" data-target="doc"><i class="material-icons left">sticky_note_2</i>GUIDE<i class="material-icons right">arrow_drop_down</i></a></li>
             <li id="map-list"><a onclick="showView('map');"><i class="material-icons left">map</i>EXPLORE</a></li>
-            <li id="list-list"><a id="lists" href="#!" data-target="domain"><i class="material-icons left">list</i>CATALOG<i class="material-icons right">arrow_drop_down</i></a></li>
+            <li id="list-list"><a onclick="showView('list'); showList('domain');"><i class="material-icons left">list</i>CATALOG</a></li>
             <li style="height:64px;" id="search-list">
                 <a style="height:inherit; padding-right:0;"><i onclick="$('#search').focus();" style="height:inherit; padding-right:16px;" class="material-icons">search</i>
         		<div id="search-box" class="input-field" style="height:inherit;">
@@ -49,10 +49,6 @@
     	<li class="divider"></li>
     	<li><a ><i class="material-icons">grass</i>Field Guide</a></li>
 	<li><a ><i class="material-icons"><span class="material-icons-outlined">park</span></i>Journal</a></li></ul>
-
-<ul id="domain" class="dropdown-content loader" style="visibility:hidden;">
-	<li><a onclick="reset = true; showView('list'); showList('domain');"><i class="material-icons"><span class="material-icons-outlined">landscape</span></i>Domain Manifest</a></li>
-	<li><a onclick="showView('list'); showList('artifact');"><i class="material-icons"><span class="material-icons-outlined">inventory_2</span></i>Artifact Registry</a></li></ul>
 
 <!-- panel -->
 <ul id="user-pane" class="sidenav loader blue-grey lighten-5" style="visibility:hidden;">
@@ -396,10 +392,10 @@ alert('changed');
 }
 
 function addOpen(i){
-    $("#registry").append("<a class='collection-item'><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;'><label><input type='checkbox' class='filled-in' checked='checked' /><span>" + opens[i].core.name + "</span></label></div><div style='display:flex; justify-content:space-between;align-items:center;'><div style='display:flex;'><div style='width:120px; ' class='z-depth-1 chip " + getColor(opens[i].core.slug)  + "'><img src='img/key/" + getCollect(opens[i].core.slug) + "'>" + opens[i].core.slug + "</div><span class='amber lighten-2 badge z-depth-1' style='color:black!important;font-weight:bold;'>" + opens[i].count + " available</span></div></div></div></div></a>");}
-
+    $("#registry").append("<a class='collection-item'><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;'><label><input type='checkbox' class='filled-in' checked='checked' /><span>" + opens[i].core.name + "</span></label></div><div style='display:flex; justify-content:space-between;align-items:center;'><div style='display:flex;'><div style='width:120px; ' class='z-depth-1 chip " + getColor(opens[i].core.slug)  + "'><img src='img/key/" + getCollect(opens[i].core.slug) + "'>" + opens[i].core.slug + "</div></div><img class='materialboxed z-depth-1' width='60' height='40' src='" + opens[i].core.banner_image_url + "'/></div></div></div></a>"); $('.materialboxed').materialbox(); }
+//<span class='amber lighten-2 badge z-depth-1' style='color:black!important;font-weight:bold;'>" + opens[i].count + " available</span>
 function addOpenDetail(i) {
-     $("#domain-info").html('<div style="display:flex;justify-content:space-evenly;align-items:center;"><div style="display: flex;flex-direction: column;text-align: left;align-items:center;"><div style="display:flex; justify-content:center;"><img style="margin-bottom:24px;" class="materialboxed z-depth-2" width="180" height="120" src="' + opens[i].core.banner_image_url + '"/></div><div style="margin-bottom:12px;">' + opens[i].core.name + '&nbsp;&nbsp · &nbsp;&nbsp<a style="cursor:pointer;" onclick="openInNewTab(\'https://opensea.io/collection/' + opens[i].core.slug + '\');">' + opens[i].core.slug + '</a></div><br/><br/><div style="display:flex;"><a onclick="addOpenDeed(' + i +');" class="waves-effect waves-light waves-blue btn blue lighten-2" ><i class="material-icons">sticky_note_2</i></a>&nbsp;&nbsp;<a onclick="showView(\'map\'); map.resize(); domains = complete; filterMap(\''+opens[i].core.slug+'\');" class="modal-close waves-effect waves-light waves-blue btn blue lighten-3" ><i class="material-icons">map</i></a>&nbsp;&nbsp;<a onclick="domains = complete; filterList(\'' + opens[i].core.slug + '\'); " class="modal-close waves-effect waves-blue btn blue lighten-3" ><i class="material-icons">list</i></a></div><br/></div></div>'); $('.materialboxed').materialbox(); }
+     $("#domain-info").html('<div style="display:flex;justify-content:space-evenly;align-items:center;"><div style="display: flex;flex-direction: column;text-align: left;align-items:center;"><div style="display:flex; justify-content:center;"></div><div style="margin-bottom:12px;">' + opens[i].core.name + '&nbsp;&nbsp · &nbsp;&nbsp<a style="cursor:pointer;" onclick="openInNewTab(\'https://opensea.io/collection/' + opens[i].core.slug + '\');">' + opens[i].core.slug + '</a></div><br/><br/><div style="display:flex;"><a onclick="addOpenDeed(' + i +');" class="waves-effect waves-light waves-blue btn blue lighten-2" ><i class="material-icons">sticky_note_2</i></a>&nbsp;&nbsp;<a onclick="showView(\'map\'); map.resize(); domains = complete; filterMap(\''+opens[i].core.slug+'\');" class="modal-close waves-effect waves-light waves-blue btn blue lighten-3" ><i class="material-icons">map</i></a>&nbsp;&nbsp;<a onclick="domains = complete; filterList(\'' + opens[i].core.slug + '\'); " class="modal-close waves-effect waves-blue btn blue lighten-3" ><i class="material-icons">list</i></a></div><br/></div></div>'); $('.materialboxed').materialbox(); }
 
 function addOpenDeed(i) {
     $("#somedialog2").css("z-index",1004);
