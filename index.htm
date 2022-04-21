@@ -630,10 +630,12 @@ setStatus = function (text) { //- year.day of year-time (hover to show month/day
             layout : 'attached', effect : 'bouncyflip', type : 'notice', // notice, warning or error
             onClose : function() { }	}); notification.show(); }, 1200 ); }
 
+var pageSwitch = true;
 function setDialog(text) {  //$("#dialog-inner2").html(text);
 			  $("#magazine-page").html(text);
-			  $('#magazine').turn({gradients: true, acceleration: true, display: 'single'});
-			  
+	if (pageSwitch) {
+			  $('#magazine').turn({gradients: true, acceleration: true, display: 'single'}); pageSwitch = false; } else {
+			  $('#magazine').turn('resize'); }
     var myDiv = document.getElementById('dialog-inner2'); myDiv.scrollTop = 0;
     somedialog = document.getElementById( 'somedialog2' ); morphEl = somedialog.querySelector( '.morph-shape' );
     s = Snap( morphEl.querySelector( 'svg' ) ); path = s.select( 'path' );
@@ -863,8 +865,8 @@ div.active {opacity: 1;height: auto;}
 
 .select-wrapper { width:100%!important; }
 	#magazine{
-	width: 90%;
-	height: 90%;
+	width: 100%;
+	height: 100%;
 }
 #magazine .turn-page{
 	background-color:white;
