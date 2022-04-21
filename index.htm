@@ -171,7 +171,7 @@
 	<div><span class="text">Page 3</span></div>
 </div>
 		
-		<div><button class="action" data-dialog-close>Close</button></div></div></div></div>
+		<!--<div><button class="action" data-dialog-close>Close</button></div>--></div></div></div>
 
 <script>
 var gridSelect = false;
@@ -635,7 +635,12 @@ function setDialog(text) {  //$("#dialog-inner2").html(text);
 			  $("#magazine-page").html(text);
 	if (pageSwitch) {
 			  $('#magazine').turn({gradients: true, acceleration: true, display: 'single'}); pageSwitch = false; } else {
-			  $('#magazine').turn('resize'); }
+			  //$('#magazine').turn('resize'); 
+				  
+				  
+				  
+				  $('selector').turn('size', document.getElementById('magazine').offsetWidth, document.getElementById('magazine).offsetHeight); }
+	
     var myDiv = document.getElementById('dialog-inner2'); myDiv.scrollTop = 0;
     somedialog = document.getElementById( 'somedialog2' ); morphEl = somedialog.querySelector( '.morph-shape' );
     s = Snap( morphEl.querySelector( 'svg' ) ); path = s.select( 'path' );
