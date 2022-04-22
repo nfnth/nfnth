@@ -382,9 +382,18 @@ function adjustSort(full) { //$("option[value='09']").attr("disabled", "disabled
     $("#select-sort").formSelect(); }
 
 function addOpen(i){
-    $("#registry").append("<a class='collection-item'><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;'><label><input type='checkbox' checked='checked' /><span>" + opens[i].core.name + "</span></label></div><div style='display:flex; justify-content:space-between;align-items:center;'><div><img class='materialboxed z-depth-1' width='60' height='40' src='" + opens[i].core.banner_image_url + "'/></div>&nbsp;&nbsp;&nbsp;&nbsp;<div style='display:flex;'><div onclick='openInNewTab(\"https://opensea.io/collection/" + opens[i].core.slug + "\");' style='width:120px;' class='z-depth-1 chip " + getColor(opens[i].core.slug)  + "'><img src='img/key/" + getCollect(opens[i].core.slug) + "'>" + opens[i].core.slug + "</div></div></div></div></div></a>"); $('.materialboxed').materialbox(); }
+    $("#registry").append("<a class='collection-item open'><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;'><label><input type='checkbox' checked='checked' id='check" + i + "' /><span>" + opens[i].core.name + "</span></label></div><div style='display:flex; justify-content:space-between;align-items:center;'><div><img class='materialboxed z-depth-1' width='60' height='40' src='" + opens[i].core.banner_image_url + "'/></div>&nbsp;&nbsp;&nbsp;&nbsp;<div style='display:flex;'><div onclick='openInNewTab(\"https://opensea.io/collection/" + opens[i].core.slug + "\");' style='width:120px;' class='z-depth-1 chip " + getColor(opens[i].core.slug)  + "'><img src='img/key/" + getCollect(opens[i].core.slug) + "'>" + opens[i].core.slug + "</div></div></div></div></div></a>"); $('.materialboxed').materialbox(); }
 //<span class='amber lighten-2 badge z-depth-1' style='color:black!important;font-weight:bold;'>" + opens[i].count + " available</span>
 //$("#somedialog2").css("z-index",1004);
+	
+$('.open').on('click', function(e) {
+  if (e.target !== this)
+    return;
+  //$('#customerServices input:checkbox.parent');
+
+	if ($(this).find("input").prop('checked')) { $(this).find("input").prop('checked', false); } else { $(this).find("input").prop('checked', true); }
+  //alert( 'clicked the foobar' );
+});
 
 function addList(i){
     $("#registry").append("<a class='collection-item'><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;'>" + domains[i].core.name + "</div><div style='display:flex; justify-content:space-between;align-items:center;'><div style='display:flex; flex-direction:column;'><div style='display:flex;align-items:center;'><div><span onclick='pullDoc(\"" + domains[i].core.name + "\");' class='waves-effect waves-light waves-blue btn blue' ><i class='material-icons'>sticky_note_2</i></span><span class='waves-effect waves-light waves-blue btn blue lighten-2' ><i class='material-icons'>map</i></span><span class='waves-effect waves-light btn amber lighten-2' ><i class='material-icons'>inventory_2</i></span></div>&nbsp;&nbsp;&nbsp;&nbsp;<span class='modal-trigger' href='#modal1' onclick='pullOwner(" + i + "); pullPrice(" + i + "); addListDetail(" + i + ");'><i class='material-icons'>more_vert</i></span></div></div></div></div></a>"); }
