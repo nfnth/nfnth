@@ -19,7 +19,7 @@
 <!-- menu -->
 <nav id="main-menu" style="position: fixed;top:0; z-index:2;visibility:hidden;" class="loader">
     <div id="panel-menu" class="nav-wrapper header blue-grey lighten-3 z-depth-2" style="border-bottom:solid 3px darkgrey; display:flex; justify-content: space-between; color:black;">
-    	<div class="z-depth-1"><a class="amber lighten-5" style="opacity:0.8; display: flex; align-items: center; height: 105%; padding-right: 10px; color: brown;font-weight: bold;font-size: 20px;">
+    	<div class="z-depth-1"><a class="amber lighten-5" style="opacity:0.7; display: flex; align-items: center; height: 105%; padding-right: 10px; color: brown;font-weight: bold;font-size: 20px;">
 		<div id="waiter" onclick="resetHome();" style="height:48px; width:48px; cursor: pointer; margin-left: 12px;"><img id="list-wait" class="image image-rotate"/><img id="list-wait2" class="image image-rotate"/></div></a></div>
 
 <!-- media -->
@@ -101,8 +101,13 @@
     <div id="list" class="content loader pane" style="overflow-y: auto; height: 95%;">
 	    <!-- filter -->
         <div id="list-filter" class="z-depth-1" style="display:flex; justify-content: center; padding-top: 24px; padding-bottom:12px; margin-bottom: -6px; align-items:center;">
-        	<div class="hide-on-med-and-down"><a class="waves-effect waves-teal btn-flat" onclick="switchView();"><i id="view-icon" class="material-icons left">view_list</i><span>List</span></a><a class="waves-effect waves-amber btn-flat" onclick="filterDomain();"><i id="select-icon" class="material-icons left">select_all</i><span>Select</span></a><a class="waves-effect waves-amber btn-flat" onclick="showView('list'); showList('open');"><i class="material-icons left">filter_list</i><span>Filter</span></a><div class="input-field col s12 m6">
-			<span><i class="material-icons">sort</i>Sort</span>
+        	<div style="display:flex;" class="hide-on-med-and-down"><a class="waves-effect waves-teal btn-flat" onclick="switchView();"><i id="view-icon" class="material-icons left">view_list</i><span>List</span></a><a class="waves-effect waves-amber btn-flat" onclick="filterDomain();"><i id="select-icon" class="material-icons left">select_all</i><span>Select</span></a><a class="waves-effect waves-amber btn-flat" onclick="showView('list'); showList('open');"><i class="material-icons left">filter_list</i><span>Filter</span></a><a id="dropdown" class='dropdown-trigger btn' href='#' data-target='dropdown1'><i class="material-icons left">sort</i>Sort</a>
+			
+			
+			
+			
+			<!--<div class="input-field col s12 m6">
+			
   			<select id="select-sort" style="z-index:1;" onchange="sorter();">
 				<option value="" selected disabled>Sort...</option>
 				<option value="az">Alpha &#8595;</option>
@@ -110,9 +115,16 @@
 				<option value="09">Price &#8593;</option>
 				<option value="90">Price &#8595;</option>
 				<option value="!)">Serial &#8595;</option>
-			<option value=")!">Serial &#8593;</option></select></div></div>
+			<option value=")!">Serial &#8593;</option></select></div>--></div>
 		<div class="screen-hide"><a class="waves-effect waves-teal btn-flat" onclick="switchView();"><i id="view-icon2" class="material-icons">view_list</i></a><a class="waves-effect waves-amber btn-flat" onclick="showView('list'); showList('open');"><i class="material-icons">deselect</i></a><a class="waves-effect waves-amber btn-flat" onclick="showView('list'); showList('open');"><i class="material-icons">filter_list</i></a><a class="waves-effect waves-amber btn-flat"><span class='modal-trigger' href='#modal2'><i class="material-icons">sort</i></span></a></div></div>
         <div id="registry" class="collection" style="overflow:auto;"></div></div>
+	
+	<ul id='dropdown1' class='dropdown-content'>
+    <li><a href="#!">Alpha &#8595;</a></li>
+    <li><a href="#!">Alpha &#8593;</a></li>
+    <li class="divider" tabindex="-1"></li>
+    <li><a href="#!">Price &#8593;</a></li>
+  </ul>
 	
     <!-- search -->
     <div id="results" style="margin:80; display:none;" class="content loader pane">search...</div>
@@ -206,6 +218,7 @@ var gear4 = Math.floor(Math.random() * (42 - 1 + 1)) + 1; document.getElementByI
 var gear4b = Math.floor(Math.random() * (42 - 1 + 1)) + 1; document.getElementById('world-gear2').src = "img/gear/gear" + gear4b.toString() + ".png";
 	$("#lister").prop("checked", false);
     $('#docs').dropdown({ constrainWidth: false, coverTrigger: false } ); $('#doc-hide').dropdown({ constrainWidth: false, coverTrigger: false } ); //hover: true 
+			$('#dropdown').dropdown();
     $('#user-pane').sidenav({ edge: 'right' });
     $('.fixed-action-btn').floatingActionButton({ hoverEnabled: false }); $('.fixed-action-btn').hide();
 
@@ -426,7 +439,7 @@ function addOpen(i){
 //});
 }
 function addList(i){
-    $("#registry").append("<a class='collection-item'><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;'>" + domains[i].core.name + "</div><div style='display:flex; justify-content:space-between;align-items:center;'><div style='display:flex; flex-direction:column;'><div style='display:flex;align-items:center;'><div><span onclick='pullDoc(\"" + domains[i].core.name + "\");' class='waves-effect waves-light btn-flat' ><i style='font-size:30px;' class='material-icons'>sticky_note_2</i></span><span class='waves-effect waves-light btn-flat' ><i style='font-size:30px;' class='material-icons'>map</i></span><span style='margin-left:12px;' class='waves-effect waves-light btn' ><i class='material-icons'>inventory_2</i></span></div>&nbsp;&nbsp;&nbsp;&nbsp;<span style='display:flex;color:black;' class='modal-trigger' href='#modal1' onclick='pullOwner(" + i + "); pullPrice(" + i + "); addListDetail(" + i + ");'><i class='material-icons'>more_vert</i></span></div></div></div></div></a>"); }
+    $("#registry").append("<a class='collection-item'><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;'>" + domains[i].core.name + "</div><div style='display:flex; justify-content:space-between;align-items:center;'><div style='display:flex; flex-direction:column;'><div style='display:flex;align-items:center;'><div><span onclick='pullDoc(\"" + domains[i].core.name + "\");' class='waves-effect waves-light btn-flat' ><i style='font-size:28px;' class='material-icons'>sticky_note_2</i></span><span class='waves-effect waves-light btn-flat' ><i style='font-size:28px;' class='material-icons'>map</i></span><span style='margin-left:12px;' class='waves-effect waves-light btn amber lighten-2' ><i class='material-icons'>inventory_2</i></span></div>&nbsp;&nbsp;&nbsp;&nbsp;<span style='display:flex;color:black;' class='modal-trigger' href='#modal1' onclick='pullOwner(" + i + "); pullPrice(" + i + "); addListDetail(" + i + ");'><i class='material-icons'>more_vert</i></span></div></div></div></div></a>"); }
 
 function addListDetail(i) {
      $("#domain-info").html('<div style="display:flex;justify-content:space-evenly;align-items:center;width:100%;padding-top:12px;"><div style="display: flex;flex-direction: column;text-align: left;align-items:center;width:100%;"><div style="display:flex; justify-content:center;"><img style="margin-bottom:12px;" class="materialboxed z-depth-2" width="140" height="140" src="' + domains[i].core.image_preview_url + '"/>&nbsp;&nbsp;&nbsp;&nbsp;<div style="cursor:pointer;" id="o'+ i + '"></div></div><div style="margin-bottom:16px;">' + domains[i].name + '&nbsp;&nbsp · &nbsp;&nbsp<a onclick="openInNewTab(\'' + domains[i].core.external_link + '\');">' + domains[i].core.name + '</a></div><br/><div class="z-depth-1" style="background-color:ghostwhite; opacity:0.8; display:flex;justify-content:space-evenly;width:100%; padding:12px;" ><div class="z-depth-1 chip amber lighten-2">21930 OCUR</div><a onclick="showMark(\'' + i + '\'); showView(\'map\'); map.resize();" class="modal-close waves-effect waves-light btn green lighten-2" ><i class="material-icons">credit_card</i></a></div></div></div>'); $('.materialboxed').materialbox(); }
