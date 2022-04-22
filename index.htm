@@ -116,7 +116,6 @@
         <div style="display:flex;  align-items: center; justify-content: space-evenly; margin:12px; margin-top:48px;">
 		<div class="input-field col s6"><i class="material-icons prefix">sailing</i><input id="opener" type="text" class="validate"><label for="opener" >OpenSea ID</label></div></div>
 
-	    
 	<div style="display:flex;  align-items: center; justify-content: space-evenly; margin:12px; margin-top:24px;">
 		<div id="editColor" class="chip z-depth-1 waves-effect waves-blue blue-grey lighten-2" style="display:flex; color:white; align-items:center; justify-content:center; width:60px;" onclick="colorStart();"><div style="display:flex;"><i id="pal" class="material-icons">palette</i></div></div>
 	    <div style="visibility:hidden;width:0;position:absolute;top:0;"><input type="color" oninput="setColor();" id="favcolor" name="favcolor" value="#ff0000" style="width:0px; height:0px;opacity:0;" /></div></div>
@@ -386,14 +385,6 @@ function adjustSort(full) { //$("option[value='09']").attr("disabled", "disabled
         $('#select-sort').append('<option value=")!">Serial &#8593;</option>'); }
     $("#select-sort").formSelect(); }
 
-function setFilter() {
-$('select').formSelect();
-}
-
-function filterCollect() {
-alert('changed');
-}
-
 function addOpen(i){
     $("#registry").append("<a class='collection-item'><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;'><label><input type='checkbox' class='filled-in' checked='checked' /><span>" + opens[i].core.name + "</span></label></div><div style='display:flex; justify-content:space-between;align-items:center;'><div><img class='materialboxed z-depth-1' width='60' height='40' src='" + opens[i].core.banner_image_url + "'/></div>&nbsp;&nbsp;&nbsp;&nbsp;<div style='display:flex;'><div onclick='openInNewTab(\"https://opensea.io/collection/" + opens[i].core.slug + "\");' style='width:120px;' class='z-depth-1 chip " + getColor(opens[i].core.slug)  + "'><img src='img/key/" + getCollect(opens[i].core.slug) + "'>" + opens[i].core.slug + "</div></div></div></div></div></a>"); $('.materialboxed').materialbox(); }
 //<span class='amber lighten-2 badge z-depth-1' style='color:black!important;font-weight:bold;'>" + opens[i].count + " available</span>
@@ -406,7 +397,7 @@ function addList(i){
     $("#registry").append("<a class='collection-item'><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;'>" + domains[i].core.name + "</div><div style='display:flex; justify-content:space-between;align-items:center;'><div style='display:flex; flex-direction:column;'><div style='display:flex;align-items:center;'><div><span onclick='pullDoc(\"" + domains[i].core.name + "\");' class='waves-effect waves-light waves-blue btn blue' ><i class='material-icons'>sticky_note_2</i></span><span class='waves-effect waves-light waves-blue btn blue lighten-2' ><i class='material-icons'>map</i></span><span class='waves-effect waves-light btn amber lighten-2' ><i class='material-icons'>inventory_2</i></span></div>&nbsp;&nbsp;&nbsp;&nbsp;<span class='modal-trigger' href='#modal1' onclick='pullOwner(" + i + "); pullPrice(" + i + "); addListDetail(" + i + ");'><i class='material-icons'>more_vert</i></span></div></div></div></div></a>"); }
 
 function addListDetail(i) {
-     $("#domain-info").html('<div style="display:flex;justify-content:space-evenly;align-items:center;"><div style="display: flex;flex-direction: column;text-align: left;align-items:center;"><div style="display:flex; justify-content:center;"><img style="margin-bottom:12px;" class="materialboxed z-depth-2" width="140" height="140" src="' + domains[i].core.image_preview_url + '"/>&nbsp;&nbsp;&nbsp;&nbsp;<div style="cursor:pointer;" id="o'+ i + '"></div></div><div style="margin-bottom:16px;">' + domains[i].name + '&nbsp;&nbsp · &nbsp;&nbsp<a onclick="openInNewTab(\'' + domains[i].core.external_link + '\');">' + domains[i].core.name + '</a></div><br/><div style="display:flex;"><a onclick="showMark(\'' + i + '\'); showView(\'map\'); map.resize();" class="modal-close waves-effect waves-light btn green lighten-2" ><i class="material-icons">credit_card</i></a></div><br/></div></div>'); $('.materialboxed').materialbox(); }
+     $("#domain-info").html('<div style="display:flex;justify-content:space-evenly;align-items:center;"><div style="display: flex;flex-direction: column;text-align: left;align-items:center;"><div style="display:flex; justify-content:center;"><img style="margin-bottom:12px;" class="materialboxed z-depth-2" width="140" height="140" src="' + domains[i].core.image_preview_url + '"/>&nbsp;&nbsp;&nbsp;&nbsp;<div style="cursor:pointer;" id="o'+ i + '"></div></div><div style="margin-bottom:16px;">' + domains[i].name + '&nbsp;&nbsp · &nbsp;&nbsp<a onclick="openInNewTab(\'' + domains[i].core.external_link + '\');">' + domains[i].core.name + '</a></div><br/><div style="display:flex;justify-content:space-between;"><div class="z-depth-1 chip amber lighten-2">21930 OCUR</div><a onclick="showMark(\'' + i + '\'); showView(\'map\'); map.resize();" class="modal-close waves-effect waves-light btn green lighten-2" ><i class="material-icons">credit_card</i></a></div><br/></div></div>'); $('.materialboxed').materialbox(); }
 
 function addListDeed(i) {
     $("#somedialog2").css("z-index",1004); var embedDisplay = "";
@@ -427,10 +418,6 @@ if (elem.requestFullscreen) { elem.requestFullscreen();
 } else if (elem.mozRequestFullScreen) { elem.mozRequestFullScreen();
 } else if (elem.webkitRequestFullscreen) { elem.webkitRequestFullscreen(); } }
 	
-inventory.push('Purchase Collectible'); inventory.push('Promote Domain'); inventory.push('Transfer OCUR');
-function addContent(content) {
-    $("#registry").append("<a class='collection-item' ><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;'>" + content + "</div><div><span onclick='pullDoc(\"" + content + "\");' class='waves-effect waves-light waves-blue btn blue' ><i class='material-icons'>help_center</i></span><span class='waves-effect waves-light waves-blue btn blue lighten-2' ><i class='material-icons'>map</i></span><span class='waves-effect waves-light waves-green btn green lighten-2' ><i class='material-icons'>credit_card</i></span></div></div></a>"); }
-
 function padSerial(serial) { if (serial != null) { if (serial.length == 1) { return '0' + serial; } else { return serial; } } }
 
 function getCollect(value) {
@@ -516,9 +503,6 @@ function filterMap(slug) { holder = [];
     var place2 = [domains[0].coord.substring(domains[0].coord.indexOf(', ')+1,domains[0].coord.indexOf(']')-1), domains[0].coord.substring(domains[0].coord.indexOf('[')+1,domains[0].coord.indexOf(',')-1)];
     startUp = function() {currentMarkers[0].togglePopup(); };  setZoom = 2; fly(middle);  }
 
-function switchWallet(i) {
-	if (walletSwitch) { walletSwitch = false; pullOwner(i);$("#i"+i).html('image'); } else { walletSwitch = true; $("#o"+i).html('<img  class="materialboxed" width="120" height="120" src="'+domains[i].core.image_preview_url+'"/>'); $("#i"+i).html('account_balance_wallet'); } }
-
 var popups = []; var walletSwitch = true;
 function showMark(i) { selectedMark = i;  //if (place == "") place = window.location.host;
 	var place2 = [domains[i].coord.substring(domains[i].coord.indexOf(', ')+1,domains[i].coord.indexOf(']')-1), domains[i].coord.substring(domains[i].coord.indexOf('[')+1,domains[i].coord.indexOf(',')-1)];
@@ -545,7 +529,7 @@ function popMark(i) {
 
 function removeMarkers() { if (currentMarkers!==null) { for (var i = currentMarkers.length - 1; i >= 0; i--) { currentMarkers[i].remove(); } currentMarkers = []; } }
 
-function addWallet(id) {return '<div style="cursor:pointer; display: flex; flex-direction: column; text-align: center;" onclick="copyClip(\'' + id + '\');"><img class="z-depth-1" src="https://chart.googleapis.com/chart?chs=120x120&cht=qr&chl=' + id + '&choe=UTF-8" /></div>';  }
+function addWallet(id) {return '<div style="cursor:pointer; display: flex; flex-direction: column; text-align: center;" onclick="copyClip(\'' + id + '\');"><img class="z-depth-1" src="https://chart.googleapis.com/chart?chs=120x120&cht=qr&chl=' + id + '&choe=UTF-8" /><span>Unclaimed 🏞️</div>';  }
 
 var listCount = 0;
 
