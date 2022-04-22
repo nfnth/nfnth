@@ -78,14 +78,14 @@
         <img src="img/world-min.jpg" class="z-depth-2" style="width:100%; margin-bottom:-6px; " />
         <div style="position: absolute; margin-top:360px; width: 100%; top:0; height: 0; "><div style="cursor:pointer; position:absolute; color:white; font-size:24px;background-color: rgba(245, 245, 245, 0.8);padding-bottom: 48px;padding-top: 36px;text-align: center;align-items: center;justify-content: center;width: 100%;cursor:pointer;display: flex; flex-direction: column;" onclick="showView('map'); mapIntro();"><div style="display:flex; justify-items:center;"><img id="world-gear" height="48" width="48" style="opacity:0.5;" /><img id="world-gear2" height="48" width="48" style="position:absolute; opacity:0.5;" /><span style="color:darkgoldenrod; font-weight:bold; font-size:28px;border-radius: 6px;padding-left: 6px;">ocur.io</span></div><div><span style="color:goldenrod; font-size:26px; font-weight:bold;vertical-align:super;">$own [build] //explore</span></div><div><span style="font-size:22px;color:black;">deed. domain. </span><span style="font-size:22px; color:black; font-weight:bold;">decentralized.</span></div></div></div>
 	    
-	<div class="footer" style="margin-bottom:120px;"><div style="cursor:pointer; position:absolute; color:white; font-size:24px;background-color: rgba(245, 245, 245, 0.8);padding-bottom: 48px;padding-top: 36px;text-align: center;align-items: center;justify-content: center;width: 100%;cursor:pointer;display: flex; flex-direction: column;" ><div><span style="color:goldenrod; font-size:26px; font-weight:bold;vertical-align:super;">Purchase Collectible</span></div><div><span style="font-size:22px;color:black;">deed. domain. </span><span style="font-size:22px; color:black; font-weight:bold;">© 2014 Copyright Text</span></div></div></div></div>
+	<div class="footer" style="margin-bottom:120px;"><div style="cursor:pointer; position:absolute; color:white; font-size:24px;background-color: rgba(245, 245, 245, 0.8);padding-bottom: 48px;padding-top: 36px;text-align: center;align-items: center;justify-content: center;width: 100%;cursor:pointer;display: flex; flex-direction: column;" ><div class="card-panel hoverable">Purchase Collectible</div><div><span style="font-size:22px;color:black;">deed. domain. </span><span style="font-size:22px; color:black; font-weight:bold;">© 2014 Copyright Text</span></div></div></div></div>
 
     <!-- list -->
     <div id="list" class="content loader pane" style="overflow-y: auto; height: 95%;">
 	    <!-- filter -->
         <div id="list-filter" class="z-depth-1" style="display:flex; justify-content: center; padding-top: 24px; padding-bottom:12px; margin-bottom: -6px; align-items:center;">
-        	<div class="hide-on-med-and-down"><a class="waves-effect waves-teal btn-flat" onclick="switchView();"><i id="view-icon" class="material-icons left">view_list</i><span>List</span></a><a class="waves-effect waves-amber btn-flat" onclick="showView('list'); showList('open');"><i class="material-icons left">filter_list</i><span>Filter</span></a><a class="waves-effect waves-amber btn-flat" ><span class='modal-trigger' href='#modal2'><i class="material-icons left">sort</i><span>Sort</span></span></a><a class="waves-effect waves-amber btn-flat" onclick="showView('list'); showList('open');"><i class="material-icons left">deselect</i><span>Deselect</span></a></div>
-		<div class="screen-hide"><a class="waves-effect waves-teal btn-flat" onclick="switchView();"><i id="view-icon" class="material-icons">view_list</i></a><a class="waves-effect waves-amber btn-flat" onclick="showView('list'); showList('open');"><i class="material-icons">filter_list</i></a><a class="waves-effect waves-amber btn-flat"><span class='modal-trigger' href='#modal2'><i class="material-icons">sort</i></span></a><a class="waves-effect waves-amber btn-flat" onclick="showView('list'); showList('open');"><i class="material-icons">deselect</i></a></div></div>
+        	<div class="hide-on-med-and-down"><a class="waves-effect waves-teal btn-flat" onclick="switchView();"><i id="view-icon" class="material-icons left">view_list</i><span>List</span></a><a class="waves-effect waves-amber btn-flat" onclick="showView('list'); showList('open');"><i class="material-icons left">deselect</i><span>Deselect</span></a><a class="waves-effect waves-amber btn-flat" onclick="showView('list'); showList('open');"><i class="material-icons left">filter_list</i><span>Filter</span></a><a class="waves-effect waves-amber btn-flat" ><span class='modal-trigger' href='#modal2'><i class="material-icons left">sort</i>Sort</span></a></div>
+		<div class="screen-hide"><a class="waves-effect waves-teal btn-flat" onclick="switchView();"><i id="view-icon" class="material-icons">view_list</i></a><a class="waves-effect waves-amber btn-flat" onclick="showView('list'); showList('open');"><i class="material-icons">deselect</i></a><a class="waves-effect waves-amber btn-flat" onclick="showView('list'); showList('open');"><i class="material-icons">filter_list</i></a><a class="waves-effect waves-amber btn-flat"><span class='modal-trigger' href='#modal2'><i class="material-icons">sort</i></span></a></div></div>
         <div id="registry" class="collection" style="overflow:auto;"></div></div>
 	
     <!-- search -->
@@ -146,8 +146,8 @@
 	
 </div>
 		
-		<div><button class="action" data-dialog-close>Close</button> <p class="range-field">
-			<input type="range" id="test5" min="0" max="100" /><button onclick="nextPage();">Next</button>
+		<div><button class="action" data-dialog-close>Close</button> <form action="#"><p class="range-field">
+			<input type="range" id="test5" min="0" max="100" /></form><button onclick="nextPage();">Next</button>
     </p></div></div></div></div>
 
 <script>
