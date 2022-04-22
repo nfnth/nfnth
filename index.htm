@@ -63,7 +63,7 @@
   	<li><div style="margin-top:0;" class="divider"></div></li>
   	<!-- <i class="material-icons left">directions</i><i class="material-icons left">picture_as_pdf</i><i class="material-icons left">calculate</i>-->
   	<li><a class="subheader">Domain Information</a></li>
-  	<li><a class="waves-effect"><i class="material-icons">landscape</i><span id="myURL">Property Status</span></a></li>
+  	<li><a class="waves-effect"><i class="material-icons">landscape</i><span id="myURL">Profile Status</span></a></li>
     	<li><a class="waves-effect"><i class="material-icons">toll</i><span id="myURL">OCUR Balance (Domain)</span></a></li>
   	<li style="margin-top:12px; display: flex;align-items: center;justify-content: center;margin-bottom:16px;"><select id="domain-template" class="sider" onchange="domainSelect();">
         <option selected="selected">No domain selected</option><option>tactician.us (demo)</option></select></li>
@@ -76,9 +76,26 @@
     <!-- world -->
     <div id="world" class="content loader pane blue-grey lighten-5" style="width:100%;background-color:darkgrey;">
         <img src="img/world-min.jpg" class="z-depth-2" style="width:100%; margin-bottom:-6px; " />
-        <div style="position: absolute; margin-top:360px; width: 100%; top:0; height: 0; "><div style="cursor:pointer; position:absolute; color:white; font-size:24px;background-color: rgba(245, 245, 245, 0.8);padding-bottom: 48px;padding-top: 36px;text-align: center;align-items: center;justify-content: center;width: 100%;cursor:pointer;display: flex; flex-direction: column;" onclick="showView('map'); mapIntro();"><div style="display:flex; justify-items:center;"><img id="world-gear" height="48" width="48" style="opacity:0.5;" /><img id="world-gear2" height="48" width="48" style="position:absolute; opacity:0.5;" /><span style="color:darkgoldenrod; font-weight:bold; font-size:28px;border-radius: 6px;padding-left: 6px;">ocur.io</span></div><div><span style="color:goldenrod; font-size:26px; font-weight:bold;vertical-align:super;">$own [build] //explore</span></div><div><span style="font-size:22px;color:black;">deed. domain. </span><span style="font-size:22px; color:black; font-weight:bold;">decentralized.</span></div></div></div>
+        <div style="position: absolute; width: 100%; top:50%; height: 0; "><div style="cursor:pointer; position:absolute; color:white; font-size:24px;background-color: rgba(245, 245, 245, 0.8);padding-bottom: 48px;padding-top: 36px;text-align: center;align-items: center;justify-content: center;width: 100%;cursor:pointer;display: flex; flex-direction: column;" onclick="showView('map'); mapIntro();"><div style="display:flex; justify-items:center;"><img id="world-gear" height="48" width="48" style="opacity:0.5;" /><img id="world-gear2" height="48" width="48" style="position:absolute; opacity:0.5;" /><span style="color:darkgoldenrod; font-weight:bold; font-size:28px;border-radius: 6px;padding-left: 6px;">ocur.io</span></div><div><span style="color:goldenrod; font-size:26px; font-weight:bold;vertical-align:super;">$own [build] //explore</span></div><div><span style="font-size:22px;color:black;">deed. domain. </span><span style="font-size:22px; color:black; font-weight:bold;">decentralized.</span></div></div></div>
 	    
-	<div class="footer" style="margin-bottom:120px;"><div style="cursor:pointer; position:absolute; color:white; font-size:24px;background-color: rgba(245, 245, 245, 0.8);padding-bottom: 48px;padding-top: 36px;text-align: center;align-items: center;justify-content: center;width: 100%;cursor:pointer;display: flex; flex-direction: column;" ><div class="card-panel hoverable">Purchase Collectible</div><div><span style="font-size:22px;color:black;">deed. domain. </span><span style="font-size:22px; color:black; font-weight:bold;">© 2014 Copyright Text</span></div></div></div></div>
+	<div class="footer" ><div style="cursor:pointer; position:absolute; color:white; font-size:24px;background-color: rgba(245, 245, 245, 0.8);padding-bottom: 48px;padding-top: 36px;text-align: center;align-items: center;justify-content: center;width: 100%;cursor:pointer;display: flex; flex-direction: column;" >
+  <div class="card hoverable">
+    <div class="card-content">
+      <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+    </div>
+    <div class="card-tabs">
+      <ul class="tabs tabs-fixed-width">
+        <li class="tab"><a href="#test4">Test 1</a></li>
+        <li class="tab"><a class="active" href="#test5">Test 2</a></li>
+        <li class="tab"><a href="#test6">Test 3</a></li>
+      </ul>
+    </div>
+    <div class="card-content grey lighten-4">
+      <div id="test4">Test 1</div>
+      <div id="test5">Test 2</div>
+      <div id="test6">Test 3</div>
+    </div>
+  </div><div><span style="font-size:22px;color:black;">deed. domain. </span><span style="font-size:22px; color:black; font-weight:bold;">© 2014 Copyright Text</span></div></div></div></div>
 
     <!-- list -->
     <div id="list" class="content loader pane" style="overflow-y: auto; height: 95%;">
@@ -122,7 +139,7 @@
 <!-- dialog -->
 <div id="modal1" class="modal bottom-sheet content loader blue-grey lighten-5"><div id="domain-info" class="modal-content"></div></div>
 <div id="modal2" class="modal bottom-sheet content loader blue-grey lighten-5"><div id="sort-info" class="modal-content">
-			<div style="width:100%; display:flex; flex-direction:column; align-items:center;">
+			<div style="width:100%; display:flex; flex-direction:column; align-items:center;height:240px;">
 		<div class="input-field col s12 m6">
   			<select id="select-sort" style="z-index:1;" onchange="sorter();">
 				<option value="" selected disabled>Sort...</option>
@@ -411,7 +428,7 @@ function addOpen(i){
 //});
 }
 function addList(i){
-    $("#registry").append("<a class='collection-item'><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;'>" + domains[i].core.name + "</div><div style='display:flex; justify-content:space-between;align-items:center;'><div style='display:flex; flex-direction:column;'><div style='display:flex;align-items:center;'><div><span onclick='pullDoc(\"" + domains[i].core.name + "\");' class='waves-effect waves-light waves-blue btn-flat' ><i class='material-icons'>sticky_note_2</i></span><span class='waves-effect waves-light waves-blue btn-flat' ><i class='material-icons'>map</i></span><span style='margin-left:12px;' class='waves-effect waves-light btn amber lighten-2' ><i class='material-icons'>inventory_2</i></span></div>&nbsp;&nbsp;&nbsp;&nbsp;<span style='display:flex;' class='modal-trigger' href='#modal1' onclick='pullOwner(" + i + "); pullPrice(" + i + "); addListDetail(" + i + ");'><i class='material-icons'>more_vert</i></span></div></div></div></div></a>"); }
+    $("#registry").append("<a class='collection-item'><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;'>" + domains[i].core.name + "</div><div style='display:flex; justify-content:space-between;align-items:center;'><div style='display:flex; flex-direction:column;'><div style='display:flex;align-items:center;'><div><span onclick='pullDoc(\"" + domains[i].core.name + "\");' class='waves-effect waves-light waves-blue btn-flat amber-text text-lighten-3' ><i style='font-size:30px;' class='material-icons'>sticky_note_2</i></span><span class='waves-effect waves-light waves-blue btn-flat amber-text text-lighten-3' ><i style='font-size:30px;' class='material-icons'>map</i></span><span style='margin-left:12px;' class='waves-effect waves-light btn amber lighten-2' ><i class='material-icons'>inventory_2</i></span></div>&nbsp;&nbsp;&nbsp;&nbsp;<span style='display:flex;color:black;' class='modal-trigger' href='#modal1' onclick='pullOwner(" + i + "); pullPrice(" + i + "); addListDetail(" + i + ");'><i class='material-icons'>more_vert</i></span></div></div></div></div></a>"); }
 
 function addListDetail(i) {
      $("#domain-info").html('<div style="display:flex;justify-content:space-evenly;align-items:center;width:100%;padding-top:12px;"><div style="display: flex;flex-direction: column;text-align: left;align-items:center;width:100%;"><div style="display:flex; justify-content:center;"><img style="margin-bottom:12px;" class="materialboxed z-depth-2" width="140" height="140" src="' + domains[i].core.image_preview_url + '"/>&nbsp;&nbsp;&nbsp;&nbsp;<div style="cursor:pointer;" id="o'+ i + '"></div></div><div style="margin-bottom:16px;">' + domains[i].name + '&nbsp;&nbsp · &nbsp;&nbsp<a onclick="openInNewTab(\'' + domains[i].core.external_link + '\');">' + domains[i].core.name + '</a></div><br/><div class="z-depth-1" style="background-color:ghostwhite; opacity:0.8; display:flex;justify-content:space-evenly;width:100%; padding:12px;" ><div class="z-depth-1 chip amber lighten-2">21930 OCUR</div><a onclick="showMark(\'' + i + '\'); showView(\'map\'); map.resize();" class="modal-close waves-effect waves-light btn green lighten-2" ><i class="material-icons">credit_card</i></a></div></div></div>'); $('.materialboxed').materialbox(); }
@@ -818,7 +835,7 @@ body { display: flex;flex-direction: column; -webkit-tap-highlight-color: transp
 .footer {
   position: fixed;
   left: 0;
-  bottom: 0;
+  bottom: 240px;
   width: 100%;
 
 }
@@ -882,20 +899,8 @@ div.active {opacity: 1;height: auto;}
 	height: 100%;
 }
 	
-/*	.positioning-context {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}*/
 	
 	.positioning-context {
- /*   width: 300px;
-    height: 300px;*/
 		width:100%; height:100%;
     background-color:#CCCCCC;
 
