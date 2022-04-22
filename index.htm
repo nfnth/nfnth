@@ -392,16 +392,16 @@ function addList(i){
 
 function addListDetail(i) {
      $("#domain-info").html('<div style="display:flex;justify-content:space-evenly;align-items:center;"><div style="display: flex;flex-direction: column;text-align: left;align-items:center;"><div style="display:flex; justify-content:center;"><img style="margin-bottom:12px;" class="materialboxed z-depth-2" width="140" height="140" src="' + domains[i].core.image_preview_url + '"/>&nbsp;&nbsp;&nbsp;&nbsp;<div style="cursor:pointer;" id="o'+ i + '"></div></div><div style="margin-bottom:16px;">' + domains[i].name + '&nbsp;&nbsp · &nbsp;&nbsp<a onclick="openInNewTab(\'' + domains[i].core.external_link + '\');">' + domains[i].core.name + '</a></div><br/><div style="display:flex;justify-content:space-between;"><div class="z-depth-1 chip amber lighten-2">21930 OCUR</div><a onclick="showMark(\'' + i + '\'); showView(\'map\'); map.resize();" class="modal-close waves-effect waves-light btn green lighten-2" ><i class="material-icons">credit_card</i></a></div><br/></div></div>'); $('.materialboxed').materialbox(); }
-
+//$("#somedialog2").css("z-index",1004);
 function addListDeed(i) {
-    $("#somedialog2").css("z-index",1004); var embedDisplay = "";
+     var embedDisplay = "";
 	if (domains[i].core.animation_url != null) { embedDisplay = "<video  style='width:80%;' autoplay controls><source type='video/mp4' src='" + domains[i].core.animation_url + "'></video>" } else { embedDisplay = "<img  style='width:80%;' src='" + domains[i].core.image_url + "' /"; }
     return "<div style='text-align:center;'><p><span style='font-weight:16px'>" + domains[i].name + "</span>&nbsp;&nbsp; · &nbsp;&nbsp;<a onclick='openInNewTab(\"" + domains[i].core.external_link + "\");'>" + domains[i].core.name + "</a></p></div><br/><div id='emDisp' style='text-align:center;'>" + embedDisplay + "</div><br/><br/><p>" + domains[i].core.description + "</p><a onclick='openInNewTab(\"" + domains[i].ref + "\");'>Read more...</a><br/><br/><div style='text-align:center;'><img style='max-width:80%;' src='" + domains[i].img + "' /></div><br/><br/><div style='text-align:center;margin:auto;'><div class='z-depth-1 chip " +  getClass(domains[i].sub)  + "'>" + domains[i].sub + "</div>&nbsp;&nbsp;&nbsp;&nbsp;<div style='width:120px; ' class='z-depth-1 chip " + getColor(domains[i].core.collection.slug) + "'><img src='img/key/" + getCollect(domains[i].core.collection.slug) + "'><div style='border-radius:12px; width:100px;background-color:rgb(245, 246, 247,0.75);color:black;font-size:16px;font-weight:bold;' class='z-depth-1'>" + padSerial(domains[i].serial) + "</div></div></div><br/><div style='margin:auto;display: flex;align-items: center;justify-content: center;'><div><img class='modal-close' onclick='showDoc(\"key/state\");' style='cursor:pointer; width:48px; height:48px;' src='img/flag/" + domains[i].place + ".png' /></div>&nbsp;&nbsp;&nbsp;&nbsp;<div class='z-depth-1 chip amber lighten-2'>OCUR " + domains[i].ur + "</div></div><div style='display: flex;justify-content: space-evenly;margin-top: 24px;flex-direction: column;height: 240px;margin-bottom: 24px;align-items: center;'><div style='width:160px;cursor:pointer;' id='c"+ i + "'></div><a onclick='openInNewTab(\"" + domains[i].core.permalink + "\");' class='waves-effect waves-light waves-green btn green lighten-2' ><i class='material-icons right'>credit_card</i><span id='d" + i + "'></span></a></div>";   }
 	
 function showDoc(doc) { document.getElementById('dialog-inner2').scrollTo(0, 0); $.get('doc/'+doc, function(data) { setDialog(renderMd(data)); }); }
-function buildDoc(doc) { $("#magazine-page").html("Welcome!"); $('#magazine').turn({gradients: true, acceleration: true, display: 'single'});
-	for (let i=0;i<domains.length;i++) { $('#magazine').turn('addPage', addListDeed(i)); }
-		     setDialog('');
+function buildDoc(doc) { $("#magazine-page").html(addListDeed(0)); 
+	for (let i=1;i<domains.length-150;i++) { $('#magazine').turn('addPage', addListDeed(i)); }
+		    $('#magazine').turn({gradients: true, acceleration: true, display: 'single'}); setDialog('');
 		     //pullOwner(i); pullPrice(i);
 	
 }
