@@ -47,7 +47,7 @@
 	<li><a onclick="showDoc('PLANME');"><i class="material-icons">chair</i>On Deed to Domain</a></li>
 	<li class="divider"></li>
     	<li><a onclick="buildDoc('urland');"><i class="material-icons">grass</i>Ocurious Field Guide</a></li>
-	<li><a ><i class="material-icons"><span class="material-icons-outlined">park</span></i>An OCUR Manual</a></li>
+	<li><a ><i class="material-icons"><span class="material-icons-outlined">park</span></i>About OCUR Trade</a></li>
 	<li class="divider"></li>
     	<li><a onclick="buildDoc('urland');"><i class="material-icons">settings</i>Citizen's Journal</a></li></ul>
 
@@ -78,7 +78,7 @@
         <img src="img/world-min.jpg" class="z-depth-2" style="width:100%; margin-bottom:-6px; " />
         <div style="position: absolute; margin-top:360px; width: 100%; top:0; height: 0; "><div style="cursor:pointer; position:absolute; color:white; font-size:24px;background-color: rgba(245, 245, 245, 0.8);padding-bottom: 48px;padding-top: 36px;text-align: center;align-items: center;justify-content: center;width: 100%;cursor:pointer;display: flex; flex-direction: column;" onclick="showView('map'); mapIntro();"><div style="display:flex; justify-items:center;"><img id="world-gear" height="48" width="48" style="opacity:0.5;" /><img id="world-gear2" height="48" width="48" style="position:absolute; opacity:0.5;" /><span style="color:darkgoldenrod; font-weight:bold; font-size:28px;border-radius: 6px;padding-left: 6px;">ocur.io</span></div><div><span style="color:goldenrod; font-size:26px; font-weight:bold;vertical-align:super;">$own [build] //explore</span></div><div><span style="font-size:22px;color:black;">deed. domain. </span><span style="font-size:22px; color:black; font-weight:bold;">decentralized.</span></div></div></div>
 	    
-	<div style="position: absolute; margin-bottom:96px; width: 100%; bottom:0; height: 0; "><div style="cursor:pointer; position:absolute; color:white; font-size:24px;background-color: rgba(245, 245, 245, 0.8);padding-bottom: 48px;padding-top: 36px;text-align: center;align-items: center;justify-content: center;width: 100%;cursor:pointer;display: flex; flex-direction: column;" ><div><span style="color:goldenrod; font-size:26px; font-weight:bold;vertical-align:super;">Purchase Collectible</span></div><div><span style="font-size:22px;color:black;">deed. domain. </span><span style="font-size:22px; color:black; font-weight:bold;">© 2014 Copyright Text</span></div></div></div></div>
+	<footer style="width: 100%; "><div style="cursor:pointer; position:absolute; color:white; font-size:24px;background-color: rgba(245, 245, 245, 0.8);padding-bottom: 48px;padding-top: 36px;text-align: center;align-items: center;justify-content: center;width: 100%;cursor:pointer;display: flex; flex-direction: column;" ><div><span style="color:goldenrod; font-size:26px; font-weight:bold;vertical-align:super;">Purchase Collectible</span></div><div><span style="font-size:22px;color:black;">deed. domain. </span><span style="font-size:22px; color:black; font-weight:bold;">© 2014 Copyright Text</span></div></div></footer></div>
 
     <!-- list -->
     <div id="list" class="content loader pane" style="overflow-y: auto; height: 95%;">
@@ -122,7 +122,7 @@
             <div id="show-progress" class="progress" style="display:none;"><div class="indeterminate"></div></div></div></div>
 
 <!-- dialog -->
-<div id="modal1" class="modal bottom-sheet content loader blue-grey lighten-5"><div id="domain-info" class="modal-content"></div></div>
+<div id="modal1" class="modal bottom-sheet content loader blue-grey lighten-4"><div id="domain-info" class="modal-content"></div></div>
 <div id="modal2" class="modal bottom-sheet content loader blue-grey lighten-5"><div id="sort-info" class="modal-content"><div id="filter" class="content loader pane" style="width:100%;"><div style="display:flex; flex-direction:column; align-items:center;">
 		<div class="input-field col s12 m6">
   			<select id="select-sort" style="z-index:1;" onchange="sorter();">
@@ -408,7 +408,7 @@ function addList(i){
     $("#registry").append("<a class='collection-item'><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;'>" + domains[i].core.name + "</div><div style='display:flex; justify-content:space-between;align-items:center;'><div style='display:flex; flex-direction:column;'><div style='display:flex;align-items:center;'><div><span onclick='pullDoc(\"" + domains[i].core.name + "\");' class='waves-effect waves-light waves-blue btn blue' ><i class='material-icons'>sticky_note_2</i></span><span class='waves-effect waves-light waves-blue btn blue lighten-2' ><i class='material-icons'>map</i></span><span class='waves-effect waves-light btn amber lighten-2' ><i class='material-icons'>inventory_2</i></span></div>&nbsp;&nbsp;&nbsp;&nbsp;<span style='display:flex;' class='modal-trigger' href='#modal1' onclick='pullOwner(" + i + "); pullPrice(" + i + "); addListDetail(" + i + ");'><i class='material-icons'>more_vert</i></span></div></div></div></div></a>"); }
 
 function addListDetail(i) {
-     $("#domain-info").html('<div style="display:flex;justify-content:space-evenly;align-items:center;width:100%;padding-top:16px;"><div style="display: flex;flex-direction: column;text-align: left;align-items:center;width:100%;"><div style="display:flex; justify-content:center;"><img style="margin-bottom:12px;" class="materialboxed z-depth-2" width="140" height="140" src="' + domains[i].core.image_preview_url + '"/>&nbsp;&nbsp;&nbsp;&nbsp;<div style="cursor:pointer;" id="o'+ i + '"></div></div><div style="margin-bottom:16px;">' + domains[i].name + '&nbsp;&nbsp · &nbsp;&nbsp<a onclick="openInNewTab(\'' + domains[i].core.external_link + '\');">' + domains[i].core.name + '</a></div><br/><div class="grey lighten-5" style="display:flex;justify-content:space-between;width:100%; padding:16px;" class="z-depth-1"><div class="z-depth-1 chip amber lighten-2">21930 OCUR</div><a onclick="showMark(\'' + i + '\'); showView(\'map\'); map.resize();" class="modal-close waves-effect waves-light btn green lighten-2" ><i class="material-icons">credit_card</i></a></div><br/></div></div>'); $('.materialboxed').materialbox(); }
+     $("#domain-info").html('<div style="display:flex;justify-content:space-evenly;align-items:center;width:100%;padding-top:12px;"><div style="display: flex;flex-direction: column;text-align: left;align-items:center;width:100%;"><div style="display:flex; justify-content:center;"><img style="margin-bottom:12px;" class="materialboxed z-depth-2" width="140" height="140" src="' + domains[i].core.image_preview_url + '"/>&nbsp;&nbsp;&nbsp;&nbsp;<div style="cursor:pointer;" id="o'+ i + '"></div></div><div style="margin-bottom:16px;">' + domains[i].name + '&nbsp;&nbsp · &nbsp;&nbsp<a onclick="openInNewTab(\'' + domains[i].core.external_link + '\');">' + domains[i].core.name + '</a></div><br/><div class="blue-grey lighten-5" style="opacity:0.8; display:flex;justify-content:space-between;width:100%; padding:12px;" class="z-depth-1"><div class="z-depth-1 chip amber lighten-2">21930 OCUR</div><a onclick="showMark(\'' + i + '\'); showView(\'map\'); map.resize();" class="modal-close waves-effect waves-light btn green lighten-2" ><i class="material-icons">credit_card</i></a></div><br/></div></div>'); $('.materialboxed').materialbox(); }
 	
 //$("#somedialog2").css("z-index",1004);
 function addListDeed(i) {
@@ -802,11 +802,17 @@ function colorStart() { document.getElementById("favcolor").focus(); document.ge
 </script>
 
 <style>
+	html, body { height: 100%;}
 main {flex: 1 0 auto;}
-body { display: flex;min-height: 100vh;flex-direction: column; -webkit-tap-highlight-color: transparent; margin: 0; top: 0; left: 0; overflow-x: hidden; overflow-y: hidden; padding: 0 0 0 0; font-family: Arial, Helvetica, sans-serif; background-color: ghostwhite; }
+body { display: flex;flex-direction: column; -webkit-tap-highlight-color: transparent; margin: 0; top: 0; left: 0; overflow-x: hidden; overflow-y: hidden; padding: 0 0 0 0; font-family: Arial, Helvetica, sans-serif; background-color: ghostwhite; }
 .hidden { display:none!important; height: 0; padding: 0!important; } .disappear { visibility: hidden; } .load { opacity: 0; } .gone { width:0; height:0; z-index:-400; position:absolute; top:-9999; left:-9999;}
 .fade {-webkit-animation-name: fade;-webkit-animation-duration: 1.5s;animation-name: fade;animation-duration: 1.5s;} @-webkit-keyframes fade {from {opacity: .4}to {opacity: 1}} @keyframes fade {from {opacity: .4}to {opacity: 1}}
 
+	body > footer {
+  position: sticky;
+  top: 100vh;
+}
+	
 img { -khtml-user-select: none;-o-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;}
 span {-khtml-user-select: none;-o-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;}
 div {-khtml-user-select: none;-o-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;}
