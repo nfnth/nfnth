@@ -82,17 +82,11 @@
 
     <!-- list -->
     <div id="list" class="content loader pane" style="overflow-y: auto; height: 95%;">
+	    <!-- filter -->
         <div id="list-filter" class="z-depth-1" style="display:flex; justify-content: center; padding-top: 24px; padding-bottom:12px; margin-bottom: -6px; align-items:center;">
-		
-        	<div class="hide-on-med-and-down"><a class="waves-effect waves-teal btn-flat" onclick="switchView();"><i id="view-icon" class="material-icons left">view_list</i><span>List</span></a><a class="waves-effect waves-amber btn-flat" onclick="showView('list'); showList('open');"><i class="material-icons left">filter_list</i><span>Filter</span></a></div><div><a class="waves-effect waves-amber btn-flat" class='modal-trigger' href='#modal2' ><i class="material-icons left">sort</i><span>Sort</span></a><a class="waves-effect waves-amber btn-flat" onclick="showView('list'); showList('open');"><i class="material-icons left">deselect</i><span>Deselect</span></a></div>
-		<div class="screen-hide"><a class="waves-effect waves-teal btn-flat" onclick="switchView();"><i id="view-icon" class="material-icons">view_list</i><span>List</span></a><a class="waves-effect waves-amber btn-flat" onclick="showView('list'); showList('open');"><i class="material-icons">filter_list</i></a></div><div><a class="waves-effect waves-amber btn-flat" class='modal-trigger' href='#modal2'><i class="material-icons">sort</i></a><a class="waves-effect waves-amber btn-flat" onclick="showView('list'); showList('open');"><i class="material-icons">deselect</i></a></div>
-	    
-	    
-	    </div><!--select_all-->
+        	<div class="hide-on-med-and-down"><a class="waves-effect waves-teal btn-flat" onclick="switchView();"><i id="view-icon" class="material-icons left">view_list</i><span>List</span></a><a class="waves-effect waves-amber btn-flat" onclick="showView('list'); showList('open');"><i class="material-icons left">filter_list</i><span>Filter</span></a><a class="waves-effect waves-amber btn-flat" class='modal-trigger' href='#modal2' ><i class="material-icons left">sort</i><span>Sort</span></a><a class="waves-effect waves-amber btn-flat" onclick="showView('list'); showList('open');"><i class="material-icons left">deselect</i><span>Deselect</span></a></div>
+		<div class="screen-hide"><a class="waves-effect waves-teal btn-flat" onclick="switchView();"><i id="view-icon" class="material-icons">view_list</i><span>List</span></a><a class="waves-effect waves-amber btn-flat" onclick="showView('list'); showList('open');"><i class="material-icons">filter_list</i></a><a class="waves-effect waves-amber btn-flat" class='modal-trigger' href='#modal2'><i class="material-icons">sort</i></a><a class="waves-effect waves-amber btn-flat" onclick="showView('list'); showList('open');"><i class="material-icons">deselect</i></a></div></div>
         <div id="registry" class="collection" style="overflow:auto;"></div></div>
-
-    <!-- filter -->
-	
 	
     <!-- search -->
     <div id="results" style="margin:80; display:none;" class="content loader pane">search...</div>
