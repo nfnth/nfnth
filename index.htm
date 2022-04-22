@@ -146,7 +146,9 @@
 	
 </div>
 		
-		<!--<div><button class="action" data-dialog-close>Close</button></div>--></div></div></div>
+		<div><button class="action" data-dialog-close>Close</button> <p class="range-field">
+			<input type="range" id="test5" min="0" max="100" /><button onclick="nextPage();">Next</button>
+    </p></div></div></div></div>
 
 <script>
 var gridSelect = false;
@@ -427,7 +429,9 @@ function buildDoc(doc) { $("#magazine-page").html(addListDeed(0));
 			//$('#selector').turn({when: {turn: function(e, page, view){ alert('page'+page); }}};
 	
 }
-
+function nextPage() {
+				$('#magazine').turn('next');	       
+					       }
 var pageSwitch = true;
 function setDialog(text) {  //$("#dialog-inner2").html(text);
 			  
