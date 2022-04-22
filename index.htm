@@ -84,8 +84,8 @@
     <div id="list" class="content loader pane" style="overflow-y: auto; height: 95%;">
 	    <!-- filter -->
         <div id="list-filter" class="z-depth-1" style="display:flex; justify-content: center; padding-top: 24px; padding-bottom:12px; margin-bottom: -6px; align-items:center;">
-        	<div class="hide-on-med-and-down"><a class="waves-effect waves-teal btn-flat" onclick="switchView();"><i id="view-icon" class="material-icons left">view_list</i><span>List</span></a><a class="waves-effect waves-amber btn-flat" onclick="showView('list'); showList('open');"><i class="material-icons left">deselect</i><span>Deselect</span></a><a class="waves-effect waves-amber btn-flat" onclick="showView('list'); showList('open');"><i class="material-icons left">filter_list</i><span>Filter</span></a><a class="waves-effect waves-amber btn-flat" ><span class='modal-trigger' href='#modal2'><i class="material-icons left">sort</i>Sort</span></a></div>
-		<div class="screen-hide"><a class="waves-effect waves-teal btn-flat" onclick="switchView();"><i id="view-icon" class="material-icons">view_list</i></a><a class="waves-effect waves-amber btn-flat" onclick="showView('list'); showList('open');"><i class="material-icons">deselect</i></a><a class="waves-effect waves-amber btn-flat" onclick="showView('list'); showList('open');"><i class="material-icons">filter_list</i></a><a class="waves-effect waves-amber btn-flat"><span class='modal-trigger' href='#modal2'><i class="material-icons">sort</i></span></a></div></div>
+        	<div class="hide-on-med-and-down"><a class="waves-effect waves-teal btn-flat" onclick="switchView();"><i id="view-icon" class="material-icons left">view_list</i><span>List</span></a><a class="waves-effect waves-amber btn-flat" onclick="filterDomain();"><i id="select-icon" class="material-icons left">select_all</i><span>Select</span></a><a class="waves-effect waves-amber btn-flat" onclick="showView('list'); showList('open');"><i class="material-icons left">filter_list</i><span>Filter</span></a><a class="waves-effect waves-amber btn-flat" ><span class='modal-trigger' href='#modal2'><i class="material-icons left">sort</i>Sort</span></a></div>
+		<div class="screen-hide"><a class="waves-effect waves-teal btn-flat" onclick="switchView();"><i id="view-icon2" class="material-icons">view_list</i></a><a class="waves-effect waves-amber btn-flat" onclick="showView('list'); showList('open');"><i class="material-icons">deselect</i></a><a class="waves-effect waves-amber btn-flat" onclick="showView('list'); showList('open');"><i class="material-icons">filter_list</i></a><a class="waves-effect waves-amber btn-flat"><span class='modal-trigger' href='#modal2'><i class="material-icons">sort</i></span></a></div></div>
         <div id="registry" class="collection" style="overflow:auto;"></div></div>
 	
     <!-- search -->
@@ -121,7 +121,8 @@
 
 <!-- dialog -->
 <div id="modal1" class="modal bottom-sheet content loader blue-grey lighten-5"><div id="domain-info" class="modal-content"></div></div>
-<div id="modal2" class="modal bottom-sheet content loader blue-grey lighten-5"><div id="sort-info" class="modal-content"><div id="filter" class="content loader pane" style="width:100%;"><div style="display:flex; flex-direction:column; align-items:center;">
+<div id="modal2" class="modal bottom-sheet content loader blue-grey lighten-5"><div id="sort-info" class="modal-content">
+			<div style="width:100%; display:flex; flex-direction:column; align-items:center;">
 		<div class="input-field col s12 m6">
   			<select id="select-sort" style="z-index:1;" onchange="sorter();">
 				<option value="" selected disabled>Sort...</option>
@@ -130,7 +131,7 @@
 				<option value="09">Price &#8593;</option>
 				<option value="90">Price &#8595;</option>
 				<option value="!)">Serial &#8595;</option>
-			<option value=")!">Serial &#8593;</option></select></div></div></div></div></div>
+			<option value=")!">Serial &#8593;</option></select></div></div></div></div>
 
 <div id="somedialog2" class="dialog print-help hide-scrollbar" style="z-index:99;display:none;">
 	<div id="someoverlay" class="dialog__overlay hide-scrollbar"></div>
@@ -162,6 +163,11 @@ function showFav(site) {
     $('<link>').appendTo('head').attr({ class: 'ico', type: 'image/x-icon', rel: 'shortcut icon', href: "img/fav/favicon.ico" });
     $('<link>').appendTo('head').attr({ class: 'ico', type: 'image/x-icon', rel: 'icon', sizes: "192x192", href: "img/fav/android-chrome-192x192.png" });
     $('<link>').appendTo('head').attr({ class: 'ico', type: 'image/x-icon', rel: 'apple-touch-icon', sizes: "128x128", href: "img/fav/apple-touch-icon.png" }); }
+			
+function filterDomain() { if ($("#select-icon").html() == "select_all") {
+			$("#select-icon").html("deselect"); $("#select-icon").next().html("Deselect"); }
+			else { $("#select-icon").html("select_all"); $("#select-icon").next().html("Select"); }
+			}
 
 function adjustSize(img) {
     if (img.height >= img.width) { adjustment = (img.height - img.width) / 48; shim = 'padding-right'; img.height = "48"; }
@@ -173,7 +179,7 @@ function copyClip(text) { navigator.clipboard.writeText(text);M.toast({html: 'Ad
 var width = window.innerWidth; var height = window.innerHeight + 48;
 async function initial() {
     //document.getElementById('domain-template').getElementsByTagName('option')[0].selected = 'selected';
-    //$('select').formSelect(); 
+    $('select').formSelect(); 
 			$('.modal').modal(); //$('#modal2').modal(); //$('#dialog-inner2').css("height", window.innerHeight - 375);
     $("#map").css("height",height + "px"); $("#registry").css("height",height + "px"); showFav('scroller');
 
@@ -367,7 +373,7 @@ function showView(view) {  hideView(); $('#'+view).show();
 var complete; var reset = false; var first = true;
 function showList(area) { $("#registry").html(''); $("#registry").hide(); if (first) { complete = domains; first = false; }
     switch (area) {
-	    case "grid": sortSet = [area,domains,0,18,16]; var snip; var carder = 4; if (screen.width < 480) { carder = 1; } for (let i=0;i<domains.length;i++) { if ((i%carder) == 0) { snip = '<div style="display:flex;width:100%;justify-content:center;">'; } snip += addGrid(i); if (((i+1)%carder) == 0) { snip += '</div>'; $("#registry").append(snip); } } adjustSort(true); break;
+	    case "grid": sortSet = [area,domains,0,18,16]; var snip; var carder = 4; if (screen.width < 480) { carder = 1; } for (let i=0;i<domains.length;i++) { if ((i%carder) == 0) { snip = '<div style="display:flex;width:100%;justify-content:center;">'; } snip += addGrid(i); if (((i+1)%carder) == 0) { snip += '</div>'; $("#registry").append(snip); } } $('.materialboxed').materialbox();  adjustSort(true); break;
         case "domain": $("#list-filter").show(); if (reset) { domains = complete; reset = false; }
 		    if (showGrid) { showList('grid'); break; }
 		    sortSet = [area,domains,0,18,16]; for (let i=0;i<domains.length;i++) { addList(i); } adjustSort(true); break;
@@ -456,7 +462,7 @@ var width = positionInfo.width;
 //function turnPage() { $('selector').turn('next'); }
 function addGrid(i) { //alert((i%4));//card-panel?<div id="positioning-context">
     return '<div style="width:360px;height:280px;margin:24px; display:flex;flex-direction:column;justify-content:space-between; border-radius:16px;" class="card sticky-action hoverable"><div style="border-radius:16px 16px 0 0;" class="positioning-context card-image waves-effect waves-block waves-light z-depth-3"><img style="width:100%; height:100%;" class="materialboxed" src="' + domains[i].core.image_preview_url + '"></div><div class="card-content z-depth-1" style="border-radius:0 0 16px 16px;" onclick="pullOwner(' + i + ');"><span class="card-title activator grey-text text-darken-4">' + domains[i].core.name + '<i class="material-icons right">expand_less</i></span></div><div class="card-reveal" style="overflow:hidden;"><span class="card-title grey-text text-darken-4">' + domains[i].name + '<i class="material-icons right">expand_more</i></span><div style="display:flex;align-items:center;justify-content:space-evenly;margin-top:24px;"><div style="width:160px;cursor:pointer;" id="o'+ i + '"></div><div style="display:flex; flex-direction:column;align-items:center;"><a onclick="addListDeed(' + i +');" class="waves-effect waves-light waves-blue btn blue lighten-2" ><i class="material-icons">sticky_note_2</i></a>&nbsp;&nbsp;<a onclick="showMark(\'' + i + '\'); showView(\'map\'); map.resize();" class="modal-close waves-effect waves-blue btn blue lighten-3" ><i class="material-icons">map</i></a>&nbsp;&nbsp;<a onclick="showMark(\'' + i + '\'); showView(\'map\'); map.resize();" class="modal-close waves-effect waves-light btn amber lighten-3" ><i class="material-icons">inventory_2</i></a></div></div><div style="margin-top:20px;"><div class="z-depth-1 chip amber lighten-2">21930 OCUR</div></div></div></div>';
-	$('.materialboxed').materialbox(); 
+	
 	//alert(((i+1)%4));
 	//if (((i+1)%4) == 0) { $("#registry").append('</div>'); }
 }
