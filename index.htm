@@ -141,8 +141,7 @@
         <div id="dialog-inner2" class="dialog-inner print-help hide-scrollbar" style="overflow:auto;">
 		<div id="magazine">
 	<div><span class="text" id="magazine-page">Page 1</span></div>
-	<div><span class="text">Page 2</span></div>
-	<div><span class="text">Page 3</span></div>
+	
 </div>
 		
 		<!--<div><button class="action" data-dialog-close>Close</button></div>--></div></div></div>
@@ -400,7 +399,9 @@ function addListDeed(i) {
 	
 function showDoc(doc) { document.getElementById('dialog-inner2').scrollTo(0, 0); $.get('doc/'+doc, function(data) { setDialog(renderMd(data)); }); }
 function buildDoc(doc) { $("#magazine-page").html(addListDeed(0)); 
-	for (let i=1;i<domains.length-150;i++) { $('#magazine').turn('addPage', addListDeed(i)); }
+	for (let i=1;i<domains.length-150;i++) {$("#magazine").append("<div><span class='text'>" + addListDeed(i) + "</span></div>");
+	 //$('#magazine').turn('addPage', addListDeed(i)); 
+								      }
 		    $('#magazine').turn({gradients: true, acceleration: true, display: 'single'}); setDialog('');
 		     //pullOwner(i); pullPrice(i);
 	
