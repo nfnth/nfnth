@@ -53,7 +53,7 @@
 
 <!-- panel -->
 <ul id="user-pane" class="sidenav loader blue-grey lighten-5" style="visibility:hidden;">
-	<li><div class="user-view z-depth-1" style="background-color: #eaf2f7;display: flex;margin: auto; padding: 0;align-items: center; padding-left:12px;"><span id="ocuros" style="cursor: pointer;margin:auto;" onclick="openInNewTab('https://github.com/nfnth/os'); $('#user-pane').sidenav('close');" class="new badge green darken-2 tooltipped" data-position="left" data-tooltip="ocurOS | v1.08" data-badge-caption=""></span>
+	<li><div class="user-view z-depth-1" style="background-color: #eaf2f7;display: flex;margin: auto; padding: 0;align-items: center; padding-left:12px;"><span id="ocuros" style="cursor: pointer;margin:auto;" onclick="openInNewTab('https://github.com/nfnth/os'); $('#user-pane').sidenav('close');" class="new badge green darken-2" data-badge-caption=""></span>
         <img id="user-pic" style="height: 72px;margin-left:18px; padding: 12px;" onclick="openInNewTab('https://github.com/nfnth/nfnth'); $('#user-pane').sidenav('close');"/></div></li>
     <li><a class="subheader">Wallet Information</a></li>
   	<li><a class="waves-effect" onclick="if (walletAddress != '') {copyClip(walletAddress);}"><i class="material-icons">alternate_email</i><span id="myAdd">Wallet Address</span></a></li>
@@ -63,7 +63,7 @@
   	<li><div style="margin-top:0;" class="divider"></div></li>
   	<!-- <i class="material-icons left">directions</i><i class="material-icons left">picture_as_pdf</i><i class="material-icons left">calculate</i>-->
   	<li><a class="subheader">Domain Information</a></li>
-  	<li><a class="waves-effect"><i class="material-icons">token</i><span id="myURL">Ocurious Status</span></a></li>
+  	<li><a class="waves-effect"><i class="material-icons">landscape</i><span id="myURL">Owner Status</span></a></li>
     	<li><a class="waves-effect"><i class="material-icons">toll</i><span id="myURL">OCUR Balance (Domain)</span></a></li>
   	<li style="margin-top:12px; display: flex;align-items: center;justify-content: center;margin-bottom:16px;"><select id="domain-template" class="sider" onchange="domainSelect();">
         <option selected="selected">No domain selected</option><option>tactician.us (demo)</option></select></li>
@@ -177,14 +177,14 @@ async function initial() {
 
     var gear = Math.floor(Math.random() * (42 - 1 + 1)) + 1; document.getElementById('list-wait').src = "img/gear/gear" + gear.toString() + ".png";
     var gear2 = Math.floor(Math.random() * (42 - 1 + 1)) + 1; document.getElementById('list-wait2').src = "img/gear/gear" + gear2.toString() + ".png";
-	var gear3 = Math.floor(Math.random() * (42 - 1 + 1)) + 1; document.getElementById('user-list').src = "img/gear/gear" + gear3.toString() + ".png";
+	var gear3 = Math.floor(Math.random() * (42 - 1 + 1)) + 1; document.getElementById('user-pic').src = "img/gear/gear" + gear3.toString() + ".png";
 	var gear4 = Math.floor(Math.random() * (42 - 1 + 1)) + 1; document.getElementById('world-gear').src = "img/gear/gear" + gear4.toString() + ".png";
 	$("#lister").prop("checked", false);
     $('#docs').dropdown({ constrainWidth: false, coverTrigger: false } ); $('#doc-hide').dropdown({ constrainWidth: false, coverTrigger: false } ); //coverTrigger: false, hover: true 
    // $('#lists').dropdown({ constrainWidth: false, coverTrigger: false } ); $('#list-hide').dropdown({ constrainWidth: false, coverTrigger: false } );
     $('#user-pane').sidenav({ edge: 'right' });
     $('.fixed-action-btn').floatingActionButton({ hoverEnabled: false }); $("#map-add").hide(); $("#map-edit").hide(); $("#map-delete").hide();
-    $('.tooltipped').tooltip();
+
     $("#stamper").show(); $("#world").show(); //searchClear();
      
     setTimeout(function() { $(".loader").css("visibility", "visible"); $('img').on('dragstart', function(evt) { return false; }); }  , 500); }
