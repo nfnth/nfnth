@@ -402,7 +402,10 @@ function buildDoc(doc) { $("#magazine-page").html(addListDeed(0));
 	for (let i=1;i<domains.length-150;i++) {$("#magazine").append("<div><span class='text'>" + addListDeed(i) + "</span></div>");
 	 //$('#magazine').turn('addPage', addListDeed(i)); 
 								      }
-		    $('#magazine').turn({gradients: true, acceleration: true, display: 'single'}); setDialog('');
+		    $('#magazine').turn({gradients: true, acceleration: true, display: 'single'}); 
+			
+			$('#magazine').turn('range', 2);
+			setDialog('');
 		     //pullOwner(i); pullPrice(i);
 	
 }
