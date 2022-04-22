@@ -347,12 +347,15 @@ var mapSwitch = true; var introSwitch = true;
 
 function hideView() { $('.modal').modal('close');   window.scrollTo(0, 0); $("#editor").removeClass("scale-in"); 
 		     $("#editor").removeClass("scale-out"); $("#editor").addClass("scale-out"); $('.pane').hide();}
+var spinner = 0;
 function showView(view) {  hideView(); $('#'+view).show();
     switch (view) {
         case 'editor': $("#editor").addClass("scale-in"); break;
 	case 'filter': $("#filter").addClass("scale-in"); break;
         case 'list': break;
-        case 'news': $("#stamper").show(); $("#world").show(); break;
+	    case 'news': if (spinner == 0) {  $("#list-wait).css("-webkit-animation", ""); $("#list-wait).css("-moz-animation", ""); $("#list-wait).css("animation", ""); spinner = 1; } else if (spinner == 1) { $("#stamper").show(); $("#world").show(); spinner = 2;} else { $("#list-wait).css("-webkit-animation", "spin 8s linear infinite"); $("#list-wait).css("-moz-animation", "spin 8s linear infinite"); $("#list-wait).css("animation", "spin 8s linear infinite"); spinner = 0;}
+    
+		     break;
         case 'map': $("#actions").show(); map.resize(); break; } }
 
 var complete; var reset = false; var first = true;
