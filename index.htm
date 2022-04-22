@@ -18,7 +18,7 @@
 
 <!-- menu -->
 <nav id="main-menu" style="position: fixed;top:0; z-index:2;visibility:hidden;" class="loader">
-    <div id="panel-menu" class="nav-wrapper header blue-grey lighten-3 z-depth-3" style="border-bottom:solid 3px darkgrey; display:flex; justify-content: space-between; color:black;">
+    <div id="panel-menu" class="nav-wrapper header blue-grey lighten-3 z-depth-2" style="border-bottom:solid 3px darkgrey; display:flex; justify-content: space-between; color:black;">
     	<div class="z-depth-1"><a class="amber lighten-5" style="opacity:0.8; display: flex; align-items: center; height: 105%; padding-right: 10px; color: brown;font-weight: bold;font-size: 20px;">
 		<div id="waiter" onclick="resetHome();" style="height:48px; width:48px; cursor: pointer; margin-left: 12px;"><img id="list-wait" class="image image-rotate"/><img id="list-wait2" class="image image-rotate"/></div></a></div>
 
@@ -76,9 +76,9 @@
     <!-- world -->
     <div id="world" class="content loader pane blue-grey lighten-5" style="width:100%;background-color:darkgrey;">
         <img src="img/world-min.jpg" class="z-depth-2" style="width:100%; margin-bottom:-6px; " />
-        <div style="position: absolute; margin-top:360px; width: 100%; top:0; height: 0; "><div style="cursor:pointer; position:absolute; color:white; font-size:24px;background-color: rgba(245, 245, 245, 0.8);padding-bottom: 48px;padding-top: 36px;text-align: center;align-items: center;justify-content: center;width: 100%;cursor:pointer;display: flex; flex-direction: column;" onclick="showView('map'); mapIntro();"><div style="display:flex; justify-items:center;"><img id="world-gear" height="48" width="48" /><span style="color:darkgoldenrod; font-weight:bold; font-size:28px;border-radius: 6px;padding-left: 6px;">ocur.io</span></div><div><span style="color:goldenrod; font-size:26px; font-weight:bold;vertical-align:super;">$own [build] //explore</span></div><div><span style="font-size:22px;color:black;">deed. domain. </span><span style="font-size:22px; color:black; font-weight:bold;">decentralized.</span></div></div></div>
+        <div style="position: absolute; margin-top:360px; width: 100%; top:0; height: 0; "><div style="cursor:pointer; position:absolute; color:white; font-size:24px;background-color: rgba(245, 245, 245, 0.8);padding-bottom: 48px;padding-top: 36px;text-align: center;align-items: center;justify-content: center;width: 100%;cursor:pointer;display: flex; flex-direction: column;" onclick="showView('map'); mapIntro();"><div style="display:flex; justify-items:center;"><img id="world-gear" height="48" width="48" style="opacity:0.5;" /><img id="world-gear2" height="48" width="48" style="opacity:0.5;" /><span style="color:darkgoldenrod; font-weight:bold; font-size:28px;border-radius: 6px;padding-left: 6px;">ocur.io</span></div><div><span style="color:goldenrod; font-size:26px; font-weight:bold;vertical-align:super;">$own [build] //explore</span></div><div><span style="font-size:22px;color:black;">deed. domain. </span><span style="font-size:22px; color:black; font-weight:bold;">decentralized.</span></div></div></div>
 	    
-	<div style="position: absolute; margin-bottom:48px; width: 100%; bottom:0; height: 0; "><div style="cursor:pointer; position:absolute; color:white; font-size:24px;background-color: rgba(245, 245, 245, 0.8);padding-bottom: 48px;padding-top: 36px;text-align: center;align-items: center;justify-content: center;width: 100%;cursor:pointer;display: flex; flex-direction: column;" onclick="showView('map'); mapIntro();"><div style="display:flex; justify-items:center;"><img id="world-gear" height="48" width="48" /><span style="color:darkgoldenrod; font-weight:bold; font-size:28px;border-radius: 6px;padding-left: 6px;">ocur.io</span></div><div><span style="color:goldenrod; font-size:26px; font-weight:bold;vertical-align:super;">$own [build] //explore</span></div><div><span style="font-size:22px;color:black;">deed. domain. </span><span style="font-size:22px; color:black; font-weight:bold;">© 2014 Copyright Text</span></div></div></div></div>
+	<div style="position: absolute; margin-bottom:48px; width: 100%; bottom:0; height: 0; "><div style="cursor:pointer; position:absolute; color:white; font-size:24px;background-color: rgba(245, 245, 245, 0.8);padding-bottom: 48px;padding-top: 36px;text-align: center;align-items: center;justify-content: center;width: 100%;cursor:pointer;display: flex; flex-direction: column;" ><div><span style="color:goldenrod; font-size:26px; font-weight:bold;vertical-align:super;">$own [build] //explore</span></div><div><span style="font-size:22px;color:black;">deed. domain. </span><span style="font-size:22px; color:black; font-weight:bold;">© 2014 Copyright Text</span></div></div></div></div>
 
     <!-- list -->
     <div id="list" class="content loader pane" style="overflow-y: auto; height: 95%;">
@@ -88,16 +88,7 @@
         <div id="registry" class="collection" style="overflow:auto;"></div></div>
 
     <!-- filter -->
-	<div id="filter" class="content loader pane" style="width:100%;"><div style="display:flex; flex-direction:column; align-items:center;">
-		<div class="input-field col s12 m6">
-  			<select id="select-sort" style="z-index:1;" onchange="sorter();">
-				<option value="" selected disabled>Sort...</option>
-				<option value="az">Alpha &#8595;</option>
-				<option value="za">Alpha &#8593;</option>
-				<option value="09">Price &#8593;</option>
-				<option value="90">Price &#8595;</option>
-				<option value="!)">Serial &#8595;</option>
-				<option value=")!">Serial &#8593;</option></select></div></div></div>
+	
 	
     <!-- search -->
     <div id="results" style="margin:80; display:none;" class="content loader pane">search...</div>
@@ -132,6 +123,16 @@
 
 <!-- dialog -->
 <div id="modal1" class="modal bottom-sheet content loader blue-grey lighten-5"><div id="domain-info" class="modal-content"></div></div>
+<div id="modal2" class="modal bottom-sheet content loader blue-grey lighten-5"><div id="sort-info" class="modal-content"><div id="filter" class="content loader pane" style="width:100%;"><div style="display:flex; flex-direction:column; align-items:center;">
+		<div class="input-field col s12 m6">
+  			<select id="select-sort" style="z-index:1;" onchange="sorter();">
+				<option value="" selected disabled>Sort...</option>
+				<option value="az">Alpha &#8595;</option>
+				<option value="za">Alpha &#8593;</option>
+				<option value="09">Price &#8593;</option>
+				<option value="90">Price &#8595;</option>
+				<option value="!)">Serial &#8595;</option>
+			<option value=")!">Serial &#8593;</option></select></div></div></div></div></div>
 
 <div id="somedialog2" class="dialog print-help hide-scrollbar" style="z-index:99;display:none;">
 	<div id="someoverlay" class="dialog__overlay hide-scrollbar"></div>
