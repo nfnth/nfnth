@@ -20,7 +20,7 @@
 <nav id="main-menu" style="position: fixed;top:0; z-index:2;visibility:hidden;" class="loader">
     <div id="panel-menu" class="nav-wrapper header blue-grey lighten-3 z-depth-3" style="border-bottom:solid 3px darkgrey; display:flex; justify-content: space-between; color:black;">
     	<div class="z-depth-1"><a class="blue-grey lighten-1" style="display: flex; align-items: center; height: 105%; padding-right: 10px; color: brown;font-weight: bold;font-size: 20px;">
-		<div id="waiter" onclick="showView('news');" style="height:48px; width:48px; cursor: pointer; margin-left: 12px;"><img id="list-wait" class="image"/><img id="list-wait2" class="image2"/></div></a></div>
+		<div id="waiter" onclick="showView('news');" style="height:48px; width:48px; cursor: pointer; margin-left: 12px;"><img id="list-wait" class="image image-rotate"/><img id="list-wait2" class="image image-rotate"/></div></a></div>
 
 <!-- media -->
 	<a id="doc-hide" class="screen-hide" href="#!" data-target="doc"><i class="material-icons">sticky_note_2</i></a>
@@ -353,7 +353,7 @@ function showView(view) {  hideView(); $('#'+view).show();
         case 'editor': $("#editor").addClass("scale-in"); break;
 	case 'filter': $("#filter").addClass("scale-in"); break;
         case 'list': break;
-	    case 'news': if (spinner == 0) {  $("#list-wait").css("-webkit-animation", ""); $("#list-wait").css("-moz-animation", ""); $("#list-wait").css("animation", ""); $("#list-wait2").css("-webkit-animation", ""); $("#list-wait2").css("-moz-animation", ""); $("#list-wait2").css("animation", ""); spinner = 1; } else if (spinner == 1) { $("#stamper").show(); $("#world").show(); spinner = 2;} else { $("#list-wait").css("-webkit-animation", "spin 8s linear infinite"); $("#list-wait").css("-moz-animation", "spin 8s linear infinite"); $("#list-wait").css("animation", "spin 8s linear infinite"); $("#list-wait2").css("-webkit-animation", "spin 8s linear infinite"); $("#list-wait2").css("-moz-animation", "spin 8s linear infinite"); $("#list-wait2").css("animation", "spin 8s linear infinite"); spinner = 0;}
+	    case 'news': if (spinner == 0) {  $("#list-wait").removeClass("image-rotate"); $("#list-wait2").removeClass("image-rotate"); spinner = 1; } else if (spinner == 1) { $("#stamper").show(); $("#world").show(); spinner = 2;} else { $("#list-wait").addClass("image-rotate"); $("#list-wait2").addClass("image-rotate"); spinner = 0;}
     
 		     break;
         case 'map': $("#actions").show(); map.resize(); break; } }
@@ -845,8 +845,8 @@ div.active {opacity: 1;height: auto;}
 
 @media print { body, .print-help {display: block !important;position: relative !important;width: auto !important;height: auto !important;overflow: visible !important;margin-left: 0 !important;}}
 
-.image {position: absolute;width: 48px;height: 48px;-webkit-animation:spin 4s linear infinite; -moz-animation:spin 4s linear infinite;animation:spin 4s linear infinite;opacity: 0.5;}
-.image2 {position: absolute;width: 48px;height: 48px;-webkit-animation:spin 8s linear infinite; -moz-animation:spin 8s linear infinite;animation:spin 8s linear infinite;opacity: 0.5;}
+.image {position: absolute;width: 48px;height: 48px;opacity: 0.5;}
+.image-rotate { -webkit-animation:spin 8s linear infinite; -moz-animation:spin 8s linear infinite;animation:spin 8s linear infinite; }
 @-moz-keyframes spin {100% { -moz-transform: rotate(360deg); }} @-webkit-keyframes spin {100% { -webkit-transform: rotate(360deg); }} @keyframes spin {100% {-webkit-transform: rotate(360deg);transform:rotate(360deg);}}
 
 .select-wrapper { width:100%!important; }
