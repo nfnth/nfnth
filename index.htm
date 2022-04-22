@@ -183,7 +183,7 @@ async function initial() {
     $('#user-pane').sidenav({ edge: 'right' });
     $('.fixed-action-btn').floatingActionButton({ hoverEnabled: false }); $("#map-add").hide(); $("#map-edit").hide(); $("#map-delete").hide();
     $('.tooltipped').tooltip();
-    showView('news'); //searchClear();
+    $("#stamper").show(); $("#world").show(); //searchClear();
      
     setTimeout(function() { $(".loader").css("visibility", "visible"); $('img').on('dragstart', function(evt) { return false; }); }  , 500); }
 
