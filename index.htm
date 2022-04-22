@@ -39,7 +39,7 @@
           			<input id="search" type="search" onkeyup="searchResults()" style="padding-left:12px; width: calc(100% - 1rem);"><label class="label-icon" for="search" ></label><i class="material-icons" onclick="searchClear()">close</i></div></a></li></ul>
 
     <!-- user -->
-        <div id="wallet-area" class="z-depth-1 blue-grey lighten-2" style="display:flex;height:105%;" onclick="datetimeStart(); setup(); $('#user-pane').sidenav('open');">
+        <div id="wallet-area" class="z-depth-1 blue-grey lighten-2" style="opacity:0.8; display:flex;height:105%;" onclick="datetimeStart(); setup(); $('#user-pane').sidenav('open');">
             <ul><li id="setting-wallet" ><a id="wallet-icon" href="#" style="margin: 0;justify-items: center;display: flex;align-items: center; color:whitesmoke;" ><i class="material-icons">account_balance_wallet</i><span class="mobile-hide">&nbsp;CONNECT</span></a></li></ul></div></div></nav>
 
 <!-- dropdown -->
@@ -68,7 +68,7 @@
   	<li style="margin-top:12px; display: flex;align-items: center;justify-content: center;margin-bottom:16px;"><select id="domain-template" class="sider" onchange="domainSelect();">
         <option selected="selected">No domain selected</option><option>tactician.us (demo)</option></select></li>
 	<li style="margin-top:12px;"><a id="poster" class="btn waves-effect waves-light green z-depth-1 lighten-2 disabled" style="width: 240px;margin: auto;border-radius: 8px;margin-bottom:12px;color:black;" onclick="if (walletAddress != '') {showView('map'); map.resize(); addArtifact(); $('#user-pane').sidenav('close');}"><i class="material-icons left">build</i>Build Artifact</a></li>
-	<li style="margin-top:12px;"><a id="transfer" class="btn waves-effect waves-light green z-depth-1 lighten-2 disabled" style="width: 240px;margin: auto;border-radius: 8px;margin-bottom:12px;color:black;" onclick="if (walletAddress != '') {showView('map'); map.resize(); addArtifact(); $('#user-pane').sidenav('close');}"><i class="material-icons left">compare_arrows</i>Trade OCUR</a></li></ul>
+	<li style="margin-top:12px;"><a id="transfer" class="btn waves-effect waves-light green z-depth-1 lighten-2 disabled" style="width: 240px;margin: auto;border-radius: 8px;margin-bottom:12px;color:black;" onclick="if (walletAddress != '') {showView('map'); map.resize(); addArtifact(); $('#user-pane').sidenav('close');}"><i class="material-icons left">sync_alt</i>Trade OCUR</a></li></ul>
 
 <!-- view -->
 <div id="home" style="text-align:center;visibility:hidden; width:100%; z-index:1; padding-top: 54px;" class="content loader print-help">
