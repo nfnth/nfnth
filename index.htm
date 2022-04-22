@@ -20,7 +20,7 @@
 <nav id="main-menu" style="position: fixed;top:0; z-index:2;visibility:hidden;" class="loader">
     <div id="panel-menu" class="nav-wrapper header blue-grey lighten-3 z-depth-3" style="border-bottom:solid 3px darkgrey; display:flex; justify-content: space-between; color:black;">
     	<div class="z-depth-1"><a class="blue-grey lighten-1" style="display: flex; align-items: center; height: 105%; padding-right: 10px; color: brown;font-weight: bold;font-size: 20px;">
-		<div id="waiter" onclick="showView('news');" style="height:48px; width:48px; cursor: pointer; margin-left: 12px;"><img id="list-wait" class="image image-rotate"/><img id="list-wait2" class="image image-rotate"/></div></a></div>
+		<div id="waiter" onclick="resetHome();" style="height:48px; width:48px; cursor: pointer; margin-left: 12px;"><img id="list-wait" class="image image-rotate"/><img id="list-wait2" class="image image-rotate"/></div></a></div>
 
 <!-- media -->
 	<a id="doc-hide" class="screen-hide" href="#!" data-target="doc"><i class="material-icons">sticky_note_2</i></a>
@@ -341,6 +341,7 @@ function pullDomain(domain) { $.get('deed/domain/' + domain, function(data) { sh
 pullInfo(); pullOpens(); //pullAsset(asset.token_id);
 
 var mapSwitch = true; var introSwitch = true;
+function resetHome() { if (spinner == 0) {  $("#list-wait").removeClass("image-rotate"); $("#list-wait2").removeClass("image-rotate"); spinner = 1; } else if (spinner == 1) { hideView(); $('#news').show(); $("#stamper").show(); $("#world").show(); spinner = 2;} else { $("#list-wait").addClass("image-rotate"); $("#list-wait2").addClass("image-rotate"); spinner = 0;} }
 
 function hideView() { $('.modal').modal('close');   window.scrollTo(0, 0); $("#editor").removeClass("scale-in"); 
 		     $("#editor").removeClass("scale-out"); $("#editor").addClass("scale-out"); $('.pane').hide();}
@@ -350,7 +351,7 @@ function showView(view) {  hideView(); $('#'+view).show();
         case 'editor': $("#editor").addClass("scale-in"); break;
 	case 'filter': $("#filter").addClass("scale-in"); break;
         case 'list': break;
-	    case 'news': if (spinner == 0) {  $("#list-wait").removeClass("image-rotate"); $("#list-wait2").removeClass("image-rotate"); spinner = 1; } else if (spinner == 1) { $("#stamper").show(); $("#world").show(); spinner = 2;} else { $("#list-wait").addClass("image-rotate"); $("#list-wait2").addClass("image-rotate"); spinner = 0;}
+	    case 'news': 
     
 		     break;
         case 'map': $("#actions").show(); map.resize(); break; } }
