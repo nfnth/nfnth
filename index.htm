@@ -410,14 +410,14 @@ var pageSwitch = true;
 function setDialog(text) {  //$("#dialog-inner2").html(text);
 			  
 
-			  $('#magazine').turn('resize'); 
+			 // $('#magazine').turn('resize'); 
 				  
 				var element = document.getElementById('dialog-inner2');
 var positionInfo = element.getBoundingClientRect();
 var height = positionInfo.height;
 var width = positionInfo.width;
 				  
-				  $('#magazine').turn('size', width, height); 
+				  $('#magazine').turn('size', window.innerWidth - 120, window.innerHeight - 120); 
 	
     var myDiv = document.getElementById('dialog-inner2'); myDiv.scrollTop = 0;
     somedialog = document.getElementById( 'somedialog2' ); morphEl = somedialog.querySelector( '.morph-shape' );
