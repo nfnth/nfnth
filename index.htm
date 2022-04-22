@@ -25,34 +25,36 @@
 <!-- media -->
 	<a id="doc-hide" class="screen-hide" href="#!" data-target="doc"><i class="material-icons">sticky_note_2</i></a>
         <a id="map-hide" class="screen-hide" onclick="showView('map'); "><i class="material-icons">map</i></a>
-	<a id="list-hide" class="screen-hide" onclick="showView('list'); showList('domain');"><i class="material-icons">list</i></a>
+	<a id="list-hide" class="screen-hide" onclick="showView('list'); showList('domain');"><i class="material-icons">inventory_2</i></a>
     	<a id="search-hide" class="screen-hide" onclick="showView('search');"><i class="material-icons">search</i></a>
 
     <!-- desktop -->
     	<ul class="hide-on-med-and-down">
 	    <li id="doc-list"><a id="docs" href="#!" data-target="doc"><i class="material-icons left">sticky_note_2</i>GUIDE<i class="material-icons right">arrow_drop_down</i></a></li>
             <li id="map-list"><a onclick="showView('map');"><i class="material-icons left">map</i>EXPLORE</a></li>
-            <li id="list-list"><a onclick="showView('list'); showList('domain');"><i class="material-icons left">list</i>CATALOG</a></li>
+            <li id="list-list"><a onclick="showView('list'); showList('domain');"><i class="material-icons left">inventory_2</i>CATALOG</a></li>
             <li style="height:64px;" id="search-list">
                 <a style="height:inherit; padding-right:0;"><i onclick="$('#search').focus();" style="height:inherit; padding-right:16px;" class="material-icons">search</i>
         		<div id="search-box" class="input-field" style="height:inherit;">
           			<input id="search" type="search" onkeyup="searchResults()" style="padding-left:12px; width: calc(100% - 1rem);"><label class="label-icon" for="search" ></label><i class="material-icons" onclick="searchClear()">close</i></div></a></li></ul>
 
     <!-- user -->
-        <div id="wallet-area" class="z-depth-1 blue-grey lighten-2" style="display:flex;height:101%;" onclick="datetimeStart(); setup(); $('#user-pane').sidenav('open');">
+        <div id="wallet-area" class="z-depth-1 blue-grey lighten-2" style="display:flex;height:103%;" onclick="datetimeStart(); setup(); $('#user-pane').sidenav('open');">
             <ul><li id="setting-wallet" ><a id="wallet-icon" href="#" style="margin: 0;justify-items: center;display: flex;align-items: center;" ><i class="material-icons">account_balance_wallet</i><span class="mobile-hide">&nbsp;CONNECT</span></a></li></ul></div></div></nav>
 
 <!-- dropdown -->
 <ul id="doc" class="dropdown-content loader" style="visibility:hidden;">
-	<li><a onclick="showDoc('PLANME');"><i class="material-icons">explore</i>On Deed to Domain</a></li>
+	<li><a onclick="showDoc('PLANME');"><i class="material-icons">settings</i>On Deed to Domain</a></li>
 	<li class="divider"></li>
     	<li><a onclick="buildDoc('urland');"><i class="material-icons">grass</i>Ocurious Field Guide</a></li>
-	<li><a ><i class="material-icons"><span class="material-icons-outlined">park</span></i>Citizen's Journal</a></li></ul>
+	<li><a ><i class="material-icons"><span class="material-icons-outlined">park</span></i>OCUR Manual</a></li>
+	<li class="divider"></li>
+    	<li><a onclick="buildDoc('urland');"><i class="material-icons">chair</i>Citizen's Journal</a></li></ul>
 
 <!-- panel -->
 <ul id="user-pane" class="sidenav loader blue-grey lighten-5" style="visibility:hidden;">
 	<li><div class="user-view z-depth-1" style="background-color: #eaf2f7;display: flex;margin: auto; padding: 0;align-items: center; padding-left:12px;"><span id="ocuros" style="cursor: pointer;margin:auto;" onclick="openInNewTab('https://github.com/nfnth/os'); $('#user-pane').sidenav('close');" class="new badge green darken-2 tooltipped" data-position="left" data-tooltip="ocurOS | v1.08" data-badge-caption=""></span>
-        <img id="user-pic" style="height: 72px;margin-left:18px; padding: 12px;" src="img/seal3.png" onclick="openInNewTab('https://github.com/nfnth/nfnth'); $('#user-pane').sidenav('close');"/></div></li>
+        <img id="user-pic" style="height: 72px;margin-left:18px; padding: 12px;" onclick="openInNewTab('https://github.com/nfnth/nfnth'); $('#user-pane').sidenav('close');"/></div></li>
     <li><a class="subheader">Wallet Information</a></li>
   	<li><a class="waves-effect" onclick="if (walletAddress != '') {copyClip(walletAddress);}"><i class="material-icons">alternate_email</i><span id="myAdd">Wallet Address</span></a></li>
   	<li><a class="waves-effect"><i class="material-icons">account_balance</i><span id="myETH">ETH Balance</span></a></li>
@@ -66,7 +68,7 @@
   	<li style="margin-top:12px; display: flex;align-items: center;justify-content: center;margin-bottom:16px;"><select id="domain-template" class="sider" onchange="domainSelect();">
         <option selected="selected">No domain selected</option><option>tactician.us (demo)</option></select></li>
 	<li style="margin-top:12px;"><a id="poster" class="btn waves-effect waves-light green z-depth-1 lighten-2 disabled" style="width: 240px;margin: auto;border-radius: 8px;margin-bottom:12px;color:black;" onclick="if (walletAddress != '') {showView('map'); map.resize(); addArtifact(); $('#user-pane').sidenav('close');}"><i class="material-icons left">inventory_2</i>Build Artifact</a></li>
-	<li style="margin-top:12px;"><a id="transfer" class="btn waves-effect waves-light green z-depth-1 lighten-2 disabled" style="width: 240px;margin: auto;border-radius: 8px;margin-bottom:12px;color:black;" onclick="if (walletAddress != '') {showView('map'); map.resize(); addArtifact(); $('#user-pane').sidenav('close');}"><i class="material-icons left">toll</i>Transfer OCUR</a></li></ul>
+	<li style="margin-top:12px;"><a id="transfer" class="btn waves-effect waves-light green z-depth-1 lighten-2 disabled" style="width: 240px;margin: auto;border-radius: 8px;margin-bottom:12px;color:black;" onclick="if (walletAddress != '') {showView('map'); map.resize(); addArtifact(); $('#user-pane').sidenav('close');}"><i class="material-icons left">toll</i>Trade OCUR</a></li></ul>
 
 <!-- view -->
 <div id="home" style="text-align:center;visibility:hidden; width:100%; z-index:1; padding-top: 54px;" class="content loader print-help">
@@ -74,7 +76,7 @@
     <!-- world -->
     <div id="world" class="content loader pane blue-grey lighten-5" style="width:100%;background-color:darkgrey;">
         <img src="img/world-min.jpg" class="z-depth-2" style="width:100%; margin-bottom:-6px; " />
-        <div style="position: absolute; margin-top:360px; width: 100%; top:0; height: 0; "><div style="cursor:pointer; position:absolute; color:white; font-size:24px;background-color: rgba(245, 245, 245, 0.8);padding-bottom: 48px;padding-top: 36px;text-align: center;align-items: center;justify-content: center;width: 100%;cursor:pointer;display: flex; flex-direction: column;" onclick="showView('map'); mapIntro();"><div style="display:flex; justify-items:center;"><img height="48" width="48" src="img/gear/gear2.png" /><span style="color:darkgoldenrod; font-weight:bold; font-size:28px;border-radius: 6px;padding-left: 6px;">ocur.io</span></div><div><span style="color:goldenrod; font-size:26px; font-weight:bold;vertical-align:super;">$own [build] //explore</span></div><div><span style="font-size:22px;color:black;">deed. domain. </span><span style="font-size:22px; color:black; font-weight:bold;">decentralized.</span></div></div></div>
+        <div style="position: absolute; margin-top:360px; width: 100%; top:0; height: 0; "><div style="cursor:pointer; position:absolute; color:white; font-size:24px;background-color: rgba(245, 245, 245, 0.8);padding-bottom: 48px;padding-top: 36px;text-align: center;align-items: center;justify-content: center;width: 100%;cursor:pointer;display: flex; flex-direction: column;" onclick="showView('map'); mapIntro();"><div style="display:flex; justify-items:center;"><img id="world-gear" height="48" width="48" /><span style="color:darkgoldenrod; font-weight:bold; font-size:28px;border-radius: 6px;padding-left: 6px;">ocur.io</span></div><div><span style="color:goldenrod; font-size:26px; font-weight:bold;vertical-align:super;">$own [build] //explore</span></div><div><span style="font-size:22px;color:black;">deed. domain. </span><span style="font-size:22px; color:black; font-weight:bold;">decentralized.</span></div></div></div>
 	<div style="position: absolute; margin-top:480px; width: 100%; top:0; height: 0; "><div style="cursor:pointer; position:absolute; color:white; font-size:24px;background-color: rgba(245, 245, 245, 0.8);padding-bottom: 48px;padding-top: 36px;text-align: center;align-items: center;justify-content: center;width: 100%;cursor:pointer;display: flex; flex-direction: column;" ><div style="display:flex; justify-items:center;"><span style="color:darkgoldenrod; font-weight:bold; font-size:28px;border-radius: 6px;padding-left: 6px;" >Purchase Collectible</span></div></div></div>
 	<div style="position: absolute; margin-top:560px; width: 100%; top:0; height: 0; "><div style="cursor:pointer; position:absolute; color:white; font-size:24px;background-color: rgba(245, 245, 245, 0.8);padding-bottom: 48px;padding-top: 36px;text-align: center;align-items: center;justify-content: center;width: 100%;cursor:pointer;display: flex; flex-direction: column;" ><div style="display:flex; justify-items:center;"><span style="color:darkgoldenrod; font-weight:bold; font-size:28px;border-radius: 6px;padding-left: 6px;" onclick="showDoc('ocur');">Trade OCUR</span></div><div><span style="font-size:22px;color:black;" onclick="showDoc('donation');">Land Preserve</span><span style="font-size:22px; color:black; font-weight:bold;" onclick="openInNewTab('https://github.com/nfnth');">About ocur.io</span></div></div></div></div>
 
@@ -103,12 +105,13 @@
     <!-- map -->
     <div id="map" class="content loader pane" style="width:100%;"></div>
         <div id="actions" class="content loader pane fixed-action-btn" >
-            <a class="btn-floating btn-large amber lighten-4 waves-effect waves-light"><i class="large material-icons">apps</i></a>
+            <a class="btn-floating btn-large amber lighten-3 waves-effect waves-light"><i class="large material-icons">menu</i></a>
             <ul>
 		<li><a id="map-sat" class="btn-floating waves-effect waves-light grey" onclick="mapSat();"><i class="material-icons">satellite_alt</i></a></li>
 		<li><a id="map-gps" class="btn-floating waves-effect waves-light grey" onclick="mapLoc();"><i class="material-icons">gps_fixed</i></a></li>
-		<li><a id="map-route" class="btn-floating waves-effect waves-light blue lighten-3" onclick="mapRoute();"><i class="material-icons">route</i></a></li>
-                <li><a id="map-rand" class="btn-floating waves-effect waves-light blue lighten-3" onclick="mapRand();"><i class="material-icons">shuffle</i></a></li></ul></div>
+		<li><a id="map-direction" class="btn-floating waves-effect waves-light grey onclick="mapRoute();"><i class="material-icons">directions</i></a></li>
+		<li><a id="map-route" class="btn-floating waves-effect waves-light green lighten-2" onclick="mapRoute();"><i class="material-icons">route</i></a></li>
+                <li><a id="map-rand" class="btn-floating waves-effect waves-light green lighten-2" onclick="mapRand();"><i class="material-icons">shuffle</i></a></li></ul></div>
 
     <!-- editor -->
     <div id="editor" class="content loader pane scale-transition scale-out">
@@ -174,6 +177,8 @@ async function initial() {
 
     var gear = Math.floor(Math.random() * (42 - 1 + 1)) + 1; document.getElementById('list-wait').src = "img/gear/gear" + gear.toString() + ".png";
     var gear2 = Math.floor(Math.random() * (42 - 1 + 1)) + 1; document.getElementById('list-wait2').src = "img/gear/gear" + gear2.toString() + ".png";
+	var gear3 = Math.floor(Math.random() * (42 - 1 + 1)) + 1; document.getElementById('user-list').src = "img/gear/gear" + gear3.toString() + ".png";
+	var gear4 = Math.floor(Math.random() * (42 - 1 + 1)) + 1; document.getElementById('world-gear').src = "img/gear/gear" + gear4.toString() + ".png";
 	$("#lister").prop("checked", false);
     $('#docs').dropdown({ constrainWidth: false, coverTrigger: false } ); $('#doc-hide').dropdown({ constrainWidth: false, coverTrigger: false } ); //coverTrigger: false, hover: true 
    // $('#lists').dropdown({ constrainWidth: false, coverTrigger: false } ); $('#list-hide').dropdown({ constrainWidth: false, coverTrigger: false } );
