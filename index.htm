@@ -387,14 +387,14 @@ function addOpen(i){
 //<span class='amber lighten-2 badge z-depth-1' style='color:black!important;font-weight:bold;'>" + opens[i].count + " available</span>
 //$("#somedialog2").css("z-index",1004);
 	
-$('.open').on('click', function(e) {
-  if (e.target !== this)
-    return;
+//$('.open').on('click', function(e) {
+//  if (e.target !== this)
+//    return;
   //$('#customerServices input:checkbox.parent');
 
-	if ($(this).find("input").prop('checked')) { $(this).find("input").prop('checked', false); } else { $(this).find("input").prop('checked', true); }
+//	if ($(this).find("input").prop('checked')) { $(this).find("input").prop('checked', false); } else { $(this).find("input").prop('checked', true); }
   //alert( 'clicked the foobar' );
-});
+//});
 }
 function addList(i){
     $("#registry").append("<a class='collection-item'><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;'>" + domains[i].core.name + "</div><div style='display:flex; justify-content:space-between;align-items:center;'><div style='display:flex; flex-direction:column;'><div style='display:flex;align-items:center;'><div><span onclick='pullDoc(\"" + domains[i].core.name + "\");' class='waves-effect waves-light waves-blue btn blue' ><i class='material-icons'>sticky_note_2</i></span><span class='waves-effect waves-light waves-blue btn blue lighten-2' ><i class='material-icons'>map</i></span><span class='waves-effect waves-light btn amber lighten-2' ><i class='material-icons'>inventory_2</i></span></div>&nbsp;&nbsp;&nbsp;&nbsp;<span class='modal-trigger' href='#modal1' onclick='pullOwner(" + i + "); pullPrice(" + i + "); addListDetail(" + i + ");'><i class='material-icons'>more_vert</i></span></div></div></div></div></a>"); }
@@ -859,6 +859,7 @@ div.active {opacity: 1;height: auto;}
 #magazine .turn-page{
 	background-color:white;
 }
+	.open { cursor:default; }
 
 nav ul a { color:black; } nav ul a:hover { color:darkgoldenrod!important; } nav ul a:hover { color:darkgoldenrod; }
 
