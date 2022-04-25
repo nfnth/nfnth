@@ -18,8 +18,8 @@
 
 <!-- menu -->
 <nav id="main-menu" style="position: fixed;top:0; z-index:2;visibility:hidden;" class="loader">
-    <div id="panel-menu" class="nav-wrapper header blue-grey lighten-3 z-depth-2" style="border-bottom:solid 3px darkgrey; display:flex; justify-content: space-between; color:black;">
-    	<div class="z-depth-1"><a class="amber lighten-5" style="opacity:0.7; display: flex; align-items: center; height: 105%; padding-right: 10px; color: brown;font-weight: bold;font-size: 20px;">
+    <div id="panel-menu" class="nav-wrapper header z-depth-1" style="background-color: #fde4a4; display:flex; justify-content: space-between; color:black;">
+    	<div class="z-depth-1"><a class="amber lighten-5" style="opacity:0.7; display: flex; align-items: center; height: 100%; padding-right: 10px; color: brown;font-weight: bold;font-size: 20px;">
 		<div id="waiter" onclick="resetHome();" style="height:48px; width:48px; cursor: pointer; margin-left: 12px;"><img id="list-wait" class="image image-rotate"/><img id="list-wait2" class="image image-rotate"/></div></a></div>
 
 <!-- media -->
@@ -39,7 +39,7 @@
           			<input id="search" type="search" onkeyup="searchResults()" style="padding-left:12px; width: calc(100% - 1rem);"><label class="label-icon" for="search" ></label><i class="material-icons" onclick="searchClear()">close</i></div></a></li></ul>
 
     <!-- user -->
-        <div id="wallet-area" class="z-depth-1 blue-grey lighten-2" style="opacity:0.8; display:flex;height:105%;" onclick="datetimeStart(); setup(); $('#user-pane').sidenav('open');">
+        <div id="wallet-area" class="z-depth-1" style="background-color:#9b6a36; opacity:0.75; display:flex;height:100%;" onclick="datetimeStart(); setup(); $('#user-pane').sidenav('open');">
             <ul><li id="setting-wallet" ><a id="wallet-icon" href="#" style="margin: 0;justify-items: center;display: flex;align-items: center; color:whitesmoke;" ><i class="material-icons">account_balance_wallet</i><span class="mobile-hide">&nbsp;CONNECT</span></a></li></ul></div></div></nav>
 
 <!-- dropdown -->
@@ -937,7 +937,7 @@ div.active {opacity: 1;height: auto;}
 	
 	#domain-info { padding:0; }
 
-nav ul a { color:black; } nav ul a:hover { color:darkgoldenrod!important; } nav ul a:hover { color:darkgoldenrod; }
+nav ul a { color:#9b6a36; } nav ul a:hover { color:darkgoldenrod!important; } nav ul a:hover { color:darkgoldenrod; }
 
 .hide-scrollbar { overflow: auto; -ms-overflow-style: none; /* IE 11 */ scrollbar-width: none; /* Firefox 64 */ }
 .dropdown-content li>a>i { margin:0 12px 0 0; } .dropdown-content li>a, .dropdown-content li>span { color:darkslategray!important; }</style></body></html>
