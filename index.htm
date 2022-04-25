@@ -52,8 +52,8 @@
     	<li><a onclick="buildDoc('urland');"><i class="material-icons">settings</i>Citizen's Journal</a></li></ul>
 
 <!-- panel -->
-<ul id="user-pane" class="sidenav loader blue-grey lighten-5" style="visibility:hidden;">
-	<li><div class="user-view z-depth-1" style="background-color: #eaf2f7;display: flex;margin: auto; padding: 0;align-items: center; padding-left:12px;"><span id="ocuros" style="cursor: pointer;margin:auto; color:black!important; font-size:16px;" onclick="openInNewTab('https://github.com/nfnth/nfnth'); $('#user-pane').sidenav('close');" class="new badge amber accent-1" data-badge-caption=""></span>
+<ul id="user-pane" class="sidenav loader" style="visibility:hidden;">
+	<li><div class="user-view z-depth-1 amber lighten-5" style="display: flex;margin: auto; padding: 0;align-items: center; padding-left:12px;"><span id="ocuros" style="cursor: pointer;margin:auto; color:black!important; font-size:16px;" onclick="openInNewTab('https://github.com/nfnth/nfnth'); $('#user-pane').sidenav('close');" class="new badge amber accent-1" data-badge-caption=""></span>
         <img id="user-pic" style="opacity:0.5; height: 48px;position:absolute; right:0; margin: 12px; cursor:pointer;" onclick="openInNewTab('https://github.com/nfnth'); $('#user-pane').sidenav('close');"/><img id="user-pic2" style="opacity:0.5; height: 48px;cursor:pointer;margin:12px;" onclick="openInNewTab('https://github.com/nfnth'); $('#user-pane').sidenav('close');"/></div></li>
     <li><a class="subheader">Wallet Information</a></li>
   	<li><a class="waves-effect" onclick="if (walletAddress != '') {copyClip(walletAddress);}"><i class="material-icons">alternate_email</i><span id="myAdd">Wallet Address</span></a></li>
