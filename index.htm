@@ -86,25 +86,18 @@
       <ul class="tabs tabs-fixed-width">
         <li class="tab"><a href="#test4">Purchase Collectible</a></li>
         <li class="tab"><a class="active" href="#test5">Explore world</a></li>
-        <li class="tab"><a href="#test6">About Ocurious</a></li>
-      </ul>
-    </div>
+        <li class="tab"><a href="#test6">About Ocurious</a></li></ul></div>
     <div class="card-content grey lighten-4">
       <div id="test4">Test 1</div>
       <div id="test5">showView('map'); mapIntro();</div>
-      <div id="test6">Test 3</div>
-    </div>
+      <div id="test6">Test 3</div></div>
   </div><div><span style="font-size:22px;color:black;">deed. domain. </span><span style="font-size:22px; color:black; font-weight:bold;">© 2014 Copyright Text</span></div></div></div></div>
 
     <!-- list -->
     <div id="list" class="content loader pane" style="overflow-y: auto; height: 95%;">
 	    <!-- filter -->
         <div id="list-filter" class="z-depth-1 grey lighten-5" style="display:flex; justify-content: center; padding-top: 24px; padding-bottom:12px; margin-bottom: -6px; align-items:center;">
-        	<div style="display:flex;" class="hide-on-med-and-down"><a class="waves-effect waves-light amber lighten-2 btn" onclick="switchView();"><i id="view-icon" class="material-icons left">grid_view</i><span>Grid</span></a><a class="waves-effect waves-amber btn-flat" onclick="filterDomain();"><i id="select-icon" class="material-icons left">select_all</i><span>Select</span></a><a class="waves-effect waves-amber btn-flat" onclick="showView('list'); showList('open');"><i class="material-icons left">filter_list</i><span>Filter</span></a><a id="dropdown" class='dropdown-trigger btn-flat' href='#' data-target='dropdown1'><i class="material-icons left">sort</i>Sort</a>
-			
-			
-			
-			
+        	<div style="display:flex;" class="hide-on-med-and-down"><a class="waves-effect waves-light amber lighten-2 btn" onclick="switchView();"><i id="view-icon" class="material-icons left">grid_view</i><span id="view-name">Grid</span></a><a class="waves-effect waves-amber btn-flat" onclick="filterDomain();"><i id="select-icon" class="material-icons left">select_all</i><span>Select</span></a><a class="waves-effect waves-amber btn-flat" onclick="showView('list'); showList('open');"><i class="material-icons left">filter_list</i><span>Filter</span></a><a id="dropdown" class='dropdown-trigger btn-flat' href='#' data-target='dropdown1'><i class="material-icons left">sort</i>Sort</a>
 			<!--<div class="input-field col s12 m6">
 			
   			<select id="select-sort" style="z-index:1;" onchange="sorter();">
@@ -410,7 +403,7 @@ function showList(area) { $("#registry").html(''); $("#registry").hide(); if (fi
     $("#registry").show(); $('img').on('dragstart', function(evt) { return false; }); }
 
 var showGrid = false;
-function switchView() { if (showGrid) { showList('grid'); $("#view-icon").html("view_list"); showGrid = false; } else { showList('domain'); $("#view-icon").html("grid_view"); showGrid = true;} }
+function switchView() { if (showGrid) { showList('grid'); $("#view-name").html("List"); $("#view-icon").html("view_list"); showGrid = false; } else { showList('domain'); $("#view-name").html("Grid"); $("#view-icon").html("grid_view"); showGrid = true;} }
 function adjustSort(full) { //$("option[value='09']").attr("disabled", "disabled");
     $('#select-sort').empty();
     $('#select-sort').append('<option value="" selected disabled>Sort...</option>');
@@ -488,7 +481,7 @@ var width = positionInfo.width;
 
 //function turnPage() { $('selector').turn('next'); }
 function addGrid(i) { //alert((i%4));//card-panel?<div id="positioning-context">
-    return '<div style="width:360px;height:280px;margin:24px; display:flex;flex-direction:column;justify-content:space-between; border-radius:16px;" class="card sticky-action hoverable"><div style="border-radius:16px 16px 0 0;" class="positioning-context card-image waves-effect waves-block waves-light z-depth-3"><img style="width:100%; height:100%;" class="materialboxed" src="' + domains[i].core.image_preview_url + '"></div><div class="card-content z-depth-1" style="border-radius:0 0 16px 16px;" onclick="pullOwner(' + i + ');"><span class="card-title activator grey-text text-darken-4"><a class="btn-floating waves-effect waves-light blue-grey lighten-2"><i class="material-icons">sticky_note_2</i></a>' + domains[i].core.name + '<i class="material-icons right">expand_less</i></span></div><div class="card-reveal" style="overflow:hidden;"><span class="card-title grey-text text-darken-4">' + domains[i].name + '<i class="material-icons right">expand_more</i></span><div style="display:flex;align-items:center;justify-content:space-evenly;margin-top:24px;"><div style="width:160px;cursor:pointer;" id="o'+ i + '"></div><div style="display:flex; flex-direction:column;align-items:center;"><a onclick="addListDeed(' + i +');" class="waves-effect waves-light waves-blue btn blue lighten-2" ><i class="material-icons">sticky_note_2</i></a>&nbsp;&nbsp;<a onclick="showMark(\'' + i + '\'); showView(\'map\'); map.resize();" class="modal-close waves-effect waves-blue btn blue lighten-3" ><i class="material-icons">map</i></a>&nbsp;&nbsp;<a onclick="showMark(\'' + i + '\'); showView(\'map\'); map.resize();" class="modal-close waves-effect waves-light btn amber lighten-3" ><i class="material-icons">inventory_2</i></a></div></div><div style="margin-top:20px;"><div class="z-depth-1 chip amber lighten-2">21930 OCUR</div></div></div></div>';
+    return '<div style="width:360px;height:280px;margin:24px; display:flex;flex-direction:column;justify-content:space-between; border-radius:16px;" class="card sticky-action hoverable"><div style="border-radius:16px 16px 0 0;" class="positioning-context card-image waves-effect waves-block waves-light z-depth-3"><img style="width:100%; height:100%;" class="materialboxed" src="' + domains[i].core.image_preview_url + '"></div><div class="card-content z-depth-1" style="border-radius:0 0 16px 16px;" onclick="pullOwner(' + i + ');"><span class="card-title activator grey-text text-darken-4"><div><a class="btn-floating waves-effect waves-light blue-grey lighten-2"><i class="material-icons">sticky_note_2</i></a></div><div>' + domains[i].core.name + '</div><div><i class="material-icons right">expand_less</i></span></div></div><div class="card-reveal" style="overflow:hidden;"><span class="card-title grey-text text-darken-4">' + domains[i].name + '<i class="material-icons right">expand_more</i></span><div style="display:flex;align-items:center;justify-content:space-evenly;margin-top:24px;"><div style="width:160px;cursor:pointer;" id="o'+ i + '"></div><div style="display:flex; flex-direction:column;align-items:center;"><a onclick="addListDeed(' + i +');" class="waves-effect waves-light waves-blue btn blue lighten-2" ><i class="material-icons">sticky_note_2</i></a>&nbsp;&nbsp;<a onclick="showMark(\'' + i + '\'); showView(\'map\'); map.resize();" class="modal-close waves-effect waves-blue btn blue lighten-3" ><i class="material-icons">map</i></a>&nbsp;&nbsp;<a onclick="showMark(\'' + i + '\'); showView(\'map\'); map.resize();" class="modal-close waves-effect waves-light btn amber lighten-3" ><i class="material-icons">inventory_2</i></a></div></div><div style="margin-top:20px;"><div class="z-depth-1 chip amber lighten-2">21930 OCUR</div></div></div></div>';
 	
 	//alert(((i+1)%4));
 	//if (((i+1)%4) == 0) { $("#registry").append('</div>'); }
