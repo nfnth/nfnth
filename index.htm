@@ -150,7 +150,7 @@
             <div id="show-progress" class="progress" style="display:none;"><div class="indeterminate"></div></div></div></div>
 
 <!-- dialog -->
-<div id="modal1" class="modal bottom-sheet content loader"><div id="domain-info" class="modal-content amber lighten-4"></div></div>
+<div id="modal1" class="modal bottom-sheet content loader"><div id="domain-info" class="modal-content amber lighten-5"></div></div>
 
 <div id="somedialog2" class="dialog print-help hide-scrollbar" style="z-index:99;display:none;">
 	<div id="someoverlay" class="dialog__overlay hide-scrollbar"></div>
@@ -434,7 +434,7 @@ function addList(i){
     $("#registry").append("<a class='collection-item'><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;'>" + domains[i].core.name + "</div><div style='display:flex; justify-content:space-between;align-items:center;'><div style='display:flex; flex-direction:column;'><div style='display:flex;align-items:center;'><div><span onclick='pullDoc(\"" + domains[i].core.name + "\");' class='waves-effect waves-light btn-flat' ><i class='material-icons'>sticky_note_2</i></span><span style='margin-left:12px;' class='waves-effect waves-light btn amber lighten-2' ><i class='material-icons'>inventory_2</i></span></div>&nbsp;&nbsp;&nbsp;&nbsp;<span style='display:flex;color:black;' class='modal-trigger' href='#modal1' onclick='pullOwner(" + i + "); pullPrice(" + i + "); addListDetail(" + i + ");'><i class='material-icons'>more_vert</i></span></div></div></div></div></a>"); }
 
 function addListDetail(i) {
-     $("#domain-info").html('<div style="display:flex;justify-content:space-evenly;align-items:center;width:100%;padding-top:12px;"><div style="display: flex;flex-direction: column;text-align: left;align-items:center;width:100%;"><div style="display:flex; justify-content:center;"><img style="margin-bottom:12px;" class="materialboxed z-depth-2" width="140" height="140" src="' + domains[i].core.image_preview_url + '"/>&nbsp;&nbsp;&nbsp;&nbsp;<div style="cursor:pointer;" id="o'+ i + '"></div></div><div style="margin-bottom:16px;">' + domains[i].name + '&nbsp;&nbsp · &nbsp;&nbsp<a onclick="openInNewTab(\'' + domains[i].core.external_link + '\');">' + domains[i].core.name + '</a></div><br/><div class="z-depth-1 amber lighten-5" style="background-opacity:0.8; display:flex;justify-content:space-evenly;width:100%; padding:12px;" ><div class="z-depth-1 chip" style="background-color: #fde4a4;">21930 OCUR</div><a onclick="showMark(\'' + i + '\'); showView(\'map\'); map.resize();" class="modal-close waves-effect waves-light btn green lighten-2" ><i class="material-icons">credit_card</i></a></div></div></div>'); $('.materialboxed').materialbox(); }
+     $("#domain-info").html('<div style="display:flex;justify-content:space-evenly;align-items:center;width:100%;padding-top:12px;"><div style="display: flex;flex-direction: column;text-align: left;align-items:center;width:100%;"><div style="display:flex; justify-content:center;"><img style="margin-bottom:12px;" class="materialboxed z-depth-2" width="140" height="140" src="' + domains[i].core.image_preview_url + '"/>&nbsp;&nbsp;&nbsp;&nbsp;<div style="cursor:pointer;" id="o'+ i + '"></div></div><div style="margin-bottom:16px;">' + domains[i].name + '&nbsp;&nbsp · &nbsp;&nbsp<a onclick="openInNewTab(\'' + domains[i].core.external_link + '\');">' + domains[i].core.name + '</a></div><br/><div class="z-depth-1" style="background-opacity:0.8; background-color:#ffe8ae; display:flex;justify-content:space-evenly;width:100%; padding:12px;" ><div class="z-depth-1 chip" style="background-color: #fde4a4;">21930 OCUR</div><a onclick="showMark(\'' + i + '\'); showView(\'map\'); map.resize();" class="modal-close waves-effect waves-light btn green lighten-2" ><i class="material-icons">credit_card</i></a></div></div></div>'); $('.materialboxed').materialbox(); }
 	
 //$("#somedialog2").css("z-index",1004);
 function addListDeed(i) {
@@ -924,7 +924,7 @@ div.active {opacity: 1;height: auto;}
   /*Custom Background Color While Active*/
 }
 
-
+	.collection a.collection-item:hover { background-color: #ffe8ae;}
 	.card .card-image img {position:absolute;}
 	
 nav ul a { color:#9b6a36; } nav ul a:hover { color:darkgoldenrod!important; background-color:ghostwhite; }
