@@ -489,7 +489,7 @@ function addGrid(i) { //alert((i%4));//card-panel?<div id="positioning-context">
 	//alert(((i+1)%4));
 	//if (((i+1)%4) == 0) { $("#registry").append('</div>'); }
 }
-function setBox(i) { $('.materialboxed').removeClass("materialboxed"); $("#img"+i).addClass("materialboxed"); $('.materialboxed').materialbox(); $('.materialboxed').materialbox('open');}
+function setBox(i) { $('.materialboxed').removeClass("materialboxed"); $("#img"+i).addClass("materialboxed"); $('.materialboxed').materialbox(); $('.materialboxed').materialbox('open'); $("#img"+i).css("z-index", "2"); }
 	function fullScreen() {
 		var elem = document.getElementById("emDisp");
 if (elem.requestFullscreen) { elem.requestFullscreen();
