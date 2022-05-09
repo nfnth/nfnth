@@ -1,13 +1,13 @@
 
-### How to Trade OCUR
+### How to Trade NFN
 
-**ocur.io · Ocurious** uses [**OCUR**](https://etherscan.io/token/0xCcaB679860B1017589239BCeEEabe5CD45965aFc), a standard ERC-20 ETH token, as both stock and currency.
+**NfNth** uses [**NFN**](https://etherscan.io/token/0xCcaB679860B1017589239BCeEEabe5CD45965aFc), a standard ERC-20 ETH token, as both stock and currency.
 <br/><br/>
 
 
-**OCUR** has a *fixed market-cap*, and is distributed as:
+**NFN** has a *fixed market-cap*, and is distributed as:
 <br/><br/>
-|**Pool**|**OCUR** Available|
+|**Pool**|**NFN** Available|
 |-|-|
 |*public* investment (available for trade)|500,000,000,000|
 |*public* domain (distributed to domain owners)|400,000,000|
@@ -17,7 +17,7 @@
 |**TOTAL**|1,000,000,000,000|
 
 <br/>
-**To trade OCUR**, go to [Uniswap](https://app.uniswap.org/#/pool/103894), and enter the following token,
+**To trade NFN**, go to [Uniswap](https://app.uniswap.org/#/pool/103894), and enter the following token,
 
 
 <div style="text-align:center;">
@@ -25,17 +25,15 @@
 <a onclick="navigator.clipboard.writeText('0xCcaB679860B1017589239BCeEEabe5CD45965aFc');M.toast({html: 'Address copied.'});" class="waves-effect waves-light btn"><i class="material-icons right">content_copy</i>Copy</a></div>
 
 
-To view your **OCUR** balance, use **Connect Wallet** <i class="material-icons">account_balance_wallet</i> to view your individual balance, and/or select a domain to the domain's balance.
+To view your **NFN** balance, use **Connect Wallet** <i class="material-icons">account_balance_wallet</i> to view your balance.
 <br/>
-
-Domains generate **OCUR** on a scheduled basis, all distributions are taken from the public domain pool, and can be distributed to the owner's wallet by using the distribution form.
 
 
 ### How to Donate
 
 Donations go directly to support the [National Park Service](https://www.nps.gov/index.htm) and are eligible as a charitable contribution deduction, under the registered corporation **NfNth Corp**.
 <br/><br/>
-Payments can be made in ETH and sent to:
+Payments can be made in ETH/SOL and sent to:
 <br/><br/>
 <div style="text-align:center;">
 **0xB0D39Cd2a5Acc510529444B45a3ACa189D971c49**&nbsp;&nbsp;
