@@ -1,11 +1,11 @@
 
 ###  [📚📚 NfNth](https://github.com/nfnth/nfnth)
 
-Home of **[.10OS](https://github.com/nfnth/os)** (*v1.08*) and the [**NFN**](https://etherscan.io/token/0xCcaB679860B1017589239BCeEEabe5CD45965aFc) *ETH ERC-20* token | [trade on Uniswap](https://app.uniswap.org/#/pool/103894) 
+Download **[.10OS](https://github.com/nfnth/os)** (or [build](https://github.com/nfnth/os)) and trade [**NFN**](https://etherscan.io/token/0xCcaB679860B1017589239BCeEEabe5CD45965aFc) *ETH ERC-20* token | [view on Uniswap](https://app.uniswap.org/#/pool/103894) 
 
 <a href="https://opensea.io/ocurio" title="Buy on OpenSea" target="_blank"><img style="margin-left:24px; width:220px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="https://storage.googleapis.com/opensea-static/Logomark/Badge%20-%20Available%20On%20-%20Light.png" alt="Available on OpenSea" /></a>
 
-An [**NfNth Collectible**](https://buy.stripe.com/5kA4hL5NB6Qv7Ty5kk) is available, includes,
+The [**NfNth Collectible**](https://buy.stripe.com/5kA4hL5NB6Qv7Ty5kk) is available, includes,
 
 - 2021 **Native American** *$1 Coin*
 - copy of **Civilian Complex** · *The NfNth Guide to Deed Domain*
