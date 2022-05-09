@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="deed domains for sale, from deed to domain, collectible domains" />
 <meta name="keywords" content="domain, deed, nft, nfnth, crypto, NFN" />
-<meta name="author" content="ocurio" />
+<meta name="author" content="nfnth" />
 
 <!-- resources -->
 <script src="res/all.js"></script><link rel="stylesheet" href="res/all.css"></head>
@@ -17,21 +17,21 @@
 
 <!-- menu -->
 <nav id="main-menu" style="position: fixed;top:0; z-index:2;visibility:hidden;" class="loader">
-    <div id="panel-menu" class="nav-wrapper header z-depth-1 blue-grey lighten-4" style="display:flex; justify-content: space-between; color:black; border-bottom: solid 2px cornflowerblue;">
+    <div id="panel-menu" class="nav-wrapper header z-depth-1 blue-grey lighten-4" style="display:flex; justify-content: space-between; color:black; border-bottom: solid 2px smokewhite;">
     	<div><a style="opacity:0.7; background-color:ghostwhite; display: flex; align-items: center; height: 100%; padding-right: 10px; color: brown;font-weight: bold;font-size: 20px;">
 		<div id="waiter" onclick="resetHome();" style="height:48px; width:48px; cursor: pointer; margin-left: 12px;"><img id="list-wait" class="image image-rotate"/><img id="list-wait2" class="image image-rotate"/></div></a></div>
 
 <!-- media -->
 	<a id="doc-hide" class="screen-hide media-menu" href="#!" data-target="doc"><i class="material-icons">sticky_note_2</i></a>
         <a id="map-hide" class="screen-hide media-menu" onclick="showView('list'); showList('domain');"><i class="material-icons">map</i></a>
-	<a id="list-hide" class="screen-hide media-menu" onclick="showView('list'); showList('domain');"><i class="material-icons">inventory_2</i></a>
+	<a id="list-hide" class="screen-hide media-menu" onclick="showView('list'); showList('domain');"><i class="material-icons">list</i></a>
     	<a id="search-hide" class="screen-hide media-menu" onclick="showView('search');"><i class="material-icons">search</i></a>
 
     <!-- desktop -->
     	<ul class="hide-on-med-and-down">
 	    <li id="doc-list"><a id="docs" href="#!" data-target="doc"><i class="material-icons left">sticky_note_2</i>CATALOG<i class="material-icons right">arrow_drop_down</i></a></li>
             <li id="map-list"><a onclick="showView('list'); showList('domain');"><i class="material-icons left">map</i>EXPLORE</a></li>
-            <li id="list-list"><a onclick="showView('list'); showList('domain');"><i class="material-icons left">inventory_2</i>ABOUT</a></li>
+            <li id="list-list"><a onclick="showView('list'); showList('domain');"><i class="material-icons left">list</i>ABOUT</a></li>
             <li style="height:64px;" id="search-list">
                 <a style="height:inherit; padding-right:0;"><i onclick="$('#search').focus();" style="height:inherit; padding-right:16px;" class="material-icons">search</i>
         		<div id="search-box" class="input-field" style="height:inherit;">
@@ -63,11 +63,9 @@
   	<!-- <i class="material-icons left">directions</i><i class="material-icons left">picture_as_pdf</i><i class="material-icons left">calculate</i>-->
   	<li><a class="subheader">Domain Information</a></li>
   	<li><a class="waves-effect"><i class="material-icons">landscape</i><span id="myURL">Current Status</span></a></li>
-    	<li><a class="waves-effect"><i class="material-icons">toll</i><span id="myURL">OCUR Balance (Domain)</span></a></li>
   	<li style="margin-top:12px; display: flex;align-items: center;justify-content: center;margin-bottom:16px;"><select id="domain-template" class="sider" onchange="domainSelect();">
         <option selected="selected">No domain selected</option><option>tactician.us (demo)</option></select></li>
-	<li style="margin-top:12px;"><a id="poster" class="btn waves-effect waves-light amber z-depth-1 lighten-2 disabled" style="width: 240px;margin: auto;border-radius: 8px;margin-bottom:12px;color:black;" onclick="if (walletAddress != '') {showView('map'); map.resize(); addArtifact(); $('#user-pane').sidenav('close');}"><i class="material-icons left">build</i>Build Artifact</a></li>
-	<li style="margin-top:12px;"><a id="transfer" class="btn waves-effect waves-light amber z-depth-1 lighten-2 disabled" style="width: 240px;margin: auto;border-radius: 8px;margin-bottom:12px;color:black;" onclick="if (walletAddress != '') {showView('map'); map.resize(); addArtifact(); $('#user-pane').sidenav('close');}"><i class="material-icons left">sync_alt</i>Trade OCUR</a></li></ul>
+	<li style="margin-top:12px;"><a id="poster" class="btn waves-effect waves-light amber z-depth-1 lighten-2 disabled" style="width: 240px;margin: auto;border-radius: 8px;margin-bottom:12px;color:black;" onclick="if (walletAddress != '') {showView('map'); map.resize(); addArtifact(); $('#user-pane').sidenav('close');}"><i class="material-icons left">build</i>Build Artifact</a></li></ul>
 
 <!-- view -->
 <div id="home" style="text-align:center;visibility:hidden; width:100%; z-index:1; padding-top: 54px;" class="content loader print-help">
@@ -167,10 +165,7 @@
 	<div><span class="text" id="magazine-page">Page 1</span></div>
 	
 </div>
-		
-		<div><button class="action" data-dialog-close>Close</button> <form action="#"><p class="range-field">
-			<input type="range" id="test5" min="0" max="100" /></form><button onclick="nextPage();">Next</button>
-    </p></div></div></div></div>
+		</div></div></div>
 
 <script>
 var gridSelect = false;
@@ -451,7 +446,7 @@ function buildDoc(doc) { $("#magazine-page").html(addListDeed(0));
 	for (let i=1;i<domains.length-150;i++) {$("#magazine").append("<div><span class='text'>" + addListDeed(i) + "</span></div>");
 	 //$('#magazine').turn('addPage', addListDeed(i)); 
 								      }
-		    $('#magazine').turn({gradients: true, acceleration: true, display: 'single', when: {turn: function(e,page,view){ alert(page); }}}); 
+$('#magazine').turn({gradients: true, acceleration: true, display: 'single', when: {turn: function(e,page,view){ alert(page); }}}); 
 			
 			$('#magazine').turn('range', 2);
 			setDialog('');
@@ -459,21 +454,14 @@ function buildDoc(doc) { $("#magazine-page").html(addListDeed(0));
 			//$('#selector').turn({when: {turn: function(e, page, view){ alert('page'+page); }}};
 	
 }
-function nextPage() {
-				$('#magazine').turn('next');	       
-					       }
-var pageSwitch = true;
-function setDialog(text) {  //$("#dialog-inner2").html(text);
-			  
 
-			 // $('#magazine').turn('resize'); 
+function setDialog(text) { 
 				  
 				var element = document.getElementById('dialog-inner2');
 var positionInfo = element.getBoundingClientRect();
 var height = positionInfo.height;
 var width = positionInfo.width;
-				  
-				  $('#magazine').turn('size', 1100, 700); 
+
 	
     var myDiv = document.getElementById('dialog-inner2'); myDiv.scrollTop = 0;
     somedialog = document.getElementById( 'somedialog2' ); morphEl = somedialog.querySelector( '.morph-shape' );
@@ -928,7 +916,6 @@ div.active {opacity: 1;height: auto;}
   /*Custom Background Color While Active*/
 }
 
-	a.collection-item:hover { background-color: cornflowerblue!important;}
 	.card .card-image img {position:absolute;}
 	#doc li a { background-color:ghostwhite; }
 nav ul a { color:cornflowerblue!important; } nav ul a:hover { color:ghostwhite!important; background-color: cornflowerblue!important; }
