@@ -389,7 +389,7 @@ function showView(view) {  hideView(); $('#'+view).show();
         case 'map': $("#actions").show(); map.resize(); break; } }
 
 var complete; var reset = false; var first = true;
-function showList(area) { $('#map').show(); $("#registry").html(''); $("#registry").hide(); if (first) { complete = domains; first = false; }
+function showList(area) { $('#map').show(); map.resize();  $("#registry").html(''); $("#registry").hide(); if (first) { complete = domains; first = false; }
     switch (area) {
 	    case "grid": sortSet = [area,domains,0,18,16]; var snip; var carder = 4; if (screen.width < 480) { carder = 1; } for (let i=0;i<domains.length;i++) { if ((i%carder) == 0) { snip = '<div style="display:flex;width:100%;justify-content:center;">'; } snip += addGrid(i); if (((i+1)%carder) == 0) { snip += '</div>'; $("#registry").append(snip); } } $('.materialboxed').materialbox();  adjustSort(true); break;
         case "domain": $("#list-filter").show(); if (reset) { domains = complete; reset = false; }
@@ -448,7 +448,7 @@ function buildDoc(doc) { $("#magazine-page").html(addListDeed(0));
 								      }
 $('#magazine').turn({gradients: true, acceleration: true, display: 'single', when: {turn: function(e,page,view){ alert(page); }}}); 
 			
-			$('#magazine').turn('range', 2);
+			
 			setDialog('');
 		     //pullOwner(i); pullPrice(i);
 			//$('#selector').turn({when: {turn: function(e, page, view){ alert('page'+page); }}};
@@ -900,9 +900,9 @@ div.active {opacity: 1;height: auto;}
 	
 	        .tabs .tab a{ color:goldenrod; } /*Black color to the text*/
 
-        .tabs .tab a:hover { background-color:#ffe8ae; color:darkgoldenrod; } /*Text color on hover*/
+        .tabs .tab a:hover { background-color:#ffe8ae; color:cornflowerblue; } /*Text color on hover*/
 
-        .tabs .tab a.active { background-color:#ffe8ae; color:darkgoldenrod; } /*Background and text color when a tab is active*/
+        .tabs .tab a.active { background-color:#ffe8ae; color:cornflowerblue; } /*Background and text color when a tab is active*/
 
         .tabs .indicator {
             background-color:darkgoldenrod;
