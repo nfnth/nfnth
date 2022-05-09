@@ -17,8 +17,8 @@
 
 <!-- menu -->
 <nav id="main-menu" style="position: fixed;top:0; z-index:2;visibility:hidden;" class="loader">
-    <div id="panel-menu" class="nav-wrapper header z-depth-1 blue-grey lighten-3" style="display:flex; justify-content: space-between; color:black; border-bottom: solid 3px cornflowerblue;">
-    	<div><a class="blue-grey lighten-4" style="opacity:0.7; display: flex; align-items: center; height: 100%; padding-right: 10px; color: brown;font-weight: bold;font-size: 20px;">
+    <div id="panel-menu" class="nav-wrapper header z-depth-1 blue-grey lighten-4" style="display:flex; justify-content: space-between; color:black; border-bottom: solid 3px cornflowerblue;">
+    	<div><a style="opacity:0.7; display: flex; align-items: center; height: 100%; padding-right: 10px; color: brown;font-weight: bold;font-size: 20px;">
 		<div id="waiter" onclick="resetHome();" style="height:48px; width:48px; cursor: pointer; margin-left: 12px;"><img id="list-wait" class="image image-rotate"/><img id="list-wait2" class="image image-rotate"/></div></a></div>
 
 <!-- media -->
@@ -38,15 +38,15 @@
           			<input id="search" type="search" onkeyup="searchResults()" style="padding-left:12px; width: calc(100% - 1rem);"><label class="label-icon" for="search" ></label><i class="material-icons" onclick="searchClear()">close</i></div></a></li></ul>
 
     <!-- user -->
-        <div id="wallet-area" class="z-depth-1" style="background-color:#9b6a36; opacity:0.75; display:flex;height:100%;" onclick="datetimeStart(); setup(); $('#user-pane').sidenav('open');">
+        <div id="wallet-area" class="z-depth-1 blue-grey lighten-3" style="opacity:0.75; display:flex;height:100%;" onclick="datetimeStart(); setup(); $('#user-pane').sidenav('open');">
             <ul><li id="setting-wallet" ><a id="wallet-icon" href="#" style="margin: 0;justify-items: center;display: flex;align-items: center; color:whitesmoke; justify-content:center;" ><i class="material-icons">account_balance_wallet</i><span class="mobile-hide">&nbsp;CONNECT</span></a></li></ul></div></div></nav>
 
 <!-- dropdown -->
 <ul id="doc" class="dropdown-content loader" style="visibility:hidden;">
 	<li><a onclick="showDoc('PLANME');"><i class="material-icons">chair</i>On Deed to Domain</a></li>
 	<li class="divider"></li>
-    	<li><a onclick="buildDoc('urland');"><i class="material-icons">grass</i>Ocurious Field Guide</a></li>
-	<li><a ><i class="material-icons"><span class="material-icons-outlined">park</span></i>About OCUR Trade</a></li>
+    	<li><a onclick="buildDoc('urland');"><i class="material-icons">grass</i>NfNth Field Guide</a></li>
+	<li><a ><i class="material-icons"><span class="material-icons-outlined">park</span></i>About NFN Trade</a></li>
 	<li class="divider"></li>
     	<li><a onclick="buildDoc('urland');"><i class="material-icons">settings</i>Citizen's Journal</a></li></ul>
 
@@ -931,6 +931,6 @@ div.active {opacity: 1;height: auto;}
 	a.collection-item:hover { background-color: #ffe8ae!important;}
 	.card .card-image img {position:absolute;}
 	#doc li a { background-color:ghostwhite; }
-nav ul a { color:darkblue; } nav ul a:hover { color:ghostwhite!important; background-color: cornflowerblue; }
+nav ul a { color:cornflowerblue; } nav ul a:hover { color:ghostwhite!important; background-color: cornflowerblue; }
 .hide-scrollbar { overflow: auto; -ms-overflow-style: none; /* IE 11 */ scrollbar-width: none; /* Firefox 64 */ }
 .dropdown-content li>a>i { margin:0 12px 0 0; } .dropdown-content li>a, .dropdown-content li>span { color:goldenrod!important; }</style></body></html>
