@@ -52,6 +52,21 @@
 
 <!-- panel -->
 <ul id="user-pane" class="sidenav loader" style="visibility:hidden;">
+	<li>
+		<div class="card" style="border-radius:12px;display:inline-block;padding:12px;>
+    <div class="card-content"></div>
+    <div class="card-tabs">
+			  <ul class="tabs tabs-fixed-width z-depth-1">
+        <li class="tab amber lighten-5"><a class="active" href="#test4">Domain</a></li>
+		<li class="tab amber lighten-5"><a href="#test5">Deed</a></li></ul>
+      </div>
+    <div class="card-content  amber lighten-5 z-depth-1">
+	<div id="test4"><a onclick="showView('map'); mapIntro();">Tutorial</a></div>
+      <div id="test5"><div class="hoverable" style="display:flex; justify-items:center;width:800px;max-width:80%;">Purchase Collectible</div></div>
+      <div id="test6" style="padding:16px;"><img id="world-gear" height="48" width="48" style="opacity:0.5;position:absolute;" /><img id="world-gear2" height="48" width="48" style="position:absolute; opacity:0.5;" /><span style="color:darkgoldenrod; font-weight:bold; font-size:28px;border-radius: 6px;padding-left: 16px;">Ocurious //ocur.io</span><br/><br/><span style="color:goldenrod; font-size:26px; font-weight:bold;vertical-align:super;">$own [build] *explore</span><br/>Visit on <a onclick='openInNewTab("https://github.com/nfnth");'>GitHub</a></div></div></div>
+		
+		
+		</li>
 	<li><div class="user-view z-depth-1 amber lighten-5" style="display: flex;margin: auto; padding: 0;align-items: center; padding-left:12px;"><span id="ocuros" style="cursor: pointer;margin:auto; color:black!important; font-size:16px;" onclick="openInNewTab('https://github.com/nfnth/nfnth'); $('#user-pane').sidenav('close');" class="new badge amber accent-1" data-badge-caption=""></span>
         <img id="user-pic" style="opacity:0.5; height: 48px;position:absolute; right:0; margin: 12px; cursor:pointer;" onclick="openInNewTab('https://github.com/nfnth'); $('#user-pane').sidenav('close');"/><img id="user-pic2" style="opacity:0.5; height: 48px;cursor:pointer;margin:12px;" onclick="openInNewTab('https://github.com/nfnth'); $('#user-pane').sidenav('close');"/></div></li>
     <li><a class="subheader">Wallet Information</a></li>
@@ -76,34 +91,15 @@
         <img src="img/world-min.jpg" class="z-depth-2" style="width:100%; margin-bottom:-6px; " />
 	    
 	<div style="  position: fixed;left: 0;top:35%;width: 100%;" ><div class="z-depth-1" style="cursor:pointer; font-size:24px;background-color: rgba(245, 245, 245, 0.8);padding-bottom: 48px;padding-top: 36px;text-align: center;align-items: center;justify-content: center;width: 100%;cursor:pointer;" >
-  <div class="card" style="border-radius:12px;display:inline-block;padding:12px;>
-    <div class="card-content"></div>
-    <div class="card-tabs">
-      <ul class="tabs tabs-fixed-width z-depth-1">
-        <li class="tab amber lighten-5"><a class="active" href="#test4">News</a></li>
-        <li class="tab amber lighten-5"><a href="#test5">Learn</a></li>
-        <li class="tab amber lighten-5"><a href="#test6">About</a></li></ul></div>
-    <div class="card-content  amber lighten-5 z-depth-1">
-	<div id="test4"><a onclick="showView('map'); mapIntro();">Tutorial</a></div>
-      <div id="test5"><div class="hoverable" style="display:flex; justify-items:center;width:800px;max-width:80%;">Purchase Collectible</div></div>
-      <div id="test6" style="padding:16px;"><img id="world-gear" height="48" width="48" style="opacity:0.5;position:absolute;" /><img id="world-gear2" height="48" width="48" style="position:absolute; opacity:0.5;" /><span style="color:darkgoldenrod; font-weight:bold; font-size:28px;border-radius: 6px;padding-left: 16px;">Ocurious //ocur.io</span><br/><br/><span style="color:goldenrod; font-size:26px; font-weight:bold;vertical-align:super;">$own [build] *explore</span><br/>Visit on <a onclick='openInNewTab("https://github.com/nfnth");'>GitHub</a></div></div></div>
+  
 		     <div><span style="font-size:22px;color:black;">deed. domain. </span><span style="font-size:22px; color:black; font-weight:bold;">decentralized.</span><span style="font-size:16px; color:black; font-weight:bold;">© 2022 Copyright, <a onclick="openInNewTab('https://github.com/nfnth');">NfNth Corp.</a></span></div></div></div></div>
 
-    <!-- console -->
+    <!-- map -->
     <div id="list" class="content loader pane" style="overflow-y: auto; height: 95%;">
 	    <!-- filter -->
         <div id="list-filter" class="z-depth-1 grey lighten-5" style="display:flex; justify-content: center; padding-top: 24px; padding-bottom:12px; margin-bottom: -6px; align-items:center;position: fixed; z-index: 1;">
-        	<div class="hide-on-med-and-down"><a class="waves-effect waves-amber btn-flat" onclick="showView('list'); showList('open');"><i id="select-icon" class="material-icons left">filter_list</i><span>Filter</span></a><a id="dropdown-full" class='dropdown-trigger btn-flat' style="margin-right:8px;" href='#' data-target='dropdown1'><i class="material-icons left">sort</i>Sort</a><a id="dropdown-full2" class="waves-effect waves-light amber lighten-2 btn dropdown-trigger" href='#' data-target='dropdown2' style="margin-right:8px;" ><i id="view-icon" class="material-icons left">layers</i><span id="view-name">Layers</span></a>
-		<!--
-		<ul>
-		<li><a id="map-sat" class="btn-floating waves-effect waves-light grey" onclick="mapSat();"><i class="material-icons">satellite_alt</i></a></li>
-		<li><a id="map-gps" class="btn-floating waves-effect waves-light grey" onclick="mapLoc();"><i class="material-icons">gps_fixed</i></a></li>
-		<li><a id="map-direction" class="btn-floating waves-effect waves-light grey onclick="mapRoute();"><i class="material-icons">directions</i></a></li>
-		<li><a id="map-route" class="btn-floating waves-effect waves-light green lighten-2" onclick="mapRoute();"><i class="material-icons">route</i></a></li>
-                <li><a id="map-rand" class="btn-floating waves-effect waves-light green lighten-2" onclick="mapRand();"><i class="material-icons">shuffle</i></a></li></ul>-->
-	
-	</div></div>
-		<!-- <div class="screen-hide"><a class="waves-effect waves-light btn-flat" style="margin-right:8px;" onclick="showView('list'); showList('open');"><i class="material-icons">filter_list</i></a><a class="waves-effect waves-light btn-flat disabled" onclick="showView('list'); showList('open');"><i class="material-icons">deselect</i></a><a id="dropdown-mobile" class="waves-effect waves-light btn-flat dropdown-trigger" style="margin-right:8px;" href="#" data-target="dropdown2"><i class="material-icons">sort</i></a><a class="waves-effect waves-light btn amber lighten-2" style="margin-right:8px;display:inline-flex;align-items:center;" onclick="switchView();"><i id="view-icon2" class="material-icons">grid_view</i>&nbsp;&nbsp;<span id="view-name2">Grid</span></a></div> --> </div>
+        	<div class="hide-on-med-and-down"><a class="waves-effect waves-amber btn-flat" onclick="showView('list'); showList('open');"><i id="select-icon" class="material-icons left">filter_list</i><span>Filter</span></a><a id="dropdown-full" class='dropdown-trigger btn-flat' style="margin-right:8px;" href='#' data-target='dropdown1'><i class="material-icons left">sort</i>Sort</a><a id="dropdown-full2" class="waves-effect waves-light amber lighten-2 btn dropdown-trigger" href='#' data-target='dropdown2' style="margin-right:8px;" ><i id="view-icon" class="material-icons left">layers</i><span id="view-name">Layers</span></a></div></div>
+		<div class="screen-hide"><a class="waves-effect waves-light btn-flat" style="margin-right:8px;" onclick="showView('list'); showList('open');"><i class="material-icons">filter_list</i></a><a class="waves-effect waves-light btn-flat disabled" onclick="showView('list'); showList('open');"><i class="material-icons">deselect</i></a><a id="dropdown-mobile" class="waves-effect waves-light btn-flat dropdown-trigger" style="margin-right:8px;" href="#" data-target="dropdown2"><i class="material-icons">sort</i></a><a class="waves-effect waves-light btn amber lighten-2" style="margin-right:8px;display:inline-flex;align-items:center;" onclick="switchView();"><i id="view-icon2" class="material-icons">grid_view</i>&nbsp;&nbsp;<span id="view-name2">Grid</span></a></div></div>
 		
 		<div style="width:100%; display:flex;">
 		    <!-- map -->
@@ -113,12 +109,11 @@
 	<div id="registry" class="collection" style="overflow:auto;width:50%;"></div></div></div>
 
 <ul id='dropdown2' class='dropdown-content'>
-    <li><a href="#!"><i class="material-icons">satellite_alt</i>Satellite</a></li>
-    <li class="divider" tabindex="-1"></li>
-    <li><a href="#!">Price &#8593;</a></li><li><a href="#!">Location &#8595;</a></li>
-<li class="divider" tabindex="-1"></li>
-<li><a href="#!">Serial &#8595;</a></li><li><a href="#!">Directions &#8593;</a></li>
-<li><a href="#!">Random &#8593;</a></li><li><a href="#!">Story &#8595;</a></li></ul>
+    	<li><a href="#!" onclick="mapSat();"><i class="material-icons">satellite_alt</i>Satellite</a></li>
+    	<li class="divider" tabindex="-1"></li>
+    	<li><a href="#!" onclick="mapLoc();"><i class="material-icons">gps_fixed</i>Location</a></li><li><a href="#!" onclick="mapRoute();"><i class="material-icons">directions</i>Directions</a></li>
+	<li class="divider" tabindex="-1"></li>
+	<li><a href="#!" onclick="mapRand();"><i class="material-icons">shuffle</i>Random</a></li><li><a href="#!" onclick="mapRoute();"><i class="material-icons">route</i>Story</a></li></ul>
 
 <ul id='dropdown1' class='dropdown-content'>
     <li><a href="#!">Name &#8595;</a></li><li><a href="#!">Name &#8593;</a></li>
