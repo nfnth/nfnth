@@ -60,7 +60,7 @@
 	<li><a class="waves-effect"><i class="material-icons">inventory_2</i><span id="myArt">My Artifacts</span></a></li>
 	<li style="margin-top:16px;margin-bottom:12px;"><a id="maker" class="btn waves-effect waves-light amber z-depth-1 lighten-3" style="width: 240px;margin: auto;border-radius: 8px;color:black;" onclick="if (walletAddress != '') {desetup(); $('#user-pane').sidenav('close');}"><i class="material-icons left">logout</i>Disconnect</a></li>
   	<li><div style="margin-top:0;" class="divider"></div></li>
-  	<!-- <i class="material-icons left">directions</i><i class="material-icons left">picture_as_pdf</i><i class="material-icons left">calculate</i>-->
+  	<!--<i class="material-icons left">calculate</i>-->
   	<li><a class="subheader">Domain Information</a></li>
   	<li><a class="waves-effect"><i class="material-icons">landscape</i><span id="dStatus">Current Status</span></a></li>
 	<li><a class="waves-effect"><i class="material-icons">landscape</i><span id="dArt">Posted Artifact</span></a></li>
@@ -115,24 +115,12 @@
 <ul id='dropdown2' class='dropdown-content'>
     <li><a href="#!"><i class="material-icons">satellite_alt</i>Satellite</a></li>
     <li class="divider" tabindex="-1"></li>
-    <li><a href="#!">Price &#8593;</a></li><li><a href="#!">Price &#8595;</a></li>
+    <li><a href="#!">Price &#8593;</a></li><li><a href="#!">Location &#8595;</a></li>
 <li class="divider" tabindex="-1"></li>
-<li><a href="#!">Serial &#8595;</a></li><li><a href="#!">Serial &#8593;</a></li></ul>
-<ul id='dropdown2' class='dropdown-content'>
-    <li><a href="#!">Name &#8595;</a></li><li><a href="#!">Name &#8593;</a></li>
-    <li class="divider" tabindex="-1"></li>
-    <li><a href="#!">Price &#8593;</a></li><li><a href="#!">Price &#8595;</a></li>
-<li class="divider" tabindex="-1"></li>
-<li><a href="#!">Serial &#8595;</a></li><li><a href="#!">Serial &#8593;</a></li></ul>	
+<li><a href="#!">Serial &#8595;</a></li><li><a href="#!">Directions &#8593;</a></li>
+<li><a href="#!">Random &#8593;</a></li><li><a href="#!">Story &#8595;</a></li></ul>
 
-
-	<ul id='dropdown1' class='dropdown-content'>
-    <li><a href="#!">Name &#8595;</a></li><li><a href="#!">Name &#8593;</a></li>
-    <li class="divider" tabindex="-1"></li>
-    <li><a href="#!">Price &#8593;</a></li><li><a href="#!">Price &#8595;</a></li>
-<li class="divider" tabindex="-1"></li>
-<li><a href="#!">Serial &#8595;</a></li><li><a href="#!">Serial &#8593;</a></li></ul>
-<ul id='dropdown2' class='dropdown-content'>
+<ul id='dropdown1' class='dropdown-content'>
     <li><a href="#!">Name &#8595;</a></li><li><a href="#!">Name &#8593;</a></li>
     <li class="divider" tabindex="-1"></li>
     <li><a href="#!">Price &#8593;</a></li><li><a href="#!">Price &#8595;</a></li>
@@ -213,7 +201,7 @@ var gear4 = Math.floor(Math.random() * (42 - 1 + 1)) + 1; document.getElementByI
 var gear4b = Math.floor(Math.random() * (42 - 1 + 1)) + 1; document.getElementById('world-gear2').src = "img/gear/gear" + gear4b.toString() + ".png";
 	$("#lister").prop("checked", false);
     $('#docs').dropdown({ constrainWidth: false, coverTrigger: false } ); $('#doc-hide').dropdown({ constrainWidth: false, coverTrigger: false } ); //hover: true 
-			$('#dropdown-full').dropdown(); $('#dropdown-mobile').dropdown(); $('#dropdown-full2').dropdown();
+			$('#dropdown-full').dropdown(); $('#dropdown-mobile').dropdown(); $('#dropdown-full2').dropdown({ constrainWidth: false });
     $('#user-pane').sidenav({ edge: 'right' }); $('.tooltipped').tooltip();
     
 
@@ -428,7 +416,7 @@ function addOpen(i){
 //});
 }
 function addList(i){
-    $("#registry").append("<a class='collection-item'><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;' onclick='showMark(" + i + ");'>" + domains[i].core.name + "</div><div style='display:flex; justify-content:space-between;align-items:center;'><div style='display:flex; flex-direction:column;'><div style='display:flex;align-items:center;'><span style='display:flex;color:black;' class='modal-trigger' href='#modal1' onclick='pullOwner(" + i + "); pullPrice(" + i + "); addListDetail(" + i + ");'><i class='material-icons'>more_vert</i></span></div></div></div></div></a>"); }
+    $("#registry").append("<a class='collection-item'><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;' onclick='showMark(" + i + "); popMark(" + i + ");'>" + domains[i].core.name + "</div><div style='display:flex; justify-content:space-between;align-items:center;'><div style='display:flex; flex-direction:column;'><div style='display:flex;align-items:center;'><span style='display:flex;color:black;' class='modal-trigger' href='#modal1' onclick='pullOwner(" + i + "); pullPrice(" + i + "); addListDetail(" + i + ");'><i class='material-icons'>more_vert</i></span></div></div></div></div></a>"); }
 
 function addListDetail(i) {
 	setTimeout(function() {
@@ -456,10 +444,6 @@ var height = positionInfo.height; var width = positionInfo.width;
     dlg2 = new DialogFx( somedialog, {
         onOpenDialog : function( instance ) { path.stop().animate( { 'path' : steps.open }, 400, mina.easeinout );},
         onCloseDialog : function( instance ) { path.stop().animate( { 'path' : steps.close }, 400, mina.easeinout );	}	} ); dlg2.toggle(dlg2); }
-
-function addGrid(i) { //alert((i%4));//card-panel?<div id="positioning-context">
-    return '<div style="width:360px;height:280px;margin:12px; display:flex;flex-direction:column;justify-content:space-between; border-radius:16px;" class="card sticky-action hoverable"><div style="border-radius:16px 16px 0 0;" class="positioning-context card-image waves-effect waves-block waves-light z-depth-3"><img id="img' + i + '" style="width:100%; height:100%;" src="' + domains[i].core.image_preview_url + '" onclick="setBox(\'' + i + '\');"></div><div class="card-content z-depth-1" style="border-radius:0 0 16px 16px;display: flex;justify-content: space-between;align-items: center;" onclick="setBox();" ><div>' + domains[i].core.name + '</div><div style="display:flex;"><span onclick="pullDoc(\'' + domains[i].core.name + '\');" class="waves-effect waves-light btn-flat" ><i class="material-icons">sticky_note_2</i></span><a class="btn waves-effect waves-light amber lighten-2" style="margin-left:12px;"><i class="material-icons">inventory_2</i></a><span class="card-title activator grey-text text-darken-4"><i class="material-icons right">more_vert</i></span></div></div><div class="card-reveal" style="overflow:hidden;"><span class="card-title grey-text text-darken-4">' + domains[i].name + '<i class="material-icons right">more_vert</i></span><div style="display:flex;align-items:center;justify-content:space-evenly;margin-top:24px;"><div style="width:160px;cursor:pointer;" id="o'+ i + '"></div><div style="display:flex; flex-direction:column;align-items:center;justify-content:space-evenly;"><div class="z-depth-1 chip amber lighten-2">21930 OCUR</div><a onclick="showMark(\'' + i + '\'); showView(\'map\'); map.resize();" class="modal-close waves-effect waves-light btn green lighten-2" ><i class="material-icons">credit_card</i></a></div></div></div></div>';
-}
 
 	function fullScreen() {
 		var elem = document.getElementById("emDisp");
