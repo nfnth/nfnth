@@ -5,17 +5,17 @@
 
 Welcome to **NfNth**, a world inspired by the geocacher's trade, powered by the **NFT deed domain**.
 
-Use a **NFT deed domain** as both,
+Use **NFT deed domain** as both,
 
 
-- *deed*, token to store in a crypto wallet, to share/trade with others
-- *domain*, key to access a domain and build content
+- *deed* - token to store in a crypto wallet, to share/trade with others
+- *domain* - key to access a domain and build content
 
 
-Content, referred to as **artifact**, can include datetime, location, and additional text, images, and files, to be associated with the domain.
+Content, also called **artifact**, includes datetime, location, additional text, and images and files, to be associated with the domain.
 
 Upon transfer of a **deed domain** to another wallet, both *access* and *content* are transfered to the new owner.
 <br/><br/>
 ### Get Started
 
-To begin, install a *web3-compliant* wallet, such as [MetaMask](https://metamask.io/) and/or [Coinbase](https://www.coinbase.com/wallet), visit [OpenSea <i class="material-icons">sailing</i>](https://opensea.io/urland) to purchase an NFT, then use the <i class="material-icons">account_balance_wallet</i> icon to connect and select your **deed domain** to build content.
+To begin, install a *web3-compliant* wallet, such as [MetaMask](https://metamask.io/) and/or [Coinbase](https://www.coinbase.com/wallet), visit [OpenSea <i class="material-icons">sailing</i>](https://opensea.io/nfnth) to purchase an NFT, then use the <i class="material-icons">account_balance_wallet</i> icon to connect and select a **domain** to build content.
