@@ -1,7 +1,10 @@
 
-###  [📚📚 NfNth](https://github.com/nfnth/nfnth) · Download **[.10OS](https://github.com/nfnth/os)** (or [build](https://github.com/nfnth/os))
+###  [📚📚 NfNth](https://github.com/nfnth/nfnth) · use **[.10OS](https://github.com/nfnth/os)** (or [build from scratch](https://github.com/nfnth/os))
 
 <a href="https://opensea.io/ocurio" title="Buy on OpenSea" target="_blank"><img style="margin-left:24px; width:220px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="https://storage.googleapis.com/opensea-static/Logomark/Badge%20-%20Available%20On%20-%20Light.png" alt="Available on OpenSea" /></a>
+
+
+<a href="https://opensea.io/ocurio" title="Buy on SolSea" target="_blank"><img style="margin-left:24px; width:220px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="img/solsea.png" alt="Available on SolSea" /></a>
 
 The [**NfNth Collectible**](https://buy.stripe.com/5kA4hL5NB6Qv7Ty5kk) is available, includes,
 
