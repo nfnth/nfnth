@@ -48,7 +48,7 @@
     	<li><a onclick="buildDoc('urland');"><i class="material-icons">grass</i>NfNth Field Guide</a></li>
 	<li><a ><i class="material-icons"><span class="material-icons-outlined">park</span></i>About NFN Trade</a></li>
 	<li class="divider"></li>
-    	<li><a onclick="buildDoc('urland');"><i class="material-icons">settings</i>Citizen's Journal</a></li></ul>
+    	<li><a onclick="buildDoc('urland');"><i class="material-icons">flag</i>Citizen's Journal</a></li></ul>
 
 <!-- panel -->
 <ul id="user-pane" class="sidenav loader" style="visibility:hidden;">
@@ -130,8 +130,6 @@
 	
     <!-- search -->
     <div id="results" style="margin:80; display:none;" class="content loader pane">search...</div>
-
-
 
     <!-- editor -->
     <div id="editor" class="content loader pane scale-transition scale-out">
@@ -379,9 +377,7 @@ function showView(view) {  hideView(); $('#'+view).show();
         case 'editor': $("#editor").addClass("scale-in"); break;
 	case 'filter': $("#filter").addClass("scale-in"); break;
         case 'list': $('#map').show(); $("#actions").show(); map.resize(); break;
-	    case 'news': 
-    
-		     break;
+	case 'news':  break;
         case 'map': $("#actions").show(); map.resize(); break; } }
 
 var complete; var reset = false; var first = true;
@@ -424,13 +420,12 @@ function addOpen(i){
 //});
 }
 function addList(i){
-    $("#registry").append("<a class='collection-item'><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;'>" + domains[i].core.name + "</div><div style='display:flex; justify-content:space-between;align-items:center;'><div style='display:flex; flex-direction:column;'><div style='display:flex;align-items:center;'>&nbsp;&nbsp;&nbsp;&nbsp;<span style='display:flex;color:black;' class='modal-trigger' href='#modal1' onclick='pullOwner(" + i + "); pullPrice(" + i + "); addListDetail(" + i + ");'><i class='material-icons'>more_vert</i></span></div></div></div></div></a>"); }
+    $("#registry").append("<a class='collection-item'><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;' onclick='showMark(" + i + ");'>" + domains[i].core.name + "</div><div style='display:flex; justify-content:space-between;align-items:center;'><div style='display:flex; flex-direction:column;'><div style='display:flex;align-items:center;'><span style='display:flex;color:black;' class='modal-trigger' href='#modal1' onclick='pullOwner(" + i + "); pullPrice(" + i + "); addListDetail(" + i + ");'><i class='material-icons'>more_vert</i></span></div></div></div></div></a>"); }
 
 function addListDetail(i) {
 	setTimeout(function() {
-     $("#domain-info").html('<div style="display:flex;justify-content:space-evenly;align-items:center;width:100%;padding-top:12px;"><div style="display: flex;flex-direction: column;text-align: left;align-items:center;width:100%;"><div style="display:flex; justify-content:center;"><img style="margin-bottom:12px; cursor:pointer;" onclick="buildDoc(\'' + i + '\');" class="z-depth-2" width="140" height="140" src="' + domains[i].core.image_preview_url + '"/>&nbsp;&nbsp;&nbsp;&nbsp;<div style="cursor:pointer;" id="o'+ i + '"></div></div><div style="margin-bottom:16px;">' + domains[i].name + '&nbsp;&nbsp · &nbsp;&nbsp<a onclick="openInNewTab(\'' + domains[i].core.external_link + '\');">' + domains[i].core.name + '</a></div><br/><div class="z-depth-1 " style="background-color:rgb(255,255,255,0.5); display:flex;justify-content:space-evenly;width:100%; padding:12px;box-shadow:8px -8px 12px 12px inset whitesmoke;" ><span onclick="pullDoc(\'' + domains[i].core.name + '\');" class="waves-effect waves-light btn-flat" ><i class="material-icons">sticky_note_2</i></span><div class="z-depth-1 chip" style="background-color: #fde4a4;">21930 OCUR</div><span onclick="pullDoc(\'' + domains[i].core.name + '\');" class="waves-effect waves-light btn-flat" ><i class="material-icons:>sticky_note_2</i></span><a onclick="showMark(\'' + i + '\'); showView(\'map\'); map.resize();" class="modal-close waves-effect waves-light btn green lighten-2" ><i class="material-icons">credit_card</i></a></div></div></div>'); $('.materialboxed').materialbox(); }, 200); }
+     $("#domain-info").html('<div style="display:flex;justify-content:space-evenly;align-items:center;width:100%;padding-top:12px;"><div style="display: flex;flex-direction: column;text-align: left;align-items:center;width:100%;"><div style="display:flex; justify-content:center;"><img style="margin-bottom:12px; cursor:pointer;" onclick="buildDoc(\'' + i + '\');" class="z-depth-2 modal-close" width="140" height="140" src="' + domains[i].core.image_preview_url + '"/>&nbsp;&nbsp;&nbsp;&nbsp;<div style="cursor:pointer;" id="o'+ i + '"></div></div><div style="margin-bottom:16px;">' + domains[i].name + '&nbsp;&nbsp · &nbsp;&nbsp<a onclick="openInNewTab(\'' + domains[i].core.external_link + '\');">' + domains[i].core.name + '</a></div><br/><div class="z-depth-1 " style="background-color:rgb(255,255,255,0.5); display:flex;justify-content:space-evenly;width:100%; padding:12px;box-shadow:8px -8px 12px 12px inset whitesmoke;" ><div class="z-depth-1 chip" style="background-color: #fde4a4;">21930 artifact</div><a onclick="showMark(\'' + i + '\'); showView(\'map\'); map.resize();" class="modal-close waves-effect waves-light btn green lighten-2" ><i class="material-icons">sailing</i></a></div></div></div>'); }, 200); }
 	
-//$("#somedialog2").css("z-index",1004);
 function addListDeed(i) {
      var embedDisplay = "";
 	if (domains[i].core.animation_url != null) { embedDisplay = "<video  style='width:80%;' controls><source type='video/mp4' src='" + domains[i].core.animation_url + "'></video>" } else { embedDisplay = "<img  style='width:80%;' src='" + domains[i].core.image_url + "' /"; }
@@ -442,13 +437,10 @@ function buildDoc(i) { setDialog(addListDeed(i));
 }
 
 function setDialog(text) { 
-				  
-				var element = document.getElementById('dialog-inner2'); $("#dialog-inner2").html(text);
+var element = document.getElementById('dialog-inner2'); $("#dialog-inner2").html(text);
 var positionInfo = element.getBoundingClientRect();
-var height = positionInfo.height;
-var width = positionInfo.width;
+var height = positionInfo.height; var width = positionInfo.width;
 
-	
     var myDiv = document.getElementById('dialog-inner2'); myDiv.scrollTop = 0;
     somedialog = document.getElementById( 'somedialog2' ); morphEl = somedialog.querySelector( '.morph-shape' );
     s = Snap( morphEl.querySelector( 'svg' ) ); path = s.select( 'path' );
@@ -459,11 +451,8 @@ var width = positionInfo.width;
 
 function addGrid(i) { //alert((i%4));//card-panel?<div id="positioning-context">
     return '<div style="width:360px;height:280px;margin:12px; display:flex;flex-direction:column;justify-content:space-between; border-radius:16px;" class="card sticky-action hoverable"><div style="border-radius:16px 16px 0 0;" class="positioning-context card-image waves-effect waves-block waves-light z-depth-3"><img id="img' + i + '" style="width:100%; height:100%;" src="' + domains[i].core.image_preview_url + '" onclick="setBox(\'' + i + '\');"></div><div class="card-content z-depth-1" style="border-radius:0 0 16px 16px;display: flex;justify-content: space-between;align-items: center;" onclick="setBox();" ><div>' + domains[i].core.name + '</div><div style="display:flex;"><span onclick="pullDoc(\'' + domains[i].core.name + '\');" class="waves-effect waves-light btn-flat" ><i class="material-icons">sticky_note_2</i></span><a class="btn waves-effect waves-light amber lighten-2" style="margin-left:12px;"><i class="material-icons">inventory_2</i></a><span class="card-title activator grey-text text-darken-4"><i class="material-icons right">more_vert</i></span></div></div><div class="card-reveal" style="overflow:hidden;"><span class="card-title grey-text text-darken-4">' + domains[i].name + '<i class="material-icons right">more_vert</i></span><div style="display:flex;align-items:center;justify-content:space-evenly;margin-top:24px;"><div style="width:160px;cursor:pointer;" id="o'+ i + '"></div><div style="display:flex; flex-direction:column;align-items:center;justify-content:space-evenly;"><div class="z-depth-1 chip amber lighten-2">21930 OCUR</div><a onclick="showMark(\'' + i + '\'); showView(\'map\'); map.resize();" class="modal-close waves-effect waves-light btn green lighten-2" ><i class="material-icons">credit_card</i></a></div></div></div></div>';
-	
-	//alert(((i+1)%4));
-	//if (((i+1)%4) == 0) { $("#registry").append('</div>'); }
 }
-function setBox(i) { $('.materialboxed').removeClass("materialboxed"); $("#img"+i).addClass("materialboxed"); $('.materialboxed').materialbox(); $('.materialboxed').materialbox('open'); $("#img"+i).css("z-index", "2"); }
+
 	function fullScreen() {
 		var elem = document.getElementById("emDisp");
 if (elem.requestFullscreen) { elem.requestFullscreen();
