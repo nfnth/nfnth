@@ -1,5 +1,5 @@
 
-###  [📚📚 NfNth](https://github.com/nfnth/nfnth) · Survey of **Deed Domain**
+###  [📚📚 NfNth](https://github.com/nfnth/nfnth) · A Survey of **Deed Domain**
 
 The historical guide (and game) to geocaching in the United States.
 
@@ -12,7 +12,7 @@ The collectible, available to purchase [here](https://buy.stripe.com/5kA4hL5NB6Q
 
 <a href="https://buy.stripe.com/5kA4hL5NB6Qv7Ty5kk" target="_blank"><img style="margin-left:24px; width:90px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="img/coin.jpg" alt="Purchase NfNth Collectible" /></a>
 
-For technical details, see the [**10.OS** repo](https://github.com/nfnth/os), also available to download [here](https://github.com/nfnth/os).
+For technical details, view the [**10.OS** repo](https://github.com/nfnth/os), also available for download [here](https://github.com/nfnth/os).
 
 Licensed as **NfNth Corp** in the State of Washington, 19500 130th AV NE, Woodinville, WA 98072
 
