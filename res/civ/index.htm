@@ -226,7 +226,7 @@ option  {background-color: #000; }
 	    <span class="r_conteiner clickable" style="position:fixed;left:1vh;top:1vh;width: 131vh;"><!--
 		--><a href="javascript:sdNet.OfflineTraining( 2 );" class="r_conteiner" style="display:inline-block;margin-right:1vh;">Play solo vs AI</a><!--
 		--><a href="javascript:sdNet.OfflineTraining( 1 );" class="r_conteiner" style="display:inline-block;margin-right:1vh;">Play with AI vs AI</a><!--
-		--><a href="javascript:sdNet.OfflineTraining( 0 );" class="r_conteiner" style="display:inline-block;margin-right:3vh;">Play alone</a><!--
+		--><a href="javascript:sdNet.OfflineTraining( 0 ); tester();" class="r_conteiner" style="display:inline-block;margin-right:3vh;">Play alone</a><!--
 		--><a href="javascript:sdNet.QuickPlay( sdNet.MODE_FFA );" class="r_conteiner" style="display:inline-block;margin-right:1vh;" id="play_ffa_btn">Quick Play FFA <span style="color:rgba(255,255,255,0.3)">(2+ players, multiplayer)</span></a><!--
 		--><a href="javascript:sdNet.QuickPlay( sdNet.MODE_TEAM_VS_TEAM );" class="r_conteiner" style="display:inline-block;margin-right:1vh;" id="play_tvt_btn">Quick Play TvT <span style="color:rgba(255,255,255,0.3)">(2+ players, multiplayer)</span></a><!--
 		--><a href="javascript:sdNet.QuickPlay( sdNet.MODE_AS_ONE );" class="r_conteiner" style="display:inline-block;margin-right:3vh;" id="play_as1_btn">Quick Play As One <span style="color:rgba(255,255,255,0.3)">(4+ players, multiplayer)</span></a><!--
@@ -322,6 +322,26 @@ option  {background-color: #000; }
 	</div>
 	
 	<script type="text/javascript">
+		
+		function tester() {
+			var controls = new function() {
+  this.hTilt = false;
+  this.hTiltR = 0.5;
+  this.onChange = function() {
+    hTilt.enabled = controls.hTilt;
+    hTilt.uniforms.r.value = controls.hTiltR;
+  }
+};
+
+var gui = new dat.GUI();
+gui.add(controls, 'hTilt').onChange(controls.onChange);
+gui.add(controls, 'hTiltR', 0, 1).onChange(controls.onChange);
+
+
+//activate tilt effect
+document.querySelector('.dg .c input[type="checkbox"]').click();
+dat.GUI.toggleHide();
+		}
 		/*if ( matchMedia('(display-mode: standalone)').matches )
 		{
 			alert('You are in standalone mode! It means nothing yet though :P');
