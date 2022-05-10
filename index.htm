@@ -28,12 +28,12 @@
     	<a id="search-hide" class="screen-hide media-menu" onclick="showView('search');"><i class="material-icons">search</i></a>
 
     <!-- desktop -->
-    	<ul class="hide-on-med-and-down">
-	    <li id="doc-list"><a id="docs" href="#!" data-target="doc"><i class="material-icons left">sticky_note_2</i>LEARN<i class="material-icons right">arrow_drop_down</i></a></li>
-            <li id="map-list"><a onclick="showView('list'); showList('domain');"><i class="material-icons left">map</i>EXPLORE</a></li>
-            <li id="list-list"><a onclick="openInNewTab('https://github.com/nfnth');"><i class="material-icons left">settings</i>ABOUT</a></li>
-            <li style="height:64px;" id="search-list">
-                <a style="height:inherit; padding-right:0;"><i onclick="$('#search').focus();" style="height:inherit; padding-right:16px;" class="material-icons">search</i>
+    <ul class="hide-on-med-and-down">
+	<li id="doc-list"><a id="docs" href="#!" data-target="doc"><i class="material-icons left">sticky_note_2</i>LEARN<i class="material-icons right">arrow_drop_down</i></a></li>
+	<li id="map-list"><a onclick="showView('list'); showList('domain');"><i class="material-icons left">map</i>EXPLORE</a></li>
+        <li id="list-list"><a onclick="openInNewTab('https://github.com/nfnth');"><i class="material-icons left">settings</i>ABOUT</a></li>
+        <li style="height:64px;" id="search-list">
+        	<a style="height:inherit; padding-right:0;"><i onclick="$('#search').focus();" style="height:inherit; padding-right:16px;" class="material-icons">search</i>
         		<div id="search-box" class="input-field" style="height:inherit;">
           			<input id="search" type="search" onkeyup="searchResults()" style="padding-left:12px; width: calc(100% - 1rem);"><label class="label-icon" for="search" ></label><i class="material-icons" onclick="searchClear()">close</i></div></a></li></ul>
 
@@ -161,8 +161,7 @@
             <svg id='test-svg' xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 80 60" preserveAspectRatio="none">
                 <path d="M0,29.75h80c0,0-3.083,0.014-3.083,0.041c0,0.028,3.083,0.042,3.083,0.042H0c0,0,3.084-0.014,3.084-0.042
 											C3.084,29.762,0,29.75,0,29.75z"></path></svg></div>
-        <div id="dialog-inner2" class="dialog-inner print-help hide-scrollbar" style="overflow:auto;">
-		</div></div></div>
+        <div id="dialog-inner2" class="dialog-inner print-help hide-scrollbar" style="overflow:auto;"></div></div></div>
 
 <script>
 var gridSelect = false;
@@ -388,7 +387,6 @@ function showView(view) {  hideView(); $('#'+view).show();
 var complete; var reset = false; var first = true;
 function showList(area) {  $("#registry").html(''); $("#registry").hide(); if (first) { complete = domains; first = false; }
     switch (area) {
-	    case "grid": sortSet = [area,domains,0,18,16]; var snip; var carder = 4; if (screen.width < 480) { carder = 1; } for (let i=0;i<domains.length;i++) { if ((i%carder) == 0) { snip = '<div style="display:flex;width:100%;justify-content:center;">'; } snip += addGrid(i); if (((i+1)%carder) == 0) { snip += '</div>'; $("#registry").append(snip); } } $('.materialboxed').materialbox();  adjustSort(true); break;
         case "domain": $("#list-filter").show(); if (reset) { domains = complete; reset = false; }
 		    
 		    sortSet = [area,domains,0,18,16]; for (let i=0;i<domains.length;i++) { addList(i); } adjustSort(true); break;
@@ -430,7 +428,7 @@ function addList(i){
 
 function addListDetail(i) {
 	setTimeout(function() {
-     $("#domain-info").html('<div style="display:flex;justify-content:space-evenly;align-items:center;width:100%;padding-top:12px;"><div style="display: flex;flex-direction: column;text-align: left;align-items:center;width:100%;"><div style="display:flex; justify-content:center;"><img style="margin-bottom:12px;" class="materialboxed z-depth-2" width="140" height="140" src="' + domains[i].core.image_preview_url + '"/>&nbsp;&nbsp;&nbsp;&nbsp;<div style="cursor:pointer;" id="o'+ i + '"></div></div><div style="margin-bottom:16px;">' + domains[i].name + '&nbsp;&nbsp · &nbsp;&nbsp<a onclick="openInNewTab(\'' + domains[i].core.external_link + '\');">' + domains[i].core.name + '</a></div><br/><div class="z-depth-1 " style="background-color:rgb(255,255,255,0.5); display:flex;justify-content:space-evenly;width:100%; padding:12px;box-shadow:8px -8px 12px 12px inset whitesmoke;" ><span onclick="pullDoc(\'' + domains[i].core.name + '\');" class="waves-effect waves-light btn-flat" ><i class="material-icons">sticky_note_2</i></span><div class="z-depth-1 chip" style="background-color: #fde4a4;">21930 OCUR</div><span onclick="pullDoc(\'' + domains[i].core.name + '\');" class="waves-effect waves-light btn-flat" ><i class="material-icons:>sticky_note_2</i></span><a onclick="showMark(\'' + i + '\'); showView(\'map\'); map.resize();" class="modal-close waves-effect waves-light btn green lighten-2" ><i class="material-icons">credit_card</i></a></div></div></div>'); $('.materialboxed').materialbox(); }, 200); }
+     $("#domain-info").html('<div style="display:flex;justify-content:space-evenly;align-items:center;width:100%;padding-top:12px;"><div style="display: flex;flex-direction: column;text-align: left;align-items:center;width:100%;"><div style="display:flex; justify-content:center;"><img style="margin-bottom:12px;" onclick="buildDoc("' + i + ');" class="z-depth-2" width="140" height="140" src="' + domains[i].core.image_preview_url + '"/>&nbsp;&nbsp;&nbsp;&nbsp;<div style="cursor:pointer;" id="o'+ i + '"></div></div><div style="margin-bottom:16px;">' + domains[i].name + '&nbsp;&nbsp · &nbsp;&nbsp<a onclick="openInNewTab(\'' + domains[i].core.external_link + '\');">' + domains[i].core.name + '</a></div><br/><div class="z-depth-1 " style="background-color:rgb(255,255,255,0.5); display:flex;justify-content:space-evenly;width:100%; padding:12px;box-shadow:8px -8px 12px 12px inset whitesmoke;" ><span onclick="pullDoc(\'' + domains[i].core.name + '\');" class="waves-effect waves-light btn-flat" ><i class="material-icons">sticky_note_2</i></span><div class="z-depth-1 chip" style="background-color: #fde4a4;">21930 OCUR</div><span onclick="pullDoc(\'' + domains[i].core.name + '\');" class="waves-effect waves-light btn-flat" ><i class="material-icons:>sticky_note_2</i></span><a onclick="showMark(\'' + i + '\'); showView(\'map\'); map.resize();" class="modal-close waves-effect waves-light btn green lighten-2" ><i class="material-icons">credit_card</i></a></div></div></div>'); $('.materialboxed').materialbox(); }, 200); }
 	
 //$("#somedialog2").css("z-index",1004);
 function addListDeed(i) {
@@ -439,22 +437,13 @@ function addListDeed(i) {
     return "<div style='text-align:center;'><p><span style='font-weight:16px'>" + domains[i].name + "</span>&nbsp;&nbsp; · &nbsp;&nbsp;<a onclick='openInNewTab(\"" + domains[i].core.external_link + "\");'>" + domains[i].core.name + "</a></p></div><br/><div id='emDisp' style='text-align:center;'>" + embedDisplay + "</div><br/><br/><p>" + domains[i].core.description + "</p><a onclick='openInNewTab(\"" + domains[i].ref + "\");'>Read more...</a><br/><br/><div style='text-align:center;'><img style='max-width:80%;' src='" + domains[i].img + "' /></div><br/><br/><div style='text-align:center;margin:auto;'><div class='z-depth-1 chip " +  getClass(domains[i].sub)  + "'>" + domains[i].sub + "</div>&nbsp;&nbsp;&nbsp;&nbsp;<div style='width:120px; ' class='z-depth-1 chip " + getColor(domains[i].core.collection.slug) + "'><img src='img/key/" + getCollect(domains[i].core.collection.slug) + "'><div style='border-radius:12px; width:100px;background-color:rgb(245, 246, 247,0.75);color:black;font-size:16px;font-weight:bold;' class='z-depth-1'>" + padSerial(domains[i].serial) + "</div></div></div><br/><div style='margin:auto;display: flex;align-items: center;justify-content: center;'><div><img class='modal-close' onclick='showDoc(\"key/state\");' style='cursor:pointer; width:48px; height:48px;' src='img/flag/" + domains[i].place + ".png' /></div>&nbsp;&nbsp;&nbsp;&nbsp;<div class='z-depth-1 chip amber lighten-2'>OCUR " + domains[i].ur + "</div></div><div style='display: flex;justify-content: space-evenly;margin-top: 24px;flex-direction: column;height: 240px;margin-bottom: 24px;align-items: center;'><div style='width:160px;cursor:pointer;' id='c"+ i + "'></div><a onclick='openInNewTab(\"" + domains[i].core.permalink + "\");' class='waves-effect waves-light waves-green btn green lighten-2' ><i class='material-icons right'>credit_card</i><span id='d" + i + "'></span></a></div>";   }
 	
 function showDoc(doc) { document.getElementById('dialog-inner2').scrollTo(0, 0); $.get('doc/'+doc, function(data) { setDialog(renderMd(data)); }); }
-function buildDoc(doc) { $("#magazine-page").html(addListDeed(0)); 
-	for (let i=1;i<domains.length-150;i++) {$("#magazine").append("<div><span class='text'>" + addListDeed(i) + "</span></div>");
-	 //$('#magazine').turn('addPage', addListDeed(i)); 
-								      }
-$('#magazine').turn({gradients: true, acceleration: true, display: 'single', when: {turn: function(e,page,view){ alert(page); }}}); 
-			
-			
-			setDialog('');
+function buildDoc(i) { setDialog(addListDeed(i));
 		     //pullOwner(i); pullPrice(i);
-			//$('#selector').turn({when: {turn: function(e, page, view){ alert('page'+page); }}};
-	
 }
 
 function setDialog(text) { 
 				  
-				var element = document.getElementById('dialog-inner2');
+				var element = document.getElementById('dialog-inner2'); $("#dialog-inner2").html(text);
 var positionInfo = element.getBoundingClientRect();
 var height = positionInfo.height;
 var width = positionInfo.width;
@@ -468,7 +457,6 @@ var width = positionInfo.width;
         onOpenDialog : function( instance ) { path.stop().animate( { 'path' : steps.open }, 400, mina.easeinout );},
         onCloseDialog : function( instance ) { path.stop().animate( { 'path' : steps.close }, 400, mina.easeinout );	}	} ); dlg2.toggle(dlg2); }
 
-//function turnPage() { $('selector').turn('next'); }
 function addGrid(i) { //alert((i%4));//card-panel?<div id="positioning-context">
     return '<div style="width:360px;height:280px;margin:12px; display:flex;flex-direction:column;justify-content:space-between; border-radius:16px;" class="card sticky-action hoverable"><div style="border-radius:16px 16px 0 0;" class="positioning-context card-image waves-effect waves-block waves-light z-depth-3"><img id="img' + i + '" style="width:100%; height:100%;" src="' + domains[i].core.image_preview_url + '" onclick="setBox(\'' + i + '\');"></div><div class="card-content z-depth-1" style="border-radius:0 0 16px 16px;display: flex;justify-content: space-between;align-items: center;" onclick="setBox();" ><div>' + domains[i].core.name + '</div><div style="display:flex;"><span onclick="pullDoc(\'' + domains[i].core.name + '\');" class="waves-effect waves-light btn-flat" ><i class="material-icons">sticky_note_2</i></span><a class="btn waves-effect waves-light amber lighten-2" style="margin-left:12px;"><i class="material-icons">inventory_2</i></a><span class="card-title activator grey-text text-darken-4"><i class="material-icons right">more_vert</i></span></div></div><div class="card-reveal" style="overflow:hidden;"><span class="card-title grey-text text-darken-4">' + domains[i].name + '<i class="material-icons right">more_vert</i></span><div style="display:flex;align-items:center;justify-content:space-evenly;margin-top:24px;"><div style="width:160px;cursor:pointer;" id="o'+ i + '"></div><div style="display:flex; flex-direction:column;align-items:center;justify-content:space-evenly;"><div class="z-depth-1 chip amber lighten-2">21930 OCUR</div><a onclick="showMark(\'' + i + '\'); showView(\'map\'); map.resize();" class="modal-close waves-effect waves-light btn green lighten-2" ><i class="material-icons">credit_card</i></a></div></div></div></div>';
 	
@@ -573,7 +561,7 @@ function showMark(i) { selectedMark = i;  //if (place == "") place = window.loca
 	var place2 = [domains[i].coord.substring(domains[i].coord.indexOf(', ')+1,domains[i].coord.indexOf(']')-1), domains[i].coord.substring(domains[i].coord.indexOf('[')+1,domains[i].coord.indexOf(',')-1)];
         var html = '<div><div id="o'+ i + '" style="display:flex; justify-content:center;"><img class="materialboxed" width="120" height="120" src="'+domains[i].core.image_preview_url+'"/></div><div style="margin-top:16px; font-size:16px;"><a onclick="openInNewTab(\'' + domains[i].core.external_link + '\');">' + domains[i].core.name + '</a><br/><br/><a class="waves-effect waves-blue btn blue lighten-3" onclick="addListDeed(' + i +');"><i class="material-icons">description</i></a>&nbsp;&nbsp<a class="waves-effect waves-light btn amber lighten-4" onclick="showDoc(\'order\');"><i class="material-icons">inventory_2</i></a></div></div>';
 
-            addMark(i+99,place2,"blue",getClass(domains[i].core.collection.slug),getColor(domains[i].core.collection.slug), html, i); //setTimeout( function () { }, 1000);  
+            addMark(i+99,place2,"blue",getClass(domains[i].core.collection.slug),getColor(domains[i].core.collection.slug), html, i); 
 		     }
 
 function addMark(id, loc, folder, icon, color, html, index) {
