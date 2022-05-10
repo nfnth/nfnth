@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><title>nfNth · Deed Domain</title>
+<head><title>Nf Nth · Deed Domain</title>
 
 <meta http-equiv="Content-Language" content="en-US">
 <meta charset="UTF-8" />
@@ -76,8 +76,12 @@
         <option selected="selected">No domain selected</option><option>tactician.us (demo)</option></select></li>
 	<li style="margin-top:12px;"><a id="poster" class="btn waves-effect waves-light amber z-depth-1 lighten-2 disabled" style="width: 240px;margin: auto;border-radius: 8px;margin-bottom:12px;color:black;" onclick="if (walletAddress != '') {showView('map'); map.resize(); addArtifact(); $('#user-pane').sidenav('close');}"><i class="material-icons left">build</i>Build Artifact</a></li></ul>
 		</div>
-      <div id="test5"><div class="hoverable" style="display:flex; justify-items:center;width:800px;max-width:80%;">Purchase Collectible</div></div>
-      <div id="test6" style="padding:16px;"><img id="world-gear" height="48" width="48" style="opacity:0.5;position:absolute;" /><img id="world-gear2" height="48" width="48" style="position:absolute; opacity:0.5;" /><span style="color:darkgoldenrod; font-weight:bold; font-size:28px;border-radius: 6px;padding-left: 16px;">Ocurious //ocur.io</span><br/><br/><span style="color:goldenrod; font-size:26px; font-weight:bold;vertical-align:super;">$own [build] *explore</span><br/>Visit on <a onclick='openInNewTab("https://github.com/nfnth");'>GitHub</a></div></div></div>
+      <div id="test5"><div id="registry" class="collection" style="overflow:auto;"></div>
+		<!--<div class="hoverable" style="display:flex; justify-items:center;width:800px;max-width:80%;">Purchase Collectible</div>-->
+		
+		
+		</div>
+      </div></div>
 		
 		
 		</li>
@@ -91,7 +95,7 @@
         <img src="img/world-min.jpg" class="z-depth-2" style="width:100%; margin-bottom:-6px; " />
 	    
 	<div style="  position: fixed;left: 0;top:35%;width: 100%;" ><div class="z-depth-1" style="cursor:pointer; font-size:24px;background-color: rgba(245, 245, 245, 0.8);padding-bottom: 48px;padding-top: 36px;text-align: center;align-items: center;justify-content: center;width: 100%;cursor:pointer;" >
-  
+  <div id="test6" style="padding:16px;"><img id="world-gear" height="48" width="48" style="opacity:0.5;position:absolute;" /><img id="world-gear2" height="48" width="48" style="position:absolute; opacity:0.5;" /><span style="color:darkgoldenrod; font-weight:bold; font-size:28px;border-radius: 6px;padding-left: 16px;">Ocurious //ocur.io</span><br/><br/><span style="color:goldenrod; font-size:26px; font-weight:bold;vertical-align:super;">$own [build] *explore</span><br/>Visit on <a onclick='openInNewTab("https://github.com/nfnth");'>GitHub</a></div>
 		     <div><span style="font-size:22px;color:black;">deed. domain. </span><span style="font-size:22px; color:black; font-weight:bold;">decentralized.</span><span style="font-size:16px; color:black; font-weight:bold;">© 2022 Copyright, <a onclick="openInNewTab('https://github.com/nfnth');">NfNth Corp.</a></span></div></div></div></div>
 
     <!-- map -->
@@ -103,10 +107,10 @@
 		
 		<div style="width:100%; display:flex;">
 		    <!-- map -->
-    <div id="map" style="width:50%;"></div>
+    <div id="map" style="width:100%;"></div>
        
             
-	<div id="registry" class="collection" style="overflow:auto;width:50%;"></div></div></div>
+	</div></div>
 
 <ul id='dropdown2' class='dropdown-content'>
     	<li><a href="#!" onclick="mapSat();"><i class="material-icons">satellite_alt</i>Satellite</a></li>
@@ -157,6 +161,14 @@
 
 <script>
 var gridSelect = false;
+		
+		    
+if (typeof(Storage) !== "undefined") {
+ //window.sessionStorage - stores data for one session (data is lost when the browser tab is closed)
+} else {
+  // Sorry! No Web Storage support..
+}
+
 function changeView() { gridSelect = document.getElementById('lister').checked;
 	if (document.getElementById('lister').checked) { showView('list'); showList('grid'); } else { showView('list'); showList('domain'); } }
 
