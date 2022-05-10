@@ -7,8 +7,8 @@ The historical guide to the geocaching in the United States, *game included*.
 
 A [collectible](https://buy.stripe.com/5kA4hL5NB6Qv7Ty5kk) is also available, includes,
 
-- 2021 **Native American** *$1 Coin*
 - copy of **Civilian Complex** · *NfNth's Guide to Deed Domain*
+- 2021 **Native American** *$1 Coin*
 
 <a href="https://buy.stripe.com/5kA4hL5NB6Qv7Ty5kk" target="_blank"><img style="margin-left:24px; width:90px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="img/coin.jpg" alt="Purchase NfNth Collectible" /></a>
 
