@@ -93,20 +93,19 @@
     <div id="list" class="content loader pane" style="overflow-y: auto; height: 95%;">
 	    <!-- filter -->
         <div id="list-filter" class="z-depth-1 grey lighten-5" style="display:flex; justify-content: center; padding-top: 24px; padding-bottom:12px; margin-bottom: -6px; align-items:center;position: fixed; z-index: 1;">
-        	<div class="hide-on-med-and-down"><a class="waves-effect waves-amber btn-flat disabled" onclick="filterDomain();"><i id="select-icon" class="material-icons left">filter_list</i><span>Select</span></a><a id="dropdown-full" class='dropdown-trigger btn-flat' style="margin-right:8px;" href='#' data-target='dropdown1'><i class="material-icons left">sort</i>Sort</a><a class="waves-effect waves-light amber lighten-2 btn" style="margin-right:8px;" onclick="showView('list'); showList('open');"><i id="view-icon" class="material-icons left">layers</i><span id="view-name">Options</span></a></div>
+        	<div class="hide-on-med-and-down"><a class="waves-effect waves-amber btn-flat" onclick="showView('list'); showList('open');"><i id="select-icon" class="material-icons left">filter_list</i><span>Filter</span></a><a id="dropdown-full" class='dropdown-trigger btn-flat' style="margin-right:8px;" href='#' data-target='dropdown1'><i class="material-icons left">sort</i>Sort</a><div id="actions" class="fixed-action-btn" ><a class="waves-effect waves-light amber lighten-2 btn" style="margin-right:8px;" onclick=""><i id="view-icon" class="material-icons left">layers</i><span id="view-name">Layers</span></a><ul>
+		<li><a id="map-sat" class="btn-floating waves-effect waves-light grey" onclick="mapSat();"><i class="material-icons">satellite_alt</i></a></li>
+		<li><a id="map-gps" class="btn-floating waves-effect waves-light grey" onclick="mapLoc();"><i class="material-icons">gps_fixed</i></a></li>
+		<li><a id="map-direction" class="btn-floating waves-effect waves-light grey onclick="mapRoute();"><i class="material-icons">directions</i></a></li>
+		<li><a id="map-route" class="btn-floating waves-effect waves-light green lighten-2" onclick="mapRoute();"><i class="material-icons">route</i></a></li>
+                <li><a id="map-rand" class="btn-floating waves-effect waves-light green lighten-2" onclick="mapRand();"><i class="material-icons">shuffle</i></a></li></ul></div></div>
 		<!-- <div class="screen-hide"><a class="waves-effect waves-light btn-flat" style="margin-right:8px;" onclick="showView('list'); showList('open');"><i class="material-icons">filter_list</i></a><a class="waves-effect waves-light btn-flat disabled" onclick="showView('list'); showList('open');"><i class="material-icons">deselect</i></a><a id="dropdown-mobile" class="waves-effect waves-light btn-flat dropdown-trigger" style="margin-right:8px;" href="#" data-target="dropdown2"><i class="material-icons">sort</i></a><a class="waves-effect waves-light btn amber lighten-2" style="margin-right:8px;display:inline-flex;align-items:center;" onclick="switchView();"><i id="view-icon2" class="material-icons">grid_view</i>&nbsp;&nbsp;<span id="view-name2">Grid</span></a></div> --> </div>
 		
 		<div style="width:100%; display:flex;">
 		    <!-- map -->
     <div id="map" style="width:50%;"></div>
-        <div id="actions" class="fixed-action-btn" >
-            <a class="btn-floating btn-large amber lighten-3 waves-effect waves-light"><i class="large material-icons">menu</i></a>
-            <ul>
-		<li><a id="map-sat" class="btn-floating waves-effect waves-light grey" onclick="mapSat();"><i class="material-icons">satellite_alt</i></a></li>
-		<li><a id="map-gps" class="btn-floating waves-effect waves-light grey" onclick="mapLoc();"><i class="material-icons">gps_fixed</i></a></li>
-		<li><a id="map-direction" class="btn-floating waves-effect waves-light grey onclick="mapRoute();"><i class="material-icons">directions</i></a></li>
-		<li><a id="map-route" class="btn-floating waves-effect waves-light green lighten-2" onclick="mapRoute();"><i class="material-icons">route</i></a></li>
-                <li><a id="map-rand" class="btn-floating waves-effect waves-light green lighten-2" onclick="mapRand();"><i class="material-icons">shuffle</i></a></li></ul></div>
+       
+            
 	<div id="registry" class="collection" style="overflow:auto;width:50%;"></div></div></div>
 	
 	<ul id='dropdown1' class='dropdown-content'>
