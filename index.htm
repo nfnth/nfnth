@@ -24,7 +24,7 @@
 <!-- media -->
 	<a id="doc-hide" class="screen-hide media-menu" href="#!" data-target="doc"><i class="material-icons">sticky_note_2</i></a>
         <a id="map-hide" class="screen-hide media-menu" onclick="showView('list'); showList('domain');"><i class="material-icons">map</i></a>
-	<a id="list-hide" class="screen-hide media-menu" onclick="showView('list'); showList('domain');"><i class="material-icons">list</i></a>
+	<a id="list-hide" class="screen-hide media-menu" onclick="openInNewTab('https://github.com/nfnth');"><i class="material-icons">settings</i></a>
     	<a id="search-hide" class="screen-hide media-menu" onclick="showView('search');"><i class="material-icons">search</i></a>
 
     <!-- desktop -->
@@ -161,10 +161,6 @@
                 <path d="M0,29.75h80c0,0-3.083,0.014-3.083,0.041c0,0.028,3.083,0.042,3.083,0.042H0c0,0,3.084-0.014,3.084-0.042
 											C3.084,29.762,0,29.75,0,29.75z"></path></svg></div>
         <div id="dialog-inner2" class="dialog-inner print-help hide-scrollbar" style="overflow:auto;">
-		<div id="magazine">
-	<div><span class="text" id="magazine-page">Page 1</span></div>
-	
-</div>
 		</div></div></div>
 
 <script>
@@ -900,9 +896,9 @@ div.active {opacity: 1;height: auto;}
 	
 	        .tabs .tab a{ color:goldenrod; } /*Black color to the text*/
 
-        .tabs .tab a:hover { background-color:#ffe8ae; color:cornflowerblue; } /*Text color on hover*/
+        .tabs .tab a:hover { background-color:#ffe8ae; color:goldenrod; } /*Text color on hover*/
 
-        .tabs .tab a.active { background-color:#ffe8ae; color:cornflowerblue; } /*Background and text color when a tab is active*/
+        .tabs .tab a.active { background-color:#ffe8ae; color:goldenrod; } /*Background and text color when a tab is active*/
 
         .tabs .indicator {
             background-color:darkgoldenrod;
