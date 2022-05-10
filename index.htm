@@ -55,14 +55,15 @@
 	<li><div class="user-view z-depth-1 amber lighten-5" style="display: flex;margin: auto; padding: 0;align-items: center; padding-left:12px;"><span id="ocuros" style="cursor: pointer;margin:auto; color:black!important; font-size:16px;" onclick="openInNewTab('https://github.com/nfnth/nfnth'); $('#user-pane').sidenav('close');" class="new badge amber accent-1" data-badge-caption=""></span>
         <img id="user-pic" style="opacity:0.5; height: 48px;position:absolute; right:0; margin: 12px; cursor:pointer;" onclick="openInNewTab('https://github.com/nfnth'); $('#user-pane').sidenav('close');"/><img id="user-pic2" style="opacity:0.5; height: 48px;cursor:pointer;margin:12px;" onclick="openInNewTab('https://github.com/nfnth'); $('#user-pane').sidenav('close');"/></div></li>
     <li><a class="subheader">Wallet Information</a></li>
-  	<li><a class="waves-effect" onclick="if (walletAddress != '') {copyClip(walletAddress);}"><i class="material-icons">alternate_email</i><span id="myAdd">Wallet Address</span></a></li>
-  	<li><a class="waves-effect"><i class="material-icons">account_balance</i><span id="myETH">ETH Balance</span></a></li>
-	<li><a class="waves-effect"><i class="material-icons">toll</i><span id="myURL">OCUR Balance</span></a></li>
+  	<li><a class="waves-effect" onclick="if (walletAddress != '') {copyClip(walletAddress);}"><i class="material-icons">alternate_email</i><span id="myAdd">My Wallet Address</span></a></li>
+  	<li><a class="waves-effect"><i class="material-icons">toll</i><span id="myETH">My ETH Balance</span></a></li>
+	<li><a class="waves-effect"><i class="material-icons">inventory_2</i><span id="myArt">My Artifacts</span></a></li>
 	<li style="margin-top:16px;margin-bottom:12px;"><a id="maker" class="btn waves-effect waves-light amber z-depth-1 lighten-3" style="width: 240px;margin: auto;border-radius: 8px;color:black;" onclick="if (walletAddress != '') {desetup(); $('#user-pane').sidenav('close');}"><i class="material-icons left">logout</i>Disconnect</a></li>
   	<li><div style="margin-top:0;" class="divider"></div></li>
   	<!-- <i class="material-icons left">directions</i><i class="material-icons left">picture_as_pdf</i><i class="material-icons left">calculate</i>-->
   	<li><a class="subheader">Domain Information</a></li>
-  	<li><a class="waves-effect"><i class="material-icons">landscape</i><span id="myURL">Current Status</span></a></li>
+  	<li><a class="waves-effect"><i class="material-icons">landscape</i><span id="dStatus">Current Status</span></a></li>
+	<li><a class="waves-effect"><i class="material-icons">landscape</i><span id="dArt">Posted Artifact</span></a></li>
   	<li style="margin-top:12px; display: flex;align-items: center;justify-content: center;margin-bottom:16px;"><select id="domain-template" class="sider" onchange="domainSelect();">
         <option selected="selected">No domain selected</option><option>tactician.us (demo)</option></select></li>
 	<li style="margin-top:12px;"><a id="poster" class="btn waves-effect waves-light amber z-depth-1 lighten-2 disabled" style="width: 240px;margin: auto;border-radius: 8px;margin-bottom:12px;color:black;" onclick="if (walletAddress != '') {showView('map'); map.resize(); addArtifact(); $('#user-pane').sidenav('close');}"><i class="material-icons left">build</i>Build Artifact</a></li></ul>
@@ -378,14 +379,14 @@ function showView(view) {  hideView(); $('#'+view).show();
     switch (view) {
         case 'editor': $("#editor").addClass("scale-in"); break;
 	case 'filter': $("#filter").addClass("scale-in"); break;
-        case 'list': break;
+        case 'list': $('#map').show(); $("#actions").show(); map.resize(); break;
 	    case 'news': 
     
 		     break;
         case 'map': $("#actions").show(); map.resize(); break; } }
 
 var complete; var reset = false; var first = true;
-function showList(area) { $('#map').show(); map.resize();  $("#registry").html(''); $("#registry").hide(); if (first) { complete = domains; first = false; }
+function showList(area) {  $("#registry").html(''); $("#registry").hide(); if (first) { complete = domains; first = false; }
     switch (area) {
 	    case "grid": sortSet = [area,domains,0,18,16]; var snip; var carder = 4; if (screen.width < 480) { carder = 1; } for (let i=0;i<domains.length;i++) { if ((i%carder) == 0) { snip = '<div style="display:flex;width:100%;justify-content:center;">'; } snip += addGrid(i); if (((i+1)%carder) == 0) { snip += '</div>'; $("#registry").append(snip); } } $('.materialboxed').materialbox();  adjustSort(true); break;
         case "domain": $("#list-filter").show(); if (reset) { domains = complete; reset = false; }
@@ -425,11 +426,11 @@ function addOpen(i){
 //});
 }
 function addList(i){
-    $("#registry").append("<a class='collection-item'><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;'>" + domains[i].core.name + "</div><div style='display:flex; justify-content:space-between;align-items:center;'><div style='display:flex; flex-direction:column;'><div style='display:flex;align-items:center;'><div><span onclick='pullDoc(\"" + domains[i].core.name + "\");' class='waves-effect waves-light btn-flat' ><i class='material-icons'>sticky_note_2</i></span><span style='margin-left:12px;' class='waves-effect waves-light btn amber lighten-2' ><i class='material-icons'>inventory_2</i></span></div>&nbsp;&nbsp;&nbsp;&nbsp;<span style='display:flex;color:black;' class='modal-trigger' href='#modal1' onclick='pullOwner(" + i + "); pullPrice(" + i + "); addListDetail(" + i + ");'><i class='material-icons'>more_vert</i></span></div></div></div></div></a>"); }
+    $("#registry").append("<a class='collection-item'><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;'>" + domains[i].core.name + "</div><div style='display:flex; justify-content:space-between;align-items:center;'><div style='display:flex; flex-direction:column;'><div style='display:flex;align-items:center;'>&nbsp;&nbsp;&nbsp;&nbsp;<span style='display:flex;color:black;' class='modal-trigger' href='#modal1' onclick='pullOwner(" + i + "); pullPrice(" + i + "); addListDetail(" + i + ");'><i class='material-icons'>more_vert</i></span></div></div></div></div></a>"); }
 
 function addListDetail(i) {
 	setTimeout(function() {
-     $("#domain-info").html('<div style="display:flex;justify-content:space-evenly;align-items:center;width:100%;padding-top:12px;"><div style="display: flex;flex-direction: column;text-align: left;align-items:center;width:100%;"><div style="display:flex; justify-content:center;"><img style="margin-bottom:12px;" class="materialboxed z-depth-2" width="140" height="140" src="' + domains[i].core.image_preview_url + '"/>&nbsp;&nbsp;&nbsp;&nbsp;<div style="cursor:pointer;" id="o'+ i + '"></div></div><div style="margin-bottom:16px;">' + domains[i].name + '&nbsp;&nbsp · &nbsp;&nbsp<a onclick="openInNewTab(\'' + domains[i].core.external_link + '\');">' + domains[i].core.name + '</a></div><br/><div class="z-depth-1 " style="background-color:rgb(255,255,255,0.5); display:flex;justify-content:space-evenly;width:100%; padding:12px;box-shadow:8px -8px 12px 12px inset whitesmoke;" ><div class="z-depth-1 chip" style="background-color: #fde4a4;">21930 OCUR</div><a onclick="showMark(\'' + i + '\'); showView(\'map\'); map.resize();" class="modal-close waves-effect waves-light btn green lighten-2" ><i class="material-icons">credit_card</i></a></div></div></div>'); $('.materialboxed').materialbox(); }, 200); }
+     $("#domain-info").html('<div style="display:flex;justify-content:space-evenly;align-items:center;width:100%;padding-top:12px;"><div style="display: flex;flex-direction: column;text-align: left;align-items:center;width:100%;"><div style="display:flex; justify-content:center;"><img style="margin-bottom:12px;" class="materialboxed z-depth-2" width="140" height="140" src="' + domains[i].core.image_preview_url + '"/>&nbsp;&nbsp;&nbsp;&nbsp;<div style="cursor:pointer;" id="o'+ i + '"></div></div><div style="margin-bottom:16px;">' + domains[i].name + '&nbsp;&nbsp · &nbsp;&nbsp<a onclick="openInNewTab(\'' + domains[i].core.external_link + '\');">' + domains[i].core.name + '</a></div><br/><div class="z-depth-1 " style="background-color:rgb(255,255,255,0.5); display:flex;justify-content:space-evenly;width:100%; padding:12px;box-shadow:8px -8px 12px 12px inset whitesmoke;" ><span onclick='pullDoc(\"" + domains[i].core.name + "\");' class='waves-effect waves-light btn-flat' ><i class='material-icons'>sticky_note_2</i></span><div class="z-depth-1 chip" style="background-color: #fde4a4;">21930 OCUR</div><span onclick='pullDoc(\"" + domains[i].core.name + "\");' class='waves-effect waves-light btn-flat' ><i class='material-icons'>sticky_note_2</i></span><a onclick="showMark(\'' + i + '\'); showView(\'map\'); map.resize();" class="modal-close waves-effect waves-light btn green lighten-2" ><i class="material-icons">credit_card</i></a></div></div></div>'); $('.materialboxed').materialbox(); }, 200); }
 	
 //$("#somedialog2").css("z-index",1004);
 function addListDeed(i) {
@@ -914,6 +915,6 @@ div.active {opacity: 1;height: auto;}
 
 	.card .card-image img {position:absolute;}
 	#doc li a { background-color:ghostwhite; }
-nav ul a { color:cornflowerblue!important; } nav ul a:hover { color:ghostwhite!important; background-color: cornflowerblue!important; }
+nav ul a { color:goldenrod!important; } nav ul a:hover { color:ghostwhite!important; background-color: goldenrod!important; }
 .hide-scrollbar { overflow: auto; -ms-overflow-style: none; /* IE 11 */ scrollbar-width: none; /* Firefox 64 */ }
-.dropdown-content li>a>i { margin:0 12px 0 0; } .dropdown-content li>a, .dropdown-content li>span { color:cornflowerblue!important; }</style></body></html>
+.dropdown-content li>a>i { margin:0 12px 0 0; } .dropdown-content li>a, .dropdown-content li>span { color:goldenrod!important; }</style></body></html>
