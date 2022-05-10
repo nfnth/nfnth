@@ -11,6 +11,8 @@ An [**NfNth Collectible**](https://buy.stripe.com/5kA4hL5NB6Qv7Ty5kk) is also av
 
 <a href="https://buy.stripe.com/5kA4hL5NB6Qv7Ty5kk" target="_blank"><img style="margin-left:24px; width:90px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="img/coin.jpg" alt="Purchase NfNth Collectible" /></a>
 
+For technical details, download [.10 OS](), or [build from scratch](https://github.com/nfnth/os).
+
 Licensed as **NfNth Corp** in the State of Washington, 19500 130th AV NE, Woodinville, WA 98072
 
 [C-SPAN](https://www.c-span.org) · [BBC](http://feeds.bbci.co.uk/news/rss.xml) · [Gutenberg](http://www.gutenberg.org) · [Wikipedia](http://www.wikipedia.org/wiki/Special:Random)
