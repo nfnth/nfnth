@@ -1,7 +1,7 @@
 
 ###  [📚📚 NfNth](https://github.com/nfnth/nfnth) · A Survey of **Deed Domain**
 
-The historical guide (and game) to the geocaching in the United States.
+The historical guide (and game) to geocaching in the United States.
 
 <a href="https://opensea.io/ocurio" title="Buy on OpenSea" target="_blank"><img style="margin-left:24px; width:220px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="https://storage.googleapis.com/opensea-static/Logomark/Badge%20-%20Available%20On%20-%20Light.png" alt="Available on OpenSea" /></a> and&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://opensea.io/ocurio" title="Buy on SolSea" target="_blank"><img style="margin-left:24px; width:180px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="img/SolSea_Logo.svg" alt="Available on SolSea" /></a>
 
