@@ -553,7 +553,7 @@ function filterMap(slug) { holder = [];
     var place2 = [domains[0].coord.substring(domains[0].coord.indexOf(', ')+1,domains[0].coord.indexOf(']')-1), domains[0].coord.substring(domains[0].coord.indexOf('[')+1,domains[0].coord.indexOf(',')-1)];
     startUp = function() {currentMarkers[0].togglePopup(); };  setZoom = 2; fly(middle);  }
 
-var popups = []; var walletSwitch = true;
+var popups = []; var walletSwitch = true; var markCount = 0;
 function showMark(i) { selectedMark = i;  //if (place == "") place = window.location.host;
 	var place2 = [domains[i].coord.substring(domains[i].coord.indexOf(', ')+1,domains[i].coord.indexOf(']')-1), domains[i].coord.substring(domains[i].coord.indexOf('[')+1,domains[i].coord.indexOf(',')-1)];
         var html = '<div><div id="o'+ i + '" style="display:flex; justify-content:center;"><img class="materialboxed" width="120" height="120" src="'+domains[i].core.image_preview_url+'"/></div><div style="margin-top:16px; font-size:16px;"><a onclick="openInNewTab(\'' + domains[i].core.external_link + '\');">' + domains[i].core.name + '</a><br/><br/><a class="waves-effect waves-blue btn blue lighten-3" onclick="addListDeed(' + i +');"><i class="material-icons">description</i></a>&nbsp;&nbsp<a class="waves-effect waves-light btn amber lighten-4" onclick="showDoc(\'order\');"><i class="material-icons">inventory_2</i></a></div></div>';
@@ -569,7 +569,7 @@ function addMark(id, loc, folder, icon, color, html, index) {
     else {style += ";background-image:url('img/icon/domain/"+folder + "/" +icon+".png'); background-color:" + color + ";";}
     $('#marker'+id).attr('style',style); currentMarkers.push(marker);
 
-    currentMarkers[index].setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(html)); }
+    currentMarkers[markCount].setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(html)); }
 	
 function popMark(i) {
 	var place2 = [domains[i].coord.substring(domains[i].coord.indexOf(', ')+1,domains[i].coord.indexOf(']')-1), domains[i].coord.substring(domains[i].coord.indexOf('[')+1,domains[i].coord.indexOf(',')-1)];
