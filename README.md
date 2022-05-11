@@ -6,7 +6,7 @@ A historical guide (and game) to geocache and survey in the United States.
 |Version|Includes||
 |-|-|-|
 |deed domain|- domain ownership<br/>- build artifact|available on [OpenSea](https://opensea.io/nfnth) and/or [SolSea](https://solsea.io/login)|
-|electronic copy|- **10.OS** ISO<br/>- [access to the repo](https://github.com/nfnth/os) to build from scratch|[download here](https://github.com/nfnth/os)|
+|electronic copy|- **10.OS** ISO<br/>- access to technical stack|[download here](https://github.com/nfnth/os) and/or [access the repo](https://github.com/nfnth/os)|
 |physical copy|- **Civilian Complex** · NfNth's Guide to Deed Domain *paperback*<br/>- **Native American** 2021 $1 Coin|[purchase here](https://buy.stripe.com/5kA4hL5NB6Qv7Ty5kk)|
 
 
