@@ -107,7 +107,13 @@
 		<div style="width:100%; display:flex;">
 		    <!-- map -->
     <div id="map" style="width:100%;"></div>
-         <a class="btn-floating btn-large waves-effect waves-light green" onclick="addArtifact();"><i class="material-icons">add</i></a>
+			<div class="fixed-action-btn">
+  <a class="btn-floating btn-large green">
+    <i class="large material-icons">add</i>
+  </a>
+
+</div>
+       
             
 	</div></div>
 
@@ -184,10 +190,9 @@ function showFav(site) {
     $('<link>').appendTo('head').attr({ class: 'ico', type: 'image/x-icon', rel: 'icon', sizes: "192x192", href: "img/fav/android-chrome-192x192.png" });
     $('<link>').appendTo('head').attr({ class: 'ico', type: 'image/x-icon', rel: 'apple-touch-icon', sizes: "128x128", href: "img/fav/apple-touch-icon.png" }); }
 			
-function filterDomain() { if ($("#select-icon").html() == "select_all") {
-			$("#select-icon").html("deselect"); $("#select-icon").next().html("Deselect"); }
-			else { $("#select-icon").html("select_all"); $("#select-icon").next().html("Select"); }
-			}
+function filterDomain() { 
+	if ($("#select-icon").html() == "select_all") { $("#select-icon").html("deselect"); $("#select-icon").next().html("Deselect"); }
+	else { $("#select-icon").html("select_all"); $("#select-icon").next().html("Select"); } }
 
 function adjustSize(img) {
     if (img.height >= img.width) { adjustment = (img.height - img.width) / 48; shim = 'padding-right'; img.height = "48"; }
@@ -200,7 +205,7 @@ var width = window.innerWidth; var height = window.innerHeight + 48;
 async function initial() {
     //document.getElementById('domain-template').getElementsByTagName('option')[0].selected = 'selected';
     //$('select').formSelect(); 
-	$('.tabs').tabs();
+	$('.tabs').tabs(); $('.fixed-action-btn').floatingActionButton();
 			$('.modal').modal(); //$('#modal2').modal(); //$('#dialog-inner2').css("height", window.innerHeight - 375);
     $("#map").css("height",height + "px"); $("#registry").css("height",height + "px"); showFav('scroller');
 
