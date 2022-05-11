@@ -1,7 +1,7 @@
 
-###  [📚📚 Nf·Nth](https://github.com/nfnth/nfnth) | Deed Domain
+###  [📚📚 Nf·Nth](https://github.com/nfnth/nfnth)
 
-A historical guide (and game) to geocache and survey in the United States.
+A collection of deed domains and historical guide (and game) to geocache and survey in the United States.
 
 |Available Version|Includes||
 |-|-|-|
