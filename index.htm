@@ -221,7 +221,7 @@ var gear4b = Math.floor(Math.random() * (42 - 1 + 1)) + 1; document.getElementBy
 			$('#dropdown-full').dropdown(); $('#dropdown-mobile').dropdown(); $('#dropdown-full2').dropdown({ constrainWidth: false });
     $('#user-pane').sidenav({ edge: 'right' }); $('.tooltipped').tooltip();
     
-
+$('.collapsible').collapsible();
    hideView(); $("#stamper").show(); $("#world").show(); //searchClear();
      
     setTimeout(function() { $(".loader").css("visibility", "visible"); $('img').on('dragstart', function(evt) { return false; }); }  , 500); }
@@ -688,11 +688,6 @@ var meta = `//name=Max Hamish|image=default.png|icon=river1.png|location=56,-32|
 // map
 var map; var map_token = "pk.eyJ1IjoibmZudGgiLCJhIjoiY2tweW1rNXlsMGFpYzJwcGt1cHh6dmxzcyJ9.ZJaFrGpPDv5froWZMLXXYQ";
 var base = [-98.59236473214004, 39.82998211920899, ]; var landlord = [-101.59236473214004, 42.82998211920899, ]; var art = [-96.59236473214004, 37.82998211920899, ]; var center = [-100.4510253658899336, 43.91338997020656];
-var fr = [12.7883045678751,41.93442311882793]; var fr2 = [8.833226355143738,44.503810689066945]; var fr3 = [15.029515555089539,37.61364223955704];
-	var frc = [12.590550657238532,39.879732387773416];
-var baseContent = '<div><div><img width="48" height="48" src="img/Pixaloop_20_04_2022_11_05_02_9740000.gif"/></div><div><h6>Purchase Deed</h6><br/><a class="waves-effect waves-light btn" onclick="showDoc(\'learn/deed\');">Read...</a>&nbsp;&nbsp;<a class="waves-effect waves-light btn blue lighten-3" onclick="clearMap(); showLandlord();"><i class="material-icons">navigate_next</i></a></div></div>';
-var landContent = '<div><div><img width="48" height="48" src="img/domain.png"/></div><div><h6>Build Domain</h6><br/><a class="waves-effect waves-light btn" onclick="showDoc(\'learn/domain\');">Read...</a>&nbsp;&nbsp;<a class="waves-effect waves-light btn blue lighten-3" onclick="clearMap(); showArt();"><i class="material-icons">navigate_next</i></a></div></div>';
-var artContent = '<div><div><img width="48" height="48" src="img/barrel.png"/></div><div><h6>Trade OCUR</h6><br/><a class="waves-effect waves-light btn" onclick="showDoc(\'learn/artifact\');">Read...</a>&nbsp;&nbsp;<a class="waves-effect waves-light btn blue lighten-3" onclick="clearMap(); showBase();"><i class="material-icons">restart_alt</i></a</div></div>';
 
 var currentMarkers=[]; //var introMark;//43.706742350484916, 1.5266131055501075
 var addMark; var coordinates; var artFlag = false;
