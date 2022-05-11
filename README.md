@@ -5,7 +5,7 @@ A collection of **deed domain** with historical guide (and game) to geocache and
 
 |Version|Includes||
 |-|-|-|
-|non-fungible token (*NFT*)|· ownership on [dralun.com](https://dralun.com) [🌳🌳](https://xn--wh8ha.ws)<br/>· build access on [🏳🏴](https://xn--en8hc.ws) [🏳🏳](https://xn--en8ha.ws) [ur.land](https://ur.land) [🏴🏳](https://xn--en8hb.ws) [🏴🏴](https://xn--fn8ha.ws)<br/>· use [mattdown.com](https://mattdown.com) [📚📚](https://xn--zt8ha.ws) docs|available on [OpenSea](https://opensea.io/nfnth) and/or [SolSea](https://solsea.io/login)|
+|non-fungible token (*NFT*)|· ownership on [🏳🏴](https://xn--en8hc.ws) [🏳🏳](https://xn--en8ha.ws) [dralun.com](https://dralun.com) [🏴🏳](https://xn--en8hb.ws) [🏴🏴](https://xn--fn8ha.ws)<br/>· build access on [ur.land](https://ur.land) [🌳🌳](https://xn--wh8ha.ws)<br/>· use [mattdown.com](https://mattdown.com) [📚📚](https://xn--zt8ha.ws) docs|available on [OpenSea](https://opensea.io/nfnth) and/or [SolSea](https://solsea.io/login)|
 |electronic copy|· latest [⚙⚙](https://xn--x7ha.ws) OS distro<br/>· access to site content and code|[download ISO](https://github.com/nfnth/os) and/or [GitHub repo](https://github.com/nfnth/os)|
 |physical copy|· copy of [Civilian Complex]() [♠♠](http://xn--b6ha.ws)<br/>· *$1* Native American 2021 coin|purchase on [Stripe](https://buy.stripe.com/5kA4hL5NB6Qv7Ty5kk)|
 
