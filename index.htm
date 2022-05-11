@@ -58,9 +58,9 @@
 	<li style="height:100%;">
     <div class="card-tabs">
 	<ul class="tabs tabs-fixed-width z-depth-1">
-        	<li class="tab amber lighten-5"><a class="active" href="#test4">Deed</a></li>
+        	<li class="tab amber lighten-5"><a class="active" href="#test4">&nbsp;Deed&nbsp;</a></li>
 		<li class="tab amber lighten-5"><a href="#test5">Domain</a></li></ul></div>
-    <div class="card-content  amber lighten-5 z-depth-1">
+    <div class="card-content  amber lighten-5 z-depth-1" style="height:100%;">
 	<div id="test4">
     <ul><li><a class="subheader">Wallet Information</a></li>
   	<li><a class="waves-effect" onclick="if (walletAddress != '') {copyClip(walletAddress);}"><i class="material-icons">alternate_email</i><span id="myAdd">My Wallet Address</span></a></li>
@@ -780,7 +780,7 @@ function fly(dest) {
 // console
 var onTime = false;
 function switchTime() {
-	if (onTime) { $('#ocuros').attr('data-badge-caption', "10.OS v1.08");   onTime = false; } else { dateTimeStart(); onTime = true; }
+	if (onTime) { $('#ocuros').attr('data-badge-caption', "10.OS v1.08");   onTime = false; } else { datetimeStart(); onTime = true; }
 }
 function datetimeStart() {
     	var current = new Date(); // timestamp, milliseconds since 1970 (?) vs. milliseconds (UTC)
