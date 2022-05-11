@@ -52,13 +52,13 @@
 
 <!-- panel -->
 <ul id="user-pane" class="sidenav loader" style="visibility:hidden;overflow:hidden;">
-	<li><div class="user-view z-depth-1 amber lighten-5" style="display: flex;margin: auto; padding: 0;align-items: center; padding-left:12px;"><span id="ocuros" style="cursor: pointer;margin:auto; color:black!important; font-size:16px;" onclick="switchTime();" class="new badge amber accent-1" data-badge-caption="10.OS v1.08"></span>
+	<li><div class="user-view z-depth-1 amber lighten-4" style="display: flex;margin: auto; padding: 0;align-items: center; padding-left:12px;"><span id="ocuros" style="cursor: pointer;margin:auto; color:black!important; font-size:16px;" onclick="switchTime();" class="new badge amber accent-1" data-badge-caption="10.OS v1.08"></span>
         <img id="user-pic" style="opacity:0.5; height: 48px;position:absolute; right:0; margin: 12px; cursor:pointer;" onclick="openInNewTab('https://github.com/nfnth'); $('#user-pane').sidenav('close');"/><img id="user-pic2" style="opacity:0.5; height: 48px;cursor:pointer;margin:12px;" onclick="openInNewTab('https://github.com/nfnth'); $('#user-pane').sidenav('close');"/></div></li>
 	
 	<li style="height:100%;">
     <div class="card-tabs">
 	<ul class="tabs tabs-fixed-width z-depth-1">
-        	<li class="tab amber lighten-5"><a class="active" href="#test4">&nbsp;Deed&nbsp;</a></li>
+        	<li class="tab amber lighten-5"><a class="active" href="#test4">&nbsp; Deed &nbsp;</a></li>
 		<li class="tab amber lighten-5"><a href="#test5">Domain</a></li></ul></div>
     <div class="card-content  blue-grey lighten-5 z-depth-1" style="height:100%;">
 	<div id="test4">
@@ -78,16 +78,12 @@
 		</div>
       <div id="test5">
 	      <ul>
-		      <li class="no-padding">
+		      <li class="no-padding" style="margin-top:0;">
         <ul class="collapsible collapsible-accordion">
           <li>
-            <a class="collapsible-header">Dropdown<i class="material-icons">arrow_drop_down</i></a>
+            <a class="collapsible-header">Options<i class="material-icons">arrow_drop_down</i></a>
             <div class="collapsible-body">
-              <ul>
-                <li><a href="#!">Filter</a></li>
-                <li><a href="#!">Select</a></li>
-                <li><a href="#!">Sort</a></li>
-              </ul>
+              <div><a class="waves-effect waves-amber btn-flat" onclick="showView('list'); showList('open');"><i id="select-icon" class="material-icons left">filter_list</i><span>Filter</span></a><a class='btn-flat' style="margin-right:8px;"><i class="material-icons left">select_all</i>Select</a><a id="dropdown-full" class='dropdown-trigger btn-flat' style="margin-right:8px;" href='#' data-target='dropdown1'><i class="material-icons left">sort</i>Sort</a><a id="dropdown-full2" class="waves-effect waves-light amber lighten-2 btn dropdown-trigger" href='#' data-target='dropdown2' style="margin-right:8px;" ><i id="view-icon" class="material-icons left">layers</i><span id="view-name">Filter</span></a></div>
             </div>
           </li>
         </ul>
@@ -692,7 +688,7 @@ var base = [-98.59236473214004, 39.82998211920899, ]; var landlord = [-101.59236
 var currentMarkers=[]; //var introMark;//43.706742350484916, 1.5266131055501075
 var addMark; var coordinates; var artFlag = false;
 mapboxgl.accessToken = map_token; zoom = 5;
-map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/mapbox/light-v10', center: frc, zoom: zoom, buffer_size: 0.2}); //'mapbox://styles/mapbox/light-v10'
+map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/mapbox/light-v10', center: center, zoom: zoom, buffer_size: 0.2}); //'mapbox://styles/mapbox/light-v10'
 map.on('load', function (event) { $("head").append('<style type="text/css">.markre{visibility:visible!important;}</style>');
     map.on('click', function(e) { coordinates = e.lngLat; if(artFlag) { addArt(); artFlag = false; } $('.fixed-action-btn').floatingActionButton('close');
 				 }); });
