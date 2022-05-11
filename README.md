@@ -7,8 +7,9 @@ A historical guide (and game) to geocache and survey in the United States.
 
 |Version|Includes||
 |-|-|-|
-|electronic copy|· **10.OS** ISO<br/>· [access to the repo](https://github.com/nfnth/os) to build from scratch|[download here](https://github.com/nfnth/os)|
-|physical copy|· copy of **Civilian Complex** · NfNth's Guide to Deed Domain <br/>· 2021 **Native American** $1 Coin|[purchase here](https://buy.stripe.com/5kA4hL5NB6Qv7Ty5kk)|
+|NFT deed domain|domain rights|· [OpenSea]()<br/>· [SolSea]()|
+|electronic copy|· **10.OS** ISO<br/>· [access to the repo](https://github.com/nfnth/os) to build from scratch|[available to download](https://github.com/nfnth/os)|
+|physical copy|· copy of **Civilian Complex** · NfNth's Guide to Deed Domain <br/>· 2021 **Native American** $1 Coin|[available to purchase](https://buy.stripe.com/5kA4hL5NB6Qv7Ty5kk)|
 
 <a href="https://buy.stripe.com/5kA4hL5NB6Qv7Ty5kk" target="_blank"><img style="margin-left:24px; width:90px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="img/coin.jpg" alt="Purchase NfNth Collectible" /></a>
 
