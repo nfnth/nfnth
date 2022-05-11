@@ -5,13 +5,10 @@ A historical guide (and game) to geocache and survey in the United States.
 
 <a href="https://opensea.io/nfnth" title="Buy on OpenSea" target="_blank"><img style="margin-left:24px; width:220px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="https://storage.googleapis.com/opensea-static/Logomark/Badge%20-%20Available%20On%20-%20Light.png" alt="Available on OpenSea" /></a> and&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://solsea.io/login" title="Buy on SolSea" target="_blank"><img style="margin-left:24px; width:180px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="img/SolSea_Logo.svg" alt="Available on SolSea" /></a>
 
-|a|b|
+|Version|Includes|
 |-|-|
-|The electronic copy is [available to download](https://github.com/nfnth/os), and includes,|- **10.OS** ISO<br/>- [access to the repo](https://github.com/nfnth/os) to build from scratch|
-|The physical copy is [available to purchase](https://buy.stripe.com/5kA4hL5NB6Qv7Ty5kk), and includes,|a|
-
-- a copy of **Civilian Complex** · NfNth's Guide to Deed Domain 
-- a 2021 **Native American** $1 Coin
+|Electronic copy is [available to download](https://github.com/nfnth/os), and includes,|- **10.OS** ISO<br/>- [access to the repo](https://github.com/nfnth/os) to build from scratch|
+|Physical copy is [available to purchase](https://buy.stripe.com/5kA4hL5NB6Qv7Ty5kk), and includes,|- a copy of **Civilian Complex** · NfNth's Guide to Deed Domain <br/>- a 2021 **Native American** $1 Coin|
 
 <a href="https://buy.stripe.com/5kA4hL5NB6Qv7Ty5kk" target="_blank"><img style="margin-left:24px; width:90px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="img/coin.jpg" alt="Purchase NfNth Collectible" /></a>
 
