@@ -10,7 +10,7 @@ A collection of **deed domain** with historical guide (and game) to geocache and
 |digital|· raw image for each **deed domain**|download on [https://github.com/nfnth/deed](https://github.com/nfnth/deed)|
 |source|· use ⚙⚙ OS, an Arch-based, *Firefox-only* distro<br/>· code to [mattdown.com](https://mattdown.com) [📚📚](https://xn--zt8ha.ws) *docs-based* app|download [here](https://xn--x7ha.ws), also on [https://github.com/nfnth/os](https://github.com/nfnth/os)|
 
-Please use **GitHub** for [site-related](https://github.com/nfnth/nfnth/issues) and/or [OS-related](https://github.com/nfnth/nfnth/issues) issues, or contact **m@nfnth.com** for general questions and/or concerns.
+Use **GitHub** for [site-related](https://github.com/nfnth/nfnth/issues) and [OS-related](https://github.com/nfnth/nfnth/issues) issues, or contact **m@nfnth.com** for general questions and/or concerns.
 
 <a href="https://buy.stripe.com/5kA4hL5NB6Qv7Ty5kk" target="_blank"><img style="margin-left:24px; width:75px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="img/coin.jpg" alt="Purchase NfNth Collectible" /></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://opensea.io/nfnth" title="Buy on OpenSea" target="_blank"><img style="margin-left:24px; width:160px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="https://storage.googleapis.com/opensea-static/Logomark/Badge%20-%20Available%20On%20-%20Light.png" alt="Available on OpenSea" /></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://solsea.io/login" title="Buy on SolSea" target="_blank"><img style="margin-left:24px; width:140px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="img/SolSea_Logo.svg" alt="Available on SolSea" /></a>
 
