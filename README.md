@@ -6,7 +6,7 @@ A collection of deed domains and historical guide (and game) to geocache and sur
 |Available Version|Includes||
 |-|-|-|
 |deed domain|· domain ownership on [nfnth.com](https://nfnth.com)<br/>· access to build artifact|available on [OpenSea](https://opensea.io/nfnth) and/or [SolSea](https://solsea.io/login)|
-|electronic copy|· latest **10.OS** distro<br/>· access to site content and technical implementation|available to [download](https://github.com/nfnth/os) and/or [GitHub repo](https://github.com/nfnth/os)|
+|electronic copy|· latest **10.OS** distro<br/>· access to site content and implementation|available to [download](https://github.com/nfnth/os) and/or [GitHub](https://github.com/nfnth/os)|
 |physical copy|· copy of **Civilian Complex**, NfNth's Guide to Deed Domain<br/>· **Native American** 2021 $1 Coin|available on [Stripe](https://buy.stripe.com/5kA4hL5NB6Qv7Ty5kk)|
 
 
