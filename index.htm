@@ -720,18 +720,18 @@ function clearMarkers() { clearMap();  for (let a=0;a<currentMarkers.length;a++)
 function addArt() { clearMarkers(); addMark('a',coordinates,'snake','1','green', editContent, 0); $('.datepicker').datepicker(); //setDefaultDate: true
 		   currentMarkers[0].togglePopup(); }
 var beacon = false; var pather = false; var introMark; var nomadPath; var artifactPath; var setDomain; var currentContent = [];
-function mapIntro() { startUp = function() { currentMarkers[0].togglePopup(); 
-}; clearMarkers(); 
-    addMark('a',fr,'fire','1','indianred', baseContent, 0); currentContent.push(['a',fr,'fire','1','indianred',baseContent,0]);
-    addMark('b',fr2,'island','1','green', landContent, 1); currentContent.push(['b',fr2,'island','1','green',landContent,1]);
-    addMark('c',fr3,'monument','1','skyblue', artContent, 2); currentContent.push(['c',fr3,'monument','1','skyblue',artContent,2]);//map.flyTo({center: base});
+//function mapIntro() { startUp = function() { currentMarkers[0].togglePopup(); 
+//}; clearMarkers(); 
+  //  addMark('a',fr,'fire','1','indianred', baseContent, 0); currentContent.push(['a',fr,'fire','1','indianred',baseContent,0]);
+    //addMark('b',fr2,'island','1','green', landContent, 1); currentContent.push(['b',fr2,'island','1','green',landContent,1]);
+   // addMark('c',fr3,'monument','1','skyblue', artContent, 2); currentContent.push(['c',fr3,'monument','1','skyblue',artContent,2]);//map.flyTo({center: //base});
     //currentMarkers[0].togglePopup(); 
-		    setTimeout( function () { fly(frc); }, 1000);
-			}
+		  //  setTimeout( function () { fly(frc); }, 1000);
+			//}
 function showPath(color) { addLine(color); nomadPath = requestAnimationFrame(drawLine); }
-function showLandlord() { startPoint = fr; endPoint = fr2; showPath('green'); currentMarkers[0].togglePopup(); currentMarkers[1].togglePopup(); pather = true; currentToggle = 1; }
-function showArt() { addBeacon(fr3); currentMarkers[1].togglePopup(); currentMarkers[2].togglePopup(); beacon = true; currentToggle = 2; }
-function showBase() { currentMarkers[2].togglePopup(); currentMarkers[0].togglePopup(); currentToggle = 0; }
+//function showLandlord() { startPoint = fr; endPoint = fr2; showPath('green'); currentMarkers[0].togglePopup(); currentMarkers[1].togglePopup(); pather = true; currentToggle = 1; }
+//function showArt() { addBeacon(fr3); currentMarkers[1].togglePopup(); currentMarkers[2].togglePopup(); beacon = true; currentToggle = 2; }
+//function showBase() { currentMarkers[2].togglePopup(); currentMarkers[0].togglePopup(); currentToggle = 0; }
 
 function clearMap() { cancelAnimationFrame(nomadPath); if (pather) { removeLine(); } if (beacon) { removeBeacon(); } pather = false; beacon = false; }
     const geojsonDraw = { "type": "FeatureCollection","features": [{"type": "Feature", "geometry": { "type": "LineString", "coordinates": [] } }] };
