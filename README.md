@@ -5,7 +5,7 @@ A collection of **deed domain** with historical guide (and game) to geocache and
 
 |Version|Includes||
 |-|-|-|
-|non-fungible token (NFT)|· ownership on [dralun.com](https://dralun.com)<br/>· access to build artifact on [ur.land](https://ur.land)|available on [OpenSea](https://opensea.io/nfnth) and/or [SolSea](https://solsea.io/login)|
+|non-fungible token (NFT)|· ownership on [dralun.com](https://dralun.com)<br/>· access to build on [ur.land](https://ur.land)|available on [OpenSea](https://opensea.io/nfnth) and/or [SolSea](https://solsea.io/login)|
 |electronic copy|· latest [10.OS]() distro *v1.08*<br/>· access to site content and code|[download ISO](https://github.com/nfnth/os) and/or [GitHub repo](https://github.com/nfnth/os)|
 |physical copy|· copy of [Civilian Complex]()<br/>· *$1* Native American 2021 coin|purchase on [Stripe](https://buy.stripe.com/5kA4hL5NB6Qv7Ty5kk)|
 
