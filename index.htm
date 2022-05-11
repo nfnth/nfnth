@@ -24,14 +24,14 @@
 <!-- media -->
 	<a id="doc-hide" class="screen-hide media-menu" href="#!" data-target="doc"><i class="material-icons">sticky_note_2</i></a>
         <a id="map-hide" class="screen-hide media-menu" onclick="showView('list'); showList('domain');"><i class="material-icons">map</i></a>
-	<a id="list-hide" class="screen-hide media-menu" onclick="openInNewTab('https://nfnth.com/res/civ');"><i class="material-icons">tsunami</i></a>
+	<a id="list-hide" class="screen-hide media-menu" onclick="openInNewTab('https://dev.nfnth.com/res/civ');"><i class="material-icons">tsunami</i></a>
     	<a id="search-hide" class="screen-hide media-menu" onclick="showView('search');"><i class="material-icons">search</i></a>
 
     <!-- desktop -->
     <ul class="hide-on-med-and-down">
 	<li id="doc-list"><a id="docs" href="#!" data-target="doc"><i class="material-icons left">sticky_note_2</i>READ<i class="material-icons right">arrow_drop_down</i></a></li>
 	<li id="map-list"><a onclick="showView('list'); showList('domain');"><i class="material-icons left">map</i>MAP</a></li>
-        <li id="list-list"><a onclick="openInNewTab('https://nfnth.com/res/civ');"><i class="material-icons left">tsunami</i>EXPLORE</a></li>
+        <li id="list-list"><a onclick="openInNewTab('https://dev.nfnth.com/res/civ');"><i class="material-icons left">tsunami</i>EXPLORE</a></li>
         <li style="height:64px;" id="search-list">
         	<a style="height:inherit; padding-right:0;"><i onclick="$('#search').focus();" style="height:inherit; padding-right:16px;" class="material-icons">search</i>
         		<div id="search-box" class="input-field" style="height:inherit;">
@@ -873,13 +873,13 @@ div.active {opacity: 1;height: auto;}
 .open { cursor:default; }
 #domain-info { padding:0; }
 
-nav ul a { color:cornflowerblue; } nav ul a:hover { color:ghostwhite!important; background-color: cornflowerblue!important; }
+nav ul a { color:darkgrey; } nav ul a:hover { color:ghostwhite!important; background-color: cornflowerblue!important; }
 	
-.tabs .tab a{ color:goldenrod; } /*Black color to the text*/
-.tabs .tab a:hover { background-color:#ffe8ae; color:goldenrod; } /*Text color on hover*/
-.tabs .tab a.active { background-color:#ffe8ae; color:goldenrod; } /*Background and text color when a tab is active*/
-.tabs .indicator { background-color:darkgoldenrod; } /*Color of underline*/
-.tabs .tab a:focus.active { color:darkgoldenrod; /*Custom Text Color While Active*/ background-color: #ffe8ae; /*Custom Background Color While Active*/ }
+.tabs .tab a{ color:cornflowerblue; } /*Black color to the text*/
+.tabs .tab a:hover { background-color:grey; color:cornflowerblue; } /*Text color on hover*/
+.tabs .tab a.active { background-color:#grey; color:cornflowerblue; } /*Background and text color when a tab is active*/
+.tabs .indicator { background-color:darkblue; } /*Color of underline*/
+.tabs .tab a:focus.active { color:darkblue; /*Custom Text Color While Active*/ background-color: #ffe8ae; /*Custom Background Color While Active*/ }
 
 	.card .card-image img {position:absolute;}
 	#doc li a { background-color:ghostwhite; }
