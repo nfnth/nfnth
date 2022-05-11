@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><title>Nf Nth · Deed Domain</title>
+<head><title>Nf|Nth · Deed Domain</title>
 
 <meta http-equiv="Content-Language" content="en-US">
 <meta charset="UTF-8" />
@@ -29,9 +29,9 @@
 
     <!-- desktop -->
     <ul class="hide-on-med-and-down">
-	<li id="doc-list"><a id="docs" href="#!" data-target="doc"><i class="material-icons left">sticky_note_2</i>LEARN<i class="material-icons right">arrow_drop_down</i></a></li>
-	<li id="map-list"><a onclick="showView('list'); showList('domain');"><i class="material-icons left">map</i>EXPLORE</a></li>
-        <li id="list-list"><a onclick="openInNewTab('https://github.com/nfnth');"><i class="material-icons left">settings</i>ABOUT</a></li>
+	<li id="doc-list"><a id="docs" href="#!" data-target="doc"><i class="material-icons left">sticky_note_2</i>READ<i class="material-icons right">arrow_drop_down</i></a></li>
+	<li id="map-list"><a onclick="showView('list'); showList('domain');"><i class="material-icons left">map</i>TRACK/a></li>
+        <li id="list-list"><a onclick="openInNewTab('https://nfnth.com/res/civ');"><i class="material-icons left">tsunami</i>EXPLORE</a></li>
         <li style="height:64px;" id="search-list">
         	<a style="height:inherit; padding-right:0;"><i onclick="$('#search').focus();" style="height:inherit; padding-right:16px;" class="material-icons">search</i>
         		<div id="search-box" class="input-field" style="height:inherit;">
@@ -46,16 +46,16 @@
 	<li><a onclick="showDoc('PLANME');"><i class="material-icons">chair</i>On Deed to Domain</a></li>
 	<li class="divider"></li>
     	<li><a onclick="showDoc('README');"><i class="material-icons">grass</i>NfNth Field Guide</a></li>
-	<li><a onclick="showDoc('nfn');">><i class="material-icons"><span class="material-icons-outlined">park</span></i>About NFN Trade</a></li>
+	<li><a onclick="showDoc('nfn');"><i class="material-icons"><span class="material-icons-outlined">park</span></i>About NFN Trade</a></li>
 	<li class="divider"></li>
     	<li><a onclick="buildDoc('urland');"><i class="material-icons">flag</i>Citizen's Journal</a></li></ul>
 
 <!-- panel -->
-<ul id="user-pane" class="sidenav loader" style="visibility:hidden;">
+<ul id="user-pane" class="sidenav loader" style="visibility:hidden;overflow:hidden;">
 	<li><div class="user-view z-depth-1 amber lighten-5" style="display: flex;margin: auto; padding: 0;align-items: center; padding-left:12px;"><span id="ocuros" style="cursor: pointer;margin:auto; color:black!important; font-size:16px;" onclick="openInNewTab('https://github.com/nfnth/nfnth'); $('#user-pane').sidenav('close');" class="new badge amber accent-1" data-badge-caption=""></span>
         <img id="user-pic" style="opacity:0.5; height: 48px;position:absolute; right:0; margin: 12px; cursor:pointer;" onclick="openInNewTab('https://github.com/nfnth'); $('#user-pane').sidenav('close');"/><img id="user-pic2" style="opacity:0.5; height: 48px;cursor:pointer;margin:12px;" onclick="openInNewTab('https://github.com/nfnth'); $('#user-pane').sidenav('close');"/></div></li>
-	<li><div class="card" style="border-radius:12px;display:inline-block;padding:12px;>
-    <!--<div class="card-content"></div>-->
+	<li style="margin-top:16px;margin-bottom:12px;"><a id="maker" class="btn waves-effect waves-light amber z-depth-1 lighten-3" style="width: 240px;margin: auto;border-radius: 8px;color:black;" onclick="if (walletAddress != '') {desetup(); $('#user-pane').sidenav('close');}"><i class="material-icons left">logout</i>Connect</a></li>
+	<li style="height:100%;">
     <div class="card-tabs">
 	<ul class="tabs tabs-fixed-width z-depth-1">
         	<li class="tab amber lighten-5"><a class="active" href="#test4">Domain</a></li>
@@ -66,7 +66,7 @@
   	<li><a class="waves-effect" onclick="if (walletAddress != '') {copyClip(walletAddress);}"><i class="material-icons">alternate_email</i><span id="myAdd">My Wallet Address</span></a></li>
   	<li><a class="waves-effect"><i class="material-icons">toll</i><span id="myETH">My ETH Balance</span></a></li>
 	<li><a class="waves-effect"><i class="material-icons">inventory_2</i><span id="myArt">My Artifacts</span></a></li>
-	<li style="margin-top:16px;margin-bottom:12px;"><a id="maker" class="btn waves-effect waves-light amber z-depth-1 lighten-3" style="width: 240px;margin: auto;border-radius: 8px;color:black;" onclick="if (walletAddress != '') {desetup(); $('#user-pane').sidenav('close');}"><i class="material-icons left">logout</i>Disconnect</a></li>
+	
   	<li><div style="margin-top:0;" class="divider"></div></li>
   	<!--<i class="material-icons left">calculate</i>-->
   	<li><a class="subheader">Domain Information</a></li>
@@ -78,14 +78,7 @@
 		</div>
       <div id="test5"><div id="registry" class="collection" style="overflow:auto;"></div>
 		<!--<div class="hoverable" style="display:flex; justify-items:center;width:800px;max-width:80%;">Purchase Collectible</div>-->
-		
-		
-		</div>
-      </div></div>
-		
-		
-		</li>
-	</ul>
+		</div></div></div></li></ul>
 
 <!-- view -->
 <div id="home" style="text-align:center;visibility:hidden; width:100%; z-index:1; padding-top: 54px;" class="content loader print-help">
@@ -102,7 +95,7 @@
     <div id="list" class="content loader pane" style="overflow-y: auto; height: 95%;">
 	    <!-- filter -->
         <div id="list-filter" class="z-depth-1 grey lighten-5" style="display:flex; justify-content: center; padding-top: 24px; padding-bottom:12px; margin-bottom: -6px; align-items:center;position: fixed; z-index: 1;">
-        	<div class="hide-on-med-and-down"><a class="waves-effect waves-amber btn-flat" onclick="showView('list'); showList('open');"><i id="select-icon" class="material-icons left">filter_list</i><span>Filter</span></a><a id="dropdown-full" class='dropdown-trigger btn-flat' style="margin-right:8px;" href='#' data-target='dropdown1'><i class="material-icons left">sort</i>Sort</a><a id="dropdown-full2" class="waves-effect waves-light amber lighten-2 btn dropdown-trigger" href='#' data-target='dropdown2' style="margin-right:8px;" ><i id="view-icon" class="material-icons left">layers</i><span id="view-name">Layers</span></a></div></div>
+        	<div class="hide-on-med-and-down"><a class="waves-effect waves-amber btn-flat" onclick="showView('list'); showList('open');"><i id="select-icon" class="material-icons left">filter_list</i><span>Filter</span></a><a class='btn-flat' style="margin-right:8px;"><i class="material-icons left">select_all</i>Select</a><a id="dropdown-full" class='dropdown-trigger btn-flat' style="margin-right:8px;" href='#' data-target='dropdown1'><i class="material-icons left">sort</i>Sort</a><a id="dropdown-full2" class="waves-effect waves-light amber lighten-2 btn dropdown-trigger" href='#' data-target='dropdown2' style="margin-right:8px;" ><i id="view-icon" class="material-icons left">layers</i><span id="view-name">Layers</span></a></div></div>
 		<div class="screen-hide"><a class="waves-effect waves-light btn-flat" style="margin-right:8px;" onclick="showView('list'); showList('open');"><i class="material-icons">filter_list</i></a><a class="waves-effect waves-light btn-flat disabled" onclick="showView('list'); showList('open');"><i class="material-icons">deselect</i></a><a id="dropdown-mobile" class="waves-effect waves-light btn-flat dropdown-trigger" style="margin-right:8px;" href="#" data-target="dropdown2"><i class="material-icons">sort</i></a><a class="waves-effect waves-light btn amber lighten-2" style="margin-right:8px;display:inline-flex;align-items:center;" onclick="switchView();"><i id="view-icon2" class="material-icons">grid_view</i>&nbsp;&nbsp;<span id="view-name2">Grid</span></a></div></div>
 		
 		<div style="width:100%; display:flex;">
