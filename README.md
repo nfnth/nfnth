@@ -1,5 +1,5 @@
 
-###  [📚📚 NfNth](https://github.com/nfnth/nfnth) · **Deed Domain** Survey
+###  [📚📚 Nf·Nth](https://github.com/nfnth/nfnth) | **Deed Domain** Survey
 
 The historical guide (and game) to geocaching in the United States.
 
