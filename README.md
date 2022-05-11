@@ -3,7 +3,7 @@
 
 A collection of **deed domain** with historical guide (and game) to geocache and survey in the United States (and North America).
 
-|Collectible|Includes||
+|Content|Includes||
 |-|-|-|
 |source|· [⚙⚙](https://xn--x7ha.ws) OS, an Arch-based, *Firefox-only* distro<br/>· code to [mattdown.com](https://mattdown.com) [📚📚](https://xn--zt8ha.ws) *docs-based* app|download [here](https://xn--x7ha.ws), also on [https://github.com/nfnth/os](https://github.com/nfnth/os)|
 |digital|· raw image for each **deed domain**|download on [https://github.com/nfnth/deed](https://github.com/nfnth/deed)|
