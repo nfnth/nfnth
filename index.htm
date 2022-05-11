@@ -30,7 +30,7 @@
     <!-- desktop -->
     <ul class="hide-on-med-and-down">
 	<li id="doc-list"><a id="docs" href="#!" data-target="doc"><i class="material-icons left">sticky_note_2</i>JOURNAL<i class="material-icons right">arrow_drop_down</i></a></li>
-	<li id="map-list"><a onclick="showView('list'); showList('domain');"><i class="material-icons left">map</i>MAP</a></li>
+	<li id="map-list"><a onclick="showView('list'); showList('domain');"><i class="material-icons left">map</i>ATLAS</a></li>
         <li id="list-list"><a onclick="openInNewTab('https://nfnth.com/res/civ');"><i class="material-icons left">tsunami</i>WORLD</a></li>
         <li style="height:64px;" id="search-list">
         	<a style="height:inherit; padding-right:0;"><i onclick="$('#search').focus();" style="height:inherit; padding-right:16px;" class="material-icons">search</i>
@@ -79,8 +79,9 @@
       <div id="test5">
 	      <ul>
 		      <li style="margin-top:16px;margin-bottom:12px;">
+			      <div style="display:flex;">
 			      <a class='btn-flat' style="margin-right:8px;"><i class="material-icons left">select_all</i></a><a id="dropdown-full" class='dropdown-trigger btn-flat' style="margin-right:8px;" href='#' data-target='dropdown1'><i class="material-icons left">sort</i>/a>
-			      <a id="dropdown-full3" class="btn waves-effect waves-light amber z-depth-1 lighten-3 dropdown-trigger" style="width: 240px;margin: auto;border-radius: 8px;color:black;" href='#' data-target='dropdown3' ><i class="material-icons left">filter_list</i>Filter</a></li>
+			      <a id="dropdown-full3" class="btn waves-effect waves-light amber z-depth-1 lighten-3 dropdown-trigger" style="width: 240px;margin: auto;border-radius: 8px;color:black;" href='#' data-target='dropdown3' ><i class="material-icons left">filter_list</i>Filter</a></div></li>
 		      
 		      
 	      <li style="margin-top:16px;margin-bottom:12px;"><a id="maker" class="btn waves-effect waves-light amber z-depth-1 lighten-3" style="width: 240px;margin: auto;border-radius: 8px;color:black;" onclick="if (walletAddress != '') {desetup(); $('#user-pane').sidenav('close');}"><i class="material-icons left">flight</i>Visit</a></li>
@@ -883,6 +884,6 @@ div.active {opacity: 1;height: auto;}
 
 	.card .card-image img {position:absolute;}
 	#doc li a { background-color:ghostwhite; }
-nav ul a { color:darkgoldenrod!important; } nav ul a:hover { color:ghostwhite!important; background-color: goldenrod!important; }
+nav ul a { color:darkgoldenrod; } nav ul a:hover { color:ghostwhite!important; background-color: goldenrod!important; }
 .hide-scrollbar { overflow: auto; -ms-overflow-style: none; /* IE 11 */ scrollbar-width: none; /* Firefox 64 */ }
 .dropdown-content li>a>i { margin:0 12px 0 0; } .dropdown-content li>a, .dropdown-content li>span { color:goldenrod!important; }</style></body></html>
