@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><title>Nf|Nth · Deed Domain</title>
+<head><title>Nf·Nth | Deed Domain</title>
 
 <meta http-equiv="Content-Language" content="en-US">
 <meta charset="UTF-8" />
@@ -30,7 +30,7 @@
     <!-- desktop -->
     <ul class="hide-on-med-and-down">
 	<li id="doc-list"><a id="docs" href="#!" data-target="doc"><i class="material-icons left">sticky_note_2</i>READ<i class="material-icons right">arrow_drop_down</i></a></li>
-	<li id="map-list"><a onclick="showView('list'); showList('domain');"><i class="material-icons left">map</i>TRACK/a></li>
+	<li id="map-list"><a onclick="showView('list'); showList('domain');"><i class="material-icons left">map</i>TRACK</a></li>
         <li id="list-list"><a onclick="openInNewTab('https://nfnth.com/res/civ');"><i class="material-icons left">tsunami</i>EXPLORE</a></li>
         <li style="height:64px;" id="search-list">
         	<a style="height:inherit; padding-right:0;"><i onclick="$('#search').focus();" style="height:inherit; padding-right:16px;" class="material-icons">search</i>
@@ -38,7 +38,7 @@
           			<input id="search" type="search" onkeyup="searchResults()" style="padding-left:12px; width: calc(100% - 1rem);"><label class="label-icon" for="search" ></label><i class="material-icons" onclick="searchClear()">close</i></div></a></li></ul>
 
     <!-- user -->
-        <div id="wallet-area" class="z-depth-1 blue-grey lighten-3" style="opacity:0.75; display:flex;height:100%;" onclick="datetimeStart(); setup(); $('#user-pane').sidenav('open');">
+        <div id="wallet-area" class="z-depth-1 blue-grey lighten-3" style="opacity:0.75; display:flex;height:100%;" onclick="$('#user-pane').sidenav('open');">
             <ul><li id="setting-wallet" ><a id="wallet-icon" href="#" style="margin: 0;justify-items: center;display: flex;align-items: center; color:whitesmoke; justify-content:center;" ><i class="material-icons">account_balance_wallet</i><span class="mobile-hide">&nbsp;CONNECT</span></a></li></ul></div></div></nav>
 
 <!-- dropdown -->
@@ -52,21 +52,21 @@
 
 <!-- panel -->
 <ul id="user-pane" class="sidenav loader" style="visibility:hidden;overflow:hidden;">
-	<li><div class="user-view z-depth-1 amber lighten-5" style="display: flex;margin: auto; padding: 0;align-items: center; padding-left:12px;"><span id="ocuros" style="cursor: pointer;margin:auto; color:black!important; font-size:16px;" onclick="openInNewTab('https://github.com/nfnth/nfnth'); $('#user-pane').sidenav('close');" class="new badge amber accent-1" data-badge-caption=""></span>
+	<li><div class="user-view z-depth-1 blue-grey lighten-3" style="display: flex;margin: auto; padding: 0;align-items: center; padding-left:12px;"><span id="ocuros" style="cursor: pointer;margin:auto; color:black!important; font-size:16px;" onclick="switchTime();" class="new badge amber accent-1" data-badge-caption="">10.OS v1.08</span>
         <img id="user-pic" style="opacity:0.5; height: 48px;position:absolute; right:0; margin: 12px; cursor:pointer;" onclick="openInNewTab('https://github.com/nfnth'); $('#user-pane').sidenav('close');"/><img id="user-pic2" style="opacity:0.5; height: 48px;cursor:pointer;margin:12px;" onclick="openInNewTab('https://github.com/nfnth'); $('#user-pane').sidenav('close');"/></div></li>
-	<li style="margin-top:16px;margin-bottom:12px;"><a id="maker" class="btn waves-effect waves-light amber z-depth-1 lighten-3" style="width: 240px;margin: auto;border-radius: 8px;color:black;" onclick="if (walletAddress != '') {desetup(); $('#user-pane').sidenav('close');}"><i class="material-icons left">logout</i>Connect</a></li>
+	
 	<li style="height:100%;">
     <div class="card-tabs">
 	<ul class="tabs tabs-fixed-width z-depth-1">
-        	<li class="tab amber lighten-5"><a class="active" href="#test4">Domain</a></li>
-		<li class="tab amber lighten-5"><a href="#test5">Deed</a></li></ul></div>
+        	<li class="tab amber lighten-5"><a class="active" href="#test4">Deed</a></li>
+		<li class="tab amber lighten-5"><a href="#test5">Domain</a></li></ul></div>
     <div class="card-content  amber lighten-5 z-depth-1">
 	<div id="test4">
     <ul><li><a class="subheader">Wallet Information</a></li>
   	<li><a class="waves-effect" onclick="if (walletAddress != '') {copyClip(walletAddress);}"><i class="material-icons">alternate_email</i><span id="myAdd">My Wallet Address</span></a></li>
   	<li><a class="waves-effect"><i class="material-icons">toll</i><span id="myETH">My ETH Balance</span></a></li>
 	<li><a class="waves-effect"><i class="material-icons">inventory_2</i><span id="myArt">My Artifacts</span></a></li>
-	
+	<li style="margin-top:16px;margin-bottom:12px;"><a id="maker" class="btn waves-effect waves-light amber z-depth-1 lighten-3" style="width: 240px;margin: auto;border-radius: 8px;color:black;" onclick="if (walletAddress != '') {desetup(); $('#user-pane').sidenav('close');}"><i class="material-icons left">logout</i>Connect</a></li>
   	<li><div style="margin-top:0;" class="divider"></div></li>
   	<!--<i class="material-icons left">calculate</i>-->
   	<li><a class="subheader">Domain Information</a></li>
@@ -76,7 +76,9 @@
         <option selected="selected">No domain selected</option><option>tactician.us (demo)</option></select></li>
 	<li style="margin-top:12px;"><a id="poster" class="btn waves-effect waves-light amber z-depth-1 lighten-2 disabled" style="width: 240px;margin: auto;border-radius: 8px;margin-bottom:12px;color:black;" onclick="if (walletAddress != '') {showView('map'); map.resize(); addArtifact(); $('#user-pane').sidenav('close');}"><i class="material-icons left">build</i>Build Artifact</a></li></ul>
 		</div>
-      <div id="test5"><div id="registry" class="collection" style="overflow:auto;"></div>
+      <div id="test5">
+	      <div style="margin-top:16px;margin-bottom:12px;"><a id="maker" class="btn waves-effect waves-light amber z-depth-1 lighten-3" style="width: 240px;margin: auto;border-radius: 8px;color:black;" onclick="if (walletAddress != '') {desetup(); $('#user-pane').sidenav('close');}"><i class="material-icons left">flight</i>Visit</a></div>
+	      <div id="registry" class="collection" style="overflow:auto;"></div>
 		<!--<div class="hoverable" style="display:flex; justify-items:center;width:800px;max-width:80%;">Purchase Collectible</div>-->
 		</div></div></div></li></ul>
 
@@ -776,6 +778,10 @@ function fly(dest) {
     map.flyTo({ center: dest, zoom: setZoom, bearing: 0, speed: 0.8,  curve: 1,  easing: (t) => t, essential: true }); }
 
 // console
+var onTime = false;
+function switchTime() {
+	if (onTime) { $('#ocuros').attr('data-badge-caption', "10.OS v1.08");   onTime = false; } else { dateTimeStart(); onTime = true; }
+}
 function datetimeStart() {
     	var current = new Date(); // timestamp, milliseconds since 1970 (?) vs. milliseconds (UTC)
     	var yyyy = current.getFullYear(), MM = current.getMonth() + 1; if (MM < 10) { MM = "0" + MM.toString(); }
