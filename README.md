@@ -5,8 +5,8 @@ A collection of **deed domain** and historical guide (and game) to geocache and 
 
 |Version|Includes||
 |-|-|-|
-|deed domain|· ownership on [nfnth.com](https://nfnth.com)<br/>· access to build artifact|available on [OpenSea](https://opensea.io/nfnth) and/or [SolSea](https://solsea.io/login)|
-|electronic copy|· latest [10.OS]() distro<br/>· access to site content and code|[download ISO](https://github.com/nfnth/os) and/or [GitHub repo](https://github.com/nfnth/os)|
+|NFT|· ownership on [nfnth.com](https://nfnth.com)<br/>· access to build artifact|available on [OpenSea](https://opensea.io/nfnth) and/or [SolSea](https://solsea.io/login)|
+|electronic copy|· latest [10.OS]() distro *v1.08*<br/>· access to site content and code|[download ISO](https://github.com/nfnth/os) and/or [GitHub repo](https://github.com/nfnth/os)|
 |physical copy|· copy of [Civilian Complex]()<br/>· Native American 2021 $1 Coin|available on [Stripe](https://buy.stripe.com/5kA4hL5NB6Qv7Ty5kk)|
 
 <a href="https://buy.stripe.com/5kA4hL5NB6Qv7Ty5kk" target="_blank"><img style="margin-left:24px; width:75px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="img/coin.jpg" alt="Purchase NfNth Collectible" /></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://opensea.io/nfnth" title="Buy on OpenSea" target="_blank"><img style="margin-left:24px; width:160px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="https://storage.googleapis.com/opensea-static/Logomark/Badge%20-%20Available%20On%20-%20Light.png" alt="Available on OpenSea" /></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://solsea.io/login" title="Buy on SolSea" target="_blank"><img style="margin-left:24px; width:140px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="img/SolSea_Logo.svg" alt="Available on SolSea" /></a>
