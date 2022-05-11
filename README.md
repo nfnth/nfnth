@@ -1,7 +1,7 @@
 
 ### [👓👓](http://xn--4p8ha.ws) [🧤🧤](http://xn--uv9ha.ws) Nf·Nth [👖👖](http://xn--7p8ha.ws) [🧦🧦](http://xn--wv9ha.ws/) on [nfnth.com](https://nfnth.com)
 
-A collection of **deed domain** with historical guide (and game) to geocache and survey in the United States.
+A collection of **deed domain** with historical guide (and game) to geocache and survey in the United States (and North America).
 
 |Version|Includes||
 |-|-|-|
