@@ -30,8 +30,8 @@
     <!-- desktop -->
     <ul class="hide-on-med-and-down">
 	<li id="doc-list"><a id="docs" href="#!" data-target="doc"><i class="material-icons left">sticky_note_2</i>JOURNAL<i class="material-icons right">arrow_drop_down</i></a></li>
-	<li id="map-list"><a onclick="showView('list'); showList('domain');"><i class="material-icons left">map</i>TRACK</a></li>
-        <li id="list-list"><a onclick="openInNewTab('https://nfnth.com/res/civ');"><i class="material-icons left">tsunami</i>EXPLORE</a></li>
+	<li id="map-list"><a onclick="showView('list'); showList('domain');"><i class="material-icons left">map</i>MAP</a></li>
+        <li id="list-list"><a onclick="openInNewTab('https://nfnth.com/res/civ');"><i class="material-icons left">tsunami</i>WORLD</a></li>
         <li style="height:64px;" id="search-list">
         	<a style="height:inherit; padding-right:0;"><i onclick="$('#search').focus();" style="height:inherit; padding-right:16px;" class="material-icons">search</i>
         		<div id="search-box" class="input-field" style="height:inherit;">
@@ -79,11 +79,8 @@
       <div id="test5">
 	      <ul>
 		      <li class="no-padding" >
-        <ul class="collapsible collapsible-accordion" style="margin-top:0;">
-          <li>
-            <a class="collapsible-header">Options<i class="material-icons">arrow_drop_down</i></a>
-            <div class="collapsible-body">
-              <div style="display:flex;flex-direction:column;"><a class='btn-flat' style="margin-right:8px;"><i class="material-icons left">select_all</i>Select</a><a id="dropdown-full" class='dropdown-trigger btn-flat' style="margin-right:8px;" href='#' data-target='dropdown1'><i class="material-icons left">sort</i>Sort</a><a id="dropdown-full3" class="waves-effect waves-light amber lighten-2 btn dropdown-trigger" href='#' data-target='dropdown3' style="margin-right:8px;" ><i id="view-icon" class="material-icons left">filter_list</i><span id="view-name">Filter</span></a></div></div></li></ul></li>
+			      <div style="display:flex;flex-direction:column;"><a class='btn-flat' style="margin-right:8px;"><i class="material-icons left">select_all</i>Select</a><a id="dropdown-full" class='dropdown-trigger btn-flat' style="margin-right:8px;" href='#' data-target='dropdown1'><i class="material-icons left">sort</i>Sort</a><a id="dropdown-full3" class="waves-effect waves-light amber lighten-2 btn dropdown-trigger" href='#' data-target='dropdown3' style="margin-right:8px;" ><i id="view-icon" class="material-icons left">filter_list</i><span id="view-name">Filter</span></a></div>
+        </li>
 	      <li style="margin-top:16px;margin-bottom:12px;"><a id="maker" class="btn waves-effect waves-light amber z-depth-1 lighten-3" style="width: 240px;margin: auto;border-radius: 8px;color:black;" onclick="if (walletAddress != '') {desetup(); $('#user-pane').sidenav('close');}"><i class="material-icons left">flight</i>Visit</a></li>
 	      <li><div id="registry" class="collection" style="overflow:auto;"></div></li></ul>
 		<!--<div class="hoverable" style="display:flex; justify-items:center;width:800px;max-width:80%;">Purchase Collectible</div>-->
@@ -110,14 +107,14 @@
 		<div style="width:100%; display:flex;">
 		    <!-- map -->
     <div id="map" style="width:100%;"></div>
-       
+         <a class="btn-floating btn-large waves-effect waves-light green" onclick="addArtifact();"><i class="material-icons">add</i></a>
             
 	</div></div>
 
 <ul id='dropdown3' class='dropdown-content'>
     	<li><a href="#!" onclick="mapSat();"><i class="material-icons">grid_view</i>Category</a></li>
     	<li class="divider" tabindex="-1"></li>
-    	<li><a href="#!" onclick="mapLoc();"><i class="material-icons">view_list</i>Location</a></li><li><a href="#!" onclick="mapRoute();"><i class="material-icons">directions</i>Domain</a></li></ul>
+    	<li><a href="#!" onclick="mapLoc();"><i class="material-icons">view_list</i>Domain</a></li></ul>
 
 <ul id='dropdown2' class='dropdown-content'>
     	<li><a href="#!" onclick="mapSat();"><i class="material-icons">satellite_alt</i>Satellite</a></li>
