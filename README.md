@@ -5,7 +5,7 @@ A collection of **deed domain** with historical guide (and game) to geocache and
 
 |Collectible|Includes||
 |-|-|-|
-|physical|· copy of [Civilian Complex](https://civilplex.com) [♠♠](https://xn--b6ha.ws) paperback<br/>· *$1* Native American 2021 coin|purchase on [https://buy.stripe.com/5kA4hL5NB6Qv7Ty5kk](https://buy.stripe.com/5kA4hL5NB6Qv7Ty5kk)|
+|physical|· copy of **Civilian Complex** [♠♠](https://xn--b6ha.ws) paperback<br/>· *$1* Native American 2021 coin|purchase [here](https://civilplex.com)|
 |token (*NFT*)|· ownership on [🏳🏴](https://xn--en8hc.ws) [🏳🏳](https://xn--en8ha.ws) [Dralun](https://dralun.com) [🏴🏳](https://xn--en8hb.ws) [🏴🏴](https://xn--fn8ha.ws)<br/>· access to build on [UR.Land](https://ur.land) [🌳🌳](https://xn--wh8ha.ws)|available on [https://opensea.io/nfnth](https://opensea.io/nfnth), [SolSea](https://solsea.io/login) *pending*|
 |digital|· raw image for each **deed domain**|available on [https://github.com/nfnth/deed](https://github.com/nfnth/deed)|
 |source|· use [⚙⚙ OS](https://xn--x7ha.ws), an [Arch](https://archlinux.org/)-based, *Firefox-only* distro<br/>· code to [MattDown](https://mattdown.com) [📚📚](https://xn--zt8ha.ws) *docs-based* app|download [here](https://xn--x7ha.ws), also on [https://github.com/nfnth/os](https://github.com/nfnth/os)|
