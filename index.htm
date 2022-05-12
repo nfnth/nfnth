@@ -52,7 +52,7 @@
 
 <!-- panel -->
 <ul id="user-pane" class="sidenav loader" style="visibility:hidden;overflow:hidden;">
-	<li><div class="user-view z-depth-1 blue-grey lighten-4" style="display: flex;margin: auto; padding: 0;align-items: center; padding-left:12px;"><span id="ocuros" style="cursor: pointer;margin:auto; color:black!important; font-size:18px;border-radius: 8px; opacity: 0.7; color: white !important; font-weight: bold;" onclick="switchTime();" class="new badge amber accent-1" data-badge-caption="10.OS | v1.08"></span>
+	<li><div class="user-view z-depth-1 blue-grey lighten-4" style="display: flex;margin: auto; padding: 0;align-items: center; padding-left:12px;"><span id="ocuros" style="cursor: pointer;margin:auto; color:black!important; font-size:18px;border-radius: 8px; opacity: 0.7; font-weight: bold;" onclick="switchTime();" class="new badge amber accent-1" data-badge-caption="⚙⚙ OS | v1.08"></span>
         <img id="user-pic" style="opacity:0.6; height: 48px;position:absolute; right:0; margin: 12px; cursor:pointer;" onclick="openInNewTab('https://github.com/nfnth'); $('#user-pane').sidenav('close');"/><img id="user-pic2" style="opacity:0.6; height: 48px;cursor:pointer;margin:12px;" onclick="openInNewTab('https://github.com/nfnth'); $('#user-pane').sidenav('close');"/></div></li>
 	
 	<li style="height:100%;">
@@ -80,7 +80,7 @@
 	      <ul>
 		      <li style="margin-top:16px;margin-bottom:12px;">
 			      <div style="display:flex;">
-			      <a class='btn-flat' style="margin-right:8px;"><i class="material-icons left">select_all</i></a><a id="dropdown-full" class='dropdown-trigger btn-flat' style="margin-right:8px;" href='#' data-target='dropdown1'><i class="material-icons left">sort</i>/a>
+			      <a class='btn-flat' style="margin-right:8px;"><i class="material-icons left">select_all</i></a><a id="dropdown-full" class='dropdown-trigger btn-flat' style="margin-right:8px;" href='#' data-target='dropdown1'><i class="material-icons left">sort</i></a>
 			      <a id="dropdown-full3" class="btn waves-effect waves-light amber z-depth-1 lighten-3 dropdown-trigger" style="margin: auto;border-radius: 8px;color:black;" href='#' data-target='dropdown3' ><i class="material-icons left">filter_list</i>Filter</a></div></li>
 		      
 		      
@@ -98,7 +98,7 @@
 	    
 	<div style="  position: fixed;left: 0;top:35%;width: 100%;" ><div class="z-depth-1" style="cursor:pointer; font-size:24px;background-color: rgba(245, 245, 245, 0.8);padding-bottom: 48px;padding-top: 36px;text-align: center;align-items: center;justify-content: center;width: 100%;cursor:pointer;" >
   <div id="test6" style="padding:16px;"><img id="world-gear" height="48" width="48" style="opacity:0.5;position:absolute;" /><img id="world-gear2" height="48" width="48" style="position:absolute; opacity:0.5;" /><span style="color:darkgoldenrod; font-weight:bold; font-size:28px;border-radius: 6px;padding-left: 16px;">Nf•Nth //nfnth.com</span><br/><br/><span style="color:goldenrod; font-size:26px; font-weight:bold;vertical-align:super;">*read [trade] $explore</span></div>
-		     <div><span style="font-size:22px;color:black;">deed. domain. </span><span style="font-size:22px; color:black; font-weight:bold;">decentralized.</span><br/><span style="font-size:16px; color:black; font-weight:bold;">© 2022 Copyright, <a onclick="openInNewTab('https://github.com/nfnth');">NfNth Corp.</a></span></div></div></div></div>
+		     <div><span style="font-size:22px;color:black;">deed. domain. </span><span style="font-size:22px; color:black; font-weight:bold;">decentralized.</span><br/><a onclick="openInNewTab('https://github.com/nfnth');">NfNth Corp.</a><span style="font-size:16px; color:black; font-weight:bold;">© 2022 Copyright</span></div></div></div></div>
 
     <!-- map -->
     <div id="list" class="content loader pane" style="overflow-y: auto; height: 95%;">
@@ -789,7 +789,7 @@ function fly(dest) {
 // console
 var onTime = false;
 function switchTime() {
-	if (onTime) { $('#ocuros').attr('data-badge-caption', "10.OS v1.08");   onTime = false; } else { datetimeStart(); onTime = true; }
+	if (onTime) { $('#ocuros').attr('data-badge-caption', "⚙⚙ OS | v1.08");   onTime = false; } else { datetimeStart(); onTime = true; }
 }
 function datetimeStart() {
     	var current = new Date(); // timestamp, milliseconds since 1970 (?) vs. milliseconds (UTC)
@@ -881,7 +881,7 @@ dropdown-content li>a>i { margin:0 12px 0 0; } .dropdown-content li>a, .dropdown
 .tabs .tab a:hover { background-color:cornflowerblue; color:white; } /*Text color on hover*/
 .tabs .tab a.active { background-color:grey; color:cornflowerblue; } /*Background and text color when a tab is active*/
 .tabs .indicator { background-color:cornflowerblue; } /*Color of underline*/
-.tabs .tab a:focus.active { color:cornflowerblue; /*Custom Text Color While Active*/ background-color: lightgrey /*Custom Background Color While Active*/ }
+.tabs .tab a:focus.active { color:cornflowerblue; /*Custom Text Color While Active*/ background-color: grey /*Custom Background Color While Active*/ }
 
 	.card .card-image img {position:absolute;}
 	#doc li a { background-color:ghostwhite; }
