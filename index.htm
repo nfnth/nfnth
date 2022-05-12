@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><title>Nf|Nth · Deed Domain</title>
+<head><title>Nf | Nth · Deed Domain</title>
 
 <meta http-equiv="Content-Language" content="en-US">
 <meta charset="UTF-8" />
@@ -81,7 +81,7 @@
 		      <li style="padding-top:16px;margin-bottom:12px;display: flex;justify-content: space-evenly;">
 			      <div style="display:flex;">
 			      <a class='btn-flat' style="margin-right:8px;"><i class="material-icons left">select_all</i></a><a id="dropdown-full" class='dropdown-trigger btn-flat' style="margin-right:8px;" href='#' data-target='dropdown1'><i class="material-icons left">sort</i></a>
-			      <a class="waves-effect waves-light btn amber lighten-2" style="margin-right:8px;display:inline-flex;align-items:center;" onclick="switchView();"><i id="view-icon2" class="material-icons">grid_view</i><span id="view-name2">Grid</span></a></div></li>
+			      <a class="waves-effect waves-light btn amber lighten-2" style="margin-right:8px;display:inline-flex;align-items:center;" onclick="switchView();"><i id="view-icon2" class="material-icons">grid_view</i><span id="view-name2">&nbsp;&nbsp;Cat</span></a></div></li>
  
 	      <li style="margin-top:16px;margin-bottom:12px;"><a id="maker" class="btn waves-effect waves-light amber z-depth-1 lighten-3 disabled" style="width: 240px;margin: auto;border-radius: 8px;color:black;" onclick="if (walletAddress != '') {desetup(); $('#user-pane').sidenav('close');}"><i class="material-icons left">temple_buddhist</i>Visit</a></li>
 	      <li><div id="registry" class="collection" style="overflow:auto;"></div></li></ul>
@@ -212,7 +212,7 @@ async function initial() {
 	var gear4b = Math.floor(Math.random() * (42 - 1 + 1)) + 1; document.getElementById('world-gear2').src = "img/gear/gear" + gear4b.toString() + ".png";
 	//$("#lister").prop("checked", false);
     $('#docs').dropdown({ constrainWidth: false, coverTrigger: false } ); $('#doc-hide').dropdown({ constrainWidth: false, coverTrigger: false } ); //hover: true 
-			$('#dropdown-full').dropdown({ constrainWidth: false }); $('#dropdown-mobile').dropdown(); $('#dropdown-full2').dropdown({ constrainWidth: true }); $('#dropdown-full3').dropdown({ constrainWidth: false });
+			$('#dropdown-full').dropdown({ constrainWidth: false }); $('#dropdown-mobile').dropdown(); $('#dropdown-full2').dropdown({ constrainWidth: false }); $('#dropdown-full3').dropdown({ constrainWidth: false });
     $('#user-pane').sidenav({ edge: 'right' }); $('.tooltipped').tooltip();
     
 $('.collapsible').collapsible();
@@ -400,7 +400,7 @@ function showList(area) {  $("#registry").html(''); $("#registry").hide(); if (f
     $("#registry").show(); $('img').on('dragstart', function(evt) { return false; }); }
 
 var showGrid = true;
-function switchView() { if (showGrid) { showList('grid'); $("#view-name").html("List"); $("#view-icon2").html("view_list"); $("#view-name2").html("List"); $("#view-icon").html("view_list"); showGrid = false; } else { showList('domain'); $("#view-name").html("Grid"); $("#view-icon").html("grid_view"); $("#view-name2").html("Grid"); $("#view-icon2").html("grid_view"); showGrid = true;} }
+function switchView() { if (showGrid) { showList('open'); $("#view-icon2").html("view_list"); $("#view-name2").html("List"); showGrid = false; } else { showList('domain'); $("#view-name2").html("Cat"); $("#view-icon2").html("grid_view"); showGrid = true;} }
 function adjustSort(full) { //$("option[value='09']").attr("disabled", "disabled");
     $('#select-sort').empty();
     $('#select-sort').append('<option value="" selected disabled>Sort...</option>');
