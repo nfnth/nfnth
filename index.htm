@@ -105,7 +105,7 @@
 	    <!-- filter -->
         <div id="list-filter" class="z-depth-1 grey lighten-5" style="display:flex; justify-content: center; padding-top: 24px; padding-bottom:12px; margin-bottom: -6px; align-items:center;position: fixed; z-index: 1; padding-right:12px;">
         	<div class="hide-on-med-and-down"><a class="waves-effect waves-amber btn-flat" onclick="mapLoc();"><i id="select-icon" class="material-icons left">gps_fixed</i><span>Location</span></a><a class='btn-flat' style="margin-right:8px;" onclick="mapRand();"><i class="material-icons left">shuffle</i>Random</a><a id="dropdown-full2" class="waves-effect waves-light amber lighten-2 btn dropdown-trigger" href='#' data-target='dropdown2' style="margin-right:8px;" ><i id="view-icon" class="material-icons left">layers</i><span id="view-name">Layers</span></a></div></div>
-		<div class="screen-hide"><a class="waves-effect waves-amber btn-flat" onclick="mapLoc();"><i id="select-icon" class="material-icons left">gps_fixed</i><span>Location</span></a><a class='btn-flat' style="margin-right:8px;" onclick="mapRand();"><i class="material-icons left">shuffle</i>Random</a><a id="dropdown-full4" class="waves-effect waves-light btn amber lighten-2 dropdown-trigger" style="margin-right:8px;display:inline-flex;align-items:center;" href='#' data-target='dropdown2'><i id="view-icon2" class="material-icons left">layers</i><span id="view-name2">Layers</span></a></div></div>
+		<div class="screen-hide"><a class="waves-effect waves-amber btn-flat" onclick="mapLoc();"><i id="select-icon" class="material-icons left">gps_fixed</i><span>Location</span></a><a class='btn-flat' style="margin-right:8px;" onclick="mapRand();"><i class="material-icons left">shuffle</i>Random</a><a id="dropdown-full4" class="waves-effect waves-light btn amber lighten-2 dropdown-trigger" style="margin-right:8px;display:inline-flex;align-items:center;" href='#' data-target='dropdown3'><i id="view-icon2" class="material-icons left">layers</i><span id="view-name2">Layers</span></a></div></div>
 		
 		<div style="width:100%; display:flex;">
 		    <!-- map -->
@@ -113,6 +113,12 @@
     <div id="map-tool" class="fixed-action-btn">
   <a class="btn-floating btn-large waves-effect waves-light green" onclick="addArtifact();">
     <i class="large material-icons">add</i></a></div></div></div>
+<ul id='dropdown1' class='dropdown-content'>
+    <li><a href="#!">Name &#8595;</a></li><li><a href="#!">Name &#8593;</a></li>
+    <li class="divider" tabindex="-1"></li>
+    <li><a href="#!">DateTime &#8593;</a></li><li><a href="#!">DateTime &#8595;</a></li>
+<li class="divider" tabindex="-1"></li>
+<li><a href="#!">Color &#8595;</a></li><li><a href="#!">Color &#8593;</a></li></ul>
 
 <ul id='dropdown2' class='dropdown-content'>
     	<li id="map-sat"><a href="#!" onclick="mapSat();"><i class="material-icons">satellite_alt</i>Satellite</a></li>
@@ -121,27 +127,34 @@
 	<li class="divider" tabindex="-1"></li>
 	<li id="map-route"><a href="#!" onclick="mapRoute();"><i class="material-icons">route</i>Story</a></li></ul>
 
-<ul id='dropdown1' class='dropdown-content'>
-    <li><a href="#!">Name &#8595;</a></li><li><a href="#!">Name &#8593;</a></li>
-    <li class="divider" tabindex="-1"></li>
-    <li><a href="#!">DateTime &#8593;</a></li><li><a href="#!">DateTime &#8595;</a></li>
-<li class="divider" tabindex="-1"></li>
-<li><a href="#!">Color &#8595;</a></li><li><a href="#!">Color &#8593;</a></li></ul>
-	
+<ul id='dropdown3' class='dropdown-content'>
+    	<li id="map-sat"><a href="#!" onclick="mapSat();"><i class="material-icons">satellite_alt</i>Satellite</a></li>
+    	<li class="divider" tabindex="-1"></li>
+    	<li id="map-dir"><a href="#!" onclick="mapDir();"><i class="material-icons">directions</i>Directions</a></li>
+	<li class="divider" tabindex="-1"></li>
+	<li id="map-route"><a href="#!" onclick="mapRoute();"><i class="material-icons">route</i>Story</a></li></ul>
+
+
+<ul id='dropdown4' class='dropdown-content'>
+    	<li id="map-sat"><a href="#!" onclick="mapSat();"><i class="material-icons">satellite_alt</i>Basic</a></li>
+    	<li class="divider" tabindex="-1"></li>
+    	<li id="map-dir"><a href="#!" onclick="mapDir();"><i class="material-icons">directions</i>Advanced</a></li>
+	<li class="divider" tabindex="-1"></li>
+	<li id="map-route"><a href="#!" onclick="mapRoute();"><i class="material-icons">route</i>Profile</a></li></ul>
+	<!--recipe, sequence, graph-->
     <!-- search -->
     <div id="results" style="margin:80; display:none;" class="content loader pane">search...</div>
 
     <!-- editor -->
     <div id="editor" class="content loader pane scale-transition scale-out">
-        <div style="display:flex;  align-items: center; justify-content: space-evenly; margin:12px; margin-top:16px;">
-		<div class="input-field col s6"><i class="material-icons prefix">event</i><input id="opener" type="text" class="validate"><label for="opener" >Name</label></div></div>
+       
 	    
 <div style="display:flex;  align-items: center; justify-content: center; margin:12px;">
-            <i class="material-icons left">dynamic_feed</i>
-                <select id="editor-template" onchange="setTemplate();">
-                    <optgroup label="Basic">
-                        <option>Empty</option><option>Profile</option></optgroup>
-                        <optgroup label="Advanced"><option>Recipe</option><option>Instruction</option><option>Sequence</option><option>Graph</option></optgroup></select></div>
+	<a onclick="clearEditor();" class="waves-effect waves-grey btn-flat"><i class="material-icons left">refresh</i>Clear</a>
+                <a onclick="showPreview();" class="waves-effect waves-grey btn-flat"><i class="material-icons left">web_asset</i>Preview</a>
+	<a id="dropdown-full5" class="waves-effect waves-light amber lighten-2 btn dropdown-trigger" href='#' data-target='dropdown4' style="margin-right:8px;" ><i id="view-icon" class="material-icons left">dynamic_feed</i><span id="view-name">Template</span></a></div>
+  
+
         <div id="pad" class="z-depth-2" contentEditable="true" style="text-align:left; overflow-y: auto; width:90%; border:1px solid darkgrey; box-shadow: 1px 1px beige; border-radius: 8px;height: 100%;padding: 12px;margin:auto;font-size:20px;">...enter content here...</div><br/>
         <div style="display:flex;justify-content:space-between;">
             <div style="display:flex;  justify-content: left; margin-left:20%;  align-items:center;">
@@ -150,9 +163,7 @@
                 <div class="chip">file1.png<i class="close material-icons">close</i></div></div></div>
 
         <div style="display:flex; justify-content:space-between; margin:24px;position:sticky;bottom:24px;padding-right:48px;width:100%;">
-            <div>
-                <a onclick="clearEditor();" class="waves-effect waves-grey btn-flat"><i class="material-icons left">refresh</i>Clear</a>
-                <a onclick="showPreview();" class="waves-effect waves-grey btn-flat"><i class="material-icons left">web_asset</i>Preview</a></div>
+            
             <div>
                 <a onclick="pullArtifact($('#opener').val()); showView('map');" class="waves-effect waves-green green btn"><i class="material-icons right">east</i>Continue</a></div>
             <div id="show-progress" class="progress" style="display:none;"><div class="indeterminate"></div></div></div></div>
@@ -212,7 +223,7 @@ async function initial() {
 	var gear4b = Math.floor(Math.random() * (42 - 1 + 1)) + 1; document.getElementById('world-gear2').src = "img/gear/gear" + gear4b.toString() + ".png";
 	//$("#lister").prop("checked", false);
     $('#docs').dropdown({ constrainWidth: false, coverTrigger: false } ); $('#doc-hide').dropdown({ constrainWidth: false, coverTrigger: false } ); //hover: true 
-			$('#dropdown-full').dropdown({ constrainWidth: false }); $('#dropdown-mobile').dropdown(); $('#dropdown-full2').dropdown({ constrainWidth: false }); $('#dropdown-full3').dropdown({ constrainWidth: false }); $('#dropdown-full4').dropdown({ constrainWidth: false });
+			$('#dropdown-full').dropdown({ constrainWidth: false }); $('#dropdown-mobile').dropdown(); $('#dropdown-full2').dropdown({ constrainWidth: false }); $('#dropdown-full3').dropdown({ constrainWidth: false }); $('#dropdown-full4').dropdown({ constrainWidth: false }); $('#dropdown-full5').dropdown({ constrainWidth: false });
     $('#user-pane').sidenav({ edge: 'right' }); $('.tooltipped').tooltip();
     
 $('.collapsible').collapsible();
