@@ -110,12 +110,9 @@
 		<div style="width:100%; display:flex;">
 		    <!-- map -->
     <div id="map" class="content loader pane" style="width:100%;"></div>
-			<div id="map-tool" class="fixed-action-btn">
+    <div id="map-tool" class="fixed-action-btn">
   <a class="btn-floating btn-large waves-effect waves-light green" onclick="addArtifact();">
-    <i class="large material-icons">add</i>
-  </a>
-
-</div></div></div>
+    <i class="large material-icons">add</i></a></div></div></div>
 
 <ul id='dropdown3' class='dropdown-content'>
     	<li><a href="#!" onclick="mapSat();"><i class="material-icons">grid_view</i>Category</a></li>
@@ -217,7 +214,7 @@ var gear4 = Math.floor(Math.random() * (42 - 1 + 1)) + 1; document.getElementByI
 var gear4b = Math.floor(Math.random() * (42 - 1 + 1)) + 1; document.getElementById('world-gear2').src = "img/gear/gear" + gear4b.toString() + ".png";
 	//$("#lister").prop("checked", false);
     $('#docs').dropdown({ constrainWidth: false, coverTrigger: false } ); $('#doc-hide').dropdown({ constrainWidth: false, coverTrigger: false } ); //hover: true 
-			$('#dropdown-full').dropdown(); $('#dropdown-mobile').dropdown(); $('#dropdown-full2').dropdown({ constrainWidth: false }); $('#dropdown-full3').dropdown({ constrainWidth: false });
+			$('#dropdown-full').dropdown({ constrainWidth: true }); $('#dropdown-mobile').dropdown(); $('#dropdown-full2').dropdown({ constrainWidth: true }); $('#dropdown-full3').dropdown({ constrainWidth: false });
     $('#user-pane').sidenav({ edge: 'right' }); $('.tooltipped').tooltip();
     
 $('.collapsible').collapsible();
