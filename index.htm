@@ -51,7 +51,7 @@
     	<li><a onclick="showDoc('README');"><i class="material-icons">grass</i>NfNth Field Guide</a></li>
 	<li><a onclick="showDoc('nfn');"><i class="material-icons"><span class="material-icons-outlined">park</span></i>About NFN Trade</a></li>
 	<li class="divider"></li>
-    	<li><a onclick="showView('editor'); changeFocus();"><i class="material-icons">flag</i>Citizen's Notepad...</a></li></ul>
+    	<li><a onclick="showView('editor'); changeFocus();"><i class="material-icons">edit</i>Citizen's Journal...</a></li></ul>
 
 <!-- panel -->
 <ul id="user-pane" class="sidenav loader" style="visibility:hidden;overflow:hidden;">
@@ -138,7 +138,7 @@
 		<div class="input-field col s6"><i class="material-icons prefix">title</i><input id="opener" type="text" class="validate"><label for="opener" >Name</label></div></div>
 	    
 <div style="display:flex;  align-items: center; justify-content: space-evenly; margin:12px; margin-top:24px;">
-            <a onclick="showView('map');" class="waves-effect waves-grey btn grey"><i class="material-icons left">west</i>Back</a>
+            <i class="material-icons left">dynamic_feed</i>
                 <select id="editor-template" onchange="setTemplate();">
                     <optgroup label="Basic">
                         <option>Empty</option><option>Profile</option></optgroup>
@@ -150,9 +150,7 @@
                 <div class="hiddenfile"><input name="upload" type="file" id="fileinput" onchange="checkFile();" multiple="multiple"/></div>
                 <div class="chip">file1.png<i class="close material-icons">close</i></div></div></div>
 	    
-
-	<div style="display:flex;  align-items: center; justify-content: space-evenly; margin:12px; margin-top:24px;">
-		<div id="editColor" class="chip z-depth-1 waves-effect waves-blue blue-grey lighten-2" style="display:flex; color:white; align-items:center; justify-content:center; width:60px;" onclick="colorStart();"><div style="display:flex;"><i id="pal" class="material-icons">palette</i></div></div>
+	
 	    <div style="visibility:hidden;width:0;position:absolute;top:0;"><input type="color" oninput="setColor();" id="favcolor" name="favcolor" value="#ff0000" style="width:0px; height:0px;opacity:0;" /></div></div>
 
         <div style="display:flex; justify-content:space-between; margin:24px;">
@@ -614,7 +612,7 @@ function setResults() { searchMatch = []; searchResult = "";
         searchResult += "<div><a href='https://'" + domains[i][4] + "'>" + domains[i][4] + "</a></div><br/>"; } }
     $('#results').html(searchResult); showView('results'); }
 
-var editContent = '<div id="header-logo" style="display: flex;justify-content: center;align-items: center; display: flex;padding:12px;"><div style="border-radius:12px; padding:12px; margin-right:12px;" class="z-depth-1 input-field col s6"><img width="48" height="48" id="editor-image" src="img/seal3.png" onclick="showView(\'editor\'); changeFocus();" /></div><div style="display:flex;"><div id="editOpen" class="chip z-depth-1 waves-effect waves-blue blue-grey lighten-2" style="display:flex; color:white; align-items:center; justify-content:center; width:60px;" onclick="showView(\'editor\'); changeFocus();"><div style="display:flex;"><i id="pal" class="material-icons">edit</i></div></div></div></div><div><span id="editor-name"></span></div><div style="display:flex;justify-content:center;margin-top:12px;margin-bottom:12px;"><a class="waves-effect waves-light btn green" onclick="sendArtifact();"><i class="material-icons left">inventory_2</i>Deploy...</a></div></div>';
+var editContent = '<div id="header-logo" style="display: flex;justify-content: center;align-items: center; display: flex;padding:12px;"><div style="border-radius:12px; padding:12px; margin-right:12px;" class="z-depth-1 input-field col s6"><img width="48" height="48" id="editor-image" src="img/seal3.png" onclick="showView(\'editor\'); changeFocus();" /></div><div style="display:flex;"><div id="editOpen" class="chip z-depth-1 waves-effect waves-blue blue-grey lighten-2" style="display:flex; color:white; align-items:center; justify-content:center; width:60px;" onclick="showView(\'editor\'); changeFocus();"><div style="display:flex;"><i id="pal" class="material-icons">edit</i></div><div id="editColor" class="chip z-depth-1 waves-effect waves-blue blue-grey lighten-2" style="display:flex; color:white; align-items:center; justify-content:center; width:60px;" onclick="colorStart();"><div style="display:flex;"><i id="pal" class="material-icons">palette</i></div></div></div></div><div><span id="editor-name"></span></div><div style="display:flex;justify-content:center;margin-top:12px;margin-bottom:12px;"><a class="waves-effect waves-light btn green" onclick="sendArtifact();"><i class="material-icons left">inventory_2</i>Deploy...</a></div></div>';
 
 function setColor() { $("#markera").css("background-color", document.getElementById('favcolor').value); $("#pal").html("done");
 $("#editColor").addClass("green"); $("#editColor").removeClass("blue-grey");
@@ -682,6 +680,74 @@ renderMt = function (text) { MathJax.texReset();
     MathJax.startup.document.clear(); MathJax.startup.document.updateDocument(); return $("#mather").html(); }); }
 
 var meta = `//name=Max Hamish|image=default.png|icon=river1.png|location=56,-32|link=https://nfnth.com|description=`
+
+var meta = `
+//name=Max Hamish|image=default.png|icon=river1.png|location=56,-32|link=https://nfnth.com|description=
+`
+var profileBasic = `
+## Welcome to my profile
+
+- Start coding...
+`
+var profileAdvanced = `
+...advanced...
+`
+var artifactRecipe = `
+[!MATH]|
+\begin{align}
+\dot{x} & = \sigma(y-x) \\
+\dot{y} & = \rho x - y - xz \\
+\dot{z} & = -\beta z + xy
+\end{align}
+|
+`
+var artifactSequence = `
+[!MERMAID]|
+sequenceDiagram
+    participant Alice
+    participant Bob
+    Alice->>John: Hello John, how are you?
+    loop Healthcheck
+        John->>John: Fight against hypochondria
+    end
+    Note right of John: Rational thoughts <br/>prevail!
+    John-->>Alice: Great!
+    John->>Bob: How about you?
+    Bob-->>John: Jolly good!
+|`
+var artifactGraph = `
+[!MERMAID]|
+graph TB
+    sq[Square shape] --> ci((Circle shape))
+
+    subgraph A
+        od>Odd shape]-- Two line<br/>edge comment --> ro
+        di{Diamond with <br/> line break} -.-> ro(Rounded<br>square<br>shape)
+        di==>ro2(Rounded square shape)
+    end
+
+    %% Notice that no text in shape are added here instead that is appended further down
+    e --> od3>Really long text with linebreak<br>in an Odd shape]
+
+    %% Comments after double percent signs
+    e((Inner / circle<br>and some odd <br>special characters)) --> f(,.?!+-*ز)
+
+    cyr[Cyrillic]-->cyr2((Circle shape Начало));
+
+     classDef green fill:#9f6,stroke:#333,stroke-width:2px;
+     classDef orange fill:#f96,stroke:#333,stro ke-width:4px;
+     class sq,e green
+     class di orange
+|`;
+
+function setTemplate() {
+    switch($('#editor-template').find(":selected").text()) {
+        case "Empty":$("#pad").html(""); break;
+        case "Profile":$("#pad").html(profileBasic); break;
+        case "Recipe":$("#pad").html(profileAdvanced); break;
+        case "Instruction":$("#pad").html(artifactRecipe); break;
+        case "Sequence":$("#pad").html(artifactSequence); break;
+        case "Graph":$("#pad").html(artifactGraph); break;} changeFocus(); }
 
 //https://docs.mapbox.com/help/tutorials/local-search-geocoding-api/ //https://docs.mapbox.com/mapbox-gl-js/example/mapbox-gl-directions/
 //"//style: 'mapbox://styles/mapbox/dark-v10'"
