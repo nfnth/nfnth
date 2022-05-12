@@ -30,7 +30,7 @@
     <!-- desktop -->
     <ul class="hide-on-med-and-down">
 	<li id="doc-list"><a id="docs" href="#!" data-target="doc"><i class="material-icons left">sticky_note_2</i>READ<i class="material-icons right">arrow_drop_down</i></a></li>
-	<li id="map-list"><a onclick="showView('list'); showList('domain');"><i class="material-icons left">map</i>MAP</a></li>
+	<li id="map-list"><a onclick="showView('list'); showList('domain');"><i class="material-icons left">map</i>TRADE</a></li>
         <li id="list-list"><a onclick="openInNewTab('https://dev.nfnth.com/res/civ');"><i class="material-icons left">tsunami</i>EXPLORE</a></li>
         <li style="height:64px;" id="search-list">
         	<a style="height:inherit; padding-right:0;"><i onclick="$('#search').focus();" style="height:inherit; padding-right:16px;" class="material-icons">search</i>
@@ -52,7 +52,7 @@
 
 <!-- panel -->
 <ul id="user-pane" class="sidenav loader" style="visibility:hidden;overflow:hidden;">
-	<li><div class="user-view z-depth-1 amber lighten-3" style="display: flex;margin: auto; padding: 0;align-items: center; padding-left:12px;"><span id="ocuros" style="cursor: pointer;margin:auto; color:black!important; font-size:18px;" onclick="switchTime();" class="new badge amber accent-1" data-badge-caption="10.OS | v1.08"></span>
+	<li><div class="user-view z-depth-1 blue-grey lighten-3" style="display: flex;margin: auto; padding: 0;align-items: center; padding-left:12px;"><span id="ocuros" style="cursor: pointer;margin:auto; color:black!important; font-size:18px;" onclick="switchTime();" class="new badge amber accent-1" data-badge-caption="10.OS | v1.08"></span>
         <img id="user-pic" style="opacity:0.5; height: 48px;position:absolute; right:0; margin: 12px; cursor:pointer;" onclick="openInNewTab('https://github.com/nfnth'); $('#user-pane').sidenav('close');"/><img id="user-pic2" style="opacity:0.5; height: 48px;cursor:pointer;margin:12px;" onclick="openInNewTab('https://github.com/nfnth'); $('#user-pane').sidenav('close');"/></div></li>
 	
 	<li style="height:100%;">
@@ -97,7 +97,7 @@
         <img src="img/world-min.jpg" class="z-depth-2" style="width:100%; margin-bottom:-6px; " />
 	    
 	<div style="  position: fixed;left: 0;top:35%;width: 100%;" ><div class="z-depth-1" style="cursor:pointer; font-size:24px;background-color: rgba(245, 245, 245, 0.8);padding-bottom: 48px;padding-top: 36px;text-align: center;align-items: center;justify-content: center;width: 100%;cursor:pointer;" >
-  <div id="test6" style="padding:16px;"><img id="world-gear" height="48" width="48" style="opacity:0.5;position:absolute;" /><img id="world-gear2" height="48" width="48" style="position:absolute; opacity:0.5;" /><span style="color:darkgoldenrod; font-weight:bold; font-size:28px;border-radius: 6px;padding-left: 16px;">Nf•Nth //nfnth.com</span><br/><br/><span style="color:goldenrod; font-size:26px; font-weight:bold;vertical-align:super;">*read [map] $explore</span></div>
+  <div id="test6" style="padding:16px;"><img id="world-gear" height="48" width="48" style="opacity:0.5;position:absolute;" /><img id="world-gear2" height="48" width="48" style="position:absolute; opacity:0.5;" /><span style="color:darkgoldenrod; font-weight:bold; font-size:28px;border-radius: 6px;padding-left: 16px;">Nf•Nth //nfnth.com</span><br/><br/><span style="color:goldenrod; font-size:26px; font-weight:bold;vertical-align:super;">*read [trade] $explore</span></div>
 		     <div><span style="font-size:22px;color:black;">deed. domain. </span><span style="font-size:22px; color:black; font-weight:bold;">decentralized.</span><br/><span style="font-size:16px; color:black; font-weight:bold;">© 2022 Copyright, <a onclick="openInNewTab('https://github.com/nfnth');">NfNth Corp.</a></span></div></div></div></div>
 
     <!-- map -->
@@ -878,10 +878,10 @@ dropdown-content li>a>i { margin:0 12px 0 0; } .dropdown-content li>a, .dropdown
 	
 	
 .tabs .tab a{ color:cornflowerblue; } /*Black color to the text*/
-.tabs .tab a:hover { background-color:ghostwhite; color:cornflowerblue; } /*Text color on hover*/
-.tabs .tab a.active { background-color:ghostwhite; color:cornflowerblue; } /*Background and text color when a tab is active*/
+.tabs .tab a:hover { background-color:darkgrey; color:cornflowerblue; } /*Text color on hover*/
+.tabs .tab a.active { background-color:grey; color:cornflowerblue; } /*Background and text color when a tab is active*/
 .tabs .indicator { background-color:cornflowerblue; } /*Color of underline*/
-.tabs .tab a:focus.active { color:cornflowerblue; /*Custom Text Color While Active*/ background-color: ghostwhite; /*Custom Background Color While Active*/ }
+.tabs .tab a:focus.active { color:ghostwhite; /*Custom Text Color While Active*/ background-color: grey /*Custom Background Color While Active*/ }
 
 	.card .card-image img {position:absolute;}
 	#doc li a { background-color:ghostwhite; }
