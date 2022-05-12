@@ -32,7 +32,7 @@
 
     <!-- desktop -->
     <ul class="hide-on-med-and-down">
-	<li id="doc-list"><a id="docs" href="#!" data-target="doc"><i class="material-icons left">sticky_note_2</i>LEARN<i class="material-icons right">arrow_drop_down</i></a></li>
+	<li id="doc-list"><a id="docs" href="#!" data-target="doc"><i class="material-icons left">sticky_note_2</i>WRITE<i class="material-icons right">arrow_drop_down</i></a></li>
 	<li id="map-list"><a onclick="showView('list'); showList('domain');"><i class="material-icons left">map</i>TRACK</a></li>
         <li id="list-list"><a onclick="openInNewTab('https://dev.nfnth.com/res/civ');"><i class="material-icons left">tsunami</i>EXPLORE</a></li>
         <li style="height:64px;" id="search-list">
@@ -51,7 +51,7 @@
     	<li><a onclick="showDoc('README');"><i class="material-icons">grass</i>NfNth Field Guide</a></li>
 	<li><a onclick="showDoc('nfn');"><i class="material-icons"><span class="material-icons-outlined">park</span></i>About NFN Trade</a></li>
 	<li class="divider"></li>
-    	<li><a onclick="buildDoc('urland');"><i class="material-icons">flag</i>Citizen's Update</a></li></ul>
+    	<li><a onclick="showView('editor'); changeFocus();"><i class="material-icons">flag</i>Citizen's Notepad...</a></li></ul>
 
 <!-- panel -->
 <ul id="user-pane" class="sidenav loader" style="visibility:hidden;overflow:hidden;">
@@ -115,11 +115,6 @@
   <a class="btn-floating btn-large waves-effect waves-light green" onclick="addArtifact();">
     <i class="large material-icons">add</i></a></div></div></div>
 
-<ul id='dropdown3' class='dropdown-content'>
-    	<li><a href="#!" onclick="mapSat();"><i class="material-icons">grid_view</i>Category</a></li>
-    	<li class="divider" tabindex="-1"></li>
-    	<li><a href="#!" onclick="mapLoc();"><i class="material-icons">view_list</i>Domain</a></li></ul>
-
 <ul id='dropdown2' class='dropdown-content'>
     	<li id="map-sat"><a href="#!" onclick="mapSat();"><i class="material-icons">satellite_alt</i>Satellite</a></li>
     	<li class="divider" tabindex="-1"></li>
@@ -140,7 +135,21 @@
     <!-- editor -->
     <div id="editor" class="content loader pane scale-transition scale-out">
         <div style="display:flex;  align-items: center; justify-content: space-evenly; margin:12px; margin-top:48px;">
-		<div class="input-field col s6"><i class="material-icons prefix">sailing</i><input id="opener" type="text" class="validate"><label for="opener" >OpenSea ID</label></div></div>
+		<div class="input-field col s6"><i class="material-icons prefix">title</i><input id="opener" type="text" class="validate"><label for="opener" >Name</label></div></div>
+	    
+<div style="display:flex;  align-items: center; justify-content: space-evenly; margin:12px; margin-top:24px;">
+            <a onclick="showView('map');" class="waves-effect waves-grey btn grey"><i class="material-icons left">west</i>Back</a>
+                <select id="editor-template" onchange="setTemplate();">
+                    <optgroup label="Basic">
+                        <option>Empty</option><option>Profile</option></optgroup>
+                        <optgroup label="Advanced"><option>Recipe</option><option>Instruction</option><option>Sequence</option><option>Graph</option></optgroup></select></div>
+        <div id="pad" class="z-depth-2" contentEditable="true" style="text-align:left; overflow-y: auto; width:90%; border:1px solid darkgrey; box-shadow: 1px 1px beige; border-radius: 8px;height: 48px;padding: 12px;margin:auto;font-size:20px;">...enter content here...</div><br/>
+        <div style="display:flex;justify-content:space-between;">
+            <div style="display:flex;  justify-content: left; margin-left:20%;  align-items:center;">
+                <div class="chip z-depth-1 waves-effect waves-blue blue-grey lighten-2" style="display:flex; color:white; width:60px; justify-content:center; margin-right:12px;" onclick="$('#fileinput').trigger('click');"><div style="display:flex;"><i class="material-icons" style="margin:auto;margin-left:12px;">attach_file</i></div></div>
+                <div class="hiddenfile"><input name="upload" type="file" id="fileinput" onchange="checkFile();" multiple="multiple"/></div>
+                <div class="chip">file1.png<i class="close material-icons">close</i></div></div></div>
+	    
 
 	<div style="display:flex;  align-items: center; justify-content: space-evenly; margin:12px; margin-top:24px;">
 		<div id="editColor" class="chip z-depth-1 waves-effect waves-blue blue-grey lighten-2" style="display:flex; color:white; align-items:center; justify-content:center; width:60px;" onclick="colorStart();"><div style="display:flex;"><i id="pal" class="material-icons">palette</i></div></div>
