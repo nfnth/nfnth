@@ -11,7 +11,10 @@
 <meta name="author" content="nfnth" />
 
 <!-- resources -->
-<script src="res/all.js"></script><link rel="stylesheet" href="res/all.css"></head>
+<script src="res/all.js"></script><link rel="stylesheet" href="res/all.css">
+	<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
+<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css" type="text/css">
+	</head>
 
 <body style="overflow:overlay; background-color:ghostwhite;" >
 
@@ -688,7 +691,7 @@ map.on('load', function (event) { $("head").append('<style type="text/css">.mark
 
 var satSwitch = true; var satCenter; var currentToggle = 0; var gpsSwitch = false; var randSwitch = false;
 function mapSat() { satCenter = map.getCenter();
-	if (satSwitch) { mapStyle = 'mapbox://styles/mapbox/satellite-streets-v11'; satSwitch = false; $("#map-sat").removeClass("amber");  } else { mapStyle = 'mapbox://styles/mapbox/light-v10'; satSwitch = true; $("#map-sat").addClass("amber");}
+	if (satSwitch) { mapStyle = 'mapbox://styles/mapbox/satellite-streets-v11'; satSwitch = false; $("#map-sat").addClass("amber");  } else { mapStyle = 'mapbox://styles/mapbox/light-v10'; satSwitch = true; $("#map-sat").removeClass("amber");}
 	map = new mapboxgl.Map({container: 'map', style: mapStyle, center: satCenter, zoom: zoom, buffer_size: 0.2}); 
 		  clearMarkers();
 		  for (let a=0;a<currentContent.length;a++) { addMark(currentContent[a][0],currentContent[a][1],currentContent[a][2],currentContent[a][3],currentContent[a][4],currentContent[a][5],currentContent[a][6]); } currentMarkers[currentToggle].togglePopup(); }
@@ -862,7 +865,7 @@ div.active {opacity: 1;height: auto;}
 
 nav ul a { color:black; } nav ul a:hover { color:ghostwhite!important; background-color: cornflowerblue!important; }
 dropdown-content li>a>i { margin:0 12px 0 0; } .dropdown-content li>a, .dropdown-content li>span { color:black!important; }
-	#setting-wallet { color:cornflowerblue; }
+	#wallet-icon { color:darkslategray; }
 	
 .tabs .tab a{ color:black; } /*Black color to the text*/
 .tabs .tab a:hover { background-color:#91a7ce; color:white; } /*Text color on hover*/
