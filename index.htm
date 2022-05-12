@@ -201,7 +201,8 @@ function copyClip(text) { navigator.clipboard.writeText(text); M.toast({html: 'A
 
 var width = window.innerWidth; var height = window.innerHeight + 48;
 async function initial() {
-    //document.getElementById('domain-template').getElementsByTagName('option')[0].selected = 'selected'; //$('select').formSelect(); 
+    //document.getElementById('domain-template').getElementsByTagName('option')[0].selected = 'selected'; 
+	$('select').formSelect(); 
 	$('.tabs').tabs(); $('.fixed-action-btn').floatingActionButton(); $("#map-tool").hide();
 	$('.modal').modal(); //$('#modal2').modal(); //$('#dialog-inner2').css("height", window.innerHeight - 375);
     	$("#map").css("height",height + "px"); $("#registry").css("height",height + "px"); showFav('scroller');
