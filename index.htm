@@ -29,8 +29,8 @@
 
     <!-- desktop -->
     <ul class="hide-on-med-and-down">
-	<li id="doc-list"><a id="docs" href="#!" data-target="doc"><i class="material-icons left">sticky_note_2</i>READ<i class="material-icons right">arrow_drop_down</i></a></li>
-	<li id="map-list"><a onclick="showView('list'); showList('domain');"><i class="material-icons left">map</i>TRADE</a></li>
+	<li id="doc-list"><a id="docs" href="#!" data-target="doc"><i class="material-icons left">sticky_note_2</i>LEARN<i class="material-icons right">arrow_drop_down</i></a></li>
+	<li id="map-list"><a onclick="showView('list'); showList('domain');"><i class="material-icons left">map</i>TRACK</a></li>
         <li id="list-list"><a onclick="openInNewTab('https://dev.nfnth.com/res/civ');"><i class="material-icons left">tsunami</i>EXPLORE</a></li>
         <li style="height:64px;" id="search-list">
         	<a style="height:inherit; padding-right:0;"><i onclick="$('#search').focus();" style="height:inherit; padding-right:16px;" class="material-icons">search</i>
@@ -96,7 +96,7 @@
         <img src="img/world-min.jpg" class="z-depth-2" style="width:100%; margin-bottom:-6px; " />
 	    
 	<div style="  position: fixed;left: 0;top:35%;width: 100%;" ><div class="z-depth-1" style="cursor:pointer; font-size:24px;background-color: rgba(245, 245, 245, 0.8);padding-bottom: 48px;padding-top: 36px;text-align: center;align-items: center;justify-content: center;width: 100%;cursor:pointer;" >
-  <div id="test6" style="padding:16px;"><img id="world-gear" height="48" width="48" style="opacity:0.5;position:absolute;" /><img id="world-gear2" height="48" width="48" style="position:absolute; opacity:0.5;" /><span style="color:darkgoldenrod; font-weight:bold; font-size:28px;border-radius: 6px;padding-left: 48px;">Nf•Nth // nfnth.com</span><br/><br/><span style="color:goldenrod; font-size:26px; font-weight:bold;vertical-align:super;">*read [trade] $explore</span></div>
+  <div id="test6" style="padding:16px;"><img id="world-gear" height="48" width="48" style="opacity:0.5;position:absolute;" /><img id="world-gear2" height="48" width="48" style="position:absolute; opacity:0.5;" /><span style="color:darkgoldenrod; font-weight:bold; font-size:28px;border-radius: 6px;padding-left: 48px;">Nf•Nth // nfnth.com</span><br/><br/><span style="color:goldenrod; font-size:26px; font-weight:bold;vertical-align:super;">*learn [track] $explore</span></div>
 		     <div><span style="font-size:22px;color:black;">deed. domain. </span><span style="font-size:22px; color:black; font-weight:bold;">decentralized.</span><br/><a style="font-size:20px;" onclick="openInNewTab('https://github.com/nfnth');">NfNth Corp.</a><span style="font-size:16px; color:black; font-weight:bold;">© 2022 Copyright</span></div></div></div></div>
 
     <!-- map -->
@@ -119,11 +119,11 @@
     	<li><a href="#!" onclick="mapLoc();"><i class="material-icons">view_list</i>Domain</a></li></ul>
 
 <ul id='dropdown2' class='dropdown-content'>
-    	<li><a href="#!" onclick="mapSat();"><i class="material-icons">satellite_alt</i>Satellite</a></li>
+    	<li id="map-sat"><a href="#!" onclick="mapSat();"><i class="material-icons">satellite_alt</i>Satellite</a></li>
     	<li class="divider" tabindex="-1"></li>
-    	<li><a href="#!" onclick="mapRoute();"><i class="material-icons">directions</i>Directions</a></li>
+    	<li id="map-dir"><a href="#!" onclick="mapDir();"><i class="material-icons">directions</i>Directions</a></li>
 	<li class="divider" tabindex="-1"></li>
-	<li><a href="#!" onclick="mapRoute();"><i class="material-icons">route</i>Story</a></li></ul>
+	<li id="map-route"><a href="#!" onclick="mapRoute();"><i class="material-icons">route</i>Story</a></li></ul>
 
 <ul id='dropdown1' class='dropdown-content'>
     <li><a href="#!">Name &#8595;</a></li><li><a href="#!">Name &#8593;</a></li>
@@ -688,7 +688,7 @@ map.on('load', function (event) { $("head").append('<style type="text/css">.mark
 
 var satSwitch = true; var satCenter; var currentToggle = 0; var gpsSwitch = false; var randSwitch = false;
 function mapSat() { satCenter = map.getCenter();
-	if (satSwitch) { mapStyle = 'mapbox://styles/mapbox/satellite-streets-v11'; satSwitch = false; $("#map-sat").removeClass("grey"); $("#map-sat").addClass("blue"); } else { mapStyle = 'mapbox://styles/mapbox/light-v10'; satSwitch = true; $("#map-sat").removeClass("blue"); $("#map-sat").addClass("grey");}
+	if (satSwitch) { mapStyle = 'mapbox://styles/mapbox/satellite-streets-v11'; satSwitch = false; $("#map-sat").removeClass("amber");  } else { mapStyle = 'mapbox://styles/mapbox/light-v10'; satSwitch = true; $("#map-sat").addClass("amber");}
 	map = new mapboxgl.Map({container: 'map', style: mapStyle, center: satCenter, zoom: zoom, buffer_size: 0.2}); 
 		  clearMarkers();
 		  for (let a=0;a<currentContent.length;a++) { addMark(currentContent[a][0],currentContent[a][1],currentContent[a][2],currentContent[a][3],currentContent[a][4],currentContent[a][5],currentContent[a][6]); } currentMarkers[currentToggle].togglePopup(); }
@@ -702,6 +702,7 @@ function geoError() { alert('No location'); }
 var selectedMark = -1; var mapMark = -1;
 function mapRand() { clearMarkers(); mapMark = Math.floor(Math.random() * domains.length); showMark(mapMark); }
 function mapRoute() { clearMarkers(); mapMark += 1; if (selectedMark == domains.length) { mapMark = 0; } showMark(mapMark);  }
+function mapDir() { clearMarkers(); map.addControl(new MapboxDirections({ accessToken: mapboxgl.accessToken }),'bottom-left'); }
 function mapAdd() { clearMarkers(); addArtifact(); }
 	
 function addArtifact() { M.toast({html: 'Select location...'}); artFlag = true; datetimeStart(); }
@@ -786,7 +787,6 @@ function switchTime() {
 	return datestamp + "@" + timestamp; }
 
 function colorStart() { document.getElementById("favcolor").focus(); document.getElementById("favcolor").click(); }
-//map.addControl(new MapboxDirections({ accessToken: mapboxgl.accessToken }),'top-left');
 // add calculator... //replace youtube with html5 video?
 </script>
 
@@ -862,7 +862,7 @@ div.active {opacity: 1;height: auto;}
 
 nav ul a { color:black; } nav ul a:hover { color:ghostwhite!important; background-color: cornflowerblue!important; }
 dropdown-content li>a>i { margin:0 12px 0 0; } .dropdown-content li>a, .dropdown-content li>span { color:black!important; }
-	
+	#setting-wallet { color:cornflowerblue; }
 	
 .tabs .tab a{ color:black; } /*Black color to the text*/
 .tabs .tab a:hover { background-color:#91a7ce; color:white; } /*Text color on hover*/
