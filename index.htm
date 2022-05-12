@@ -51,7 +51,7 @@
     	<li><a onclick="showDoc('README');"><i class="material-icons">grass</i>NfNth Field Guide</a></li>
 	<li><a onclick="showDoc('nfn');"><i class="material-icons"><span class="material-icons-outlined">park</span></i>About NFN Trade</a></li>
 	<li class="divider"></li>
-    	<li><a onclick="showView('editor'); changeFocus();"><i class="material-icons">edit</i>Citizen's Journal...</a></li></ul>
+    	<li><a onclick="showView('editor'); changeFocus();"><i class="material-icons">edit</i>Citizen's Notepad...</a></li></ul>
 
 <!-- panel -->
 <ul id="user-pane" class="sidenav loader" style="visibility:hidden;overflow:hidden;">
@@ -76,16 +76,14 @@
 	<li><a class="waves-effect"><i class="material-icons">inventory_2</i><span id="dArt">Posted Artifact</span></a></li>
   	<li style="margin-top:12px; display: flex;align-items: center;justify-content: center;margin-bottom:16px;"><select id="domain-template" class="sider" onchange="domainSelect();">
         <option selected="selected">No domain selected</option><option>tactician.us (demo)</option></select></li>
-	<li style="margin-top:12px;"><a id="poster" class="btn waves-effect waves-light amber z-depth-1 lighten-2 disabled" style="width: 240px;margin: auto;border-radius: 8px;margin-bottom:12px;color:black;" onclick="if (walletAddress != '') {showView('map'); map.resize(); addArtifact(); $('#user-pane').sidenav('close');}"><i class="material-icons left">build</i>Build Domain</a></li></ul>
-		</div>
-      <div id="test5">
-	      <ul>
-		      <li style="padding-top:16px;margin-bottom:12px;display: flex;justify-content: space-evenly;">
-			      <div style="display:flex;">
-			      <a class='btn-flat' style="margin-right:8px;"><i class="material-icons left">select_all</i></a><a id="dropdown-full" class='dropdown-trigger btn-flat' style="margin-right:8px;" href='#' data-target='dropdown1'><i class="material-icons left">sort</i></a>
-			      <a class="waves-effect waves-light btn amber lighten-2" style="margin-right:8px;display:inline-flex;align-items:center;" onclick="switchView();"><i id="view-icon2" class="material-icons">grid_view</i><span id="view-name2">&nbsp;&nbsp;Cat</span></a></div></li>
+	<li style="margin-top:12px;"><a id="poster" class="btn waves-effect waves-light amber z-depth-1 lighten-2 disabled" style="width: 240px;margin: auto;border-radius: 8px;margin-bottom:12px;color:black;" onclick="if (walletAddress != '') {showView('map'); map.resize(); addArtifact(); $('#user-pane').sidenav('close');}"><i class="material-icons left">build</i>Build Domain</a></li></ul></div>
+      <div id="test5"><ul>
+	<li style="padding-top:16px;margin-bottom:12px;display: flex;justify-content: space-evenly;">
+	<div style="display:flex;">
+	<a class='btn-flat' style="margin-right:8px;"><i class="material-icons left">select_all</i></a><a id="dropdown-full" class='dropdown-trigger btn-flat' style="margin-right:8px;" href='#' data-target='dropdown1'><i class="material-icons left">sort</i></a>
+	<a class="waves-effect waves-light btn amber lighten-2" style="margin-right:8px;display:inline-flex;align-items:center;" onclick="switchView();"><i id="view-icon2" class="material-icons">grid_view</i><span id="view-name2">&nbsp;&nbsp;Img</span></a></div></li>
  
-	      <li style="margin-top:16px;margin-bottom:12px;"><a id="maker" class="btn waves-effect waves-light amber z-depth-1 lighten-3 disabled" style="width: 240px;margin: auto;border-radius: 8px;color:black;" onclick="if (walletAddress != '') {desetup(); $('#user-pane').sidenav('close');}"><i class="material-icons left">temple_buddhist</i>Visit</a></li>
+	<li style="margin-top:16px;margin-bottom:12px;"><a id="maker" class="btn waves-effect waves-light amber z-depth-1 lighten-3 disabled" style="width: 120px;margin: auto;border-radius: 8px;color:black;" onclick="if (walletAddress != '') {desetup(); $('#user-pane').sidenav('close');}"><i class="material-icons left">temple_buddhist</i>Edit</a><a id="maker" class="btn waves-effect waves-light amber z-depth-1 lighten-3 disabled" style="width: 1200px;margin: auto;border-radius: 8px;color:black;" onclick="if (walletAddress != '') {desetup(); $('#user-pane').sidenav('close');}"><i class="material-icons left">temple_buddhist</i>Delete</a></li>
 	      <li><div id="registry" class="collection" style="overflow:auto;"></div></li></ul>
 		<!--<div class="hoverable" style="display:flex; justify-items:center;width:800px;max-width:80%;">Purchase Collectible</div>-->
 		</div></div></div></li></ul>
@@ -106,7 +104,7 @@
 	    <!-- filter -->
         <div id="list-filter" class="z-depth-1 grey lighten-5" style="display:flex; justify-content: center; padding-top: 24px; padding-bottom:12px; margin-bottom: -6px; align-items:center;position: fixed; z-index: 1; padding-right:12px;">
         	<div class="hide-on-med-and-down"><a class="waves-effect waves-amber btn-flat" onclick="mapLoc();"><i id="select-icon" class="material-icons left">gps_fixed</i><span>Location</span></a><a class='btn-flat' style="margin-right:8px;" onclick="mapRand();"><i class="material-icons left">shuffle</i>Random</a><a id="dropdown-full2" class="waves-effect waves-light amber lighten-2 btn dropdown-trigger" href='#' data-target='dropdown2' style="margin-right:8px;" ><i id="view-icon" class="material-icons left">layers</i><span id="view-name">Layers</span></a></div></div>
-		<div class="screen-hide"><a class="waves-effect waves-light btn-flat" style="margin-right:8px;" onclick="showView('list'); showList('open');"><i class="material-icons">filter_list</i></a><a class="waves-effect waves-light btn-flat disabled" onclick="showView('list'); showList('open');"><i class="material-icons">deselect</i></a><a id="dropdown-mobile" class="waves-effect waves-light btn-flat dropdown-trigger" style="margin-right:8px;" href="#" data-target="dropdown2"><i class="material-icons">sort</i></a><a class="waves-effect waves-light btn amber lighten-2" style="margin-right:8px;display:inline-flex;align-items:center;" onclick="switchView();"><i id="view-icon2" class="material-icons">grid_view</i>&nbsp;&nbsp;<span id="view-name2">Grid</span></a></div></div>
+		<div class="screen-hide"><a class="waves-effect waves-amber btn-flat" onclick="mapLoc();"><i id="select-icon" class="material-icons left">gps_fixed</i><span>Location</span></a><a class='btn-flat' style="margin-right:8px;" onclick="mapRand();"><i class="material-icons left">shuffle</i>Random</a><a class="waves-effect waves-light btn amber lighten-2 dropdown-trigger" style="margin-right:8px;display:inline-flex;align-items:center;" href='#' data-target='dropdown2'><i id="view-icon2" class="material-icons left">layers</i><span id="view-name2">Layers</span></a></div></div>
 		
 		<div style="width:100%; display:flex;">
 		    <!-- map -->
@@ -149,9 +147,6 @@
                 <div class="chip z-depth-1 waves-effect waves-blue blue-grey lighten-2" style="display:flex; color:white; width:60px; justify-content:center; margin-right:12px;" onclick="$('#fileinput').trigger('click');"><div style="display:flex;"><i class="material-icons" style="margin:auto;margin-left:12px;">attach_file</i></div></div>
                 <div class="hiddenfile"><input name="upload" type="file" id="fileinput" onchange="checkFile();" multiple="multiple"/></div>
                 <div class="chip">file1.png<i class="close material-icons">close</i></div></div></div>
-	    
-	
-	
 
         <div style="display:flex; justify-content:space-between; margin:24px;position:fixed;bottom:0;padding-right:48px;">
             <div>
@@ -176,13 +171,6 @@
 
 <script>
 var gridSelect = false;
-		
-		    
-if (typeof(Storage) !== "undefined") {
- //window.sessionStorage - stores data for one session (data is lost when the browser tab is closed)
-} else {
-  // Sorry! No Web Storage support..
-}
 
 function changeView() { gridSelect = document.getElementById('lister').checked;
 	if (document.getElementById('lister').checked) { showView('list'); showList('grid'); } else { showView('list'); showList('domain'); } }
@@ -411,7 +399,7 @@ function showList(area) {  $("#registry").html(''); $("#registry").hide(); if (f
     $("#registry").show(); $('img').on('dragstart', function(evt) { return false; }); }
 
 var showGrid = true;
-function switchView() { if (showGrid) { showList('open'); $("#view-icon2").html("view_list"); $("#view-name2").html("List"); showGrid = false; } else { showList('domain'); $("#view-name2").html("Cat"); $("#view-icon2").html("grid_view"); showGrid = true;} }
+function switchView() { if (showGrid) { showList('open'); $("#view-icon2").html("view_list"); $("#view-name2").html("&nbsp;&nbsp;List"); showGrid = false; } else { showList('domain'); $("#view-name2").html("&nbsp;&nbsp;Img"); $("#view-icon2").html("grid_view"); showGrid = true;} }
 function adjustSort(full) { //$("option[value='09']").attr("disabled", "disabled");
     $('#select-sort').empty();
     $('#select-sort').append('<option value="" selected disabled>Sort...</option>');
