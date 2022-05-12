@@ -76,7 +76,7 @@
 	<li><a class="waves-effect"><i class="material-icons">inventory_2</i><span id="dArt">My Posted Artifact</span></a></li>
   	<li style="margin-top:12px; display: flex;align-items: center;justify-content: center;margin-bottom:16px;"><select id="domain-template" class="sider" onchange="domainSelect();">
         <option selected="selected">No domain selected</option><option>tactician.us (demo)</option></select></li>
-	<li style="margin-top:12px;"><a id="poster" class="btn waves-effect waves-light amber z-depth-1 lighten-2 disabled" style="width: 240px;margin: auto;border-radius: 8px;margin-bottom:12px;color:black;" onclick="if (walletAddress != '') {showView('map'); map.resize(); addArtifact(); $('#user-pane').sidenav('close');}"><i class="material-icons left">build</i>Build Domain</a></li></ul></div>
+	<li style="margin-top:12px;"><a id="poster" class="btn waves-effect waves-light amber z-depth-1 lighten-2 disabled" style="width: 240px;margin: auto;border-radius: 8px;margin-bottom:12px;color:black;" onclick="$('.tabs').tabs('select', 'test5');"><i class="material-icons left">build</i>Build Domain</a></li></ul></div>
       <div id="test5"><ul>
 	<li style="padding-top:16px;margin-bottom:12px;display: flex;justify-content: space-evenly;">
 		<div style="display:flex;">
@@ -84,7 +84,7 @@
 		<a class="waves-effect waves-light btn amber lighten-2" style="margin-right:8px;display:inline-flex;align-items:center;width:100px;" onclick="switchView();"><i id="view-icon2" class="material-icons">grid_view</i><span id="view-name2">&nbsp;&nbsp;Img</span></a></div></li>
  
 	<li style="margin-top:16px;margin-bottom:12px;">
-		<div style="display:flex;justify-content:space-evenly;padding-top:12px;padding-bottom:12px;"><a class="btn waves-effect waves-light amber z-depth-1 lighten-3" style="width: 120px;border-radius: 8px;color:black;" ><i class="material-icons left">inventory_2</i>Add</a><a class="btn-flat waves-effect waves-light red z-depth-1"><i class="material-icons">edit</i></a><a class="btn-flat waves-effect waves-light red z-depth-1"><i class="material-icons">delete</i></a></div></li>
+		<div style="display:flex;justify-content:space-evenly;padding-top:12px;padding-bottom:12px;"><a class="btn waves-effect waves-light green z-depth-1 lighten-2" style="width: 120px;border-radius: 8px;color:black;" onclick="addArtifact();" ><i class="material-icons left">inventory_2</i>Add</a><a class="btn-flat waves-effect waves-light z-depth-1 disabled"><i class="material-icons">edit</i></a><a class="btn-flat waves-effect waves-light z-depth-1 disabled"><i class="material-icons">delete</i></a></div></li>
 	<li><div id="registry" class="collection" style="overflow:auto;"></div></li></ul>
 		<!--<div class="hoverable" style="display:flex; justify-items:center;width:800px;max-width:80%;">Purchase Collectible</div>-->
 		</div></div></div></li></ul>
