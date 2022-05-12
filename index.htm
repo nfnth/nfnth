@@ -32,7 +32,7 @@
 
     <!-- desktop -->
     <ul class="hide-on-med-and-down">
-	<li id="doc-list"><a id="docs" href="#!" data-target="doc"><i class="material-icons left">sticky_note_2</i>NOTE<i class="material-icons right">arrow_drop_down</i></a></li>
+	<li id="doc-list"><a id="docs" href="#!" data-target="doc"><i class="material-icons left">sticky_note_2</i>WRITE<i class="material-icons right">arrow_drop_down</i></a></li>
 	<li id="map-list"><a onclick="showView('list'); showList('domain');"><i class="material-icons left">map</i>TRACK</a></li>
         <li id="list-list"><a onclick="openInNewTab('https://dev.nfnth.com/res/civ');"><i class="material-icons left">tsunami</i>EXPLORE</a></li>
         <li style="height:64px;" id="search-list">
@@ -134,14 +134,15 @@
 	<li class="divider" tabindex="-1"></li>
 	<li id="map-route"><a href="#!" onclick="mapRoute();"><i class="material-icons">route</i>Story</a></li></ul>
 
-
 <ul id='dropdown4' class='dropdown-content'>
-    	<li id="map-sat"><a href="#!" onclick="mapSat();"><i class="material-icons">satellite_alt</i>Basic</a></li>
-    	<li class="divider" tabindex="-1"></li>
-    	<li id="map-dir"><a href="#!" onclick="mapDir();"><i class="material-icons">directions</i>Advanced</a></li>
+    	<li id="map-sat"><a href="#!" onclick="setTemplate('Empty');"><i class="material-icons">label</i>Empty</a></li>
+    	<li id="map-dir"><a href="#!" onclick="setTemplate('Profile');"><i class="material-icons">identity_platform</i>Profile</a></li>
+	<li id="map-dir"><a href="#!" onclick="setTemplate('Instruction');"><i class="material-icons">checklist</i>Checklist</a></li>
 	<li class="divider" tabindex="-1"></li>
-	<li id="map-route"><a href="#!" onclick="mapRoute();"><i class="material-icons">route</i>Profile</a></li></ul>
-	<!--recipe, sequence, graph-->
+	<li id="map-route"><a href="#!" onclick="setTemplate('Recipe');"><i class="material-icons">cooking</i>Recipe</a></li>
+	<li id="map-route"><a href="#!" onclick="setTemplate('Sequence');"><i class="material-icons">dry_cleaning</i>Sequence</a></li>
+	<li id="map-route"><a href="#!" onclick="setTemplate('Graph');"><i class="material-icons">fort</i>Graph</a></li></ul>
+
     <!-- search -->
     <div id="results" style="margin:80; display:none;" class="content loader pane">search...</div>
 
@@ -737,8 +738,8 @@ graph TB
      class di orange
 |`;
 
-function setTemplate() {
-    switch($('#editor-template').find(":selected").text()) {
+function setTemplate(temp) {
+    switch(temp) {
         case "Empty":$("#pad").html(""); break;
         case "Profile":$("#pad").html(profileBasic); break;
         case "Recipe":$("#pad").html(profileAdvanced); break;
