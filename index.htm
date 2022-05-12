@@ -79,13 +79,13 @@
 	<li style="margin-top:12px;"><a id="poster" class="btn waves-effect waves-light amber z-depth-1 lighten-2 disabled" style="width: 240px;margin: auto;border-radius: 8px;margin-bottom:12px;color:black;" onclick="if (walletAddress != '') {showView('map'); map.resize(); addArtifact(); $('#user-pane').sidenav('close');}"><i class="material-icons left">build</i>Build Domain</a></li></ul></div>
       <div id="test5"><ul>
 	<li style="padding-top:16px;margin-bottom:12px;display: flex;justify-content: space-evenly;">
-	<div style="display:flex;">
-	<a class='btn-flat' style="margin-right:8px;"><i class="material-icons left">select_all</i></a><a id="dropdown-full" class='dropdown-trigger btn-flat' style="margin-right:8px;" href='#' data-target='dropdown1'><i class="material-icons left">sort</i></a>
-	<a class="waves-effect waves-light btn amber lighten-2" style="margin-right:8px;display:inline-flex;align-items:center;width:100px;" onclick="switchView();"><i id="view-icon2" class="material-icons">grid_view</i><span id="view-name2">&nbsp;&nbsp;Img</span></a></div></li>
+		<div style="display:flex;">
+		<a class='btn-flat' style="margin-right:8px;"><i class="material-icons left">select_all</i></a><a id="dropdown-full" class='dropdown-trigger btn-flat' style="margin-right:8px;" href='#' data-target='dropdown1'><i class="material-icons left">sort</i></a>
+		<a class="waves-effect waves-light btn amber lighten-2" style="margin-right:8px;display:inline-flex;align-items:center;width:100px;" onclick="switchView();"><i id="view-icon2" class="material-icons">grid_view</i><span id="view-name2">&nbsp;&nbsp;Img</span></a></div></li>
  
 	<li style="margin-top:16px;margin-bottom:12px;">
-		<div style="display:flex;justify-content:space-evenly;padding-top:12px;padding-bottom:12px;"><a id="maker" class="btn waves-effect waves-light amber z-depth-1 lighten-3" style="width: 120px;border-radius: 8px;color:black;" onclick="if (walletAddress != '') {desetup(); $('#user-pane').sidenav('close');}"><i class="material-icons left">edit</i>Edit</a><a id="maker" class="btn waves-effect waves-light red z-depth-1 lighten-3" style="width: 120px;border-radius: 8px;color:black;" onclick="if (walletAddress != '') {desetup(); $('#user-pane').sidenav('close');}"><i class="material-icons left">delete</i>Del</a></div></li>
-	      <li><div id="registry" class="collection" style="overflow:auto;"></div></li></ul>
+		<div style="display:flex;justify-content:space-evenly;padding-top:12px;padding-bottom:12px;"><a id="maker" class="btn waves-effect waves-light amber z-depth-1 lighten-3" style="width: 120px;border-radius: 8px;color:black;" onclick="if (walletAddress != '') {desetup(); $('#user-pane').sidenav('close');}"><i class="material-icons left">inventory_2</i>Add</a><a class="btn-flat waves-effect waves-light red z-depth-1"  onclick="if (walletAddress != '') {desetup(); $('#user-pane').sidenav('close');}"><i class="material-icons>edit</i></a><a class="btn-flat waves-effect waves-light red z-depth-1"  onclick="if (walletAddress != '') {desetup(); $('#user-pane').sidenav('close');}"><i class="material-icons>delete</i></a></div></li>
+	<li><div id="registry" class="collection" style="overflow:auto;"></div></li></ul>
 		<!--<div class="hoverable" style="display:flex; justify-items:center;width:800px;max-width:80%;">Purchase Collectible</div>-->
 		</div></div></div></li></ul>
 
@@ -105,7 +105,7 @@
 	    <!-- filter -->
         <div id="list-filter" class="z-depth-1 grey lighten-5" style="display:flex; justify-content: center; padding-top: 24px; padding-bottom:12px; margin-bottom: -6px; align-items:center;position: fixed; z-index: 1; padding-right:12px;">
         	<div class="hide-on-med-and-down"><a class="waves-effect waves-amber btn-flat" onclick="mapLoc();"><i id="select-icon" class="material-icons left">gps_fixed</i><span>Location</span></a><a class='btn-flat' style="margin-right:8px;" onclick="mapRand();"><i class="material-icons left">shuffle</i>Random</a><a id="dropdown-full2" class="waves-effect waves-light amber lighten-2 btn dropdown-trigger" href='#' data-target='dropdown2' style="margin-right:8px;" ><i id="view-icon" class="material-icons left">layers</i><span id="view-name">Layers</span></a></div></div>
-		<div class="screen-hide"><a class="waves-effect waves-amber btn-flat" onclick="mapLoc();"><i id="select-icon" class="material-icons left">gps_fixed</i><span>Location</span></a><a class='btn-flat' style="margin-right:8px;" onclick="mapRand();"><i class="material-icons left">shuffle</i>Random</a><a class="waves-effect waves-light btn amber lighten-2 dropdown-trigger" style="margin-right:8px;display:inline-flex;align-items:center;" href='#' data-target='dropdown2'><i id="view-icon2" class="material-icons left">layers</i><span id="view-name2">Layers</span></a></div></div>
+		<div class="screen-hide"><a class="waves-effect waves-amber btn-flat" onclick="mapLoc();"><i id="select-icon" class="material-icons left">gps_fixed</i><span>Location</span></a><a class='btn-flat' style="margin-right:8px;" onclick="mapRand();"><i class="material-icons left">shuffle</i>Random</a><a id="dropdown-full4" class="waves-effect waves-light btn amber lighten-2 dropdown-trigger" style="margin-right:8px;display:inline-flex;align-items:center;" href='#' data-target='dropdown2'><i id="view-icon2" class="material-icons left">layers</i><span id="view-name2">Layers</span></a></div></div>
 		
 		<div style="width:100%; display:flex;">
 		    <!-- map -->
@@ -212,7 +212,7 @@ async function initial() {
 	var gear4b = Math.floor(Math.random() * (42 - 1 + 1)) + 1; document.getElementById('world-gear2').src = "img/gear/gear" + gear4b.toString() + ".png";
 	//$("#lister").prop("checked", false);
     $('#docs').dropdown({ constrainWidth: false, coverTrigger: false } ); $('#doc-hide').dropdown({ constrainWidth: false, coverTrigger: false } ); //hover: true 
-			$('#dropdown-full').dropdown({ constrainWidth: false }); $('#dropdown-mobile').dropdown(); $('#dropdown-full2').dropdown({ constrainWidth: false }); $('#dropdown-full3').dropdown({ constrainWidth: false });
+			$('#dropdown-full').dropdown({ constrainWidth: false }); $('#dropdown-mobile').dropdown(); $('#dropdown-full2').dropdown({ constrainWidth: false }); $('#dropdown-full3').dropdown({ constrainWidth: false }); $('#dropdown-full4').dropdown({ constrainWidth: false });
     $('#user-pane').sidenav({ edge: 'right' }); $('.tooltipped').tooltip();
     
 $('.collapsible').collapsible();
