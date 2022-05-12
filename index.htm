@@ -52,7 +52,7 @@
 
 <!-- panel -->
 <ul id="user-pane" class="sidenav loader" style="visibility:hidden;overflow:hidden;">
-	<li><div class="user-view z-depth-1 blue-grey lighten-4" style="display: flex;margin: auto; padding: 0;align-items: center; padding-left:12px;"><span id="ocuros" style="cursor: pointer;margin:auto; color:black!important; font-size:18px;border-radius: 8px; opacity: 0.7; font-weight: bold;" onclick="switchTime();" class="new badge amber accent-1" data-badge-caption="⚙⚙ OS | v1.08"></span>
+	<li><div class="user-view z-depth-1 blue-grey lighten-4" style="display: flex;margin: auto; padding: 0;align-items: center; padding-left:12px;"><span id="ocuros" style="cursor: pointer;margin:auto; color:black!important; font-size:18px;border-radius: 8px; opacity: 0.7; font-weight: bold;" onclick="M.toast({html: switchTime()});" class="new badge amber accent-1" data-badge-caption="⚙⚙ OS · v1.08"></span>
         <img id="user-pic" style="opacity:0.6; height: 48px;position:absolute; right:0; margin: 12px; cursor:pointer;" onclick="openInNewTab('https://github.com/nfnth'); $('#user-pane').sidenav('close');"/><img id="user-pic2" style="opacity:0.6; height: 48px;cursor:pointer;margin:12px;" onclick="openInNewTab('https://github.com/nfnth'); $('#user-pane').sidenav('close');"/></div></li>
 	
 	<li style="height:100%;">
@@ -382,7 +382,7 @@ pullInfo(); pullOpens(); //pullAsset(asset.token_id);
 var mapSwitch = true; var introSwitch = true;
 function resetHome() { if (spinner == 0) {  $("#list-wait").removeClass("image-rotate"); $("#list-wait2").removeClass("image-rotate"); spinner = 1; } else if (spinner == 1) { hideView(); $('#news').show(); $("#stamper").show(); $("#world").show(); spinner = 2;} else { $("#list-wait").addClass("image-rotate"); $("#list-wait2").addClass("image-rotate"); spinner = 0;} }
 
-function hideView() { $('.modal').modal('close');   window.scrollTo(0, 0); $("#editor").removeClass("scale-in"); 
+function hideView() { $('.modal').modal('close');   window.scrollTo(0, 0); $("#editor").removeClass("scale-in"); $("#map-tool").hide();
 		     $("#editor").removeClass("scale-out"); $("#editor").addClass("scale-out"); $('.pane').hide();}
 var spinner = 0;
 function showView(view) {  hideView(); $('#'+view).show();
@@ -391,7 +391,7 @@ function showView(view) {  hideView(); $('#'+view).show();
 	case 'filter': $("#filter").addClass("scale-in"); break;
         case 'list': $('#map').show(); $("#actions").show(); map.resize(); break;
 	case 'news':  break;
-        case 'map': $("#actions").show(); map.resize(); break; } }
+        case 'map': $("#map-tool").show(); map.resize(); break; } }
 
 var complete; var reset = false; var first = true;
 function showList(area) {  $("#registry").html(''); $("#registry").hide(); if (first) { complete = domains; first = false; }
@@ -419,13 +419,7 @@ function adjustSort(full) { //$("option[value='09']").attr("disabled", "disabled
 
 function addOpen(i){
     $("#registry").append("<a class='collection-item open'><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;'><label><input type='checkbox' checked='checked' id='check" + i + "' /><span class='tooltipped' data-position='bottom' data-tooltip='" + opens[i].core.name + "'>" + opens[i].core.name + "</span></label></div><div style='display:flex; justify-content:space-between;align-items:center;'><div><img class='materialboxed z-depth-1' width='60' height='40' src='" + opens[i].core.banner_image_url + "'/></div>&nbsp;&nbsp;&nbsp;&nbsp;<div style='display:flex;'><div onclick='openInNewTab(\"https://opensea.io/collection/" + opens[i].core.slug + "\");' style='width:120px;' class='z-depth-1 chip " + getColor(opens[i].core.slug)  + "'><img src='img/key/" + getCollect(opens[i].core.slug) + "'>" + opens[i].core.slug + "</div></div></div></div></div></a>"); $('.materialboxed').materialbox(); 
-//<span class='amber lighten-2 badge z-depth-1' style='color:black!important;font-weight:bold;'>" + opens[i].count + " available</span>
 //$("#somedialog2").css("z-index",1004);
-	
-//$('.open').on('click', function(e) {
-//  if (e.target !== this)
-//    return;
-  //$('#customerServices input:checkbox.parent');
 
 //	if ($(this).find("input").prop('checked')) { $(this).find("input").prop('checked', false); } else { $(this).find("input").prop('checked', true); }
   //alert( 'clicked the foobar' );
@@ -789,14 +783,11 @@ function fly(dest) {
 // console
 var onTime = false;
 function switchTime() {
-	if (onTime) { $('#ocuros').attr('data-badge-caption', "⚙⚙ OS | v1.08");   onTime = false; } else { datetimeStart(); onTime = true; }
-}
-function datetimeStart() {
     	var current = new Date(); // timestamp, milliseconds since 1970 (?) vs. milliseconds (UTC)
     	var yyyy = current.getFullYear(), MM = current.getMonth() + 1; if (MM < 10) { MM = "0" + MM.toString(); }
     	var dd = current.getDate(), hh = current.getHours(), mm = current.getMinutes(), ss = current.getSeconds();
     	var datestamp = yyyy + "." + MM + "." + dd; var timestamp = hh + ":" + mm + ":" + ss; // calendar?
-	$('#ocuros').attr('data-badge-caption', datestamp + "@" + timestamp); }
+	return datestamp + "@" + timestamp; }
 
 function colorStart() { document.getElementById("favcolor").focus(); document.getElementById("favcolor").click(); }
 //map.addControl(new MapboxDirections({ accessToken: mapboxgl.accessToken }),'top-left');
@@ -878,7 +869,7 @@ dropdown-content li>a>i { margin:0 12px 0 0; } .dropdown-content li>a, .dropdown
 	
 	
 .tabs .tab a{ color:black; } /*Black color to the text*/
-.tabs .tab a:hover { background-color:cornflowerblue; color:white; } /*Text color on hover*/
+.tabs .tab a:hover { background-color:#91a7ce; color:white; } /*Text color on hover*/
 .tabs .tab a.active { background-color:cornflowerblue; color:ghostwhite; } /*Background and text color when a tab is active*/
 .tabs .indicator { background-color:cornflowerblue; } /*Color of underline*/
 .tabs .tab a:focus.active { color:white; /*Custom Text Color While Active*/ background-color: cornflowerblue /*Custom Background Color While Active*/ }
