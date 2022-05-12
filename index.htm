@@ -201,7 +201,7 @@ async function initial() {
 	$('.tabs').tabs(); $('.fixed-action-btn').floatingActionButton(); $("#map-tool").hide();
 	$('.modal').modal(); //$('#modal2').modal(); //$('#dialog-inner2').css("height", window.innerHeight - 375);
     	$("#map").css("height",height + "px"); $("#registry").css("height",height + "px"); showFav('scroller');
-	$("#editor").css("height",height - 240 + "px");
+	$("#editor").css("height",height - 360 + "px");
 
 	var gear = Math.floor(Math.random() * (42 - 1 + 1)) + 1; document.getElementById('list-wait').src = "img/gear/gear" + gear.toString() + ".png";
 	var gear2 = Math.floor(Math.random() * (42 - 1 + 1)) + 1; document.getElementById('list-wait2').src = "img/gear/gear" + gear2.toString() + ".png";
@@ -403,13 +403,13 @@ function switchView() { if (showGrid) { showList('open'); $("#view-icon2").html(
 function adjustSort(full) { //$("option[value='09']").attr("disabled", "disabled");
     $('#select-sort').empty();
     $('#select-sort').append('<option value="" selected disabled>Sort...</option>');
-    $('#select-sort').append('<option value="az">Alpha &#8595;</option>');
-    $('#select-sort').append('<option value="za">Alpha &#8593;</option>');
+    $('#select-sort').append('<option value="az">Name &#8595;</option>');
+    $('#select-sort').append('<option value="za">Name &#8593;</option>');
     if (full) {
-        $('#select-sort').append('<option value="09">Price &#8593;</option>');
-        $('#select-sort').append('<option value="90">Price &#8595;</option>');
-        $('#select-sort').append('<option value="!)">Serial &#8595;</option>');
-        $('#select-sort').append('<option value=")!">Serial &#8593;</option>'); }
+        $('#select-sort').append('<option value="09">DateTime &#8593;</option>');
+        $('#select-sort').append('<option value="90">DateTime &#8595;</option>');
+        $('#select-sort').append('<option value="!)">Color &#8595;</option>');
+        $('#select-sort').append('<option value=")!">Color &#8593;</option>'); }
     $("#select-sort").formSelect(); }
 
 function addOpen(i){
