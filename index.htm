@@ -181,6 +181,15 @@
 
 <script>
 var gridSelect = false;
+	
+function checkFile() { showPreview();
+//var files = document.getElementById("fileinput");
+//for (var a = 0; a < files.files.length; a++)
+//{
+  //  alert(files.files[a].name);
+//}
+//document.getElementById("fileinput").files[0];
+}
 
 function changeView() { gridSelect = document.getElementById('lister').checked;
 	if (document.getElementById('lister').checked) { showView('list'); showList('grid'); } else { showView('list'); showList('domain'); } }
@@ -611,7 +620,7 @@ function setResults() { searchMatch = []; searchResult = "";
         searchResult += "<div><a href='https://'" + domains[i][4] + "'>" + domains[i][4] + "</a></div><br/>"; } }
     $('#results').html(searchResult); showView('results'); }
 
-var editContent = '<div id="header-logo" style="display: flex;justify-content: center;align-items: center; display: flex;padding:12px;"><div style="border-radius:12px; padding:12px; margin-right:12px;" class="z-depth-1 input-field col s6"><img width="48" height="48" id="editor-image" src="img/seal3.png" onclick="$(\'#fileinput\').trigger(\'click\');" /></div><div style="display:flex;flex-direction:column;"><div id="editOpen" class="chip z-depth-1 waves-effect waves-blue blue-grey lighten-2" style="display:flex; color:white; align-items:center; justify-content:center; width:60px;" onclick="showView(\'editor\'); changeFocus();"><div style="display:flex;"><i id="pal" class="material-icons">edit</i></div></div><div id="editColor" class="chip z-depth-1 waves-effect waves-blue blue-grey lighten-2" style="display:flex; color:white; align-items:center; justify-content:center; width:60px;" onclick="colorStart();"> <div style="visibility:hidden;width:0;position:absolute;top:0;"><input type="color" oninput="setColor();" id="favcolor" name="favcolor" value="#ff0000" style="width:0px; height:0px;opacity:0;" /></div><div style="display:flex;"><i id="pal" class="material-icons">palette</i></div></div></div></div><div><div class="input-field col s6"><i class="material-icons prefix">note</i><input id="icon_prefix" type="text" class="validate"><label for="icon_prefix">Create label...</label></div></div><div style="display:flex;justify-content:center;margin-top:12px;margin-bottom:12px;"><a class="waves-effect waves-light btn-flat" onclick="sendArtifact();"><i class="material-icons">web_asset</i></a><a class="waves-effect waves-light btn green" onclick="sendArtifact();"><i class="material-icons right">upload</i>Post...</a></div></div>';
+var editContent = '<div id="header-logo" style="display: flex;justify-content: center;align-items: center; display: flex;padding:12px;"><div style="border-radius:12px; padding:12px; margin-right:12px;" class="z-depth-1 input-field col s6"><img width="48" height="48" id="editor-image" src="img/seal3.png" onclick="$(\'#fileinput\').trigger(\'click\');" /></div><div style="display:flex;flex-direction:column;"><div id="editOpen" class="chip z-depth-1 waves-effect waves-blue blue-grey lighten-2" style="display:flex; color:white; align-items:center; justify-content:center; width:60px;" onclick="showView(\'editor\'); changeFocus();"><div style="display:flex;"><i id="pal" class="material-icons">edit</i></div></div><div id="editColor" class="chip z-depth-1 waves-effect waves-blue blue-grey lighten-2" style="display:flex; color:white; align-items:center; justify-content:center; width:60px;" onclick="colorStart();"> <div style="visibility:hidden;width:0;position:absolute;top:0;"><input type="color" oninput="setColor();" id="favcolor" name="favcolor" value="#ff0000" style="width:0px; height:0px;opacity:0;" /></div><div style="display:flex;"><i id="pal" class="material-icons">palette</i></div></div></div></div><div><div class="input-field col s6"><input id="icon_prefix" type="text" class="validate"><label for="icon_prefix">Create label...</label></div></div><div style="display:flex;justify-content:center;margin-top:12px;margin-bottom:12px;"><a class="waves-effect waves-light btn-flat" onclick="sendArtifact();"><i class="material-icons">web_asset</i></a><a class="waves-effect waves-light btn green" onclick="sendArtifact();"><i class="material-icons right">upload</i>Post</a></div></div>';
 
 function setColor() { $("#markera").css("background-color", document.getElementById('favcolor').value); $("#pal").html("done");
 $("#editColor").addClass("green"); $("#editColor").removeClass("blue-grey");
