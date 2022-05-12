@@ -68,13 +68,12 @@
     <ul><li><a class="subheader">Wallet Information</a></li>
   	<li><a class="waves-effect" onclick="if (walletAddress != '') {copyClip(walletAddress);}"><i class="material-icons">alternate_email</i><span id="myAdd">My Wallet Address</span></a></li>
   	<li><a class="waves-effect"><i class="material-icons">toll</i><span id="myETH">My ETH Balance</span></a></li>
-	<li><a class="waves-effect"><i class="material-icons">inventory_2</i><span id="myArt">My Artifacts</span></a></li>
 	<li style="margin-top:16px;margin-bottom:12px;"><a id="maker" class="btn waves-effect waves-light amber z-depth-1 lighten-3" style="width: 240px;margin: auto;border-radius: 8px;color:black;" onclick="if (walletAddress != '') {desetup(); $('#user-pane').sidenav('close');} else { setup(); }"><i class="material-icons left">login</i>Connect</a></li>
   	<li><div style="margin-top:0;" class="divider"></div></li>
   	<!--<i class="material-icons left">calculate</i>-->
   	<li><a class="subheader">Domain Information</a></li>
   	<li><a class="waves-effect"><i class="material-icons">landscape</i><span id="dStatus">Current Status</span></a></li>
-	<li><a class="waves-effect"><i class="material-icons">landscape</i><span id="dArt">Posted Artifact</span></a></li>
+	<li><a class="waves-effect"><i class="material-icons">inventory_2</i><span id="dArt">Posted Artifact</span></a></li>
   	<li style="margin-top:12px; display: flex;align-items: center;justify-content: center;margin-bottom:16px;"><select id="domain-template" class="sider" onchange="domainSelect();">
         <option selected="selected">No domain selected</option><option>tactician.us (demo)</option></select></li>
 	<li style="margin-top:12px;"><a id="poster" class="btn waves-effect waves-light amber z-depth-1 lighten-2 disabled" style="width: 240px;margin: auto;border-radius: 8px;margin-bottom:12px;color:black;" onclick="if (walletAddress != '') {showView('map'); map.resize(); addArtifact(); $('#user-pane').sidenav('close');}"><i class="material-icons left">build</i>Build Artifact</a></li></ul>
@@ -705,7 +704,14 @@ function geoError() { alert('No location'); }
 var selectedMark = -1; var mapMark = -1;
 function mapRand() { clearMarkers(); mapMark = Math.floor(Math.random() * domains.length); showMark(mapMark); }
 function mapRoute() { clearMarkers(); mapMark += 1; if (selectedMark == domains.length) { mapMark = 0; } showMark(mapMark);  }
-function mapDir() { clearMarkers(); map.addControl(new MapboxDirections({ accessToken: mapboxgl.accessToken }),'bottom-left'); }
+var dirSwitch = true;
+var dirControl = new MapboxDirections({ accessToken: mapboxgl.accessToken });
+function mapDir() { 
+	if (dirSwitch) { dirSwitch = false; $("#map-dir").addClass("amber"); 
+		        map.addControl(dirControl, 'bottom-left');
+		       } else { dirSwitch = true; $("#map-dir").removeClass("amber"); map.removeControl(dirControl); }
+	
+	 }
 function mapAdd() { clearMarkers(); addArtifact(); }
 	
 function addArtifact() { M.toast({html: 'Select location...'}); artFlag = true; datetimeStart(); }
@@ -875,6 +881,7 @@ dropdown-content li>a>i { margin:0 12px 0 0; } .dropdown-content li>a, .dropdown
 	.collapsible-header {background-color:ghostwhite;}
 	.card .card-image img {position:absolute;}
 	#doc li a { background-color:ghostwhite; }
+.mapboxgl-ctrl-bottom-left { position:fixed; bottom:40%; }
 
 .hide-scrollbar { overflow: auto; -ms-overflow-style: none; /* IE 11 */ scrollbar-width: none; /* Firefox 64 */ }
 .</style></body></html>
