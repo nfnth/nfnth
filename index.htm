@@ -66,7 +66,7 @@
   	<li><a class="waves-effect" onclick="if (walletAddress != '') {copyClip(walletAddress);}"><i class="material-icons">alternate_email</i><span id="myAdd">My Wallet Address</span></a></li>
   	<li><a class="waves-effect"><i class="material-icons">toll</i><span id="myETH">My ETH Balance</span></a></li>
 	<li><a class="waves-effect"><i class="material-icons">inventory_2</i><span id="myArt">My Artifacts</span></a></li>
-	<li style="margin-top:16px;margin-bottom:12px;"><a id="maker" class="btn waves-effect waves-light amber z-depth-1 lighten-3" style="width: 240px;margin: auto;border-radius: 8px;color:black;" onclick="if (walletAddress != '') {desetup(); $('#user-pane').sidenav('close');}"><i class="material-icons left">logout</i>Connect</a></li>
+	<li style="margin-top:16px;margin-bottom:12px;"><a id="maker" class="btn waves-effect waves-light amber z-depth-1 lighten-3" style="width: 240px;margin: auto;border-radius: 8px;color:black;" onclick="if (walletAddress != '') {desetup(); $('#user-pane').sidenav('close');} else { setup(); }"><i class="material-icons left">login</i>Connect</a></li>
   	<li><div style="margin-top:0;" class="divider"></div></li>
   	<!--<i class="material-icons left">calculate</i>-->
   	<li><a class="subheader">Domain Information</a></li>
@@ -81,9 +81,9 @@
 		      <li style="padding-top:16px;margin-bottom:12px;display: flex;justify-content: space-evenly;">
 			      <div style="display:flex;">
 			      <a class='btn-flat' style="margin-right:8px;"><i class="material-icons left">select_all</i></a><a id="dropdown-full" class='dropdown-trigger btn-flat' style="margin-right:8px;" href='#' data-target='dropdown1'><i class="material-icons left">sort</i></a>
-			      <a id="dropdown-full3" class="btn waves-effect waves-light amber z-depth-1 lighten-3 dropdown-trigger" style="margin: auto;border-radius: 8px;color:black;" href='#' data-target='dropdown3' ><i class="material-icons left">filter_list</i>Filter</a></div></li>
+			      <a class="waves-effect waves-light btn amber lighten-2" style="margin-right:8px;display:inline-flex;align-items:center;" onclick="switchView();"><i id="view-icon2" class="material-icons">grid_view</i><span id="view-name2">Grid</span></a></div></li>
  
-	      <li style="margin-top:16px;margin-bottom:12px;"><a id="maker" class="btn waves-effect waves-light amber z-depth-1 lighten-3" style="width: 240px;margin: auto;border-radius: 8px;color:black;" onclick="if (walletAddress != '') {desetup(); $('#user-pane').sidenav('close');}"><i class="material-icons left">explore</i>Visit</a></li>
+	      <li style="margin-top:16px;margin-bottom:12px;"><a id="maker" class="btn waves-effect waves-light amber z-depth-1 lighten-3 disabled" style="width: 240px;margin: auto;border-radius: 8px;color:black;" onclick="if (walletAddress != '') {desetup(); $('#user-pane').sidenav('close');}"><i class="material-icons left">temple_buddhist</i>Visit</a></li>
 	      <li><div id="registry" class="collection" style="overflow:auto;"></div></li></ul>
 		<!--<div class="hoverable" style="display:flex; justify-items:center;width:800px;max-width:80%;">Purchase Collectible</div>-->
 		</div></div></div></li></ul>
@@ -195,34 +195,34 @@ function adjustSize(img) {
     else {adjustment = (img.width - img.height) / 48; shim = 'padding-top'; img.width = "48";}
     img.style.setProperty(shim,adjustment+'px'); img.style.setProperty('display','block');}
 
-function copyClip(text) { navigator.clipboard.writeText(text);M.toast({html: 'Address copied.'}); }
+function copyClip(text) { navigator.clipboard.writeText(text); M.toast({html: 'Address copied.'}); }
 
 var width = window.innerWidth; var height = window.innerHeight + 48;
 async function initial() {
-    //document.getElementById('domain-template').getElementsByTagName('option')[0].selected = 'selected';
-    //$('select').formSelect(); 
+    //document.getElementById('domain-template').getElementsByTagName('option')[0].selected = 'selected'; //$('select').formSelect(); 
 	$('.tabs').tabs(); $('.fixed-action-btn').floatingActionButton(); $("#map-tool").hide();
-			$('.modal').modal(); //$('#modal2').modal(); //$('#dialog-inner2').css("height", window.innerHeight - 375);
-    $("#map").css("height",height + "px"); $("#registry").css("height",height + "px"); showFav('scroller');
+	$('.modal').modal(); //$('#modal2').modal(); //$('#dialog-inner2').css("height", window.innerHeight - 375);
+    	$("#map").css("height",height + "px"); $("#registry").css("height",height + "px"); showFav('scroller');
 
-var gear = Math.floor(Math.random() * (42 - 1 + 1)) + 1; document.getElementById('list-wait').src = "img/gear/gear" + gear.toString() + ".png";
-var gear2 = Math.floor(Math.random() * (42 - 1 + 1)) + 1; document.getElementById('list-wait2').src = "img/gear/gear" + gear2.toString() + ".png";
-var gear3 = Math.floor(Math.random() * (42 - 1 + 1)) + 1; document.getElementById('user-pic').src = "img/gear/gear" + gear3.toString() + ".png";
-var gear3b = Math.floor(Math.random() * (42 - 1 + 1)) + 1; document.getElementById('user-pic2').src = "img/gear/gear" + gear3b.toString() + ".png";
-var gear4 = Math.floor(Math.random() * (42 - 1 + 1)) + 1; document.getElementById('world-gear').src = "img/gear/gear" + gear4.toString() + ".png";
-var gear4b = Math.floor(Math.random() * (42 - 1 + 1)) + 1; document.getElementById('world-gear2').src = "img/gear/gear" + gear4b.toString() + ".png";
+	var gear = Math.floor(Math.random() * (42 - 1 + 1)) + 1; document.getElementById('list-wait').src = "img/gear/gear" + gear.toString() + ".png";
+	var gear2 = Math.floor(Math.random() * (42 - 1 + 1)) + 1; document.getElementById('list-wait2').src = "img/gear/gear" + gear2.toString() + ".png";
+	var gear3 = Math.floor(Math.random() * (42 - 1 + 1)) + 1; document.getElementById('user-pic').src = "img/gear/gear" + gear3.toString() + ".png";
+	var gear3b = Math.floor(Math.random() * (42 - 1 + 1)) + 1; document.getElementById('user-pic2').src = "img/gear/gear" + gear3b.toString() + ".png";
+	var gear4 = Math.floor(Math.random() * (42 - 1 + 1)) + 1; document.getElementById('world-gear').src = "img/gear/gear" + gear4.toString() + ".png";
+	var gear4b = Math.floor(Math.random() * (42 - 1 + 1)) + 1; document.getElementById('world-gear2').src = "img/gear/gear" + gear4b.toString() + ".png";
 	//$("#lister").prop("checked", false);
     $('#docs').dropdown({ constrainWidth: false, coverTrigger: false } ); $('#doc-hide').dropdown({ constrainWidth: false, coverTrigger: false } ); //hover: true 
-			$('#dropdown-full').dropdown({ constrainWidth: true }); $('#dropdown-mobile').dropdown(); $('#dropdown-full2').dropdown({ constrainWidth: true }); $('#dropdown-full3').dropdown({ constrainWidth: false });
+			$('#dropdown-full').dropdown({ constrainWidth: false }); $('#dropdown-mobile').dropdown(); $('#dropdown-full2').dropdown({ constrainWidth: true }); $('#dropdown-full3').dropdown({ constrainWidth: false });
     $('#user-pane').sidenav({ edge: 'right' }); $('.tooltipped').tooltip();
     
 $('.collapsible').collapsible();
-   hideView(); $("#stamper").show(); $("#world").show(); //searchClear();
+   hideView(); //$("#stamper").show(); 
+	$("#world").show(); //searchClear();
      
     setTimeout(function() { $(".loader").css("visibility", "visible"); $('img').on('dragstart', function(evt) { return false; }); }  , 500); }
 
 initial();
-document.addEventListener('DOMContentLoaded', function() { if (window.location.href == "https://ocur.io/?action=about") { showDoc('land'); } });
+document.addEventListener('DOMContentLoaded', function() { });
 
 function domainFind() {
     var domainName = window.location.host; var pathName = window.location.pathname.replaceAll('/',''); var searchName = window.location.search.replaceAll('?domain=','');
@@ -432,7 +432,7 @@ function addListDeed(i) {
      var embedDisplay = "";
 	if (domains[i].core.animation_url != null) { embedDisplay = "<video  style='width:80%;' controls><source type='video/mp4' src='" + domains[i].core.animation_url + "'></video>" } else { embedDisplay = "<img  style='width:80%;' src='" + domains[i].core.image_url + "' /"; }
 		
-    return "<div style='text-align:center;'><p><span style='font-weight:16px'>" + domains[i].name + "</span>&nbsp;&nbsp; · &nbsp;&nbsp;<a onclick='openInNewTab(\"" + domains[i].core.external_link + "\");'>" + domains[i].core.name + "</a></p></div><br/><div style='text-align:center;margin:auto;'><div style='width:120px; ' class='z-depth-1 chip " + getColor(domains[i].core.collection.slug) + "'><img src='img/key/" + getCollect(domains[i].core.collection.slug) + "'><div style='border-radius:12px; width:100px;background-color:rgb(245, 246, 247,0.75);color:black;font-size:16px;font-weight:bold;' class='z-depth-1'>" + padSerial(domains[i].serial) + "</div></div></div><br/><div style='display: flex;justify-content: space-evenly;margin-top: 24px;flex-direction: column;height: 240px;margin-bottom: 24px;align-items: center;'><div style='width:160px;cursor:pointer;' id='c"+ i + "'></div><a onclick='openInNewTab(\"" + domains[i].core.permalink + "\");' class='waves-effect waves-light waves-blue btn blue lighten-2' ><i class='material-icons right'>sailing</i><span id='d" + i + "'></span></a></div><ul class='collapsible expandable'><li><div class='collapsible-header'><i class='material-icons'>description</i>Description</div><div class='collapsible-body'><p>" + domains[i].core.description + "</p><a onclick='openInNewTab(\"" + domains[i].ref + "\");'>Read more...</a><br/><br/><div style='text-align:center;'><img style='max-width:80%;' src='" + domains[i].img + "' /></div><br/><br/></div></li><li><div class='collapsible-header'><i class='material-icons'>movie</i>Media</div><div class='collapsible-body'><div id='emDisp' style='text-align:center;'>" + embedDisplay + "</div><br/><br/></div></li><li><div class='collapsible-header'><i class='material-icons'>history_edu</i>Ownership</div><div class='collapsible-body'><div id='emDisp' style='text-align:center;'>" + embedDisplay + "</div><br/><br/></div></li></ul>";   }
+    return "<div style='text-align:center;'><p><span style='font-weight:16px'>" + domains[i].name + "</span>&nbsp;&nbsp; · &nbsp;&nbsp;<a onclick='openInNewTab(\"" + domains[i].core.external_link + "\");'>" + domains[i].core.name + "</a></p></div><br/><div style='text-align:center;margin:auto;'><div style='width:120px; ' class='z-depth-1 chip " + getColor(domains[i].core.collection.slug) + "'><img src='img/key/" + getCollect(domains[i].core.collection.slug) + "'><div style='border-radius:12px; width:100px;background-color:rgb(245, 246, 247,0.75);color:black;font-size:16px;font-weight:bold;' class='z-depth-1'>" + padSerial(domains[i].serial) + "</div></div></div><br/><div style='display: flex;justify-content: space-evenly;margin-top: 24px;flex-direction: column;height: 240px;margin-bottom: 24px;align-items: center;'><div style='width:160px;cursor:pointer;' id='c"+ i + "'></div><a onclick='openInNewTab(\"" + domains[i].core.permalink + "\");' class='waves-effect waves-light waves-blue btn blue lighten-2' ><i class='material-icons right'>sailing</i><span id='d" + i + "'></span></a></div><ul class='collapsible expandable z-depth-1'><li><div class='collapsible-header'><i class='material-icons'>description</i>Description</div><div class='collapsible-body'><p>" + domains[i].core.description + "</p><a onclick='openInNewTab(\"" + domains[i].ref + "\");'>Read more...</a><br/><br/><div style='text-align:center;'><img style='max-width:80%;' src='" + domains[i].img + "' /></div><br/><br/></div></li><li><div class='collapsible-header'><i class='material-icons'>movie</i>Media</div><div class='collapsible-body'><div id='emDisp' style='text-align:center;'>" + embedDisplay + "</div><br/><br/></div></li><li><div class='collapsible-header'><i class='material-icons'>history_edu</i>Ownership</div><div class='collapsible-body'><div id='emDisp' style='text-align:center;'>" + embedDisplay + "</div><br/><br/></div></li></ul>";   }
 	
 function showDoc(doc) { document.getElementById('dialog-inner2').scrollTo(0, 0); $.get('doc/'+doc, function(data) { setDialog(renderMd(data)); }); }
 function buildDoc(i) { setDialog(addListDeed(i)); $('.collapsible').collapsible();
@@ -869,7 +869,7 @@ dropdown-content li>a>i { margin:0 12px 0 0; } .dropdown-content li>a, .dropdown
 .tabs .tab a.active { background-color:cornflowerblue; color:ghostwhite; } /*Background and text color when a tab is active*/
 .tabs .indicator { background-color:cornflowerblue; } /*Color of underline*/
 .tabs .tab a:focus.active { color:white; /*Custom Text Color While Active*/ background-color: cornflowerblue /*Custom Background Color While Active*/ }
-
+	.collapsible-header {background-color:ghostwhite;}
 	.card .card-image img {position:absolute;}
 	#doc li a { background-color:ghostwhite; }
 
