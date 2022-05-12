@@ -83,7 +83,8 @@
 	<a class='btn-flat' style="margin-right:8px;"><i class="material-icons left">select_all</i></a><a id="dropdown-full" class='dropdown-trigger btn-flat' style="margin-right:8px;" href='#' data-target='dropdown1'><i class="material-icons left">sort</i></a>
 	<a class="waves-effect waves-light btn amber lighten-2" style="margin-right:8px;display:inline-flex;align-items:center;" onclick="switchView();"><i id="view-icon2" class="material-icons">grid_view</i><span id="view-name2">&nbsp;&nbsp;Img</span></a></div></li>
  
-	<li style="margin-top:16px;margin-bottom:12px;"><a id="maker" class="btn waves-effect waves-light amber z-depth-1 lighten-3 disabled" style="width: 100px;margin: auto;border-radius: 8px;color:black;" onclick="if (walletAddress != '') {desetup(); $('#user-pane').sidenav('close');}"><i class="material-icons left">temple_buddhist</i>Edit</a><a id="maker" class="btn waves-effect waves-light amber z-depth-1 lighten-3 disabled" style="width: 100px;margin: auto;border-radius: 8px;color:black;" onclick="if (walletAddress != '') {desetup(); $('#user-pane').sidenav('close');}"><i class="material-icons left">temple_buddhist</i>Delete</a></li>
+	<li style="margin-top:16px;margin-bottom:12px;">
+		<div style="display:flex;"><a id="maker" class="btn waves-effect waves-light amber z-depth-1 lighten-3 disabled" style="width: 100px;margin: auto;border-radius: 8px;color:black;" onclick="if (walletAddress != '') {desetup(); $('#user-pane').sidenav('close');}"><i class="material-icons left">temple_buddhist</i>Edit</a><a id="maker" class="btn waves-effect waves-light amber z-depth-1 lighten-3 disabled" style="width: 100px;margin: auto;border-radius: 8px;color:black;" onclick="if (walletAddress != '') {desetup(); $('#user-pane').sidenav('close');}"><i class="material-icons left">temple_buddhist</i>Delete</a></div></li>
 	      <li><div id="registry" class="collection" style="overflow:auto;"></div></li></ul>
 		<!--<div class="hoverable" style="display:flex; justify-items:center;width:800px;max-width:80%;">Purchase Collectible</div>-->
 		</div></div></div></li></ul>
@@ -132,7 +133,7 @@
 
     <!-- editor -->
     <div id="editor" class="content loader pane scale-transition scale-out">
-        <div style="display:flex;  align-items: center; justify-content: space-evenly; margin:12px; margin-top:48px;">
+        <div style="display:flex;  align-items: center; justify-content: space-evenly; margin:12px; margin-top:16px;">
 		<div class="input-field col s6"><i class="material-icons prefix">event</i><input id="opener" type="text" class="validate"><label for="opener" >Name</label></div></div>
 	    
 <div style="display:flex;  align-items: center; justify-content: center; margin:12px;">
@@ -891,7 +892,7 @@ nav ul a {display: flex!important; align-items: center; width:100%;}
 .sidenav .collapsible, .sidenav.fixed .collapsible {border-top: 1px solid #ddd!important; border-right: 1px solid #ddd!important; border-left: 1px solid #ddd!important;margin: .5rem 0 1rem 0;-webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2)!important;box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2)!important; }
 
 .select-dropdown li img { width: 32px; height: 32px;float: right;margin: auto;bottom: 0;top: 0;margin-top: 12px;right: 0;margin-right: 12px;}
-.select-wrapper { width:45%; max-width:240px; }
+.select-wrapper { width:45%; max-width:215px; }
 
 .hiddenfile { width: 0px;height: 0px;overflow: hidden;}
 
