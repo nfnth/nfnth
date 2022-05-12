@@ -78,7 +78,7 @@
 		</div>
       <div id="test5">
 	      <ul>
-		      <li style="padding-top:16px;margin-bottom:12px;">
+		      <li style="padding-top:16px;margin-bottom:12px;display: flex;justify-content: space-evenly;">
 			      <div style="display:flex;">
 			      <a class='btn-flat' style="margin-right:8px;"><i class="material-icons left">select_all</i></a><a id="dropdown-full" class='dropdown-trigger btn-flat' style="margin-right:8px;" href='#' data-target='dropdown1'><i class="material-icons left">sort</i></a>
 			      <a id="dropdown-full3" class="btn waves-effect waves-light amber z-depth-1 lighten-3 dropdown-trigger" style="margin: auto;border-radius: 8px;color:black;" href='#' data-target='dropdown3' ><i class="material-icons left">filter_list</i>Filter</a></div></li>
@@ -385,7 +385,7 @@ function showView(view) {  hideView(); $('#'+view).show();
     switch (view) {
         case 'editor': $("#editor").addClass("scale-in"); break;
 	case 'filter': $("#filter").addClass("scale-in"); break;
-        case 'list': $('#map').show(); $("#actions").show(); map.resize(); break;
+        case 'list': $('#map').show(); $("#map-tool").show(); map.resize(); break;
 	case 'news':  break;
         case 'map': $("#map-tool").show(); map.resize(); break; } }
 
