@@ -20,4 +20,4 @@ Licensed as **NfNth Corp** in the State of Washington, [19500 130th AV NE, Woodi
 
 [C-SPAN](https://www.c-span.org) · [BBC](http://feeds.bbci.co.uk/news/rss.xml) · [Gutenberg](http://www.gutenberg.org) · [Wikipedia](http://www.wikipedia.org/wiki/Special:Random)
 
-To donate, and/or have a site (and/or profile) featured below, [become an **NfNth** sponsor](https://github.com/sponsors/nfnth).
+To donate and/or feature a site below, [become an **NfNth** sponsor](https://github.com/sponsors/nfnth).
