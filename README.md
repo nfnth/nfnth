@@ -3,15 +3,14 @@
 
 [nfnth.com](https://nfnth.com) [🙂🙂](https://xn--938ha.ws)
 
-A collection of **deed domain** with historical guide (and game) to geocache and survey in the United States (and North America).
+A collection of sites to facilitate a historical guide (and game) to geocache and survey in the United States (and North America).
 
 |Content|Includes||
 |-|-|-|
-|os|[Ocur.io](https://ocur.io)|[repo](https://github.com/nfnth/os)|
-|doc|[MattDown.com](https:///mattdown.com)|[repo](https://github.com/nfnth/md)|
-|deed domain|[UR.Land](https://ur.land)[🌳🌳](https://xn--wh8ha.ws)|[repo](https://github.com/nfnth/deed)|
-|physical|· copy of [civilplex.com] [♠♠](https://xn--b6ha.ws)<br/>· *$1* Native American 2021 coin|[link](https://civilplex.com)|
+|deed domain|· copy of [civilplex.com] [♠♠](https://xn--b6ha.ws)<br/>· *$1* Native American 2021 coin<br/>· access to [UR.Land](https://ur.land)[🌳🌳](https://xn--wh8ha.ws)|[repo](https://github.com/nfnth/deed)|
 |game|[🏳🏴](https://xn--en8hc.ws) [🏳🏳](https://xn--en8ha.ws) [dralun.com](https://dralun.com) [🏴🏳](https://xn--en8hb.ws) [🏴🏴](https://xn--fn8ha.ws)|[repo](https://github.com/nfnth/nfnth)|
+|doc|[MattDown.com](https:///mattdown.com)|[repo](https://github.com/nfnth/md)|
+|os|[ocur.io](https://ocur.io)|[repo](https://github.com/nfnth/os)|
 
 Use **GitHub** for [site-related](https://github.com/nfnth/nfnth/issues) and [OS-related](https://github.com/nfnth/nfnth/issues) issues, or contact **m@nfnth.com** for general questions and/or concerns.
 
