@@ -1,5 +1,5 @@
 
-### Nf|Nth
+### Nf|Nth [🙂🙂](https://xn--938ha.ws)
 
 A collection of repos to facilitate a historical guide (and game) to geocache and survey in the United States (and North America).
 
@@ -11,7 +11,6 @@ A collection of repos to facilitate a historical guide (and game) to geocache an
 |[mattdown.com](https://mattdown.com)|documentation|[doc](https://github.com/nfnth/doc)|[📚📚](https://xn--zt8ha.ws)|
 |[ur.land](https://ur.land)|domain|[deed](https://github.com/nfnth/deed)|[🏳🏴](https://xn--en8hc.ws) [🏳🏳](https://xn--en8ha.ws) [🏴🏳](https://xn--en8hb.ws) [🏴🏴](https://xn--fn8ha.ws)|
 |[civilplex.com](https://civilplex.com)|media|[game](https://github.com/nfnth/game)|[♠♠](https://xn--b6ha.ws)|
-|[katank.com](https://katank.com)|inventory|[gear](https://github.com/nfnth/gear)|[🙂🙂](https://xn--938ha.ws)|
 
 Use the **GitHub** repos for issues, and/or contact **m@nfnth.com** for general questions and/or concerns.
 
