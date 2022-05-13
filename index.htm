@@ -32,7 +32,7 @@
 
     <!-- desktop -->
     <ul class="hide-on-med-and-down">
-	<li id="doc-list"><a id="docs" href="#!" data-target="doc"><i class="material-icons left">sticky_note_2</i>NOTE<i class="material-icons right">arrow_drop_down</i></a></li>
+	<li id="doc-list"><a id="docs" href="#!" data-target="doc"><i class="material-icons left">sticky_note_2</i>WRITE<i class="material-icons right">arrow_drop_down</i></a></li>
 	<li id="map-list"><a onclick="showView('list'); showList('domain');"><i class="material-icons left">map</i>TRACK</a></li>
         <li id="list-list"><a onclick="openInNewTab('https://dev.nfnth.com/res/civ');"><i class="material-icons left">tsunami</i>EXPLORE</a></li>
         <li style="height:64px;" id="search-list">
@@ -97,7 +97,7 @@
         <img src="img/world-min.jpg" class="z-depth-2" style="width:100%; margin-bottom:-6px; " />
 	    
 	<div style="  position: fixed;left: 0;bottom:48px;width: 100%;" ><div class="z-depth-1" style="cursor:pointer; font-size:24px;background-color: rgba(245, 245, 245, 0.8);padding-bottom: 48px;padding-top: 36px;text-align: center;align-items: center;justify-content: center;width: 100%;cursor:pointer;" >
-  <div id="test6" style="padding:16px;"><img id="world-gear" height="48" width="48" style="opacity:0.5;position:absolute;" /><img id="world-gear2" height="48" width="48" style="position:absolute; opacity:0.5;" /><svg class="svg" viewBox="0 0 450 50"><text y="50">// *write [track] $explore</text></svg></div>
+  <div id="test6" style="padding:16px;"><svg style="overflow:visible;" class="svg" viewBox="0 0 450 50"><text y="50">nfnth.com // *write [track] $explore</text></svg></div>
 		     <div><span style="font-size:22px;color:black;">deed. domain. </span><span style="font-size:22px; color:black; font-weight:bold;">decentralized.</span><br/><a style="font-size:20px;" onclick="openInNewTab('https://github.com/nfnth');">NfNth Corp.</a><span style="font-size:16px; color:black; font-weight:bold;">© 2022 Copyright</span></div>
 		
 		</div></div></div>
@@ -979,19 +979,9 @@ dropdown-content li>a>i { margin:0 12px 0 0; } .dropdown-content li>a, .dropdown
 .mapboxgl-ctrl-bottom-left { position:fixed; bottom:40%; }
 
 .hide-scrollbar { overflow: auto; -ms-overflow-style: none; /* IE 11 */ scrollbar-width: none; /* Firefox 64 */ }
-	.svg{
-  font   : bold 36px Century Gothic, Arial;
-  width  : 100%;
-  height : 120px;
-}
+	.svg{ font: bold 24px Century Gothic, Arial; width  : 100%; height : 120px; }
 
-text{
-  fill            : goldenrod;
-  stroke          : darkgoldenrod;
-  stroke-width    : .5px;
-  stroke-linejoin : round;
-  animation       : 2s pulsate infinite;
-}
+text{ fill: goldenrod; stroke: darkgoldenrod; stroke-width: .5px; stroke-linejoin : round; animation: 2s pulsate infinite; }
 
 @keyframes pulsate {
   50%{ stroke-width:1px }
