@@ -1,19 +1,17 @@
 
-### 
+### Nf|Nth
 
-[nfnth.com](https://nfnth.com) 
-
-A collection of sites to facilitate a historical guide (and game) to geocache and survey in the United States (and North America).
+A collection of repos to facilitate a historical guide (and game) to geocache and survey in the United States (and North America).
 
 |Site|Description|Repo|Includes|
 |-|-|-|-|
-|nfnth.com||corp|[👓👓](http://xn--4p8ha.ws) [🧤🧤](http://xn--uv9ha.ws) Nf·Nth [👖👖](http://xn--7p8ha.ws) [🧦🧦](http://xn--wv9ha.ws/)|
-|ocur.io||os|[⚙⚙](https://xn--x7ha.ws)|
-|dralun.com||app|[🌳🌳](https://xn--wh8ha.ws)|
-|mattdown.com||doc|[📚📚](https://xn--zt8ha.ws)|
-|ur.land||viewer|[🙂🙂](https://xn--938ha.ws)|
-|civilplex.com||game|[🏳🏴](https://xn--en8hc.ws) [🏳🏳](https://xn--en8ha.ws) [🏴🏳](https://xn--en8hb.ws) [🏴🏴](https://xn--fn8ha.ws)|
-|||gear|[♠♠](https://xn--b6ha.ws)|
+|nfnth.com|listings|corp|[👓👓](http://xn--4p8ha.ws) [🧤🧤](http://xn--uv9ha.ws) Nf·Nth [👖👖](http://xn--7p8ha.ws) [🧦🧦](http://xn--wv9ha.ws/)|
+|ocur.io|software|os|[⚙⚙](https://xn--x7ha.ws)|
+|dralun.com|data|app|[🌳🌳](https://xn--wh8ha.ws)|
+|mattdown.com|documentation|doc|[📚📚](https://xn--zt8ha.ws)|
+|ur.land|domain deeds|viewer|[🙂🙂](https://xn--938ha.ws)|
+|civilplex.com|media|game|[🏳🏴](https://xn--en8hc.ws) [🏳🏳](https://xn--en8ha.ws) [🏴🏳](https://xn--en8hb.ws) [🏴🏴](https://xn--fn8ha.ws)|
+|katank.com|inventory|gear|[♠♠](https://xn--b6ha.ws)|
 
 deed domain
 copy of [civilplex.com] <br/>· *$1* Native American 2021 coin<br/>· access to [UR.Land](https://ur.land)|[repo](https://github.com/nfnth/deed)|
