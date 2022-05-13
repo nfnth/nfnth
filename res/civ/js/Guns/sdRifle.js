@@ -1,3 +1,0 @@
-class sdRifle extends sdGun
-{
-}
