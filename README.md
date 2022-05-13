@@ -1,7 +1,8 @@
 
 ### [Nf|Nth](https://github.com/nfnth) [🙂🙂](https://xn--938ha.ws)
 
-A collection of repos to facilitate a historical guide (and game) to geocache and survey in the United States (and North America).
+A collection of repos to facilitate the historical guide (and game) to geocache and survey in the United States (and North America).
+
 
 |Site|Description|Repo|Includes|
 |-|-|-|-|
@@ -11,6 +12,7 @@ A collection of repos to facilitate a historical guide (and game) to geocache an
 |[mattdown.com](https://mattdown.com)|document|[doc](https://github.com/nfnth/doc)|[📚📚](https://xn--zt8ha.ws)|
 |[ur.land](https://ur.land)|domain|[deed](https://github.com/nfnth/deed)|[🏳🏴](https://xn--en8hc.ws)<br/>[🏳🏳](https://xn--en8ha.ws)<br/>[🏴🏳](https://xn--en8hb.ws)<br/>[🏴🏴](https://xn--fn8ha.ws)|
 |[civilplex.com](https://civilplex.com)|media|[game](https://github.com/nfnth/game)|[♠♠](https://xn--b6ha.ws)|
+
 
 Use the [**GitHub** repos](https://github.com/nfnth?tab=repositories) for issues, and/or contact **m@nfnth.com** for general questions and/or concerns.
 
@@ -22,4 +24,4 @@ Licensed as **NfNth Corp** in the State of Washington, [19500 130th AV NE, Woodi
 
 [C-SPAN](https://www.c-span.org) · [BBC](http://feeds.bbci.co.uk/news/rss.xml) · [Gutenberg](http://www.gutenberg.org) · [Wikipedia](http://www.wikipedia.org/wiki/Special:Random)
 
-To *donate* and/or *advertise* below, [become an **NfNth** sponsor](https://github.com/sponsors/nfnth).
+To **donate** and/or **advertise** below, [become an **NfNth** sponsor](https://github.com/sponsors/nfnth).
