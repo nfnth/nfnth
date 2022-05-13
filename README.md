@@ -6,10 +6,10 @@ A collection of repos to facilitate a historical guide (and game) to geocache an
 |Site|Description|Repo|Includes|
 |-|-|-|-|
 |[nfnth.com](https://nfnth.com)|general|[nfnth](https://github.com/nfnth/nfnth)|[👓👓](http://xn--4p8ha.ws) [🧤🧤](http://xn--uv9ha.ws) [👖👖](http://xn--7p8ha.ws) [🧦🧦](http://xn--wv9ha.ws/)|
-|[ocur.io](https://ocur.io)|software|[os](https://github.com/nfnth/os)|[⚙⚙](https://xn--x7ha.ws)|
+|[ocur.io](https://ocur.io)|app|[os](https://github.com/nfnth/os)|[⚙⚙](https://xn--x7ha.ws)|
 |[dralun.com](https://dralun.com)|data|[app](https://github.com/nfnth/app)|[🌳🌳](https://xn--wh8ha.ws)|
 |[mattdown.com](https://mattdown.com)|documentation|[doc](https://github.com/nfnth/doc)|[📚📚](https://xn--zt8ha.ws)|
-|[ur.land](https://ur.land)|domains|[deed](https://github.com/nfnth/deed)|[🏳🏴](https://xn--en8hc.ws) [🏳🏳](https://xn--en8ha.ws) [🏴🏳](https://xn--en8hb.ws) [🏴🏴](https://xn--fn8ha.ws)|
+|[ur.land](https://ur.land)|domain|[deed](https://github.com/nfnth/deed)|[🏳🏴](https://xn--en8hc.ws) [🏳🏳](https://xn--en8ha.ws) [🏴🏳](https://xn--en8hb.ws) [🏴🏴](https://xn--fn8ha.ws)|
 |[civilplex.com](https://civilplex.com)|media|[game](https://github.com/nfnth/game)|[♠♠](https://xn--b6ha.ws)|
 |[katank.com](https://katank.com)|inventory|[gear](https://github.com/nfnth/gear)|[🙂🙂](https://xn--938ha.ws)|
 
