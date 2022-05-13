@@ -1,5 +1,5 @@
 
-### Nf|Nth [🙂🙂](https://xn--938ha.ws)
+### [Nf|Nth](https://github.com/nfnth) [🙂🙂](https://xn--938ha.ws)
 
 A collection of repos to facilitate a historical guide (and game) to geocache and survey in the United States (and North America).
 
@@ -8,11 +8,11 @@ A collection of repos to facilitate a historical guide (and game) to geocache an
 |[nfnth.com](https://nfnth.com)|general|[nfnth](https://github.com/nfnth/nfnth)|[👓👓](http://xn--4p8ha.ws) [🧤🧤](http://xn--uv9ha.ws) [👖👖](http://xn--7p8ha.ws) [🧦🧦](http://xn--wv9ha.ws/)|
 |[ocur.io](https://ocur.io)|app|[app](https://github.com/nfnth/app)|[⚙⚙](https://xn--x7ha.ws)|
 |[dralun.com](https://dralun.com)|data|[data](https://github.com/nfnth/data)|[🌳🌳](https://xn--wh8ha.ws)|
-|[mattdown.com](https://mattdown.com)|documentation|[doc](https://github.com/nfnth/doc)|[📚📚](https://xn--zt8ha.ws)|
+|[mattdown.com](https://mattdown.com)|document|[doc](https://github.com/nfnth/doc)|[📚📚](https://xn--zt8ha.ws)|
 |[ur.land](https://ur.land)|domain|[deed](https://github.com/nfnth/deed)|[🏳🏴](https://xn--en8hc.ws) [🏳🏳](https://xn--en8ha.ws) [🏴🏳](https://xn--en8hb.ws) [🏴🏴](https://xn--fn8ha.ws)|
 |[civilplex.com](https://civilplex.com)|media|[game](https://github.com/nfnth/game)|[♠♠](https://xn--b6ha.ws)|
 
-Use the **GitHub** repos for issues, and/or contact **m@nfnth.com** for general questions and/or concerns.
+Use the [**GitHub** repos](https://github.com/nfnth?tab=repositories) for issues, and/or contact **m@nfnth.com** for general questions and/or concerns.
 
 <a href="https://opensea.io/nfnth" title="Buy on OpenSea" target="_blank"><img style="margin-left:24px; width:160px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="https://storage.googleapis.com/opensea-static/Logomark/Badge%20-%20Available%20On%20-%20Light.png" alt="Available on OpenSea" /></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://solsea.io/login" title="Buy on SolSea" target="_blank"><img style="margin-left:24px; width:140px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="sol.svg" alt="Available on SolSea" /></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://buy.stripe.com/5kA4hL5NB6Qv7Ty5kk" target="_blank"><img style="margin-left:24px; width:75px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="coin.jpg" alt="Purchase NfNth Collectible" /></a>
 
