@@ -152,22 +152,7 @@
 
     <!-- editor -->
     <div id="editor" class="content loader pane scale-transition scale-out">
-	<div style="display:flex;  align-items: center; justify-content: center; margin:12px; margin-top:24px;">
-		<a id="dropdown-full5" class="waves-effect waves-light amber lighten-2 btn dropdown-trigger" href='#' data-target='dropdown4' style="margin-right:8px;" ><i id="view-icon" class="material-icons left">dynamic_feed</i><span id="view-name">Template</span></a>
-		<a onclick="clearEditor();" class="waves-effect waves-grey btn-flat"><i class="material-icons left">refresh</i>Clear</a></div>
-  
-        <div id="pad" class="z-depth-2" contentEditable="true" style="text-align:left; overflow-y: auto; width:90%; border:1px solid darkgrey; box-shadow: 1px 1px beige; border-radius: 8px;height: 100%;padding: 12px;margin:auto;font-size:20px;">...enter content here...</div><br/>
-        <div style="display:flex;justify-content:space-between;">
-            <div style="display:flex;  justify-content: left; margin-left:20%;  align-items:center;">
-                <div class="chip z-depth-1 waves-effect waves-blue blue-grey lighten-2" style="display:flex; color:white; width:60px; justify-content:center; margin-right:12px;" onclick="$('#fileinput').trigger('click');"><div style="display:flex;"><i class="material-icons" style="margin:auto;margin-left:12px;">attach_file</i></div></div>
-                <div class="hiddenfile"><input name="upload" type="file" id="preview" onchange="checkFile();" multiple="multiple"/></div>
-                <div class="chip">file1.png<i class="close material-icons">close</i></div></div></div>
-
-        <div style="display:flex; justify-content:space-between; margin:24px;position:sticky;bottom:24px;padding-right:48px;width:100%;">
-            <a onclick="showPreview();" class="waves-effect waves-grey btn-flat"><i class="material-icons left">web_asset</i>Preview</a>
-            <div>
-                <a onclick="pullArtifact($('#opener').val()); showView('map');" class="waves-effect waves-green green btn"><i class="material-icons right">east</i>Continue</a></div>
-            <div id="show-progress" class="progress" style="display:none;"><div class="indeterminate"></div></div></div></div>
+	</div>
 
 <!-- dialog -->
 <div id="modal1" class="modal bottom-sheet content loader"><div id="domain-info" class="modal-content grey lighten-4" style="box-shadow: 1px 18px 24px 1px inset cornsilk" ></div></div>
@@ -300,42 +285,7 @@ function sendArtifact() {
 function readArtifact() { pullInfo(); }
 
 // data
-var opens = [], deeds = [], domains = [], artifacts = [], claims = []; const options = {method: 'GET'}; var inventory = [];
-class Open { core = "api_object"; count = 0; } //asset.name; image_url; banner_image_url; slug;
-class Domain { core = "api_object"; name = "civi"; coord = "key.png"; img = "scene.png"; sub = "City objects."; ur = 1; place = "MI"; serial = 1; ref = "wiki.htm"; owner = "me"; price = "0.1";} // asset.token_id; image_url; image_thumbnail_url; image_preview_url; name; description; external_link; permalink; creator.address; name; parseFloat(asset.sell_orders[0].base_price)/1000000000000000000;
 
-function pullOpens() { //$("#waiter").show();
-    fetch('https://api.opensea.io/api/v1/collections?asset_owner=0x8a83fbbacb82030ea17179c0403b04e7bce7ba10&offset=0&limit=300', options)
-      .then(response => response.json()).then(response => {
-        for (let i = 0; i < response.length; i++) { var asset = response[i];
-            if (asset.name == "NfNth Collection" || asset.name == "Rarible" || asset.name == "Uniswap V3 Positions") { continue; }
-            var tmp = new Open; tmp.core = asset; opens.push(tmp); } } ).then(response => { for (let i=0;i<opens.length;i++) { opens[i].count = pullOpen(opens[i].core.slug); } }).catch(err => console.error(err)); }
-
-function pullOpen(name) { 
-    fetch('https://api.opensea.io/api/v1/assets?limit=50&collection='+name, options)
-      .then(response => response.json()) //.then(response => assets = response)
-      .then(response => { for (let i = 0; i < response.assets.length; i++) {
-            var tmp = new Domain(); var asset = response.assets[i]; var traits = asset.traits;
-            if (asset.name == "absaroka.us" || asset.name == "monocacy.us") { continue; } tmp.core = asset;
-            for (let a = 0; a < traits.length; a++) {
-                switch(traits[a].trait_type.toLowerCase()) {
-                    case 'name': tmp.name = traits[a].value.toString(); break;
-                    case 'coord': tmp.coord = traits[a].value.toString(); break;
-                    case 'img': tmp.img = traits[a].value.toString(); break;
-                    case 'class': tmp.sub = traits[a].value.toString(); break;
-                    case 'ur': tmp.ur = traits[a].value.toString(); break;
-                    case 'state': tmp.place = traits[a].value.toString(); break;
-                    case 'serial': tmp.serial = traits[a].value.toString(); break;
-                    case 'ref': tmp.ref = traits[a].value.toString(); break;
-                    default: break; } }
-            domains.push(tmp);  }  updateCount(name, response.assets.length); } ).then(response => {
-            	if (domains.length > 180) { 
-			if (domainFound == false) { var domainPath = getParameter(); 
-				if (domainPath != 'none') { for (let b = 0; b < domains.length; b++) { 
-					if (domains[b].core.external_url == domainPath) { showMark(b); 
-						document.title = document.title.replace("Ocurious",domains[b].core.external_url);  
-						domainFound = true; } } } else { domainFound = true; } }
-			complete = domains.slice(); domainFind(); } }).catch(err => console.error(err)); }
 
 var domainFound = false;
 function getParameter() { var pathArray = window.location.pathname.split('/'); switch (pathArray.length) { case 2: return pathArray[1]; break; default: return 'none'; } }
@@ -356,24 +306,11 @@ function pullPrice(i) { id = domains[i].core.token_id;
 function updateInfo(i) { $("#d"+i).html(domains[i].price); if (domains[i].price != "Unlisted") { $("#d"+i).html($("#d"+i).html() + " ETH"); }
 	$("#o"+i).html(addWallet(domains[i].owner)); $("#c"+i).html(addWallet(domains[i].owner)); }
 
-var tempArtifact;
-function pullArtifact(link) { //https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/62652367444291733483705976494538757758952482544655308357132040202091906465793
-	fetch('https://api.opensea.io/api/v1/asset/'+link.replace('https://opensea.io/assets/',''), options)
-      		.then(response => response.json())
-      		.then(response => {  tempArtifact = response; updatePreview(); }).catch(err => console.error(err)); }
-
 function updatePreview() { 
 	$("#editor-image").attr("src", tempArtifact.image_url);
 	$("#editor-image").attr("onclick", "setDialog(tempArtifact.description);");
 	$("#editor-name").html(tempArtifact.name); }
-function pullClaims(name) {
-    fetch('https://api.opensea.io/api/v1/assets?limit=10&owner='+name, options)
-      .then(response => response.json())
-      .then(response => {
-        for (let i = 0; i < response.assets.length; i++) {
-           var asset = response.assets[i]; var id = asset.token_id; //alert(id);
-           for (let j = 0; j < holder.length; j++) { if (holder[j][0] == id) { claims.push(j); } } } } )
-      .then(response => { findDeeds(); }).catch(err => console.error(err)); }
+
 
 var worlds = []; var world = [];
 function pullInfo() {
@@ -421,17 +358,6 @@ function showList(area) {  $("#registry").html(''); $("#registry").hide(); if (f
 
 var showGrid = true;
 function switchView() { if (showGrid) { showList('open'); $("#view-icon2").html("view_list"); $("#view-name2").html("&nbsp;&nbsp;List"); showGrid = false; } else { showList('domain'); $("#view-name2").html("&nbsp;&nbsp;Img"); $("#view-icon2").html("grid_view"); showGrid = true;} }
-function adjustSort(full) { //$("option[value='09']").attr("disabled", "disabled");
-    $('#select-sort').empty();
-    $('#select-sort').append('<option value="" selected disabled>Sort...</option>');
-    $('#select-sort').append('<option value="az">Name &#8595;</option>');
-    $('#select-sort').append('<option value="za">Name &#8593;</option>');
-    if (full) {
-        $('#select-sort').append('<option value="09">DateTime &#8593;</option>');
-        $('#select-sort').append('<option value="90">DateTime &#8595;</option>');
-        $('#select-sort').append('<option value="!)">Color &#8595;</option>');
-        $('#select-sort').append('<option value=")!">Color &#8593;</option>'); }
-    $("#select-sort").formSelect(); }
 
 function addOpen(i){
     $("#registry").append("<a class='collection-item open'><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;'><label><input type='checkbox' checked='checked' id='check" + i + "' /><span class='tooltipped' data-position='bottom' data-tooltip='" + opens[i].core.name + "'>" + opens[i].core.name + "</span></label></div><div style='display:flex; justify-content:space-between;align-items:center;'><div><img class='materialboxed z-depth-1' width='60' height='40' src='" + opens[i].core.banner_image_url + "'/></div>&nbsp;&nbsp;&nbsp;&nbsp;<div style='display:flex;'><div onclick='openInNewTab(\"https://opensea.io/collection/" + opens[i].core.slug + "\");' style='width:120px;' class='z-depth-1 chip " + getColor(opens[i].core.slug)  + "'><img src='img/key/" + getCollect(opens[i].core.slug) + "'>" + opens[i].core.slug + "</div></div></div></div></div></a>"); $('.materialboxed').materialbox(); 
@@ -613,15 +539,6 @@ setStatus = function (text) { //- year.day of year-time (hover to show month/day
 function setForm() { setDialog($("#former").html()); }
 $('#somedialog2').attr('style','z-index:99;');
 
-function setTemplate(temp) {
-    switch(temp) {
-        case "Empty":$("#pad").html(""); break;
-        case "Profile":$("#pad").html(profileBasic); break;
-        case "Recipe":$("#pad").html(profileAdvanced); break;
-        case "Instruction":$("#pad").html(artifactRecipe); break;
-        case "Sequence":$("#pad").html(artifactSequence); break;
-        case "Graph":$("#pad").html(artifactGraph); break;} changeFocus(); }
-
 // console
 var onTime = false;
 function switchTime() {
@@ -729,7 +646,7 @@ dropdown-content li>a>i { margin:0 12px 0 0; } .dropdown-content li>a, .dropdown
 .mapboxgl-ctrl-bottom-left { position:fixed; bottom:40%; }
 
 .hide-scrollbar { overflow: auto; -ms-overflow-style: none; /* IE 11 */ scrollbar-width: none; /* Firefox 64 */ }
-	.svg{ font: bold 24px Century Gothic, Arial; width  : 100%; height : 120px; }
+	.svg{ font: bold 18px Century Gothic, Arial; width  : 100%; height : 120px; }
 
 text{ fill: cornflowerblue; stroke: cadetblue; stroke-width: .5px; stroke-linejoin : round; animation: 2s pulsate infinite; }
 
