@@ -48,10 +48,10 @@
 <ul id="doc" class="dropdown-content loader" style="visibility:hidden;">
 	<li><a onclick="showDoc('README');"><i class="material-icons">chair</i>On Deed to Domain</a></li>
 	<li class="divider"></li>
-	<li><a onclick="showDoc('nfn');"><i class="material-icons"><span class="material-icons-outlined">grass</span></i>About NFN Trade</a></li>
-    	<li><a onclick="showDoc('PLANME');"><i class="material-icons">park</i>NfNth Field Guide</a></li>
+	<li><a onclick="showDoc('nfn');"><i class="material-icons"><span class="material-icons-outlined">grass</span></i>About Artifact Trade</a></li>
+    	<li><a onclick="showDoc('PLANME');"><i class="material-icons">park</i>Civilian Field Guide</a></li>
 	<li class="divider"></li>
-    	<li><a onclick="showView('editor'); changeFocus();"><i class="material-icons">book</i>Artifact Editor...</a></li></ul>
+    	<li><a onclick="showView('editor'); changeFocus();"><i class="material-icons">book</i>Note Editor...</a></li></ul>
 
 <!-- panel -->
 <ul id="user-pane" class="sidenav loader" style="visibility:hidden;overflow:hidden;">
@@ -84,7 +84,7 @@
 		<a class="waves-effect waves-light btn amber lighten-2" style="margin-right:8px;display:inline-flex;align-items:center;width:100px;" onclick="switchView();"><i id="view-icon2" class="material-icons">grid_view</i><span id="view-name2">&nbsp;&nbsp;Img</span></a></div></li>
  
 	<li style="margin-top:16px;margin-bottom:12px;">
-		<div style="display:flex;justify-content:space-evenly;padding-top:12px;padding-bottom:12px;"><a class="btn waves-effect waves-light blue z-depth-1 lighten-3" style="width: 120px;border-radius: 8px;color:black;" onclick="addArtifact();" ><i class="material-icons right">inventory_2</i>New</a><a class="btn-flat waves-effect waves-light z-depth-1 disabled"><i class="material-icons">edit</i></a><a class="btn-flat waves-effect waves-light z-depth-1 disabled"><i class="material-icons">delete</i></a></div></li>
+		<div style="display:flex;justify-content:space-evenly;padding-top:12px;padding-bottom:12px;"><a class="btn waves-effect waves-light blue z-depth-1 lighten-2" style="width: 120px;border-radius: 8px;color:black;" onclick="addArtifact();" ><i class="material-icons left">inventory_2</i>New</a><a class="btn-flat waves-effect waves-light z-depth-1 disabled"><i class="material-icons">edit</i></a><a class="btn-flat waves-effect waves-light z-depth-1 disabled"><i class="material-icons">delete</i></a></div></li>
 	<li><div id="registry" class="collection" style="overflow:auto;"></div></li></ul>
 		<!--<div class="hoverable" style="display:flex; justify-items:center;width:800px;max-width:80%;">Purchase Collectible</div>-->
 		</div></div></div></li></ul>
@@ -98,7 +98,7 @@
 	    
 	<div style="  position: fixed;left: 0;bottom:48px;width: 100%;" ><div class="z-depth-1" style="cursor:pointer; font-size:24px;background-color: rgba(245, 245, 245, 0.8);padding-bottom: 48px;padding-top: 36px;text-align: center;align-items: center;justify-content: center;width: 100%;cursor:pointer;" >
   <div id="test6"><svg style="overflow:visible;" class="svg" viewBox="0 0 450 50"><text y="50%" x="50%" text-anchor="middle">// *write [track] $explore</text></svg></div>
-		     <div><span style="font-size:24px;color:goldenrod;text-shadow:1px 1px black;">nfnth.com&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size:22px;color:black;">deed. domain. </span><span style="font-size:22px; color:black; font-weight:bold;">decentralized.</span><br/><a style="font-size:20px;" onclick="openInNewTab('https://github.com/nfnth');">NfNth Corp.</a><span style="font-size:16px; color:black; font-weight:bold;">© 2022 Copyright</span></div>
+		     <div><span style="font-size:24px;color:goldenrod;text-shadow:1px 1px darkgoldenrod;">nfnth.com&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size:22px;color:black;">deed. domain. </span><span style="font-size:22px; color:black; font-weight:bold;">decentralized.</span><br/><a style="font-size:20px;margin-right:12px;" onclick="openInNewTab('https://github.com/nfnth');">NfNth Corp.</a><span style="font-size:16px; color:black; font-weight:bold;">© 2022 Copyright</span></div>
 		
 		</div></div></div>
 
@@ -113,7 +113,7 @@
 		    <!-- map -->
     <div id="map" class="content loader pane" style="width:100%;"></div>
     <div id="map-tool" class="fixed-action-btn">
-  <a class="btn-floating btn-large waves-effect waves-light amber lighten-3" onclick="addArtifact();">
+  <a class="btn-floating btn-large waves-effect waves-light blue lighten-2" onclick="addArtifact();">
     <i class="large material-icons">add</i></a></div></div></div>
 <ul id='dropdown1' class='dropdown-content'>
     <li><a href="#!">Name &#8595;</a></li><li><a href="#!">Name &#8593;</a></li>
@@ -980,7 +980,7 @@ dropdown-content li>a>i { margin:0 12px 0 0; } .dropdown-content li>a, .dropdown
 .hide-scrollbar { overflow: auto; -ms-overflow-style: none; /* IE 11 */ scrollbar-width: none; /* Firefox 64 */ }
 	.svg{ font: bold 24px Century Gothic, Arial; width  : 100%; height : 120px; }
 
-text{ fill: cornflowerblue; stroke: white; stroke-width: .5px; stroke-linejoin : round; animation: 2s pulsate infinite; }
+text{ fill: cornflowerblue; stroke: cadetblue; stroke-width: .5px; stroke-linejoin : round; animation: 2s pulsate infinite; }
 
 @keyframes pulsate {
   50%{ stroke-width:1px }
