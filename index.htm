@@ -497,48 +497,6 @@ function getCollect(value) {
         case 'custo': return 'black.png';
         default: return 'blue_swords.png'; }}
 
-function getColor(value) {
-    switch(value) {
-        case 'librar': return 'brown lighten-4';
-        case 'patric': return 'orange';
-        case 'clini': return 'pink';
-        case 'sect': return 'green';
-        case 'technic': return 'white';
-        case 'utili': return 'gray';
-        case 'civilia': return 'blue';
-        case 'tact': return 'red';
-        case 'elect': return 'yellow';
-        case 'agrar': return 'brown';
-        case 'logicia': return 'purple';
-        case 'custo': return 'black';
-        default: return 'blue_swords.png'; }}
-
-function getClass (value) {
-    switch(value) {
-        case 'site': return 'green';
-        case 'monument': return 'blue';
-        case 'plant': return 'red';
-        case 'animal': return 'yellow';
-        case 'city': return 'green';
-        case 'dwelling': return 'blue';
-        case 'canada': return 'blue';
-        case 'mexico': return 'yellow';
-        case 'tribe': return 'red';
-        case 'battle': return 'red';
-        case 'general': return 'blue';
-        case 'chief': return 'orange'; //fort...
-        //writer politic media business
-        //park landmark
-        //object
-        case 'art': return 'blue'; //design?
-        case 'machine': return 'gray';
-        case 'stock': return 'green';
-        case 'river': return getColor('water') + ' lighten-2';
-        case 'island': return 'blue lighten-1';
-        case 'monument': return getColor('town') + ' darken-3';
-        case 'mountain': return getColor('air');
-        default: return 'black';}}
-
 var holder; var sortItem; var sortSet = ['manifest',domains,0,18,16];
 function setFilter(collect) { collections = []; collections.push(collect); pullCollections(); }
 function sorter() { var sort = $('#select-sort').val().toString(); //holder = domains;
@@ -637,7 +595,6 @@ const [file] = preview.files
         $("#editThumb").addClass("green");$("#editThumb").removeClass("blue-grey"); }}}
 function changeFocus() { var element = $("#pad"); element.attr("tabindex", -1).focus().val(element.val()); }
 
-// markdown render
 var setStatus;
 function setNotice(text) {
     setTimeout( function() {
@@ -656,8 +613,6 @@ setStatus = function (text) { //- year.day of year-time (hover to show month/day
 function setForm() { setDialog($("#former").html()); }
 $('#somedialog2').attr('style','z-index:99;');
 
-
-
 function setTemplate(temp) {
     switch(temp) {
         case "Empty":$("#pad").html(""); break;
@@ -666,119 +621,6 @@ function setTemplate(temp) {
         case "Instruction":$("#pad").html(artifactRecipe); break;
         case "Sequence":$("#pad").html(artifactSequence); break;
         case "Graph":$("#pad").html(artifactGraph); break;} changeFocus(); }
-
-//https://docs.mapbox.com/help/tutorials/local-search-geocoding-api/ //https://docs.mapbox.com/mapbox-gl-js/example/mapbox-gl-directions/
-//"//style: 'mapbox://styles/mapbox/dark-v10'"
-//https://imagecompressor.com/ //- Stryker font, dad's artitect... //- teleprompt with audio?
-// map
-var map; var map_token = "pk.eyJ1IjoibmZudGgiLCJhIjoiY2tweW1rNXlsMGFpYzJwcGt1cHh6dmxzcyJ9.ZJaFrGpPDv5froWZMLXXYQ";
-var base = [-98.59236473214004, 39.82998211920899, ]; var landlord = [-101.59236473214004, 42.82998211920899, ]; var art = [-96.59236473214004, 37.82998211920899, ]; var center = [-100.4510253658899336, 43.91338997020656];
-
-var currentMarkers=[]; //var introMark;//43.706742350484916, 1.5266131055501075
-var addMark; var coordinates; var artFlag = false;
-mapboxgl.accessToken = map_token; zoom = 5;
-map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/mapbox/light-v10', center: center, zoom: zoom, buffer_size: 0.2}); //'mapbox://styles/mapbox/light-v10'
-map.on('load', function (event) { $("head").append('<style type="text/css">.markre{visibility:visible!important;}</style>');
-    map.on('click', function(e) { coordinates = e.lngLat; if(artFlag) { addArt(); artFlag = false; } $('.fixed-action-btn').floatingActionButton('close');
-				 }); });
-
-var satSwitch = true; var satCenter; var currentToggle = 0; var gpsSwitch = false; var randSwitch = false;
-function mapSat() { satCenter = map.getCenter();
-	if (satSwitch) { mapStyle = 'mapbox://styles/mapbox/satellite-streets-v11'; satSwitch = false; $("#map-sat").addClass("amber");  } else { mapStyle = 'mapbox://styles/mapbox/light-v10'; satSwitch = true; $("#map-sat").removeClass("amber");}
-	map = new mapboxgl.Map({container: 'map', style: mapStyle, center: satCenter, zoom: zoom, buffer_size: 0.2}); 
-		  clearMarkers();
-		  for (let a=0;a<currentContent.length;a++) { addMark(currentContent[a][0],currentContent[a][1],currentContent[a][2],currentContent[a][3],currentContent[a][4],currentContent[a][5],currentContent[a][6]); } currentMarkers[currentToggle].togglePopup(); }
-
-var tempCoord = [0,0];
-function mapLoc() { if (gpsSwitch) { clearMap(); gpsSwitch = false; $("#map-gps").addClass("grey"); $("#map-gps").removeClass("blue"); } 
-	else { if(navigator.geolocation) { navigator.geolocation.getCurrentPosition(geoSuccess, geoError); } else { alert("Geolocation is not supported by this browser.");} } }
-function geoSuccess(position) {tempCoord[1] = position.coords.latitude;tempCoord[0] = position.coords.longitude; gpsSwitch = true; $("#map-gps").addClass("blue"); $("#map-gps").removeClass("grey"); setZoom = 8; fly(tempCoord); addBeacon(tempCoord); beacon = true; } 
-function geoError() { alert('No location'); }
-
-var selectedMark = -1; var mapMark = -1;
-function mapRand() { clearMarkers(); mapMark = Math.floor(Math.random() * domains.length); showMark(mapMark); }
-function mapRoute() { clearMarkers(); mapMark += 1; if (selectedMark == domains.length) { mapMark = 0; } showMark(mapMark);  }
-var dirSwitch = true;
-var dirControl = new MapboxDirections({ accessToken: mapboxgl.accessToken });
-function mapDir() { 
-	if (dirSwitch) { dirSwitch = false; $("#map-dir").addClass("amber"); 
-		        map.addControl(dirControl, 'bottom-left');
-		       } else { dirSwitch = true; $("#map-dir").removeClass("amber"); map.removeControl(dirControl); }
-	
-	 }
-function mapAdd() { clearMarkers(); addArtifact(); }
-	
-function addArtifact() { M.toast({html: 'Select location...'}); artFlag = true; datetimeStart(); }
-function clearMarkers() { clearMap();  for (let a=0;a<currentMarkers.length;a++){ currentMarkers[a].remove(); } currentMarkers = []; }
-function addArt() { clearMarkers(); addMark('a',coordinates,'snake','1','green', editContent, 0); $('.datepicker').datepicker(); //setDefaultDate: true
-		   currentMarkers[0].togglePopup(); }
-var beacon = false; var pather = false; var introMark; var nomadPath; var artifactPath; var setDomain; var currentContent = [];
-//function mapIntro() { startUp = function() { currentMarkers[0].togglePopup(); 
-//}; clearMarkers(); 
-  //  addMark('a',fr,'fire','1','indianred', baseContent, 0); currentContent.push(['a',fr,'fire','1','indianred',baseContent,0]);
-    //addMark('b',fr2,'island','1','green', landContent, 1); currentContent.push(['b',fr2,'island','1','green',landContent,1]);
-   // addMark('c',fr3,'monument','1','skyblue', artContent, 2); currentContent.push(['c',fr3,'monument','1','skyblue',artContent,2]);//map.flyTo({center: //base});
-    //currentMarkers[0].togglePopup(); 
-		  //  setTimeout( function () { fly(frc); }, 1000);
-			//}
-function showPath(color) { addLine(color); nomadPath = requestAnimationFrame(drawLine); }
-//function showLandlord() { startPoint = fr; endPoint = fr2; showPath('green'); currentMarkers[0].togglePopup(); currentMarkers[1].togglePopup(); pather = true; currentToggle = 1; }
-//function showArt() { addBeacon(fr3); currentMarkers[1].togglePopup(); currentMarkers[2].togglePopup(); beacon = true; currentToggle = 2; }
-//function showBase() { currentMarkers[2].togglePopup(); currentMarkers[0].togglePopup(); currentToggle = 0; }
-
-function clearMap() { cancelAnimationFrame(nomadPath); if (pather) { removeLine(); } if (beacon) { removeBeacon(); } pather = false; beacon = false; }
-    const geojsonDraw = { "type": "FeatureCollection","features": [{"type": "Feature", "geometry": { "type": "LineString", "coordinates": [] } }] };
-var startPoint; var endPoint;
-var framesPerSecond = 20; var initialOpacity = 1; var opacity = initialOpacity; var initialRadius = 4; var radius = initialRadius; var maxRadius = 15; var speedFactor = 100; var animation; var lineCoordinates=[]; var animationCounter=0;
-function addLine(color) {
-    var diffX = endPoint[0] - startPoint[0];  var diffY = endPoint[1] - startPoint[1]; var sfX = diffX / speedFactor; var sfY = diffY / speedFactor; var i=0; var j=0;
-    while (Math.abs(i) < Math.abs(diffX) || Math.abs(j) < Math.abs(diffY)) { lineCoordinates.push([startPoint[0] + i, startPoint[1] + j]);
-        if (Math.abs(i) < Math.abs(diffX)) {i += sfX; } if (Math.abs(j) < Math.abs(diffY)) { j += sfY; } }
-
-    map.addSource('point1', {"type": "geojson", "data": { "type": "Point", "coordinates": [ startPoint[0], startPoint[1] ]  } });
-    map.addLayer({ "id": "circle1", "source": "point1", "type": "circle", "paint": {"circle-radius": initialRadius, "circle-radius-transition": { duration: 0 }, "circle-opacity-transition": {   duration: 0}, "circle-color": 'black' } });
-    map.addLayer({"id": "point1", "source": "point1","type": "circle","paint": {   "circle-radius": initialRadius, "circle-color": 'black' } });
-    map.addSource('point2', {"type": "geojson", "data": { "type": "Point", "coordinates": [ endPoint[0], endPoint[1] ]  } });
-    map.addLayer({"id": "circle2", "source": "point2", "type": "circle", "paint": {  "circle-radius": initialRadius,"circle-radius-transition": {  duration: 0}, "circle-opacity-transition": {   duration: 0 }, "circle-color": 'black' } });
-    map.addLayer({ "id": "point2", "source": "point2","type": "circle", "paint": { "circle-radius": initialRadius, "circle-color": 'black' }  });
-    map.addLayer({'id': 'line-draw','type': 'line', 'source': { 'type': 'geojson', 'data': geojsonDraw },'layout': { 'line-cap': 'round', 'line-join': 'round' }, 'paint': {'line-color': color,'line-width': 2, 'line-dasharray': [2, 1]} });  }
-
-function removeLine() {
-    map.removeLayer('line-draw'); map.removeLayer('point2'); map.removeLayer('circle2');map.removeLayer('point1'); map.removeLayer('circle1'); map.removeSource('point2'); map.removeSource('point1');  map.removeSource('line-draw');
-    geojsonDraw.features[0].geometry.coordinates = []; }
-
-function drawLine(i) {
-    if (animationCounter < lineCoordinates.length) {
-        geojsonDraw.features[0].geometry.coordinates.push(lineCoordinates[animationCounter]);
-        map.getSource('line-draw').setData(geojsonDraw);
-        nomadPath = requestAnimationFrame(drawLine);
-        animationCounter++;}
-    else { var coord = geojsonDraw.features[0].geometry.coordinates;
-        if (coord.length > 0) {
-            geojsonDraw.features[0].geometry.coordinates = coord;
-            map.getSource('line-draw').setData(geojsonDraw);
-            nomadPath = requestAnimationFrame(drawLine); }} }
-
-const size = 200;
-const pulsingDot = { width: size, height: size, data: new Uint8Array(size * size * 4),
-    onAdd: function () { const canvas = document.createElement('canvas'); canvas.width = this.width; canvas.height = this.height; this.context = canvas.getContext('2d'); },
-    render: function () { const duration = 1000; const t = (performance.now() % duration) / duration; const radius = (size / 2) * 0.3; const outerRadius = (size / 2) * 0.7 * t + radius; const context = this.context;
-        context.clearRect(0, 0, this.width, this.height); context.beginPath(); context.arc( this.width / 2, this.height / 2, outerRadius, 0, Math.PI * 2 ); context.fillStyle = `rgba(3, 111, 252, ${1 - t})`; context.fill();
-        context.beginPath(); context.arc( this.width / 2, this.height / 2, radius, 0, Math.PI * 2 ); context.fillStyle = 'rgba(68, 140, 235, 1)'; context.strokeStyle = 'white'; context.lineWidth = 2 + 4 * (1 - t); context.fill(); context.stroke();
-        this.data = context.getImageData( 0, 0, this.width, this.height).data; map.triggerRepaint(); return true; } };
-
-function addBeacon(place) {
-    map.addImage('pulsing-dot', pulsingDot, { pixelRatio: 2 });
-    map.addSource('dot-point', { 'type': 'geojson', 'data': { 'type': 'FeatureCollection', 'features': [ { 'type': 'Feature', 'geometry': { 'type': 'Point', 'coordinates': place } } ] } });
-    map.addLayer({'id': 'layer-with-pulsing-dot', 'type': 'symbol', 'source': 'dot-point', 'layout': { 'icon-image': 'pulsing-dot' }  }); }
-function removeBeacon() {map.removeLayer('layer-with-pulsing-dot');map.removeSource('dot-point');map.removeImage('pulsing-dot'); }
-
-var flying; var startUp; var setZoom = 5;
-function fly(dest) {
-    const nowhere = [-75.10664162497726, 45.741025518671464];
-    map.fire('click', { latLng: nowhere, point: map.project(nowhere), originalEvent: {} }); flying = true;
-    map.on('moveend', function(e){ if(flying){ flying = false; startUp(); } });
-    map.flyTo({ center: dest, zoom: setZoom, bearing: 0, speed: 0.8,  curve: 1,  easing: (t) => t, essential: true }); }
 
 // console
 var onTime = false;
