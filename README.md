@@ -5,18 +5,15 @@ A collection of repos to facilitate a historical guide (and game) to geocache an
 
 |Site|Description|Repo|Includes|
 |-|-|-|-|
-|nfnth.com|listings|corp|[👓👓](http://xn--4p8ha.ws) [🧤🧤](http://xn--uv9ha.ws) Nf·Nth [👖👖](http://xn--7p8ha.ws) [🧦🧦](http://xn--wv9ha.ws/)|
-|ocur.io|software|os|[⚙⚙](https://xn--x7ha.ws)|
-|dralun.com|data|app|[🌳🌳](https://xn--wh8ha.ws)|
-|mattdown.com|documentation|doc|[📚📚](https://xn--zt8ha.ws)|
-|ur.land|domain deeds|viewer|[🙂🙂](https://xn--938ha.ws)|
-|civilplex.com|media|game|[🏳🏴](https://xn--en8hc.ws) [🏳🏳](https://xn--en8ha.ws) [🏴🏳](https://xn--en8hb.ws) [🏴🏴](https://xn--fn8ha.ws)|
-|katank.com|inventory|gear|[♠♠](https://xn--b6ha.ws)|
+|nfnth.com|listings|[nfnth](https://github.com/nfnth/nfnth)|[👓👓](http://xn--4p8ha.ws) [🧤🧤](http://xn--uv9ha.ws) [👖👖](http://xn--7p8ha.ws) [🧦🧦](http://xn--wv9ha.ws/)|
+|ocur.io|software|[os](https://github.com/nfnth/os)|[⚙⚙](https://xn--x7ha.ws)|
+|dralun.com|data|[app](https://github.com/nfnth/app)|[🌳🌳](https://xn--wh8ha.ws)|
+|mattdown.com|documentation|[doc](https://github.com/nfnth/doc)|[📚📚](https://xn--zt8ha.ws)|
+|ur.land|domain deeds|[viewer](https://github.com/nfnth/deed)|[🙂🙂](https://xn--938ha.ws)|
+|civilplex.com|media|[game](https://github.com/nfnth/game)|[🏳🏴](https://xn--en8hc.ws) [🏳🏳](https://xn--en8ha.ws) [🏴🏳](https://xn--en8hb.ws) [🏴🏴](https://xn--fn8ha.ws)|
+|katank.com|inventory|[gear](https://github.com/nfnth/gear)|[♠♠](https://xn--b6ha.ws)|
 
-deed domain
-copy of [civilplex.com] <br/>· *$1* Native American 2021 coin<br/>· access to [UR.Land](https://ur.land)|[repo](https://github.com/nfnth/deed)|
-
-Use **GitHub** for [site-related](https://github.com/nfnth/nfnth/issues) and [OS-related](https://github.com/nfnth/nfnth/issues) issues, or contact **m@nfnth.com** for general questions and/or concerns.
+Use the **GitHub** repos for issues, and/or contact **m@nfnth.com** for general questions and/or concerns.
 
 <a href="https://buy.stripe.com/5kA4hL5NB6Qv7Ty5kk" target="_blank"><img style="margin-left:24px; width:75px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="img/coin.jpg" alt="Purchase NfNth Collectible" /></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://opensea.io/nfnth" title="Buy on OpenSea" target="_blank"><img style="margin-left:24px; width:160px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="https://storage.googleapis.com/opensea-static/Logomark/Badge%20-%20Available%20On%20-%20Light.png" alt="Available on OpenSea" /></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://solsea.io/login" title="Buy on SolSea" target="_blank"><img style="margin-left:24px; width:140px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="img/SolSea_Logo.svg" alt="Available on SolSea" /></a>
 
