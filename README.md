@@ -4,7 +4,7 @@
 A collection of repos to facilitate the historical guide (and game) to geocache and survey in the United States (and North America).
 
 
-|Site|Description|Repo|Includes|
+|Site|Desc|Repo||
 |-|-|-|-|
 |[nfnth.com](https://nfnth.com)|general|[nfnth](https://github.com/nfnth/nfnth)|[👓👓](http://xn--4p8ha.ws)<br/>[🧤🧤](http://xn--uv9ha.ws)<br/>[👖👖](http://xn--7p8ha.ws)<br/>[🧦🧦](http://xn--wv9ha.ws/)|
 |[ocur.io](https://ocur.io)|app|[app](https://github.com/nfnth/app)|[⚙⚙](https://xn--x7ha.ws)|
