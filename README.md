@@ -19,14 +19,12 @@ Use [**GitHub** issues](https://github.com/nfnth/nfnth/issues) for **support**, 
 
 Licensed as **NfNth Corp** in the State of Washington, [19500 130th AV NE, Woodinville, WA 98072](https://www.google.com/maps/place/19500+130th+Ave+NE,+Woodinville,+WA+98072/@47.7479925,-122.1874976,14.79z/data=!4m8!1m2!2m1!1surland!3m4!1s0x54900e91e7d1bbd7:0xc04ec07789786761!8m2!3d47.7690595!4d-122.1662039)
 
-[corp](https://ccfs.sos.wa.gov/#/Dashboard) - [license](https://secure.dor.wa.gov/) - [copyright](https://eco.copyright.gov) - [trademark](https://www.uspto.gov/) - [tax]() - [book](https://www.makeplayingcards.com) - [ship](https://www.usps.com/business/web-tools-apis/documentation-updates.htm)
+[corp](https://ccfs.sos.wa.gov/#/Dashboard) · [license](https://secure.dor.wa.gov/) · [copyright](https://eco.copyright.gov) · [trademark](https://www.uspto.gov/) · [tax]()
 
 **AKAM** **INTL** **GOOG** with **COIN** **STRIPE** **VISA** **CHASE** (**GE** **GD** **GM** **KR** Canon? AirBNB)
 
-Runs on [Linode](https://cloud.linode.com). Crypto with [gate.io]() and [ETH](https://geth.ethereum.org/downloads/) (Presearch) 5% rule (FINRA)
+Runs on [Linode](https://cloud.linode.com). Ships with [USPS](https://www.usps.com/business/web-tools-apis/documentation-updates.htm). Crypto with [gate.io]() and [ETH](https://geth.ethereum.org/downloads/) (Presearch) 5% rule (FINRA)
 
-[C-SPAN](https://www.c-span.org) · [BBC](http://feeds.bbci.co.uk/news/rss.xml) · [Gutenberg](http://www.gutenberg.org) · [Wikipedia](http://www.wikipedia.org/wiki/Special:Random)
+[C-SPAN](https://www.c-span.org) · [BBC](http://feeds.bbci.co.uk/news/rss.xml) · [Gutenberg](http://www.gutenberg.org) · [Wikipedia](http://www.wikipedia.org/wiki/Special:Random) with [BH]() · [AceHardware]() · [NorthernTool]() · [MPC](https://www.makeplayingcards.com)
 
-[BH]() · [AceHardware]() · [NorthernTool]()
-
-[Donate to Ukraine!](https://engine.presearch.org/search?q=donate+to+ukraine) and/or [local](Zion/United Methodist (Woodinville)) and https://www.change.org/
+[Donate to Ukraine!](https://engine.presearch.org/search?q=donate+to+ukraine) and/or Zion/United Methodist and https://www.change.org/
