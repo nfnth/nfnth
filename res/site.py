@@ -22,7 +22,7 @@ from eth_account import Account, messages
 #from shutil import copyfile
 
 DATA="/mnt/data/"
-PATH="/root/app/"
+PATH="/root/nfnth/"
 ETH_API_KEY=""
 OPEN_API_KEY=""
 TOKEN="0xCcaB679860B1017589239BCeEEabe5CD45965aFc"
@@ -118,8 +118,8 @@ async def site(port):
     #app['locked'] = False
 
     app.router.add_static('/res', PATH + 'res')
-    app.router.add_static('/img', PATH + 'img')
-    app.router.add_static('/doc', PATH + 'doc')
+    #app.router.add_static('/img', PATH + 'img')
+    #app.router.add_static('/doc', PATH + 'doc')
     app.router.add_static('/domain', DATA + 'domain')
 
     app.add_routes([web.get('/', index)])
