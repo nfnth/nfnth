@@ -7,11 +7,11 @@
 [👖👖](http://xn--7p8ha.ws)<br/>
 [🧦🧦](http://xn--wv9ha.ws)
 
-The **[DRALUN](https://dralun.com)** project to facilitate the historical guide (and game) to geocache and survey in the United States (and North America).
+The **[DRALUN](https://dralun.com)** project to facilitate the historical guide (and game) to geocache and survey in the United States (and North America), includes:
 
-- [UR.Land](https://ur.land) [🌳🌳](https://xn--wh8ha.ws) *app*
-- [mattdown.com](https://mattdown.com) at [📚📚](https://xn--zt8ha.ws) *language*
-- [ocur.io](https://ocur.io) [🏳🏴](https://xn--en8hc.ws) [🏳🏳](https://xn--en8ha.ws) [🏴🏳](https://xn--en8hb.ws) [🏴🏴](https://xn--fn8ha.ws) *os*
+- [🌳🌳](https://xn--wh8ha.ws) [UR.Land](https://ur.land) *app*
+- [📚📚](https://xn--zt8ha.ws) [mattdown.com](https://mattdown.com) *language*
+- [🏳🏴](https://xn--en8hc.ws) [🏳🏳](https://xn--en8ha.ws) [ocur.io](https://ocur.io) [🏴🏳](https://xn--en8hb.ws) [🏴🏴](https://xn--fn8ha.ws) *os*
 
 Use [**GitHub** issues](https://github.com/nfnth/nfnth/issues) for support, [sponsor **NfNth**](https://github.com/sponsors/nfnth) to **donate** and/or **advertise** below.
 
