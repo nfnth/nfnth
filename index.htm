@@ -263,6 +263,13 @@ var spinner = 0; function resetHome() {
 
 function openInNewTab(url) { window.open(url, '_blank').focus(); } //window.location.href = url;
 function getParameter() { var pathArray = window.location.pathname.split('/'); switch (pathArray.length) { case 2: return pathArray[1]; break; default: return 'none'; } }
+function redirect() {
+	var page = getParameter();
+	switch (page) {
+		case 'mattdown.com': showDoc('mattdown'); break;
+		case 'nfnth.com': aboutDoc(); break;
+		case 'ocur.io': showDoc('os'); break; } 
+}
 
 function showFav(site) {
     $('<link>').appendTo('head').attr({ class: 'ico', type: 'image/x-icon', rel: 'icon', href: "res/img/fav/favicon.ico" });
@@ -294,7 +301,7 @@ async function initial() {
     
    	hideView(); $('#news').show(); $("#stamper").show(); $("#world").show(); //searchClear();
      
-    	setTimeout(function() { $(".loader").css("visibility", "visible"); 
+    	setTimeout(function() { $(".loader").css("visibility", "visible"); redirect();
 			       //showList('open'); showList('domain'); 
 			       $('img').on('dragstart', function(evt) { return false; }); }  , 500); }
 
@@ -429,8 +436,8 @@ function addListDeed(i) { var embedDisplay = "";
 		
 	return "<div style='text-align:center;'><p><span style='font-weight:16px'>" + domains[i].name + "</span>&nbsp;&nbsp; · &nbsp;&nbsp;<a onclick='openInNewTab(\"" + domains[i].core.external_link + "\");'>" + domains[i].core.name + "</a></p></div><br/><div id='emDisp' style='text-align:center;'>" + embedDisplay + "</div><br/><br/><a class='waves-effect waves-light btn amber lighten-2' onclick=''><i class='material-icons right'>media</i>Video...</a></br></br><p>" + domains[i].core.description + "</p><a onclick='openInNewTab(\"" + domains[i].ref + "\");'>Read more...</a><div style='text-align:center;'><img style='max-width:80%;' src='" + domains[i].img + "' /></div><br/><div style='text-align:center;margin:auto;'><div onclick='openInNewTab(\"https://opensea.io/collection/" + domains[i].core.collection.slug + "\");' style='width:120px; ' class='z-depth-1 chip " + getCollect(domains[i].core.collection.slug).replace(".png","") + "'><img src='img/key/" + getCollect(domains[i].core.collection.slug) + "'><div style='border-radius:12px; width:100px;background-color:rgb(245, 246, 247,0.75);color:black;font-size:16px;font-weight:bold;' class='z-depth-1'>x</div></div>&nbsp;&nbsp;<a onclick='openInNewTab(\"" + domains[i].core.permalink + "\");' class='waves-effect waves-light waves-blue btn blue lighten-2' ><i class='material-icons right'>sailing</i><span id='d" + i + "'></span></a></div><br/>Owner Info...";   }
 
-
-function showDoc(doc) { document.getElementById('dialog-inner2').scrollTo(0, 0); $.get('doc/'+doc, function(data) { setDialog(renderMd(data)); }); }
+function aboutDoc() { document.getElementById('dialog-inner2').scrollTo(0, 0); $.get('README.md', function(data) { setDialog(renderMd(data)); }); }
+function showDoc(doc) { document.getElementById('dialog-inner2').scrollTo(0, 0); $.get('res/doc/'+doc, function(data) { setDialog(renderMd(data)); }); }
 function buildDoc(i) { $("#somedialog2").css("z-index",1004); setDialog(addListDeed(i)); $('.collapsible').collapsible({ accordian:false }); }
 		     //pullOwner(i); pullPrice(i);
 
