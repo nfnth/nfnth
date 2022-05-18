@@ -82,20 +82,32 @@ async def data(request):
         print ("authenticated...")
         #domain = request.host
         
-        api_url = "https://api.opensea.io/api/v1/asset/0x495f947276749Ce646f68AC8c248420045cb7b5e/" + ref
-        headers = {"X-API-KEY": API_KEY}
-
-        print (api_url)
-        x = requests.get(api_url, headers=headers).json().get("top_ownerships")[0].get("owner").get("address")
-        print (x)
-        if x.upper() == wallet.upper(): #owner authenticated
-            #request.app['locked'] = False
-            if os.exists(DATA + 'domain/' + ref): #backup?
-                os.remove(DATA + 'domain/' + ref)
-            with open(DATA + 'domain/' + ref, "wt") as fout:
+        if domain == "profile":
+            path = DATA + 'wallet/' + wallet.lower()
+            if os.path.isdir(path):
+                shutil.rmtree(path)
+            os.mkdir(path)
+            with open(path + '/profile') as fout:
                 fout.write(content)
                 pass
-            return web.Response(text='valid',content_type="text/html")
+            return web.Response(text='valid wallet',content_type="text/html")
+        else:
+            api_url = "https://api.opensea.io/api/v1/asset/0x495f947276749Ce646f68AC8c248420045cb7b5e/" + domain
+            headers = {"X-API-KEY": OPEN_API_KEY}
+
+            print (api_url)
+            x = requests.get(api_url, headers=headers).json().get("top_ownerships")[0].get("owner").get("address")
+            print (x)
+            if x.upper() == wallet.upper(): #owner authenticated
+                path = DATA + 'domain/' + ref
+                #request.app['locked'] = False
+                if os.exists(path): #backup?
+                    shutil.rmtree(path)
+                os.mkdir(path)
+                with open(path + '/deed', "wt") as fout:
+                    fout.write(content)
+                    pass
+                return web.Response(text='valid domain',content_type="text/html")
         else:
             return web.Response(text='invalid owner',content_type="text/html")
     else:
@@ -122,8 +134,6 @@ async def site(port):
     #app['locked'] = False
 
     app.router.add_static('/res', PATH + 'res')
-    #app.router.add_static('/img', PATH + 'img')
-    #app.router.add_static('/doc', PATH + 'doc')
     app.router.add_static('/domain', DATA + 'domain')
 
     app.add_routes([web.get('/', index)])
