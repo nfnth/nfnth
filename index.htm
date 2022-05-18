@@ -14,7 +14,7 @@
 <script src="res/app/all.js"></script><link rel="stylesheet" href="res/app/all.css">
 <script src="res/app/open.js"></script><script src="res/app/wallet.js"></script><script src="res/app/md.js"></script></head>
 
-<body style="overflow:overlay; background-color:goldenrod;" >
+<body style="overflow:overlay; background-color:whitesmoke;transition: background-color 1s linear;" >
 
 <!-- menu -->
 <nav id="main-menu" style="position: fixed;top:0; z-index:2;visibility:hidden;" class="loader">
@@ -23,15 +23,15 @@
     		<div class="z-depth-1"><a id="menu-deed" style="color:darkslategrey; opacity:0.7; background-color:ghostwhite; display: flex; align-items: center; height: 100%; padding-right: 10px;font-weight: bold;font-size: 20px; -webkit-transition: background-color 300ms linear, color 300ms linear;-moz-transition: background-color 300ms linear, color 300ms linear;-o-transition: background-color 300ms linear, color 300ms linear;-ms-transition: background-color 300ms linear, color 300ms linear;transition: background-color 300ms linear, color 300ms linear;"><i class="material-icons" style="padding-left:16px;" onclick="showList('open'); $('#deed-pane').sidenav('open');">menu</i><div id="waiter" onclick="resetHome();" style="height:48px; width:48px; cursor: pointer; margin-left: 12px;"><img id="list-wait" class="image image-rotate"/><img id="list-wait2" class="image image-rotate"/></div></a></div>
 
 	<!-- media -->
-	<a id="explore-hide" class="screen-hide media-menu" data-target="explore"><i class="material-icons">edit</i></a>
 	<a id="doc-hide" class="screen-hide media-menu" href="#!" data-target="doc"><i class="material-icons">sticky_note_2</i></a>
+	<a id="explore-hide" class="screen-hide media-menu" data-target="explore"><i class="material-icons">edit</i></a>
 	<a id="map-hide" class="screen-hide media-menu" onclick="showView('list'); showList('domain');"><i class="material-icons">map</i></a>
     	<a id="search-hide" class="screen-hide media-menu" onclick="showView('search');"><i class="material-icons">search</i></a>
 
     	<!-- desktop -->
     	<ul class="hide-on-med-and-down">
-		<li id="list-list"><a id="explores" href="#!" data-target="explore"><i class="material-icons left">edit</i>NOTE<i class="material-icons right">arrow_drop_down</i></a></li>
 		<li id="doc-list"><a id="docs" href="#!" data-target="doc"><i class="material-icons left">sticky_note_2</i>STORE<i class="material-icons right">arrow_drop_down</i></a></li>
+		<li id="list-list"><a id="explores" href="#!" data-target="explore"><i class="material-icons left">edit</i>NOTE<i class="material-icons right">arrow_drop_down</i></a></li>
 		<li id="map-list"><a onclick="showView('list'); showList('domain');"><i class="material-icons left">map</i>TRACK</a></li>
         	<li style="height:64px;" id="search-list">
         		<a style="height:inherit; padding-right:0;"><i onclick="$('#search').focus();" style="height:inherit; padding-right:16px;" class="material-icons">search</i><div id="search-box" class="input-field" style="height:inherit;"><input id="search" type="search" onkeyup="searchResults()" style="padding-left:12px; width: calc(100% - 1rem);"><label class="label-icon" for="search" ></label><i class="material-icons" onclick="searchClear()">close</i></div></a></li></ul>
@@ -279,7 +279,7 @@ function showFav(site) {
 function copyClip(text) { navigator.clipboard.writeText(text); M.toast({html: 'Address copied.'}); }
 
 var width = window.innerWidth; var height = window.innerHeight + 48;
-async function initial() {
+async function initial() { $(body).css("background-color","goldenrod");
 	$('.tabs').tabs(); $('.fixed-action-btn').floatingActionButton(); $("#map-tool").hide(); $('select').formSelect();
 	$('.modal').modal(); //$('#dialog-inner2').css("height", window.innerHeight - 375);
 	$("#registry-open").css("height",(height - 120) + "px"); $("#registry-domain").css("height",(height - 120) + "px");
