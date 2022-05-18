@@ -21,12 +21,12 @@ Licensed as **NfNth Corp** in the State of Washington, [19500 130th AV NE, Woodi
 
 [corp](https://ccfs.sos.wa.gov/#/Dashboard) - [license](https://secure.dor.wa.gov/) - [copyright](https://eco.copyright.gov) - [trademark](https://www.uspto.gov/) - [tax]() - [book](https://www.makeplayingcards.com) - [ship](https://www.usps.com/business/web-tools-apis/documentation-updates.htm)
 
-Runs on [Linode](https://cloud.linode.com) **AKAM** **INTL** **GOOG** with **COIN** **STRIPE** **VISA** **CHASE**
+**AKAM** **INTL** **GOOG** with **COIN** **STRIPE** **VISA** **CHASE** (**GE** **GD** **GM** **KR** Canon? AirBNB)
+
+Runs on [Linode](https://cloud.linode.com). Crypto with [gate.io]() and [ETH](https://geth.ethereum.org/downloads/) (Presearch) 5% rule (FINRA)
 
 [C-SPAN](https://www.c-span.org) · [BBC](http://feeds.bbci.co.uk/news/rss.xml) · [Gutenberg](http://www.gutenberg.org) · [Wikipedia](http://www.wikipedia.org/wiki/Special:Random)
 
-Channel coming soon, featuring private BH, Ace Hardware with NorthernTool!  **GE** **GD** **GM** **KR** Canon? AirBNB
-
-Crypto with [gate.io]() and [ETH](https://geth.ethereum.org/downloads/) (Presearch) 5% rule (FINRA)
+[BH]() · [AceHardware]() · [NorthernTool]()
 
 [Donate to Ukraine!](https://engine.presearch.org/search?q=donate+to+ukraine) and/or [local](Zion/United Methodist (Woodinville)) and https://www.change.org/
