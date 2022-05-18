@@ -1,21 +1,8 @@
 
-### Site Ideas...
+### Upcoming Features
 
-https://docs.mapbox.com/api/navigation/directions/
-https://www.logodesign.net/qrcode-generator (QR with logo!)
-
-### Game Ideas...
-
-https://jsfiddle.net/aa0et7tr/5/
-https://codepen.io/shubniggurath/pen/OEeMOd (water)
-https://codepen.io/shubniggurath/pen/BVKgJK (storm)
-https://codepen.io/vcomics/pen/aGmoae (city)
-https://codepen.io/shubniggurath/pen/WgJZJo (snow)
-https://codepen.io/SteveJRobertson/pen/emGWaR
-https://codepen.io/knoland/pen/XKxrJb
-https://codesandbox.io/embed/v6sle?codemirror=1
-https://codepen.io/sjcobb/pen/gmjVqb
-
-### Shop Ideas...
-
-https://www.blenderbottle.com/
+|Project||
+|-|-|
+|site|https://docs.mapbox.com/api/navigation/directions/<br/>https://www.logodesign.net/qrcode-generator (QR with logo!)|
+|game|https://jsfiddle.net/aa0et7tr/5/<br/>https://codepen.io/shubniggurath/pen/OEeMOd (water)<br/>https://codepen.io/shubniggurath/pen/BVKgJK (storm)<br/>https://codepen.io/vcomics/pen/aGmoae (city)<br/>https://codepen.io/shubniggurath/pen/WgJZJo (snow)<br/>https://codepen.io/SteveJRobertson/pen/emGWaR<br/>https://codepen.io/knoland/pen/XKxrJb<br/>https://codesandbox.io/embed/v6sle?codemirror=1<br/>https://codepen.io/sjcobb/pen/gmjVqb|
+|shop|https://www.blenderbottle.com/|
