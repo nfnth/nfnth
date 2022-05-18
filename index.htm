@@ -23,16 +23,16 @@
     		<div class="z-depth-1"><a id="menu-deed" style="color:darkslategrey; opacity:0.7; background-color:ghostwhite; display: flex; align-items: center; height: 100%; padding-right: 10px;font-weight: bold;font-size: 20px; -webkit-transition: background-color 300ms linear, color 300ms linear;-moz-transition: background-color 300ms linear, color 300ms linear;-o-transition: background-color 300ms linear, color 300ms linear;-ms-transition: background-color 300ms linear, color 300ms linear;transition: background-color 300ms linear, color 300ms linear;"><i class="material-icons" style="padding-left:16px;" onclick="showList('open'); $('#deed-pane').sidenav('open');">menu</i><div id="waiter" onclick="resetHome();" style="height:48px; width:48px; cursor: pointer; margin-left: 12px;"><img id="list-wait" class="image image-rotate"/><img id="list-wait2" class="image image-rotate"/></div></a></div>
 
 	<!-- media -->
-	<a id="explore-hide" class="screen-hide media-menu" data-target="explore"><i class="material-icons">build</i></a>
-        <a id="map-hide" class="screen-hide media-menu" onclick="showView('list'); showList('domain');"><i class="material-icons">map</i></a>
+	<a id="explore-hide" class="screen-hide media-menu" data-target="explore"><i class="material-icons">edit</i></a>
 	<a id="doc-hide" class="screen-hide media-menu" href="#!" data-target="doc"><i class="material-icons">sticky_note_2</i></a>
+	<a id="map-hide" class="screen-hide media-menu" onclick="showView('list'); showList('domain');"><i class="material-icons">map</i></a>
     	<a id="search-hide" class="screen-hide media-menu" onclick="showView('search');"><i class="material-icons">search</i></a>
 
     	<!-- desktop -->
     	<ul class="hide-on-med-and-down">
-		<li id="list-list"><a id="explores" href="#!" data-target="explore"><i class="material-icons left">build</i>BUILD<i class="material-icons right">arrow_drop_down</i></a></li>
+		<li id="list-list"><a id="explores" href="#!" data-target="explore"><i class="material-icons left">edit</i>NOTE<i class="material-icons right">arrow_drop_down</i></a></li>
+		<li id="doc-list"><a id="docs" href="#!" data-target="doc"><i class="material-icons left">sticky_note_2</i>STORE<i class="material-icons right">arrow_drop_down</i></a></li>
 		<li id="map-list"><a onclick="showView('list'); showList('domain');"><i class="material-icons left">map</i>TRACK</a></li>
-		<li id="doc-list"><a id="docs" href="#!" data-target="doc"><i class="material-icons left">sticky_note_2</i>NOTE<i class="material-icons right">arrow_drop_down</i></a></li>
         	<li style="height:64px;" id="search-list">
         		<a style="height:inherit; padding-right:0;"><i onclick="$('#search').focus();" style="height:inherit; padding-right:16px;" class="material-icons">search</i><div id="search-box" class="input-field" style="height:inherit;"><input id="search" type="search" onkeyup="searchResults()" style="padding-left:12px; width: calc(100% - 1rem);"><label class="label-icon" for="search" ></label><i class="material-icons" onclick="searchClear()">close</i></div></a></li></ul>
 
@@ -49,14 +49,14 @@
 <ul id="doc" class="dropdown-content loader" style="visibility:hidden;">
 	<li><a onclick="showDoc('README');"><i class="material-icons">chair</i>On Deed to Domain</a></li>
 	<li class="divider"></li>
+	<li><a onclick="showDoc('PLANME');"><i class="material-icons">park</i>Civilian Field Guide</a></li>
 	<li><a onclick="showDoc('nfn');"><i class="material-icons"><span class="material-icons-outlined">grass</span></i>About Artifact Trade</a></li>
-    	<li><a onclick="showDoc('PLANME');"><i class="material-icons">park</i>Civilian Field Guide</a></li>
 	<li class="divider"></li>
-	<li><a onclick="showView('editor'); changeFocus();"><i class="material-icons">book</i>Document Editor...</a></li></ul>
+	<li><a onclick="showDoc('os');"><i class="material-icons">book</i>Use ocurOS</a></li></ul>
 
 <!-- panel (deed) -->
 <ul id="deed-pane" class="sidenav loader" style="visibility:hidden;overflow:hidden;">
-	<li><div class="user-view z-depth-1 amber lighten-5" style="display: flex;margin: auto; padding: 0;align-items: center; padding-left:12px;"><span id="ocuros" style="cursor: pointer;margin:auto; color:darkslategrey!important; font-size:18px;border-radius: 8px; opacity: 0.7; font-weight: bold;" onclick="showDoc('os');" class="badge amber lighten-4" data-badge-caption="ocurOS · v1.08"></span><img id="user-pic" style="opacity:0.6; height: 48px;position:absolute; right:0; margin: 12px; cursor:pointer;" onclick="openInNewTab('https://github.com/nfnth'); $('#user-pane').sidenav('close');"/><img id="user-pic2" style="opacity:0.6; height: 48px;cursor:pointer;margin:12px;" onclick="openInNewTab('https://ocur.io'); $('#user-pane').sidenav('close');"/></div></li>
+	<li><div class="user-view z-depth-1 amber lighten-5" style="display: flex;margin: auto; padding: 0;align-items: center; padding-left:12px;"><span id="ocuros" style="cursor: pointer;margin:auto; color:darkslategrey!important; font-size:18px;border-radius: 8px; opacity: 0.7; font-weight: bold;" onclick="showDoc('os'); $('#deed-pane').sidenav('close');" class="badge amber lighten-4" data-badge-caption="ocurOS · v1.08"></span><img id="user-pic" style="opacity:0.6; height: 48px;position:absolute; right:0; margin: 12px; cursor:pointer;" onclick="openInNewTab('https://github.com/nfnth'); $('#deed-pane').sidenav('close');"/><img id="user-pic2" style="opacity:0.6; height: 48px;cursor:pointer;margin:12px;" onclick="openInNewTab('https://github.com/nfnth'); $('#deed-pane').sidenav('close');"/></div></li>
 	
 	<!-- tabs -->
 	<li style="height:100%;"><ul class="tabs tabs-fixed-width z-depth-1">
@@ -75,10 +75,10 @@
 		
 <!-- panel (domain) -->
 <ul id="user-pane" class="sidenav loader" style="visibility:hidden;overflow:hidden;">
-	<li><div class="user-view z-depth-1 blue-grey lighten-4" style="display: flex;margin: auto; padding: 0;align-items: center; padding-left:12px;"><a id="poster" class="btn waves-effect waves-light green z-depth-1 lighten-2 disabled white-text" style="width: 240px;margin: auto;border-radius: 8px;margin-bottom:12px;color:black;" onclick="$('.tabs').tabs('select', 'test5');"><i class="material-icons left">help</i>Help</a></div></li>
+	<li><div class="user-view z-depth-1 blue-grey lighten-4" style="display: flex;margin: auto; padding: 0;align-items: center; padding-left:12px;"><a class="btn waves-effect waves-light green z-depth-1 lighten-2" style="margin: auto;border-radius: 8px;margin-bottom:12px; margin-top:12px; color:black;" onclick="openInNewTab('https://github.com/nfnth/nfnth/issues'); $('#user-pane').sidenav('close');"><i class="material-icons left">help</i>Help</a></div></li>
 	
 	<!-- tabs -->
-	<li style="height:100%;"><ul class="tabs tabs-fixed-width z-depth-1">
+	<li style="height:100%;"><ul class="tabs tabs-fixed-width z-depth-1 wallet">
         	<li class="tab blue-grey lighten-5"><a class="active" href="#test4">&nbsp;Deed&nbsp;</a></li>
 		<li class="tab blue-grey lighten-5"><a href="#test5">Domain</a></li></ul><div class="card-content z-depth-1" style="height:100%;background-color:ghostwhite;">
 			
@@ -723,6 +723,12 @@ dropdown-content li>a>i { margin:0 12px 0 0; } .dropdown-content li>a, .dropdown
 .tabs .tab a.active { background-color:goldenrod; color:ghostwhite; } /*Background and text color when a tab is active*/
 .tabs .indicator { background-color:darkgoldenrod; } /*Color of underline*/
 .tabs .tab a:focus.active { color:white; /*Custom Text Color While Active*/ background-color: goldenrod /*Custom Background Color While Active*/ }
+	
+.tabs.wallet .tab a{ color:black; } /*Black color to the text*/
+.tabs.wallet .tab a:hover { background-color:lightgrey; color:white; } /*Text color on hover*/
+.tabs.wallet .tab a.active { background-color:cadetblue; color:ghostwhite; } /*Background and text color when a tab is active*/
+.tabs.wallet .indicator { background-color:cornflowerblue; } /*Color of underline*/
+.tabs.wallet .tab a:focus.active { color:white; /*Custom Text Color While Active*/ background-color: cadetblue /*Custom Background Color While Active*/ }
 
 /*	.card .card-image img {position:absolute;}*/
 	#doc li a { background-color:ghostwhite; }
