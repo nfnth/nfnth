@@ -1,5 +1,5 @@
 
-### [Nf|Nth](https://github.com/nfnth) [🙂🙂](https://xn--938ha.ws)
+### home of [Nf|Nth](https://github.com/nfnth) [🙂🙂](https://xn--938ha.ws)
 
 A collection of repos to facilitate the historical guide (and game) to geocache and survey in the United States (and North America).
 
