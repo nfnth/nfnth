@@ -117,8 +117,8 @@
         	<div class="hide-on-med-and-down"><a class="waves-effect waves-amber btn-flat" onclick="mapLoc();"><i id="select-icon" class="material-icons left">gps_fixed</i><span>Location</span></a><a class='btn-flat' style="margin-right:8px;" onclick="mapRand();"><i class="material-icons left">shuffle</i>Random</a><a id="dropdown-maper" class="waves-effect waves-light amber lighten-2 btn dropdown-trigger" href='#' data-target='dropdown-map' style="margin-right:8px;" ><i id="view-icon" class="material-icons left">layers</i><span id="view-name">Layers</span></a></div></div>
 		<div class="screen-hide"><a class="waves-effect waves-amber btn-flat" onclick="mapLoc();"><i id="select-icon" class="material-icons left">gps_fixed</i><span></span></a><a class='btn-flat' style="margin-right:8px;" onclick="mapRand();"><i class="material-icons left">shuffle</i></a><a id="dropdown-mediaer" class="waves-effect waves-light btn amber lighten-2 dropdown-trigger" style="margin-right:8px;display:inline-flex;align-items:center;" href='#' data-target='dropdown-media'><i id="view-icon2" class="material-icons left">layers</i><span id="view-name2">Layers</span></a></div></div>
 		
-		<div style="width:100%; display:flex;"><div id="map" class="content loader pane" style="width:100%;"></div>
-			<div id="map-tool" class="fixed-action-btn"><a class="btn-floating btn-large waves-effect waves-light blue lighten-2" onclick="addArtifact();"><i class="large material-icons">add</i></a></div></div></div>
+		<div id="map" class="content loader pane" style="width:100%;"></div>
+			<div id="map-tool" class="fixed-action-btn"><a class="btn-floating btn-large waves-effect waves-light blue lighten-2" onclick="addArtifact();"><i class="large material-icons">add</i></a></div></div>
 
     	<!-- search -->
     	<div id="results" style="margin:80; display:none;" class="content loader pane">search...</div>
@@ -671,7 +671,7 @@ nav ul a {display: flex!important; align-items: center; width:100%;}
 /* mobile */
 .screen-hide {display:none;}
 	.media-menu { color:darkslategrey; } .media-menu:active { color:whitesmoke; }
-@media screen and (max-width: 999px) {.mobile-hide {display:none;} .screen-hide {display:block;} #list-filter {position:inherit!important;} .card {width:100%!important;} #setting-wallet { width:60px; }}
+@media screen and (max-width: 999px) {.mobile-hide {display:none;} .screen-hide {display:block;} #list-filter {position:inherit!important; padding-top:8px!important; } .card {width:100%!important;} #setting-wallet { width:60px; }}
 @media screen and (max-height: 450px) {.sidenav {padding-top: 15px;}.sidenav a {font-size: 18px;}}
 	
 @media screen and (max-width: 800px) {/* 8.5 x 11 with even centered 8 .logo { width: 36px; height:36px; }*/}
