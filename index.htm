@@ -279,7 +279,7 @@ function showFav(site) {
 function copyClip(text) { navigator.clipboard.writeText(text); M.toast({html: 'Address copied.'}); }
 
 var width = window.innerWidth; var height = window.innerHeight + 48;
-async function initial() { $(body).css("background-color","goldenrod");
+async function initial() { $('body').css("background-color","goldenrod");
 	$('.tabs').tabs(); $('.fixed-action-btn').floatingActionButton(); $("#map-tool").hide(); $('select').formSelect();
 	$('.modal').modal(); //$('#dialog-inner2').css("height", window.innerHeight - 375);
 	$("#registry-open").css("height",(height - 120) + "px"); $("#registry-domain").css("height",(height - 120) + "px");
