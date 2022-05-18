@@ -1,23 +1,20 @@
 
-### home of Mr. [Nf|Nth](https://github.com/nfnth) 
+### home of Mr. [Nf|Nth](https://github.com/nfnth) and the [deed domain](https://github.com/nfnth/deed)
 
 [🙂🙂](https://xn--938ha.ws)<br/>
 [👓👓](http://xn--4p8ha.ws)<br/>
 [🧤🧤](http://xn--uv9ha.ws)<br/>
 [👖👖](http://xn--7p8ha.ws)<br/>
-[🧦🧦](http://xn--wv9ha.ws/)
+[🧦🧦](http://xn--wv9ha.ws)
 
-A collection of repos to facilitate the historical guide (and game) to geocache and survey in the United States (and North America).
 
-[deed](https://github.com/nfnth/deed)
+A collection of projects to facilitate the historical guide (and game) to geocache and survey in the United States (and North America).
 
-[dralun.com](https://dralun.com) with [UR.Land](https://ur.land) at [🌳🌳](https://xn--wh8ha.ws)
+- [dralun.com](https://dralun.com) with [UR.Land](https://ur.land) at [🌳🌳](https://xn--wh8ha.ws)
+- [mattdown.com](https://mattdown.com) at [📚📚](https://xn--zt8ha.ws)
+- [ocur.io](https://ocur.io) with [🏳🏴](https://xn--en8hc.ws) [🏳🏳](https://xn--en8ha.ws) [🏴🏳](https://xn--en8hb.ws) [🏴🏴](https://xn--fn8ha.ws)
 
-[ocur.io](https://ocur.io) with [mattdown.com](https://mattdown.com) at [📚📚](https://xn--zt8ha.ws)
-
-[🏳🏴](https://xn--en8hc.ws) [🏳🏳](https://xn--en8ha.ws) [🏴🏳](https://xn--en8hb.ws) [🏴🏴](https://xn--fn8ha.ws)?
-
-Use the [**GitHub** repos](https://github.com/nfnth/nfnth/issues) for issues, and/or contact **m@nfnth.com** for general questions and/or concerns.
+Use [**GitHub** issues](https://github.com/nfnth/nfnth/issues) for support, and/or contact **m@nfnth.com** for general questions and/or concerns.
 
 To **donate** and/or **advertise** below, [sponsor **NfNth**](https://github.com/sponsors/nfnth).
 
