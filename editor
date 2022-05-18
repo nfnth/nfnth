@@ -1,0 +1,39 @@
+<div style="display:flex;  align-items: center; justify-content: center; margin:12px; margin-top:24px;">
+		<a id="dropdown-template" class="waves-effect waves-light amber lighten-2 btn dropdown-trigger" href='#' data-target='dropdown-temp' style="margin-right:8px;" ><i id="view-icon" class="material-icons left">dynamic_feed</i><span id="view-name">Template</span></a>
+		<a onclick="clearEditor();" class="waves-effect waves-grey btn-flat"><i class="material-icons left">refresh</i>Clear</a></div>
+  
+        <div id="pad" class="z-depth-2" contentEditable="true" style="text-align:left; overflow-y: auto; width:90%; border:1px solid darkgrey; box-shadow: 1px 1px beige; border-radius: 8px;height: 100%;padding: 12px;margin:auto;font-size:20px;">...enter content here...</div><br/>
+        <div style="display:flex;justify-content:space-between;">
+            <div style="display:flex;  justify-content: left; margin-left:20%;  align-items:center;">
+                <div class="chip z-depth-1 waves-effect waves-blue blue-grey lighten-2" style="display:flex; color:white; width:60px; justify-content:center; margin-right:12px;" onclick="$('#fileinput').trigger('click');"><div style="display:flex;"><i class="material-icons" style="margin:auto;margin-left:12px;">attach_file</i></div></div>
+                <div class="hiddenfile"><input name="upload" type="file" id="preview" onchange="checkFile();" multiple="multiple"/></div>
+                <div class="chip">file1.png<i class="close material-icons">close</i></div></div></div>
+
+        <div style="display:flex; justify-content:space-between; margin:24px;position:sticky;bottom:24px;padding-right:48px;width:100%;">
+            <a onclick="showPreview();" class="waves-effect waves-grey btn-flat"><i class="material-icons left">web_asset</i>Preview</a>
+            <div>
+                <a onclick="pullArtifact($('#opener').val()); showView('map');" class="waves-effect waves-green green btn"><i class="material-icons right">east</i>Continue</a></div>
+            <div id="show-progress" class="progress" style="display:none;"><div class="indeterminate"></div></div></div>
+
+<ul id='dropdown-temp' class='dropdown-content'>
+    	<li id="map-sat"><a href="#!" onclick="setTemplate('Empty');"><i class="material-icons">label</i>Empty</a></li>
+	<li class="divider" tabindex="-1"></li>
+    	<li id="map-dir"><a href="#!" onclick="setTemplate('Profile');"><i class="material-icons">badge</i>Profile</a></li>
+	<li id="map-dir"><a href="#!" onclick="setTemplate('Instruction');"><i class="material-icons">checklist</i>Checklist</a></li>
+	<li class="divider" tabindex="-1"></li>
+	<li id="map-route"><a href="#!" onclick="setTemplate('Recipe');"><i class="material-icons">restaurant</i>Recipe</a></li>
+	<li id="map-route"><a href="#!" onclick="setTemplate('Sequence');"><i class="material-icons">dry_cleaning</i>Sequence</a></li>
+	<li id="map-route"><a href="#!" onclick="setTemplate('Graph');"><i class="material-icons">fort</i>Graph</a></li></ul>
+
+<script>
+$('#dropdown-template').dropdown({ constrainWidth: false });
+	
+  function setTemplate(temp) {
+    switch(temp) {
+        case "Empty":$("#pad").html(""); break;
+        case "Profile":$("#pad").html(profileBasic); break;
+        case "Recipe":$("#pad").html(profileAdvanced); break;
+        case "Instruction":$("#pad").html(artifactRecipe); break;
+        case "Sequence":$("#pad").html(artifactSequence); break;
+        case "Graph":$("#pad").html(artifactGraph); break;} changeFocus(); }
+	</script>
