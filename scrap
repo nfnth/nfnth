@@ -308,3 +308,47 @@ site() {
 nohup firefox > /dev/null 2>&1 &
 #sed -i "s/#XXXX/nohup chromium 'http:\/\/localhost:5001' --test-type --start-fullscreen --disable-web-security --user-data-dir=~ --no-sandbox > \/dev\/null 2>&1 & disown &/g" /root/config/start.sh
 
+
+https://codepen.io/shubniggurath/pen/OEeMOd (water)
+https://codepen.io/shubniggurath/pen/BVKgJK (storm)
+https://codepen.io/vcomics/pen/aGmoae (city)
+https://codepen.io/shubniggurath/pen/WgJZJo (snow)
+
+https://codepen.io/SteveJRobertson/pen/emGWaR
+
+https://codepen.io/knoland/pen/XKxrJb
+
+https://codesandbox.io/embed/v6sle?codemirror=1
+
+
+https://codepen.io/sjcobb/pen/gmjVqb
+https://www.blenderbottle.com/
+
+https://engine.presearch.org/search?q=donate+to+ukraine
+
+https://www.logodesign.net/qrcode-generator (QR with logo!)
+
+https://www.change.org/
+
+5% rule (FINRA)
+
+about:support (profiles) (config)
+
+Ace Hardware with northerntool
+AirBnb
+
+builtinseattle
+
+GE, KR? Canon, GD
+Presearch with crypto?
+Zion/United Methodist (Woodinville)
+ 
+ https://jsfiddle.net/aa0et7tr/5/
+
+[corp](https://ccfs.sos.wa.gov/#/Dashboard) - [license](https://secure.dor.wa.gov/) - [copyright](https://eco.copyright.gov) - [trademark](https://www.uspto.gov/)
+(Akamai, INTL), build [private](BH) with [ETH](https://geth.ethereum.org/downloads/) and (GOOG)
+[book](https://www.makeplayingcards.com)
+[ship](https://www.usps.com/business/web-tools-apis/documentation-updates.htm) (STRIPE, VISA)
+[coin](https://coinbase.com) (CHASE, COIN) with [crypto](https://gate.io)
+
+(GM)||taxes|
