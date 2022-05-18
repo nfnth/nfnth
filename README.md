@@ -20,3 +20,28 @@ Use [**GitHub** issues](https://github.com/nfnth/nfnth/issues) for **support**, 
 Licensed as **NfNth Corp** in the State of Washington, [19500 130th AV NE, Woodinville, WA 98072](https://www.google.com/maps/place/19500+130th+Ave+NE,+Woodinville,+WA+98072/@47.7479925,-122.1874976,14.79z/data=!4m8!1m2!2m1!1surland!3m4!1s0x54900e91e7d1bbd7:0xc04ec07789786761!8m2!3d47.7690595!4d-122.1662039)
 
 [C-SPAN](https://www.c-span.org) · [BBC](http://feeds.bbci.co.uk/news/rss.xml) · [Gutenberg](http://www.gutenberg.org) · [Wikipedia](http://www.wikipedia.org/wiki/Special:Random)
+
+Ace Hardware with northerntool
+AirBnb
+
+builtinseattle
+
+GE, KR? Canon, GD
+Presearch with crypto?
+Zion/United Methodist (Woodinville)
+ 
+ 
+
+[corp](https://ccfs.sos.wa.gov/#/Dashboard) - [license](https://secure.dor.wa.gov/) - [copyright](https://eco.copyright.gov) - [trademark](https://www.uspto.gov/)
+(Akamai, INTL), build [private](BH) with [ETH](https://geth.ethereum.org/downloads/) and (GOOG)
+[book](https://www.makeplayingcards.com)
+[ship](https://www.usps.com/business/web-tools-apis/documentation-updates.htm) (STRIPE, VISA)
+[coin](https://coinbase.com) (CHASE, COIN) with [crypto](https://gate.io)
+
+(GM)||taxes|
+
+https://www.change.org/
+
+https://engine.presearch.org/search?q=donate+to+ukraine
+
+5% rule (FINRA)
