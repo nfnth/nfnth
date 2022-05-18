@@ -32,7 +32,11 @@ SECRET = Fernet(KEY)
 
 # client
 async def index(request): #request.remote_addr #if not request.host == "dralun.com":
-    if request.host == "ur.land": #add emoji...ur.land?
+    route = request.match_info.get('route', '')
+    
+    if route == "README.md":
+        return web.FileResponse(PATH + 'README.md')
+    elif request.host == "ur.land": #add emoji...ur.land?
         return web.FileResponse(PATH + 'index.htm')
 
 async def api(request):
