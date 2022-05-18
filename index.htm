@@ -30,7 +30,7 @@
 
     	<!-- desktop -->
     	<ul class="hide-on-med-and-down">
-		<li id="doc-list"><a id="docs" href="#!" data-target="doc"><i class="material-icons left">sticky_note_2</i>STORE<i class="material-icons right">arrow_drop_down</i></a></li>
+		<li id="doc-list"><a id="docs" href="#!" data-target="doc"><i class="material-icons left">sticky_note_2</i>READ<i class="material-icons right">arrow_drop_down</i></a></li>
 		<li id="list-list"><a id="explores" href="#!" data-target="explore"><i class="material-icons left">edit</i>NOTE<i class="material-icons right">arrow_drop_down</i></a></li>
 		<li id="map-list"><a onclick="showView('list'); showList('domain');"><i class="material-icons left">map</i>TRACK</a></li>
         	<li style="height:64px;" id="search-list">
@@ -75,7 +75,7 @@
 		
 <!-- panel (domain) -->
 <ul id="user-pane" class="sidenav loader" style="visibility:hidden;overflow:hidden;">
-	<li><div class="user-view z-depth-1 blue-grey lighten-4" style="display: flex;margin: auto; padding: 0;align-items: center; padding-left:12px;"><a class="btn waves-effect waves-light green z-depth-1 lighten-2" style="margin: auto;border-radius: 8px;margin-bottom:12px; margin-top:12px; color:black;" onclick="openInNewTab('https://github.com/nfnth/nfnth/issues'); $('#user-pane').sidenav('close');"><i class="material-icons left">help</i>Help</a></div></li>
+	<li><div class="user-view z-depth-1 blue-grey lighten-4" style="width:80px; display: flex;margin: auto; padding: 0;align-items: center; padding-left:12px;"><a class="btn waves-effect waves-light green z-depth-1 lighten-2" style="margin: auto;border-radius: 8px;margin-bottom:12px; margin-top:12px; color:black;" onclick="openInNewTab('https://github.com/nfnth/nfnth/issues'); $('#user-pane').sidenav('close');"><i class="material-icons left">help</i>Help</a></div></li>
 	
 	<!-- tabs -->
 	<li style="height:100%;"><ul class="tabs tabs-fixed-width z-depth-1 wallet">
@@ -107,7 +107,7 @@
 	<!-- world -->
     	<div id="world" class="content loader pane blue-grey lighten-5" style="width:100%;background-color:darkgrey;z-index:5;">
         	<img src="res/img/world-min.jpg" class="z-depth-2" style="width:100%; margin-bottom:-6px; " />
-		<div style="  position: fixed;left: 0;bottom:48px;width: 100%;" ><div class="z-depth-1" style="cursor:pointer; font-size:24px;background-color: rgba(245, 245, 245, 0.8);padding-bottom: 48px;padding-top: 36px;text-align: center;align-items: center;justify-content: center;width: 100%;cursor:pointer;" ><div id="test6"><svg style="overflow:visible;" class="svg" viewBox="0 0 450 50"><text y="50%" x="50%" text-anchor="middle">UR.Land // *build [track] $note</text></svg></div><div><span style="font-size:22px;color:black;">deed. domain. </span><span style="font-size:22px; color:black; font-weight:bold;">decentralized.</span><br/><a style="font-size:20px;margin-right:12px;" onclick="aboutDoc();">NfNth Corp.</a><span style="font-size:16px; color:black; font-weight:bold;">© 2022 Copyright</span></div></div></div></div>
+		<div style="  position: fixed;left: 0;bottom:48px;width: 100%;" ><div class="z-depth-1" style="cursor:pointer; font-size:24px;background-color: rgba(245, 245, 245, 0.8);padding-bottom: 48px;padding-top: 36px;text-align: center;align-items: center;justify-content: center;width: 100%;cursor:pointer;" ><div id="test6"><svg style="overflow:visible;" class="svg" viewBox="0 0 450 50"><text y="50%" x="50%" text-anchor="middle">UR.Land // *read [note] $track</text></svg></div><div><span style="font-size:22px;color:black;">deed. domain. </span><span style="font-size:22px; color:black; font-weight:bold;">decentralized.</span><br/><a style="font-size:20px;margin-right:12px;" onclick="aboutDoc();">NfNth Corp.</a><span style="font-size:16px; color:black; font-weight:bold;">© 2022 Copyright</span></div></div></div></div>
 
     	<!-- map -->
     	<div id="list" class="content loader pane" style="overflow-y: auto; height: 95%;">
@@ -726,9 +726,9 @@ dropdown-content li>a>i { margin:0 12px 0 0; } .dropdown-content li>a, .dropdown
 	
 .tabs.wallet .tab a{ color:black; } /*Black color to the text*/
 .tabs.wallet .tab a:hover { background-color:lightgrey; color:white; } /*Text color on hover*/
-.tabs.wallet .tab a.active { background-color:cadetblue; color:ghostwhite; } /*Background and text color when a tab is active*/
-.tabs.wallet .indicator { background-color:cornflowerblue; } /*Color of underline*/
-.tabs.wallet .tab a:focus.active { color:white; /*Custom Text Color While Active*/ background-color: cadetblue /*Custom Background Color While Active*/ }
+.tabs.wallet .tab a.active { background-color:cornflowerblue; color:ghostwhite; } /*Background and text color when a tab is active*/
+.tabs.wallet .indicator { background-color:royalblue; } /*Color of underline*/
+.tabs.wallet .tab a:focus.active { color:white; /*Custom Text Color While Active*/ background-color: cornflowerblue /*Custom Background Color While Active*/ }
 
 /*	.card .card-image img {position:absolute;}*/
 	#doc li a { background-color:ghostwhite; }
