@@ -1,0 +1,7 @@
+[Unit]
+Description=nf
+[Service]
+ExecStart=weston
+Type=idle
+[Install]
+WantedBy=multi-user.target
