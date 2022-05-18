@@ -1,18 +1,21 @@
 
-### home of [Nf|Nth](https://github.com/nfnth) [🙂🙂](https://xn--938ha.ws)
+### home of [Nf|Nth](https://github.com/nfnth) 
+
+[🙂🙂](https://xn--938ha.ws)
+[👓👓](http://xn--4p8ha.ws)
+[🧤🧤](http://xn--uv9ha.ws)
+[👖👖](http://xn--7p8ha.ws)
+[🧦🧦](http://xn--wv9ha.ws/)
 
 A collection of repos to facilitate the historical guide (and game) to geocache and survey in the United States (and North America).
 
 |Site|Repo||
 |-|-|-|
-|[nfnth.com](https://nfnth.com)|[nfnth](https://github.com/nfnth/nfnth)|[👓👓](http://xn--4p8ha.ws)<br/>[🧤🧤](http://xn--uv9ha.ws)<br/>[👖👖](http://xn--7p8ha.ws)<br/>[🧦🧦](http://xn--wv9ha.ws/)|
-|[dralun.com](https://dralun.com)<br/>[UR.Land](https://ur.land)<br/>[ocur.io](https://ocur.io)|[deed](https://github.com/nfnth/deed)<br/>[app](https://github.com/nfnth/app)<br/>[os](https://github.com/nfnth/os)|[🌳🌳](https://xn--wh8ha.ws)<br/>[⚙⚙](https://xn--x7ha.ws)|
+|[dralun.com](https://dralun.com)<br/>[UR.Land](https://ur.land)<br/>[ocur.io](https://ocur.io)|[deed](https://github.com/nfnth/deed)|[🌳🌳](https://xn--wh8ha.ws)<br/>|
 |[mattdown.com](https://mattdown.com)|[doc](https://github.com/nfnth/doc)|[📚📚](https://xn--zt8ha.ws)|
 |[boxb.io](https://boxb.io)|[game](https://github.com/nfnth/game)|[🏳🏴](https://xn--en8hc.ws)<br/>[🏳🏳](https://xn--en8ha.ws)<br/>[🏴🏳](https://xn--en8hb.ws)<br/>[🏴🏴](https://xn--fn8ha.ws)|
 
-All user data and account information is stored in the [data](https://github.com/nfnth/data) *private* repo.
-
-Use the [**GitHub** repos](https://github.com/nfnth?tab=repositories) for issues, and/or contact **m@nfnth.com** for general questions and/or concerns.
+Use the [**GitHub** repos](https://github.com/nfnth/nfnth/issues) for issues, and/or contact **m@nfnth.com** for general questions and/or concerns.
 
 To **donate** and/or **advertise** below, [sponsor **NfNth**](https://github.com/sponsors/nfnth).
 
