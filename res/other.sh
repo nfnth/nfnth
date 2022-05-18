@@ -62,3 +62,5 @@ site() {
 #        env MOZ_USE_XINPUT2=1 firefox  #...about settings?
 nohup firefox > /dev/null 2>&1 &
 #sed -i "s/#XXXX/nohup chromium 'http:\/\/localhost:5001' --test-type --start-fullscreen --disable-web-security --user-data-dir=~ --no-sandbox > \/dev\/null 2>&1 & disown &/g" /root/config/start.sh
+
+about:support (profiles) (config)
