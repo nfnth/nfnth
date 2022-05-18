@@ -9,7 +9,9 @@
 
 A project to facilitate the historical guide (and game) to geocache and survey in the United States (and North America).
 
-[UR.Land](https://ur.land) [🌳🌳](https://xn--wh8ha.ws) *app* on [ocur.io](https://ocur.io) [🏳🏴](https://xn--en8hc.ws) [🏳🏳](https://xn--en8ha.ws) [🏴🏳](https://xn--en8hb.ws) [🏴🏴](https://xn--fn8ha.ws) *os* with [mattdown.com](https://mattdown.com) at [📚📚](https://xn--zt8ha.ws) *language*
+- [UR.Land](https://ur.land) [🌳🌳](https://xn--wh8ha.ws) *app*
+- [mattdown.com](https://mattdown.com) at [📚📚](https://xn--zt8ha.ws) *language*
+- [ocur.io](https://ocur.io) [🏳🏴](https://xn--en8hc.ws) [🏳🏳](https://xn--en8ha.ws) [🏴🏳](https://xn--en8hb.ws) [🏴🏴](https://xn--fn8ha.ws) *os*
 
 Use [**GitHub** issues](https://github.com/nfnth/nfnth/issues) for support, and/or contact **m@nfnth.com** for general questions and/or concerns.
 
