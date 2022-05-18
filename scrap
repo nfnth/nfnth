@@ -354,3 +354,138 @@ Zion/United Methodist (Woodinville)
 (GM)||taxes|
 
 https://docs.mapbox.com/api/navigation/directions/
+
+<div style="display:flex;  align-items: center; justify-content: center; margin:12px; margin-top:24px;">
+		<a id="dropdown-template" class="waves-effect waves-light amber lighten-2 btn dropdown-trigger" href='#' data-target='dropdown-temp' style="margin-right:8px;" ><i id="view-icon" class="material-icons left">dynamic_feed</i><span id="view-name">Template</span></a>
+		<a onclick="clearEditor();" class="waves-effect waves-grey btn-flat"><i class="material-icons left">refresh</i>Clear</a></div>
+  
+        <div id="pad" class="z-depth-2" contentEditable="true" style="text-align:left; overflow-y: auto; width:90%; border:1px solid darkgrey; box-shadow: 1px 1px beige; border-radius: 8px;height: 100%;padding: 12px;margin:auto;font-size:20px;">...enter content here...</div><br/>
+        <div style="display:flex;justify-content:space-between;">
+            <div style="display:flex;  justify-content: left; margin-left:20%;  align-items:center;">
+                <div class="chip z-depth-1 waves-effect waves-blue blue-grey lighten-2" style="display:flex; color:white; width:60px; justify-content:center; margin-right:12px;" onclick="$('#fileinput').trigger('click');"><div style="display:flex;"><i class="material-icons" style="margin:auto;margin-left:12px;">attach_file</i></div></div>
+                <div class="hiddenfile"><input name="upload" type="file" id="preview" onchange="checkFile();" multiple="multiple"/></div>
+                <div class="chip">file1.png<i class="close material-icons">close</i></div></div></div>
+
+        <div style="display:flex; justify-content:space-between; margin:24px;position:sticky;bottom:24px;padding-right:48px;width:100%;">
+            <a onclick="showPreview();" class="waves-effect waves-grey btn-flat"><i class="material-icons left">web_asset</i>Preview</a>
+            <div>
+                <a onclick="pullArtifact($('#opener').val()); showView('map');" class="waves-effect waves-green green btn"><i class="material-icons right">east</i>Continue</a></div>
+            <div id="show-progress" class="progress" style="display:none;"><div class="indeterminate"></div></div></div>
+
+<ul id='dropdown-temp' class='dropdown-content'>
+    	<li id="map-sat"><a href="#!" onclick="setTemplate('Empty');"><i class="material-icons">label</i>Empty</a></li>
+	<li class="divider" tabindex="-1"></li>
+    	<li id="map-dir"><a href="#!" onclick="setTemplate('Profile');"><i class="material-icons">badge</i>Profile</a></li>
+	<li id="map-dir"><a href="#!" onclick="setTemplate('Instruction');"><i class="material-icons">checklist</i>Checklist</a></li>
+	<li class="divider" tabindex="-1"></li>
+	<li id="map-route"><a href="#!" onclick="setTemplate('Recipe');"><i class="material-icons">restaurant</i>Recipe</a></li>
+	<li id="map-route"><a href="#!" onclick="setTemplate('Sequence');"><i class="material-icons">dry_cleaning</i>Sequence</a></li>
+	<li id="map-route"><a href="#!" onclick="setTemplate('Graph');"><i class="material-icons">fort</i>Graph</a></li></ul>
+
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.1/css/materialize.min.css">
+
+<div class="container">
+  <div class="row">
+    <nav>
+      <div class="nav-wrapper">
+        <div class="col s12">
+          <a href="#" class="brand-logo">Text to speech example</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <form class="col s8 offset-s2">
+    <div class="row">
+      <label>Choose voice</label>
+      <select id="voices"></select>
+    </div>
+    <div class="row">
+      <div class="col s6">
+        <label>Rate</label>
+        <p class="range-field">
+          <input type="range" id="rate" min="1" max="100" value="10" />
+        </p>
+      </div>
+      <div class="col s6">
+        <label>Pitch</label>
+        <p class="range-field">
+          <input type="range" id="pitch" min="0" max="2" value="1" />
+        </p>
+      </div>
+      <div class="col s12">
+        <p>N.B. Rate and Pitch only work with native voice.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <textarea id="message" class="materialize-textarea"></textarea>
+        <label>Write message</label>
+      </div>
+    </div>
+    <a href="#" id="speak" class="waves-effect waves-light btn">Speak</a>
+  </form>  
+</div>
+
+<div id="modal1" class="modal">
+  <h4>Speech Synthesis not supported</h4>
+  <p>Your browser does not support speech synthesis.</p>
+  <p>We recommend you use Google Chrome.</p>
+  <div class="action-bar">
+    <a href="#" class="waves-effect waves-green btn-flat modal-action modal-close">Close</a>
+  </div>
+</div>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.1/js/materialize.min.js"></script>
+
+<script>
+$('#dropdown-template').dropdown({ constrainWidth: false });
+	
+  function setTemplate(temp) {
+    switch(temp) {
+        case "Empty":$("#pad").html(""); break;
+        case "Profile":$("#pad").html(profileBasic); break;
+        case "Recipe":$("#pad").html(profileAdvanced); break;
+        case "Instruction":$("#pad").html(artifactRecipe); break;
+        case "Sequence":$("#pad").html(artifactSequence); break;
+        case "Graph":$("#pad").html(artifactGraph); break;} changeFocus(); }
+	
+	$(function(){
+  if ('speechSynthesis' in window) {
+    speechSynthesis.onvoiceschanged = function() {
+      var $voicelist = $('#voices');
+
+      if($voicelist.find('option').length == 0) {
+        speechSynthesis.getVoices().forEach(function(voice, index) {
+          var $option = $('<option>')
+          .val(index)
+          .html(voice.name + (voice.default ? ' (default)' :''));
+
+          $voicelist.append($option);
+        });
+
+        $voicelist.material_select();
+      }
+    }
+
+    $('#speak').click(function(){
+      var text = $('#message').val();
+      var msg = new SpeechSynthesisUtterance();
+      var voices = window.speechSynthesis.getVoices();
+      msg.voice = voices[$('#voices').val()];
+      msg.rate = $('#rate').val() / 10;
+      msg.pitch = $('#pitch').val();
+      msg.text = text;
+
+      msg.onend = function(e) {
+        console.log('Finished in ' + event.elapsedTime + ' seconds.');
+      };
+
+      speechSynthesis.speak(msg);
+    })
+  } else {
+    $('#modal1').openModal();
+  }
+});
+	</script>
