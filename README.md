@@ -7,15 +7,13 @@
 [👖👖](http://xn--7p8ha.ws)<br/>
 [🧦🧦](http://xn--wv9ha.ws)
 
-The [dralun.com](https://dralun.com) project to facilitate the historical guide (and game) to geocache and survey in the United States (and North America).
+The **[DRALUN](https://dralun.com)** project to facilitate the historical guide (and game) to geocache and survey in the United States (and North America).
 
 - [UR.Land](https://ur.land) [🌳🌳](https://xn--wh8ha.ws) *app*
 - [mattdown.com](https://mattdown.com) at [📚📚](https://xn--zt8ha.ws) *language*
 - [ocur.io](https://ocur.io) [🏳🏴](https://xn--en8hc.ws) [🏳🏳](https://xn--en8ha.ws) [🏴🏳](https://xn--en8hb.ws) [🏴🏴](https://xn--fn8ha.ws) *os*
 
-Use [**GitHub** issues](https://github.com/nfnth/nfnth/issues) for support, and/or contact **m@nfnth.com** for general questions and/or concerns.
-
-To **donate** and/or **advertise** below, [sponsor **NfNth**](https://github.com/sponsors/nfnth).
+Use [**GitHub** issues](https://github.com/nfnth/nfnth/issues) for support, [sponsor **NfNth**](https://github.com/sponsors/nfnth) to **donate** and/or **advertise** below.
 
 <a href="https://opensea.io/nfnth" title="Buy on OpenSea" target="_blank"><img style="margin-left:24px; width:160px; border-radius:5px;" src="https://storage.googleapis.com/opensea-static/Logomark/Badge%20-%20Available%20On%20-%20Light.png" alt="Available on OpenSea" /></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://buy.stripe.com/5kA4hL5NB6Qv7Ty5kk" target="_blank"><img style="margin-left:24px; width:75px; border-radius:5px;" src="coin.jpg" alt="Purchase NfNth Collectible" /></a>
 
