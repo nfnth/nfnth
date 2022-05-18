@@ -9,11 +9,13 @@
 
 A collection of repos to facilitate the historical guide (and game) to geocache and survey in the United States (and North America).
 
-|Site|Repo||
-|-|-|-|
-|[dralun.com](https://dralun.com)<br/>[UR.Land](https://ur.land)<br/>[ocur.io](https://ocur.io)|[deed](https://github.com/nfnth/deed)|[🌳🌳](https://xn--wh8ha.ws)<br/>|
-|[mattdown.com](https://mattdown.com)|[doc](https://github.com/nfnth/doc)|[📚📚](https://xn--zt8ha.ws)|
-|[boxb.io](https://boxb.io)|[game](https://github.com/nfnth/game)|[🏳🏴](https://xn--en8hc.ws)<br/>[🏳🏳](https://xn--en8ha.ws)<br/>[🏴🏳](https://xn--en8hb.ws)<br/>[🏴🏴](https://xn--fn8ha.ws)|
+[deed](https://github.com/nfnth/deed)
+
+[dralun.com](https://dralun.com) with [UR.Land](https://ur.land) at [🌳🌳](https://xn--wh8ha.ws)
+
+[ocur.io](https://ocur.io) with [mattdown.com](https://mattdown.com) at [📚📚](https://xn--zt8ha.ws)
+
+[🏳🏴](https://xn--en8hc.ws) [🏳🏳](https://xn--en8ha.ws) [🏴🏳](https://xn--en8hb.ws) [🏴🏴](https://xn--fn8ha.ws)?
 
 Use the [**GitHub** repos](https://github.com/nfnth/nfnth/issues) for issues, and/or contact **m@nfnth.com** for general questions and/or concerns.
 
@@ -35,10 +37,6 @@ https://codepen.io/shubniggurath/pen/OEeMOd (water)
 https://codepen.io/shubniggurath/pen/BVKgJK (storm)
 https://codepen.io/vcomics/pen/aGmoae (city)
 https://codepen.io/shubniggurath/pen/WgJZJo (snow)
-https://codepen.io/soju22/pen/BaNKwpZ (curtain)
-https://codepen.io/sanprieto/pen/XWNjBdb (coffee)
-https://codepen.io/b29/pen/LoaRKx (space)
-https://codepen.io/mwmwmw/pen/VgemeN (card)
 
 https://codepen.io/SteveJRobertson/pen/emGWaR
 
