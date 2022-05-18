@@ -1,5 +1,5 @@
 
-### home of Mr. [Nf|Nth](https://github.com/nfnth) and [dralun.com](https://dralun.com)
+### home of Mr. [Nf|Nth](https://github.com/nfnth)
 
 [🙂🙂](https://xn--938ha.ws)<br/>
 [👓👓](http://xn--4p8ha.ws)<br/>
@@ -7,7 +7,7 @@
 [👖👖](http://xn--7p8ha.ws)<br/>
 [🧦🧦](http://xn--wv9ha.ws)
 
-A project to facilitate the historical guide (and game) to geocache and survey in the United States (and North America).
+The [dralun.com](https://dralun.com) project to facilitate the historical guide (and game) to geocache and survey in the United States (and North America).
 
 - [UR.Land](https://ur.land) [🌳🌳](https://xn--wh8ha.ws) *app*
 - [mattdown.com](https://mattdown.com) at [📚📚](https://xn--zt8ha.ws) *language*
