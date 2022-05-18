@@ -9,11 +9,11 @@
 
 The **[DRALUN](https://dralun.com)** project to facilitate the historical guide (and game) to geocache and survey in the United States (and North America), includes:
 
-- [🌳🌳](https://xn--wh8ha.ws) [UR.Land](https://ur.land) *app*
-- [📚📚](https://xn--zt8ha.ws) [mattdown.com](https://mattdown.com) *language*
-- [🏳🏴](https://xn--en8hc.ws) [🏳🏳](https://xn--en8ha.ws) [ocur.io](https://ocur.io) [🏴🏳](https://xn--en8hb.ws) [🏴🏴](https://xn--fn8ha.ws) *os*
+- [🌳🌳](https://xn--wh8ha.ws) **[UR.Land](https://ur.land)** *app*
+- [📚📚](https://xn--zt8ha.ws) **[mattdown.com](https://mattdown.com)** *language*
+- [🏳🏴](https://xn--en8hc.ws) [🏳🏳](https://xn--en8ha.ws) **[ocur.io](https://ocur.io)** [🏴🏳](https://xn--en8hb.ws) [🏴🏴](https://xn--fn8ha.ws) *os*
 
-Use [**GitHub** issues](https://github.com/nfnth/nfnth/issues) for support, [sponsor **NfNth**](https://github.com/sponsors/nfnth) to **donate** and/or **advertise** below.
+Use [**GitHub** issues](https://github.com/nfnth/nfnth/issues) for **support**, [sponsor **NfNth**](https://github.com/sponsors/nfnth) to **donate** and/or **advertise** below.
 
 <a href="https://opensea.io/nfnth" title="Buy on OpenSea" target="_blank"><img style="margin-left:24px; width:160px; border-radius:5px;" src="https://storage.googleapis.com/opensea-static/Logomark/Badge%20-%20Available%20On%20-%20Light.png" alt="Available on OpenSea" /></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://buy.stripe.com/5kA4hL5NB6Qv7Ty5kk" target="_blank"><img style="margin-left:24px; width:75px; border-radius:5px;" src="res/img/coin.jpg" alt="Purchase NfNth Collectible" /></a>
 
