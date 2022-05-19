@@ -1,5 +1,6 @@
 
 class Wallet { address = ""; deed = []; }
+class Deed { name = ""; id = ""; }
 var user = new Wallet();
 
 var setup = async function () {
@@ -21,8 +22,9 @@ function desetup() { $("#wallet-area").addClass("blue-grey"); $("#wallet-area").
     emptyDeeds(); domainSelect(); }
 
 function listDeeds() {
+	for (let j = 0; j < domains.length; j++) { if (domains[j].core.token_id == user.deed[i].id) {  user.deed[i].name = domains[j].core.name; j = domains.length; } }
     $('#domain-template').empty(); $('#domain-template').append('<option selected="selected">No domain selected</option>');
-    for (let i = 0; i < user.deed.length; i++) { $('#domain-template').append('<option selected="selected">' + user.deed[i] + '</option>'); }
+    for (let i = 0; i < user.deed.length; i++) { $('#domain-template').append('<option selected="selected" value="' + user.deed[i].id + '">' + user.deed[i].name + '</option>'); }
     document.getElementById('domain-template').getElementsByTagName('option')[0].selected = 'selected';
     $("#domain-template").formSelect(); $('select').formSelect(); }
 
