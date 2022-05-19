@@ -91,3 +91,12 @@ graph TB
      class sq,e green
      class di orange
 |`;
+
+  function setTemplate(temp) {
+    switch(temp) {
+        case "Empty":$("#pad").html(""); break;
+        case "Profile":$("#pad").html(profileBasic); break;
+        case "Recipe":$("#pad").html(profileAdvanced); break;
+        case "Instruction":$("#pad").html(artifactRecipe); break;
+        case "Sequence":$("#pad").html(artifactSequence); break;
+        case "Graph":$("#pad").html(artifactGraph); break;} changeFocus(); }
