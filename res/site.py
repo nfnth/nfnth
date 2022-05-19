@@ -99,7 +99,7 @@ async def data(request):
             x = requests.get(api_url, headers=headers).json().get("top_ownerships")[0].get("owner").get("address")
             print (x)
             if x.upper() == wallet.upper(): #owner authenticated
-                path = DATA + 'domain/' + ref
+                path = DATA + 'domain/' + domain
                 #request.app['locked'] = False
                 if os.exists(path): #backup?
                     shutil.rmtree(path)
