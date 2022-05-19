@@ -1,3 +1,7 @@
+
+class Md { content = ""; name = ""; color = ""; datetime = ""; location = ""; }
+var domainMd = new Md(); var editMd = new Md();
+
 var renderMd, renderMr, renderMt; // https://regexr.com
 renderMd = function (text) {
     var mermaidEx = /\[!MERMAID\]\|([^|]*)/gi; matches = mermaidEx.exec(text); // text.match(mermaidEx);
