@@ -1,7 +1,7 @@
 
 class Wallet { address = ""; deed = []; }
 class Deed { name = ""; id = ""; }
-var user = new Wallet();
+var user = new Wallet(); var disconnect = false;
 
 var setup = async function () {
     if (window.ethereum) { //web3 = new Web3(window.ethereum); //await account();
@@ -10,15 +10,15 @@ var setup = async function () {
         $.get("api/"+user.address, async function(data) { 
             var fields = data.split('|'); var ether = JSON.parse(fields[0]).result; var urler = fields[1];
             $("#myETH").html(ether); $("#myURL").html(urler);
-            $("#maker").removeClass("disabled"); 
+            $("#maker").html('<i class="material-icons left">logout</i>Disconnect'); disconnect = true;
             $("#wallet-area").removeClass("blue-grey"); $("#wallet-area").addClass("green"); $("#wallet-icon").css("color","white"); } ); 
     	for (let i=0;i<opens.length;i++) { pullAssets(user, opens[i].core.slug); } 
     }
     else { M.toast({html: 'No wallet found.'}); } }; $("#wallet-setup").click(setup);
 
-function desetup() { $("#wallet-area").addClass("blue-grey"); $("#wallet-area").removeClass("green"); $("#wallet-icon").css("color","black");
+function desetup() { user = ""; user = new Wallet(); $("#wallet-area").addClass("blue-grey"); $("#wallet-area").removeClass("green"); $("#wallet-icon").css("color","black");
     $("#myAdd").html('My Wallet Address');  $("#myETH").html('My ETH Balance'); $("#myURL").html('My URL Balance');
-    $("#maker").addClass("disabled"); 
+    $("#maker").html('<i class="material-icons left">login</i>Connect'); disconnect = false;
     emptyDeeds(); domainSelect(); }
 
 function listDeeds() {
@@ -40,11 +40,13 @@ function domainSelect() { var d = document.getElementById("domain-template"); va
     else { $("#poster").removeClass("disabled");  $("#trader").removeClass("disabled"); pullDomain(dv);  } }
 
 function pullDomain(domain) { domainMd = ""; domainMd = new Md(); 
-	$.get('https://ur.land/domain/' + domain + '/deed', function(data) { alert(data);
-		var lines = data.split(/\r?\n/); var fields = lines[0].split('|'); alert(lines[0]); alert(fields[0]);
+	$.get('https://ur.land/domain/' + domain + '/deed', function(data) { 
+		var lines = data.split(/\r?\n/); var fields = lines[0].split('|'); 
 		domainMd.name = fields[0]; domainMd.color = fields[1]; domainMd.datetime = fields[2]; domainMd.location = fields[3];
-		for (let i = 1; i < lines.length; i++) { domainMd.content += lines[i]; }  }); alert(domainMd.name);
+		for (let i = 1; i < lines.length; i++) { domainMd.content += lines[i]; }  
 	if (domainMd.name != "") { $("#registry-artifact").html(); $("#registry-artifact").append(domainMd.name); }
+	}); 
+	
 			    }
 
 function postDomain() {
