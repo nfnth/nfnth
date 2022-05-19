@@ -78,14 +78,27 @@ function flyMark(i) {
 
 	setZoom = 9; startUp = function() { tempMark.togglePopup(); }; fly(mark); } 
 
+var inputMark;
+function editMark() {
+	var marv = document.createElement('div'); marv.id = 'markerx'; 
+	inputMark = new mapboxgl.Marker(marv).setLngLat(coordinates).addTo(map);
+
+    	$('#markerx').addClass('markre'); $('#markerx').addClass('z-depth-3'); var style=$('#markerx').attr('style');
+    	temper = ";background-color:red;border:solid 2px black;"; style += temper; 
+    	//style += ";background-image:url('img/icon/domain/"+folder + "/" +icon+".png'); 
+	$('#markerx').attr('style',style); 
+
+	inputMark.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(editContent));
+}
+
 function clearMark() { clearMap();  for (let a=0;a<domains.length;a++){ if (domains[a].map != "") { domains[a].map.remove(); domains[a].map = ""; } } }
 
 function removeMarkers() { if (currentMarkers!==null) { for (var i = currentMarkers.length - 1; i >= 0; i--) { currentMarkers[i].remove(); } currentMarkers = []; } }
 	
-function addArtifact() { M.toast({html: 'Select location...'}); artFlag = true; datetimeStart(); }
+function addArtifact() { M.toast({html: 'Select location...'}); artFlag = true; } //datetimeStart(); }
 
-function addArt() { clearMarkers(); addMark('a',coordinates,'snake','1','green', editContent, 0); $('.datepicker').datepicker(); //setDefaultDate: true
-		   currentMarkers[0].togglePopup(); }
+function addArt() { clearMark(); editMark(); //$('.datepicker').datepicker(); //setDefaultDate: true
+		   inputMark.togglePopup(); }
 var beacon = false; var pather = false; var introMark; var nomadPath; var artifactPath; var setDomain; var currentContent = [];
 //function mapIntro() { startUp = function() { currentMarkers[0].togglePopup(); 
 
