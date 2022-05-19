@@ -70,8 +70,8 @@ async def data(request):
  
     print(wallet)
     print (message)
-    key = SECRET.decrypt(message)
-    print (key)
+    #key = SECRET.decrypt(message)
+    #print (key)
     #if not key == ...withen 1 hour? return invalid key...
     
     encoded = eth_account.messages.encode_structured_data(text=message)
