@@ -42,7 +42,7 @@ function pullAssets(owner, slug) {
     fetch('https://api.opensea.io/api/v1/assets?limit=50&owner='+owner.address+'&collection_slug='+slug, options)
       .then(response => response.json())
       .then(response => {
-        for (let i = 0; i < response.assets.length; i++) { owner.deed.push(response.assets[i].token_id); 
+        for (let i = 0; i < response.assets.length; i++) { var tmp = new Deed(); tmp.id = response.assets[i].token_id; owner.deed.push(tmp); 
            //var asset = response.assets[i]; var id = asset.token_id; //alert(id);
            //for (let j = 0; j < holder.length; j++) { if (holder[j][0] == id) { claims.push(j); } } 
 							 } } ).then(response => { listDeeds(); }).catch(err => console.error(err)); }
