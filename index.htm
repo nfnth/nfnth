@@ -278,6 +278,11 @@ function redirect() { var page = getParameter();
 		case 'mattdown.com': showDoc('mattdown'); break;
 		case 'nfnth.com': aboutDoc(); break;
 		case 'ocur.io': showDoc('os'); break; }  }
+	
+function domainFind() {
+    var domainName = window.location.host; var pathName = window.location.pathname.replaceAll('/',''); var searchName = window.location.search.replaceAll('?domain=','');
+    if (domainName == "ustat.us" && pathName != "") { showView('map'); map.resize(); showMark3(pathName); } }
+//var elems = document.querySelectorAll('.modal'); var instances = M.Modal.init(elems); });
 
 function showFav(site) {
     $('<link>').appendTo('head').attr({ class: 'ico', type: 'image/x-icon', rel: 'icon', href: "res/img/fav/favicon.ico" });
@@ -308,69 +313,15 @@ async function initial() { $('body').css("background-color","lightgrey");
 	$('#user-pane').sidenav({ edge: 'right' }); $('#deed-pane').sidenav({ edge: 'left', onCloseEnd: populateMap }); 
     
    	hideView(); $('#news').show(); $("#stamper").show(); $("#world").show(); //searchClear();
-     
-    	setTimeout(function() { $(".loader").css("visibility", "visible"); redirect();
-			       //showList('open'); showList('domain'); 
-			       $('img').on('dragstart', function(evt) { return false; }); }  , 500); }
+     setNotice('...latest domain...');
+    	setTimeout(function() { $(".loader").css("visibility", "visible"); redirect(); $('img').on('dragstart', function(evt) { return false; }); }  , 500); }
 
 initial();
 document.addEventListener('DOMContentLoaded', function() { });
 
-function domainFind() {
-    var domainName = window.location.host; var pathName = window.location.pathname.replaceAll('/',''); var searchName = window.location.search.replaceAll('?domain=','');
-    if (domainName == "ustat.us" && pathName != "") { showView('map'); map.resize(); showMark3(pathName); } }
-//var elems = document.querySelectorAll('.modal'); var instances = M.Modal.init(elems); });
-
-function findDeeds() { //getExchange();
-    $('#domain-template').empty(); $('#domain-template').append('<option selected="selected">No domain selected</option>');
-    for (let i = 0; i < myDomains.length; i++) { $('#domain-template').append('<option selected="selected">' + domains[myDomains[i]][4] + '</option>'); }
-    document.getElementById('domain-template').getElementsByTagName('option')[0].selected = 'selected';
-    $("#domain-template").formSelect(); $('select').formSelect(); }
-function emptyDeeds() { $('#domain-template').empty();
-    $('#domain-template').append('<option selected="selected">No domain selected</option>'); $('#domain-template').append('<option>tactician.us (demo)</option>');
-    $("#domain-template").formSelect(); }
-function domainSelect() { var d = document.getElementById("domain-template"); var dt = d.options[d.selectedIndex].text; var dv = d.options[d.selectedIndex].value; 
-    if (dt == 'No domain selected') { $("#poster").addClass("disabled"); $("#trader").addClass("disabled"); }
-    else { $("#poster").removeClass("disabled");  $("#trader").removeClass("disabled"); pullDomain(dv);  } }
-var info;
-function showDomain(domain) { $.get("doc/domain/"+domain, function(data) {setDialog(renderMd(data));}).fail(function(){setDialog('No domain info found.');});}
-	
-function setDomains(direction) {
-    if (!(direction)) { $('#editor-domain').prop("disabled", false); } else { $('#editor-domain').prop('disabled', 'disabled'); }
-    collections = [];
-    var selection = $('#select-collection').val().toString(); var collect = selection.split(',');
-    for (let i = 0; i < collect.length; i++){collections.push(collect[i]);} pullCollections();
-
-    var elems = document.querySelectorAll('#editor-domain'); var instances = M.FormSelect.init(elems); }
-
-function setDeeds(disable) {
-    for (let i = 0; i < domains.length; i++) {
-        if (domains[i][8] == wallet.toLowerCase()) { $('#editor-domain').append($('<option>', { value: 1, text: domains[i][4] })); } }
-    if (disable) { $('#editor-domain').prop('disabled', 'disabled'); } $('select').formSelect(); }
-	
-function readArtifact() { pullInfo(); }
-
-var domainFound = false;
 
 
-function updateInfo(i) { $("#d"+i).html(domains[i].price); if (domains[i].price != "Unlisted") { $("#d"+i).html($("#d"+i).html() + " ETH"); }
-	$("#o"+i).html(addWallet(domains[i].owner)); $("#c"+i).html(addWallet(domains[i].owner)); }
-
-function updatePreview() { 
-	$("#editor-image").attr("src", tempArtifact.image_url);
-	$("#editor-image").attr("onclick", "setDialog(tempArtifact.description);");
-	$("#editor-name").html(tempArtifact.name); }
-
-var current;
-function pullDomain(domain) { $.get('https://ur.land/domain/' + domain + '/deed', function(data) { 
-	alert(data); }); }
-   // $.get("path" , function(data) { docs = data.replaceAll('/root/nfnth/data/domain/'+domain+'/','').split('|doc'); ///root/nfnth/data/domain/dralun.com/doc|manifest|/root/nfnth/data/domain/dralun.com/doc/sample|artifact
-    //var lines = data.split(/\r?\n/); //for (let i = 0; i < lines.length; i++) { // var fields = lines[i].split('|');
-
-   // $.get("domain/" + domain + "/manifest", function(data) { domainJSON = JSON.parse(data); status = JSON.parse(data).status; });
-      //manifest.push(fields);
-
-//pullAsset(asset.token_id);
+//var current;
 
 var mapSwitch = true; var introSwitch = true;
 
@@ -534,6 +485,20 @@ function filterMap(slug) { holder = [];
 
 function addWallet(id) {return '<div style="cursor:pointer; display: flex; flex-direction: column; text-align: center;" onclick="copyClip(\'' + id + '\');"><img class="z-depth-1" src="https://chart.googleapis.com/chart?chs=120x120&cht=qr&chl=' + id + '&choe=UTF-8" /><span>Unclaimed 🏞️</div>';  }
 
+function readArtifact() { pullInfo(); }
+
+var domainFound = false;
+var info;
+function showDomain(domain) { $.get("doc/domain/"+domain, function(data) {setDialog(renderMd(data));}).fail(function(){setDialog('No domain info found.');});}
+
+function updateInfo(i) { $("#d"+i).html(domains[i].price); if (domains[i].price != "Unlisted") { $("#d"+i).html($("#d"+i).html() + " ETH"); }
+	$("#o"+i).html(addWallet(domains[i].owner)); $("#c"+i).html(addWallet(domains[i].owner)); }
+
+function updatePreview() { 
+	$("#editor-image").attr("src", tempArtifact.image_url);
+	$("#editor-image").attr("onclick", "setDialog(tempArtifact.description);");
+	$("#editor-name").html(tempArtifact.name); }
+	
 var listCount = 0;
 
 var searchMatch = []; function setClear() { $('#search').val(''); }
