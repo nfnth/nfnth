@@ -309,7 +309,7 @@ async function initial() { $('body').css("background-color","lightgrey");
 	$('#explores').dropdown({ constrainWidth: false, coverTrigger: false } ); $('#explore-hide').dropdown({ constrainWidth: false, coverTrigger: false } ); 
 	$('#dropdown-opener').dropdown({ constrainWidth: false }); $('#dropdown-domainer').dropdown({ constrainWidth: false });
 	$('#dropdown-deeder').dropdown({ constrainWidth: false }); $('#dropdown-maper').dropdown({ constrainWidth: false }); $('#dropdown-mediaer').dropdown({ constrainWidth: false });  //$('#dropdown-full4').dropdown({ constrainWidth: false }); $('#dropdown-full5').dropdown({ constrainWidth: false });
-    
+    $('#dropdown-template').dropdown({ constrainWidth: false });
 	$('#user-pane').sidenav({ edge: 'right' }); $('#deed-pane').sidenav({ edge: 'left', onCloseEnd: populateMap }); 
     
    	hideView(); $('#news').show(); $("#stamper").show(); $("#world").show(); //searchClear();
@@ -565,74 +565,17 @@ function switchTime() {
 
 function colorStart() { document.getElementById("favcolor").focus(); document.getElementById("favcolor").click(); }
 // add calculator... //replace youtube with html5 video?
-	
-	$('#dropdown-template').dropdown({ constrainWidth: false });
-	
-  function setTemplate(temp) {
-    switch(temp) {
-        case "Empty":$("#pad").html(""); break;
-        case "Profile":$("#pad").html(profileBasic); break;
-        case "Recipe":$("#pad").html(profileAdvanced); break;
-        case "Instruction":$("#pad").html(artifactRecipe); break;
-        case "Sequence":$("#pad").html(artifactSequence); break;
-        case "Graph":$("#pad").html(artifactGraph); break;} changeFocus(); }
-	
+
 function testSound(i) {  
 	var text = domains[i].core.description;
       var msg = new SpeechSynthesisUtterance();
       var voices = window.speechSynthesis.getVoices();
-      msg.voice = voices[$('#voices').val()];
+      msg.voice = voices[$('#voices').val()]; //additional?
       msg.rate = $('#rate').val() / 10;
       msg.pitch = $('#pitch').val();
       msg.text = text;
 
-      //msg.onend = function(e) {
-     //   console.log('Finished in ' + event.elapsedTime + ' seconds.');
-     // };
-
-      speechSynthesis.speak(msg);
-	
-}
-	$(function(){
-  if ('speechSynthesis' in window) {
-    speechSynthesis.onvoiceschanged = function() {
-      var $voicelist = $('#voices');
-
-      if($voicelist.find('option').length == 0) {
-        speechSynthesis.getVoices().forEach(function(voice, index) {
-          var $option = $('<option>')
-          .val(index)
-          .html(voice.name + (voice.default ? ' (default)' :''));
-
-          $voicelist.append($option);
-        });
-
-        $voicelist.material_select();
-      }
-    }
-
-    $('#speak').click(function(){
-      var text = $('#message').val();
-      var msg = new SpeechSynthesisUtterance();
-      var voices = window.speechSynthesis.getVoices();
-      msg.voice = voices[$('#voices').val()];
-      msg.rate = $('#rate').val() / 10;
-      msg.pitch = $('#pitch').val();
-      msg.text = text;
-
-      msg.onend = function(e) {
-        console.log('Finished in ' + event.elapsedTime + ' seconds.');
-      };
-
-      speechSynthesis.speak(msg);
-    })
-  } else {
-    $('#modal1').openModal();
-  }
-});
-	
-	
-	
+      speechSynthesis.speak(msg); }
 </script>
 <script src="res/app/map.js"></script>
 <script>pullOpens();</script>
