@@ -8,7 +8,7 @@
 [🧦🧦](http://xn--wv9ha.ws)<br/>
 [👟👟](http://xn--hq8ha.ws)
 
-The **[DRALUN](https://dralun.com)** project is to facilitate the historical guide (and game) to geocache and survey in the United States (and North America), and includes:
+The **[DRALUN](https://dralun.com)** project is used to help facilitate the historical guide (and game) to geocache and survey in the United States (and North America), to include:
 
 - [🌳🌳](https://xn--wh8ha.ws) **[UR.Land](https://ur.land)** *app*
 - [📚📚](https://xn--zt8ha.ws) **[mattdown.com](https://mattdown.com)** *script*
