@@ -54,13 +54,13 @@ function showMark(i) {
 	domains[i].map = marker;
 	//currentMarkers.push(marker);
 	
-	var markup = '<div><div style="display:flex; justify-content:center;"><img style="cursor:pointer;" onclick="buildDoc(' + i + ');" width="120" height="120" src="'+domains[i].core.image_preview_url+'"/></div><div style="margin-top:16px; font-size:16px;"><a onclick="openInNewTab(\'' + domains[i].core.external_link + '\');">' + domains[i].core.name + '</a><br/><br/><a class="waves-effect waves-blue btn blue lighten-3 modal-trigger" href="#modal1" onclick="addListDetail(' + i + ');"><i class="material-icons">description</i></a>&nbsp;&nbsp;<a class="waves-effect waves-light btn amber" onclick="showDoc(\'order\');"><i class="material-icons">inventory_2</i></a></div></div>';
+	var markup = '<div><div style="display:flex; justify-content:center;"><img class="materialboxed" style="cursor:pointer;" width="120" height="120" src="'+domains[i].core.image_preview_url+'"/></div><div style="margin-top:16px; font-size:16px;"><a onclick="openInNewTab(\'' + domains[i].core.external_link + '\');">' + domains[i].core.name + '</a><br/><br/><a class="waves-effect waves-blue btn blue lighten-3" onclick="buildDoc(' + i + ');" ><i class="material-icons">description</i></a>&nbsp;&nbsp;<a class="modal-trigger waves-effect waves-light btn amber" href="#modal1" onclick="addListDetail(' + i + ');"><i class="material-icons">inventory_2</i></a></div></div>';
 
 	domains[i].map.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); }
 
-function popMark(i) { domains[i].map.togglePopup(); }
-var tempMark;
-function flyMark(i) { 
+function popMark(i) { domains[i].map.togglePopup(); $('.materialboxed').materialbox(); }
+var tempMark = "";
+function flyMark(i) { if (tempMark != "") { tempMark.remove(); } 
 	var mark = [domains[i].coord.substring(domains[i].coord.indexOf(', ')+1,domains[i].coord.indexOf(']')-1), domains[i].coord.substring(domains[i].coord.indexOf('[')+1,domains[i].coord.indexOf(',')-1)];
 	var marv = document.createElement('div'); marv.id = 'marker' + i; 
 	var marker = new mapboxgl.Marker(marv).setLngLat(mark).addTo(map);
@@ -72,14 +72,14 @@ function flyMark(i) {
 	
 	tempMark = marker;
 	
-	var markup = '<div><div style="display:flex; justify-content:center;"><img style="cursor:pointer;" onclick="buildDoc(' + i + ');" width="120" height="120" src="'+domains[i].core.image_preview_url+'"/></div><div style="margin-top:16px; font-size:16px;"><a onclick="openInNewTab(\'' + domains[i].core.external_link + '\');">' + domains[i].core.name + '</a><br/><br/><a class="waves-effect waves-blue btn blue lighten-3 modal-trigger" href="#modal1" onclick="addListDetail(' + i + ');"><i class="material-icons">description</i></a>&nbsp;&nbsp;<a class="waves-effect waves-light btn amber" onclick="showDoc(\'order\');"><i class="material-icons">inventory_2</i></a></div></div>';
+	var markup = '<div><div style="display:flex; justify-content:center;"><img class="materialboxed" style="cursor:pointer;" width="120" height="120" src="'+domains[i].core.image_preview_url+'"/></div><div style="margin-top:16px; font-size:16px;"><a onclick="openInNewTab(\'' + domains[i].core.external_link + '\');">' + domains[i].core.name + '</a><br/><br/><a class="waves-effect waves-blue btn blue lighten-3" onclick="buildDoc(' + i + ');" ><i class="material-icons">description</i></a>&nbsp;&nbsp;<a class="modal-trigger waves-effect waves-light btn amber" href="#modal1" onclick="addListDetail(' + i + ');"><i class="material-icons">inventory_2</i></a></div></div>';
 
 	tempMark.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); 
 
 	setZoom = 9; startUp = function() { tempMark.togglePopup(); }; fly(mark); } 
 
 var inputMark;
-function editMark() {
+function editMark() { if (inputMark != "") { inputMark.remove(); inputMark = ""; }
 	var marv = document.createElement('div'); marv.id = 'markerx'; 
 	inputMark = new mapboxgl.Marker(marv).setLngLat(coordinates).addTo(map);
 
@@ -91,7 +91,8 @@ function editMark() {
 	inputMark.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(editContent));
 }
 
-function clearMark() { clearMap();  for (let a=0;a<domains.length;a++){ if (domains[a].map != "") { domains[a].map.remove(); domains[a].map = ""; } } }
+function clearMark() { clearMap(); if (tempMark != "") { tempMark.remove(); tempMark = ""; } if (inputMark != "") { inputMark.remove(); inputMark = ""; }
+	for (let a=0;a<domains.length;a++){ if (domains[a].map != "") { domains[a].map.remove(); domains[a].map = ""; } } }
 
 function removeMarkers() { if (currentMarkers!==null) { for (var i = currentMarkers.length - 1; i >= 0; i--) { currentMarkers[i].remove(); } currentMarkers = []; } }
 	
