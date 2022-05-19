@@ -44,7 +44,7 @@ function pullDomain(domain) { domainMd = ""; domainMd = new Md();
 		var lines = data.split(/\r?\n/); var fields = lines[0].split('|');
 		domainMd.name = fields[0]; domainMd.color = fields[1]; domainMd.datetime = fields[2]; domainMd.location = fields[3];
 		for (let i = 1; i < lines.length; i++) { domainMd.content += lines[i]; }  }); 
-	if (domainMd.name != "") { $("#registry").html(); $("#registry").append(domainMd.name); }
+	if (domainMd.name != "") { $("#registry").html(); $("#registry-artifact").append(domainMd.name); }
 			    }
 
 function postDomain() {
