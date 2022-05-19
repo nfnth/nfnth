@@ -11,12 +11,12 @@ var setup = async function () {
             var fields = data.split('|'); var ether = JSON.parse(fields[0]).result; var urler = fields[1];
             $("#myETH").html(ether); $("#myURL").html(urler);
             $("#maker").addClass("blue"); $("#maker").removeClass("green"); $("#maker").html('<i class="material-icons left">logout</i>Disconnect'); disconnect = true;
-            $("#wallet-area").removeClass("blue-grey"); $("#wallet-area").addClass("green"); $("#wallet-icon").css("color","white"); } ); 
+            $("#wallet-area").removeClass("grey"); $("#wallet-area").addClass("green"); $("#wallet-icon").css("color","white"); } ); 
     	for (let i=0;i<opens.length;i++) { pullAssets(user, opens[i].core.slug); } 
     }
     else { M.toast({html: 'No wallet found.'}); } }; $("#wallet-setup").click(setup);
 
-function desetup() { user = ""; user = new Wallet(); $("#wallet-area").addClass("blue-grey"); $("#wallet-area").removeClass("green"); $("#wallet-icon").css("color","black");
+function desetup() { user = ""; user = new Wallet(); $("#wallet-area").addClass("grey"); $("#wallet-area").removeClass("green"); $("#wallet-icon").css("color","black");
     $("#myAdd").html('My Wallet Address');  $("#myETH").html('My ETH Balance'); $("#myURL").html('My URL Balance');
     $("#maker").addClass("green"); $("#maker").removeClass("blue"); $("#maker").html('<i class="material-icons left">login</i>Connect'); disconnect = false;
     emptyDeeds(); domainSelect(); }
