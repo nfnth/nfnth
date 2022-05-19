@@ -410,7 +410,7 @@ function switchOpen() { if (showGridOpen) { showGridOpen = false; showList('open
 function selOpen() { for (let i=0;i<opens.length;i++) { opens[i].checked = selectOpen; } showList('open');
 	if (selectOpen) { selectOpen = false;   $("#open-sel-icon").html("deselect"); } else { selectOpen = true;  $("#open-sel-icon").html("select_all");} }
 
-function buildDomain(slug) { clearMark(); for (let i=0;i<domains.length;i++) { if (domains[i].core.collection.slug == slug) { domains[i].checked = true; addMark(i); } else { domains[i].checked = false; } } }
+function buildCollect(slug) { clearMark(); for (let i=0;i<domains.length;i++) { if (domains[i].core.collection.slug == slug) { domains[i].checked = true; addMark(i); } else { domains[i].checked = false; } } }
 function populateMap() { clearMark(); for (let i=0;i<domains.length;i++) { if (domains[i].checked == true) { showMark(i); currentMark = i; } }  }
 
 function adjustSize(img) {
