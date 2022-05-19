@@ -40,11 +40,11 @@ function domainSelect() { var d = document.getElementById("domain-template"); va
     else { $("#poster").removeClass("disabled");  $("#trader").removeClass("disabled"); pullDomain(dv);  } }
 
 function pullDomain(domain) { domainMd = ""; domainMd = new Md(); 
-	$.get('https://ur.land/domain/' + domain + '/deed', function(data) { 
-		var lines = data.split(/\r?\n/); var fields = lines[0].split('|');
+	$.get('https://ur.land/domain/' + domain + '/deed', function(data) { alert(data);
+		var lines = data.split(/\r?\n/); var fields = lines[0].split('|'); alert(lines[0]); alert(fields[0]);
 		domainMd.name = fields[0]; domainMd.color = fields[1]; domainMd.datetime = fields[2]; domainMd.location = fields[3];
-		for (let i = 1; i < lines.length; i++) { domainMd.content += lines[i]; }  }); 
-	if (domainMd.name != "") { $("#registry").html(); $("#registry-artifact").append(domainMd.name); }
+		for (let i = 1; i < lines.length; i++) { domainMd.content += lines[i]; }  }); alert(domainMd.name);
+	if (domainMd.name != "") { $("#registry-artifact").html(); $("#registry-artifact").append(domainMd.name); }
 			    }
 
 function postDomain() {
