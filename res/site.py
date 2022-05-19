@@ -84,7 +84,7 @@ async def data(request):
         
         if domain == "profile":
             path = DATA + 'wallet/' + wallet.lower()
-            if os.path.isdir(path):
+            if os.path.exists(path):
                 shutil.rmtree(path)
             os.mkdir(path)
             with open(path + '/profile') as fout:
@@ -101,7 +101,7 @@ async def data(request):
             if x.upper() == wallet.upper(): #owner authenticated
                 path = DATA + 'domain/' + domain
                 #request.app['locked'] = False
-                if os.exists(path): #backup?
+                if os.path.exists(path): #backup?
                     shutil.rmtree(path)
                 os.mkdir(path)
                 with open(path + '/deed', "wt") as fout:
