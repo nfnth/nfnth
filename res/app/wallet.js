@@ -11,7 +11,7 @@ var setup = async function () {
             $("#myETH").html(ether); $("#myURL").html(urler);
             $("#maker").removeClass("disabled"); 
             $("#wallet-area").removeClass("blue-grey"); $("#wallet-area").addClass("green"); $("#wallet-icon").css("color","white"); } ); 
-    	for (let i=0;i<opens.length;i++) { pullAssets(user, opens[i].core.slug); } listDeeds();
+    	for (let i=0;i<opens.length;i++) { pullAssets(user, opens[i].core.slug); } 
     }
     else { M.toast({html: 'No wallet found.'}); } }; $("#wallet-setup").click(setup);
 
