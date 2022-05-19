@@ -78,7 +78,7 @@ function flyMark(i) { if (tempMark != "") { tempMark.remove(); }
 
 	setZoom = 9; startUp = function() { tempMark.togglePopup(); }; fly(mark); } 
 
-var inputMark;
+var inputMark = "";
 function editMark() { if (inputMark != "") { inputMark.remove(); inputMark = ""; }
 	var marv = document.createElement('div'); marv.id = 'markerx'; 
 	inputMark = new mapboxgl.Marker(marv).setLngLat(coordinates).addTo(map);
