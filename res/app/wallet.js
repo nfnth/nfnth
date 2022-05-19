@@ -41,7 +41,7 @@ function pullDomain(domain) { $.get('https://ur.land/domain/' + domain + '/deed'
    // $.get("domain/" + domain + "/manifest", function(data) { domainJSON = JSON.parse(data); status = JSON.parse(data).status; });
       //manifest.push(fields);
 	
-var signer = async function (domain, content, action, ref) { //add key to message...
+var signer = async function (content, ref) { //add key to message...
     var messager = '{"domain":{"name":"UR.Land"},"message":{"contents":"Hello, key value for UR.Land"},"primaryType":"Mail","types":{"EIP712Domain":[{"name":"name","type":"string"}],"Mail":[{"name":"contents","type":"string"}]}}';
     var from = user.address; var params = [from, messager]; var method = 'eth_signTypedData_v4';
     web3.currentProvider.sendAsync( { method, params, from, },
