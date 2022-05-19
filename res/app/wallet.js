@@ -10,7 +10,7 @@ var setup = async function () {
         $.get("api/"+user.address, async function(data) { 
             var fields = data.split('|'); var ether = JSON.parse(fields[0]).result; var urler = fields[1];
             $("#myETH").html(ether); $("#myURL").html(urler);
-            $("#maker").html('<i class="material-icons left">logout</i>Disconnect'); disconnect = true;
+            $("#maker").addClass("blue"); $("#maker").removeClass("green"); $("#maker").html('<i class="material-icons left">logout</i>Disconnect'); disconnect = true;
             $("#wallet-area").removeClass("blue-grey"); $("#wallet-area").addClass("green"); $("#wallet-icon").css("color","white"); } ); 
     	for (let i=0;i<opens.length;i++) { pullAssets(user, opens[i].core.slug); } 
     }
@@ -18,7 +18,7 @@ var setup = async function () {
 
 function desetup() { user = ""; user = new Wallet(); $("#wallet-area").addClass("blue-grey"); $("#wallet-area").removeClass("green"); $("#wallet-icon").css("color","black");
     $("#myAdd").html('My Wallet Address');  $("#myETH").html('My ETH Balance'); $("#myURL").html('My URL Balance');
-    $("#maker").html('<i class="material-icons left">login</i>Connect'); disconnect = false;
+    $("#maker").addClass("green"); $("#maker").removeClass("blue"); $("#maker").html('<i class="material-icons left">login</i>Connect'); disconnect = false;
     emptyDeeds(); domainSelect(); }
 
 function listDeeds() {
@@ -44,7 +44,7 @@ function pullDomain(domain) { domainMd = ""; domainMd = new Md();
 		var lines = data.split(/\r?\n/); var fields = lines[0].split('|'); 
 		domainMd.name = fields[0]; domainMd.color = fields[1]; domainMd.datetime = fields[2]; domainMd.location = fields[3];
 		for (let i = 1; i < lines.length; i++) { domainMd.content += lines[i]; }  
-	if (domainMd.name != "") { $("#registry-artifact").html(); $("#registry-artifact").append(domainMd.name); }
+	if (domainMd.name != "") { $("#registry-artifact").html(); $("#registry-artifact").append("<a class='collection-item'>" + domainMd.name + "</a>"); }
 	}); 
 	
 			    }
