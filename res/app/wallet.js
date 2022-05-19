@@ -5,7 +5,7 @@ var user = new Wallet();
 var setup = async function () {
     if (window.ethereum) { //web3 = new Web3(window.ethereum); //await account();
         const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' }); user.address = accounts[0];
-        $("#myAdd").html(walletAddress.toLowerCase().substring(0,16) + "...");
+        $("#myAdd").html(user.address.toLowerCase().substring(0,16) + "...");
         $.get("api/"+user.address, async function(data) { 
             var fields = data.split('|'); var ether = JSON.parse(fields[0]).result; var urler = fields[1];
             $("#myETH").html(ether); $("#myURL").html(urler);
