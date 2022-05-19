@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><title>UR.Land · De|o/ma*in(d)</title>
+<head><title>UR.Land · De/o*main|ed</title>
 
 <meta http-equiv="Content-Language" content="en-US">
 <meta charset="UTF-8" />
@@ -87,7 +87,7 @@
 			<li><a class="subheader">Wallet Information</a></li>
   			<li><a class="waves-effect" onclick="if (user.address != '') {copyClip(user.address);}"><i class="material-icons">alternate_email</i><span id="myAdd">My Wallet Address</span></a></li>
   			<li><a class="waves-effect"><i class="material-icons">toll</i><span id="myETH">My ETH Balance</span></a></li>
-			<li style="margin-top:16px;margin-bottom:12px;"><a id="maker" class="btn waves-effect waves-light blue z-depth-1 lighten-3" style="width: 240px;margin: auto;border-radius: 8px;color:black;" onclick="if (disconnect) {desetup(); $('#user-pane').sidenav('close');} else { setup(); }"><i class="material-icons left">login</i>Connect</a></li>
+			<li style="margin-top:16px;margin-bottom:12px;"><a id="maker" class="btn waves-effect waves-light green z-depth-1 lighten-3" style="width: 240px;margin: auto;border-radius: 8px;" onclick="if (disconnect) {desetup(); $('#user-pane').sidenav('close');} else { setup(); }"><i class="material-icons left">login</i>Connect</a></li>
   			<li><div style="margin-top:0;" class="divider"></div></li><!--<i class="material-icons left">calculate</i>-->
   			<li><a class="subheader">Domain Information</a></li>
   			<li><a class="waves-effect"><i class="material-icons">landscape</i><span id="dStatus">My Current Status</span></a></li>
@@ -98,7 +98,7 @@
 		<!-- list (domain) -->
       		<div id="test5"><ul>
 			<li style="padding-top:16px;margin-bottom:12px;display: flex;justify-content: space-evenly;"><div style="display:flex;justify-content:space-evenly;width:100%;"><a class='btn-flat' ><i class="material-icons left">select_all</i></a><a id="dropdown-deeder" class='dropdown-trigger btn-flat'  href='#' data-target='dropdown-deed'><i class="material-icons left">sort</i></a><a class="waves-effect waves-light btn blue lighten-2" style="display:inline-flex;align-items:center;width:100px;" onclick="switchView();"><i id="view-icon2" class="material-icons">grid_view</i><span id="view-name2">&nbsp;&nbsp;Img</span></a></div></li>
- 			<li style="margin-top:16px;margin-bottom:12px;"><div style="display:flex;justify-content:space-evenly;padding-top:12px;padding-bottom:12px;"><a class="btn waves-effect waves-light amber z-depth-1 lighten-2" style="width: 120px;border-radius: 8px;color:black;" onclick="addArtifact();" ><i class="material-icons left">inventory_2</i>New</a><a class="btn-flat waves-effect waves-light z-depth-1 disabled"><i class="material-icons">edit</i></a><a class="btn-flat waves-effect waves-light z-depth-1 disabled"><i class="material-icons">delete</i></a></div></li>
+ 			<li style="margin-top:16px;margin-bottom:12px;"><div style="display:flex;justify-content:space-evenly;padding-top:12px;padding-bottom:12px;"><a class="btn waves-effect waves-light green z-depth-1 lighten-2" style="width: 120px;border-radius: 8px;" onclick="addArtifact();" ><i class="material-icons left">inventory_2</i>New</a><a class="btn-flat waves-effect waves-light z-depth-1 disabled"><i class="material-icons">edit</i></a><a class="btn-flat waves-effect waves-light z-depth-1 disabled"><i class="material-icons">delete</i></a></div></li>
 			<li><div id="registry-artifact" class="collection" style="overflow:auto;"></div></li></ul></div></div></div></li></ul>
 
 <!-- view -->
@@ -114,11 +114,11 @@
 	    
 	    	<!-- tools -->
 	    	<div id="list-filter" class="z-depth-1 grey lighten-5" style="display:flex; justify-content: center; padding-top: 24px; padding-bottom:12px; margin-bottom: -6px; align-items:center;position: fixed; z-index: 1; padding-right:12px;">
-        	<div class="hide-on-med-and-down"><a class="waves-effect waves-amber btn-flat" onclick="mapLoc();"><i id="select-icon" class="material-icons left">gps_fixed</i><span>Location</span></a><a class='btn-flat' style="margin-right:8px;" onclick="mapRand();"><i class="material-icons left">shuffle</i>Random</a><a id="dropdown-maper" class="waves-effect waves-light amber lighten-2 btn dropdown-trigger" href='#' data-target='dropdown-map' style="margin-right:8px;" ><i id="view-icon" class="material-icons left">layers</i><span id="view-name">Layers</span></a></div>
-		<div class="screen-hide"><a class="waves-effect waves-amber btn-flat" onclick="mapLoc();"><i id="select-icon" class="material-icons left">gps_fixed</i><span></span></a><a class='btn-flat' style="margin-right:8px;" onclick="mapRand();"><i class="material-icons left">shuffle</i></a><a id="dropdown-mediaer" class="waves-effect waves-light btn amber lighten-2 dropdown-trigger" style="margin-right:8px;display:inline-flex;align-items:center;" href='#' data-target='dropdown-media'><i id="view-icon2" class="material-icons left">layers</i><span id="view-name2">Layers</span></a></div></div>
+        		<div class="hide-on-med-and-down"><a class="waves-effect waves-amber btn-flat" onclick="mapLoc();"><i id="select-icon" class="material-icons left">gps_fixed</i><span>Location</span></a><a class='btn-flat' style="margin-right:8px;" onclick="mapRand();"><i class="material-icons left">shuffle</i>Random</a><a id="dropdown-maper" class="waves-effect waves-light amber lighten-2 btn dropdown-trigger" href='#' data-target='dropdown-map' style="margin-right:8px;" ><i id="view-icon" class="material-icons left">layers</i><span id="view-name">Layers</span></a></div>
+			<div class="screen-hide"><a class="waves-effect waves-amber btn-flat" onclick="mapLoc();"><i id="select-icon" class="material-icons left">gps_fixed</i><span></span></a><a class='btn-flat' style="margin-right:8px;" onclick="mapRand();"><i class="material-icons left">shuffle</i></a><a id="dropdown-mediaer" class="waves-effect waves-light btn amber lighten-2 dropdown-trigger" style="margin-right:8px;display:inline-flex;align-items:center;" href='#' data-target='dropdown-media'><i id="view-icon2" class="material-icons left">layers</i><span id="view-name2">Layers</span></a></div></div>
 		
 		<div id="map" class="content loader pane" style="width:100%;"></div>
-			<div id="map-tool" class="fixed-action-btn"><a class="btn-floating btn-large waves-effect waves-light amber lighten-3" onclick="addArtifact();"><i class="large material-icons">add</i></a></div></div>
+			<div id="map-tool" class="fixed-action-btn"><a class="btn-floating btn-large waves-effect waves-light green lighten-2" onclick="addArtifact();"><i class="large material-icons">add</i></a></div></div>
 
     	<!-- search -->
     	<div id="results" style="margin:80; display:none;" class="content loader pane">search...</div>
