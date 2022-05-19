@@ -39,14 +39,21 @@ function domainSelect() { var d = document.getElementById("domain-template"); va
     if (dt == 'No domain selected') { $("#poster").addClass("disabled"); $("#trader").addClass("disabled"); }
     else { $("#poster").removeClass("disabled");  $("#trader").removeClass("disabled"); pullDomain(dv);  } }
 
-function pullDomain(domain) { $.get('https://ur.land/domain/' + domain + '/deed', function(data) { 
-	alert(data); }); }
-   // $.get("path" , function(data) { docs = data.replaceAll('/root/nfnth/data/domain/'+domain+'/','').split('|doc'); ///root/nfnth/data/domain/dralun.com/doc|manifest|/root/nfnth/data/domain/dralun.com/doc/sample|artifact
-    //var lines = data.split(/\r?\n/); //for (let i = 0; i < lines.length; i++) { // var fields = lines[i].split('|');
+function pullDomain(domain) { domainMd = ""; domainMd = new Md(); 
+	$.get('https://ur.land/domain/' + domain + '/deed', function(data) { 
+		var lines = data.split(/\r?\n/); var fields = lines[0].split('|');
+		domainMd.name = fields[0]; domainMd.color = fields[1]; domainMd.datetime = fields[2]; domainMd.location = fields[3];
+		for (let i = 1; i < lines.length; i++) { domainMd.content += lines[i]; }  }); 
+	if (domainMd.name != "") { $("#registry").html(); $("#registry").append(domainMd.name); }
+			    }
 
-   // $.get("domain/" + domain + "/manifest", function(data) { domainJSON = JSON.parse(data); status = JSON.parse(data).status; });
-      //manifest.push(fields);
-	
+function postDomain() {
+	var d = document.getElementById("domain-template"); var dt = d.options[d.selectedIndex].text; var dv = d.options[d.selectedIndex].value; 
+	if (dt != 'No domain selected') {
+		var stamp = editMd.name + "|" + editMd.color + "|" + editMd.datetime + "|" + editMd.location + "\n";
+		signer(stamp + editMd.content, dv); }
+	else { alert('No domain selected'); }
+}
 var signer = async function (content, ref) { //add key to message...
     var messager = '{"domain":{"name":"UR.Land"},"message":{"contents":"Hello, key value for UR.Land"},"primaryType":"Mail","types":{"EIP712Domain":[{"name":"name","type":"string"}],"Mail":[{"name":"contents","type":"string"}]}}';
     var from = user.address; var params = [from, messager]; var method = 'eth_signTypedData_v4';
