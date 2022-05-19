@@ -108,8 +108,8 @@ async def data(request):
                     fout.write(content)
                     pass
                 return web.Response(text='valid domain',content_type="text/html")
-        else:
-            return web.Response(text='invalid owner',content_type="text/html")
+            else:
+                return web.Response(text='invalid owner',content_type="text/html")
     else:
         return web.Response(text='invalid wallet',content_type="text/html")
 
