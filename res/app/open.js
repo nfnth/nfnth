@@ -45,8 +45,8 @@ function pullAssets(owner, slug) {
         for (let i = 0; i < response.assets.length; i++) { owner.deed.push(response.assets[i].token_id); 
            //var asset = response.assets[i]; var id = asset.token_id; //alert(id);
            //for (let j = 0; j < holder.length; j++) { if (holder[j][0] == id) { claims.push(j); } } 
-							 } } ).catch(err => console.error(err)); }
-     // .then(response => { findDeeds(); }).catch(err => console.error(err)); }
+							 } } ).then(response => { listDeeds(); }).catch(err => console.error(err)); }
+     // .then(response => { listDeeds(); }).catch(err => console.error(err)); }
 
 function pullOwner(i) { id = domains[i].core.token_id;
 	fetch('https://api.opensea.io/api/v1/asset/0x495f947276749ce646f68ac8c248420045cb7b5e/'+id, options)
