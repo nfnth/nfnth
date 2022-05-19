@@ -85,9 +85,9 @@
 		<!-- list (deed) -->
 		<div id="test4"><ul>
 			<li><a class="subheader">Wallet Information</a></li>
-  			<li><a class="waves-effect" onclick="if (walletAddress != '') {copyClip(walletAddress);}"><i class="material-icons">alternate_email</i><span id="myAdd">My Wallet Address</span></a></li>
+  			<li><a class="waves-effect" onclick="if (user.address != '') {copyClip(user.address);}"><i class="material-icons">alternate_email</i><span id="myAdd">My Wallet Address</span></a></li>
   			<li><a class="waves-effect"><i class="material-icons">toll</i><span id="myETH">My ETH Balance</span></a></li>
-			<li style="margin-top:16px;margin-bottom:12px;"><a id="maker" class="btn waves-effect waves-light blue z-depth-1 lighten-3" style="width: 240px;margin: auto;border-radius: 8px;color:black;" onclick="if (walletAddress != '') {desetup(); $('#user-pane').sidenav('close');} else { setup(); }"><i class="material-icons left">login</i>Connect</a></li>
+			<li style="margin-top:16px;margin-bottom:12px;"><a id="maker" class="btn waves-effect waves-light blue z-depth-1 lighten-3" style="width: 240px;margin: auto;border-radius: 8px;color:black;" onclick="if (user.address != '') {desetup(); $('#user-pane').sidenav('close');} else { setup(); }"><i class="material-icons left">login</i>Connect</a></li>
   			<li><div style="margin-top:0;" class="divider"></div></li><!--<i class="material-icons left">calculate</i>-->
   			<li><a class="subheader">Domain Information</a></li>
   			<li><a class="waves-effect"><i class="material-icons">landscape</i><span id="dStatus">My Current Status</span></a></li>
