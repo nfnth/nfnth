@@ -76,7 +76,7 @@ function flyMark(i) { if (tempMark != "") { tempMark.remove(); }
 
 	tempMark.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); 
 
-	setZoom = 9; startUp = function() { $('.materialboxed').materialbox(); tempMark.togglePopup();  }; fly(mark); } 
+	setZoom = 9; startUp = function() {  tempMark.togglePopup(); $('.materialboxed').materialbox(); }; fly(mark); } 
 
 var inputMark = "";
 function editMark() { if (inputMark != "") { inputMark.remove(); inputMark = ""; }
