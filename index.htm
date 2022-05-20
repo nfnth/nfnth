@@ -75,7 +75,7 @@
 		
 <!-- panel (domain) -->
 <ul id="user-pane" class="sidenav loader" style="visibility:hidden;overflow:hidden;">
-	<li style="margin-top:12px; margin-bottom:12px;"><a class="btn waves-effect waves-light blue z-depth-1 lighten-3" style="width:80px; margin: auto;border-radius: 8px;margin-bottom:12px; margin-top:12px; color:black;" onclick="openInNewTab('https://github.com/nfnth/nfnth/issues'); $('#user-pane').sidenav('close');"><i class="material-icons left">help</i></a><a id="maker" class="btn waves-effect waves-light green z-depth-1 lighten-3" style="width: 160px;margin: auto;border-radius: 8px;" onclick="if (disconnect) {desetup(); $('#user-pane').sidenav('close');} else { setup(); }"><i class="material-icons left">login</i>Connect</a></li>
+	<li style="margin-top:12px; margin-bottom:12px;display:flex;"><a id="maker" class="btn waves-effect waves-light green z-depth-1 lighten-3" style="margin: auto;border-radius: 8px;" onclick="if (disconnect) {desetup(); $('#user-pane').sidenav('close');} else { setup(); }"><i class="material-icons left">login</i>Connect</a><a class="btn-flat waves-effect waves-light blue lighten-3" onclick="openInNewTab('https://github.com/nfnth/nfnth/issues'); $('#user-pane').sidenav('close');"><i class="material-icons">help</i></a></li>
 	
 	<!-- tabs -->
 	<li style="height:100%;"><ul class="tabs tabs-fixed-width z-depth-1 wallet">
@@ -88,7 +88,7 @@
   			<li><a class="waves-effect" onclick="if (user.address != '') {copyClip(user.address);}"><i class="material-icons">alternate_email</i><span id="myAdd">My Wallet Address</span></a></li>
   			<li><a class="waves-effect"><i class="material-icons">toll</i><span id="myETH">My ETH Balance</span></a></li>
 			<li><a class="waves-effect"><i class="material-icons">token</i><span id="myURL">My URL Balance</span></a></li>
-			<li style="margin-top:16px;margin-bottom:12px;"><a id="maker" class="btn waves-effect waves-light green z-depth-1 lighten-3" style="width: 240px;margin: auto;border-radius: 8px;" onclick=""><i class="material-icons left">account_box</i>Build Profile</a></li>
+			<li style="margin-top:16px;margin-bottom:12px;"><a class="btn waves-effect waves-light green z-depth-1 lighten-3" style="width: 240px;margin: auto;border-radius: 8px;" onclick=""><i class="material-icons left">account_box</i>Edit Profile</a></li>
   			<li><div style="margin-top:0;" class="divider"></div></li><!--<i class="material-icons left">calculate</i>-->
   			<li><a class="subheader">Domain Information</a></li>
   			<li><a class="waves-effect"><i class="material-icons">landscape</i><span id="dStatus">My Current Status</span></a></li>
