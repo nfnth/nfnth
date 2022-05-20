@@ -75,7 +75,9 @@
 		
 <!-- panel (domain) -->
 <ul id="user-pane" class="sidenav loader" style="visibility:hidden;overflow:hidden;">
-	<li style="margin-top:12px; margin-bottom:12px;display:flex;"><a id="maker" class="btn waves-effect waves-light green z-depth-1 lighten-3 black-text" style="margin: auto;border-radius: 8px;" onclick="if (disconnect) {desetup(); $('#user-pane').sidenav('close');} else { setup(); }"><i class="material-icons left">account_balance_wallet</i>Connect</a><a style="width:48px;" class="btn-flat waves-effect waves-light" onclick="openInNewTab('https://github.com/nfnth/nfnth/issues'); $('#user-pane').sidenav('close');"><i class="material-icons">help</i></a></li>
+	<li style="padding-top:16px;margin-bottom:12px;display: flex;justify-content: space-evenly;"><div style="display:flex;justify-content:space-evenly;width:100%;"><a class='btn-flat' onclick="openInNewTab('https://github.com/nfnth/nfnth/issues'); $('#user-pane').sidenav('close');"><i class="material-icons">help</i></a><a class="waves-effect waves-light btn blue lighten-2" style="display:inline-flex;align-items:center;width:100px;" onclick="if (disconnect) {desetup(); $('#user-pane').sidenav('close');} else { setup(); }"><i class="material-icons">account_balance_wallet</i><span>Connect</span></a></div></li>
+	
+<!--	<li style="margin-top:12px; margin-bottom:12px;display:flex;"><a id="maker" class="btn waves-effect waves-light green z-depth-1 lighten-3 black-text" style="margin: auto;border-radius: 8px;" onclick="if (disconnect) {desetup(); $('#user-pane').sidenav('close');} else { setup(); }"><i class="material-icons left">account_balance_wallet</i>Connect</a><a style="width:48px;" class="btn-flat waves-effect waves-light" onclick="openInNewTab('https://github.com/nfnth/nfnth/issues'); $('#user-pane').sidenav('close');"><i class="material-icons">help</i></a></li> -->
 	
 	<!-- tabs -->
 	<li style="height:100%;"><ul class="tabs tabs-fixed-width z-depth-1 wallet">
