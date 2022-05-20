@@ -232,7 +232,7 @@ async function initial() { $('body').css("background-color","lightgrey");
 	$('.modal').modal(); //$('#dialog-inner2').css("height", window.innerHeight - 375);
 	$("#registry-open").css("height",(height - 120) + "px"); $("#registry-domain").css("height",(height - 120) + "px");
     	$("#map").css("height",height + "px"); $("#registry").css("height",height + "px"); showFav('scroller');
-	$("#editor").css("height",height - 360 + "px");
+	$("#editor").css("height",height - 360 + "px"); $('.materialboxed').materialbox();
 
 	var gear = Math.floor(Math.random() * (42 - 1 + 1)) + 1; document.getElementById('list-wait').src = "res/img/gear/gear" + gear.toString() + ".png";
 	var gear2 = Math.floor(Math.random() * (42 - 1 + 1)) + 1; document.getElementById('list-wait2').src = "res/img/gear/gear" + gear2.toString() + ".png";
