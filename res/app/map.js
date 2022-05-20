@@ -54,11 +54,11 @@ function showMark(i) {
 	domains[i].map = marker;
 	//currentMarkers.push(marker);
 	
-	var markup = '<div><div style="display:flex; justify-content:center;"><img class="materialboxed" style="cursor:pointer;" width="120" height="120" src="'+domains[i].core.image_preview_url+'"/></div><div style="margin-top:16px; font-size:16px;"><a onclick="openInNewTab(\'' + domains[i].core.external_link + '\');">' + domains[i].core.name + '</a><br/><br/><a class="waves-effect waves-blue btn blue lighten-2" onclick="buildDoc(' + i + ');" ><i class="material-icons">description</i></a>&nbsp;&nbsp;<a class="modal-trigger waves-effect waves-light btn amber" href="#modal1" onclick="addListDetail(' + i + ');"><i class="material-icons">inventory_2</i></a></div></div>';
+	var markup = '<div><div style="display:flex; justify-content:center;"><img class="materialboxed" width="120" height="120" src="'+domains[i].core.image_preview_url+'"/></div><div style="margin-top:16px; font-size:16px;"><a onclick="openInNewTab(\'' + domains[i].core.external_link + '\');">' + domains[i].core.name + '</a><br/><br/><a class="waves-effect waves-blue btn blue lighten-2" onclick="buildDoc(' + i + ');" ><i class="material-icons">description</i></a>&nbsp;&nbsp;<a class="modal-trigger waves-effect waves-light btn amber" href="#modal1" onclick="addListDetail(' + i + ');"><i class="material-icons">inventory_2</i></a></div></div>';
 
-	domains[i].map.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); }
+	domains[i].map.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); $('.materialboxed').materialbox(); }
 
-function popMark(i) { domains[i].map.togglePopup(); $('.materialboxed').materialbox(); }
+function popMark(i) { $('.materialboxed').materialbox(); domains[i].map.togglePopup();  }
 var tempMark = "";
 function flyMark(i) { if (tempMark != "") { tempMark.remove(); } 
 	var mark = [domains[i].coord.substring(domains[i].coord.indexOf(', ')+1,domains[i].coord.indexOf(']')-1), domains[i].coord.substring(domains[i].coord.indexOf('[')+1,domains[i].coord.indexOf(',')-1)];
@@ -72,11 +72,11 @@ function flyMark(i) { if (tempMark != "") { tempMark.remove(); }
 	
 	tempMark = marker;
 	
-	var markup = '<div><div style="display:flex; justify-content:center;"><img class="materialboxed" style="cursor:pointer;" width="120" height="120" src="'+domains[i].core.image_preview_url+'"/></div><div style="margin-top:16px; font-size:16px;"><a onclick="openInNewTab(\'' + domains[i].core.external_link + '\');">' + domains[i].core.name + '</a><br/><br/><a class="waves-effect waves-blue btn blue lighten-2" onclick="buildDoc(' + i + ');" ><i class="material-icons">description</i></a>&nbsp;&nbsp;<a class="modal-trigger waves-effect waves-light btn amber" href="#modal1" onclick="addListDetail(' + i + ');"><i class="material-icons">inventory_2</i></a></div></div>';
+	var markup = '<div><div style="display:flex; justify-content:center;"><img class="materialboxed" width="120" height="120" src="'+domains[i].core.image_preview_url+'"/></div><div style="margin-top:16px; font-size:16px;"><a onclick="openInNewTab(\'' + domains[i].core.external_link + '\');">' + domains[i].core.name + '</a><br/><br/><a class="waves-effect waves-blue btn blue lighten-2" onclick="buildDoc(' + i + ');" ><i class="material-icons">description</i></a>&nbsp;&nbsp;<a class="modal-trigger waves-effect waves-light btn amber" href="#modal1" onclick="addListDetail(' + i + ');"><i class="material-icons">inventory_2</i></a></div></div>';
 
 	tempMark.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); 
 
-	setZoom = 9; startUp = function() { tempMark.togglePopup(); }; fly(mark); } 
+	setZoom = 9; startUp = function() { $('.materialboxed').materialbox(); tempMark.togglePopup();  }; fly(mark); } 
 
 var inputMark = "";
 function editMark() { if (inputMark != "") { inputMark.remove(); inputMark = ""; }
