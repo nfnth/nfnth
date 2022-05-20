@@ -10,7 +10,7 @@ var setup = async function () {
         $.get("api/"+user.address, async function(data) { 
             var fields = data.split('|'); var ether = JSON.parse(fields[0]).result; var urler = fields[1];
             $("#myETH").html(ether); $("#myURL").html(urler);
-            $("#maker").addClass("blue"); $("#maker").removeClass("green"); $("#maker").html('<i class="material-icons left">logout</i>Disconnect'); disconnect = true;
+            $("#maker").addClass("blue"); $("#maker").removeClass("green"); $("#maker").html('<i class="material-icons left">logout</i>Disconnect'); disconnect = true; $("#map-link").removeClass("disabled"); $("#map-icon").css("color","green"); 
             $("#wallet-area").removeClass("grey"); $("#wallet-area").addClass("green"); $("#wallet-icon").css("color","white"); } ); 
     	for (let i=0;i<opens.length;i++) { pullAssets(user, opens[i].core.slug); } 
     }
@@ -18,7 +18,7 @@ var setup = async function () {
 
 function desetup() { user = ""; user = new Wallet(); $("#wallet-area").addClass("grey"); $("#wallet-area").removeClass("green"); $("#wallet-icon").css("color","black");
     $("#myAdd").html('My Wallet Address');  $("#myETH").html('My ETH Balance'); $("#myURL").html('My URL Balance');
-    $("#maker").addClass("green"); $("#maker").removeClass("blue"); $("#maker").html('<i class="material-icons left">login</i>Connect'); disconnect = false;
+    $("#maker").addClass("green"); $("#maker").removeClass("blue"); $("#maker").html('<i class="material-icons left">login</i>Connect'); disconnect = false; $("#map-link").addClass("disabled"); $("#map-icon").css("color",""); 
     emptyDeeds(); domainSelect(); }
 
 function listDeeds() {
