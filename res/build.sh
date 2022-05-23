@@ -41,13 +41,13 @@ base() {
     #rsync -aAXxv --exclude="mnt" --exclude="boot" / /mnt #cp -ax / /mnt
     #rm /mnt/etc/fstab
 
-    #cp -vaT /boot /mnt/boot #rsync -aAXxv /boot /mnt/boot
-    cp -vaT /run/archiso/bootmnt/arch/boot/$(uname -m)/vmlinuz-linux /mnt/boot/vmlinuz-linux
-    cp /run/archiso/bootmnt/shellx64.efi /mnt/boot/shellx64.efi
-    cp -r /run/archiso/bootmnt/EFI /mnt/boot/EFI
-    cp /run/archiso/bootmnt/arch/boot/amd-ucode.img /mnt/boot/amd-ucode.img
-    cp /run/archiso/bootmnt/arch/boot/intel-ucode.img /mnt/boot/intel-ucode.img
-    cp -r /run/archiso/bootmnt/loader /mnt/boot/loader
+    cp -vaT /boot /mnt/boot #rsync -aAXxv /boot /mnt/boot
+    #cp -vaT /run/archiso/bootmnt/arch/boot/$(uname -m)/vmlinuz-linux /mnt/boot/vmlinuz-linux
+    #cp /run/archiso/bootmnt/shellx64.efi /mnt/boot/shellx64.efi
+    #cp -r /run/archiso/bootmnt/EFI /mnt/boot/EFI
+    #cp /run/archiso/bootmnt/arch/boot/amd-ucode.img /mnt/boot/amd-ucode.img
+    #cp /run/archiso/bootmnt/arch/boot/intel-ucode.img /mnt/boot/intel-ucode.img
+    #cp -r /run/archiso/bootmnt/loader /mnt/boot/loader
 
     genfstab -U /mnt >> /mnt/etc/fstab
     
