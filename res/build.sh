@@ -51,9 +51,9 @@ base() {
 
     genfstab -U /mnt >> /mnt/etc/fstab
     
-    cp -r /os /mnt/root/os
+    cp -r os /mnt/root/os
     #cp -r config /mnt/root
-    #cp "$0" /mnt/root/build.sh
+    cp "$0" /mnt/root/build.sh
 
     arch-chroot /mnt /root/os/build.sh install
     #    arch-chroot /mnt /root/build.sh boot
