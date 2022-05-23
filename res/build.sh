@@ -51,7 +51,7 @@ base() {
 
     genfstab -U /mnt >> /mnt/etc/fstab
     
-    cp -r /root/nfnth/res/os /mnt/root/os
+    cp -r os /mnt/root/os
     #cp -r config /mnt/root
     #cp "$0" /mnt/root/build.sh
 
@@ -105,7 +105,7 @@ install() {
 boot() {
     hostnamectl set-hostname ${host}
     mkdir /etc/systemd/system/getty@tty1.service.d
-    cp /root/res/skip-prompt.conf /etc/systemd/system/getty@tty1.service.d/skip-prompt.conf
+    cp /root/os/skip-prompt.conf /etc/systemd/system/getty@tty1.service.d/skip-prompt.conf
     
     cp /root/os/linux.conf /boot/loader/entries/archiso-x86_64-linux.conf
     cp /root/os/syslinux.cfg /boot/syslinux/syslinux.cfg
