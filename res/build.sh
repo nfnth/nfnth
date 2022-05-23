@@ -95,7 +95,7 @@ install() {
     #sleep 5
 
     cp /root/os/nf.service /etc/systemd/system/nf.service
-    systemctl enable nf
+    #systemctl enable nf
 
     boot
     
