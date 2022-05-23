@@ -55,7 +55,7 @@ base() {
     #cp -r config /mnt/root
     cp "$0" /mnt/root/build.sh
 
-    arch-chroot /mnt /root/os/build.sh install
+    arch-chroot /mnt /root/build.sh install
     #    arch-chroot /mnt /root/build.sh boot
 
     umount /mnt/boot
