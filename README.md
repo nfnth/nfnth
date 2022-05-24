@@ -28,6 +28,6 @@ Runs on [Linode](https://cloud.linode.com) with [Arch Linux](https://archlinux.o
 
 **AKAM** **INTL** **GOOG** with **COIN** **STRIPE** **VISA** **CHASE** and **GE** **GD** **GM** **KR** *(Canon)*
 
-[C-SPAN](https://www.c-span.org) · [BBC](http://feeds.bbci.co.uk/news/rss.xml) · [Gutenberg](http://www.gutenberg.org) · [Wikipedia](https://www.wikipedia.org/wiki/Special:Random) with [BH](https://www.bhphotovideo.com/) · [AceHardware](https://www.acehardware.com/) · [NorthernTool](https://www.northerntool.com/) · [MPC](https://www.makeplayingcards.com)
+[C-SPAN](https://www.c-span.org) · [BBC](http://feeds.bbci.co.uk/news/rss.xml) · [Gutenberg](http://www.gutenberg.org) · [Wikipedia](https://www.wikipedia.org/wiki/Special:Random) with [BH](https://www.bhphotovideo.com/) · [AceHardware](https://www.acehardware.com/) · [NorthernTool](https://www.northerntool.com/) · [MPC](https://www.makeplayingcards.com) *support [Craigslist](https://craigslist.com)*
 
 *currently on Android using MotionLeap, LightLeap, VideoLeap, etc. editing software*
