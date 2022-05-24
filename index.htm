@@ -30,9 +30,11 @@
 
     	<!-- desktop -->
     	<ul class="hide-on-med-and-down">
-		<li id="doc-list"><a id="docs" href="#!" data-target="doc"><i class="material-icons left">sticky_note_2</i>READ<i class="material-icons right">arrow_drop_down</i></a></li>
+		<!--<li id="doc-list"><a id="docs" href="#!" data-target="doc"><i class="material-icons left">sticky_note_2</i>READ<i class="material-icons right">arrow_drop_down</i></a></li>
 		<li id="list-list"><a id="explores" href="#!" data-target="explore"><i class="material-icons left">edit</i>NOTE<i class="material-icons right">arrow_drop_down</i></a></li>
-		<li id="map-list"><a onclick="showView('list'); showList('domain');"><i class="material-icons left">map</i>TRACK</a></li>
+		<li id="map-list"><a onclick="showView('list'); showList('domain');"><i class="material-icons left">map</i>TRACK</a></li>-->
+		<li><a id="map-link" class="btn waves-effect waves-light green lighten-2" onclick="alert('test');"><i id="map-icon" class="material-icons">location</i></a></li>
+		
         	<li style="height:64px;" id="search-list">
         		<a style="height:inherit; padding-right:0;"><i onclick="$('#search').focus();" style="height:inherit; padding-right:16px;" class="material-icons">search</i><div id="search-box" class="input-field" style="height:inherit;"><input id="search" type="search" onkeyup="searchResults()" style="padding-left:12px; width: calc(100% - 1rem);"><label class="label-icon" for="search" ></label><i class="material-icons" onclick="searchClear()">close</i></div></a></li></ul>
 
@@ -123,7 +125,8 @@
 		<div id="map" class="content loader pane" style="width:100%;"></div>
 			<div id="map-tool" style="right:50%;" class="fixed-action-btn"><a id="map-link" class="btn waves-effect waves-light green lighten-2" onclick="alert('test');"><i id="map-icon" class="material-icons left">add</i>Show list</a></div>
 	<div id="map-tool" style="right:50%;" class="fixed-action-btn"><a id="map-link" class="btn waves-effect waves-light green lighten-2" onclick="alert('test');"><i id="map-icon" class="material-icons left">add</i>Show list</a></div>
-	<div id="map-tool" style="bottom:50%;" class="fixed-action-btn"><a id="map-link" class="btn waves-effect waves-light green lighten-2" onclick="alert('test');"><i id="map-icon" class="material-icons">location</i></a></div>
+	<div id="map-tool" style="bottom:50%;" class="fixed-action-btn"><a id="map-link" class="btn waves-effect waves-light green lighten-2" onclick="alert('test');"><i id="map-icon" class="material-icons">location</i></a>
+		<a id="map-link" class="btn waves-effect waves-light green lighten-2" onclick="alert('test');"><i id="map-icon" class="material-icons">location</i></a></div>
 	</div>
 
     	<!-- search -->
@@ -254,7 +257,8 @@ async function initial() { $('body').css("background-color","lightgrey");
     $('#dropdown-template').dropdown({ constrainWidth: false });
 	$('#user-pane').sidenav({ edge: 'right' }); $('#deed-pane').sidenav({ edge: 'left', onCloseEnd: populateMap }); 
     
-   	hideView(); $('#news').show(); $("#stamper").show(); $("#world").show(); //searchClear();
+   	hideView(); showView('list'); showList('domain');
+			  //$('#news').show(); $("#stamper").show(); $("#world").show(); //searchClear();
      //setNotice('...latest domain...');
     	setTimeout(function() { $(".loader").css("visibility", "visible"); redirect(); $('img').on('dragstart', function(evt) { return false; }); }  , 500); }
 
