@@ -26,6 +26,6 @@ Licensed as **NfNth Corp** in the State of Washington, [19500 130th AV NE, Woodi
 
 Runs on [Linode](https://cloud.linode.com) with [Arch Linux](https://archlinux.org). Ships with [USPS](https://www.usps.com/business/web-tools-apis/documentation-updates.htm). Crypto uses [gate.io](https://gate.io) with [ETH](https://geth.ethereum.org/downloads/) and Presearch
 
-**AKAM** **INTL** **GOOG** with **COIN** **STRIPE** **VISA** **CHASE** and **GE** **GD** **GM** **KR** *(Canon, AirBNB)*
+**AKAM** **INTL** **GOOG** with **COIN** **STRIPE** **VISA** **CHASE** and **GE** **GD** **GM** **KR** *(Canon)*
 
 [C-SPAN](https://www.c-span.org) · [BBC](http://feeds.bbci.co.uk/news/rss.xml) · [Gutenberg](http://www.gutenberg.org) · [Wikipedia](https://www.wikipedia.org/wiki/Special:Random) with [BH](https://www.bhphotovideo.com/) · [AceHardware](https://www.acehardware.com/) · [NorthernTool](https://www.northerntool.com/) · [MPC](https://www.makeplayingcards.com)
