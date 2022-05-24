@@ -89,13 +89,13 @@ install() {
 #Address=${ip}
 #EOF
     mkdir /root/.config
-    #cp /root/os/weston.ini /root/.config/weston.ini
+    cp /root/os/weston.ini /root/.config/weston.ini
     #sed -i "s/twm/exec \/root\/res\/ocur.sh /g" /etc/X11/xinit/xinitrc
     #chmod +x /root/res/ocur.sh
     #sleep 5
 
-    #cp /root/os/nf.service /etc/systemd/system/nf.service
-    #systemctl enable nf
+    cp /root/os/nf.service /etc/systemd/system/nf.service
+    systemctl enable nf
 
     boot
     
@@ -111,8 +111,8 @@ boot() {
     cp /root/os/syslinux.cfg /boot/syslinux/syslinux.cfg
     cp /root/os/mkinitcpio.conf /etc/mkinitcpio.conf
     
-    sed -i "s/root=XXXX/root=PARTUUID=${partuuid}/g" /boot/loader/entries/archiso-x86_64-linux.conf
-    sed -i "s/root=XXXX/root=PARTUUID=${partuuid}/g" /boot/syslinux/syslinux.cfg
+    sed -i "s/root=XXXX/root=${partuuid}/g" /boot/loader/entries/archiso-x86_64-linux.conf #UUID=
+    sed -i "s/root=XXXX/root=${partuuid}/g" /boot/syslinux/syslinux.cfg #UUID=
 
     mkinitcpio -P
     syslinux-install_update -i -a -m
