@@ -12,10 +12,10 @@ user_name="nfnth"
 user_password="nfnth"
 
 #packages...
-client="linux linux-firmware syslinux mkinitcpio edk2-shell efibootmgr gptfdisk nano vim iwd dhcpcd wayland weston firefox"
-#xorg-server xorg-xinit xorg-xrandr xorg-xdpyinfo xorg-xinput xterm feh lxde-common lxdm lxsession openbox alsa-utils picom firefox kate" #chromium
+client="linux linux-firmware syslinux mkinitcpio edk2-shell efibootmgr gptfdisk nano vim iwd dhcpcd wayland weston firefox sudo"
+#xorg-server xorg-xinit xorg-xrandr xorg-xdpyinfo xorg-xinput xterm feh lxde-common lxdm lxsession openbox alsa-utils picom kate" #chromium
 arch="arch-install-scripts dosfstools"
-#mkinitcpio-archiso ppp pptpclient terminus-font archiso cmake mesa mime-types ntp wget dhcp feh openscad inkscape gimp blender musescore openshot vulkan? sshpass noto-fonts noto-fonts-extra noto-fonts-emoji intel-ucode amd-ucode tor vi vim-minimal
+#mkinitcpio-archiso ppp pptpclient terminus-font archiso cmake mesa mime-types ntp wget dhcp openscad inkscape gimp blender musescore openshot vulkan? sshpass noto-fonts noto-fonts-extra noto-fonts-emoji intel-ucode amd-ucode tor vi vim-minimal
 
 server="gcc haproxy certbot python python-pip glibc" #git glibc
 python="aiohttp asyncio" #web3 aiosmtpd acme certbot" #av aiortc #opencv-python object-mapper
@@ -89,12 +89,12 @@ install() {
 #Address=${ip}
 #EOF
     mkdir /root/.config
-    cp /root/os/weston.ini /root/.config/weston.ini
+    #cp /root/os/weston.ini /root/.config/weston.ini
     #sed -i "s/twm/exec \/root\/res\/ocur.sh /g" /etc/X11/xinit/xinitrc
     #chmod +x /root/res/ocur.sh
     #sleep 5
 
-    cp /root/os/nf.service /etc/systemd/system/nf.service
+    #cp /root/os/nf.service /etc/systemd/system/nf.service
     #systemctl enable nf
 
     boot
@@ -111,8 +111,8 @@ boot() {
     cp /root/os/syslinux.cfg /boot/syslinux/syslinux.cfg
     cp /root/os/mkinitcpio.conf /etc/mkinitcpio.conf
     
-    sed -i "s/root=XXXX/root=UUID=${uuid}/g" /boot/loader/entries/archiso-x86_64-linux.conf
-    sed -i "s/root=XXXX/root=UUID=${uuid}/g" /boot/syslinux/syslinux.cfg
+    sed -i "s/root=XXXX/root=PARTUUID=${partuuid}/g" /boot/loader/entries/archiso-x86_64-linux.conf
+    sed -i "s/root=XXXX/root=PARTUUID=${partuuid}/g" /boot/syslinux/syslinux.cfg
 
     mkinitcpio -P
     syslinux-install_update -i -a -m
