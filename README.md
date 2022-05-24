@@ -24,7 +24,7 @@ Licensed as **NfNth Corp** in the State of Washington, [19500 130th AV NE, Woodi
 
 #### Affiliates
 
-Runs on [Linode](https://cloud.linode.com). Ships with [USPS](https://www.usps.com/business/web-tools-apis/documentation-updates.htm). Crypto uses [gate.io](https://gate.io) with [ETH](https://geth.ethereum.org/downloads/) and Presearch
+Runs on [Linode](https://cloud.linode.com) with [Arch Linux](https://archlinux.org). Ships with [USPS](https://www.usps.com/business/web-tools-apis/documentation-updates.htm). Crypto uses [gate.io](https://gate.io) with [ETH](https://geth.ethereum.org/downloads/) and Presearch
 
 **AKAM** **INTL** **GOOG** with **COIN** **STRIPE** **VISA** **CHASE** and **GE** **GD** **GM** **KR** *(Canon, AirBNB)*
 
