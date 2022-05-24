@@ -257,10 +257,10 @@ async function initial() { $('body').css("background-color","lightgrey");
     $('#dropdown-template').dropdown({ constrainWidth: false });
 	$('#user-pane').sidenav({ edge: 'right' }); $('#deed-pane').sidenav({ edge: 'left', onCloseEnd: populateMap }); 
     
-   	hideView(); showView('list'); showList('domain');
+   	hideView(); 
 			  //$('#news').show(); $("#stamper").show(); $("#world").show(); //searchClear();
      //setNotice('...latest domain...');
-    	setTimeout(function() { $(".loader").css("visibility", "visible"); redirect(); $('img').on('dragstart', function(evt) { return false; }); }  , 500); }
+    	setTimeout(function() { $(".loader").css("visibility", "visible"); redirect(); showView('list'); showList('domain'); $('img').on('dragstart', function(evt) { return false; }); }  , 500); }
 
 initial();
 document.addEventListener('DOMContentLoaded', function() { });
