@@ -2,6 +2,7 @@
 Description=nf
 [Service]
 ExecStart=/usr/bin/weston
+Environment="XDG_RUNTIME_DIR=/run/weston"
 Type=idle
 [Install]
-WantedBy=graphical.target
+WantedBy=multi-user.target
