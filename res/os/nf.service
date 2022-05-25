@@ -1,7 +1,7 @@
 [Unit]
 Description=nf
 [Service]
-ExecStart=weston
+ExecStart=/usr/bin/weston
 Type=idle
 [Install]
-WantedBy=multi-user.target
+WantedBy=graphical.target
