@@ -97,7 +97,7 @@ install() {
     cp /root/os/nf.service /etc/systemd/system/nf.service
     #systemctl enable nf
     mkdir /root/.config/autostart
-    cp /root/os/nf.sh /root/.config/autostart/nf.sh
+    cp /root/os/nf.sh /etc/profile.d/nf.sh
     chmod +x /root/.config/autostart/nf.sh
 
     boot
