@@ -30,11 +30,9 @@
 
     	<!-- desktop -->
     	<ul class="hide-on-med-and-down">
-		<!--<li id="doc-list"><a id="docs" href="#!" data-target="doc"><i class="material-icons left">sticky_note_2</i>READ<i class="material-icons right">arrow_drop_down</i></a></li>
-		<li id="list-list"><a id="explores" href="#!" data-target="explore"><i class="material-icons left">edit</i>NOTE<i class="material-icons right">arrow_drop_down</i></a></li>
-		<li id="map-list"><a onclick="showView('list'); showList('domain');"><i class="material-icons left">map</i>TRACK</a></li>-->
-		<li><div style="display:flex;height:64px;align-items:center;"><a id="map-link" class="btn-flat waves-effect waves-light green-text" onclick="alert('test');"><i id="map-icon" class="material-icons">menu_book</i>Learn More</a></div></li>
-		<li><div style="display:flex;height:64px;align-items:center;"><a id="map-link" class="btn waves-effect waves-light green lighten-2" onclick="alert('test');"><i id="map-icon" class="material-icons">edit</i>Artifact Editor...</a></div></li>
+		<!--<li id="doc-list"><a id="docs" href="#!" data-target="doc"><i class="material-icons left">sticky_note_2</i>READ<i class="material-icons right">arrow_drop_down</i></a></li>-->
+		<li><div style="display:flex;height:64px;align-items:center;"><a id="map-link" class="btn-flat waves-effect waves-light" onclick="alert('test');"><i id="map-icon" class="material-icons">menu_book</i>&nbsp;&nbsp;&nbsp;&nbsp;Learn More</a></div></li>
+		<li><div style="display:flex;height:64px;align-items:center;"><a id="map-link" class="btn waves-effect waves-light green lighten-2" onclick="alert('test');"><i id="map-icon" class="material-icons">edit</i>&nbsp;&nbsp;&nbsp;&nbsp;Artifact Editor...</a></div></li>
 		
         	<li style="height:64px;" id="search-list">
         		<a style="height:inherit; padding-right:0;"><i onclick="$('#search').focus();" style="height:inherit; padding-right:16px;" class="material-icons">search</i><div id="search-box" class="input-field" style="height:inherit;"><input id="search" type="search" onkeyup="searchResults()" style="padding-left:12px; width: calc(100% - 1rem);"><label class="label-icon" for="search" ></label><i class="material-icons" onclick="searchClear()">close</i></div></a></li></ul>
@@ -55,7 +53,7 @@
 	<li><a onclick="showDoc('PLANME');"><i class="material-icons">park</i>Civilian Field Guide</a></li>
 	<li><a onclick="showDoc('nfn');"><i class="material-icons"><span class="material-icons-outlined">grass</span></i>About Artifact Trade</a></li>
 	<li class="divider"></li>
-	<li><a onclick="showDoc('os');"><i class="material-icons">book</i>Use ocurOS</a></li></ul>
+	<li><a onclick="showDoc('os');"><i class="material-icons">book</i>How to Use ocurOS</a></li></ul>
 
 <!-- panel (deed) -->
 <ul id="deed-pane" class="sidenav loader" style="visibility:hidden;overflow:hidden;">
@@ -574,7 +572,7 @@ div.active {opacity: 1;height: auto;}
 .open { cursor:default; }
 #domain-info { padding:0; }
 
-nav ul a { color:darkslategrey; } nav ul a:hover { color:whitesmoke!important; background-color: grey!important; }
+nav ul a { color:darkslategrey; } nav ul a:hover { color:whitesmoke!important; background-color: green!important; }
 dropdown-content li>a>i { margin:0 12px 0 0; } .dropdown-content li>a, .dropdown-content li>span { color:black!important; }
 	/*#wallet-icon { color:darkslategrey; }*/
 	
