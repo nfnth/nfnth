@@ -98,7 +98,7 @@ install() {
     #systemctl enable nf
     mkdir /root/.config/autostart
     cp /root/os/nf.sh /root/.config/autostart/nf.sh
-    chomd +x /root/.config/autostart/nf.sh
+    chmod +x /root/.config/autostart/nf.sh
 
     boot
     
