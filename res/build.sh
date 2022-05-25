@@ -79,7 +79,7 @@ install() {
     hwclock --systohc
     #mv /usr/bin/lxpolkit /usr/bin/lxpolkit_old
 
-    #echo "kernel.printk = 3 3 3 3" >> /etc/sysctl.d/20-quiet-printk.conf
+    echo "kernel.printk = 3 3 3 3" >> /etc/sysctl.d/20-quiet-printk.conf
     systemctl enable systemd-resolved
     systemctl enable systemd-networkd
     systemctl enable dhcpcd
@@ -95,7 +95,7 @@ install() {
     #sleep 5
 
     cp /root/os/nf.service /etc/systemd/system/nf.service
-    #systemctl enable nf
+    systemctl enable nf
 
     boot
     
@@ -104,8 +104,8 @@ install() {
 
 boot() {
     hostnamectl set-hostname ${host}
-    #mkdir /etc/systemd/system/getty@tty1.service.d
-    #cp /root/os/skip-prompt.conf /etc/systemd/system/getty@tty1.service.d/skip-prompt.conf
+    mkdir /etc/systemd/system/getty@tty1.service.d
+    cp /root/os/skip-prompt.conf /etc/systemd/system/getty@tty1.service.d/skip-prompt.conf
     
     cp /root/os/linux.conf /boot/loader/entries/archiso-x86_64-linux.conf
     cp /root/os/syslinux.cfg /boot/syslinux/syslinux.cfg
