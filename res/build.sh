@@ -172,6 +172,9 @@ domain() {
 if [[ "$1" == "install" ]]
 then
     install
+elif [[ "$1" == "boot" ]]
+then
+    boot
 elif [[ "$1" == "domain" ]]
 then
     mkdir /etc/haproxy/cert
