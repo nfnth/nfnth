@@ -64,3 +64,11 @@ nohup firefox > /dev/null 2>&1 &
 #sed -i "s/#XXXX/nohup chromium 'http:\/\/localhost:5001' --test-type --start-fullscreen --disable-web-security --user-data-dir=~ --no-sandbox > \/dev\/null 2>&1 & disown &/g" /root/config/start.sh
 
 about:support (profiles) (config)
+
+#rsync -aAXxv /boot /mnt/boot
+    #cp -vaT /run/archiso/bootmnt/arch/boot/$(uname -m)/vmlinuz-linux /mnt/boot/vmlinuz-linux
+    #cp /run/archiso/bootmnt/shellx64.efi /mnt/boot/shellx64.efi
+    #cp -r /run/archiso/bootmnt/EFI /mnt/boot/EFI
+    #cp /run/archiso/bootmnt/arch/boot/amd-ucode.img /mnt/boot/amd-ucode.img
+    #cp /run/archiso/bootmnt/arch/boot/intel-ucode.img /mnt/boot/intel-ucode.img
+    #cp -r /run/archiso/bootmnt/loader /mnt/boot/loader
