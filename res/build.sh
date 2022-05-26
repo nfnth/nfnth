@@ -15,9 +15,9 @@ user_password="nfnth"
 client="linux linux-firmware syslinux mkinitcpio edk2-shell efibootmgr gptfdisk nano vim iwd dhcpcd wayland weston firefox sudo"
 #xorg-server xorg-xinit xorg-xrandr xorg-xdpyinfo xorg-xinput xterm feh lxde-common lxdm lxsession openbox alsa-utils picom kate" #chromium
 arch="arch-install-scripts dosfstools"
-#mkinitcpio-archiso ppp pptpclient terminus-font archiso cmake mesa mime-types ntp wget dhcp openscad inkscape gimp blender musescore openshot vulkan? sshpass noto-fonts noto-fonts-extra noto-fonts-emoji intel-ucode amd-ucode tor vi vim-minimal
+#mkinitcpio-archiso ppp pptpclient terminus-font archiso cmake mesa mime-types ntp wget dhcp openscad inkscape gimp blender musescore openshot vulkan? sshpass noto-fonts noto-fonts-extra noto-fonts-emoji intel-ucode amd-ucode tor 
 
-server="gcc haproxy certbot python python-pip glibc" #git glibc
+server="gcc haproxy certbot python python-pip glibc" #git
 python="aiohttp asyncio" #web3 aiosmtpd acme certbot" #av aiortc #opencv-python object-mapper
 
 timezone="America/Los_Angeles"
@@ -37,17 +37,15 @@ base() {
     mkdir /mnt/boot
     mount ${drive}${drived}1 /mnt/boot
 
-    pacstrap /mnt base base-devel
-    #rsync -aAXxv --exclude="mnt" --exclude="boot" / /mnt #cp -ax / /mnt
+    if [[ "$1" == "install" ]]
+    then
+        pacstrap /mnt base base-devel
+    else
+        rsync -aAXxv --exclude="mnt" --exclude="boot" / /mnt #cp -ax / /mnt
+    fi
     #rm /mnt/etc/fstab
 
-    cp -vaT /boot /mnt/boot #rsync -aAXxv /boot /mnt/boot
-    #cp -vaT /run/archiso/bootmnt/arch/boot/$(uname -m)/vmlinuz-linux /mnt/boot/vmlinuz-linux
-    #cp /run/archiso/bootmnt/shellx64.efi /mnt/boot/shellx64.efi
-    #cp -r /run/archiso/bootmnt/EFI /mnt/boot/EFI
-    #cp /run/archiso/bootmnt/arch/boot/amd-ucode.img /mnt/boot/amd-ucode.img
-    #cp /run/archiso/bootmnt/arch/boot/intel-ucode.img /mnt/boot/intel-ucode.img
-    #cp -r /run/archiso/bootmnt/loader /mnt/boot/loader
+    cp -vaT /boot /mnt/boot 
 
     genfstab -U /mnt >> /mnt/etc/fstab
     
