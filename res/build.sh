@@ -37,26 +37,23 @@ base() {
     mount ${drive}${drived}2 /mnt
     mkdir /mnt/boot
     mount ${drive}${drived}1 /mnt/boot
+    
+    cp -vaT /boot /mnt/boot 
 
     if [[ "${network}" == "on" ]]
     then
         pacstrap /mnt base base-devel
+        cp -r os /mnt/root/os
+        cp "$0" /mnt/root/build.sh
+        arch-chroot /mnt /root/build.sh install
     else
         rsync -aAXxv --exclude="mnt" --exclude="boot" / /mnt #cp -ax / /mnt
+        rm /mnt/etc/fstab
     fi
-    #rm /mnt/etc/fstab
-
-    cp -vaT /boot /mnt/boot 
-
-    genfstab -U /mnt >> /mnt/etc/fstab
     
-    cp -r os /mnt/root/os
-    #cp -r config /mnt/root
-    cp "$0" /mnt/root/build.sh
-
-    arch-chroot /mnt /root/build.sh install
-    #    arch-chroot /mnt /root/build.sh boot
-
+    genfstab -U /mnt >> /mnt/etc/fstab
+    arch-chroot /mnt /root/build.sh boot
+    
     umount /mnt/boot
     umount /mnt
 }
@@ -93,13 +90,12 @@ install() {
     #chmod +x /root/res/ocur.sh
     #sleep 5
 
-    cp /root/os/nf.service /etc/systemd/system/nf.service
+    #cp /root/os/nf.service /etc/systemd/system/nf.service
     #systemctl enable nf
-    mkdir /root/.config/autostart
     cp /root/os/nf.sh /etc/profile.d/nf.sh
-    chmod +x /root/.config/autostart/nf.sh
+    #chmod +x /root/.config/autostart/nf.sh
 
-    boot
+    #boot
     
     #) go to /usr/share/applications // search for firefox
 }
