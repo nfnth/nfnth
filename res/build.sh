@@ -6,6 +6,7 @@ drived="" #secondary drive, i.e. use 'p' for /dev/mmcblk0p1
 
 uuid=$(blkid -o export "${drive}${drived}"2 | sed -ne 's/^UUID=//p')
 partuuid=$(blkid -o export "${drive}${drived}"2 | grep PARTUUID)
+network="on" #off
 
 password="nfnth" #root password
 user_name="nfnth"
@@ -37,7 +38,7 @@ base() {
     mkdir /mnt/boot
     mount ${drive}${drived}1 /mnt/boot
 
-    if [[ "$1" == "install" ]]
+    if [[ "${network}" == "on" ]]
     then
         pacstrap /mnt base base-devel
     else
