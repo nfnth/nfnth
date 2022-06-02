@@ -18,7 +18,7 @@ The **[DRALUN](https://dralun.com)** project is used to help facilitate a histor
 
 [Donate to Ukraine!](https://engine.presearch.org/search?q=donate+to+ukraine) and/or Zion/United Methodist with [change.org](https://www.change.org/).
 
-Licensed as **NfNth Corp** in the State of Washington, [19500 130th AV NE, Woodinville, WA 98072](https://www.google.com/maps/place/19500+130th+Ave+NE,+Woodinville,+WA+98072/@47.7479925,-122.1874976,14.79z/data=!4m8!1m2!2m1!1surland!3m4!1s0x54900e91e7d1bbd7:0xc04ec07789786761!8m2!3d47.7690595!4d-122.1662039)
+Licensed as **NfNth Corp** in the State of Washington, [19500 130th AV NE, Woodinville, WA 98072](https://www.mapbox.com) *the Wedge*.
 
 [corp](https://ccfs.sos.wa.gov/#/Dashboard) · [license](https://secure.dor.wa.gov/) · [copyright](https://eco.copyright.gov) · [trademark](https://www.uspto.gov/) · [tax](https://blue.kingcounty.com/Assessor/eRealProperty/Dashboard.aspx?ParcelNbr=1428900123) *5% rule (FINRA)*
 
