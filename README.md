@@ -109,3 +109,7 @@ Big Red (I am small) East of the 522 / 405 / 94 / 23 / 8 years ARM on the 5
 Lake City I can no longer handle Shell City Shell Beach the fight of the brownie coral and the 60606 man in the manager's chair not Apple tins cause that would be Chelan not the da in Ripleys OR to NY wax
 
 2 rubies great lake sand Cedar Points where Chesapeake was dad? the fisherman again Edmonds Salt and Iron
+
+Washington DC and the costa rican steel / trinidad wood / + full Egyptian cotton with cash! Hard Rock Egypt and Applebees is dumb 
+
+until we meet again Frankenmuth to Leavenworth that 2 girls in a diner
