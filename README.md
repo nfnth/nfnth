@@ -84,4 +84,24 @@ black girls at the McDonalds and Maid in Manttan at the Ypsilanti "yo Brandy Boo
 
 Matts and Legos and the Hopper 
 
+brother Doc Tyler and the dark escapades of Depot Town "frog island" and turkey lair
 
+this is not Aesops Fables 1560?
+
+My mama's diamond +green /blue /red
+
+XMR? on the WA?
+
+Hard to Kill the Power Ranger when Ospreys from the heavens fall
+
+Columbia Tower to Columbia records (100 CDs for free)
+
+Renaissance dominos estate no PHP bub Boffi and Chicago russian car salesman go nam and the tristate area, Lauren's dead
+
+not Queen grandmother of poor Indiana
+
+Guersney boy 
+
+O Can in the blonde sprizer of Kroger
+
+Big Red (I am small) East of the 522 / 405 / 94 / 23 / 8 years ARM on the 5
