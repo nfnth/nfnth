@@ -35,8 +35,23 @@ Fred Me"ij"yer to McDonalds to JCPenneys to Target to Dow Chemical to Warner Mel
 brought to you by William Gates III "aka" Texas printer *true story*
 
 also,
+
 Shotgun at the McKinley's
+
 Drowning Pool of Mackinac
+
 Lake Erie plane crash x2
+
 Harborview "Prince" = "murder" dawgs
+
 Trollie's knockup
+
+...and Leopold's Vodka!
+
+Buddhist Temple of Ann Arbor here we come! and Magic Mountain's blonde surprise
+
+Lake Michigan hottie twins in the bed of Pokemon with two field spars
+
+and Maude the Owl cat, Siberian Tilly, both adopted
+
+Rocks flushed down the toilet by blonde Byrd vet with daughters......
