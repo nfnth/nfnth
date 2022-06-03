@@ -113,3 +113,5 @@ Lake City I can no longer handle Shell City Shell Beach the fight of the brownie
 Washington DC and the costa rican steel / trinidad wood / + full Egyptian cotton with cash! Hard Rock Egypt and Applebees is dumb 
 
 until we meet again Frankenmuth to Leavenworth that 2 girls in a diner
+
+Katrina Ann / Noah "me" / Adam that's Drake / and the GoT girl that looked back
