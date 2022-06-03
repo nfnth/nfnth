@@ -33,3 +33,10 @@ Runs on [Linode](https://cloud.linode.com) with [Arch Linux](https://archlinux.o
 Fred Me"ij"yer to McDonalds to JCPenneys to Target to Dow Chemical to Warner Mel "Goodes" Lambert aka Pfizer to Valassis/Bosch to UM Hospital/Plant Operations/Ford Library aka "Donations" (with BE in Computer Science) to Free the "Treemont" and the Microsoft Dark Docs gang, back to you MIT "73 Boston
 
 brought to you by William Gates III "aka" Texas printer *true story*
+
+also,
+Shotgun at the McKinley's
+Drowning Pool of Mackinac
+Lake Erie plane crash x2
+Harborview "Prince" = "murder" dawgs
+Trollie's knockup
