@@ -55,3 +55,33 @@ Lake Michigan hottie twins in the bed of Pokemon with two field spars
 and Maude the Owl cat, Siberian Tilly, both adopted
 
 Rocks flushed down the toilet by blonde Byrd vet with daughters......
+
+Saint Leslie of Saline and the "Ed Helms" still there...
+
+Mike the dark Layfeyette and brown
+
+Prospect street of the 1848 Arbordale 
+
+...coming soon...
+
+stryker font and 2000 summer escape to Egypt with blackie, Sears camel jockey
+
+New Orleans on the tabs of mixer, I didn't climb into the crypt but my wife's oysters were of heaven
+
+... lots of Florida with Air Supply/Steve Miller and Dr. Dre/Eminem and the Detroit with no film, school
+
+Chuck the "not radio freak" and or Levin and his wolves of New Mexico, aka man dies with needle gun, ghost gun/Enclave
+
+Navy man's bike, frat party at Bristol "Bay" and the Borders of broken Vigo not Country Day/Cranbrook
+
+Huron and the King school elementary
+
+bellvue simulation to bellville complete, parties of bodies at Michigan State and the empty towers of Huron golf/pool ball
+
+black girls at the McDonalds and Maid in Manttan at the Ypsilanti "yo Brandy Booker"
+
+"Ode to Washtenaw" and the Lorne the Duck Draker could never read again
+
+Matts and Legos and the Hopper 
+
+
