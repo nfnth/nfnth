@@ -64,7 +64,7 @@ Prospect street of the 1848 Arbordale
 
 ...coming soon...
 
-stryker font and 2000 summer escape to Egypt with blackie, Sears camel jockey
+stryker font and 2000 summer escape to Egypt with blackie, Sears camel jockey his brother's gay yet he speaks of a old red vitamin's soft big girl
 
 New Orleans on the tabs of mixer, I didn't climb into the crypt but my wife's oysters were of heaven
 
@@ -117,3 +117,11 @@ until we meet again Frankenmuth to Leavenworth that 2 girls in a diner
 Katrina Ann / Noah "me" / Adam that's Drake / and the GoT girl that looked back
 
 Julie Pfingst and Amanda Cassidy and Rochester qQ to QQ 10+ B rest in resume
+
+Sebolt gas station that Mad magic pill box now has a doppleganger in AA haven
+
+my missing Sounders tickets and the Mariners I had to go alone Perry
+
+now I feel bad for Holt and the only place Wolverine Tower no 777 to drinks at the Crisler
+
+poor Ed's aircraft carrier and the Stephen Blackird he lost and his private bathroom and the detectives that share cells with ASB
