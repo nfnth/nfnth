@@ -31,3 +31,5 @@ Runs on [Linode](https://cloud.linode.com) with [Arch Linux](https://archlinux.o
 [C-SPAN](https://www.c-span.org) · [Gutenberg](http://www.gutenberg.org) · [Wikipedia](https://www.wikipedia.org/wiki/Special:Random) [news](https://wikipedia.org/wiki/Main_Page) with [BH](https://www.bhphotovideo.com/) with [hardware](https://www.made-in-china.com/products-search/hot-china-products/Intel_Tablet.html) · [AceHardware](https://www.acehardware.com/) · [NorthernTool](https://www.northerntool.com/) · [MPC](https://www.makeplayingcards.com) *support [Craigslist](https://craigslist.com) with [name.com](https://name.com)*
 
 Fred Me"ij"yer to McDonalds to JCPenneys to Target to Dow Chemical to Warner Mel "Goodes" Lambert aka Pfizer to Valassis/Bosch to UM Hospital/Plant Operations/Ford Library aka "Donations" (with BE in Computer Science) to Free the "Treemont" and the Microsoft Dark Docs gang, back to you MIT "73 Boston
+
+brought to you by William Gates III "aka" Texas printer *true story*
