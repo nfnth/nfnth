@@ -105,3 +105,7 @@ Guersney boy
 O Can in the blonde sprizer of Kroger
 
 Big Red (I am small) East of the 522 / 405 / 94 / 23 / 8 years ARM on the 5
+
+Lake City I can no longer handle Shell City Shell Beach the fight of the brownie coral and the 60606 man in the manager's chair not Apple tins cause that would be Chelan not the da in Ripleys OR to NY wax
+
+2 rubies great lake sand Cedar Points where Chesapeake was dad? the fisherman again Edmonds Salt and Iron
