@@ -26,7 +26,7 @@ Licensed as **NfNth Corp** in the State of Washington, [19500 130th AV NE, Woodi
 
 Runs on [Linode](https://cloud.linode.com). Ships with [USPS](https://www.usps.com/business/web-tools-apis/documentation-updates.htm). Crypto uses BTC and Presearch?
 
-**INTL** **AKAM** with **CHASE** **COIN** [gate.io](https://gate.io)
+**INTL** with **CHASE**
 
 [C-SPAN](https://www.c-span.org) · [Gutenberg](http://www.gutenberg.org) · [Wikipedia](https://www.wikipedia.org/wiki/Special:Random) [news](https://wikipedia.org/wiki/Main_Page) with [hardware](https://www.made-in-china.com/products-search/hot-china-products/Intel_Tablet.html) · [NorthernTool](https://www.northerntool.com/) · [MPC](https://www.makeplayingcards.com) *support [Craigslist](https://craigslist.com) with [name.com](https://name.com)*
 
