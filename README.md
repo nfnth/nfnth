@@ -14,7 +14,7 @@ The **[DRALUN](https://dralun.com)** project is used to help facilitate a histor
 - [📚📚](https://xn--zt8ha.ws) **[mattdown.com](https://mattdown.com)** *lang*
 - [🏳🏴](https://xn--en8hc.ws) [🏳🏳](https://xn--en8ha.ws) **[ocur.io](https://ocur.io)** [🏴🏳](https://xn--en8hb.ws) [🏴🏴](https://xn--fn8ha.ws) *os*
 
-<a href="https://buy.stripe.com/5kA4hL5NB6Qv7Ty5kk" target="_blank"><img style="margin-left:24px; width:75px; border-radius:5px;" src="res/img/coin.jpg" alt="Purchase NfNth Collectible" /></a>
+*BTC address, paper wallet*
 
 [Donate to Ukraine!](https://engine.presearch.org/search?q=donate+to+ukraine) and/or Zion/United Methodist with [change.org](https://www.change.org/).
 
