@@ -27,7 +27,7 @@ Licensed as **NfNth Corp** in the State of Washington, [19500 130th AV NE, Woodi
 
 #### Affiliates
 
-Runs on [Linode](https://cloud.linode.com). Ships with [USPS](https://www.usps.com/business/web-tools-apis/documentation-updates.htm). Crypto uses BTC and Presearch?
+Runs on [Linode](https://cloud.linode.com). Ships with [USPS](https://www.usps.com/business/web-tools-apis/documentation-updates.htm).
 
 **INTL** with **CHASE**
 
@@ -92,8 +92,6 @@ brother Doc Tyler and the dark escapades of Depot Town "frog island" and turkey 
 this is not Aesops Fables 1560?
 
 My mama's diamond +green /blue /red
-
-XMR? on the WA?
 
 Hard to Kill the Power Ranger when Ospreys from the heavens fall
 
