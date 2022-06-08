@@ -73,7 +73,6 @@ install() {
     timedatectl set-timezone ${timezone}
     timedatectl set-ntp true
     hwclock --systohc
-    #mv /usr/bin/lxpolkit /usr/bin/lxpolkit_old
 
     echo "kernel.printk = 3 3 3 3" >> /etc/sysctl.d/20-quiet-printk.conf
     systemctl enable systemd-resolved
@@ -86,12 +85,9 @@ install() {
 #EOF
     mkdir /root/.config
     cp /root/os/weston.ini /root/.config/weston.ini
-    #sed -i "s/twm/exec \/root\/res\/ocur.sh /g" /etc/X11/xinit/xinitrc
-    #chmod +x /root/res/ocur.sh
-    #sleep 5
 
-    #cp /root/os/nf.service /etc/systemd/system/nf.service
-    #systemctl enable nf
+    cp /root/os/nf.service /etc/systemd/system/nf.service
+    systemctl enable nf
     cp /root/os/nf.sh /etc/profile.d/nf.sh
     #chmod +x /root/.config/autostart/nf.sh
 
