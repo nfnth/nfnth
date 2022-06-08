@@ -1,9 +1,4 @@
 
-button to render contract, 
-*BTC address, paper wallet*
-
-private key ledger with transfer
-
 ### home of [Nf·Nth](https://github.com/nfnth)
 
 [🙂🙂](https://xn--938ha.ws)<br/>
@@ -23,7 +18,7 @@ The **[DRALUN](https://dralun.com)** project is used to help facilitate a histor
 
 Licensed as **NfNth Corp** in the State of Washington, [19500 130th AV NE, Woodinville, WA 98072](https://www.mapbox.com) *the Wedge*.
 
-[corp](https://ccfs.sos.wa.gov/#/Dashboard) · [license](https://secure.dor.wa.gov/) · [copyright](https://eco.copyright.gov) · [trademark](https://www.uspto.gov/) · [tax](https://blue.kingcounty.com/Assessor/eRealProperty/Dashboard.aspx?ParcelNbr=1428900123) *5% rule (FINRA)*
+[license](https://secure.dor.wa.gov/) · [tax](https://blue.kingcounty.com/Assessor/eRealProperty/Dashboard.aspx?ParcelNbr=1428900123) *5% rule (FINRA)*
 
 #### Affiliates
 
