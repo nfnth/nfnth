@@ -12,7 +12,7 @@ The **[DRALUN](https://dralun.com)** project is used to help facilitate a histor
 
 - [🌳🌳](https://xn--wh8ha.ws) **[UR.Land](https://ur.land)** *app*
 - [📚📚](https://xn--zt8ha.ws) **[mattdown.com](https://mattdown.com)** *lang*
-- [🏳🏴](https://xn--en8hc.ws) [🏳🏳](https://xn--en8ha.ws) **[ocur.io](https://ocur.io)** [🏴🏳](https://xn--en8hb.ws) [🏴🏴](https://xn--fn8ha.ws) *os*
+- [🏳🏴](https://xn--en8hc.ws) [🏳🏳](https://xn--en8ha.ws) [🏴🏳](https://xn--en8hb.ws) [🏴🏴](https://xn--fn8ha.ws) *os*
 
 [Donate to Ukraine!](https://engine.presearch.org/search?q=donate+to+ukraine) and/or Zion/United Methodist with [change.org](https://www.change.org/).
 
