@@ -216,7 +216,12 @@ var spinner = 0; function resetHome() {
 	else { $("#list-wait").addClass("image-rotate"); $("#list-wait2").addClass("image-rotate"); spinner = 0;} }
 
 function openInNewTab(url) { window.open(url, '_blank').focus(); } //window.location.href = url;
-function getParameter() { var pathArray = window.location.pathname.split('/'); switch (pathArray.length) { case 2: return pathArray[1]; break; default: return 'none'; } }
+function getParameter() { var path = window.location.pathname;
+	var domain = path.substring(path.find("?/"), path.length-1); return domain;
+	//var pathArray = window.location.pathname.split('/'); switch (pathArray.length) { case 2: return pathArray[1]; break; default: return 'none'; } 
+			}
+	
+alert(getParameter());
 function redirect() { var page = getParameter();
 	switch (page) {
 		case 'mattdown.com': showDoc('mattdown'); break;
