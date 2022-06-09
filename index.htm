@@ -213,7 +213,7 @@ var spinner = 0; function resetHome() {
 	else { $("#list-wait").addClass("image-rotate"); $("#list-wait2").addClass("image-rotate"); spinner = 0;} }
 
 function openInNewTab(url) { window.open(url, '_blank').focus(); } //window.location.href = url;
-function getParameter() { var path = window.location.pathname;
+function getParameter() { var path = window.location.pathname; alert(path);
 	var domain = path.substring(path.indexOf("?/"), path.length-1); return domain;
 	//var pathArray = window.location.pathname.split('/'); switch (pathArray.length) { case 2: return pathArray[1]; break; default: return 'none'; } 
 			}
