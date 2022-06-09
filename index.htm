@@ -30,7 +30,7 @@
     	<!-- desktop -->
     	<ul class="hide-on-med-and-down">
 		<li id="doc-list"><a id="docs" href="#!" data-target="doc"><i class="material-icons left">sticky_note_2</i>READ<i class="material-icons right">arrow_drop_down</i></a></li>
-		<li id="doc-list"><a id="docs" href="#!" data-target="doc"><i class="material-icons left">edit</i>EDIT</a></li>
+		<li id="doc-list" style="margin-right:12px;"><a id="docs" href="#!" data-target="doc"><i class="material-icons left">edit</i>EDIT</a></li>
         	<li style="height:64px;" id="search-list">
         		<a style="height:inherit; padding-right:0;"><i onclick="$('#search').focus();" style="height:inherit; padding-right:16px;" class="material-icons">search</i><div id="search-box" class="input-field" style="height:inherit;"><input id="search" type="search" onkeyup="searchResults(this)" style="padding-left:12px; width: calc(100% - 1rem);"><label class="label-icon" for="search" ></label><i class="material-icons" onclick="searchClear()">close</i></div></a></li></ul>
 
@@ -505,7 +505,7 @@ function testSound(i) {
       speechSynthesis.speak(msg); }
 	
 	
-function searchResults(text) { if(event.key === 'Enter') { openInNewTab('https://presearch.com/search?q=' + text.value); }}</script>
+function searchResults(text) { if(event.key === 'Enter') { openInNewTab('https://presearch.com/search?q=' + $(text).val()); }}</script>
 <script src="res/app/map.js"></script>
 <script>pullOpens();</script>
 <style>
