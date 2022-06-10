@@ -1,18 +1,11 @@
 
 ### home of [Nf·Nth](https://github.com/nfnth)
 
-[🙂🙂](https://xn--938ha.ws)<br/>
-[👓👓](http://xn--4p8ha.ws)<br/>
-[🧤🧤](http://xn--uv9ha.ws)<br/>
-[👖👖](http://xn--7p8ha.ws)<br/>
-[🧦🧦](http://xn--wv9ha.ws)<br/>
-[👟👟](http://xn--hq8ha.ws)
+[🙂🙂](https://xn--938ha.ws) · [👓👓](http://xn--4p8ha.ws) · [🧤🧤](http://xn--uv9ha.ws) · [👖👖](http://xn--7p8ha.ws) · [🧦🧦](http://xn--wv9ha.ws) · [👟👟](http://xn--hq8ha.ws)
 
-The **[DRALUN](https://dralun.com)** project is used to help facilitate a historical guide (with map) to geocache and survey in the United States (and North America), to include:
+The [🌳🌳](https://xn--wh8ha.ws) **[DRALUN](https://dralun.com) · [UR.Land](https://ur.land)** project is used to help facilitate a historical guide (with map) to geocache and survey in the United States (and North America).
 
-- [🌳🌳](https://xn--wh8ha.ws) **[UR.Land](https://ur.land)** *app*
-- [📚📚](https://xn--zt8ha.ws) **[mattdown.com](https://mattdown.com)** *lang*
-- [🏳🏴](https://xn--en8hc.ws) [🏳🏳](https://xn--en8ha.ws) [🏴🏳](https://xn--en8hb.ws) [🏴🏴](https://xn--fn8ha.ws) *os*
+Also features, [📚📚](https://xn--zt8ha.ws) **[mattdown.com](https://mattdown.com)** documentation, and [🏳🏴](https://xn--en8hc.ws) [🏳🏳](https://xn--en8ha.ws) [🏴🏳](https://xn--en8hb.ws) [🏴🏴](https://xn--fn8ha.ws).
 
 [Donate to Ukraine!](https://engine.presearch.org/search?q=donate+to+ukraine) and/or Zion/United Methodist with [change.org](https://www.change.org/).
 
