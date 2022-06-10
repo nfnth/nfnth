@@ -54,12 +54,12 @@
 
 <!-- panel (deed) -->
 <ul id="deed-pane" class="sidenav loader" style="visibility:hidden;overflow:hidden;">
-	<li><div class="user-view z-depth-1 amber lighten-5" style="display: flex;margin: auto; padding: 0;align-items: center; padding-left:12px;"><span id="ocuros" style="cursor: pointer;margin:auto; color:darkslategrey!important; font-size:18px;border-radius: 8px; opacity: 0.7; font-weight: bold;" onclick="showDoc('os'); $('#deed-pane').sidenav('close');" class="badge amber lighten-4" data-badge-caption="nfOS · v1.08"><img src="res/img/scroll_logo.png" style="width:24px; height:24px;" /></span><img id="user-pic" style="opacity:0.6; height: 48px;position:absolute; right:0; margin: 12px; cursor:pointer;" onclick="openInNewTab('https://github.com/nfnth'); $('#deed-pane').sidenav('close');"/><img id="user-pic2" style="opacity:0.6; height: 48px;cursor:pointer;margin:12px;" onclick="openInNewTab('https://github.com/nfnth'); $('#deed-pane').sidenav('close');"/></div></li>
+	<li><div class="user-view z-depth-1 amber lighten-5" style="display: flex;margin: auto; padding: 0;align-items: center; padding-left:12px;"><span id="ocuros" style="cursor: pointer;margin:auto; color:darkslategrey!important; font-size:18px;border-radius: 8px; opacity: 0.7; font-weight: bold;  height: 36px !important;display: flex;align-items: center;padding-top: 10px;" onclick="showDoc('os'); $('#deed-pane').sidenav('close');" class="badge green lighten-2" data-badge-caption="nfOS · v1.08"><img src="res/img/scroll_logo.png" style="width:24px; height:24px;" /></span><img id="user-pic" style="opacity:0.6; height: 48px;position:absolute; right:0; margin: 12px; cursor:pointer;" onclick="openInNewTab('https://github.com/nfnth'); $('#deed-pane').sidenav('close');"/><img id="user-pic2" style="opacity:0.6; height: 48px;cursor:pointer;margin:12px;" onclick="openInNewTab('https://github.com/nfnth'); $('#deed-pane').sidenav('close');"/></div></li>
 	
 	<!-- tabs -->
 	<li style="height:100%;"><ul class="tabs tabs-fixed-width z-depth-1">
-			<li class="tab blue-grey lighten-5" onclick="showList('open');"><a class="active" href="#test1">OpenSea</a></li>
-			<li class="tab blue-grey lighten-5" onclick="showList('domain');"><a href="#test2">&nbsp;&nbsp;&nbsp;&nbsp;Deed&nbsp;&nbsp;&nbsp;&nbsp;</a></li></ul><div class="card-content z-depth-1" style="height:100%;background-color:ghostwhite;">
+			<li class="tab blue-grey lighten-5" onclick="showList('open');"><a class="active" href="#test1">Collect</a></li>
+			<li class="tab blue-grey lighten-5" onclick="showList('domain');"><a href="#test2">&nbsp;&nbsp;Token&nbsp;&nbsp;</a></li></ul><div class="card-content z-depth-1" style="height:100%;background-color:ghostwhite;">
 			
 		<!-- list (collect) -->
 		<div id="test1"><ul>
@@ -79,8 +79,8 @@
 	
 	<!-- tabs -->
 	<li style="height:100%;"><ul class="tabs tabs-fixed-width z-depth-1 wallet">
-        	<li class="tab blue-grey lighten-5"><a class="active" href="#test4">&nbsp;&nbsp;&nbsp;Domain&nbsp;&nbsp;&nbsp;</a></li>
-		<li class="tab blue-grey lighten-5"><a href="#test5">Artifact</a></li></ul><div class="card-content z-depth-1" style="height:100%;background-color:ghostwhite;">
+        	<li class="tab blue-grey lighten-5"><a class="active" href="#test4">&nbsp;&nbsp;&nbsp;Deed&nbsp;&nbsp;&nbsp;</a></li>
+		<li class="tab blue-grey lighten-5"><a href="#test5">Domain</a></li></ul><div class="card-content z-depth-1" style="height:100%;background-color:ghostwhite;">
 			
 		<!-- list (deed) -->
 		<div id="test4"><ul>
@@ -576,7 +576,7 @@ div.active {opacity: 1;height: auto;}
 .open { cursor:default; }
 #domain-info { padding:0; }
 
-nav ul a { color:darkslategrey; } nav ul a:hover { color:whitesmoke!important; background-color: green!important; }
+nav ul a { color:darkslategrey; } nav ul a:hover { color:whitesmoke!important; background-color: goldenrod!important; }
 dropdown-content li>a>i { margin:0 12px 0 0; } .dropdown-content li>a, .dropdown-content li>span { color:black!important; }
 	/*#wallet-icon { color:darkslategrey; }*/
 	
