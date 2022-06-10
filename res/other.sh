@@ -1,10 +1,5 @@
-#exec ntpd -qg & #hwclock --systohc
-#exec nohup xterm -geometry 800x600+0+0 -e 'chromium "http://localhost:4444" --no-sandbox' > /dev/null 2>&1 & disown &
-#exec nohup python /root/dralun/site/run.py > /dev/null 2>&1 & disown &
 
-#exec nohup chromium "http://localhost:5001" --start-fullscreen --disable-web-security --user-data-dir=~ --no-sandbox > /dev/null 2>&1 & disown & #use chrome://flags
-#exec nohup firefox -url "https://boxb.in" & xdotool search --sync --onlyvisible --class "Firefox" windowactivate key F11 &
-#exec startlxde
+#exec nohup python /root/dralun/site/run.py > /dev/null 2>&1 & disown &
 
 prep() {
     tar -C /root -czf deployment.tar.gz nfnth
@@ -26,9 +21,6 @@ site() {
     wget -O "test.css" "https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css" #materialize.min.css mapbox-gl.css ext.css?
 }
 
-#if [[ "$1" == "deploy" ]]
-#then
-#    prep
 #    sshpass -p ${server_password} ssh root@${server_ip} 'chmod +x /root/build.sh'
 #    sshpass -p ${server_password} ssh root@${server_ip} '/root/build.sh run'
     #if [[ "${site}" == "yes" ]]
@@ -37,8 +29,6 @@ site() {
     #fi
 
     #ip link set $(echo $(ls -d /sys/class/net/w*) | sed 's/\/sys\/class\/net\///g') down
-    #systemctl set-default graphical.target
-    #ln -sT /usr/share/zoneinfo/${timezone} /etc/localtime # -sf ?
 
     #ssh-keygen -t rsa -b 4096 -C me@you.com
     #openssl ecparam -genkey -name secp384r1 | openssl ec -out ecc-privkey.pem
@@ -47,28 +37,8 @@ site() {
     #add public key to /home/user/.ssh/authorized_keys
     #enable PubKey authentication in /etc/ssh/sshd_config (restart service)
     #systemctl enable sshd
-    
-    #!/bin/bash
-# script to run on startup
-
-#exec ntpd -qg & #hwclock --systohc
-#xinput --map-to-output "pointer:Goodix Capacitive TouchScreen" "DSI1"
-#picom -b
-#exec nohup firefox -url "https://boxb.in" & xdotool search --sync --onlyvisible --class "Firefox" windowactivate key F11 &
-#xrandr --output DSI1 --rotate right #--auto --pos 0x0 --primary --output DP1 --auto --pos 3840x0
-#lsof -i -P -n
 
     #amixer sset Master unmute #amixer set Master 50+
-#        env MOZ_USE_XINPUT2=1 firefox  #...about settings?
-nohup firefox > /dev/null 2>&1 &
 #sed -i "s/#XXXX/nohup chromium 'http:\/\/localhost:5001' --test-type --start-fullscreen --disable-web-security --user-data-dir=~ --no-sandbox > \/dev\/null 2>&1 & disown &/g" /root/config/start.sh
 
 about:support (profiles) (config)
-
-#rsync -aAXxv /boot /mnt/boot
-    #cp -vaT /run/archiso/bootmnt/arch/boot/$(uname -m)/vmlinuz-linux /mnt/boot/vmlinuz-linux
-    #cp /run/archiso/bootmnt/shellx64.efi /mnt/boot/shellx64.efi
-    #cp -r /run/archiso/bootmnt/EFI /mnt/boot/EFI
-    #cp /run/archiso/bootmnt/arch/boot/amd-ucode.img /mnt/boot/amd-ucode.img
-    #cp /run/archiso/bootmnt/arch/boot/intel-ucode.img /mnt/boot/intel-ucode.img
-    #cp -r /run/archiso/bootmnt/loader /mnt/boot/loader
