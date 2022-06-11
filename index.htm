@@ -38,23 +38,17 @@
         <div id="wallet-area" class="z-depth-1 grey lighten-1" style="opacity:0.75; display:flex;height:100%;" onclick="$('#user-pane').sidenav('open');"><ul><li id="setting-wallet" ><a id="wallet-icon" href="#" style="margin: 0;justify-items: center;display: flex;align-items: center; justify-content:center;" ><i class="material-icons">account_balance_wallet</i><span class="mobile-hide">&nbsp;WALLET</span></a></li></ul></div></div></nav>
 
 <!-- dropdown -->
-<ul id="explore" class="dropdown-content loader" style="visibility:hidden;">
-	<li><a onclick="showView('editor'); changeFocus();"><i class="material-icons">book</i>Document Editor</a></li>
-	<li><a onclick="showDoc('README');"><i class="material-icons">fireplace</i>Civilian's Complex</a></li>
-	<li class="divider"></li>
-	<li><a onclick="openInNewTab('https://boxb.io');"><i class="material-icons"><span class="material-icons-outlined">fort</span></i>Play UR...</a></li></ul>
-
 <ul id="doc" class="dropdown-content loader" style="visibility:hidden;">
 	<li><a onclick="showDoc('README');"><i class="material-icons">chair</i>On Deed to Domain</a></li>
 	<li class="divider"></li>
-	<li><a onclick="showDoc('PLANME');"><i class="material-icons">park</i>Civilian Field Guide</a></li>
+	<li><a onclick="showDoc('PLANME');"><i class="material-icons">park</i>Civilian's Field Guide</a></li>
 	<li><a onclick="showDoc('nfn');"><i class="material-icons"><span class="material-icons-outlined">grass</span></i>About Artifact Trade</a></li>
 	<li class="divider"></li>
 	<li><a onclick="showDoc('os');"><i class="material-icons">book</i>How to Use ocurOS</a></li></ul>
 
 <!-- panel (deed) -->
 <ul id="deed-pane" class="sidenav loader" style="visibility:hidden;overflow:hidden;">
-	<li><div class="user-view z-depth-1 amber lighten-5" style="display: flex;margin: auto; padding: 0;align-items: center; padding-left:12px;"><span id="ocuros" style="cursor: pointer;margin:auto; color:darkslategrey!important; font-size:18px;border-radius: 8px; opacity: 0.7; font-weight: bold;  height: 36px !important;display: flex;align-items: center;padding-top: 10px;" onclick="showDoc('os'); $('#deed-pane').sidenav('close');" class="badge green lighten-2" data-badge-caption="nfOS · v1.08"><img src="res/img/scroll_logo.png" style="width:24px; height:24px;" /></span><img id="user-pic" style="opacity:0.6; height: 48px;position:absolute; right:0; margin: 12px; cursor:pointer;" onclick="openInNewTab('https://github.com/nfnth'); $('#deed-pane').sidenav('close');"/><img id="user-pic2" style="opacity:0.6; height: 48px;cursor:pointer;margin:12px;" onclick="openInNewTab('https://github.com/nfnth'); $('#deed-pane').sidenav('close');"/></div></li>
+	<li><div class="user-view z-depth-1 amber lighten-5" style="display: flex;margin: auto; padding: 0;align-items: center; padding-left:12px;"><span id="ocuros" style="cursor: pointer;margin:auto; color:darkslategrey!important; font-size:18px;border-radius: 8px; opacity: 0.7; font-weight: bold;  height: 36px !important;display: flex;align-items: center;padding-top: 10px;" onclick="showDoc('os'); $('#deed-pane').sidenav('close');" class="badge green lighten-2" data-badge-caption="brOS · v1.08"><img src="res/img/scroll_logo.png" style="width:24px; height:24px; margin-right:8px;" /></span><img id="user-pic" style="opacity:0.6; height: 48px;position:absolute; right:0; margin: 12px; cursor:pointer;" onclick="openInNewTab('https://github.com/nfnth'); $('#deed-pane').sidenav('close');"/><img id="user-pic2" style="opacity:0.6; height: 48px;cursor:pointer;margin:12px;" onclick="openInNewTab('https://github.com/nfnth'); $('#deed-pane').sidenav('close');"/></div></li>
 	
 	<!-- tabs -->
 	<li style="height:100%;"><ul class="tabs tabs-fixed-width z-depth-1">
@@ -121,9 +115,13 @@
 		<div id="map" class="content loader pane" style="width:100%;"></div>
 			<div id="map-tool" style="right:50%;" class="fixed-action-btn"><a id="map-link" class="btn waves-effect waves-light green lighten-2" onclick="alert('test');"><i id="map-icon" class="material-icons left">grid_view</i>Show list</a></div>
 	<div id="map-tool" style="bottom:50%;display:flex;flex-direction:column;" class="fixed-action-btn">
-		<a class="btn waves-effect waves-light green lighten-2" onclick="alert('test');"><i id="map-icon" class="material-icons">add</i></a>
+		
+		
+		<a  class="btn waves-effect waves-light green lighten-2" onclick="alert('test');"><i id="map-icon" class="material-icons">near_me</i></a>
+		<a style="margin-top:12px;" class="btn waves-effect waves-light green lighten-2" onclick="alert('test');"><i id="map-icon" class="material-icons">satellite_alt</i></a>
+		<a style="margin-top:12px;" class="btn waves-effect waves-light green lighten-2" onclick="alert('test');"><i id="map-icon" class="material-icons">add</i></a>
 	<a class="btn waves-effect waves-light green lighten-2" onclick="alert('test');"><i id="map-icon" class="material-icons">remove</i></a>
-	<a style="margin-top:12px;" class="btn waves-effect waves-light green lighten-2" onclick="alert('test');"><i id="map-icon" class="material-icons">near_me</i></a></div></div>
+	</div></div>
 
     	<!-- search -->
     	<div id="results" style="margin:80; display:none;" class="content loader pane">search...</div>
@@ -180,24 +178,6 @@
     	<li><a href="#!">DateTime &#8593;</a></li><li><a href="#!">DateTime &#8595;</a></li>
 	<li class="divider" tabindex="-1"></li>
 	<li><a href="#!">Color &#8595;</a></li><li><a href="#!">Color &#8593;</a></li></ul>
-
-<ul id='dropdown-map' class='dropdown-content'>
-    	<li id="map-sat"><a href="#!" onclick="mapSat();"><i class="material-icons">satellite_alt</i>Satellite</a></li>
-    	<li class="divider" tabindex="-1"></li>
-    	<li id="map-dir"><a href="#!" onclick="mapDir();"><i class="material-icons">directions</i>Directions</a></li>
-	<li class="divider" tabindex="-1"></li>
-	<li id="map-route"><a href="#!" onclick="mapRoute();"><i class="material-icons">receipt</i>Deed</a></li>
-	<li id="map-route"><a href="#!" onclick="mapRoute();"><i class="material-icons">castle</i>Domain</a></li>
-	<li id="map-route"><a href="#!" onclick="mapRoute();"><i class="material-icons">inventory</i>Artifact</a></li>
-	<li class="divider" tabindex="-1"></li>
-	<li id="map-route"><a href="#!" onclick="mapRoute();"><i class="material-icons">route</i>Story</a></li></ul>
-
-<ul id='dropdown-media' class='dropdown-content'>
-    	<li id="map-sat"><a href="#!" onclick="mapSat();"><i class="material-icons">satellite_alt</i>Satellite</a></li>
-    	<li class="divider" tabindex="-1"></li>
-    	<li id="map-dir"><a href="#!" onclick="mapDir();"><i class="material-icons">directions</i>Directions</a></li>
-	<li class="divider" tabindex="-1"></li>
-	<li id="map-route"><a href="#!" onclick="mapRoute();"><i class="material-icons">route</i>Story</a></li></ul>
 
 <!-- dialog -->
 <div id="modal1" class="modal bottom-sheet content loader"><div id="domain-info" class="modal-content grey lighten-4" style="box-shadow: 1px 18px 24px 1px inset cornsilk" ></div></div>
