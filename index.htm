@@ -69,8 +69,6 @@
 <ul id="user-pane" class="sidenav loader" style="visibility:hidden;overflow:hidden;">
 	<li style="padding-top:16px;margin-bottom:16px;display: flex;justify-content: space-evenly;"><div style="display:flex;justify-content:space-evenly;width:100%;"><a class='btn-flat waves-effect waves-light' onclick="openInNewTab('https://github.com/nfnth/nfnth/issues'); $('#user-pane').sidenav('close');"><i class="material-icons">help</i></a><a class="waves-effect waves-light btn blue lighten-2" style="display:inline-flex;align-items:center;" onclick="if (disconnect) {desetup(); $('#user-pane').sidenav('close');} else { setup(); }"><i class="material-icons">account_balance_wallet</i><span>&nbsp;&nbsp;&nbsp;&nbsp;Connect</span></a></div></li>
 	
-<!--	<li style="margin-top:12px; margin-bottom:12px;display:flex;"><a id="maker" class="btn waves-effect waves-light green z-depth-1 lighten-3 black-text" style="margin: auto;border-radius: 8px;" onclick="if (disconnect) {desetup(); $('#user-pane').sidenav('close');} else { setup(); }"><i class="material-icons left">account_balance_wallet</i>Connect</a><a style="width:48px;" class="btn-flat waves-effect waves-light blue-text" onclick="openInNewTab('https://github.com/nfnth/nfnth/issues'); $('#user-pane').sidenav('close');"><i class="material-icons">help</i></a></li> -->
-	
 	<!-- tabs -->
 	<li style="height:100%;"><ul class="tabs tabs-fixed-width z-depth-1 wallet">
         	<li class="tab blue-grey lighten-5"><a class="active" href="#test4">&nbsp;&nbsp;&nbsp;Deed&nbsp;&nbsp;&nbsp;</a></li>
@@ -106,22 +104,12 @@
 
     	<!-- map -->
     	<div id="list" class="content loader pane" style="overflow-y: auto; height: 95%;">
-	    
-	    	<!-- tools 
-	    	<div id="list-filter" class="z-depth-1 grey lighten-5" style="display:flex; justify-content: center; padding-top: 24px; padding-bottom:12px; margin-bottom: -6px; align-items:center;position: fixed; z-index: 1; padding-right:12px;">
-        		<div class="hide-on-med-and-down"><a class="waves-effect waves-amber btn-flat" onclick="mapLoc();"><i id="select-icon" class="material-icons left">gps_fixed</i><span>Location</span></a><a class='btn-flat' style="margin-right:8px;" onclick="mapRand();"><i class="material-icons left">shuffle</i>Random</a><a id="dropdown-maper" class="waves-effect waves-light amber lighten-2 btn dropdown-trigger" href='#' data-target='dropdown-map' style="margin-right:8px;" ><i id="view-icon" class="material-icons left">layers</i><span id="view-name">Layers</span></a></div>
-			<div class="screen-hide"><a class="waves-effect waves-amber btn-flat" onclick="mapLoc();"><i id="select-icon" class="material-icons left">gps_fixed</i><span></span></a><a class='btn-flat' style="margin-right:8px;" onclick="mapRand();"><i class="material-icons left">shuffle</i></a><a id="dropdown-mediaer" class="waves-effect waves-light btn amber lighten-2 dropdown-trigger" style="margin-right:8px;display:inline-flex;align-items:center;" href='#' data-target='dropdown-media'><i id="view-icon2" class="material-icons left">layers</i><span id="view-name2">Layers</span></a></div></div>-->
-		
 		<div id="map" class="content loader pane" style="width:100%;"></div>
-			<div id="map-tool" style="right:50%;" class="fixed-action-btn"><a id="map-link" class="btn waves-effect waves-light green lighten-2" onclick="alert('test');"><i id="map-icon" class="material-icons left">grid_view</i>Show list</a></div>
-	<div id="map-tool" style="bottom:50%;display:flex;flex-direction:column;" class="fixed-action-btn">
-		
-		
-		<a  class="btn waves-effect waves-light green lighten-2" onclick="alert('test');"><i id="map-icon" class="material-icons">near_me</i></a>
-		<a style="margin-top:12px;" class="btn waves-effect waves-light green lighten-2" onclick="alert('test');"><i id="map-icon" class="material-icons">satellite_alt</i></a>
-		<a style="margin-top:12px;" class="btn waves-effect waves-light green lighten-2" onclick="alert('test');"><i id="map-icon" class="material-icons">add</i></a>
-	<a class="btn waves-effect waves-light green lighten-2" onclick="alert('test');"><i id="map-icon" class="material-icons">remove</i></a>
-	</div></div>
+		<div id="map-tool" style="bottom:50%;display:flex;flex-direction:column;" class="fixed-action-btn">
+			<a  class="btn waves-effect waves-light green lighten-2" onclick="mapLoc();"><i id="map-icon" class="material-icons">near_me</i></a>
+			<a style="margin-top:12px;" class="btn waves-effect waves-light green lighten-2" onclick="mapSat();"><i id="map-icon" class="material-icons">satellite_alt</i></a>
+			<a style="margin-top:12px;" class="btn waves-effect waves-light green lighten-2" onclick="mapZoom(true);"><i id="map-icon" class="material-icons">add</i></a>
+			<a class="btn waves-effect waves-light green lighten-2" onclick="mapZoom(false);"><i id="map-icon" class="material-icons">remove</i></a></div></div>
 
     	<!-- search -->
     	<div id="results" style="margin:80; display:none;" class="content loader pane">search...</div>
