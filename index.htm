@@ -39,10 +39,10 @@
 
 <!-- dropdown -->
 <ul id="doc" class="dropdown-content loader" style="visibility:hidden;">
-	<li><a onclick="showDoc('README');"><i class="material-icons">chair</i>On Deed to Domain</a></li>
+	<li><a onclick="showDoc('about');"><i class="material-icons">chair</i>On Deed to Domain</a></li>
 	<li class="divider"></li>
-	<li><a onclick="showDoc('PLANME');"><i class="material-icons">park</i>Civilian's Field Guide</a></li>
-	<li><a onclick="showDoc('nfn');"><i class="material-icons"><span class="material-icons-outlined">grass</span></i>About Artifact Trade</a></li>
+	<li><a onclick="showDoc('md');"><i class="material-icons">park</i>Civilian's Field Guide</a></li>
+	<li><a onclick="showDoc('ur');"><i class="material-icons"><span class="material-icons-outlined">grass</span></i>About Artifact Trade</a></li>
 	<li class="divider"></li>
 	<li><a onclick="showDoc('os');"><i class="material-icons">book</i>How to Use ocurOS</a></li></ul>
 
@@ -147,11 +147,11 @@
 
 <!-- items -->
 <ul id='dropdown-open' class='dropdown-content'>
-    	<li><a href="#!" onclick="opens.sort(openZA); showList('open');">Name &#8593;</a></li><li><a href="#!" onclick="opens.sort(openAZ); showList('open');">Name &#8595;</a></li>
+    	<li><a href="#!" onclick="opens.sort(openAZ); showList('open');">Name &#8595;</a></li><li><a href="#!" onclick="opens.sort(openZA); showList('open');">Name &#8593;</a></li>
     	<li style="margin-top:0;"class="divider" tabindex="-1"></li>
-    	<li><a href="#!" onclick="opens.sort(open09); showList('open');">Count &#8593;</a></li><li><a href="#!" onclick="opens.sort(open90); showList('open');">Count &#8595;</a></li>
+    	<li><a href="#!" onclick="opens.sort(open90); showList('open');">Count &#8595;</a></li><li><a href="#!" onclick="opens.sort(open09); showList('open');">Count &#8593;</a></li>
 	<li style="margin-top:0;" class="divider" tabindex="-1"></li>
-	<li><a href="#!" onclick="opens.sort(openza); showList('open');">Color &#8593;</a></li><li><a href="#!" onclick="opens.sort(openaz); showList('open');">Color &#8595;</a></li></ul>
+	<li><a href="#!" onclick="opens.sort(openaz); showList('open');">Color &#8595;</a></li><li><a href="#!" onclick="opens.sort(openza); showList('open');">Color &#8593;</a></li></ul>
 
 <ul id='dropdown-domain' class='dropdown-content'>
     	<li><a href="#!" onclick="domains.sort(domainAZ); showList('domain');">Name &#8595;</a></li><li><a href="#!" onclick="domains.sort(domainZA); showList('domain');">Name &#8593;</a></li>
@@ -188,6 +188,7 @@ function getParameter() { var path = window.location.href;
 
 function redirect() { var page = getParameter();
 	switch (page) {
+		case 'action=about': showDoc('about'); break;
 		case 'mattdown.com': showDoc('mattdown'); break;
 		case 'nfnth.com': aboutDoc(); break;
 		case 'ocur.io': showDoc('os'); break; }  }
