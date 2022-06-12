@@ -48,7 +48,7 @@
 
 <!-- panel (deed) -->
 <ul id="deed-pane" class="sidenav loader" style="visibility:hidden;overflow:hidden;">
-	<li><div class="user-view z-depth-1 amber lighten-5" style="display: flex;margin: auto; padding: 0;align-items: center; padding-left:12px;"><span id="ocuros" style="cursor: pointer;margin:auto; color:darkgreen!important; font-size:18px;border-radius: 8px; opacity: 0.7; font-weight: bold;  height: 36px !important;display: flex;align-items: center;padding-top: 10px;" onclick="showDoc('os'); $('#deed-pane').sidenav('close');" class="badge green lighten-2" data-badge-caption="urOS · v1.08"><img src="res/img/scroll_logo.png" style="width:24px; height:24px; margin-right:8px;" /></span><img id="user-pic" style="opacity:0.6; height: 48px;position:absolute; right:0; margin: 12px; cursor:pointer;" onclick="openInNewTab('https://github.com/nfnth'); $('#deed-pane').sidenav('close');"/><img id="user-pic2" style="opacity:0.6; height: 48px;cursor:pointer;margin:12px;" onclick="openInNewTab('https://github.com/nfnth'); $('#deed-pane').sidenav('close');"/></div></li>
+	<li><div class="user-view z-depth-1 amber lighten-5" style="display: flex;margin: auto; padding: 0;align-items: center; padding-left:12px;"><span id="ocuros" style="cursor: pointer;margin:auto; color:ghostwhite!important; font-size:18px;border-radius: 8px; opacity: 0.7; font-weight: bold;  height: 36px !important;display: flex;align-items: center;padding-top: 10px;" onclick="showDoc('os'); $('#deed-pane').sidenav('close');" class="badge green lighten-2" data-badge-caption="urOS"><img src="res/img/scroll_logo.png" style="width:24px; height:24px; margin-right:8px;" /> · v1.08</span><img id="user-pic" style="opacity:0.6; height: 48px;position:absolute; right:0; margin: 12px; cursor:pointer;" onclick="openInNewTab('https://github.com/nfnth'); $('#deed-pane').sidenav('close');"/><img id="user-pic2" style="opacity:0.6; height: 48px;cursor:pointer;margin:12px;" onclick="openInNewTab('https://github.com/nfnth'); $('#deed-pane').sidenav('close');"/></div></li>
 	
 	<!-- tabs -->
 	<li style="height:100%;"><ul class="tabs tabs-fixed-width z-depth-1">
@@ -57,12 +57,12 @@
 			
 		<!-- list (collect) -->
 		<div id="test1"><ul>
-			<li style="padding-top:16px;margin-bottom:12px;display: flex;justify-content: space-evenly;"><div style="display:flex;justify-content:space-evenly;width:100%;"><a class='btn-flat waves-effect waves-light' onclick="selOpen();"><i id="open-sel-icon" class="material-icons">select_all</i></a><a id="dropdown-opener" class='dropdown-trigger btn-flat' href='#' data-target='dropdown-open'><i class="material-icons">sort</i></a><a class="waves-effect waves-light btn amber lighten-2" style="display:inline-flex;align-items:center;width:100px;" onclick="switchOpen();"><i id="open-icon" class="material-icons">image</i><span id="open-name"></span></a></div></li>
+			<li style="padding-top:16px;margin-bottom:12px;display: flex;justify-content: space-evenly;"><div style="display:flex;justify-content:space-evenly;width:100%;"><a class='btn-flat waves-effect waves-light' onclick="selOpen();"><i id="open-sel-icon" class="material-icons">select_all</i></a><a id="dropdown-opener" class='dropdown-trigger btn-flat' href='#' data-target='dropdown-open'><i class="material-icons">sort</i></a><a class="waves-effect waves-light btn amber lighten-2" style="display:inline-flex;align-items:center;" onclick="switchOpen();"><i id="open-icon" class="material-icons">grid_view</i><span id="open-name"></span></a></div></li>
 			<li><div id="registry-open" class="collection" style="overflow:auto;"></div></li></ul></div>
 			
 		<!-- list (item) -->
 		<div id="test2"><ul>
-			<li style="padding-top:16px;margin-bottom:12px;display: flex;justify-content: space-evenly;"><div style="display:flex;justify-content:space-evenly;width:100%;"><a class='btn-flat' onclick="selDomain();"><i id="domain-sel-icon" class="material-icons">select_all</i></a><a id="dropdown-domainer" class='dropdown-trigger btn-flat' ref='#' data-target='dropdown-domain'><i class="material-icons">sort</i></a><a class="waves-effect waves-light btn amber lighten-2" style="display:inline-flex;align-items:center;width:100px;" onclick="switchDomain();"><i id="domain-icon" class="material-icons">image</i><span id="domain-name">&nbsp;&nbsp;Img</span></a></div></li>
+			<li style="padding-top:16px;margin-bottom:12px;display: flex;justify-content: space-evenly;"><div style="display:flex;justify-content:space-evenly;width:100%;"><a class='btn-flat' onclick="selDomain();"><i id="domain-sel-icon" class="material-icons">select_all</i></a><a id="dropdown-domainer" class='dropdown-trigger btn-flat' ref='#' data-target='dropdown-domain'><i class="material-icons">sort</i></a><a class="waves-effect waves-light btn amber lighten-2" style="display:inline-flex;align-items:center;" onclick="switchDomain();"><i id="domain-icon" class="material-icons">grid_view</i><span id="domain-name"></span></a></div></li>
 			<li><div id="registry-domain" class="collection" style="overflow:auto;"></div></li></ul></div></div></div></li></ul>	
 		
 <!-- panel (domain) -->
@@ -268,8 +268,8 @@ function switchView() { if (showGrid) { showList('open'); $("#view-icon2").html(
 								 $("#view-icon2").html("grid_view"); showGrid = true;} }
 
 var showGridOpen = false; var selectOpen = true; var selectDomain = true; var showListOpen = true;
-function switchOpen() { if (showGridOpen) { showGridOpen = false; showList('open'); $("#open-icon").html("image");  } else { showGridOpen = true; showList('open'); $("#open-icon").html("title"); } }
-	function switchDomain() { if (showListOpen) { showListOpen = false; showList('domain'); $("#domain-icon").html("title");  } else { showListOpen = true; showList('domain');  $("#domain-icon").html("image"); } }
+function switchOpen() { if (showGridOpen) { showGridOpen = false; showList('open'); $("#open-icon").html("grid_view");  } else { showGridOpen = true; showList('open'); $("#open-icon").html("view_list"); } }
+	function switchDomain() { if (showListOpen) { showListOpen = false; showList('domain'); $("#domain-icon").html("view_list");  } else { showListOpen = true; showList('domain');  $("#domain-icon").html("grid_view"); } }
 function selOpen() { for (let i=0;i<opens.length;i++) { opens[i].checked = selectOpen; } showList('open');
 	if (selectOpen) { selectOpen = false;   $("#open-sel-icon").html("deselect"); } else { selectOpen = true;  $("#open-sel-icon").html("select_all");} }
 
