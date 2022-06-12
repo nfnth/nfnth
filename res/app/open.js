@@ -20,8 +20,8 @@ function pullOpen(name) {
             for (let a = 0; a < traits.length; a++) {
                 switch(traits[a].trait_type.toLowerCase()) {
                     case 'name': tmp.name = traits[a].value.toString(); break;
-                    case 'coord': tmp.coord = traits[a].value.toString(); break;
-                    case 'img': tmp.img = traits[a].value.toString(); break;
+                    case 'gps': tmp.coord = traits[a].value.toString(); break;
+                    case 'res': tmp.img = traits[a].value.toString(); break;
                     case 'ref': tmp.ref = traits[a].value.toString(); break;
                     default: break; } }
             domains.push(tmp);  }  updateCount(name, response.assets.length); } ).then(response => {
