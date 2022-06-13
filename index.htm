@@ -105,11 +105,16 @@
     	<!-- map -->
     	<div id="list" class="content loader pane" style="overflow-y: auto; height: 95%;">
 		<div id="map" class="content loader pane" style="width:100%;"></div>
-		<div id="map-tool" style="bottom:50%;display:flex;flex-direction:column;" class="fixed-action-btn">
-			<a  class="btn waves-effect waves-light green lighten-2" onclick="mapLoc();"><i id="map-icon" class="material-icons">near_me</i></a>
-			<a style="margin-top:12px;" class="btn waves-effect waves-light green lighten-2" onclick="mapSat();"><i id="map-icon" class="material-icons">satellite_alt</i></a>
-			<a style="margin-top:12px;" class="btn waves-effect waves-light green lighten-2" onclick="mapZoom(true);"><i id="map-icon" class="material-icons">add</i></a>
-			<a class="btn waves-effect waves-light green lighten-2" onclick="mapZoom(false);"><i id="map-icon" class="material-icons">remove</i></a></div></div>
+		
+<div class="fixed-action-btn">
+  <a class="btn-floating btn-large green">
+    <i class="large material-icons">mode_edit</i>
+  </a>
+  <ul>
+    <li><a class="btn-floating green" onclick="mapLoc();" ><i class="material-icons">near_me</i></a></li>
+    <li><a class="btn-floating blue darken-1" onclick="mapSat();"><i class="material-icons">satellite_alt</i></a></li>
+  </ul>
+</div></div>
 
     	<!-- search -->
     	<div id="results" style="margin:80; display:none;" class="content loader pane">search...</div>
@@ -208,7 +213,7 @@ function copyClip(text) { navigator.clipboard.writeText(text); M.toast({html: 'A
 
 var width = window.innerWidth; var height = window.innerHeight + 48;
 async function initial() { $('body').css("background-color","lightgrey");
-	$('.tabs').tabs(); $('.fixed-action-btn').floatingActionButton(); $("#map-tool").hide(); $('select').formSelect();
+	$('.tabs').tabs(); $('.fixed-action-btn').floatingActionButton(); $('select').formSelect();
 	$('.modal').modal(); //$('#dialog-inner2').css("height", window.innerHeight - 375);
 	$("#registry-open").css("height",(height - 120) + "px"); $("#registry-domain").css("height",(height - 120) + "px");
     	$("#map").css("height",height + "px"); $("#registry").css("height",height + "px"); showFav('scroller');
@@ -574,4 +579,6 @@ text{ fill: goldenrod; stroke: darkgoldenrod; stroke-width: .5px; stroke-linejoi
 @keyframes pulsate {50%{ stroke-width:1px } }
 	
 	[type="checkbox"]:checked + span:not(.lever)::before { border-right: 2px solid black!important; border-bottom: 2px solid black!important; }
+	
+	.mapboxgl-popup-close-button { display:none!important; }
 .</style></body></html>
