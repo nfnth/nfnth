@@ -24,13 +24,13 @@
 
 	<!-- media -->
 	<a id="doc-hide" class="screen-hide media-menu" href="#!" data-target="doc"><i class="material-icons">sticky_note_2</i></a>
-	<a id="explore-hide" class="screen-hide media-menu" onclick="addArtifact();"><i class="material-icons">inventory_2</i></a>
+	<a id="explore-hide" class="screen-hide media-menu" onclick="showView('list'); showList('domain');"><i class="material-icons">map</i></a>
     	<a id="search-hide" class="screen-hide media-menu" onclick="showView('search');"><i class="material-icons">search</i></a>
 
     	<!-- desktop -->
     	<ul class="hide-on-med-and-down">
-		<li id="doc-list"><a id="docs" href="#!" data-target="doc"><i class="material-icons left">sticky_note_2</i>READ<i class="material-icons right">arrow_drop_down</i></a></li>
-		<li id="doc-list" ><a style="padding-right:24px;" onclick="addArtifact();"><i class="material-icons left">inventory_2</i>POST</a></li>
+		<li id="doc-list"><a id="docs" href="#!" data-target="doc"><i class="material-icons left">sticky_note_2</i>DOCS<i class="material-icons right">arrow_drop_down</i></a></li>
+		<li id="doc-list" ><a style="padding-right:24px;" onclick="showView('list'); showList('domain');"><i class="material-icons left">map</i>MAP</a></li>
         	<li style="height:64px;" id="search-list">
         		<a style="height:inherit; padding-right:0;"><i onclick="$('#search').focus();" style="height:inherit; padding-right:16px;" class="material-icons">search</i><div id="search-box" class="input-field" style="height:inherit;"><input id="search" type="search" onkeyup="searchResults(this)" style="padding-left:12px; width: calc(100% - 1rem);"><label class="label-icon" for="search" ></label><i class="material-icons" onclick="searchClear()">close</i></div></a></li></ul>
 
@@ -80,11 +80,11 @@
   			<li><a class="waves-effect" onclick="if (user.address != '') {copyClip(user.address);}"><i class="material-icons">alternate_email</i><span id="myAdd">My Wallet Address</span></a></li>
   			<li><a class="waves-effect"><i class="material-icons">toll</i><span id="myETH">My ETH Balance</span></a></li>
 			<li><a class="waves-effect"><i class="material-icons">map</i><span id="myURL">My UR Balance</span></a></li>
-			<li style="margin-top:16px;margin-bottom:12px;"><a class="btn waves-effect waves-light green z-depth-1 lighten-3 disabled" style="width: 240px;margin: auto;border-radius: 8px;" onclick=""><i class="material-icons left">build</i>Build Profile</a></li>
+			<li style="margin-top:16px;margin-bottom:12px;"><a class="btn waves-effect waves-light green z-depth-1 lighten-3 disabled" style="width: 240px;margin: auto;border-radius: 8px;" onclick=""><i class="material-icons left">build</i>Edit Profile</a></li>
   			<li><div style="margin-top:0;" class="divider"></div></li><!--<i class="material-icons left">calculate</i>-->
   			<li><a class="subheader">Domain Information</a></li>
   			<li><a class="waves-effect"><i class="material-icons">landscape</i><span id="dStatus">My Domain Status</span></a></li>
-			<li><a class="waves-effect"><i class="material-icons">inventory_2</i><span id="dArt">My Domain Post</span></a></li>
+			<li><a class="waves-effect"><i class="material-icons">inventory_2</i><span id="dArt">My Domain Build</span></a></li>
   			<li style="margin-top:12px; display: flex;align-items: center;justify-content: center;margin-bottom:16px;"><select id="domain-template" class="sider" onchange="domainSelect();"><option selected="selected">No domain selected</option><option value="tactician.us">tactician.us (demo)</option></select></li></ul></div>
 			
 		<!-- list (domain) -->
@@ -179,7 +179,8 @@
 											C3.084,29.762,0,29.75,0,29.75z"></path></svg></div><div id="dialog-inner2" class="dialog-inner print-help hide-scrollbar" style="overflow:auto;"></div></div></div>
 
 <script>
-var spinner = 0; function resetHome() { 
+var spinner = 0; 
+function resetHome() { 
 	if (spinner == 0) {  $("#list-wait").removeClass("image-rotate"); $("#list-wait2").removeClass("image-rotate"); spinner = 1; } 
 	else if (spinner == 1) { hideView(); $('#news').show(); $("#stamper").show(); $("#world").show(); spinner = 2;} 
 	else { $("#list-wait").addClass("image-rotate"); $("#list-wait2").addClass("image-rotate"); spinner = 0;} }
@@ -230,9 +231,9 @@ async function initial() { $('body').css("background-color","lightgrey");
 	$('#user-pane').sidenav({ edge: 'right' }); $('#deed-pane').sidenav({ edge: 'left', onCloseEnd: populateMap }); 
     
    	hideView(); 
-			  //$('#news').show(); $("#stamper").show(); $("#world").show(); //searchClear();
+			  $('#news').show(); $("#stamper").show(); $("#world").show(); //searchClear();
      //setNotice('...latest domain...');
-    	setTimeout(function() { $(".loader").css("visibility", "visible"); redirect(); showView('list'); showList('domain'); $('img').on('dragstart', function(evt) { return false; }); }  , 500); }
+    	setTimeout(function() { $(".loader").css("visibility", "visible"); redirect();  $('img').on('dragstart', function(evt) { return false; }); }  , 500); }
 
 initial();
 document.addEventListener('DOMContentLoaded', function() { });
@@ -323,14 +324,6 @@ function addListDeed(i) { var embedDisplay = "";
 		
 	return "<div style='text-align:center;'><p><span style='font-weight:16px'>" + domains[i].name + "</span>&nbsp;&nbsp; · &nbsp;&nbsp;<a onclick='openInNewTab(\"" + domains[i].core.external_link + "\");'>" + domains[i].core.name + "</a></p></div><br/><div id='emDisp' style='text-align:center;'>" + embedDisplay + "</div></br><p>" + domains[i].core.description + "</p><a onclick='openInNewTab(\"" + domains[i].ref + "\");'>Read more...</a><br/><br/><div style='text-align:center;'><img style='max-width:80%;' src='" + domains[i].img + "' /></div><br/><br/>Domain Info<br/><br/><div style='text-align:center;margin:auto;'><div onclick='openInNewTab(\"https://opensea.io/collection/" + domains[i].core.collection.slug + "\");' style='width:120px; cursor:pointer;' class='z-depth-1 chip " + getCollect(domains[i].core.collection.slug).replace(".png","") + "'><img src='res/img/key/" + getCollect(domains[i].core.collection.slug) + "'><div style='border-radius:12px; width:100px;background-color:rgb(245, 246, 247,0.75);color:black;font-size:16px;' class='z-depth-1'>" + domains[i].core.collection.slug + "</div></div>&nbsp;&nbsp;<a onclick='openInNewTab(\"" + domains[i].core.permalink + "\");' class='waves-effect waves-light waves-blue btn blue lighten-2' ><i class='material-icons right'>sailing</i>View Deed...</a></div><br/><br/><div style='display:flex; justify-content:center; width:100%;'><div style='cursor:pointer;' id='o" + i + "'></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style='display:flex;flex-direction:column;justify-content:space-evenly;text-align:center;'><div><div class='z-depth-1 chip' style='background-color: #fde4a4;'>0 build</div></div><div><div class='z-depth-1 chip blue lighten-1'>profile</div></div></div></div>";   }
 
-//var onPic = true;
-//function swapper(i) {
-//	if (onPic) { embedDisplay = "<video  style='width:80%;' controls><source type='video/mp4' src='" + domains[i].core.animation_url + "'></video>";
-//		$("#emBut").html("<i class='material-icons right'>image</i>View..."); onPic = false; }
-//	else { embedDisplay = "<img  style='width:80%;' src='" + domains[i].core.image_url + "' />"; 
-//	     $("#emBut").html("<i class='material-icons right'>tv</i>Watch..."); onPic = true; }
-//	$("#emDisp").html(embedDisplay); }
-
 function showDoc(doc) { document.getElementById('dialog-inner2').scrollTo(0, 0); $.get('res/doc/'+doc, function(data) { setDialog(renderMd(data)); }); }
 function buildDoc(i) { $("#somedialog2").css("z-index",1004); setDialog(addListDeed(i)); pullOwner(i); pullPrice(i);
 		     
@@ -348,13 +341,6 @@ var height = positionInfo.height; var width = positionInfo.width;
     dlg2 = new DialogFx( somedialog, {
         onOpenDialog : function( instance ) { path.stop().animate( { 'path' : steps.open }, 400, mina.easeinout );},
         onCloseDialog : function( instance ) { path.stop().animate( { 'path' : steps.close }, 400, mina.easeinout );	}	} ); dlg2.toggle(dlg2); }
-
-	function fullScreen() {
-		var elem = document.getElementById("emDisp");
-if (elem.requestFullscreen) { elem.requestFullscreen();
-} else if (elem.msRequestFullscreen) { elem.msRequestFullscreen();
-} else if (elem.mozRequestFullScreen) { elem.mozRequestFullScreen();
-} else if (elem.webkitRequestFullscreen) { elem.webkitRequestFullscreen(); } }
 
 function getCollect(value) {
     switch(value) {
