@@ -42,14 +42,22 @@ function mapAdd() { clearMarkers(); addArtifact(); } //pullOwner(' + i + '); pul
 
 
 var popups = []; var walletSwitch = true; var markCount = 0; //if (place == "") place = window.location.host;
-function convertCoord(coord) { //66°32′56″N 152°50′41″W
-	var raw = coord; var lat, long;
-		     if (raw.includes("N")) { lat = raw.substring(0, raw.indexOf('N')); lat = lat.substring(0, lat.indexOf('°')); }
-			else { lat = raw.substring(0, raw.indexOf('S')); lat = lat.substring(0, lat.indexOf('°')); lat = "-" + lat; }
+function convertCoord(coord) { //66°32′56″N 152°50′41″W  Degrees + ((Minutes / 60) + (Seconds / 3600))
+	var raw = coord; var lat, long; var add, add2; var sub, sub2;
+		     if (raw.includes("N")) { lat = raw.substring(0, raw.indexOf('N')); 
+					     add = lat.substring(lat.indexOf('°')+1, lat.indexOf('′')); add2 = lat.substring(lat.indexOf('′')+1, lat.indexOf('″'));
+					     lat = lat.substring(0, lat.indexOf('°')); }
+			else { lat = raw.substring(0, raw.indexOf('S')); 
+			      add = lat.substring(lat.indexOf('°')+1, lat.indexOf('′')); add2 = lat.substring(lat.indexOf('′')+1, lat.indexOf('″'));
+			      lat = lat.substring(0, lat.indexOf('°')); lat = "-" + lat; }
 
-			if (raw.includes("W")) {  long = raw.substring(raw.indexOf(' ')+1, raw.indexOf('W')); long = long.substring(0, long.indexOf('°')); }
-		     else { long = raw.substring(raw.indexOf(' ')+1, raw.indexOf('E')); long = long.substring(0, long.indexOf('°')); long = "-" + long; }
-		     return [parseInt(long), parseInt(lat)];
+			if (raw.includes("W")) {  long = raw.substring(raw.indexOf(' ')+1, raw.indexOf('W')); 
+						sub = long.substring(long.indexOf('°')+1, long.indexOf('′')); sub2 = long.substring(long.indexOf('′')+1, long.indexOf('″'));
+						long = long.substring(0, long.indexOf('°')); }
+		     else { long = raw.substring(raw.indexOf(' ')+1, raw.indexOf('E')); 
+			   sub = long.substring(long.indexOf('°')+1, long.indexOf('′')); sub2 = long.substring(long.indexOf('′')+1, long.indexOf('″'));
+			   long = long.substring(0, long.indexOf('°')); long = "-" + long; }
+		     return [parseInt(long) + (parseInt(sub)/60) + (parseInt(sub2)/3600), parseInt(lat)  + (parseInt(add)/60) + (parseInt(add2)/3600)];
 }
 function showMark(i) { 
 	var mark = convertCoord(domains[i].coord);
