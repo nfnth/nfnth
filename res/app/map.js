@@ -3,12 +3,12 @@
 //https://imagecompressor.com/ //- Stryker font, dad's artitect... //- teleprompt with audio?
 // map
 var map; var map_token = "pk.eyJ1IjoibmZudGgiLCJhIjoiY2tweW1rNXlsMGFpYzJwcGt1cHh6dmxzcyJ9.ZJaFrGpPDv5froWZMLXXYQ";
-
+var base = [-101.69697959674477, 39.77108807140884];
 
 var currentMarkers=[]; var currentMark = 0; 
 var addMark; var coordinates; var artFlag = false;
 mapboxgl.accessToken = map_token; zoom = 5;
-map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/mapbox/satellite-streets-v11', center: center, zoom: zoom, buffer_size: 0.2}); //'mapbox://styles/mapbox/light-v10'
+map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/mapbox/satellite-streets-v11', center: base, zoom: zoom, buffer_size: 0.2}); //'mapbox://styles/mapbox/light-v10'
 map.on('load', function (event) { //$("head").append('<style type="text/css">.markre{visibility:visible!important;}</style>');
 	showIntro();
     map.on('click', function(e) { coordinates = e.lngLat; if(artFlag) { addArt(); artFlag = false; } $('.fixed-action-btn').floatingActionButton('close'); }); });
@@ -161,7 +161,6 @@ function fly(dest) {
     map.on('moveend', function(e){ if(flying){ flying = false; startUp(); } });
     map.flyTo({ center: dest, zoom: setZoom, bearing: 0, speed: 0.8,  curve: 1,  easing: (t) => t, essential: true }); }
 
-var base = [-101.69697959674477, 39.77108807140884]; var landlord = [-101.59236473214004, 42.82998211920899, ]; var art = [-96.59236473214004, 37.82998211920899, ]; var center = [-100.4510253658899336, 43.91338997020656];
 function showIntro() {
 var mark = base;
 	var marv = document.createElement('div'); marv.id = 'markera'; 
@@ -174,7 +173,7 @@ var mark = base;
 	
 	tempMark = marker;
 	
-	var markup = '<div><div style="display:flex; justify-content:center;"><img class="materialboxed" width="120" height="120" src="res/img/shield.png"/></div><div style="margin-top:16px; font-size:16px;"><a>tactician.us</a><br/><br/><a class="waves-effect waves-blue btn blue lighten-2" ><i class="material-icons">description</i></a>&nbsp;&nbsp;<a class="modal-trigger waves-effect waves-light btn amber" href="#modal1" ><i class="material-icons">inventory_2</i></a></div></div>';
+	var markup = '<div><div style="display:flex; justify-content:center;"><img width="48" height="48" src="res/img/seal3.png"/></div><div style="margin-top:16px; font-size:16px;"><a>tactician.us</a><br/><br/><a class="waves-effect waves-blue btn blue lighten-2" ><i class="material-icons">description</i></a>&nbsp;&nbsp;<a class="modal-trigger waves-effect waves-light btn amber" href="#modal1" ><i class="material-icons">inventory_2</i></a></div></div>';
 
 	tempMark.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); 	
 	
