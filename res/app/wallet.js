@@ -40,6 +40,9 @@ function domainSelect() { var d = document.getElementById("domain-template"); va
     else { $("#poster").removeClass("disabled");  $("#trader").removeClass("disabled");   } pullDomain(dv); buildDomain(); }
 
 function pullDomain(domain) { domainMd = ""; domainMd = new Md(); 
+			     $("#selink").removeClass("disabled"); $("#dropdown-deeder").removeClass("disabled"); $("#swilink").removeClass("disabled");
+		$("#adder").removeClass("disabled"); $("#editer").removeClass("disabled"); $("#deleter").removeClass("disabled");
+			     
 			     var base2 = [-103.69697959674477, 39.77108807140884]; var base3 = [-101.69697959674477, 33.77108807140884]; var base4 = [-104.69697959674477, 37.77108807140884];
 	if (domain == "tactician.us") { 
 		temp = new Md(); temp.name = "Fort"; temp.color = "blue"; temp.datetime = "now"; temp.location = base2; temp.content = "test"; artifacts.push(temp);
@@ -47,6 +50,11 @@ function pullDomain(domain) { domainMd = ""; domainMd = new Md();
 		temp = new Md(); temp.name = "Fort"; temp.color = "blue"; temp.datetime = "now"; temp.location = base4; temp.content = "test3"; artifacts.push(temp);
 	
 	
+	} else if (domain == "void") {
+		artifacts = [];
+		$("#selink").addClass("disabled"); $("#dropdown-deeder").addClass("disabled"); $("#swilink").addClass("disabled");
+		$("#adder").addClass("disabled"); $("#editer").addClass("disabled"); $("#deleter").addClass("disabled");
+		
 	} else {
 	$.get('https://ur.land/domain/' + domain + '/deed', function(data) { 
 		var lines = data.split(/\r?\n/); var fields = lines[0].split('|'); 
