@@ -59,7 +59,7 @@ function pullDomain(domain) { domainMd = ""; domainMd = new Md();
 
 function buildDomain() {
 	for (let i = 1; i < artifacts.length; i++) { 
-		$("#registry-artifact").html(); $("#registry-artifact").append("<a class='collection-item'>" + artifacts[i].name + "			   }  
+		$("#registry-artifact").html(); $("#registry-artifact").append("<a class='collection-item'>" + artifacts[i].name + "</a>");			   }  
 }
 
 function postDomain() {
