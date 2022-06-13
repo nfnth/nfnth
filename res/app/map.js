@@ -102,8 +102,6 @@ function addArtifact() { M.toast({html: 'Select location...'}); artFlag = true; 
 function addArt() { clearMark(); editMark(); //$('.datepicker').datepicker(); //setDefaultDate: true
 		   inputMark.togglePopup(); }
 var beacon = false; var pather = false; var introMark; var nomadPath; var artifactPath; var setDomain; var currentContent = [];
-//function mapIntro() { startUp = function() { currentMarkers[0].togglePopup(); 
-
 function showPath(color) { addLine(color); nomadPath = requestAnimationFrame(drawLine); }
 //function showLandlord() { startPoint = fr; endPoint = fr2; showPath('green'); currentMarkers[0].togglePopup(); currentMarkers[1].togglePopup(); pather = true; currentToggle = 1; }
 //function showArt() { addBeacon(fr3); currentMarkers[1].togglePopup(); currentMarkers[2].togglePopup(); beacon = true; currentToggle = 2; }
