@@ -36,12 +36,12 @@ function emptyDeeds() { $('#domain-template').empty();
     $('#domain-template').append('<option selected="selected">No domain selected</option>'); $('#domain-template').append('<option>tactician.us (demo)</option>'); $("#domain-template").formSelect(); }
 
 function domainSelect() { var d = document.getElementById("domain-template"); var dt = d.options[d.selectedIndex].text; var dv = d.options[d.selectedIndex].value; 
-    if (dt == 'No domain selected') { $("#poster").addClass("disabled"); $("#trader").addClass("disabled"); dv = "sample"; }
+    if (dt == 'No domain selected') { $("#poster").addClass("disabled"); $("#trader").addClass("disabled"); }
     else { $("#poster").removeClass("disabled");  $("#trader").removeClass("disabled");   } pullDomain(dv); buildDomain(); }
 
 function pullDomain(domain) { domainMd = ""; domainMd = new Md(); 
 			     var base2 = [-103.69697959674477, 39.77108807140884]; var base3 = [-101.69697959674477, 33.77108807140884]; var base4 = [-104.69697959674477, 37.77108807140884];
-	if (domain == "sample") { 
+	if (domain == "tactician.us") { 
 		temp = new Md(); temp.name = "Fort"; temp.color = "blue"; temp.datetime = "now"; temp.location = base2; temp.content = "test"; artifacts.push(temp);
 		temp = new Md(); temp.name = "Supply"; temp.color = "green"; temp.datetime = "now"; temp.location = base3; temp.content = "test2"; artifacts.push(temp);
 		temp = new Md(); temp.name = "Fort"; temp.color = "blue"; temp.datetime = "now"; temp.location = base4; temp.content = "test3"; artifacts.push(temp);
