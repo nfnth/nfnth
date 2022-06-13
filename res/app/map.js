@@ -42,13 +42,13 @@ function mapAdd() { clearMarkers(); addArtifact(); } //pullOwner(' + i + '); pul
 
 
 var popups = []; var walletSwitch = true; var markCount = 0; //if (place == "") place = window.location.host;
-function convertCoord(coord) {
+function convertCoord(coord) { //66°32′56″N 152°50′41″W
 	var raw = coord; var lat, long;
-		     if (raw.includes("N")) { lat = raw.substring(0, raw.indexOf('°N')); lat = lat.substring(0, lat.indexOf('°')); }
-			else { lat = raw.substring(0, raw.indexOf('°S')); lat = lat.substring(0, lat.indexOf('°')); lat = "-" + lat; }
+		     if (raw.includes("N")) { lat = raw.substring(0, raw.indexOf('N')); lat = lat.substring(0, lat.indexOf('°')); }
+			else { lat = raw.substring(0, raw.indexOf('S')); lat = lat.substring(0, lat.indexOf('°')); lat = "-" + lat; }
 
-			if (raw.includes("W")) {  long = raw.substring(raw.indexOf(' ')+1, raw.indexOf('°W')); long = long.substring(0, long.indexOf('°')); }
-		     else { long = raw.substring(raw.indexOf(' ')+1, raw.indexOf('°E')); long = long.substring(0, long.indexOf('°')); long = "-" + long; }
+			if (raw.includes("W")) {  long = raw.substring(raw.indexOf(' ')+1, raw.indexOf('W')); long = long.substring(0, long.indexOf('°')); }
+		     else { long = raw.substring(raw.indexOf(' ')+1, raw.indexOf('E')); long = long.substring(0, long.indexOf('°')); long = "-" + long; }
 		     return [parseInt(long), parseInt(lat)];
 }
 function showMark(i) { 
