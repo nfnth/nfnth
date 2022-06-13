@@ -3,16 +3,17 @@
 //https://imagecompressor.com/ //- Stryker font, dad's artitect... //- teleprompt with audio?
 // map
 var map; var map_token = "pk.eyJ1IjoibmZudGgiLCJhIjoiY2tweW1rNXlsMGFpYzJwcGt1cHh6dmxzcyJ9.ZJaFrGpPDv5froWZMLXXYQ";
-var base = [-98.59236473214004, 39.82998211920899, ]; var landlord = [-101.59236473214004, 42.82998211920899, ]; var art = [-96.59236473214004, 37.82998211920899, ]; var center = [-100.4510253658899336, 43.91338997020656];
+
 
 var currentMarkers=[]; var currentMark = 0; //43.706742350484916, 1.5266131055501075
 var addMark; var coordinates; var artFlag = false;
 mapboxgl.accessToken = map_token; zoom = 5;
-map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/mapbox/light-v10', center: center, zoom: zoom, buffer_size: 0.2}); //'mapbox://styles/mapbox/light-v10'
+map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/mapbox/satellite-streets-v11', center: center, zoom: zoom, buffer_size: 0.2}); //'mapbox://styles/mapbox/light-v10'
 map.on('load', function (event) { //$("head").append('<style type="text/css">.markre{visibility:visible!important;}</style>');
+	showIntro();
     map.on('click', function(e) { coordinates = e.lngLat; if(artFlag) { addArt(); artFlag = false; } $('.fixed-action-btn').floatingActionButton('close'); }); });
 
-var satSwitch = true; var satCenter; var currentToggle = 0; var gpsSwitch = false; var randSwitch = false;
+var satSwitch = false; var satCenter; var currentToggle = 0; var gpsSwitch = false; var randSwitch = false;
 function mapSat() { satCenter = map.getCenter();
 	if (satSwitch) { mapStyle = 'mapbox://styles/mapbox/satellite-streets-v11'; satSwitch = false; $("#map-sat").addClass("amber");  } else { mapStyle = 'mapbox://styles/mapbox/light-v10'; satSwitch = true; $("#map-sat").removeClass("amber");}
 	map = new mapboxgl.Map({container: 'map', style: mapStyle, center: satCenter, zoom: zoom, buffer_size: 0.2}); 
@@ -58,7 +59,7 @@ function showMark(i) {
 
 	domains[i].map.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); $('.materialboxed').materialbox(); }
 
-function popMark(i) { $('.materialboxed').materialbox(); domains[i].map.togglePopup();  }
+function popMark(i) { domains[i].map.togglePopup();  }
 var tempMark = "";
 function flyMark(i) { if (tempMark != "") { tempMark.remove(); } 
 	var mark = [domains[i].coord.substring(domains[i].coord.indexOf(', ')+1,domains[i].coord.indexOf(']')-1), domains[i].coord.substring(domains[i].coord.indexOf('[')+1,domains[i].coord.indexOf(',')-1)];
@@ -76,7 +77,7 @@ function flyMark(i) { if (tempMark != "") { tempMark.remove(); }
 
 	tempMark.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); 
 
-	setZoom = 9; startUp = function() {  tempMark.togglePopup(); $('.materialboxed').materialbox(); }; fly(mark); } 
+	setZoom = 9; startUp = function() {  tempMark.togglePopup(); }; fly(mark); } 
 
 var inputMark = "";
 function editMark() { if (inputMark != "") { inputMark.remove(); inputMark = ""; }
@@ -161,3 +162,22 @@ function fly(dest) {
     map.fire('click', { latLng: nowhere, point: map.project(nowhere), originalEvent: {} }); flying = true;
     map.on('moveend', function(e){ if(flying){ flying = false; startUp(); } });
     map.flyTo({ center: dest, zoom: setZoom, bearing: 0, speed: 0.8,  curve: 1,  easing: (t) => t, essential: true }); }
+
+var base = [-98.59236473214004, 39.82998211920899, ]; var landlord = [-101.59236473214004, 42.82998211920899, ]; var art = [-96.59236473214004, 37.82998211920899, ]; var center = [-100.4510253658899336, 43.91338997020656];
+function showIntro() {
+var mark = base;
+	var marv = document.createElement('div'); marv.id = 'markera'; 
+	var marker = new mapboxgl.Marker(marv).setLngLat(mark).addTo(map);
+
+    	$('#markera').addClass('markre'); $('#markera').addClass('z-depth-3'); var style=$('#markera').attr('style');
+    	temper = ";background-color:red;border:solid 2px black;"; style += temper; 
+    	//style += ";background-image:url('img/icon/domain/"+folder + "/" +icon+".png'); 
+	$('#markera').attr('style',style); 
+	
+	tempMark = marker;
+	
+	var markup = '<div><div style="display:flex; justify-content:center;"><img class="materialboxed" width="120" height="120" src="res/img/shield.png"/></div><div style="margin-top:16px; font-size:16px;"><a>tactician.us</a><br/><br/><a class="waves-effect waves-blue btn blue lighten-2" onclick="buildDoc(' + i + ');" ><i class="material-icons">description</i></a>&nbsp;&nbsp;<a class="modal-trigger waves-effect waves-light btn amber" href="#modal1" ><i class="material-icons">inventory_2</i></a></div></div>';
+
+	tempMark.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); 	
+	
+}
