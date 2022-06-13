@@ -48,11 +48,11 @@
 
 <!-- panel (deed) -->
 <ul id="deed-pane" class="sidenav loader" style="visibility:hidden;overflow:hidden;">
-	<li><div class="user-view z-depth-1 amber lighten-5" style="display: flex;margin: auto; padding: 0;align-items: center; padding-left:12px;"><span id="ocuros" style="cursor: pointer;margin:auto; color:ghostwhite!important; font-size:18px;border-radius: 8px; opacity: 0.7; font-weight: bold;  height: 36px !important;display: flex;align-items: center;padding-top: 10px;" onclick="showDoc('os'); $('#deed-pane').sidenav('close');" class="badge green lighten-2" data-badge-caption="urOS"><img src="res/img/scroll_logo.png" style="width:24px; height:24px; margin-right:8px;" /> · v1.08</span><img id="user-pic" style="opacity:0.6; height: 48px;position:absolute; right:0; margin: 12px; cursor:pointer;" onclick="openInNewTab('https://github.com/nfnth'); $('#deed-pane').sidenav('close');"/><img id="user-pic2" style="opacity:0.6; height: 48px;cursor:pointer;margin:12px;" onclick="openInNewTab('https://github.com/nfnth'); $('#deed-pane').sidenav('close');"/></div></li>
+	<li><div class="user-view z-depth-1 amber lighten-5" style="display: flex;margin: auto; padding: 0;align-items: center; padding-left:12px;"><span id="ocuros" style="cursor: pointer;margin:auto; color:darkgreen!important; font-size:18px;border-radius: 8px; opacity: 0.7; font-weight: bold;  height: 36px !important;display: flex;align-items: center;padding-top: 10px;" onclick="showDoc('os'); $('#deed-pane').sidenav('close');" class="badge grey lighten-2" data-badge-caption="v1.08"><img src="res/img/scroll_logo.png" style="width:24px; height:24px; margin-right:8px;" />urOS · </span><img id="user-pic" style="opacity:0.6; height: 48px;position:absolute; right:0; margin: 12px; cursor:pointer;" onclick="openInNewTab('https://github.com/nfnth'); $('#deed-pane').sidenav('close');"/><img id="user-pic2" style="opacity:0.6; height: 48px;cursor:pointer;margin:12px;" onclick="openInNewTab('https://github.com/nfnth'); $('#deed-pane').sidenav('close');"/></div></li>
 	
 	<!-- tabs -->
 	<li style="height:100%;"><ul class="tabs tabs-fixed-width z-depth-1">
-			<li class="tab blue-grey lighten-5" onclick="showList('open');"><a class="active" href="#test1">Collect</a></li>
+			<li class="tab blue-grey lighten-5" onclick="showList('open');"><a class="active" href="#test1">Class</a></li>
 			<li class="tab blue-grey lighten-5" onclick="showList('domain');"><a href="#test2">&nbsp;&nbsp;Token&nbsp;&nbsp;</a></li></ul><div class="card-content z-depth-1" style="height:100%;background-color:ghostwhite;">
 			
 		<!-- list (collect) -->
@@ -62,7 +62,7 @@
 			
 		<!-- list (item) -->
 		<div id="test2"><ul>
-			<li style="padding-top:16px;margin-bottom:12px;display: flex;justify-content: space-evenly;"><div style="display:flex;justify-content:space-evenly;width:100%;"><a class='btn-flat' onclick="selDomain();"><i id="domain-sel-icon" class="material-icons">select_all</i></a><a id="dropdown-domainer" class='dropdown-trigger btn-flat' ref='#' data-target='dropdown-domain'><i class="material-icons">sort</i></a><a class="waves-effect waves-light btn amber lighten-2" style="display:inline-flex;align-items:center;" onclick="switchDomain();"><i id="domain-icon" class="material-icons">grid_view</i><span id="domain-name"></span></a></div></li>
+			<li style="padding-top:16px;margin-bottom:12px;display: flex;justify-content: space-evenly;"><div style="display:flex;justify-content:space-evenly;width:100%;"><a id='selLink' class='btn-flat disabled' onclick="selDomain();"><i id="domain-sel-icon" class="material-icons">select_all</i></a><a id="dropdown-domainer" class='dropdown-trigger btn-flat disabled' ref='#' data-target='dropdown-domain'><i class="material-icons">sort</i></a><a id='switchLink' class="waves-effect waves-light btn amber lighten-2 disabled" style="display:inline-flex;align-items:center;" onclick="switchDomain();"><i id="domain-icon" class="material-icons">grid_view</i><span id="domain-name"></span></a></div></li>
 			<li><div id="registry-domain" class="collection" style="overflow:auto;"></div></li></ul></div></div></div></li></ul>	
 		
 <!-- panel (domain) -->
@@ -147,11 +147,11 @@
 
 <!-- items -->
 <ul id='dropdown-open' class='dropdown-content'>
-    	<li><a href="#!" onclick="opens.sort(openAZ); showList('open');">Name &#8595;</a></li><li><a href="#!" onclick="opens.sort(openZA); showList('open');">Name &#8593;</a></li>
+    	<li><a href="#!" onclick="opens.sort(openAZ); showList('open');">Name&nbsp;&nbsp; &#8595;</a></li><li><a href="#!" onclick="opens.sort(openZA); showList('open');">Name&nbsp;&nbsp; &#8593;</a></li>
     	<li style="margin-top:0;"class="divider" tabindex="-1"></li>
-    	<li><a href="#!" onclick="opens.sort(open90); showList('open');">Count &#8595;</a></li><li><a href="#!" onclick="opens.sort(open09); showList('open');">Count &#8593;</a></li>
+    	<li><a href="#!" onclick="opens.sort(open90); showList('open');">Count&nbsp;&nbsp; &#8595;</a></li><li><a href="#!" onclick="opens.sort(open09); showList('open');">Count&nbsp;&nbsp; &#8593;</a></li>
 	<li style="margin-top:0;" class="divider" tabindex="-1"></li>
-	<li><a href="#!" onclick="opens.sort(openaz); showList('open');">Color &#8595;</a></li><li><a href="#!" onclick="opens.sort(openza); showList('open');">Color &#8593;</a></li></ul>
+	<li><a href="#!" onclick="opens.sort(openaz); showList('open');">Color&nbsp;&nbsp; &#8595;</a></li><li><a href="#!" onclick="opens.sort(openza); showList('open');">Color&nbsp;&nbsp; &#8593;</a></li></ul>
 
 <ul id='dropdown-domain' class='dropdown-content'>
     	<li><a href="#!" onclick="domains.sort(domainAZ); showList('domain');">Name &#8595;</a></li><li><a href="#!" onclick="domains.sort(domainZA); showList('domain');">Name &#8593;</a></li>
@@ -258,9 +258,15 @@ function showList(area) {  $("#registry").html(''); $("#registry").hide();
     //$("#registry").css("height",height + "px");
     $("#registry").show(); $('img').on('dragstart', function(evt) { return false; }); }
 
-function openDomain() { for (let i=0;i<domains.length;i++) { for (let j=0;j<opens.length;j++) { 
-	if (domains[i].core.collection.slug == opens[j].core.slug) { if (opens[j].checked == false) { domains[i].hide = true; } else { domains[i].hide = false; } }
-	  } } }
+function openDomain() { var any = false;
+	
+	for (let i=0;i<domains.length;i++) { for (let j=0;j<opens.length;j++) { 
+	if (domains[i].core.collection.slug == opens[j].core.slug) { if (opens[j].checked == false) { domains[i].hide = true; } else { domains[i].hide = false; any = true; } }
+	  } } 
+		      if (any) { 
+			      $("#selLink").removeClass('disabled'); $("#dropdown-domainer").removeClass('disabled'); $("#switchLink").removeClass('disabled'); } else { $("#selLink").addClass('disabled'); $("#dropdown-domainer").addClass('disabled'); $("#switchLink").addClass('disabled'); }
+			      
+		      }
 	
 var showGrid = true; var gridSelect = false; 
 function switchView() { if (showGrid) { showList('open'); $("#view-icon2").html("view_list"); //$("#view-name2").html("&nbsp;&nbsp;List"); 
