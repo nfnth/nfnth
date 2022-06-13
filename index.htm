@@ -30,7 +30,7 @@
     	<!-- desktop -->
     	<ul class="hide-on-med-and-down">
 		<li id="doc-list"><a id="docs" href="#!" data-target="doc"><i class="material-icons left">sticky_note_2</i>READ<i class="material-icons right">arrow_drop_down</i></a></li>
-		<li id="doc-list" ><a style="padding-right:24px;" onclick="addArtifact();"><i class="material-icons left">inventory_2</i>BUILD</a></li>
+		<li id="doc-list" ><a style="padding-right:24px;" onclick="addArtifact();"><i class="material-icons left">inventory_2</i>POST</a></li>
         	<li style="height:64px;" id="search-list">
         		<a style="height:inherit; padding-right:0;"><i onclick="$('#search').focus();" style="height:inherit; padding-right:16px;" class="material-icons">search</i><div id="search-box" class="input-field" style="height:inherit;"><input id="search" type="search" onkeyup="searchResults(this)" style="padding-left:12px; width: calc(100% - 1rem);"><label class="label-icon" for="search" ></label><i class="material-icons" onclick="searchClear()">close</i></div></a></li></ul>
 
@@ -67,7 +67,7 @@
 		
 <!-- panel (domain) -->
 <ul id="user-pane" class="sidenav loader" style="visibility:hidden;overflow:hidden;">
-	<li style="padding-top:16px;margin-bottom:16px;display: flex;justify-content: space-evenly;"><div style="display:flex;justify-content:space-evenly;width:100%;"><a class='btn-flat waves-effect waves-light' onclick="openInNewTab('https://github.com/nfnth/nfnth/issues'); $('#user-pane').sidenav('close');"><i class="material-icons">help</i></a><a class='btn-flat waves-effect waves-light' onclick="openInNewTab('https://github.com/nfnth/nfnth/issues'); $('#user-pane').sidenav('close');"><i class="material-icons">qr_code</i></a><a class="waves-effect waves-light btn blue lighten-2" style="display:inline-flex;align-items:center;margin-left:12px;" onclick="if (disconnect) {desetup(); $('#user-pane').sidenav('close');} else { setup(); }"><i class="material-icons">account_balance_wallet</i><span>&nbsp;&nbsp;&nbsp;&nbsp;Connect</span></a></div></li>
+	<li style="padding-top:16px;margin-bottom:16px;display: flex;justify-content: space-evenly;"><div style="display:flex;justify-content:space-evenly;width:100%;"><a class='btn-flat waves-effect waves-light' onclick="openInNewTab('https://github.com/nfnth/nfnth/issues'); $('#user-pane').sidenav('close');"><i class="material-icons">qr_code</i></a><a class='btn-flat waves-effect waves-light' onclick="openInNewTab('https://github.com/nfnth/nfnth/issues'); $('#user-pane').sidenav('close');"><i class="material-icons">help</i></a><a class="waves-effect waves-light btn blue lighten-2" style="display:inline-flex;align-items:center;margin-left:12px;" onclick="if (disconnect) {desetup(); $('#user-pane').sidenav('close');} else { setup(); }"><i class="material-icons">account_balance_wallet</i><span>&nbsp;&nbsp;&nbsp;&nbsp;Connect</span></a></div></li>
 	
 	<!-- tabs -->
 	<li style="height:100%;"><ul class="tabs tabs-fixed-width z-depth-1 wallet">
@@ -84,7 +84,7 @@
   			<li><div style="margin-top:0;" class="divider"></div></li><!--<i class="material-icons left">calculate</i>-->
   			<li><a class="subheader">Domain Information</a></li>
   			<li><a class="waves-effect"><i class="material-icons">landscape</i><span id="dStatus">My Domain Status</span></a></li>
-			<li><a class="waves-effect"><i class="material-icons">inventory_2</i><span id="dArt">My Posted Build</span></a></li>
+			<li><a class="waves-effect"><i class="material-icons">inventory_2</i><span id="dArt">My Domain Post</span></a></li>
   			<li style="margin-top:12px; display: flex;align-items: center;justify-content: center;margin-bottom:16px;"><select id="domain-template" class="sider" onchange="domainSelect();"><option selected="selected">No domain selected</option><option value="tactician.us">tactician.us (demo)</option></select></li>
 			<li style="margin-top:12px;"><a id="poster" class="btn waves-effect waves-light amber z-depth-1 lighten-2 disabled" style="width: 240px;margin: auto;border-radius: 8px;margin-bottom:12px;color:black;" onclick="$('.tabs').tabs('select', 'test5');"><i class="material-icons left">build</i>Build Domain</a></li></ul></div>
 			
