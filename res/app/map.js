@@ -42,8 +42,17 @@ function mapAdd() { clearMarkers(); addArtifact(); } //pullOwner(' + i + '); pul
 
 
 var popups = []; var walletSwitch = true; var markCount = 0; //if (place == "") place = window.location.host;
+function convertCoord(coord) {
+	var raw = coord; var lat, long;
+		     if (raw.includes("N")) { lat = raw.substring(0, raw.indexOf('°N')); lat = lat.substring(0, lat.indexOf('°')); }
+			else { lat = raw.substring(0, raw.indexOf('°S')); lat = lat.substring(0, lat.indexOf('°')); lat = "-" + lat; }
+
+			if (raw.includes("W")) {  long = raw.substring(raw.indexOf(' ')+1, raw.indexOf('°W')); long = long.substring(0, long.indexOf('°')); }
+		     else { long = raw.substring(raw.indexOf(' ')+1, raw.indexOf('°E')); long = long.substring(0, long.indexOf('°')); long = "-" + long; }
+		     return [parseInt(long), parseInt(lat)];
+}
 function showMark(i) { 
-	var mark = [domains[i].coord.substring(domains[i].coord.indexOf(', ')+1,domains[i].coord.indexOf(']')-1), domains[i].coord.substring(domains[i].coord.indexOf('[')+1,domains[i].coord.indexOf(',')-1)];
+	var mark = convertCoord(domains[i].coord);
 	var marv = document.createElement('div'); marv.id = 'marker' + i; 
 	var marker = new mapboxgl.Marker(marv).setLngLat(mark).addTo(map);
 
@@ -62,13 +71,7 @@ function showMark(i) {
 function popMark(i) { domains[i].map.togglePopup();  }
 var tempMark = "";
 function flyMark(i) { if (tempMark != "") { tempMark.remove(); } 
-		     var raw = domains[i].coord; var lat, long;
-		     if (raw.includes("N")) { lat = raw.substring(0, raw.indexOf('°N')); lat = lat.substring(0, lat.indexOf('°')); }
-			else { lat = raw.substring(0, raw.indexOf('°S')); lat = lat.substring(0, lat.indexOf('°')); lat = "-" + lat; }
-
-			if (raw.includes("W")) {  long = raw.substring(raw.indexOf(' ')+1, raw.indexOf('°W')); long = long.substring(0, long.indexOf('°')); }
-		     else { long = raw.substring(raw.indexOf(' ')+1, raw.indexOf('°E')); long = long.substring(0, long.indexOf('°')); long = "-" + long; }
-		     var mark = [parseInt(long), parseInt(lat)];
+		     var mark = convertCoord(domains[i].coord);
 		     //lat = lat.substring(0, lat.indexOf('°')); long = long.substring(0, long.indexOf('°'));
 		     
 		    // 25.815°N 80.224°W
