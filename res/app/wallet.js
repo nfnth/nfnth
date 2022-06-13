@@ -36,10 +36,18 @@ function emptyDeeds() { $('#domain-template').empty();
     $('#domain-template').append('<option selected="selected">No domain selected</option>'); $('#domain-template').append('<option>tactician.us (demo)</option>'); $("#domain-template").formSelect(); }
 
 function domainSelect() { var d = document.getElementById("domain-template"); var dt = d.options[d.selectedIndex].text; var dv = d.options[d.selectedIndex].value; 
-    if (dt == 'No domain selected') { $("#poster").addClass("disabled"); $("#trader").addClass("disabled"); }
-    else { $("#poster").removeClass("disabled");  $("#trader").removeClass("disabled"); pullDomain(dv);  } }
+    if (dt == 'No domain selected') { $("#poster").addClass("disabled"); $("#trader").addClass("disabled"); dv = "sample"; }
+    else { $("#poster").removeClass("disabled");  $("#trader").removeClass("disabled");   } pullDomain(dv); buildDomain(); }
 
 function pullDomain(domain) { domainMd = ""; domainMd = new Md(); 
+			     var base2 = [-103.69697959674477, 39.77108807140884]; var base3 = [-101.69697959674477, 33.77108807140884]; var base4 = [-104.69697959674477, 37.77108807140884];
+	if (domain == "sample") { 
+		temp = new Md(); temp.name = "Fort"; temp.color = "blue"; temp.datetime = "now"; temp.location = base2; temp.content = "test"; artifacts.push(temp);
+		temp = new Md(); temp.name = "Supply"; temp.color = "green"; temp.datetime = "now"; temp.location = base3; temp.content = "test2"; artifacts.push(temp);
+		temp = new Md(); temp.name = "Fort"; temp.color = "blue"; temp.datetime = "now"; temp.location = base4; temp.content = "test3"; artifacts.push(temp);
+	
+	
+	} else {
 	$.get('https://ur.land/domain/' + domain + '/deed', function(data) { 
 		var lines = data.split(/\r?\n/); var fields = lines[0].split('|'); 
 		domainMd.name = fields[0]; domainMd.color = fields[1]; domainMd.datetime = fields[2]; domainMd.location = fields[3];
@@ -47,7 +55,12 @@ function pullDomain(domain) { domainMd = ""; domainMd = new Md();
 	if (domainMd.name != "") { $("#registry-artifact").html(); $("#registry-artifact").append("<a class='collection-item'>" + domainMd.name + "</a>"); }
 	}); 
 	
-			    }
+	}  }
+
+function buildDomain() {
+	for (let i = 1; i < artifacts.length; i++) { 
+		$("#registry-artifact").html(); $("#registry-artifact").append("<a class='collection-item'>" + artifacts[i].name + "			   }  
+}
 
 function postDomain() {
 	var d = document.getElementById("domain-template"); var dt = d.options[d.selectedIndex].text; var dv = d.options[d.selectedIndex].value; 
