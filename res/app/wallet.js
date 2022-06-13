@@ -65,10 +65,10 @@ function pullDomain(domain) { domainMd = ""; domainMd = new Md();
 	
 	}  }
 
-function buildDomain() { $("#registry-artifact").html();
+function buildDomain() { $("#registry-artifact").html("");
 	if (artifacts.length == 0) { $("#registry-artifact").append("<a class='collection-item'>No deed selected.</a>"); }
-	for (let i = 1; i < artifacts.length; i++) { 
-		 $("#registry-artifact").append("<a class='collection-item'>" + artifacts[i].name + "</a>");			   }  
+	for (let i = 0; i < artifacts.length; i++) { 
+		 $("#registry-artifact").append("<a class='collection-item'>" + artifacts[i].name + "</a>");}  
 }
 
 function postDomain() {
