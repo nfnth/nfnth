@@ -30,7 +30,7 @@
     	<!-- desktop -->
     	<ul class="hide-on-med-and-down">
 		<li id="doc-list"><a id="docs" href="#!" data-target="doc"><i class="material-icons left">sticky_note_2</i>READ<i class="material-icons right">arrow_drop_down</i></a></li>
-		<li id="doc-list" ><a id="docs" href="#!" data-target="doc" style="padding-right:24px;"><i class="material-icons left">map</i>BUILD/a></li>
+		<li id="doc-list" ><a id="docs" href="#!" data-target="doc" style="padding-right:24px;"><i class="material-icons left">explore</i>BUILD</a></li>
         	<li style="height:64px;" id="search-list">
         		<a style="height:inherit; padding-right:0;"><i onclick="$('#search').focus();" style="height:inherit; padding-right:16px;" class="material-icons">search</i><div id="search-box" class="input-field" style="height:inherit;"><input id="search" type="search" onkeyup="searchResults(this)" style="padding-left:12px; width: calc(100% - 1rem);"><label class="label-icon" for="search" ></label><i class="material-icons" onclick="searchClear()">close</i></div></a></li></ul>
 
@@ -79,12 +79,12 @@
 			<li><a class="subheader">Wallet Information</a></li>
   			<li><a class="waves-effect" onclick="if (user.address != '') {copyClip(user.address);}"><i class="material-icons">alternate_email</i><span id="myAdd">My Wallet Address</span></a></li>
   			<li><a class="waves-effect"><i class="material-icons">toll</i><span id="myETH">My ETH Balance</span></a></li>
-			<li><a class="waves-effect"><i class="material-icons">castle</i><span id="myURL">My UR Balance</span></a></li>
+			<li><a class="waves-effect"><i class="material-icons">map</i><span id="myURL">My UR Balance</span></a></li>
 			<li style="margin-top:16px;margin-bottom:12px;"><a class="btn waves-effect waves-light green z-depth-1 lighten-3 disabled" style="width: 240px;margin: auto;border-radius: 8px;" onclick=""><i class="material-icons left">account_box</i>Edit Profile</a></li>
   			<li><div style="margin-top:0;" class="divider"></div></li><!--<i class="material-icons left">calculate</i>-->
   			<li><a class="subheader">Domain Information</a></li>
-  			<li><a class="waves-effect"><i class="material-icons">landscape</i><span id="dStatus">My Current Status</span></a></li>
-			<li><a class="waves-effect"><i class="material-icons">inventory_2</i><span id="dArt">My Posted Artifact</span></a></li>
+  			<li><a class="waves-effect"><i class="material-icons">landscape</i><span id="dStatus">My Domain Status</span></a></li>
+			<li><a class="waves-effect"><i class="material-icons">inventory_2</i><span id="dArt">My Posted Build</span></a></li>
   			<li style="margin-top:12px; display: flex;align-items: center;justify-content: center;margin-bottom:16px;"><select id="domain-template" class="sider" onchange="domainSelect();"><option selected="selected">No domain selected</option><option value="tactician.us">tactician.us (demo)</option></select></li>
 			<li style="margin-top:12px;"><a id="poster" class="btn waves-effect waves-light amber z-depth-1 lighten-2 disabled" style="width: 240px;margin: auto;border-radius: 8px;margin-bottom:12px;color:black;" onclick="$('.tabs').tabs('select', 'test5');"><i class="material-icons left">build</i>Build Domain</a></li></ul></div>
 			
@@ -328,7 +328,9 @@ function addListDeed(i) { var embedDisplay = "";
 //	$("#emDisp").html(embedDisplay); }
 
 function showDoc(doc) { document.getElementById('dialog-inner2').scrollTo(0, 0); $.get('res/doc/'+doc, function(data) { setDialog(renderMd(data)); }); }
-function buildDoc(i) { $("#somedialog2").css("z-index",1004); setDialog(addListDeed(i)); pullOwner(i); pullPrice(i); }
+function buildDoc(i) { $("#somedialog2").css("z-index",1004); setDialog(addListDeed(i)); pullOwner(i); pullPrice(i);
+		     
+		     $('#deed-pane').sidenav('close'); }
 
 function setDialog(text) { 
 var element = document.getElementById('dialog-inner2'); $("#dialog-inner2").html(text);
