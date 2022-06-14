@@ -58,6 +58,6 @@ function pullPrice(i) { id = domains[i].core.token_id;
 	fetch('https://api.opensea.io/api/v1/asset/0x495f947276749ce646f68ac8c248420045cb7b5e/'+id+'/listings', options)
       		.then(response => response.json()) //.then(response => assets = response)
       		.then(response => { if (typeof response.listings[0] !== 'undefined') { 
-			domains[i].price = parseFloat(response.listings[0].current_price)/1000000000000000000; } else {domains[i].price = "Unlisted" } updateInfo(i); updateWallet(i); }).catch(err => console.error(err)); }
+			domains[i].price = parseFloat(response.listings[0].current_price)/1000000000000000000; } else {domains[i].price = "Unlisted" } updateInfo(i);  }).catch(err => console.error(err)); }
 
 function updateCount(name, count) { for (let i=0;i<opens.length;i++) { if (opens[i].core.slug == name) { opens[i].count = count; break;} } }
