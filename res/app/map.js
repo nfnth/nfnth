@@ -13,7 +13,7 @@ map.on('load', function (event) { //$("head").append('<style type="text/css">.ma
 	showIntro();
     map.on('click', function(e) { coordinates = e.lngLat; if(artFlag) { addArt(); artFlag = false; } $('.fixed-action-btn').floatingActionButton('close'); }); });
 
-var satSwitch = false; var satCenter; var currentToggle = 0; var gpsSwitch = false; var artSwitch = true; var deedSwitch = true; var meSwitch = true;
+var satSwitch = false; var satCenter; var currentToggle = 0; var gpsSwitch = true; var artSwitch = false; var deedSwitch = false; var meSwitch = false;
 function mapSat() { satCenter = map.getCenter();
 	if (satSwitch) { mapStyle = 'mapbox://styles/mapbox/satellite-streets-v11'; satSwitch = false; $("#map-sat").addClass("green"); $("#map-sat").removeClass("grey"); } else { mapStyle = 'mapbox://styles/mapbox/light-v10'; satSwitch = true; $("#map-sat").removeClass("green"); $("#map-sat").addClass("grey");}
 	map = new mapboxgl.Map({container: 'map', style: mapStyle, center: satCenter, zoom: zoom, buffer_size: 0.2}); 
@@ -26,7 +26,7 @@ function mapLoc() { if (gpsSwitch) { clearMap(); gpsSwitch = false; $("#map-loc"
 function geoSuccess(position) {tempCoord[1] = position.coords.latitude;tempCoord[0] = position.coords.longitude; gpsSwitch = true; $("#map-loc").addClass("blue"); $("#map-loc").removeClass("grey"); setZoom = 8; fly(tempCoord); addBeacon(tempCoord); beacon = true; } 
 function geoError() { alert('No location'); }
 function mapDeed() {
-	if (deedSwitch) { for (var a = 0; a < domains.length; a++) { if (domains[a].checked) { showMark(a); } } deedSwitch = false;  $("#map-deed").removeClass("grey"); $("#map-deed").addClass("blue"); }
+	if (deedSwitch) { populateMap(); deedSwitch = false;  $("#map-deed").removeClass("grey"); $("#map-deed").addClass("blue"); }
 	else { clearMark(); deedSwitch = true; $("#map-deed").addClass("grey"); $("#map-deed").removeClass("blue");} }
 function mapArt() { 
 	if (artSwitch) { artSwitch = false;  $("#map-art").removeClass("grey"); $("#map-art").addClass("blue"); }
@@ -34,6 +34,8 @@ function mapArt() {
 function mapMe() { 
 	if (meSwitch) { meSwitch = false;  $("#map-me").removeClass("grey"); $("#map-me").addClass("blue"); }
 	else { meSwitch = true; $("#map-me").addClass("grey"); $("#map-me").removeClass("blue"); }}
+
+function populateMap() {  for (let i=0;i<domains.length;i++) { if (domains[i].checked) { showMark(i); } }  }
 
 //var middle = [-100.90328686441276, 39.68714979898309];
 //function filterMap(slug) { holder = []; 
