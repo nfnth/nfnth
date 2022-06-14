@@ -330,8 +330,8 @@ function addOpenDeed(i) { $("#somedialog2").css("z-index",1004);
 	
 function addList(i){ var extra = ""; if(domains[i].checked == true) { extra = "checked='checked'"; } 
 	if (showListOpen) {
-    		$("#registry-domain").append("<a class='collection-item'><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;' onclick='showView(\"list\"); showList(\"domain\"); flyMark(" + i + ");'>" + domains[i].core.name + "</div><div style='display:flex; justify-content:space-between;align-items:center;'><div style='display:flex;'><span style='color:beige;' class='btn waves-effect waves-light amber lighten-4' onclick='buildDoc(" + i + ");'><i class='material-icons'>account_balance_wallet</i></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style='display:flex;align-items:center;'><label style='display:flex;'><input type='checkbox' " + extra + " onclick='setList(" + i + ");' /><span></span></label></div></div></div></div></a>"); } else {
-		$("#registry-domain").append("<a class='collection-item'><div style='display:flex;justify-content:space-between;'><div><img style='cursor:pointer;' onclick='showView(\"list\"); showList(\"domain\"); flyMark(" + i + ");' class='z-depth-1' width='52' height='30' src='" + domains[i].core.image_url + "'/></div><div style='display:flex; justify-content:space-between;align-items:center;'><span style='color:beige;' class='btn waves-effect waves-light amber lighten-4' onclick='buildDoc(" + i + ");'><i class='material-icons'>account_balance_wallet</i></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style='display:flex; flex-direction:column;'><label style='display:flex;'><input type='checkbox' " + extra + " onclick='setList(" + i + ");' /><span></span></label></div></div></div></a>"); } }
+    		$("#registry-domain").append("<a class='collection-item'><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;' onclick='showView(\"list\"); showList(\"domain\"); flyMark(" + i + ");'>" + domains[i].core.name + "</div><div style='display:flex; justify-content:space-between;align-items:center;'><div style='display:flex;'><span style='color:beige;' class='btn waves-effect waves-light amber lighten-4' onclick='buildWallet(" + i + ");'><i class='material-icons'>account_balance_wallet</i></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style='display:flex;align-items:center;'><label style='display:flex;'><input type='checkbox' " + extra + " onclick='setList(" + i + ");' /><span></span></label></div></div></div></div></a>"); } else {
+		$("#registry-domain").append("<a class='collection-item'><div style='display:flex;justify-content:space-between;'><div><img style='cursor:pointer;' onclick='showView(\"list\"); showList(\"domain\"); flyMark(" + i + ");' class='z-depth-1' width='52' height='30' src='" + domains[i].core.image_url + "'/></div><div style='display:flex; justify-content:space-between;align-items:center;'><span style='color:beige;' class='btn waves-effect waves-light amber lighten-4' onclick='buildWallet(" + i + ");'><i class='material-icons'>account_balance_wallet</i></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style='display:flex; flex-direction:column;'><label style='display:flex;'><input type='checkbox' " + extra + " onclick='setList(" + i + ");' /><span></span></label></div></div></div></a>"); } }
 
 function addListDetail(i) { pullOwner(i); pullPrice(i);
      	$("#domain-info").html('<div style="display:flex;justify-content:space-evenly;align-items:center;width:100%;padding-top:12px;"><div style="display: flex;flex-direction: column;text-align: left;align-items:center;width:100%;"><div style="display:flex; justify-content:space-evenly; width:360px; margin-bottom:12px;"><div style="cursor:pointer;" id="o'+ i + '"></div></div><div style="margin-bottom:16px;">' + domains[i].name + '&nbsp;&nbsp · &nbsp;&nbsp<a onclick="openInNewTab(\'' + domains[i].core.external_link + '\');">' + domains[i].core.name + '</a></div><br/><div class="z-depth-1 " style="background-color:rgb(255,255,255,0.5); display:flex;justify-content:space-evenly;width:100%; padding:12px;box-shadow:8px -8px 12px 12px inset whitesmoke;" ><a onclick="showMark(\'' + i + '\'); showView(\'map\'); map.resize();" class="modal-close waves-effect waves-light btn amber lighten-1" ><i class="material-icons right">inventory_2</i>View Artifacts</a><a onclick="showMark(\'' + i + '\'); showView(\'map\'); map.resize();" class="modal-close waves-effect waves-light btn blue lighten-1" ><i class="material-icons right">sailing</i><span id="d' + i + '"></span></a></div></div></div>'); } 
@@ -351,6 +351,20 @@ function buildDoc(i) { $("#somedialog2").css("z-index",1004); document.getElemen
 		     
 		     $('#deed-pane').sidenav('close'); }
 
+function buildWallet(i) {
+	pullOwner(i);
+}
+	
+function updateWallet(i) {
+	if (domains[i].owner == "0x8a83fbbacb82030ea17179c0403b04e7bce7ba10") { M.toast({html: 'No owner found.'}); } else { 
+	//fly to owner's place...	
+	}
+}
+	
+function updateInfo(i) { $("#d"+i).html(domains[i].price); if (domains[i].price != "Unlisted") { $("#d"+i).html($("#d"+i).html() + " ETH"); }
+	
+	$("#o"+i).html(addWallet(domains[i].owner)); $("#c"+i).html(addWallet(domains[i].owner)); }
+	
 function setDialog(text) { 
 var element = document.getElementById('dialog-inner2'); $("#dialog-inner2").html(text);
 var positionInfo = element.getBoundingClientRect();
@@ -401,8 +415,7 @@ var domainFound = false;
 var info;
 function showDomain(domain) { $.get("doc/domain/"+domain, function(data) {setDialog(renderMd(data));}).fail(function(){setDialog('No domain info found.');});}
 
-function updateInfo(i) { $("#d"+i).html(domains[i].price); if (domains[i].price != "Unlisted") { $("#d"+i).html($("#d"+i).html() + " ETH"); }
-	$("#o"+i).html(addWallet(domains[i].owner)); $("#c"+i).html(addWallet(domains[i].owner)); }
+
 
 function updatePreview() { 
 	$("#editor-image").attr("src", tempArtifact.image_url); $("#editor-image").attr("onclick", "setDialog(tempArtifact.description);"); $("#editor-name").html(tempArtifact.name); }
