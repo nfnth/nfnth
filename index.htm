@@ -71,7 +71,7 @@
 		<!-- list (item) -->
 		<div id="test2"><ul>
 			<li style="padding-top:16px;margin-bottom:12px;display: flex;justify-content: space-evenly;"><div style="display:flex;justify-content:space-evenly;width:100%;"><a id='selLink' class='btn-flat disabled' onclick="selDomain();"><i id="domain-sel-icon" class="material-icons">select_all</i></a><a id="dropdown-domainer" class='dropdown-trigger btn-flat disabled' ref='#' data-target='dropdown-domain'><i class="material-icons">sort</i></a><a id='switchLink' class="waves-effect waves-light btn amber lighten-2 disabled" style="display:inline-flex;align-items:center;" onclick="switchDomain();"><i id="domain-icon" class="material-icons">grid_view</i><span id="domain-name"></span></a></div></li>
-			<li><div id="registry-domain" class="collection" style="overflow:auto;"><a class='collection-item'>no class selected</a></div></li></ul></div></div></div></li></ul>	
+			<li><div id="registry-domain" class="collection" style="overflow:auto;"><a class='collection-item'>No class selected.</a></div></li></ul></div></div></div></li></ul>	
 		
 <!-- panel (domain) -->
 <ul id="user-pane" class="sidenav loader" style="visibility:hidden;overflow:hidden;">
@@ -334,7 +334,7 @@ function addList(i){ var extra = ""; if(domains[i].checked == true) { extra = "c
 		$("#registry-domain").append("<a class='collection-item'><div style='display:flex;justify-content:space-between;'><div><img style='cursor:pointer;' onclick='showView(\"list\"); showList(\"domain\"); flyMark(" + i + ");' class='z-depth-1' width='52' height='30' src='" + domains[i].core.image_url + "'/></div><div style='display:flex; justify-content:space-between;align-items:center;'><span style='color:beige;' class='btn waves-effect waves-light amber lighten-4' onclick='buildWallet(" + i + ");'><i class='material-icons'>account_balance_wallet</i></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style='display:flex; flex-direction:column;'><label style='display:flex;'><input type='checkbox' " + extra + " onclick='setList(" + i + ");' /><span></span></label></div></div></div></a>"); } }
 
 function addListDetail(i) { pullOwner(i); pullPrice(i);
-     	$("#domain-info").html('<div style="display:flex;justify-content:space-evenly;align-items:center;width:100%;padding-top:12px;"><div style="display: flex;flex-direction: column;text-align: left;align-items:center;width:100%;"><div style="display:flex; justify-content:space-evenly; width:360px; margin-bottom:12px;"><div style="cursor:pointer;" id="o'+ i + '"></div></div><div style="margin-bottom:16px;">' + domains[i].name + '&nbsp;&nbsp · &nbsp;&nbsp<a onclick="openInNewTab(\'' + domains[i].core.external_link + '\');">' + domains[i].core.name + '</a></div><br/><div class="z-depth-1 " style="background-color:rgb(255,255,255,0.5); display:flex;justify-content:space-evenly;width:100%; padding:12px;box-shadow:8px -8px 12px 12px inset whitesmoke;" ><a onclick="showMark(\'' + i + '\'); showView(\'map\'); map.resize();" class="modal-close waves-effect waves-light btn amber lighten-1" ><i class="material-icons right">inventory_2</i>View Artifacts</a><a onclick="showMark(\'' + i + '\'); showView(\'map\'); map.resize();" class="modal-close waves-effect waves-light btn blue lighten-1" ><i class="material-icons right">sailing</i><span id="d' + i + '"></span></a></div></div></div>'); } 
+     	$("#domain-info").html('<div style="display:flex;justify-content:space-evenly;align-items:center;width:100%;padding-top:12px;"><div style="display: flex;flex-direction: column;text-align: left;align-items:center;width:100%;"><div style="display:flex; justify-content:space-evenly; width:360px; margin-bottom:12px;"><div style="cursor:pointer;" id="o'+ i + '"></div><div class="z-depth-1 " style="background-color:rgb(255,255,255,0.5); display:flex;justify-content:space-evenly;width:100%; padding:12px;box-shadow:8px -8px 12px 12px inset whitesmoke;" ><a onclick="showMark(\'' + i + '\'); showView(\'map\'); map.resize();" class="modal-close waves-effect waves-light btn amber lighten-1" ><i class="material-icons right">inventory_2</i>View Artifact</a><a onclick="showMark(\'' + i + '\'); showView(\'map\'); map.resize();" class="modal-close waves-effect waves-light btn blue lighten-1" ><i class="material-icons right">sailing</i>View Deed...</a></div></div><div style="margin-bottom:16px;">' + domains[i].name + '&nbsp;&nbsp · &nbsp;&nbsp<a onclick="openInNewTab(\'' + domains[i].core.external_link + '\');">' + domains[i].core.name + '</a></div><br/></div></div>'); } 
 	
 function addListDeed(i) { var embedDisplay = "";
 	//if (domains[i].core.animation_url != null) {  } else { 
@@ -347,12 +347,12 @@ function addListDeed(i) { var embedDisplay = "";
 function artDoc(doc) { $("#somedialog2").css("z-index",1004); document.getElementById('dialog-inner2').scrollTo(0, 0); setDialog(renderMd(artifacts[doc].content)); }
 function tempDoc(doc) {  $("#somedialog2").css("z-index",1004); document.getElementById('dialog-inner2').scrollTo(0, 0); $.get(doc, function(data) { setDialog(renderMd(data)); }); }
 function showDoc(doc) { $("#somedialog2").css("z-index",1004); document.getElementById('dialog-inner2').scrollTo(0, 0); $.get('res/doc/'+doc, function(data) { setDialog(renderMd(data)); }); }
-function buildDoc(i) { $("#somedialog2").css("z-index",1004); document.getElementById('dialog-inner2').scrollTo(0, 0); setDialog(addListDeed(i)); pullOwner(i); pullPrice(i);
+function buildDoc(i) { $("#somedialog2").css("z-index",1004); document.getElementById('dialog-inner2').scrollTo(0, 0); setDialog(addListDeed(i)); 
 		     
 		     $('#deed-pane').sidenav('close'); }
 
 function buildWallet(i) {
-	pullOwner(i);
+	pullOwner(i); // pullPrice(i);
 }
 	
 function updateWallet(i) {
