@@ -65,6 +65,7 @@ function pullDomain(domain) { domainMd = ""; domainMd = new Md();
 	
 	}  }
 
+var showArtifactOpen = true;
 function buildDomain() { $("#registry-artifact").html(""); var extra = ""; 
 	if (artifacts.length == 0) { $("#registry-artifact").append("<a class='collection-item'>no deed selected</a>"); }
 			for (let i = 0; i < artifacts.length; i++) { if(artifacts[i].checked == true) { extra = "checked='checked'"; } 
