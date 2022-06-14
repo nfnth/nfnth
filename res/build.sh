@@ -18,8 +18,8 @@ client="linux linux-firmware syslinux mkinitcpio edk2-shell efibootmgr gptfdisk 
 arch="arch-install-scripts dosfstools"
 #mkinitcpio-archiso ppp pptpclient terminus-font archiso cmake mesa mime-types ntp wget dhcp openscad inkscape gimp blender musescore openshot vulkan? sshpass noto-fonts noto-fonts-extra noto-fonts-emoji intel-ucode amd-ucode tor 
 
-server="gcc haproxy certbot python python-pip glibc" #git
-python="aiohttp asyncio" #web3 aiosmtpd acme certbot" #av aiortc #opencv-python object-mapper
+server="gcc haproxy certbot python python-pip glibc cmake python3" #git
+python="aiohttp asyncio web3" #aiosmtpd acme certbot" #av aiortc #opencv-python object-mapper
 
 timezone="America/Los_Angeles"
 host="nfnth"
