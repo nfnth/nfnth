@@ -25,10 +25,19 @@ function mapLoc() { if (gpsSwitch) { clearMap(); gpsSwitch = false; $("#map-gps"
 	else { if(navigator.geolocation) { navigator.geolocation.getCurrentPosition(geoSuccess, geoError); } else { alert("Geolocation is not supported by this browser.");} } }
 function geoSuccess(position) {tempCoord[1] = position.coords.latitude;tempCoord[0] = position.coords.longitude; gpsSwitch = true; $("#map-gps").addClass("blue"); $("#map-gps").removeClass("grey"); setZoom = 8; fly(tempCoord); addBeacon(tempCoord); beacon = true; } 
 function geoError() { alert('No location'); }
+function mapDeed() {
+	for (var a = 0; a < domains.length; a++) { if (domains[a].checked) { showMark(a); } }
+}
+
+//var middle = [-100.90328686441276, 39.68714979898309];
+//function filterMap(slug) { holder = []; 
+   // for (var a = 0; a < domains.length; a++) { if (domains[a].core.collection.slug == slug) { holder.push(domains[a]); } }
+   // clearMap(); for (let a=0;a<currentMarkers.length;a++){currentMarkers[a].remove(); } currentMarkers = []; domains = holder;
+ //   for (let i=0;i<domains.length;i++) { showMark(i); //}
+//    var place2 = [domains[0].coord.substring(domains[0].coord.indexOf(', ')+1,domains[0].coord.indexOf(']')-1), //domains[0].coord.substring(domains[0].coord.indexOf('[')+1,domains[0].coord.indexOf(',')-1)];
+//    startUp = function() {currentMarkers[0].togglePopup(); };  setZoom = 2; fly(middle);  }
 
 var selectedMark = -1; var mapMark = -1;
-function mapRand() { var rand = []; for (let i=0;i<domains.length;i++) { if (domains[i].checked == true) { rand.push(i); } }
-	mapMark = Math.floor(Math.random() * rand.length); flyMark(rand[mapMark]); }
 function mapRoute() { clearMarkers(); mapMark += 1; if (selectedMark == domains.length) { mapMark = 0; } showMark(mapMark);  }
 var dirSwitch = true;
 //var dirControl = new MapboxDirections({ accessToken: mapboxgl.accessToken });
