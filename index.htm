@@ -118,10 +118,11 @@
     <i class="large material-icons">layers</i>
   </a>
   <ul>
-    <li><a class="btn-floating green lighten-2" onclick="mapLoc();" ><i class="material-icons">near_me</i></a></li>
-    <li><a class="btn-floating green lighten-2" onclick="mapSat();"><i class="material-icons">satellite_alt</i></a></li>
-<li><a class="btn-floating blue lighten-3" onclick="mapLoc();" ><i class="material-icons">inventory_2</i></a></li>
-    <li><a class="btn-floating blue lighten-3" onclick="mapSat();"><i class="material-icons">description</i></a></li>
+    <li><a id="map-loc" class="btn-floating grey lighten-1" onclick="mapLoc();" ><i class="material-icons">near_me</i></a></li>
+    <li><a id="map-sat" class="btn-floating green lighten-1" onclick="mapSat();"><i class="material-icons">satellite_alt</i></a></li>
+<li><a id="map-art" class="btn-floating grey lighten-1" onclick="mapArt();" ><i class="material-icons">inventory_2</i></a></li>
+    <li><a id="map-deed" class="btn-floating grey lighten-1" onclick="mapDeed();"><i class="material-icons">description</i></a></li>
+	  <li><a id="map-me" class="btn-floating blue-accent lighten-1" onclick="mapMe();"><i class="material-icons">bungalow</i></a></li>
   </ul>
 </div></div>
 
@@ -266,14 +267,14 @@ function showList(area) {  $("#registry").html(''); $("#registry").hide();
     switch (area) {
         case "domain": $("#registry-domain").html(''); openDomain();
 		    sortSet = [area,domains,0,18,16]; for (let i=0;i<domains.length;i++) { if (domains[i].hide == false) addList(i); } 
-		    //$("#registry-domain").css("height",(height-48) + "px");
+		    $("#registry-domain").css("height",(height-16) + "px");
 		    //adjustSort(true); 
 		    break;
         case "filter":  sortSet = [area,domains,0,18,16]; domains = holder; for (let i=0;i<domains.length;i++) { 
 		if (domains[i].hide == false) addList(i); } adjustSort(true); break;
         case "open": $("#registry-open").html(''); sortSet = [area,opens,0,18,16]; for (let i=0;i<opens.length;i++) { 
 		if (opens[i].core.slug != "nfnth") { addOpen(i); } else { if (nfnth == true) { addOpen(i); } else { opens[i].checked = false; } } } //adjustSort(false);  
-		    //$("#registry-open").css("height",(height-48) + "px"); 
+		    $("#registry-open").css("height",(height-16) + "px"); 
 		    showList('domain');
 		    break; }
     //$("#registry").css("height",height + "px");
@@ -285,7 +286,7 @@ function openDomain() { var any = false;
 	if (domains[i].core.collection.slug == opens[j].core.slug) { if (opens[j].checked == false) { domains[i].hide = true; } else { domains[i].hide = false; any = true; } }
 	  } } 
 		      if (any) { 
-			      $("#selLink").removeClass('disabled'); $("#dropdown-domainer").removeClass('disabled'); $("#switchLink").removeClass('disabled'); } else { $("#selLink").addClass('disabled'); $("#dropdown-domainer").addClass('disabled'); $("#switchLink").addClass('disabled'); $("#registry-domain").html(""); $("#registry-domain").append("<a class='collection-item'>No class selected</a>"); }
+			      $("#selLink").removeClass('disabled'); $("#dropdown-domainer").removeClass('disabled'); $("#switchLink").removeClass('disabled'); } else { $("#selLink").addClass('disabled'); $("#dropdown-domainer").addClass('disabled'); $("#switchLink").addClass('disabled'); $("#registry-domain").html(""); $("#registry-domain").append("<a class='collection-item'>no class selected</a>"); }
 			      
 		      }
 	
@@ -387,13 +388,7 @@ function open90(a, b) { if (a.count === b.count) {  return 0; } else { return (a
 			
 function filterList(slug) { holder = []; for (var a = 0; a < domains.length; a++) { if (domains[a].core.collection.slug == slug) { holder.push(domains[a]); } } showList('filter'); sorter(); }
 
-var middle = [-100.90328686441276, 39.68714979898309];
-function filterMap(slug) { holder = []; 
-    for (var a = 0; a < domains.length; a++) { if (domains[a].core.collection.slug == slug) { holder.push(domains[a]); } }
-    clearMap(); for (let a=0;a<currentMarkers.length;a++){currentMarkers[a].remove(); } currentMarkers = []; domains = holder;
-    for (let i=0;i<domains.length;i++) { showMark(i); }
-    var place2 = [domains[0].coord.substring(domains[0].coord.indexOf(', ')+1,domains[0].coord.indexOf(']')-1), domains[0].coord.substring(domains[0].coord.indexOf('[')+1,domains[0].coord.indexOf(',')-1)];
-    startUp = function() {currentMarkers[0].togglePopup(); };  setZoom = 2; fly(middle);  }
+
 
 function addWallet(id) {return '<div style="cursor:pointer; display: flex; flex-direction: column; text-align: center;" onclick="copyClip(\'' + id + '\');"><img class="z-depth-1" src="https://chart.googleapis.com/chart?chs=120x120&cht=qr&chl=' + id + '&choe=UTF-8" /><br/><span>Unclaimed  🏞️</span></div>';  }
 
