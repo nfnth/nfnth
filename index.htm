@@ -264,12 +264,14 @@ var complete; var reset = false; var first = true;
 function showList(area) {  $("#registry").html(''); $("#registry").hide(); 
     switch (area) {
         case "domain": $("#registry-domain").html(''); openDomain();
-		    sortSet = [area,domains,0,18,16]; for (let i=0;i<domains.length;i++) { if (domains[i].hide == false) addList(i); }  
+		    sortSet = [area,domains,0,18,16]; for (let i=0;i<domains.length;i++) { if (domains[i].hide == false) addList(i); } 
+		    $("#registry-domain").append("<a class='collection-item'>&nbsp;</a>");
 		    //adjustSort(true); 
 		    break;
         case "filter":  sortSet = [area,domains,0,18,16]; domains = holder; for (let i=0;i<domains.length;i++) { 
 		if (domains[i].hide == false) addList(i); } adjustSort(true); break;
         case "open": $("#registry-open").html(''); sortSet = [area,opens,0,18,16]; for (let i=0;i<opens.length;i++) { addOpen(i); } //adjustSort(false);  
+		    $("#registry-open").append("<a class='collection-item'>&nbsp;</a>");
 		    break; }
     //$("#registry").css("height",height + "px");
     $("#registry").show(); $('img').on('dragstart', function(evt) { return false; }); }
