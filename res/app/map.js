@@ -76,9 +76,9 @@ function convertCoord(coord) { //66°32′56″N 152°50′41″W  Degrees + ((M
 			   long = long.substring(0, long.indexOf('°')); long = "-" + long; }
 	var final, final2;
 	if (isNaN(long) || isNaN(sub) || isNaN(sub2)) { 
-		if (isNaN(long) { final = 0; } else { final = parseInt(long); } } else { final = parseInt(long) + (parseInt(sub)/60) + (parseInt(sub2)/3600); }
+		if (isNaN(long)) { final = 0; } else { final = parseInt(long); } } else { final = parseInt(long) + (parseInt(sub)/60) + (parseInt(sub2)/3600); }
 	if (isNaN(lat) || isNaN(add) || isNaN(add2)) { 
-		if (isNaN(lat) { final2 = 0; } else { final2 = parseInt(lat); } } else { final2 = parseInt(lat)  + (parseInt(add)/60) + (parseInt(add2)/3600); }
+		if (isNaN(lat)) { final2 = 0; } else { final2 = parseInt(lat); } } else { final2 = parseInt(lat)  + (parseInt(add)/60) + (parseInt(add2)/3600); }
 	
 		     return [final, final2];
 }
