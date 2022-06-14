@@ -356,12 +356,15 @@ function buildWallet(i) {
 }
 	
 function updateWallet(i) {
+	
+}
+	
+function updateInfo(i) { 
+	
 	if (domains[i].owner == "0x8a83fbbacb82030ea17179c0403b04e7bce7ba10") { M.toast({html: 'No owner found.'}); } else { 
 	//fly to owner's place...	
 	}
-}
-	
-function updateInfo(i) { $("#d"+i).html(domains[i].price); if (domains[i].price != "Unlisted") { $("#d"+i).html($("#d"+i).html() + " ETH"); }
+	$("#d"+i).html(domains[i].price); if (domains[i].price != "Unlisted") { $("#d"+i).html($("#d"+i).html() + " ETH"); }
 	
 	$("#o"+i).html(addWallet(domains[i].owner)); $("#c"+i).html(addWallet(domains[i].owner)); }
 	
