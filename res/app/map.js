@@ -195,7 +195,7 @@ var mark = base;
 	
 	tempMark = marker;
 	
-	var markup = '<div><div style="display:flex; justify-content:center;"><img width="48" height="48" src="res/img/seal3.png"/></div><div style="margin-top:16px; font-size:16px;"><a>tactician.us</a><br/><br/><a class="waves-effect waves-blue btn blue lighten-2" ><i class="material-icons">description</i></a>&nbsp;&nbsp;<a class="modal-trigger waves-effect waves-light btn amber" href="#modal1" ><i class="material-icons">inventory_2</i></a></div></div>';
+	var markup = '<div><div style="display:flex; justify-content:center;"><img width="48" height="48" src="res/img/seal3.png"/></div><div style="margin-top:16px; font-size:16px;"><a>tactician.us</a><br/><br/><a class="waves-effect waves-blue btn amber lighten-2" onclick="showDoc(\'ur\');"><i class="material-icons">article</i></a>&nbsp;&nbsp;<a class="modal-trigger waves-effect waves-light btn blue lighten-2" href="#modal1" ><i class="material-icons">inventory_2</i></a></div></div>';
 
 	tempMark.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); 	 tempMark.togglePopup();
 	
