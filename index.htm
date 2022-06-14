@@ -263,7 +263,7 @@ function showView(view) {  hideView(); $('#'+view).show();
         case 'map': $("#map-tool").show(); map.resize(); break; } }
 
 var complete; var reset = false; var first = true; var nfnth = false;
-function showNfNth() { if (nfnth) nfnth = false; else nfnth = true; }
+function showNfNth() { if (nfnth) {nfnth = false;} else {nfnth = true;}  }
 function showList(area) {  $("#registry").html(''); $("#registry").hide(); 
     switch (area) {
         case "domain": $("#registry-domain").html(''); openDomain();
@@ -274,7 +274,7 @@ function showList(area) {  $("#registry").html(''); $("#registry").hide();
         case "filter":  sortSet = [area,domains,0,18,16]; domains = holder; for (let i=0;i<domains.length;i++) { 
 		if (domains[i].hide == false) addList(i); } adjustSort(true); break;
         case "open": $("#registry-open").html(''); sortSet = [area,opens,0,18,16]; for (let i=0;i<opens.length;i++) { 
-		if (opens[i].core.slug != "nfnth") { addOpen(i); } else { if (nfnth == true) addOpen(i); } } //adjustSort(false);  
+		if (opens[i].core.slug != "nfnth") { addOpen(i); } else { if (nfnth == true) { addOpen(i); } else { opens[i].checked = false; } } } //adjustSort(false);  
 		    $("#registry-open").css("height",(height-48) + "px");
 		    break; }
     //$("#registry").css("height",height + "px");
