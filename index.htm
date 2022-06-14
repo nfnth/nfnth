@@ -302,7 +302,7 @@ function selOpen() { for (let i=0;i<opens.length;i++) { opens[i].checked = selec
 	if (selectOpen) { selectOpen = false;   $("#open-sel-icon").html("deselect"); } else { selectOpen = true;  $("#open-sel-icon").html("select_all");} }
 
 function buildCollect(slug) { clearMark(); for (let i=0;i<domains.length;i++) { if (domains[i].core.collection.slug == slug) { domains[i].checked = true; showMark(i); } else { domains[i].checked = false; } } }
-function populateMap() {  for (let i=0;i<domains.length;i++) { if (domains[i].checked == true) { showMark(i); } }  }
+
 
 function adjustSize(img) {
     if (img.height >= img.width) { adjustment = (img.height - img.width) / 48; shim = 'padding-right'; img.height = "48"; }
