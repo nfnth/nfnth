@@ -114,14 +114,14 @@
 		<div id="map" class="content loader pane" style="width:100%;"></div>
 		
 <div class="fixed-action-btn">
-  <a class="btn-floating btn-large amber lighten-2">
+  <a class="btn-floating btn-large blue lighten-2">
     <i class="large material-icons">layers</i>
   </a>
   <ul>
     <li><a class="btn-floating green lighten-1" onclick="mapLoc();" ><i class="material-icons">near_me</i></a></li>
     <li><a class="btn-floating green lighten-2" onclick="mapSat();"><i class="material-icons">satellite_alt</i></a></li>
-<li><a class="btn-floating blue lighten-2" onclick="mapLoc();" ><i class="material-icons">inventory_2</i></a></li>
-    <li><a class="btn-floating amber lighten-3" onclick="mapSat();"><i class="material-icons">description</i></a></li>
+<li><a class="btn-floating blue lighten-4" onclick="mapLoc();" ><i class="material-icons">inventory_2</i></a></li>
+    <li><a class="btn-floating blue lighten-3" onclick="mapSat();"><i class="material-icons">description</i></a></li>
   </ul>
 </div></div>
 
@@ -335,7 +335,7 @@ function addListDeed(i) { var embedDisplay = "";
 //embedDisplay = '<video id="vid" style="width:80%;" width="320" height="240" controls loop poster="' + domains[i].core.image_url + '"><source src="https://cdn.jsdelivr.net/gh/nfnth/data@latest/res/media/01G00GY1BXV1FQDHD9TPRYS32P.mp4" type="video/mp4"></video>';
 //function change(a){ document.getElementById('vid').poster=a; document.getElementById('vid').src=a.replace('res/raw/','res/media/').replace('.jpg','.mp4'); }
 		
-	return "<div style='text-align:center;'><p><span style='font-weight:16px'>" + domains[i].name + "</span>&nbsp;&nbsp; · &nbsp;&nbsp;<a onclick='openInNewTab(\"" + domains[i].core.external_link + "\");'>" + domains[i].core.name + "</a></p></div><br/><div id='emDisp' style='text-align:center;'>" + embedDisplay + "</div></br><p>" + domains[i].core.description + "</p><a onclick='openInNewTab(\"" + domains[i].ref + "\");'>Read more...</a><br/><br/><div style='text-align:center;'><img style='max-width:80%;' src='" + domains[i].img + "' /></div><br/><br/><div style='text-align:center;margin:auto;'><a onclick='showView(\"list\"); showList(\"domain\"); flyMark(" + i + ");' class='waves-effect waves-light waves-blue btn amberlighten-3' ><i class='material-icons right' style='width:170px;'>map</i>View Domain</a>&nbsp;&nbsp;<a onclick='openInNewTab(\"" + domains[i].core.permalink + "\");' class='waves-effect waves-light waves-blue btn blue lighten-2' style='width:170px;'><i class='material-icons right'>sailing</i>View Deed...</a></div>";   }
+	return "<div style='text-align:center;'><p><span style='font-weight:16px'>" + domains[i].name + "</span>&nbsp;&nbsp; · &nbsp;&nbsp;<a onclick='openInNewTab(\"" + domains[i].core.external_link + "\");'>" + domains[i].core.name + "</a></p></div><br/><div id='emDisp' style='text-align:center;'>" + embedDisplay + "</div></br><p>" + domains[i].core.description + "</p><a onclick='openInNewTab(\"" + domains[i].ref + "\");'>Read more...</a><br/><br/><div style='text-align:center;'><img style='max-width:80%;' src='" + domains[i].img + "' /></div><br/><br/><div style='text-align:center;margin:auto;'><a onclick='showView(\"list\"); showList(\"domain\"); flyMark(" + i + ");' class='waves-effect waves-light waves-blue btn amber lighten-3' ><i class='material-icons right' style='width:170px;'>map</i>View Domain</a>&nbsp;&nbsp;<a onclick='openInNewTab(\"" + domains[i].core.permalink + "\");' class='waves-effect waves-light waves-blue btn blue lighten-2' style='width:170px;'><i class='material-icons right'>sailing</i>View Deed...</a></div>";   }
 
 function showDoc(doc) { document.getElementById('dialog-inner2').scrollTo(0, 0); $.get('res/doc/'+doc, function(data) { setDialog(renderMd(data)); }); }
 function buildDoc(i) { $("#somedialog2").css("z-index",1004); setDialog(addListDeed(i)); pullOwner(i); pullPrice(i);
@@ -549,7 +549,7 @@ div.active {opacity: 1;height: auto;}
 #domain-info { padding:0; }
 
 nav ul a { color:darkgoldenrod; } nav ul a:hover { color:whitesmoke!important; background-color: goldenrod!important; }
-dropdown-content li>a>i { margin:0 12px 0 0; } .dropdown-content li>a, .dropdown-content li>span { color:darkgoldenrod!important; }
+dropdown-content li>a>i { margin:0 12px 0 0; } .dropdown-content li>a, .dropdown-content li>span { color:darkslategrey!important; }
 	#wallet-icon { color:darkslategrey; }
 	
 .tabs .tab a{ color:black; } /*Black color to the text*/
