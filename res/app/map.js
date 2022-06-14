@@ -74,7 +74,11 @@ function convertCoord(coord) { //66°32′56″N 152°50′41″W  Degrees + ((M
 		     else { long = raw.substring(raw.indexOf(' ')+1, raw.indexOf('W')); 
 			   sub = long.substring(long.indexOf('°')+1, long.indexOf('′')); sub2 = long.substring(long.indexOf('′')+1, long.indexOf('″'));
 			   long = long.substring(0, long.indexOf('°')); long = "-" + long; }
-		     return [parseInt(long) + (parseInt(sub)/60) + (parseInt(sub2)/3600), parseInt(lat)  + (parseInt(add)/60) + (parseInt(add2)/3600)];
+	var final, final2;
+	if (isNaN(long) || isNaN(sub) || isNan(sub2)) { final = 0; } else { final = parseInt(long) + (parseInt(sub)/60) + (parseInt(sub2)/3600); }
+	if (isNaN(lat) || isNaN(add) || isNan(add2)) { final2 = 0; } else { final2 = parseInt(lat)  + (parseInt(add)/60) + (parseInt(add2)/3600); }
+	
+		     return [final, final2];
 }
 function showMark(i) { 
 	var mark = convertCoord(domains[i].coord);
