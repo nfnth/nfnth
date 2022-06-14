@@ -118,14 +118,14 @@ server() {
     pip install --upgrade pip
     pip3 install ${python} -U
 
-    cp /root/os/res/nth.service /etc/systemd/system/nth.service
+    cp /root/res/os/nth.service /etc/systemd/system/nth.service
     systemctl enable nth
     systemctl start nth
 }
 
 domain() {
     openssl ecparam -genkey -name secp384r1 | openssl ec -out ecc-privkey.pem
-    cp /root/os/res/openssl.cnf /etc/ssl/openssl.cnf
+    cp /root/res/os/openssl.cnf /etc/ssl/openssl.cnf
     
     COUNTER=0
     COMMAND=""
@@ -143,12 +143,12 @@ domain() {
             COMMAND=""
             rm 0000_cert.pem
             rm 0000_chain.pem
-            cp /root/os/res/openssl.cnf /etc/ssl/openssl.cnf
+            cp /root/res/os/openssl.cnf /etc/ssl/openssl.cnf
 
             echo "Continue?"
             read input < /dev/tty
         fi
-    done < /root/os/res/domain
+    done < /root/res/os/domain
     
     #echo "DNS.01 = "${domain} >> /etc/ssl/openssl.cnf
     echo $COMMAND
@@ -175,7 +175,7 @@ elif [[ "$1" == "domain" ]]
 then
     mkdir /etc/haproxy/cert
     domain
-    #cp /root/os/res/haproxy.cfg /etc/haproxy/haproxy.cfg
+    cp /root/res/os/haproxy.cfg /etc/haproxy/haproxy.cfg
     systemctl enable haproxy
     systemctl start haproxy
 elif [[ "$1" == "server" ]]
