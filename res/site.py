@@ -36,7 +36,9 @@ async def index(request): #request.remote_addr #if not request.host == "dralun.c
     
     if route == "README.md":
         return web.FileResponse(PATH + 'README.md')
-    elif request.host == "ur.land": #add emoji...ur.land?
+    elif route == "PLANME.md":
+        return web.FileResponse(PATH + 'PLANME.md')
+    elif request.host == "ur.land" or request.host == "dralun.com" or request.host == "mattdown.com":
         return web.FileResponse(PATH + 'index.htm')
 
 async def api(request):
