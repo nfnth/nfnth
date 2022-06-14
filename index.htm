@@ -114,15 +114,16 @@
 		<div id="map" class="content loader pane" style="width:100%;"></div>
 		
 <div class="fixed-action-btn">
-  <a class="btn-floating btn-large blue lighten-2">
+  <a class="btn-floating btn-large amber lighten-2">
     <i class="large material-icons">layers</i>
   </a>
   <ul>
     <li><a id="map-loc" class="btn-floating grey lighten-1" onclick="mapLoc();" ><i class="material-icons">near_me</i></a></li>
     <li><a id="map-sat" class="btn-floating green lighten-1" onclick="mapSat();"><i class="material-icons">satellite_alt</i></a></li>
-<li><a id="map-art" class="btn-floating blue lighten-3" onclick="mapArt();" ><i class="material-icons">inventory_2</i></a></li>
-    <li><a id="map-deed" class="btn-floating blue lighten-3" onclick="mapDeed();"><i class="material-icons">article</i></a></li>
-	  <li><a id="map-me" class="btn-floating blue lighten-1" onclick="mapMe();"><i class="material-icons">bungalow</i></a></li>
+	  <li><a id="map-me" class="btn-floating blue lighten-1" onclick="mapMe();"><i class="material-icons">account_balance_wallet</i></a></li>
+<li><a id="map-art" class="btn-floating amber lighten-3" onclick="mapArt();" ><i class="material-icons">inventory_2</i></a></li>
+    <li><a id="map-deed" class="btn-floating amber lighten-3" onclick="mapDeed();"><i class="material-icons">article</i></a></li>
+	  
   </ul>
 </div></div>
 
@@ -251,7 +252,9 @@ initial();
 document.addEventListener('DOMContentLoaded', function() { });
 
 var mapSwitch = true; var introSwitch = true;
-function populateMap() { }
+function populateMap() {
+if (deedSwitch == false) { deedMap(); }  
+}
 
 function hideView() { $('.modal').modal('close'); window.scrollTo(0, 0); $("#editor").removeClass("scale-in"); $("#map-tool").hide();
 		     $("#editor").removeClass("scale-out"); $("#editor").addClass("scale-out"); $('.pane').hide();}
