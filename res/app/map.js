@@ -99,7 +99,7 @@ function flyMark(i) { if (tempMark != "") { tempMark.remove(); }
 
 	tempMark.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); 
 
-	setZoom = 9; startUp = function() {  tempMark.togglePopup(); }; fly(mark); } 
+	 startUp = function() {  tempMark.togglePopup(); }; $('#deed-pane').sidenav('close'); fly(mark); } 
 
 var inputMark = "";
 function editMark() { if (inputMark != "") { inputMark.remove(); inputMark = ""; }
@@ -181,7 +181,7 @@ function fly(dest) {
     const nowhere = [-75.10664162497726, 45.741025518671464];
     map.fire('click', { latLng: nowhere, point: map.project(nowhere), originalEvent: {} }); flying = true;
     map.on('moveend', function(e){ if(flying){ flying = false; startUp(); } });
-    map.flyTo({ center: dest, zoom: setZoom, bearing: 0, speed: 0.8,  curve: 1,  easing: (t) => t, essential: true }); }
+    map.flyTo({ center: dest, zoom: zoom, bearing: 0, speed: 0.8,  curve: 1,  easing: (t) => t, essential: true }); }
 
 function showIntro() {
 var mark = base;
