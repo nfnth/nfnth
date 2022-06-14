@@ -47,7 +47,7 @@ function pullDomain(domain) { domainMd = ""; domainMd = new Md();
 	if (domain == "tactician.us") { 
 		temp = new Md(); temp.name = "Fort"; temp.color = "blue"; temp.datetime = "now"; temp.location = base2; temp.content = "test"; artifacts.push(temp);
 		temp = new Md(); temp.name = "Supply"; temp.color = "green"; temp.datetime = "now"; temp.location = base3; temp.content = "test2"; artifacts.push(temp);
-		temp = new Md(); temp.name = "Unexplored"; temp.color = "blue"; temp.datetime = "now"; temp.location = base4; temp.content = "test3"; artifacts.push(temp);
+		temp = new Md(); temp.name = "Land"; temp.color = "blue"; temp.datetime = "now"; temp.location = base4; temp.content = "test3"; artifacts.push(temp);
 	
 	
 	} else if (domain == "void") {
@@ -67,7 +67,7 @@ function pullDomain(domain) { domainMd = ""; domainMd = new Md();
 
 var showArtifactOpen = true;
 function buildDomain() { $("#registry-artifact").html(""); var extra = ""; 
-	if (artifacts.length == 0) { $("#registry-artifact").append("<a class='collection-item'>no deed selected</a>"); }
+	if (artifacts.length == 0) { $("#registry-artifact").append("<a class='collection-item'>No deed selected.</a>"); }
 			for (let i = 0; i < artifacts.length; i++) { if(artifacts[i].checked == true) { extra = "checked='checked'"; } 
 	if (showArtifactOpen) {
     		$("#registry-artifact").append("<a class='collection-item'><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;' onclick='showView(\"list\"); showList(\"domain\"); flyArt(" + i + ");'>" + artifacts[i].name + "</div><div style='display:flex; justify-content:space-between;align-items:center;'><div style='display:flex;'><span style='color:beige;' class='btn waves-effect waves-light amber lighten-4' onclick='artDoc(" + i + ");'><i class='material-icons'>article</i></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style='display:flex;align-items:center;'><label style='display:flex;'><input type='checkbox' " + extra + " onclick='setList(" + i + ");' /><span></span></label></div></div></div></div></a>"); } else {
