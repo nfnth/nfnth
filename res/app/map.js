@@ -26,7 +26,7 @@ function mapLoc() { if (gpsSwitch) { clearMap(); gpsSwitch = false; $("#map-loc"
 function geoSuccess(position) {tempCoord[1] = position.coords.latitude;tempCoord[0] = position.coords.longitude; gpsSwitch = true; $("#map-loc").addClass("blue"); $("#map-loc").removeClass("grey"); setZoom = 8; fly(tempCoord); addBeacon(tempCoord); beacon = true; } 
 function geoError() { alert('No location'); }
 function mapDeed() {
-	if (deedSwitch) { populateMap(); deedSwitch = false;  $("#map-deed").removeClass("grey"); $("#map-deed").addClass("blue"); }
+	if (deedSwitch) { deedMap(); deedSwitch = false;  $("#map-deed").removeClass("grey"); $("#map-deed").addClass("blue"); }
 	else { clearMark(); deedSwitch = true; $("#map-deed").addClass("grey"); $("#map-deed").removeClass("blue");} }
 function mapArt() { 
 	if (artSwitch) { artSwitch = false;  $("#map-art").removeClass("grey"); $("#map-art").addClass("blue"); }
@@ -35,7 +35,7 @@ function mapMe() {
 	if (meSwitch) { meSwitch = false;  $("#map-me").removeClass("grey"); $("#map-me").addClass("blue"); }
 	else { meSwitch = true; $("#map-me").addClass("grey"); $("#map-me").removeClass("blue"); }}
 
-function populateMap() {  for (let i=0;i<domains.length;i++) { if (domains[i].checked) { showMark(i); } }  }
+function deedMap() {  for (let i=0;i<domains.length;i++) { if (domains[i].checked) { showMark(i); } }  }
 
 //var middle = [-100.90328686441276, 39.68714979898309];
 //function filterMap(slug) { holder = []; 
