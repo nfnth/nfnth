@@ -24,15 +24,15 @@
 
 	<!-- media -->
 	<a id="doc-hide" class="screen-hide media-menu" href="#!" data-target="doc"><i class="material-icons">sticky_note_2</i></a>
-	<a id="explore-hide" class="screen-hide media-menu" onclick="showView('list'); showList('domain');"><i class="material-icons">map</i></a>
 	<a id="shop-hide" class="screen-hide media-menu" href="#!" data-target="shop"><i class="material-icons">explore</i></a>
+	<a id="explore-hide" class="screen-hide media-menu" onclick="showView('list'); showList('domain');"><i class="material-icons">map</i></a>
     	<a id="search-hide" class="screen-hide media-menu" onclick="showView('search');"><i class="material-icons">search</i></a>
 
     	<!-- desktop -->
     	<ul class="hide-on-med-and-down">
 		<li id="doc-list"><a id="docs" href="#!" data-target="doc"><i class="material-icons left">sticky_note_2</i>DOCS<i class="material-icons right">arrow_drop_down</i></a></li>
-		<li id="doc-list" ><a style="padding-right:24px;" onclick="showView('list'); showList('domain');"><i class="material-icons left">map</i>MAP</a></li>
 		<li id="shop-list"><a id="shops" href="#!" data-target="shop"><i class="material-icons left">explore</i>TOOL<i class="material-icons right">arrow_drop_down</i></a></li>
+		<li id="doc-list" ><a style="padding-right:24px;" onclick="showView('list'); showList('domain');"><i class="material-icons left">map</i>MAP</a></li>
         	<li style="height:64px;" id="search-list">
         		<a style="height:inherit; padding-right:0;"><i onclick="$('#search').focus();" style="height:inherit; padding-right:16px;" class="material-icons">search</i><div id="search-box" class="input-field" style="height:inherit;"><input id="search" type="search" onkeyup="searchResults(this)" style="padding-left:12px; width: calc(100% - 1rem);"><label class="label-icon" for="search" ></label><i class="material-icons" onclick="searchClear()">close</i></div></a></li></ul>
 
@@ -49,7 +49,7 @@
 	<li><a onclick="showDoc('os');"><i class="material-icons">book</i>How to Use urOS</a></li></ul>
 	
 <ul id="shop" class="dropdown-content loader" style="visibility:hidden;">
-	<li><a onclick="showDoc('kit');"><i class="material-icons">shopping_bag</i>UR.Land Collectible</a></li>
+	<li><a onclick="showDoc('kit');"><i class="material-icons">shopping_bag</i>UR.Land Kit</a></li>
 	<li><a onclick="showDoc('ur');"><i class="material-icons">token</i>Trade UR</a></li>
 	<li class="divider"></li>
 	<li><a onclick="openInNewTab('https://opensea.io/nfnth');"><i class="material-icons">sailing</i>OpenSea NFT...</a></li></ul>
@@ -75,7 +75,7 @@
 		
 <!-- panel (domain) -->
 <ul id="user-pane" class="sidenav loader" style="visibility:hidden;overflow:hidden;">
-	<li style="padding-top:16px;margin-bottom:16px;display: flex;justify-content: space-evenly;"><div style="display:flex;justify-content:space-evenly;width:100%;"><a class='btn-flat waves-effect waves-light' onclick="openInNewTab('https://github.com/nfnth/nfnth/issues'); $('#user-pane').sidenav('close');"><i class="material-icons">qr_code</i></a><a class='btn-flat waves-effect waves-light' onclick="openInNewTab('https://github.com/nfnth/nfnth/issues'); $('#user-pane').sidenav('close');"><i class="material-icons">help</i></a><a id="connector" class="waves-effect waves-light btn green lighten-4" style="display:inline-flex;align-items:center;margin-left:12px;" onclick="if (disconnect) {desetup(); $('#user-pane').sidenav('close');} else { setup(); }"><i class="material-icons">account_balance_wallet</i><span>&nbsp;&nbsp;&nbsp;&nbsp;Connect</span></a></div></li>
+	<li style="padding-top:16px;margin-bottom:16px;display: flex;justify-content: space-evenly;"><div style="display:flex;justify-content:space-evenly;width:100%;"><a class='btn-flat waves-effect waves-light' onclick="openInNewTab('https://github.com/nfnth/nfnth/issues'); $('#user-pane').sidenav('close');"><i class="material-icons">qr_code</i></a><a class='btn-flat waves-effect waves-light' onclick="openInNewTab('https://github.com/nfnth/nfnth/issues'); $('#user-pane').sidenav('close');"><i class="material-icons">help</i></a><a id="connector" class="waves-effect waves-light btn blue lighten-4" style="display:inline-flex;align-items:center;margin-left:12px;" onclick="if (disconnect) {desetup(); $('#user-pane').sidenav('close');} else { setup(); }"><i class="material-icons">account_balance_wallet</i><span>&nbsp;&nbsp;&nbsp;&nbsp;Connect</span></a></div></li>
 	
 	<!-- tabs -->
 	<li style="height:100%;"><ul class="tabs tabs-fixed-width z-depth-1 wallet">
@@ -93,12 +93,12 @@
   			<li><a class="waves-effect"><i class="material-icons">landscape</i><span id="dStatus">My Domain Status</span></a></li>
 			<li><a class="waves-effect"><i class="material-icons">inventory_2</i><span id="dArt">My Domain Artifact</span></a></li>
   			<li style="margin-top:12px; display: flex;align-items: center;justify-content: center;margin-bottom:16px;"><select id="domain-template" class="sider" onchange="domainSelect();"><option selected="selected" value="void">No domain selected</option><option value="tactician.us">tactician.us (demo)</option></select></li>
-			<li style="margin-top:16px;"><a class="btn waves-effect waves-light green z-depth-1 lighten-3 disabled" style="width: 240px;margin: auto;border-radius: 8px;" onclick=""><i class="material-icons left">build</i>Edit Profile</a></li></ul></div>
+			<li style="margin-top:16px;"><a class="btn waves-effect waves-light blue z-depth-1 lighten-3 disabled" style="width: 240px;margin: auto;border-radius: 8px;" onclick=""><i class="material-icons left">build</i>Edit Profile</a></li></ul></div>
 			
 		<!-- list (domain) -->
       		<div id="test5"><ul>
 			<li style="padding-top:16px;margin-bottom:12px;display: flex;justify-content: space-evenly;"><div style="display:flex;justify-content:space-evenly;width:100%;"><a id='selink' class='btn-flat disabled' ><i class="material-icons left">select_all</i></a><a id="dropdown-deeder" class='dropdown-trigger btn-flat disabled'  href='#' data-target='dropdown-deed'><i class="material-icons left">sort</i></a><a id="swilink" class="waves-effect waves-light btn blue lighten-2 disabled" style="display:inline-flex;align-items:center;" onclick="switchView();"><i id="view-icon2" class="material-icons">grid_view</i></a></div></li>
- 			<li style="margin-top:16px;margin-bottom:12px;"><div style="display:flex;justify-content:space-evenly;padding-top:12px;padding-bottom:12px;"><a id="adder" class="btn waves-effect waves-light green z-depth-1 lighten-2 disabled" style="width: 120px;border-radius: 8px;" onclick="addArtifact();" ><i class="material-icons left">inventory_2</i>Add</a><a id="editer" class="btn-flat waves-effect waves-light z-depth-1 disabled"><i class="material-icons">edit</i></a><a id="deleter" class="btn-flat waves-effect waves-light z-depth-1 disabled"><i class="material-icons">delete</i></a></div></li>
+ 			<li style="margin-top:16px;margin-bottom:12px;"><div style="display:flex;justify-content:space-evenly;padding-top:12px;padding-bottom:12px;"><a id="adder" class="btn waves-effect waves-light blue z-depth-1 lighten-2 disabled" style="width: 120px;border-radius: 8px;" onclick="addArtifact();" ><i class="material-icons left">inventory_2</i>Add</a><a id="editer" class="btn-flat waves-effect waves-light z-depth-1 disabled"><i class="material-icons">edit</i></a><a id="deleter" class="btn-flat waves-effect waves-light z-depth-1 disabled"><i class="material-icons">delete</i></a></div></li>
 			<li><div id="registry-artifact" class="collection" style="overflow:auto;"></div></li></ul></div></div></div></li></ul>
 
 <!-- view -->
@@ -114,14 +114,14 @@
 		<div id="map" class="content loader pane" style="width:100%;"></div>
 		
 <div class="fixed-action-btn">
-  <a class="btn-floating btn-large green">
+  <a class="btn-floating btn-large blue">
     <i class="large material-icons">layers</i>
   </a>
   <ul>
-    <li><a class="btn-floating green" onclick="mapLoc();" ><i class="material-icons">near_me</i></a></li>
-    <li><a class="btn-floating blue darken-1" onclick="mapSat();"><i class="material-icons">satellite_alt</i></a></li>
-<li><a class="btn-floating green" onclick="mapLoc();" ><i class="material-icons">done_all</i></a></li>
-    <li><a class="btn-floating blue darken-1" onclick="mapSat();"><i class="material-icons">inventory_2</i></a></li>
+    <li><a class="btn-floating green lighten-1" onclick="mapLoc();" ><i class="material-icons">near_me</i></a></li>
+    <li><a class="btn-floating blue lighten-1" onclick="mapSat();"><i class="material-icons">satellite_alt</i></a></li>
+<li><a class="btn-floating blue lighten-2" onclick="mapLoc();" ><i class="material-icons">done_all</i></a></li>
+    <li><a class="btn-floating blue lighten-2" onclick="mapSat();"><i class="material-icons">inventory_2</i></a></li>
   </ul>
 </div></div>
 
@@ -223,7 +223,7 @@ function copyClip(text) { navigator.clipboard.writeText(text); M.toast({html: 'A
 
 var width = window.innerWidth; var height = window.innerHeight + 48;
 async function initial() { $('body').css("background-color","lightgrey");
-	$('.tabs').tabs(); $('.fixed-action-btn').floatingActionButton(); $('select').formSelect();
+	$('.tabs').tabs(); $('.fixed-action-btn').floatingActionButton({ hoverable: false }); $('select').formSelect();
 	$('.modal').modal(); //$('#dialog-inner2').css("height", window.innerHeight - 375);
 	$("#registry-open").css("height",(height - 120) + "px"); $("#registry-domain").css("height",(height - 120) + "px");
     	$("#map").css("height",height + "px"); $("#registry").css("height",height + "px"); showFav('scroller');
