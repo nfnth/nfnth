@@ -8,7 +8,7 @@ function pullOpens() {
     fetch('https://api.opensea.io/api/v1/collections?asset_owner=0x8a83fbbacb82030ea17179c0403b04e7bce7ba10&offset=0&limit=300', options)
       .then(response => response.json()).then(response => {
         for (let i = 0; i < response.length; i++) { var asset = response[i];
-            if (asset.name == "NfNth Collection" || asset.name == "Rarible" || asset.name == "Uniswap V3 Positions") { continue; }
+            if (asset.name == "Rarible" || asset.name == "Uniswap V3 Positions") { continue; }
             var tmp = new Open; tmp.core = asset; opens.push(tmp); } } ).then(response => { for (let i=0;i<opens.length;i++) { opens[i].count = pullOpen(opens[i].core.slug); } }).catch(err => console.error(err)); }
 
 function pullOpen(name) { 
