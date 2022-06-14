@@ -13,7 +13,7 @@ map.on('load', function (event) { //$("head").append('<style type="text/css">.ma
 	showIntro();
     map.on('click', function(e) { coordinates = e.lngLat; if(artFlag) { addArt(); artFlag = false; } $('.fixed-action-btn').floatingActionButton('close'); }); });
 
-var satSwitch = false; var satCenter; var currentToggle = 0; var gpsSwitch = false; var randSwitch = false;
+var satSwitch = false; var satCenter; var currentToggle = 0; var gpsSwitch = false; var artSwitch = true; var deedSwitch = true; var meSwitch = true;
 function mapSat() { satCenter = map.getCenter();
 	if (satSwitch) { mapStyle = 'mapbox://styles/mapbox/satellite-streets-v11'; satSwitch = false; $("#map-sat").addClass("amber");  } else { mapStyle = 'mapbox://styles/mapbox/light-v10'; satSwitch = true; $("#map-sat").removeClass("amber");}
 	map = new mapboxgl.Map({container: 'map', style: mapStyle, center: satCenter, zoom: zoom, buffer_size: 0.2}); 
@@ -26,8 +26,20 @@ function mapLoc() { if (gpsSwitch) { clearMap(); gpsSwitch = false; $("#map-gps"
 function geoSuccess(position) {tempCoord[1] = position.coords.latitude;tempCoord[0] = position.coords.longitude; gpsSwitch = true; $("#map-gps").addClass("blue"); $("#map-gps").removeClass("grey"); setZoom = 8; fly(tempCoord); addBeacon(tempCoord); beacon = true; } 
 function geoError() { alert('No location'); }
 function mapDeed() {
-	for (var a = 0; a < domains.length; a++) { if (domains[a].checked) { showMark(a); } }
-}
+	if (deedSwitch) { for (var a = 0; a < domains.length; a++) { if (domains[a].checked) { showMark(a); } } deedSwitch = false;  $("#map-deed").removeClass("grey"); $("#map-deed").addClass("blue"); }
+	else { clearMark(); deedSwitch = true; $("#map-deed").addClass("grey"); $("#map-deed").removeClass("blue");} }
+function mapArt() { 
+	if (artSwitch) { artSwitch = false;  $("#map-art").removeClass("grey"); $("#map-art").addClass("blue"); }
+	else { artSwitch = true; $("#map-art").addClass("grey"); $("#map-art").removeClass("blue"); } }
+function mapMe() { 
+	if (meSwitch) { meSwitch = false;  $("#map-me").removeClass("grey"); $("#map-me").addClass("blue"); }
+	else { meSwitch = true; $("#map-me").addClass("grey"); $("#map-me").removeClass("blue"); }}
+
+ <li><a id="map-loc" class="btn-floating grey lighten-1" onclick="mapLoc();" ><i class="material-icons">near_me</i></a></li>
+    <li><a id="map-sat" class="btn-floating green lighten-1" onclick="mapSat();"><i class="material-icons">satellite_alt</i></a></li>
+<li><a id="map-art" class="btn-floating blue lighten-3" onclick="mapArt();" ><i class="material-icons">inventory_2</i></a></li>
+    <li><a id="map-deed" class="btn-floating blue lighten-3" onclick="mapDeed();"><i class="material-icons">article</i></a></li>
+	  <li><a id="map-me" class="btn-floating blue lighten-1" onclick="mapMe();"><i class="material-icons">bungalow</i></a></li>
 
 //var middle = [-100.90328686441276, 39.68714979898309];
 //function filterMap(slug) { holder = []; 
