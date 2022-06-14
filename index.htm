@@ -50,7 +50,7 @@
 	
 <ul id="shop" class="dropdown-content loader" style="visibility:hidden;">
 	<li><a onclick="showDoc('scrap');"><i class="material-icons">book</i>Civilian's Field Guide</a></li>
-	<li><a onclick="showDoc('os');"><i class="material-icons">factory</i>UR Builder Gear</a></li>
+	<li><a onclick="showDoc('os');"><i class="material-icons">flashlight_on</i>UR Strack Gear</a></li>
 	<li class="divider"></li>
 	<li><a onclick="openInNewTab('https://opensea.io/nfnth');"><i class="material-icons">sailing</i>OpenSea NFT...</a></li></ul>
 
@@ -310,7 +310,7 @@ function adjustSize(img) {
     else {adjustment = (img.width - img.height) / 48; shim = 'padding-top'; img.width = "48";}
     img.style.setProperty(shim,adjustment+'px'); img.style.setProperty('display','block');}
 	
-function selDomain() { for (let i=0;i<domains.length;i++) { domains[i].checked = selectDomain; } showList('domain');
+function selDomain() { for (let i=0;i<domains.length;i++) { if (domains[i].hide != true) { domains[i].checked = selectDomain; } } showList('domain');
 	if (selectDomain) { selectDomain = false;   $("#domain-sel-icon").html("deselect"); } else { selectDomain = true;  $("#domain-sel-icon").html("select_all");} }
 		    
 function setOpen(i) { if (opens[i].checked == true) { opens[i].checked = false; } else { opens[i].checked = true; } }
