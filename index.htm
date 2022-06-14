@@ -24,15 +24,15 @@
 
 	<!-- media -->
 	<a id="doc-hide" class="screen-hide media-menu" href="#!" data-target="doc"><i class="material-icons">sticky_note_2</i></a>
-	<a id="shop-hide" class="screen-hide media-menu" href="#!" data-target="shop"><i class="material-icons">smartphone</i></a>
 	<a id="explore-hide" class="screen-hide media-menu" onclick="showView('list'); showList('domain');"><i class="material-icons">map</i></a>
+	<a id="shop-hide" class="screen-hide media-menu" href="#!" data-target="shop"><i class="material-icons">smartphone</i></a>
     	<a id="search-hide" class="screen-hide media-menu" onclick="showView('search');"><i class="material-icons">search</i></a>
 
     	<!-- desktop -->
     	<ul class="hide-on-med-and-down">
 		<li id="doc-list"><a id="docs" href="#!" data-target="doc"><i class="material-icons left">sticky_note_2</i>DOCS<i class="material-icons right">arrow_drop_down</i></a></li>
-		<li id="shop-list"><a id="shops" href="#!" data-target="shop"><i class="material-icons left">smartphone</i>TOOL<i class="material-icons right">arrow_drop_down</i></a></li>
 		<li id="doc-list" ><a style="padding-right:24px;" onclick="showView('list'); showList('domain');"><i class="material-icons left">map</i>MAP</a></li>
+		<li id="shop-list"><a id="shops" href="#!" data-target="shop"><i class="material-icons left">smartphone</i>TOOL<i class="material-icons right">arrow_drop_down</i></a></li>
         	<li style="height:64px;" id="search-list">
         		<a style="height:inherit; padding-right:0;"><i onclick="$('#search').focus();" style="height:inherit; padding-right:16px;" class="material-icons">search</i><div id="search-box" class="input-field" style="height:inherit;"><input id="search" type="search" onkeyup="searchResults(this)" style="padding-left:12px; width: calc(100% - 1rem);"><label class="label-icon" for="search" ></label><i class="material-icons" onclick="searchClear()">close</i></div></a></li></ul>
 
@@ -41,18 +41,18 @@
 
 <!-- dropdown -->
 <ul id="doc" class="dropdown-content loader" style="visibility:hidden;">
-	<li><a onclick="showDoc('about');"><i class="material-icons">chair</i>On Deed to Domain</a></li>
+	<li><a onclick="tempDoc('README.md');"><i class="material-icons">chair</i>About Dralun</a></li>
 	<li class="divider"></li>
-	<li><a onclick="showDoc('md');"><i class="material-icons">grass</i>About Artifact Trade</a></li>
-	<li><a onclick="showDoc('trade');"><i class="material-icons">park</i>How to Trade UR</a></li>
+	<li><a onclick="showDoc('about');"><i class="material-icons">grass</i>Use Artifact Trade</a></li>
+	<li><a onclick="showDoc('ur');"><i class="material-icons">park</i>How to Trade UR</a></li>
 	<li class="divider"></li>
-	<li><a onclick="showDoc('os');"><i class="material-icons">fireplace</i>About Dralun</a></li></ul>
+	<li><a onclick="tempDoc('PLANME.md');"><i class="material-icons">fireplace</i>On Deed to Domain</a></li></ul>
 	
 <ul id="shop" class="dropdown-content loader" style="visibility:hidden;">
-	<li><a onclick="showDoc('kit');"><i class="material-icons">book</i>Civilian's Field Guide</a></li>
-	<li><a onclick="showDoc('os');"><i class="material-icons">factory</i>UR Gear</a></li>
+	<li><a onclick="showDoc('scrap');"><i class="material-icons">book</i>Civilian's Field Guide</a></li>
+	<li><a onclick="showDoc('os');"><i class="material-icons">factory</i>UR Builder Gear</a></li>
 	<li class="divider"></li>
-	<li><a onclick="showDoc('ur');"><i class="material-icons">sailing</i>OpenSea NFT...</a></li></ul>
+	<li><a onclick="openInNewTab('https://opensea.io/nfnth');"><i class="material-icons">sailing</i>OpenSea NFT...</a></li></ul>
 
 <!-- panel (deed) -->
 <ul id="deed-pane" class="sidenav loader" style="visibility:hidden;overflow:hidden;">
@@ -75,7 +75,7 @@
 		
 <!-- panel (domain) -->
 <ul id="user-pane" class="sidenav loader" style="visibility:hidden;overflow:hidden;">
-	<li style="padding-top:16px;margin-bottom:16px;display: flex;justify-content: space-evenly;"><div style="display:flex;justify-content:space-evenly;width:100%;"><a class='btn-flat waves-effect waves-light' onclick="openInNewTab('https://github.com/nfnth/nfnth/issues'); $('#user-pane').sidenav('close');"><i class="material-icons">qr_code</i></a><a class='btn-flat waves-effect waves-light' onclick="openInNewTab('https://github.com/nfnth/nfnth/issues'); $('#user-pane').sidenav('close');"><i class="material-icons">help</i></a><a id="connector" class="waves-effect waves-light btn blue lighten-4" style="display:inline-flex;align-items:center;margin-left:12px;" onclick="if (disconnect) {desetup(); $('#user-pane').sidenav('close');} else { setup(); }"><i class="material-icons">account_balance_wallet</i><span>&nbsp;&nbsp;&nbsp;&nbsp;Connect</span></a></div></li>
+	<li style="padding-top:16px;margin-bottom:16px;display: flex;justify-content: space-evenly;"><div style="display:flex;justify-content:space-evenly;width:100%;"><a class='btn-flat waves-effect waves-light' onclick="openInNewTab('https://github.com/nfnth/nfnth/issues'); $('#user-pane').sidenav('close');"><i class="material-icons">settings</i></a><a class='btn-flat waves-effect waves-light' onclick="openInNewTab('https://github.com/nfnth/nfnth/issues'); $('#user-pane').sidenav('close');"><i class="material-icons">help</i></a><a id="connector" class="waves-effect waves-light btn blue lighten-4" style="display:inline-flex;align-items:center;margin-left:12px;" onclick="if (disconnect) {desetup(); $('#user-pane').sidenav('close');} else { setup(); }"><i class="material-icons">account_balance_wallet</i><span>&nbsp;&nbsp;&nbsp;&nbsp;Connect</span></a></div></li>
 	
 	<!-- tabs -->
 	<li style="height:100%;"><ul class="tabs tabs-fixed-width z-depth-1 wallet">
@@ -223,7 +223,7 @@ function copyClip(text) { navigator.clipboard.writeText(text); M.toast({html: 'A
 
 var width = window.innerWidth; var height = window.innerHeight + 48;
 async function initial() { $('body').css("background-color","lightgrey");
-	$('.tabs').tabs(); $('.fixed-action-btn').floatingActionButton({ hoverable: false }); $('select').formSelect();
+	$('.tabs').tabs(); $('.fixed-action-btn').floatingActionButton({ hoverEnabled: false }); $('select').formSelect();
 	$('.modal').modal(); //$('#dialog-inner2').css("height", window.innerHeight - 375);
 	$("#registry-open").css("height",(height - 120) + "px"); $("#registry-domain").css("height",(height - 120) + "px");
     	$("#map").css("height",height + "px"); $("#registry").css("height",height + "px"); showFav('scroller');
@@ -339,9 +339,10 @@ function addListDeed(i) { var embedDisplay = "";
 		
 	return "<div style='text-align:center;'><p><span style='font-weight:16px'>" + domains[i].name + "</span>&nbsp;&nbsp; · &nbsp;&nbsp;<a onclick='openInNewTab(\"" + domains[i].core.external_link + "\");'>" + domains[i].core.name + "</a></p></div><br/><div id='emDisp' style='text-align:center;'>" + embedDisplay + "</div></br><p>" + domains[i].core.description + "</p><a onclick='openInNewTab(\"" + domains[i].ref + "\");'>Read more...</a><br/><br/><div style='text-align:center;'><img style='max-width:80%;' src='" + domains[i].img + "' /></div><br/><br/><div style='text-align:center;margin:auto;'><a onclick='showView(\"list\"); showList(\"domain\"); flyMark(" + i + ");' style='width:160px;' class='waves-effect waves-light waves-blue btn amber lighten-3' ><i class='material-icons right'>map</i>View Domain</a>&nbsp;&nbsp;<a onclick='openInNewTab(\"" + domains[i].core.permalink + "\");' class='waves-effect waves-light waves-blue btn blue lighten-2' style='width:160px;'><i class='material-icons right'>sailing</i>View Deed</a></div>";   }
 
-function artDoc(doc) { $("#somedialog2").css("z-index",1004);  setDialog(renderMd(artifacts[doc].content)); }
+function artDoc(doc) { $("#somedialog2").css("z-index",1004); document.getElementById('dialog-inner2').scrollTo(0, 0); setDialog(renderMd(artifacts[doc].content)); }
+function tempDoc(doc) {  $("#somedialog2").css("z-index",1004); document.getElementById('dialog-inner2').scrollTo(0, 0); $.get(doc, function(data) { setDialog(renderMd(data)); });
 function showDoc(doc) { $("#somedialog2").css("z-index",1004); document.getElementById('dialog-inner2').scrollTo(0, 0); $.get('res/doc/'+doc, function(data) { setDialog(renderMd(data)); }); }
-function buildDoc(i) { $("#somedialog2").css("z-index",1004); setDialog(addListDeed(i)); pullOwner(i); pullPrice(i);
+function buildDoc(i) { $("#somedialog2").css("z-index",1004); document.getElementById('dialog-inner2').scrollTo(0, 0); setDialog(addListDeed(i)); pullOwner(i); pullPrice(i);
 		     
 		     $('#deed-pane').sidenav('close'); }
 
