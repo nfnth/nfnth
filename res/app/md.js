@@ -1,5 +1,5 @@
 
-class Md { content = ""; name = ""; color = ""; datetime = ""; location = ""; }
+class Md { content = ""; name = ""; color = ""; datetime = ""; location = ""; image = ""; checked = false; }
 var domainMd = new Md(); var editMd = new Md();
 
 var renderMd, renderMr, renderMt; // https://regexr.com
