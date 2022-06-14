@@ -58,7 +58,7 @@
 
 <!-- panel (deed) -->
 <ul id="deed-pane" class="sidenav loader" style="visibility:hidden;overflow:hidden;">
-	<li><div class="user-view z-depth-1 amber lighten-5" style="display: flex;margin: auto; padding: 0;align-items: center; padding-left:12px;"><span id="ocuros" style="cursor: pointer;margin:auto; color:darkgreen!important; font-size:18px;border-radius: 8px; opacity: 0.7; height: 36px !important;display: flex;align-items: center;padding-top: 10px;" onclick="showDoc('os'); $('#deed-pane').sidenav('close');" class="badge grey lighten-2" data-badge-caption="v1.08"><img src="res/img/scroll_logo.png" style="width:24px; height:24px; margin-right:8px;" /><span style="font-weight:bold;">urOS ·&nbsp;</span></span><img id="user-pic" style="opacity:0.6; height: 48px;position:absolute; right:0; margin: 12px; cursor:pointer;" onclick="openInNewTab('https://github.com/nfnth'); $('#deed-pane').sidenav('close');"/><img id="user-pic2" style="opacity:0.6; height: 48px;cursor:pointer;margin:12px;" onclick="openInNewTab('https://github.com/nfnth'); $('#deed-pane').sidenav('close');"/></div></li>
+	<li><div class="user-view z-depth-1 amber lighten-5" style="display: flex;margin: auto; padding: 0;align-items: center; padding-left:12px;"><span id="ocuros" style="cursor: pointer;margin:auto; color:darkgreen!important; font-size:18px;border-radius: 8px; opacity: 0.7; height: 36px !important;display: flex;align-items: center;padding-top: 10px;" onclick="showDoc('os'); $('#deed-pane').sidenav('close');" class="badge grey lighten-2" data-badge-caption="v1.08"><img src="res/img/scroll_logo.png" style="width:24px; height:24px; margin-right:8px;" /><span style="font-weight:bold;">urOS ·&nbsp;</span></span><img id="user-pic" style="opacity:0.6; height: 48px;position:absolute; right:0; margin: 12px; cursor:pointer;" onclick="showNfnth(); showList('open');"/><img id="user-pic2" style="opacity:0.6; height: 48px;cursor:pointer;margin:12px;" onclick="openInNewTab('https://github.com/nfnth'); $('#deed-pane').sidenav('close');"/></div></li>
 	
 	<!-- tabs -->
 	<li style="height:100%;"><ul class="tabs tabs-fixed-width z-depth-1">
@@ -262,7 +262,8 @@ function showView(view) {  hideView(); $('#'+view).show();
         case 'list': $('#map').show(); $("#map-tool").show(); map.resize(); break;
         case 'map': $("#map-tool").show(); map.resize(); break; } }
 
-var complete; var reset = false; var first = true;
+var complete; var reset = false; var first = true; var nfnth = false;
+function showNfNth() { if (nfnth) nfnth = false; else nfnth = true; }
 function showList(area) {  $("#registry").html(''); $("#registry").hide(); 
     switch (area) {
         case "domain": $("#registry-domain").html(''); openDomain();
@@ -272,7 +273,8 @@ function showList(area) {  $("#registry").html(''); $("#registry").hide();
 		    break;
         case "filter":  sortSet = [area,domains,0,18,16]; domains = holder; for (let i=0;i<domains.length;i++) { 
 		if (domains[i].hide == false) addList(i); } adjustSort(true); break;
-        case "open": $("#registry-open").html(''); sortSet = [area,opens,0,18,16]; for (let i=0;i<opens.length;i++) { addOpen(i); } //adjustSort(false);  
+        case "open": $("#registry-open").html(''); sortSet = [area,opens,0,18,16]; for (let i=0;i<opens.length;i++) { 
+		if (opens[i].core.slug != "nfnth") { addOpen(i); } else { if (nfnth == true) addOpen(i); } } //adjustSort(false);  
 		    $("#registry-open").css("height",(height-48) + "px");
 		    break; }
     //$("#registry").css("height",height + "px");
