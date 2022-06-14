@@ -15,15 +15,15 @@ map.on('load', function (event) { //$("head").append('<style type="text/css">.ma
 
 var satSwitch = false; var satCenter; var currentToggle = 0; var gpsSwitch = false; var artSwitch = true; var deedSwitch = true; var meSwitch = true;
 function mapSat() { satCenter = map.getCenter();
-	if (satSwitch) { mapStyle = 'mapbox://styles/mapbox/satellite-streets-v11'; satSwitch = false; $("#map-sat").addClass("amber");  } else { mapStyle = 'mapbox://styles/mapbox/light-v10'; satSwitch = true; $("#map-sat").removeClass("amber");}
+	if (satSwitch) { mapStyle = 'mapbox://styles/mapbox/satellite-streets-v11'; satSwitch = false; $("#map-sat").addClass("green"); $("#map-sat").removeClass("grey"); } else { mapStyle = 'mapbox://styles/mapbox/light-v10'; satSwitch = true; $("#map-sat").removeClass("green"); $("#map-sat").addClass("grey");}
 	map = new mapboxgl.Map({container: 'map', style: mapStyle, center: satCenter, zoom: zoom, buffer_size: 0.2}); 
 		  clearMarkers();
 		  for (let a=0;a<currentContent.length;a++) { addMark(currentContent[a][0],currentContent[a][1],currentContent[a][2],currentContent[a][3],currentContent[a][4],currentContent[a][5],currentContent[a][6]); } currentMarkers[currentToggle].togglePopup(); }
 
 var tempCoord = [0,0];
-function mapLoc() { if (gpsSwitch) { clearMap(); gpsSwitch = false; $("#map-gps").addClass("grey"); $("#map-gps").removeClass("blue"); } 
+function mapLoc() { if (gpsSwitch) { clearMap(); gpsSwitch = false; $("#map-loc").addClass("grey"); $("#map-loc").removeClass("green"); } 
 	else { if(navigator.geolocation) { navigator.geolocation.getCurrentPosition(geoSuccess, geoError); } else { alert("Geolocation is not supported by this browser.");} } }
-function geoSuccess(position) {tempCoord[1] = position.coords.latitude;tempCoord[0] = position.coords.longitude; gpsSwitch = true; $("#map-gps").addClass("blue"); $("#map-gps").removeClass("grey"); setZoom = 8; fly(tempCoord); addBeacon(tempCoord); beacon = true; } 
+function geoSuccess(position) {tempCoord[1] = position.coords.latitude;tempCoord[0] = position.coords.longitude; gpsSwitch = true; $("#map-loc").addClass("blue"); $("#map-loc").removeClass("grey"); setZoom = 8; fly(tempCoord); addBeacon(tempCoord); beacon = true; } 
 function geoError() { alert('No location'); }
 function mapDeed() {
 	if (deedSwitch) { for (var a = 0; a < domains.length; a++) { if (domains[a].checked) { showMark(a); } } deedSwitch = false;  $("#map-deed").removeClass("grey"); $("#map-deed").addClass("blue"); }
@@ -34,12 +34,6 @@ function mapArt() {
 function mapMe() { 
 	if (meSwitch) { meSwitch = false;  $("#map-me").removeClass("grey"); $("#map-me").addClass("blue"); }
 	else { meSwitch = true; $("#map-me").addClass("grey"); $("#map-me").removeClass("blue"); }}
-
- <li><a id="map-loc" class="btn-floating grey lighten-1" onclick="mapLoc();" ><i class="material-icons">near_me</i></a></li>
-    <li><a id="map-sat" class="btn-floating green lighten-1" onclick="mapSat();"><i class="material-icons">satellite_alt</i></a></li>
-<li><a id="map-art" class="btn-floating blue lighten-3" onclick="mapArt();" ><i class="material-icons">inventory_2</i></a></li>
-    <li><a id="map-deed" class="btn-floating blue lighten-3" onclick="mapDeed();"><i class="material-icons">article</i></a></li>
-	  <li><a id="map-me" class="btn-floating blue lighten-1" onclick="mapMe();"><i class="material-icons">bungalow</i></a></li>
 
 //var middle = [-100.90328686441276, 39.68714979898309];
 //function filterMap(slug) { holder = []; 
