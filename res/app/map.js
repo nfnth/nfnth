@@ -26,11 +26,11 @@ function mapLoc() { if (gpsSwitch) { clearMap(); gpsSwitch = false; $("#map-loc"
 function geoSuccess(position) {tempCoord[1] = position.coords.latitude;tempCoord[0] = position.coords.longitude; gpsSwitch = true; $("#map-loc").addClass("blue"); $("#map-loc").removeClass("grey"); setZoom = 8; fly(tempCoord); addBeacon(tempCoord); beacon = true; } 
 function geoError() { alert('No location'); }
 function mapDeed() {
-	if (deedSwitch) { deedMap(); deedSwitch = false;  $("#map-deed").removeClass("grey"); $("#map-deed").addClass("blue"); }
-	else { clearMark(); deedSwitch = true; $("#map-deed").addClass("grey"); $("#map-deed").removeClass("blue");} }
+	if (deedSwitch) { deedMap(); deedSwitch = false;  $("#map-deed").removeClass("grey"); $("#map-deed").addClass("amber"); }
+	else { clearMark(); deedSwitch = true; $("#map-deed").addClass("grey"); $("#map-deed").removeClass("amber");} }
 function mapArt() { 
-	if (artSwitch) { artSwitch = false;  $("#map-art").removeClass("grey"); $("#map-art").addClass("blue"); }
-	else { artSwitch = true; $("#map-art").addClass("grey"); $("#map-art").removeClass("blue"); } }
+	if (artSwitch) { artSwitch = false;  $("#map-art").removeClass("grey"); $("#map-art").addClass("amber"); }
+	else { artSwitch = true; $("#map-art").addClass("grey"); $("#map-art").removeClass("amber"); } }
 function mapMe() { 
 	if (meSwitch) { meSwitch = false;  $("#map-me").removeClass("grey"); $("#map-me").addClass("blue"); }
 	else { meSwitch = true; $("#map-me").addClass("grey"); $("#map-me").removeClass("blue"); }}
