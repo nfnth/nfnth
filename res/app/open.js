@@ -2,7 +2,7 @@ var opens = [], deeds = [], domains = [], artifacts = [], claims = []; const opt
 var domainFound = false; var tempArtifact;
 
 class Open { core = "api_object"; count = 0; checked = false; } //asset.name; image_url; banner_image_url; slug;
-class Domain { core = "api_object"; name = "civi"; coord = "key.png"; img = "scene.png"; ref = "wiki.htm"; owner = "me"; price = "0.1"; hide = false; checked = false; map = ""; } // asset.token_id; image_url; image_thumbnail_url; image_preview_url; name; description; external_link; permalink; creator.address; name; parseFloat(asset.sell_orders[0].base_price)/1000000000000000000;
+class Domain { core = "api_object"; name = "civi"; coord = "key.png"; img = "scene.png"; ref = "wiki.htm"; owner = "me"; price = "0.1"; hide = false; checked = false; map = ""; art = []; } // asset.token_id; image_url; image_thumbnail_url; image_preview_url; name; description; external_link; permalink; creator.address; name; parseFloat(asset.sell_orders[0].base_price)/1000000000000000000;
 
 function pullOpens() {
     fetch('https://api.opensea.io/api/v1/collections?asset_owner=0x8a83fbbacb82030ea17179c0403b04e7bce7ba10&offset=0&limit=300', options)
