@@ -71,7 +71,7 @@
 		<!-- list (item) -->
 		<div id="test2"><ul>
 			<li style="padding-top:16px;margin-bottom:12px;display: flex;justify-content: space-evenly;"><div style="display:flex;justify-content:space-evenly;width:100%;"><a id='selLink' class='btn-flat disabled' onclick="selDomain();"><i id="domain-sel-icon" class="material-icons">select_all</i></a><a id="dropdown-domainer" class='dropdown-trigger btn-flat disabled' ref='#' data-target='dropdown-domain'><i class="material-icons">sort</i></a><a id='switchLink' class="waves-effect waves-light btn amber lighten-2 disabled" style="display:inline-flex;align-items:center;" onclick="switchDomain();"><i id="domain-icon" class="material-icons">grid_view</i><span id="domain-name"></span></a></div></li>
-			<li><div id="registry-domain" class="collection" style="overflow:auto;"></div></li></ul></div></div></div></li></ul>	
+			<li><div id="registry-domain" class="collection" style="overflow:auto;"><a class='collection-item'>No class selected</a></div></li></ul></div></div></div></li></ul>	
 		
 <!-- panel (domain) -->
 <ul id="user-pane" class="sidenav loader" style="visibility:hidden;overflow:hidden;">
@@ -280,7 +280,7 @@ function openDomain() { var any = false;
 	if (domains[i].core.collection.slug == opens[j].core.slug) { if (opens[j].checked == false) { domains[i].hide = true; } else { domains[i].hide = false; any = true; } }
 	  } } 
 		      if (any) { 
-			      $("#selLink").removeClass('disabled'); $("#dropdown-domainer").removeClass('disabled'); $("#switchLink").removeClass('disabled'); } else { $("#selLink").addClass('disabled'); $("#dropdown-domainer").addClass('disabled'); $("#switchLink").addClass('disabled'); }
+			      $("#selLink").removeClass('disabled'); $("#dropdown-domainer").removeClass('disabled'); $("#switchLink").removeClass('disabled'); } else { $("#selLink").addClass('disabled'); $("#dropdown-domainer").addClass('disabled'); $("#switchLink").addClass('disabled'); $("#registry-domain").html(""); $("#registry-domain").append("<a class='collection-item'>No class selected</a>"); }
 			      
 		      }
 	
