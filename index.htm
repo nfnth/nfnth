@@ -75,7 +75,7 @@
 		
 <!-- panel (domain) -->
 <ul id="user-pane" class="sidenav loader" style="visibility:hidden;overflow:hidden;">
-	<li style="padding-top:16px;margin-bottom:16px;display: flex;justify-content: space-evenly;"><div style="display:flex;justify-content:space-evenly;width:100%;"><a class='btn-flat waves-effect waves-light' onclick="openInNewTab('https://github.com/nfnth/nfnth/issues'); $('#user-pane').sidenav('close');"><i class="material-icons">settings</i></a><a class='btn-flat waves-effect waves-light' onclick="openInNewTab('https://github.com/nfnth/nfnth/issues'); $('#user-pane').sidenav('close');"><i class="material-icons">help</i></a><a id="connector" class="waves-effect waves-light btn blue lighten-4" style="display:inline-flex;align-items:center;margin-left:12px;" onclick="if (disconnect) {desetup(); $('#user-pane').sidenav('close');} else { setup(); }"><i class="material-icons">account_balance_wallet</i><span>&nbsp;&nbsp;&nbsp;&nbsp;Connect</span></a></div></li>
+	<li style="padding-top:16px;margin-bottom:16px;display: flex;justify-content: space-evenly;"><div style="display:flex;justify-content:space-evenly;width:100%;"><a class='btn-flat waves-effect waves-light' onclick="openInNewTab('https://github.com/nfnth/nfnth/issues'); $('#user-pane').sidenav('close');"><i class="material-icons">settings</i></a><a class='btn-flat waves-effect waves-light' onclick="openInNewTab('https://github.com/nfnth/nfnth/issues'); $('#user-pane').sidenav('close');"><i class="material-icons">help</i></a><a id="connector" class="waves-effect waves-light btn blue lighten-4" style="display:inline-flex;align-items:center;margin-left:12px;" onclick="if (disconnect) {desetup(); } else { setup(); }"><i class="material-icons">account_balance_wallet</i><span>&nbsp;&nbsp;&nbsp;&nbsp;Connect</span></a></div></li>
 	
 	<!-- tabs -->
 	<li style="height:100%;"><ul class="tabs tabs-fixed-width z-depth-1 wallet">
@@ -118,9 +118,9 @@
     <i class="large material-icons">layers</i>
   </a>
   <ul>
-    <li><a class="btn-floating green lighten-1" onclick="mapLoc();" ><i class="material-icons">near_me</i></a></li>
+    <li><a class="btn-floating green lighten-2" onclick="mapLoc();" ><i class="material-icons">near_me</i></a></li>
     <li><a class="btn-floating green lighten-2" onclick="mapSat();"><i class="material-icons">satellite_alt</i></a></li>
-<li><a class="btn-floating blue lighten-4" onclick="mapLoc();" ><i class="material-icons">inventory_2</i></a></li>
+<li><a class="btn-floating blue lighten-3" onclick="mapLoc();" ><i class="material-icons">inventory_2</i></a></li>
     <li><a class="btn-floating blue lighten-3" onclick="mapSat();"><i class="material-icons">description</i></a></li>
   </ul>
 </div></div>
@@ -266,14 +266,15 @@ function showList(area) {  $("#registry").html(''); $("#registry").hide();
     switch (area) {
         case "domain": $("#registry-domain").html(''); openDomain();
 		    sortSet = [area,domains,0,18,16]; for (let i=0;i<domains.length;i++) { if (domains[i].hide == false) addList(i); } 
-		    $("#registry-domain").css("height",(height-48) + "px");
+		    //$("#registry-domain").css("height",(height-48) + "px");
 		    //adjustSort(true); 
 		    break;
         case "filter":  sortSet = [area,domains,0,18,16]; domains = holder; for (let i=0;i<domains.length;i++) { 
 		if (domains[i].hide == false) addList(i); } adjustSort(true); break;
         case "open": $("#registry-open").html(''); sortSet = [area,opens,0,18,16]; for (let i=0;i<opens.length;i++) { 
 		if (opens[i].core.slug != "nfnth") { addOpen(i); } else { if (nfnth == true) { addOpen(i); } else { opens[i].checked = false; } } } //adjustSort(false);  
-		    $("#registry-open").css("height",(height-48) + "px"); showList('domain');
+		    //$("#registry-open").css("height",(height-48) + "px"); 
+		    showList('domain');
 		    break; }
     //$("#registry").css("height",height + "px");
     $("#registry").show(); $('img').on('dragstart', function(evt) { return false; }); }
@@ -337,7 +338,7 @@ function addListDeed(i) { var embedDisplay = "";
 //embedDisplay = '<video id="vid" style="width:80%;" width="320" height="240" controls loop poster="' + domains[i].core.image_url + '"><source src="https://cdn.jsdelivr.net/gh/nfnth/data@latest/res/media/01G00GY1BXV1FQDHD9TPRYS32P.mp4" type="video/mp4"></video>';
 //function change(a){ document.getElementById('vid').poster=a; document.getElementById('vid').src=a.replace('res/raw/','res/media/').replace('.jpg','.mp4'); }
 		
-	return "<div style='text-align:center;'><p><span style='font-weight:16px'>" + domains[i].name + "</span>&nbsp;&nbsp; · &nbsp;&nbsp;<a onclick='openInNewTab(\"" + domains[i].core.external_link + "\");'>" + domains[i].core.name + "</a></p></div><br/><div id='emDisp' style='text-align:center;'>" + embedDisplay + "</div></br><p>" + domains[i].core.description + "</p><a onclick='openInNewTab(\"" + domains[i].ref + "\");'>Read more...</a><br/><br/><div style='text-align:center;'><img style='max-width:80%;' src='" + domains[i].img + "' /></div><br/><br/><div style='text-align:center;margin:auto;'><a onclick='showView(\"list\"); showList(\"domain\"); flyMark(" + i + ");' style='width:160px;' class='waves-effect waves-light waves-blue btn amber lighten-3' ><i class='material-icons right'>map</i>View Domain</a>&nbsp;&nbsp;<a onclick='openInNewTab(\"" + domains[i].core.permalink + "\");' class='waves-effect waves-light waves-blue btn blue lighten-2' style='width:160px;'><i class='material-icons right'>sailing</i>View Deed</a></div>";   }
+	return "<div style='text-align:center;'><p><span style='font-weight:16px'>" + domains[i].name + "</span>&nbsp;&nbsp; · &nbsp;&nbsp;<a onclick='openInNewTab(\"" + domains[i].core.external_link + "\");'>" + domains[i].core.name + "</a></p></div><br/><div id='emDisp' style='text-align:center;'>" + embedDisplay + "</div></br><p>" + domains[i].core.description + "</p><a onclick='openInNewTab(\"" + domains[i].ref + "\");'>Read more...</a><br/><br/><div style='text-align:center;'><img style='max-width:80%;' src='" + domains[i].img + "' /></div><br/><br/><div style='text-align:center;margin:auto;'><a onclick='showView(\"list\"); showList(\"domain\"); flyMark(" + i + ");' style='width:155px;' class='waves-effect waves-light waves-blue btn amber lighten-3' ><i class='material-icons right'>map</i>View Map</a>&nbsp;&nbsp;<a onclick='openInNewTab(\"" + domains[i].core.permalink + "\");' class='waves-effect waves-light waves-blue btn blue lighten-2' style='width:155px;'><i class='material-icons right'>sailing</i>View Deed</a></div>";   }
 
 function artDoc(doc) { $("#somedialog2").css("z-index",1004); document.getElementById('dialog-inner2').scrollTo(0, 0); setDialog(renderMd(artifacts[doc].content)); }
 function tempDoc(doc) {  $("#somedialog2").css("z-index",1004); document.getElementById('dialog-inner2').scrollTo(0, 0); $.get(doc, function(data) { setDialog(renderMd(data)); }); }
