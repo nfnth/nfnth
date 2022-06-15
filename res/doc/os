@@ -1,11 +1,13 @@
 
 ### The urOS manual
 
-[Download ⚙⚙ OCUR]() based on [Arch Linux](https://archlinux.org), a minimal, fast, and easy-to-use, *browser-centric* distro.
+Based on [Arch Linux](https://archlinux.org), a minimal, fast, and easy-to-use, *browser-centric* distro.
 
-- focused on *Firefox-only* development
+- focus on *Firefox-only* development
 - boots in under 10 seconds
-- easy to add additional applications (*Gimp*, *Unreal*, *Android*, *Godot*, etc.)
+- easy to customize (*Gimp*, *Unreal*, *Android*, *Godot*, etc.)
+
+[Download urOS]()
 
 #### Build From Scratch
 
