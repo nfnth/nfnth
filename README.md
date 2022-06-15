@@ -13,7 +13,7 @@ Licensed as [**NfNth Corp**](https://secure.dor.wa.gov/) in the State of Washing
 
 [C-SPAN](https://www.c-span.org) · [Gutenberg](http://www.gutenberg.org) · [Wikipedia](https://www.wikipedia.org/wiki/Special:Random) [news](https://wikipedia.org/wiki/Main_Page)
 
-Use 5% rule (FINRA) to [donate to Ukraine!](https://engine.presearch.org/search?q=donate+to+ukraine) and/or Zion/United Methodist.  *https://imagecompressor.com/*
+Use 5% rule (FINRA) to [donate to Ukraine!](https://engine.presearch.org/search?q=donate+to+ukraine) and/or Zion/United Methodist.  *https://imagecompressor.com/* *https://regexr.com/*
 
 This contract limits our liability, in acceptance, Holder agrees to use Operator's *property* at Holder's own risk. The owner's hereby specifically disclaim any responsibilities, expressed or implied, to protect against the loss of and/or damage to Holder's *property*. Please be safe and take your keys. Lost property non-refundable.
 
