@@ -1,5 +1,5 @@
 
-### [🏳🏴](https://xn--en8hc.ws) [🏳🏳](https://xn--en8ha.ws) NfNth [🏴🏳](https://xn--en8hb.ws) [🏴🏴](https://xn--fn8ha.ws)
+### [🏳🏴](https://xn--en8hc.ws) [🏳🏳](https://xn--en8ha.ws) Nf·Nth [🏴🏳](https://xn--en8hb.ws) [🏴🏴](https://xn--fn8ha.ws)
 
 The [🌳🌳](https://xn--wh8ha.ws) **[DRALUN](https://dralun.com) · [UR.Land](https://ur.land)** project is used to facilitate a historical guide (with map) to geocache and survey in the United States (and North America), also includes [📚📚](https://xn--zt8ha.ws) **[mattdown.com](https://mattdown.com)** documentation.
 
@@ -7,7 +7,7 @@ The [🌳🌳](https://xn--wh8ha.ws) **[DRALUN](https://dralun.com) · [UR.Land]
 - Stores on [BH](https://www.bhphotovideo.com/) with [Northern](https://www.northerntool.com/) [ACE](https://www.acehardware.com/)
 - Ships on [China](https://www.made-in-china.com/products-search/hot-china-products/Intel_Tablet.html) [MPC](https://www.makeplayingcards.com) with [USPS](https://www.usps.com/business/web-tools-apis/documentation-updates.htm)
 
-[Sponsor us](https://github.com/sponsors/nfnth) to be included as an **Affiliate** below.
+[Sponsor Nf·Nth](https://github.com/sponsors/nfnth) to be included as an **Affiliate** below.
 
 <a href="https://opensea.io/nfnth" title="Buy on OpenSea" target="_blank"><img style="margin-left:24px; width:220px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="https://storage.googleapis.com/opensea-static/Logomark/Badge%20-%20Available%20On%20-%20Light.png" alt="Available on OpenSea" /></a>
 
