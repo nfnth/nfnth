@@ -149,6 +149,26 @@
 			    <div>
 				<a onclick="showView('list');" class="waves-effect waves-green green btn"><i class="material-icons right">east</i>Continue</a></div>
 			    <div id="show-progress" class="progress" style="display:none;"><div class="indeterminate"></div></div></div>
+		
+		
+<!-- manual console -->
+	<div id="manual" class="content loader pane scale-transition scale-out">
+		<a id="adder" class="btn waves-effect waves-light green z-depth-1 lighten-2 disabled" style="width: 120px;border-radius: 8px;" onclick="addArtifact();" ><i class="material-icons left">inventory_2</i>Generate Key</a>
+		<a id="adder" class="btn waves-effect waves-light green z-depth-1 lighten-2 disabled" style="width: 120px;border-radius: 8px;" onclick="addArtifact();" ><i class="material-icons left">inventory_2</i>Consume Key</a>
+	
+		...with time?
+
+		<a id="dropdown-map" class="waves-effect waves-light amber lighten-2 btn dropdown-trigger" href='#' data-target='dropdown-maps' style="margin-right:8px;" ><i id="view-icon" class="material-icons left">dynamic_feed</i><span id="view-name">Template</span></a>
+
+		notifications...
+		browser memory... (checks, zoom, map placement)
+	</div>
+		
+<ul id='dropdown-map' class='dropdown-content'>
+    	<li><a href="#!">Light</a></li>
+    	<li><a href="#!">Dark</a></li>
+	<li class="divider" tabindex="-1"></li>
+	<li><a href="#!">Satellite</a></li></ul>
 
 <ul id='dropdown-temp' class='dropdown-content'>
     	<li id="map-sat"><a href="#!" onclick="setTemplate('Empty');"><i class="material-icons">label</i>Empty</a></li>
