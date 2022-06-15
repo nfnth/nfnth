@@ -124,6 +124,30 @@ function flyMark(i) { if (tempMark != "") { tempMark.remove(); }
 
 	 startUp = function() {  tempMark.togglePopup(); }; $('#deed-pane').sidenav('close'); fly(mark); } 
 
+
+function flyArt(i) { if (tempMark != "") { tempMark.remove(); } 
+		     var mark = convertCoord(artifacts[i].location);
+		     //lat = lat.substring(0, lat.indexOf('°')); long = long.substring(0, long.indexOf('°'));
+		     
+		    // 25.815°N 80.224°W
+		     
+	//var mark = [domains[i].coord.substring(domains[i].coord.indexOf(', ')+1,domains[i].coord.indexOf(']')-1), domains[i].coord.substring(domains[i].coord.indexOf('[')+1,domains[i].coord.indexOf(',')-1)];
+	var marv = document.createElement('div'); marv.id = 'marker' + i; 
+	var marker = new mapboxgl.Marker(marv).setLngLat(mark).addTo(map);
+
+    	$('#marker'+i).addClass('markre'); $('#marker'+i).addClass('z-depth-3'); var style=$('#marker'+i).attr('style');
+    	temper = ";background-color:"+ artifacts[i].color + ";border:solid 2px black;"; style += temper; 
+    	//style += ";background-image:url('img/icon/domain/"+folder + "/" +icon+".png'); 
+	$('#marker'+i).attr('style',style); 
+	
+	tempMark = marker;
+	
+	var markup = '<div><div style="display:flex; justify-content:center;"><img onclick="buildDoc(' + i + ');" width="120" height="120" src="res/img/'+artifacts[i].image+'"/></div><div style="margin-top:16px; font-size:16px;"><span>' + artifacts[i].name + '</span><br/><br/><a class="waves-effect waves-blue btn amber lighten-2" onclick="buildWallet(' + i + ');" ><i class="material-icons">account_balance_wallet</i></a>&nbsp;&nbsp;<a class="modal-trigger waves-effect waves-light btn blue lighten-2" href="#modal1" onclick="addListDetail(' + i + ');"><i class="material-icons">inventory_2</i></a></div></div>';
+
+	tempMark.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); 
+
+	 startUp = function() {  tempMark.togglePopup(); }; $('#domain-pane').sidenav('close'); fly(mark); } 
+
 var inputMark = "";
 function editMark() { if (inputMark != "") { inputMark.remove(); inputMark = ""; }
 	var marv = document.createElement('div'); marv.id = 'markerx'; 
