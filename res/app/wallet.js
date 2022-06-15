@@ -50,7 +50,7 @@ function pullDomain(domain) { domainMd = ""; domainMd = new Md();
 		var lines = data.split(/\r?\n/); var fields = lines[0].split('|'); 
 		domainMd.name = fields[0]; domainMd.location = fields[1]; domainMd.color = fields[2]; domainMd.content = fields[3];
 		for (let i = 1; i < lines.length; i++) { 
-			temp = new Md(); fields = lines[i].split('|'); alert(fields[0]);
+			temp = new Md(); fields = lines[i].split('|'); 
 			temp.name = fields[0]; temp.location = fields[1]; temp.color = fields[2]; temp.content = fields[3]; 
 		artifacts.push(temp);
 		}  
@@ -77,7 +77,7 @@ var showArtifactOpen = true;
 function buildDomain() { $("#registry-artifact").html(""); var extra = ""; 
 	if (artifacts.length == 0) { $("#registry-artifact").append("<a class='collection-item'>No deed selected.</a>"); }
 			for (let i = 0; i < artifacts.length; i++) { if(artifacts[i].checked == true) { extra = "checked='checked'"; } 
-	if (showArtifactOpen) {
+	if (showArtifactOpen) { alert(artifacts[i].name);
     		$("#registry-artifact").append("<a class='collection-item'><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;' onclick='showView(\"list\"); showList(\"domain\"); flyArt(" + i + ");'>" + artifacts[i].name + "</div><div style='display:flex; justify-content:space-between;align-items:center;'><div style='display:flex;'><span style='color:beige;' class='btn waves-effect waves-light amber lighten-4' onclick='artDoc(" + i + ");'><i class='material-icons'>article</i></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style='display:flex;align-items:center;'><label style='display:flex;'><input type='checkbox' " + extra + " onclick='setList(" + i + ");' /><span></span></label></div></div></div></div></a>"); } else {
 		$("#registry-artifact").append("<a class='collection-item'><div style='display:flex;justify-content:space-between;'><div><img style='cursor:pointer;' onclick='showView(\"list\"); showList(\"domain\"); flyArt(" + i + ");' class='z-depth-1' width='52' height='30' src='" + artifacts[i].image + "'/></div><div style='display:flex; justify-content:space-between;align-items:center;'><span style='color:beige;' class='btn waves-effect waves-light amber lighten-4' onclick='artDoc(" + i + ");'><i class='material-icons'>article</i></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style='display:flex; flex-direction:column;'><label style='display:flex;'><input type='checkbox' " + extra + " onclick='setList(" + i + ");' /><span></span></label></div></div></div></a>"); }		
 			
