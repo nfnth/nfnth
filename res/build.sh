@@ -12,11 +12,12 @@ password="nfnth" #root password
 user_name="nfnth"
 user_password="nfnth"
 
-#packages...
+#packages... noto-fonts-emoji?
 client="linux linux-firmware syslinux mkinitcpio edk2-shell efibootmgr gptfdisk nano vim iwd dhcpcd wayland weston firefox sudo"
 #xorg-server xorg-xinit xorg-xrandr xorg-xdpyinfo xorg-xinput xterm feh lxde-common lxdm lxsession openbox alsa-utils picom kate" #chromium
 arch="arch-install-scripts dosfstools"
 #mkinitcpio-archiso ppp pptpclient terminus-font archiso cmake mesa mime-types ntp wget dhcp openscad inkscape gimp blender musescore openshot vulkan? sshpass noto-fonts noto-fonts-extra noto-fonts-emoji intel-ucode amd-ucode tor 
+#chromium --enable-features=UseOzonePlatform --ozone-platform=wayland --no-sandbox
 
 server="gcc haproxy certbot python python-pip glibc cmake python3" #git
 python="aiohttp asyncio web3" #aiosmtpd acme certbot" #av aiortc #opencv-python object-mapper
