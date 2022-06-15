@@ -272,7 +272,7 @@ document.addEventListener('DOMContentLoaded', function() { });
 
 var mapSwitch = true; var introSwitch = true;
 function populateMap() {
-if (deedSwitch == false) { deedMap(); }  
+deedMap(); 
 }
 
 function hideView() { $('.modal').modal('close'); window.scrollTo(0, 0); $("#editor").removeClass("scale-in"); $("#map-tool").hide();
