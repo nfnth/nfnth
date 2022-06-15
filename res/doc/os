@@ -1,5 +1,5 @@
 
-### The [⚙⚙](https://xn--x7ha.ws) OCUR manual
+### The urOS manual
 
 [Download ⚙⚙ OCUR]() based on [Arch Linux](https://archlinux.org), a minimal, fast, and easy-to-use, *browser-centric* distro.
 
@@ -23,8 +23,8 @@
 
    ```
    iwctl #station wlan0 connect <network> #exit
-   pacman -Sy && pacman -S git --noconfirm && git clone https://github.com/nfnth/os
-   chmod +x os/build.sh && ./os/build.sh #edit build.sh, res/domain, etc. to set parameters
+   pacman -Sy && pacman -S git --noconfirm && git clone https://github.com/nfnth/nfnth
+   chmod +x nfnth/res/build.sh && nfnth/res/build.sh #edit build.sh, res/os, etc. to set parameters
    ```
 
 That's it. Enjoy!
