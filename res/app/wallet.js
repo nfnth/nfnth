@@ -46,11 +46,11 @@ function pullDomain(domain) { domainMd = ""; domainMd = new Md();
 			     var base2 = [-103.69697959674477, 39.77108807140884]; var base3 = [-101.69697959674477, 33.77108807140884]; var base4 = [-104.69697959674477, 37.77108807140884];
 	if (domain == "tactician.us") { 
 		
-		$.get('res/doc/tactic/tact', function(data) { alert(data);
+		$.get('res/doc/tactic/tact', function(data) { 
 		var lines = data.split(/\r?\n/); var fields = lines[0].split('|'); 
 		domainMd.name = fields[0]; domainMd.location = fields[1]; domainMd.color = fields[2]; domainMd.content = fields[3];
 		for (let i = 1; i < lines.length; i++) { 
-			temp = new Md(); fields = lines[i].split('|');
+			temp = new Md(); fields = lines[i].split('|'); alert(fields[0]);
 			temp.name = fields[0]; temp.location = fields[1]; temp.color = fields[2]; temp.content = fields[3]; 
 		artifacts.push(temp);
 		}  
