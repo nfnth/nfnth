@@ -12,7 +12,6 @@ function pullOpens() {
             var tmp = new Open; tmp.core = asset; opens.push(tmp); } } ).then(response => { for (let i=0;i<opens.length;i++) { opens[i].count = pullOpen(opens[i].core.slug); if (opens[i].core.slug == "nfnth") { opens[i].core.name = "NfNth"; } } }).catch(err => console.error(err)); }
 
 function pullOpen(name) { 
-	
     fetch('https://api.opensea.io/api/v1/assets?limit=50&collection='+name, options)
       .then(response => response.json()) //.then(response => assets = response)
       .then(response => { for (let i = 0; i < response.assets.length; i++) {
