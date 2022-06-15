@@ -344,7 +344,14 @@ function addListDeed(i) { var embedDisplay = "";
 		
 	return "<div style='text-align:center;'><p><span style='font-weight:16px'>" + domains[i].name + "</span>&nbsp;&nbsp; · &nbsp;&nbsp;<a onclick='openInNewTab(\"" + domains[i].core.external_link + "\");'>" + domains[i].core.name + "</a></p></div><br/><div id='emDisp' style='text-align:center;'>" + embedDisplay + "</div></br><p>" + domains[i].core.description + "</p><a onclick='openInNewTab(\"" + domains[i].ref + "\");'>Read more...</a><br/><br/><div style='text-align:center;'><img style='max-width:80%;' src='" + domains[i].img + "' /></div><br/>";   }
 
-function artDoc(doc) { $("#somedialog2").css("z-index",1004); document.getElementById('dialog-inner2').scrollTo(0, 0); setDialog(renderMd(artifacts[doc].content)); }
+function artDoc(doc) { 
+	$.get('res/doc/tactic/' + artifacts[doc].content, function(data) { 
+		$("#somedialog2").css("z-index",1004); document.getElementById('dialog-inner2').scrollTo(0, 0); setDialog(renderMd(data));
+
+	}); 
+	
+	
+	 }
 function tempDoc(doc) {  $("#somedialog2").css("z-index",1004); document.getElementById('dialog-inner2').scrollTo(0, 0); $.get(doc, function(data) { setDialog(renderMd(data)); }); }
 function showDoc(doc) { $("#somedialog2").css("z-index",1004); document.getElementById('dialog-inner2').scrollTo(0, 0); $.get('res/doc/'+doc, function(data) { setDialog(renderMd(data)); }); }
 function buildDoc(i) { $("#somedialog2").css("z-index",1004); document.getElementById('dialog-inner2').scrollTo(0, 0); setDialog(addListDeed(i)); 
