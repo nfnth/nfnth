@@ -33,10 +33,10 @@ function showIntro() {
 
 function showMark(coord, color, image, link, name) { 
 	var mark = convertCoord(coord); var id = name.substring(0, name.indexOf("."));
-	var marv = document.createElement('div'); marv.id = 'marker' + id; $('#marker'+i).addClass('markre'); $('#marker'+id).addClass('z-depth-3'); 
+	var marv = document.createElement('div'); marv.id = 'marker' + id; $('#marker'+id).addClass('markre'); $('#marker'+id).addClass('z-depth-3'); 
 	var style=$('#marker'+id).attr('style'); style += ";background-color:"+ color + ";border:solid 2px black;"; $('#marker'+id).attr('style',style); 
     	//style += ";background-image:url('img/icon/domain/"+folder + "/" +icon+".png'); 
-	var markup = '<div><div style="display:flex; justify-content:center;"><img onclick="buildDoc(' + i + ');" width="120" height="120" src="'+ image +'"/></div><div style="margin-top:16px; font-size:16px;"><a onclick="openInNewTab(\'' + link + '\');">' + name + '</a><br/><br/><a class="waves-effect waves-blue btn amber lighten-2" onclick="buildWallet(' + i + ');" ><i class="material-icons">account_balance_wallet</i></a>&nbsp;&nbsp;<a class="modal-trigger waves-effect waves-light btn blue lighten-2" href="#modal1" onclick="addListDetail(' + i + ');"><i class="material-icons">inventory_2</i></a></div></div>';
+	var markup = '<div><div style="display:flex; justify-content:center;"><img onclick="buildDoc(' + id + ');" width="120" height="120" src="'+ image +'"/></div><div style="margin-top:16px; font-size:16px;"><a onclick="openInNewTab(\'' + link + '\');">' + name + '</a><br/><br/><a class="waves-effect waves-blue btn amber lighten-2" onclick="buildWallet(' + id + ');" ><i class="material-icons">account_balance_wallet</i></a>&nbsp;&nbsp;<a class="modal-trigger waves-effect waves-light btn blue lighten-2" href="#modal1" onclick="addListDetail(' + id + ');"><i class="material-icons">inventory_2</i></a></div></div>';
 
 	if (tempMark != "") { tempMark.remove(); } tempMark = new mapboxgl.Marker(marv).setLngLat(mark).addTo(map);
 	tempMark.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); 
