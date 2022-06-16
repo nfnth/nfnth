@@ -13,3 +13,5 @@ youtube + steam
 
 COIN (VISA) to CHASE + INTL (AKAM) 
 Amtrak? with manual/electronic keypad lock (ABNB)? + GOOG GM/GE/GD/KR? Samsung? MSFT has GitHub
+
+use glassdoor.com
