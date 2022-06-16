@@ -3,9 +3,9 @@
 
 The [🌳🌳](https://xn--wh8ha.ws) **[DRALUN](https://dralun.com) · [UR.Land](https://ur.land)** project is used to facilitate a historical guide (with map) to geocache and survey in the United States (and North America), also includes [📚📚](https://xn--zt8ha.ws) **[mattdown.com](https://mattdown.com)** documentation.
 
-- Runs on [Linode](https://cloud.linode.com) with [name.com](https://www.name.com)
-- Stores on [BH](https://www.bhphotovideo.com/) with [Northern](https://www.northerntool.com/) [ACE](https://www.acehardware.com/)
-- Ships on [China](https://www.made-in-china.com/products-search/hot-china-products/Intel_Tablet.html) [MPC](https://www.makeplayingcards.com) with [USPS](https://www.usps.com/business/web-tools-apis/documentation-updates.htm)
+- Run on [Linode](https://cloud.linode.com) with [name.com](https://www.name.com)
+- Store on [BH](https://www.bhphotovideo.com/) with [Northern](https://www.northerntool.com/) [ACE](https://www.acehardware.com/)
+- Ship on [China](https://www.made-in-china.com/products-search/hot-china-products/Intel_Tablet.html) [MPC](https://www.makeplayingcards.com) with [USPS](https://www.usps.com/business/web-tools-apis/documentation-updates.htm)
 
 [Sponsor Nf·Nth](https://github.com/sponsors/nfnth) to be included as an **Affiliate** below.
 
