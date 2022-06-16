@@ -9,8 +9,7 @@
 |[drive](https://drive.google.com/drive/my-drive)|SSD?|
 |[domains](https://domains.google.com/registrar/)|name.com?|
 
-Microsoft has GitHub
+Amtrak? with manual/electronic keypad lock (ABNB) 
+COIN (VISA) to CHASE + INTL (AKAM) 
 
-Amtrak? with manual/electronic keypad lock and INTL to COIN (VISA) AKAM GOOG (ABNB) GM/GE/GD/KR? xHD
-
-energy? Samsung?
+GOOG GM/GE/GD/KR? Samsung? MSFT has GitHub
