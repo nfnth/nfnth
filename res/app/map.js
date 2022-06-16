@@ -45,6 +45,9 @@ function showMark(coord, color, image, link, name) {
 function showDeed(i) { domains[i].map = showMark(domains[i].coord, getCollect(domains[i].core.collection.slug).replace('.png',''), domains[i].core.image_url, domains[i].core.external_link, domains[i].core.name);  }
 function showArt(i) { artifacts[i].map = showMark(artifacts[i].location, artifacts[i].color, artifacts[i].image, "", artifacts[i].name); }
 
+function deedMap() {  for (let i=0;i<domains.length;i++) { if (domains[i].checked) { showDeed(i); } }  }
+function artMap() {  for (let i=0;i<artifacts.length;i++) { if (artifacts[i].checked) { showArt(i); } }  }
+
 var flying; var startUp; 
 function fly(dest) { const nowhere = [-75.10664162497726, 45.741025518671464];
 	map.fire('click', { latLng: nowhere, point: map.project(nowhere), originalEvent: {} }); flying = true;
@@ -81,7 +84,7 @@ function mapLoc() {
 function geoSuccess(position) {tempCoord[1] = position.coords.latitude;tempCoord[0] = position.coords.longitude; gpsSwitch = true; $("#map-loc").addClass("blue"); $("#map-loc").removeClass("grey"); setZoom = 8; fly(tempCoord); addBeacon(tempCoord); beacon = true; } 
 function geoError() { alert('No location'); }
 
-function deedMap() {  for (let i=0;i<domains.length;i++) { if (domains[i].checked) { showMark(i); } }  }
+
 
 //https://api.mapbox.com/directions/v5/mapbox/driving/-73.99472793733248%2C40.73149739904491%3B-73.99268258837725%2C40.733942291758495%3B-73.98966737911867%2C40.73255977417804?alternatives=true&geometries=geojson&language=en&overview=simplified&steps=true&access_token=YOUR_MAPBOX_ACCESS_TOKEN
 
