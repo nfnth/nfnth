@@ -37,7 +37,7 @@ function showMark(coord, color, image, link, name, id) {
 	var marp = new mapboxgl.Marker(marv).setLngLat(mark).addTo(map);
 	
 	$('#marker'+id).addClass('markre'); $('#marker'+id).addClass('z-depth-3'); 
-	var style=$('#marker'+id).attr('style'); style += ";background-color:"+ color + ";border:solid 2px black;"; //alert(style); $('#marker'+id).attr('style',style); 
+	var style=$('#marker'+id).attr('style'); style += ";background-color:"+ color + ";border:solid 2px black;"; $('#marker'+id).attr('style',style); 
     	//style += ";background-image:url('img/icon/domain/"+folder + "/" +icon+".png'); 
 	var markup = '<div><div style="display:flex; justify-content:center;"><img style="cursor:pointer;" onclick="buildDoc(' + id + ');" width="120" height="120" src="'+ image +'"/></div><div style="margin-top:16px; font-size:16px;"><a onclick="openInNewTab(\'' + link + '\');">' + name + '</a><br/><br/><a class="waves-effect waves-blue btn amber lighten-2" onclick="buildWallet(' + id + ');" ><i class="material-icons">account_balance_wallet</i></a>&nbsp;&nbsp;<a class="modal-trigger waves-effect waves-light btn blue lighten-2" href="#modal1" onclick="addListDetail(' + id + ');"><i class="material-icons">inventory_2</i></a></div></div>';
 
@@ -46,6 +46,7 @@ function showMark(coord, color, image, link, name, id) {
 	
 	return marp; } //$('.materialboxed').materialbox(); 
 
+function showTemp(i) { if (tempMark != "") { tempMark.remove(); } tempMark = showMark(domains[i].coord, getCollect(domains[i].core.collection.slug).replace('.png',''), domains[i].core.image_url, domains[i].core.external_link, domains[i].core.name, i);  }
 function showDeed(i) { domains[i].map = showMark(domains[i].coord, getCollect(domains[i].core.collection.slug).replace('.png',''), domains[i].core.image_url, domains[i].core.external_link, domains[i].core.name, i);  }
 function showArt(i) { artifacts[i].map = showMark(artifacts[i].location, artifacts[i].color, artifacts[i].image, "", artifacts[i].name); }
 
@@ -58,7 +59,7 @@ function fly(dest) { const nowhere = [-75.10664162497726, 45.741025518671464];
     	map.on('moveend', function(e){ if(flying){ flying = false; startUp(); } });
     	map.flyTo({ center: dest, zoom: zoom, bearing: 0, speed: 0.8,  curve: 1,  easing: (t) => t, essential: true }); }
 
-function flyMark(i) {  showDeed(i); 
+function flyMark(i) {  showTemp(i); 
 	startUp = function() {  domains[i].map.togglePopup(); }; $('#deed-pane').sidenav('close'); fly(convertCoord(domains[i].coord)); } 
 function flyArt(i) { showArt(i); 
 	startUp = function() {  tempMark.togglePopup(); }; $('#user-pane').sidenav('close'); fly(convertCoord(artifacts[i].location)); } 
