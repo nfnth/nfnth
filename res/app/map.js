@@ -64,7 +64,7 @@ function flyMark(i) {  showTemp(i);
 function flyArt(i) { showArt(i); 
 	startUp = function() {  tempMark.togglePopup(); }; $('#user-pane').sidenav('close'); fly(convertCoord(artifacts[i].location)); } 
 
-function mapAdd() { clearMarkers(); M.toast({html: 'Select location...'}); artFlag = true; } 
+function mapAdd() { clearMark(); M.toast({html: 'Select location...'}); artFlag = true; } 
 function addArt() { clearMark(); showEdit(); tempMark.togglePopup(); }
 function showEdit() { if (tempMark != "") { tempMark.remove(); tempMark = ""; }
 	var marv = document.createElement('div'); marv.id = 'markerx'; 
