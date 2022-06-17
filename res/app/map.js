@@ -60,7 +60,7 @@ function fly(dest) { const nowhere = [-75.10664162497726, 45.741025518671464];
     	map.flyTo({ center: dest, zoom: zoom, bearing: 0, speed: 0.8,  curve: 1,  easing: (t) => t, essential: true }); }
 
 function flyMark(i) {  showTemp(i); 
-	startUp = function() {  domains[i].map.togglePopup(); }; $('#deed-pane').sidenav('close'); fly(convertCoord(domains[i].coord)); } 
+	startUp = function() {  tempMark.togglePopup(); }; $('#deed-pane').sidenav('close'); fly(convertCoord(domains[i].coord)); } 
 function flyArt(i) { showArt(i); 
 	startUp = function() {  tempMark.togglePopup(); }; $('#user-pane').sidenav('close'); fly(convertCoord(artifacts[i].location)); } 
 
