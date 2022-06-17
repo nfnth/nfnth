@@ -41,10 +41,13 @@ function domainSelect() {
 	var d = document.getElementById("domain-template"); var dt = d.options[d.selectedIndex].text; var dv = d.options[d.selectedIndex].value; 
     	if (dt == 'No domain selected') { $("#poster").addClass("disabled"); $("#trader").addClass("disabled");$("#builder").addClass("disabled"); 
 		$('#myDomain').hide().html("My Domain Balance").removeClass("badge").removeClass("amber").fadeIn('slow');
-		$("#myArt").html('My Domain Artifact'); }
+		$("#myArt").hide().html("My Domain Artifact").removeClass("badge").removeClass("blue").fadeIn('slow'); }
     	else { $("#poster").removeClass("disabled");  $("#trader").removeClass("disabled"); $("#builder").removeClass("disabled");
 	      $('#myDomain').hide().html("24,901 UR").addClass("badge").addClass("amber").fadeIn('slow');
-	     $("#myArt").html('9 artifact');} pullDomain(dv);  }
+	      $('#myArt').hide().html("9 artifact").addClass("badge").addClass("blue").fadeIn('slow');
+	        
+	     
+	     } pullDomain(dv);  }
 
 function pullDomain(domain) { domainMd = ""; domainMd = new Md(); 
 	$("#selink").removeClass("disabled"); $("#dropdown-deeder").removeClass("disabled"); $("#swilink").removeClass("disabled");
@@ -75,7 +78,7 @@ var showArtifactOpen = true;
 function buildDomain() { $("#registry-artifact").html(""); var extra = ""; 
 	if (artifacts.length == 0) { $("#registry-artifact").append("<a class='collection-item'>No deed selected.</a>"); }
 	for (let i = 0; i < artifacts.length; i++) { if(artifacts[i].checked == true) { extra = "checked='checked'"; } 
-		if (showArtifactOpen) { $("#registry-artifact").append("<a class='collection-item'><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;' onclick='showView(\"list\"); showList(\"domain\"); flyArt(" + i + ");'>" + artifacts[i].name + "</div><div style='display:flex; justify-content:space-between;align-items:center;'><div style='display:flex;'><span style='color:aliceblue;' class='btn waves-effect waves-light blue lighten-4' onclick='artDoc(" + i + ");'><i class='material-icons'>article</i></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style='display:flex;align-items:center;'><label style='display:flex;'><input type='checkbox' " + extra + " onclick='setList(" + i + ");' /><span></span></label></div></div></div></div></a>"); } 
+		if (showArtifactOpen) { $("#registry-artifact").append("<a class='collection-item'><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;' onclick='showView(\"list\"); showList(\"domain\"); flyArt(" + i + ");'>" + artifacts[i].name + "</div><div style='display:flex; justify-content:space-between;align-items:center;'><div style='display:flex;'><span style='color:aliceblue;' class='btn waves-effect waves-light blue lighten-4' onclick='artDoc(" + i + "); $('#user-pane').sidenav('close');'><i class='material-icons'>article</i></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style='display:flex;align-items:center;'><label style='display:flex;'><input type='checkbox' " + extra + " onclick='setList(" + i + ");' /><span></span></label></div></div></div></div></a>"); } 
 		else { $("#registry-artifact").append("<a class='collection-item'><div style='display:flex;justify-content:space-between;'><div><img style='cursor:pointer;' onclick='showView(\"list\"); showList(\"domain\"); flyArt(" + i + ");' class='z-depth-1' width='52' height='30' src='" + artifacts[i].image + "'/></div><div style='display:flex; justify-content:space-between;align-items:center;'><span style='color:beige;' class='btn waves-effect waves-light blue lighten-4' onclick='artDoc(" + i + ");'><i class='material-icons'>article</i></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style='display:flex; flex-direction:column;'><label style='display:flex;'><input type='checkbox' " + extra + " onclick='setList(" + i + ");' /><span></span></label></div></div></div></a>"); }	}  }
 
 function postDomain() {
