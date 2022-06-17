@@ -521,7 +521,9 @@ function switchTime() {
 
 function colorStart() { document.getElementById("favcolor").focus(); document.getElementById("favcolor").click(); }
 // add calculator... //replace youtube with html5 video?
-function textStart() { setDialog($("#editor").html()); }
+function textStart() { showView('editor'); }
+	
+	//setDialog($("#editor").html()); }
 	
 function searchResults(text) { if(event.key === 'Enter') { openInNewTab('https://presearch.com/search?q=' + $(text).val()); }}</script>
 <script src="res/app/map.js"></script>
