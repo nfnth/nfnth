@@ -137,10 +137,10 @@
 		<div style="display:flex;  align-items: center; justify-content: space-evenly; margin:12px; margin-top:24px;">
 			
 			
-		<div><a id="dropdown-template" class="waves-effect waves-light amber lighten-2 btn dropdown-trigger" href='#' data-target='dropdown-temp' style="margin-right:8px; width:140px;" ><i id="view-icon" class="material-icons left">dynamic_feed</i>Template</a>
-			<a id="dropdown-file" class="waves-effect waves-light amber lighten-3 btn dropdown-trigger" href='#' data-target='dropdown-file' style="margin-right:8px; width:140px;" ><i id="view-icon" class="material-icons left">attach_file</i>File...</a>
-			<a style="margin-right:8px; width:140px;" onclick="showPreview();" class="waves-effect waves-grey btn-flat"><i class="material-icons left">web_asset</i>Preview</a>
-			<a style="margin-right:8px; width:140px;" onclick="clearEditor();" class="waves-effect waves-grey btn-flat"><i class="material-icons left">refresh</i>Clear</a></div>
+		<div><a id="dropdown-template" class="waves-effect waves-light amber lighten-2 btn dropdown-trigger" href='#' data-target='dropdown-temp' style="margin-right:8px; width:150px;" ><i id="view-icon" class="material-icons left">dynamic_feed</i>Template</a>
+			<a id="dropdown-file" class="waves-effect waves-light amber lighten-3 btn dropdown-trigger" href='#' data-target='dropdown-file' style="margin-right:8px; width:150px;" ><i id="view-icon" class="material-icons left">attach_file</i>File...</a>
+			<a style="margin-right:8px; width:150px;" onclick="showPreview();" class="waves-effect waves-grey btn-flat"><i class="material-icons left">web_asset</i>Preview</a>
+			<a style="margin-right:8px; width:150px;" onclick="clearEditor();" class="waves-effect waves-grey btn-flat"><i class="material-icons left">refresh</i>Clear</a></div>
 			<div><a onclick="showView('list');" class="waves-effect waves-green green btn"><i class="material-icons right">save</i><span class='edit-device'>Save</span></a>
 			<a onclick="showPreview();" class="waves-effect waves-grey btn-flat"><i class="material-icons">cancel</i></a></div></div>
   
@@ -567,9 +567,9 @@ nav ul a {display: flex!important; align-items: center; width:100%;}
 .hiddenfile { width: 0px;height: 0px;overflow: hidden;}
 
 /* mobile */
-	.screen-hide {display:none;} .edit-device { width:120px; }
+	.screen-hide {display:none;} 
 	.media-menu { color:darkgoldenrod; }
-	@media screen and (max-width: 999px) {.edit-device {display:none;} .mobile-hide {display:none;} .screen-hide {display:block;} .card {width:100%!important;} #setting-wallet { width:60px; }}
+	@media screen and (max-width: 999px) { .mobile-hide {display:none;} .screen-hide {display:block;} .card {width:100%!important;} #setting-wallet { width:60px; }}
 @media screen and (max-height: 450px) {.sidenav {padding-top: 15px;}.sidenav a {font-size: 18px;}}
 	
 @media screen and (max-width: 800px) {/* 8.5 x 11 with even centered 8 .logo { width: 36px; height:36px; }*/}
@@ -579,6 +579,8 @@ nav ul a {display: flex!important; align-items: center; width:100%;}
 code { white-space: break-spaces;}
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
 
+	#pad:focus { outline:none; }
+	
 ::backdrop{background-color: white;}
 div.active {opacity: 1;height: auto;}
 
