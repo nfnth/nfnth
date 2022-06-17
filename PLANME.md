@@ -15,3 +15,8 @@ COIN (VISA) to CHASE + INTL (AKAM)
 Amtrak? with manual/electronic keypad lock (ABNB)? + GOOG GM/GE/GD/KR? Samsung? MSFT has GitHub
 
 use glassdoor.com
+
+AMD? https://store.chuwi.com/products/chuwi-rzbox
+
+https://store.chuwi.com/products/chuwi-hipad-x
+https://www.getdroidtips.com/unlock-bootloader-chuwi-hipad-x/
