@@ -66,7 +66,8 @@ function flyArt(i) { showArt(i);
 
 function mapAdd() { clearMark(); M.toast({html: 'Select location...'}); artFlag = true; } 
 function addArt() { clearMark(); showEdit(); tempMark.togglePopup(); 
-		   coordinates[0] -= 40; map.flyTo({ center: coordinates, zoom: zoom, bearing: 0, speed: 0.8,  curve: 1,  easing: (t) => t, essential: true }); }
+		   coordinates[0] -= 40; //map.flyTo({ center: coordinates, zoom: zoom, bearing: 0, speed: 0.8,  curve: 1,  easing: (t) => t, essential: true });
+		  }
 function showEdit() { if (tempMark != "") { tempMark.remove(); tempMark = ""; }
 	var marv = document.createElement('div'); marv.id = 'markerx'; 
 	tempMark = new mapboxgl.Marker(marv).setLngLat(coordinates).addTo(map);
