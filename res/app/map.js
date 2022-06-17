@@ -68,11 +68,12 @@ function mapAdd() { clearMark(); M.toast({html: 'Select location...'}); artFlag 
 function addArt() { clearMark(); showEdit(); tempMark.togglePopup(); }
 function showEdit() { if (tempMark != "") { tempMark.remove(); tempMark = ""; }
 	var marv = document.createElement('div'); marv.id = 'markerx'; 
+	tempMark = new mapboxgl.Marker(marv).setLngLat(coordinates).addTo(map);
     	$('#markerx').addClass('markre'); $('#markerx').addClass('z-depth-3'); var style=$('#markerx').attr('style');
     	style += ";background-color:red;border:solid 2px black;"; $('#markerx').attr('style',style);
     	//style += ";background-image:url('img/icon/domain/"+folder + "/" +icon+".png'); 
 		     
-	tempMark = new mapboxgl.Marker(marv).setLngLat(coordinates).addTo(map);
+	
 	tempMark.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(editContent)); }
 
 
