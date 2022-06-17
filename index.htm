@@ -92,10 +92,11 @@
 			<li><a class="waves-effect"><i class="material-icons">token</i><span id="myURL">My UR Balance</span></a></li>
   			<li><div style="margin-top:0;" class="divider"></div></li><!--<i class="material-icons left">calculate</i>-->
   			<li><a class="subheader">Domain Information</a></li>
-  			<li><a class="waves-effect"><i class="material-icons">landscape</i><span id="dStatus">My Domain Status</span></a></li>
+  			<li><a class="waves-effect"><i class="material-icons">landscape</i><span id="dStatus">My Domain Balance</span></a></li>
 			<li><a class="waves-effect"><i class="material-icons">inventory_2</i><span id="dArt">My Domain Artifact</span></a></li>
   			<li style="margin-top:12px; display: flex;align-items: center;justify-content: center;margin-bottom:16px;"><select id="domain-template" class="sider" onchange="domainSelect();"><option selected="selected" value="void">No domain selected</option><option value="tactician.us">tactician.us (demo)</option></select></li>
-			<li style="margin-top:16px;"><a id="builder" class="btn waves-effect waves-light green z-depth-1 lighten-3 disabled" style="width: 240px;margin: auto;border-radius: 8px;" onclick="mapAdd();$('#user-pane').sidenav('close');"><i class="material-icons left">build</i>Build Profile</a></li></ul></div>
+			<li style="margin-top:16px;margin-bottom:12px;"><a id="builder" class="btn waves-effect waves-light green z-depth-1 lighten-3 disabled" style="width: 240px;margin: auto;border-radius: 8px;" onclick="mapAdd();$('#user-pane').sidenav('close');"><i class="material-icons left">build</i>Build Profile</a></li>
+			<li style="margin-top:16px;"><a id="builder" class="btn waves-effect waves-light green z-depth-1 lighten-3 disabled" style="width: 240px;margin: auto;border-radius: 8px;" onclick="mapAdd();$('#user-pane').sidenav('close');"><i class="material-icons left">token</i>Trade UR</a></li></ul></div>
 			
 		<!-- list (domain) -->
       		<div id="test5"><ul>
@@ -134,10 +135,13 @@
     	<!-- editor -->
     	<div id="editor" class="content loader pane scale-transition scale-out">
 		<div style="display:flex;  align-items: center; justify-content: center; margin:12px; margin-top:24px;">
-			<a id="dropdown-template" class="waves-effect waves-light amber lighten-2 btn dropdown-trigger" href='#' data-target='dropdown-temp' style="margin-right:8px;" ><i id="view-icon" class="material-icons">dynamic_feed</i></a>
-			<a id="dropdown-file" class="waves-effect waves-light amber lighten-3 btn dropdown-trigger" href='#' data-target='dropdown-file' style="margin-right:8px;" ><i id="view-icon" class="material-icons left">attach_file</i></a>
-			<a onclick="showPreview();" class="waves-effect waves-grey btn-flat"><i class="material-icons left">web_asset</i>Preview</a>
-			<a onclick="clearEditor();" class="waves-effect waves-grey btn-flat"><i class="material-icons left">refresh</i>Clear</a><a onclick="showView('list');" class="waves-effect waves-green green btn"><i class="material-icons right">save</i>Save</a></div>
+			<div>
+				<a onclick="showPreview();" class="waves-effect waves-grey btn-flat"><i class="material-icons left">web_asset</i>Preview</a>
+			<a onclick="clearEditor();" class="waves-effect waves-grey btn-flat"><i class="material-icons left">refresh</i>Clear</a></div>
+			
+		<div><a id="dropdown-template" class="waves-effect waves-light amber lighten-2 btn dropdown-trigger" href='#' data-target='dropdown-temp' style="margin-right:8px;" ><i id="view-icon" class="material-icons">dynamic_feed</i></a>
+			<a id="dropdown-file" class="waves-effect waves-light amber lighten-3 btn dropdown-trigger" href='#' data-target='dropdown-file' style="margin-right:8px;" ><i id="view-icon" class="material-icons">attach_file</i></a></div>
+			<div><a onclick="showPreview();" class="waves-effect waves-grey btn-flat"><i class="material-icons">cancel</i></a><a onclick="showView('list');" class="waves-effect waves-green green btn"><i class="material-icons right">save</i>Save</a></div></div>
   
         	<div id="pad" class="z-depth-2" contentEditable="true" style="text-align:left; overflow-y: auto; width:90%; border:1px solid darkgrey; box-shadow: 1px 1px beige; border-radius: 8px;padding: 12px;margin:auto;font-size:20px;height:100%;">...enter content here...</div>
 			<!--<div style="display:flex;justify-content:space-between;">
@@ -521,7 +525,10 @@ function switchTime() {
 
 function colorStart() { document.getElementById("favcolor").focus(); document.getElementById("favcolor").click(); }
 // add calculator... //replace youtube with html5 video?
-function textStart() { showView('editor'); }
+function textStart() { showView('editor'); var div = document.getElementById('pad');
+setTimeout(function() {
+    div.focus();
+}, 0); }
 	
 	//setDialog($("#editor").html()); }
 	
