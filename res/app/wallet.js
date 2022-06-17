@@ -39,8 +39,8 @@ function emptyDeeds() { $('#domain-template').empty();
 
 function domainSelect() { 
 	var d = document.getElementById("domain-template"); var dt = d.options[d.selectedIndex].text; var dv = d.options[d.selectedIndex].value; 
-    	if (dt == 'No domain selected') { $("#poster").addClass("disabled"); $("#trader").addClass("disabled"); }
-    	else { $("#poster").removeClass("disabled");  $("#trader").removeClass("disabled");   } pullDomain(dv);  }
+    	if (dt == 'No domain selected') { $("#poster").addClass("disabled"); $("#trader").addClass("disabled");$("#builder").addClass("disabled"); }
+    	else { $("#poster").removeClass("disabled");  $("#trader").removeClass("disabled"); $("#builder").removeClass("disabled");  } pullDomain(dv);  }
 
 function pullDomain(domain) { domainMd = ""; domainMd = new Md(); 
 	$("#selink").removeClass("disabled"); $("#dropdown-deeder").removeClass("disabled"); $("#swilink").removeClass("disabled");
