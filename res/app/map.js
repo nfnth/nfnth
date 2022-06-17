@@ -3,7 +3,7 @@ var map; var map_style = ['satellite-streets-v11', 'light-v10', 'dark-v10']; var
 mapboxgl.accessToken = "pk.eyJ1IjoibmZudGgiLCJhIjoiY2tweW1rNXlsMGFpYzJwcGt1cHh6dmxzcyJ9.ZJaFrGpPDv5froWZMLXXYQ";
 map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/mapbox/' + map_style[0], center: base, zoom: zoom, buffer_size: 0.2});
 
-var coordinates; var artFlag = false; var tempMark = "";
+var coordinates; var artFlag = false; var tempMark = ""; var tempMap = [];
 map.on('load', function (event) { 
 	map.on('click', function(e) { coordinates = e.lngLat; if(artFlag) { addArt(); artFlag = false; } $('.fixed-action-btn').floatingActionButton('close'); }); });
 
@@ -31,10 +31,10 @@ function showIntro() {
 	tempMark = new mapboxgl.Marker(marv).setLngLat(base).addTo(map);
 	tempMark.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); tempMark.togglePopup(); }
 
-function showMark(coord, color, image, link, name) { 
-	var mark = convertCoord(coord); var id = name.substring(0, name.indexOf("."));
+function showMark(coord, color, image, link, name, id) { 
+	var mark = convertCoord(coord);
 	var marv = document.createElement('div'); marv.id = 'marker' + id; 
-	if (tempMark != "") { tempMark.remove(); } tempMark = new mapboxgl.Marker(marv).setLngLat(mark).addTo(map);
+	var marp = new mapboxgl.Marker(marv).setLngLat(mark).addTo(map);
 	
 	$('#marker'+id).addClass('markre'); $('#marker'+id).addClass('z-depth-3'); 
 	var style=$('#marker'+id).attr('style'); style += ";background-color:"+ color + ";border:solid 2px black;"; //alert(style); $('#marker'+id).attr('style',style); 
@@ -42,13 +42,14 @@ function showMark(coord, color, image, link, name) {
 	var markup = '<div><div style="display:flex; justify-content:center;"><img onclick="buildDoc(' + id + ');" width="120" height="120" src="'+ image +'"/></div><div style="margin-top:16px; font-size:16px;"><a onclick="openInNewTab(\'' + link + '\');">' + name + '</a><br/><br/><a class="waves-effect waves-blue btn amber lighten-2" onclick="buildWallet(' + id + ');" ><i class="material-icons">account_balance_wallet</i></a>&nbsp;&nbsp;<a class="modal-trigger waves-effect waves-light btn blue lighten-2" href="#modal1" onclick="addListDetail(' + id + ');"><i class="material-icons">inventory_2</i></a></div></div>';
 
 	
-	tempMark.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); 
-	return tempMark; } //$('.materialboxed').materialbox(); 
+	marp.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); 
+	
+	return marp; } //$('.materialboxed').materialbox(); 
 
-function showDeed(i) { domains[i].map = showMark(domains[i].coord, getCollect(domains[i].core.collection.slug).replace('.png',''), domains[i].core.image_url, domains[i].core.external_link, domains[i].core.name);  }
+function showDeed(i) { domains[i].map = showMark(domains[i].coord, getCollect(domains[i].core.collection.slug).replace('.png',''), domains[i].core.image_url, domains[i].core.external_link, domains[i].core.name, i);  }
 function showArt(i) { artifacts[i].map = showMark(artifacts[i].location, artifacts[i].color, artifacts[i].image, "", artifacts[i].name); }
 
-function deedMap() {  for (let i=0;i<domains.length;i++) { if (domains[i].checked) { showDeed(i); } }  }
+function deedMap() { for (let i=0;i<domains.length;i++) { if (domains[i].checked) { showDeed(i); } }  }
 function artMap() {  for (let i=0;i<artifacts.length;i++) { if (artifacts[i].checked) { showArt(i); } }  }
 
 var flying; var startUp; 
