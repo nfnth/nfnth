@@ -93,7 +93,7 @@ function geoError() { alert('No location'); }
 
 //https://api.mapbox.com/directions/v5/mapbox/driving/-73.99472793733248%2C40.73149739904491%3B-73.99268258837725%2C40.733942291758495%3B-73.98966737911867%2C40.73255977417804?alternatives=true&geometries=geojson&language=en&overview=simplified&steps=true&access_token=YOUR_MAPBOX_ACCESS_TOKEN
 
-function clearMark() { clearMap(); if (tempMark != "") { tempMark.remove(); tempMark = ""; }
+function clearMark() { if (tempMark != "") { tempMark.remove(); tempMark = ""; }
 	for (let a=0;a<domains.length;a++){ if (domains[a].map != "") { domains[a].map.remove(); domains[a].map = ""; } } }
 function clearMap() { cancelAnimationFrame(nomadPath); if (pather) { removeLine(); } if (beacon) { removeBeacon(); } pather = false; beacon = false; }
 
