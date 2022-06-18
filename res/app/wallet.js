@@ -40,11 +40,11 @@ function emptyDeeds() { $('#domain-template').empty();
 function domainSelect() { 
 	var d = document.getElementById("domain-template"); var dt = d.options[d.selectedIndex].text; var dv = d.options[d.selectedIndex].value; 
     	if (dt == 'No domain selected') { $("#poster").addClass("disabled"); $("#trader").addClass("disabled");$("#builder").addClass("disabled"); 
-		$('#myDomain').hide().html("My Domain Balance").removeClass("badge").removeClass("amber").fadeIn('slow');
-		$("#myArt").hide().html("My Domain Artifact").removeClass("badge").removeClass("blue").fadeIn('slow'); }
+		$('#myDomain').hide().html("My Domain Balance").removeClass("badge").removeClass("amber").css("font-weight","normal").fadeIn('slow');
+		$("#myArt").hide().html("My Domain Artifact").removeClass("badge").removeClass("blue").css("font-weight","normal").fadeIn('slow'); }
     	else { $("#poster").removeClass("disabled");  $("#trader").removeClass("disabled"); $("#builder").removeClass("disabled");
-	      $('#myDomain').hide().html("24,901 UR").addClass("badge").addClass("amber").fadeIn('slow');
-	      $('#myArt').hide().html("9 artifact").addClass("badge").addClass("blue").fadeIn('slow');
+	      $('#myDomain').hide().html("24,901 UR").addClass("badge").addClass("amber").css("font-weight","bold").fadeIn('slow');
+	      $('#myArt').hide().html("9 artifact").addClass("badge").addClass("blue").css("font-weight","bold").fadeIn('slow');
 	        
 	     
 	     } pullDomain(dv);  }
