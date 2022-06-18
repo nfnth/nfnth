@@ -395,7 +395,9 @@ function updateWallet(i) {
 	
 function updateInfo(i) { 
 	
-	if (domains[i].owner == "0x8a83fbbacb82030ea17179c0403b04e7bce7ba10") { M.toast({html: 'No owner found.'}); } else { 
+	if (domains[i].owner == "0x8a83fbbacb82030ea17179c0403b04e7bce7ba10") { M.toast({html: 'No owner found.'});
+$("#o"+i).html("<img src='res/img/seal3.png' width='48' />");
+ } else { 
 	//fly to owner's place...	
 	}
 	$("#d"+i).html(domains[i].price); if (domains[i].price != "Unlisted") { $("#d"+i).html($("#d"+i).html() + " ETH"); }
