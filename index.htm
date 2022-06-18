@@ -113,13 +113,12 @@
 		<div id="backer" class="z-depth-4" style=" background-color:#f5f5dcc9; position: fixed;left: 0;bottom:48px;width: 100%;" ><div class="z-depth-1" style="cursor:pointer; font-size:24px;background-color: #f5f5dc36;padding-bottom: 24px;text-align: center;align-items: center;justify-content: center;width: 100%;cursor:pointer;" ><div id="test6" class="z-depth-1" style="background-color: #daa52075;height:80px;margin-bottom:16px;margin-top:3px;"><svg style="overflow:visible;" class="svg" viewBox="0 0 450 50"><text y="50%" x="50%" text-anchor="middle">// *note [build] $explore</text></svg></div><div><span style="font-size:22px;color:black;">deed. domain. </span><span style="font-size:22px; color:black; font-weight:bold;">decentralized.</span><br/><a style="font-size:20px;margin-right:12px;" onclick="openInNewTab('https://github.com/nfnth');">NfNth Corp.</a><span style="font-size:16px; color:black; font-weight:bold;">© 2022 Copyright</span></div></div></div></div>
 
     	<!-- map -->
-    	<div id="mapper" class="content loader pane" style="overflow-y: auto; height: 95%;">
+    	<div id="mapper" class="content loader pane" style="overflow-y: auto; height: 105%;">
 		<div id="map" style="width:100%; height:100%;"></div>
 		
 <div class="fixed-action-btn">
   <a class="btn-floating btn-large blue lighten-2">
-    <i class="large material-icons">explore</i>
-  </a>
+    <i class="large material-icons">explore</i></a>
   <ul>
     <li><a id="map-loc" class="btn-floating grey lighten-1" onclick="mapLoc();" ><i class="material-icons">near_me</i></a></li>
     <li><a id="map-sat" class="btn-floating green lighten-1" onclick="mapDir();"><i class="material-icons">directions</i></a></li>
@@ -134,7 +133,7 @@
     	<div id="results" style="margin:80; display:none;" class="content loader pane">search...</div>
 
     	<!-- editor -->
-    	<div id="editor" class="content loader pane scale-transition scale-out">
+    	<div id="editor" class="content loader pane scale-transition scale-out" style="height:100%;">
 		<div style="display:flex;  align-items: center; justify-content: space-evenly; margin:12px; margin-top:24px;">
 			
 			
@@ -254,8 +253,9 @@ async function initial() { $('body').css("background-color","lightgrey");
 	$('.tabs').tabs(); $('.fixed-action-btn').floatingActionButton({ hoverEnabled: false }); $('select').formSelect();
 	$('.modal').modal(); //$('#dialog-inner2').css("height", window.innerHeight - 375);
 	$("#registry-open").css("height",(height - 120) + "px"); $("#registry-domain").css("height",(height - 120) + "px");
-    	$("#map").css("height",height + "px"); $("#registry").css("height",height + "px"); showFav('scroller');
-	$("#editor").css("height",height - 360 + "px");  //$("#pad").css("height",height - 360 + "px");//$('.materialboxed').materialbox();
+    	//$("#map").css("height",height + "px"); $("#registry").css("height",height + "px"); 
+			  showFav('scroller');
+	//$("#editor").css("height",height - 360 + "px");  //$("#pad").css("height",height - 360 + "px");//$('.materialboxed').materialbox();
 //$("#world").css("height", height - 80 + "px");
 	var gear = Math.floor(Math.random() * (42 - 1 + 1)) + 1; document.getElementById('list-wait').src = "res/img/gear/gear" + gear.toString() + ".png";
 	var gear2 = Math.floor(Math.random() * (42 - 1 + 1)) + 1; document.getElementById('list-wait2').src = "res/img/gear/gear" + gear2.toString() + ".png";
