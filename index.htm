@@ -136,7 +136,7 @@
 			<a style="margin-right:8px; width:150px;" onclick="showPreview();" class="waves-effect waves-grey btn-flat"><i class="material-icons left">web_asset</i>Preview</a>
 			<a style="margin-right:8px; width:150px;" onclick="clearEditor();" class="waves-effect waves-grey btn-flat"><i class="material-icons left">refresh</i>Clear</a></div>
 		<div>
-			<a onclick="showView('list');" class="waves-effect waves-green green btn"><i class="material-icons right">save</i><span class='edit-device'>Save</span></a>
+			<a onclick="setContent();" class="waves-effect waves-green green btn"><i class="material-icons right">save</i><span class='edit-device'>Save</span></a>
 			<a onclick="showPreview();" class="waves-effect waves-grey btn-flat"><i class="material-icons">cancel</i></a></div></div>
   
         	<div id="pad" class="z-depth-2" contentEditable="true" style="text-align:left; overflow-y: auto; width:90%; border:1px solid darkgrey; box-shadow: 1px 1px beige; border-radius: 8px;padding: 12px;margin:auto;font-size:20px;height:100%; background-color:whitesmoke;"></div>
@@ -440,8 +440,13 @@ function postDeed() {
 	editMd.name = document.getElementById("edit-name").value; editMd.color =  document.getElementById("favcolor").value; editMd.datetime = switchTime(); editMd.location = coordinates.toString(); editMd.content = $("#pad").html();	     
 	postDomain();
 }
-function setColor() { $("#markerx").css("background-color", document.getElementById('favcolor').value); //$("#pal").html("done");
-//$("#editColor").addClass("green"); $("#editColor").removeClass("blue-grey");
+function setText() {
+	editMd.name = document.getElementById('edit-name').value;
+}
+function setColor() { $("#markerx").css("background-color", document.getElementById('favcolor').value); editMd.color = document.getElementById('favcolor').value;
+}
+function setContent() { editMd.content = document.getElementById('pad').value;
+showView('mapper');	
 }
 function setPreview() {
 var preview = document.getElementById("preview");
