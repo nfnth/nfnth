@@ -61,7 +61,7 @@
 	<li><div class="user-view z-depth-1 amber lighten-5" style="display: flex;margin: auto; padding: 0;align-items: center; padding-left:12px;"><span id="ocuros" style="cursor: pointer;margin:auto; color:darkgreen!important; font-size:18px;border-radius: 8px; opacity: 0.7; height: 36px !important;display: flex;align-items: center;padding-top: 10px;" onclick="showDoc('os'); $('#deed-pane').sidenav('close');" class="badge grey lighten-2" data-badge-caption="v1.08"><img src="res/img/scroll_logo.png" style="width:24px; height:24px; margin-right:8px;" /><span style="font-weight:bold;">docOS ·&nbsp;</span></span><img id="user-pic" style="opacity:0.6; height: 48px;position:absolute; right:0; margin: 12px; cursor:pointer;" onclick="showNfNth(); showList('open');"/><img id="user-pic2" style="opacity:0.6; height: 48px;cursor:pointer;margin:12px;" onclick="showNfNth(); showList('open');"/></div></li>
 	
 	<!-- tabs -->
-	<li style="height:100%;"><ul class="tabs tabs-fixed-width z-depth-1">
+	<li style="height:100%;"><ul id="token-tabs" class="tabs tabs-fixed-width z-depth-1">
 			<li class="tab blue-grey lighten-5" onclick="showList('open');"><a class="active" href="#test1">Class</a></li>
 			<li class="tab blue-grey lighten-5" onclick="showList('domain');"><a href="#test2">Token</a></li></ul><div class="card-content z-depth-1" style="height:100%;background-color:ghostwhite;">
 			
@@ -73,7 +73,7 @@
 		<!-- list (item) -->
 		<div id="test2"><ul>
 			<li style="padding-top:16px;margin-bottom:12px;display: flex;justify-content: space-evenly;"><div style="display:flex;justify-content:space-evenly;width:100%;"><a id='selLink' class='btn-flat disabled' onclick="selDomain();"><i id="domain-sel-icon" class="material-icons">select_all</i></a><a id="dropdown-domainer" class='dropdown-trigger btn-flat disabled' ref='#' data-target='dropdown-domain'><i class="material-icons">sort</i></a><a id='switchLink' class="waves-effect waves-light btn amber lighten-2 disabled" style="display:inline-flex;align-items:center;" onclick="switchDomain();"><i id="domain-icon" class="material-icons">grid_view</i><span id="domain-name"></span></a></div></li>
-			<li><div id="registry-domain" class="collection" style="overflow:auto;"><a class='collection-item'>No class selected.</a></div></li></ul></div></div></div></li></ul>	
+			<li><div id="registry-domain" class="collection" style="overflow:auto;"><a onclick='$(#token-tabs).select("test1");' class='collection-item'>No class selected.</a></div></li></ul></div></div></div></li></ul>	
 		
 <!-- panel (domain) -->
 <ul id="user-pane" class="sidenav loader" style="visibility:hidden;overflow:hidden;">
