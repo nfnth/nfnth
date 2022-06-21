@@ -93,7 +93,7 @@ async def data(request):
             if os.path.exists(path):
                 shutil.rmtree(path)
             os.mkdir(path)
-            with open(path + '/profile') as fout:
+            with open(path + '/profile', "wt") as fout:
                 fout.write(content)
                 pass
             return web.Response(text='valid wallet',content_type="text/html")
