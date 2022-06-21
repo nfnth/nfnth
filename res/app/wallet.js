@@ -10,7 +10,6 @@ var setup = async function () {
             	var fields = data.split('|'); var ether = JSON.parse(fields[0]).result; var urler = fields[1]; var gas = fields[2];
 		$('#myETH').hide().html(ether.substring(0, 4) + " ETH").addClass("badge").addClass("green").css("font-weight","bold").fadeIn('slow'); itemPrice = parseInt(ether) / 2;
 		$('#myGas').hide().html('<a style="display:flex; color:black;">' + gas + '&nbsp;&nbsp;<i class="material-icons">local_gas_station</i></a>').addClass("badge").addClass("green").addClass("lighten-2").css("font-weight","bold").fadeIn('slow'); gasPrice = gas;
-		$('#myMail').hide().html('<a style="display:flex; color:black;">7&nbsp;&nbsp;<i class="material-icons">mail</i></a>').addClass("badge").addClass("blue").css("font-weight","bold").fadeIn('slow');
 		$('#myURL').hide().html(urler + " UR").addClass("badge").addClass("amber").css("font-weight","bold").fadeIn('slow');
             	//$("#myETH").html(ether); 
 		//$("#myURL").html(urler);
@@ -27,7 +26,7 @@ function desetup() { user = ""; user = new Wallet();
 	$("#myAdd").html('My ETH Balance');
 	$('#myETH').hide().html('My Wallet Address').removeClass("badge").removeClass("green").css("font-weight","normal").fadeIn('slow'); 
 		$('#myGas').hide().html('').removeClass("badge").removeClass("red").css("font-weight","normal").fadeIn('slow'); 
-	$('#myMail').hide().html('').removeClass("badge").removeClass("blue").css("font-weight","normal").fadeIn('slow'); 
+	 
 		$('#myURL').hide().html('My UR Balance').removeClass("badge").removeClass("amber").css("font-weight","normal").fadeIn('slow');
 		    
     	$("#connector").css("color", ""); $("#connector").html('<i class="material-icons left">login</i>Connect'); 
