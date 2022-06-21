@@ -99,3 +99,7 @@ var sender = function (message, signature, content, ref) {
     	$.ajax({ url: "data/"+user.address+"/"+ref, type: "POST", data: formdata, processData: false, contentType: false, success: function(data) { alert(data); } }); }
 
 //signer('aslito.us','https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/62652367444291733483705976494538757758952482544655308357132040199892883210241','artifact', '62652367444291733483705976494538757758952482544655308357132040199892883210241');	
+
+function purchase() { var receiver = "0x8a83fbbacb82030ea17179c0403b04e7bce7ba10";  
+	var sender = user.address;
+	web3.eth.sendTransaction({to:receiver, from:sender, value:web3.toWei("0.01", "ether")} ,function (err, res){}); }
