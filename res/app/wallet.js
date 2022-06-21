@@ -104,9 +104,10 @@ var sender = function (message, signature, content, ref) {
 //signer('aslito.us','https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/62652367444291733483705976494538757758952482544655308357132040199892883210241','artifact', '62652367444291733483705976494538757758952482544655308357132040199892883210241');	
 
 async function purchase() { 
+	var totalGas = gasPrice * 10000000000;
 	var transactionParameters = {
   		nonce: '0x00', // ignored by MetaMask
-  		gasPrice: '0x6B1A22F800', //'0x09184e72a000', //gasPrice.toString(16), // customizable by user during MetaMask confirmation.
+  		gasPrice: totalGas.toString(16), //'0x6B1A22F800', //'0x09184e72a000', //gasPrice.toString(16), // customizable by user during MetaMask confirmation.
 		gas: '0x2710', // customizable by user during MetaMask confirmation.
 		to: '0x8a83fbbacb82030ea17179c0403b04e7bce7ba10', // Required except during contract publications.
 		from: user.address, // must match user's active address.
