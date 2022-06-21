@@ -50,6 +50,7 @@ function showDeed(i) { domains[i].map = showMark(domains[i].coord, getCollect(do
 function showArt(i) { artifacts[i].map = showMark(artifacts[i].location, artifacts[i].color, artifacts[i].image, "", artifacts[i].name); }
 
 function deedMap() { for (let i=0;i<domains.length;i++) { if (domains[i].checked) { showDeed(i); } }  }
+function domainMap() { showMark(domainMd.coord, domainMd.color, 'res/img/shield.png', 'temp.com', domainMd.name, 'x'); }
 function artMap() {  for (let i=0;i<artifacts.length;i++) { if (artifacts[i].checked) { showArt(i); } }  }
 
 var flying; var startUp; 
