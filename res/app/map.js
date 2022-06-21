@@ -43,13 +43,13 @@ function showMark(coord, color, image, link, name, id, area) {
 	switch(area) {
 		case 'deed':
 			imager = 'onclick="buildDeed(' + id + ');"';
-			custom = '<a class="waves-effect waves-blue btn amber lighten-2" onclick="buildWallet(' + id + ');" ><i class="material-icons">alternate_email</i></a>&nbsp;&nbsp;<a class="modal-trigger waves-effect waves-light btn blue lighten-2" href="#modal1" onclick="addListDetail(' + id + ');"><i class="material-icons">receipt</i></a>' break;
+			custom = '<a class="waves-effect waves-blue btn amber lighten-2" onclick="buildWallet(' + id + ');" ><i class="material-icons">alternate_email</i></a>&nbsp;&nbsp;<a class="modal-trigger waves-effect waves-light btn blue lighten-2" href="#modal1" onclick="addListDetail(' + id + ');"><i class="material-icons">receipt</i></a>'; break;
 		case 'domain': 
 			imager = 'onclick="buildDomain(' + id + ');"';
-			custom = '<a class="waves-effect waves-blue btn amber lighten-2" onclick="buildWallet(' + id + ');" ><i class="material-icons">account_balance_wallet</i></a>&nbsp;&nbsp;<a class="modal-trigger waves-effect waves-light btn blue lighten-2" href="#modal1" onclick="addListDetail(' + id + ');"><i class="material-icons">list</i></a>' break;
+			custom = '<a class="waves-effect waves-blue btn amber lighten-2" onclick="buildWallet(' + id + ');" ><i class="material-icons">account_balance_wallet</i></a>&nbsp;&nbsp;<a class="modal-trigger waves-effect waves-light btn blue lighten-2" href="#modal1" onclick="addListDetail(' + id + ');"><i class="material-icons">list</i></a>'; break;
 		case 'artifact': 
 			imager = 'onclick="buildArtifact(' + id + ');"';
-			custom = '<a class="waves-effect waves-blue btn amber lighten-2" onclick="buildWallet(' + id + ');" ><i class="material-icons">terrain</i></a>' break; }
+			custom = '<a class="waves-effect waves-blue btn amber lighten-2" onclick="buildWallet(' + id + ');" ><i class="material-icons">terrain</i></a>'; break; }
 	
 	$('#marker'+id).addClass('markre'); $('#marker'+id).addClass('z-depth-3'); 
 	var style=$('#marker'+id).attr('style'); style += ";background-color:"+ color + ";border:solid 2px black;"; $('#marker'+id).attr('style',style); 
