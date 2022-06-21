@@ -7,8 +7,8 @@ var coordinates; var artFlag = false; var tempMark = ""; var tempMap = [];
 map.on('load', function (event) { 
 	map.on('click', function(e) { coordinates = e.lngLat; if(artFlag) { addArt(); artFlag = false; } $('.fixed-action-btn').floatingActionButton('close'); }); });
 
-function convertMark(coord) {
-	var raw = coord.replace('LngLat(','').replace(')','');
+function convertMark(coord) { alert(coord);
+	var raw = coord.replace('LngLat(','').replace(')',''); alert(raw);
 	return [raw.substring(0, raw.indexOf(',')), raw.substring(raw.indexOf(',')+1, raw.length)];
 }
 function convertCoord(coord) { //66°32′56″N 152°50′41″W  Degrees + ((Minutes / 60) + (Seconds / 3600)) 40°41′34″N 73°59′25″W
