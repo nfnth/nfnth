@@ -66,7 +66,7 @@ function pullDomain(domain) { domainMd = ""; domainMd = new Md();
 		$.get('domain/' + domain + '/doc', function(data) { 
 			var lines = data.split(/\r?\n/); var fields = lines[0].split('|'); 
 			domainMd.name = fields[0]; domainMd.location = fields[1]; domainMd.color = fields[2]; 
-			domainMd.image = fields[3]; domainMd.content = fields[4];
+			domainMd.image = fields[3]; domainMd.content = fields[4]; domainMap();
 			for (let i = 1; i < lines.length - 1; i++) { 
 				temp = new Md(); fields = lines[i].split('|'); 
 				temp.name = fields[0]; temp.location = fields[1]; temp.color = fields[2]; temp.image = fields[3]; temp.content = fields[4];
