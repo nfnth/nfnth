@@ -110,7 +110,7 @@ async def data(request):
                 if os.path.exists(path): #backup?
                     shutil.rmtree(path)
                 os.mkdir(path)
-                with open(path + '/deed', "wt") as fout:
+                with open(path + '/doc', "wt") as fout:
                     fout.write(content)
                     pass
                 return web.Response(text='valid domain',content_type="text/html")
