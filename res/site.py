@@ -141,6 +141,7 @@ async def site(port):
 
     app.router.add_static('/res', PATH + 'res')
     app.router.add_static('/domain', DATA + 'domain')
+    app.router.add_static('/wallet', DATA + 'wallet')
 
     app.add_routes([web.get('/', index)])
     app.add_routes([web.get('/api/{wallet}', api)])
