@@ -9,14 +9,14 @@ var setup = async function () {
         $.get("api/"+user.address, async function(data) { 
             	var fields = data.split('|'); var ether = JSON.parse(fields[0]).result; var urler = fields[1]; var gas = fields[2];
 		$('#myETH').hide().html(ether.substring(0, 4) + " ETH").addClass("badge").addClass("green").css("font-weight","bold").fadeIn('slow'); itemPrice = parseInt(ether) / 2;
-		$('#myGas').hide().html('<a style="display:flex; color:black;">' + gas + '&nbsp;&nbsp;<i class="material-icons">local_gas_station</i></a>').addClass("badge").addClass("red").css("font-weight","bold").fadeIn('slow'); gasPrice = gas;
+		$('#myGas').hide().html('<a style="display:flex; color:black;">' + gas + '&nbsp;&nbsp;<i class="material-icons">local_gas_station</i></a>').addClass("badge").addClass("green").addClass("lighten-2").css("font-weight","bold").fadeIn('slow'); gasPrice = gas;
 		$('#myMail').hide().html('<a style="display:flex; color:black;">7&nbsp;&nbsp;<i class="material-icons">mail</i></a>').addClass("badge").addClass("blue").css("font-weight","bold").fadeIn('slow');
 		$('#myURL').hide().html(urler + " URL").addClass("badge").addClass("amber").css("font-weight","bold").fadeIn('slow');
             	//$("#myETH").html(ether); 
 		//$("#myURL").html(urler);
-            	$("#connector").css("color", "darkred"); $("#connector").html('<i class="material-icons left">logout</i>Disconnect'); 
+            	$("#connector").css("color", "darkred"); $("#connector").html('<i class="material-icons left">logout</i>Disconnect'); $("#connector").removeClass("green"); $("#connector").addClass("red");
 		//disconnect = true; 
-            	$("#wallet-area").removeClass("grey"); $("#wallet-area").addClass("red"); $("#wallet-icon").css("color","darkred"); } ); 
+            	$("#wallet-area").removeClass("grey"); $("#wallet-area").addClass("green"); $("#wallet-icon").css("color","darkred"); } ); 
     	for (let i=0;i<opens.length;i++) { pullAssets(user, opens[i].core.slug); } }
     else { M.toast({html: 'No wallet found.'}); } }; $("#wallet-setup").click(setup);
 
@@ -29,6 +29,7 @@ function desetup() { user = ""; user = new Wallet();
 		$('#myURL').hide().html('My UR Balance').removeClass("badge").removeClass("amber").css("font-weight","normal").fadeIn('slow');
 		    
     	$("#connector").css("color", ""); $("#connector").html('<i class="material-icons left">login</i>Connect'); 
+		    $("#connector").addClass("green"); $("#connector").removeClass("red");
 		    //disconnect = false; 
     	emptyDeeds(); domainSelect(); }
 
