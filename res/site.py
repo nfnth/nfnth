@@ -45,13 +45,17 @@ async def api(request):
     wallet = request.match_info.get('wallet', '')
     eth_site = 'https://api.etherscan.io/api?module=account&action=balance&address=' + wallet + '&tag=latest&apikey=' + ETH_API_KEY
     token_site = 'https://api.etherscan.io/api?module=account&action=tokenbalance&contractaddress=' + TOKEN + '&address=' + wallet + '&tag=latest&apikey=' + ETH_API_KEY
+    gas_site = 'https://api.etherscan.io/api?module=gastracker&action=gasoracle&apikey=' + ETH_API_KEY
+    
     eth_balance = requests.get(eth_site)
     token_balance = requests.get(token_site).json().get("result")
+    gas_balance = request.get(gas_iste).json().get("result")
+    
     hostname = socket.gethostname()
     temp_key = socket.gethostbyname(hostname) + "|" + str(datetime.datetime.now())
     print (temp_key)
     #ip_address = socket.gethostbyname(hostname)
-    return web.Response(text=eth_balance.text+"|"+token_balance+"|"+str(SECRET.encrypt(str.encode(temp_key))),content_type="text/html")
+    return web.Response(text=eth_balance.text+"|"+token_balance+"|"+gas_balance+"|"+str(SECRET.encrypt(str.encode(temp_key))),content_type="text/html")
 
 async def data(request):
     wallet = request.match_info.get('wallet', '')
