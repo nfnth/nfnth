@@ -11,7 +11,7 @@ var setup = async function () {
 		$('#myETH').hide().html(ether.substring(0, 4) + " ETH").addClass("badge").addClass("green").css("font-weight","bold").fadeIn('slow'); itemPrice = parseInt(ether) / 2;
 		$('#myGas').hide().html('<a style="display:flex; color:black;">' + gas + '&nbsp;&nbsp;<i class="material-icons">local_gas_station</i></a>').addClass("badge").addClass("green").addClass("lighten-2").css("font-weight","bold").fadeIn('slow'); gasPrice = gas;
 		$('#myMail').hide().html('<a style="display:flex; color:black;">7&nbsp;&nbsp;<i class="material-icons">mail</i></a>').addClass("badge").addClass("blue").css("font-weight","bold").fadeIn('slow');
-		$('#myURL').hide().html(urler + " URL").addClass("badge").addClass("amber").css("font-weight","bold").fadeIn('slow');
+		$('#myURL').hide().html(urler + " UR").addClass("badge").addClass("amber").css("font-weight","bold").fadeIn('slow');
             	//$("#myETH").html(ether); 
 		//$("#myURL").html(urler);
             	$("#connector").css("color", "darkred"); $("#connector").html('<i class="material-icons left">logout</i>Disconnect'); $("#connector").removeClass("green"); $("#connector").addClass("red");
