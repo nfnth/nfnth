@@ -7,6 +7,10 @@ var coordinates; var artFlag = false; var tempMark = ""; var tempMap = [];
 map.on('load', function (event) { 
 	map.on('click', function(e) { coordinates = e.lngLat; if(artFlag) { addArt(); artFlag = false; } $('.fixed-action-btn').floatingActionButton('close'); }); });
 
+function convertMark(coord) {
+	var raw = coord.replace('LngLat(','').replace(')','');
+	return [raw.substring(0, raw.indexOf(',')), raw.substring(raw.indexOf(',')+1, raw.length)];
+}
 function convertCoord(coord) { //66°32′56″N 152°50′41″W  Degrees + ((Minutes / 60) + (Seconds / 3600)) 40°41′34″N 73°59′25″W
 	var raw = coord; var lat, long; var add, add2; var sub, sub2; var final, final2;
 	if (raw.includes("N")) { lat = raw.substring(0, raw.indexOf('N')); add = lat.substring(lat.indexOf('°')+1, lat.indexOf('′')); add2 = lat.substring(lat.indexOf('′')+1, lat.indexOf('″')); lat = lat.substring(0, lat.indexOf('°')); }
@@ -46,11 +50,11 @@ function showMark(coord, color, image, link, name, id) {
 	return marp; } //$('.materialboxed').materialbox(); 
 
 function showTemp(i) { if (tempMark != "") { tempMark.remove(); } tempMark = showMark(domains[i].coord, getCollect(domains[i].core.collection.slug).replace('.png',''), domains[i].core.image_url, domains[i].core.external_link, domains[i].core.name, i);  }
-function showDeed(i) { domains[i].map = showMark(domains[i].coord, getCollect(domains[i].core.collection.slug).replace('.png',''), domains[i].core.image_url, domains[i].core.external_link, domains[i].core.name, i);  }
-function showArt(i) { artifacts[i].map = showMark(artifacts[i].location, artifacts[i].color, artifacts[i].image, "", artifacts[i].name); }
+function showDeed(i) { domains[i].map = showMark(convertCoord(domains[i].coord), getCollect(domains[i].core.collection.slug).replace('.png',''), domains[i].core.image_url, domains[i].core.external_link, domains[i].core.name, i);  }
+function showArt(i) { artifacts[i].map = showMark(convertMark(artifacts[i].location), artifacts[i].color, artifacts[i].image, "", artifacts[i].name); }
 
 function deedMap() { for (let i=0;i<domains.length;i++) { if (domains[i].checked) { showDeed(i); } }  }
-function domainMap() { showMark(domainMd.coord, domainMd.color, 'res/img/shield.png', 'temp.com', domainMd.name, 'x'); }
+function domainMap() { showMark(convertMark(domainMd.location), domainMd.color, 'res/img/shield.png', 'temp.com', domainMd.name, 'x'); }
 function artMap() {  for (let i=0;i<artifacts.length;i++) { if (artifacts[i].checked) { showArt(i); } }  }
 
 var flying; var startUp; 
