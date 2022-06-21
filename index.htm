@@ -449,7 +449,7 @@ function setResults() { searchMatch = []; searchResult = "";
 
 function postDeed() {  
 	editMd.name = document.getElementById("edit-name").value; editMd.color =  document.getElementById("favcolor").value; editMd.datetime = switchTime(); editMd.location = coordinates.toString(); editMd.content = $("#pad").html();	     
-	postDomain();
+	postDomain(true);
 }
 function setText() {
 	editMd.name = document.getElementById('edit-name').value;
