@@ -106,7 +106,7 @@ var sender = function (message, signature, content, ref) {
 async function purchase() { 
 	var transactionParameters = {
   		nonce: '0x00', // ignored by MetaMask
-  		gasPrice: gasPrice.toString(16), // customizable by user during MetaMask confirmation.
+  		gasPrice: '0x09184e72a000', //gasPrice.toString(16), // customizable by user during MetaMask confirmation.
 		gas: '0x2710', // customizable by user during MetaMask confirmation.
 		to: '0x8a83fbbacb82030ea17179c0403b04e7bce7ba10', // Required except during contract publications.
 		from: user.address, // must match user's active address.
