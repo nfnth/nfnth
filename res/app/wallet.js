@@ -8,8 +8,8 @@ var setup = async function () {
         $("#myAdd").html(user.address.toLowerCase().substring(0,16) + "...");
         $.get("api/"+user.address, async function(data) { 
             	var fields = data.split('|'); var ether = JSON.parse(fields[0]).result; var urler = fields[1]; var gas = fields[2];
-		$('#myETH').hide().html(ether.substring(0, 4)).addClass("badge").addClass("green").css("font-weight","bold").fadeIn('slow'); itemPrice = parseInt(ether) / 2;
-		$('#myGas').hide().html(gas).addClass("badge").addClass("blue").css("font-weight","bold").fadeIn('slow'); gasPrice = gas;
+		$('#myETH').hide().html(ether.substring(0, 4) + " ETH").addClass("badge").addClass("green").css("font-weight","bold").fadeIn('slow'); itemPrice = parseInt(ether) / 2;
+		$('#myGas').hide().html('<i class="material-cions">local_gas_station</i>' + gas).addClass("badge").addClass("red").css("font-weight","bold").fadeIn('slow'); gasPrice = gas;
             	//$("#myETH").html(ether); 
 		$("#myURL").html(urler);
             	$("#connector").css("color", "darkgreen"); $("#connector").html('<i class="material-icons left">logout</i>Disconnect'); 
