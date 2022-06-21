@@ -58,8 +58,12 @@ function pullDomain(domain) { domainMd = ""; domainMd = new Md();
 	$("#selink").removeClass("disabled"); $("#dropdown-deeder").removeClass("disabled"); $("#swilink").removeClass("disabled");
 	$("#adder").removeClass("disabled"); $("#editer").removeClass("disabled"); $("#deleter").removeClass("disabled");
 			     
-	if (domain == "tactician.us") { 
-		$.get('res/doc/tactic/tact', function(data) { 
+	if (domain == "void") {
+		artifacts = [];
+		$("#selink").addClass("disabled"); $("#dropdown-deeder").addClass("disabled"); $("#swilink").addClass("disabled");
+		$("#adder").addClass("disabled"); $("#editer").addClass("disabled"); $("#deleter").addClass("disabled");
+	} else {
+		$.get('domain/' + domain + '/doc', function(data) { 
 			var lines = data.split(/\r?\n/); var fields = lines[0].split('|'); 
 			domainMd.name = fields[0]; domainMd.location = fields[1]; domainMd.color = fields[2]; 
 			domainMd.image = fields[3]; domainMd.content = fields[4];
@@ -68,16 +72,8 @@ function pullDomain(domain) { domainMd = ""; domainMd = new Md();
 				temp.name = fields[0]; temp.location = fields[1]; temp.color = fields[2]; temp.image = fields[3]; temp.content = fields[4];
 				artifacts.push(temp); }  
 			buildDomain(); }); 
-	} else if (domain == "void") {
-		artifacts = [];
-		$("#selink").addClass("disabled"); $("#dropdown-deeder").addClass("disabled"); $("#swilink").addClass("disabled");
-		$("#adder").addClass("disabled"); $("#editer").addClass("disabled"); $("#deleter").addClass("disabled");
-	} else {
-		$.get('domain/' + domain + '/deed', function(data) { 
-			var lines = data.split(/\r?\n/); var fields = lines[0].split('|'); 
-			domainMd.name = fields[0]; domainMd.color = fields[1]; domainMd.datetime = fields[2]; domainMd.location = fields[3];
-			for (let i = 1; i < lines.length; i++) { domainMd.content += lines[i]; }  
-		if (domainMd.name != "") { $("#registry-artifact").html(); $("#registry-artifact").append("<a class='collection-item'>" + domainMd.name + "</a>"); }}); }  }
+	
+	}  }
 
 var showArtifactOpen = true;
 function buildDomain() { $("#registry-artifact").html(""); var extra = ""; 
@@ -89,8 +85,12 @@ function buildDomain() { $("#registry-artifact").html(""); var extra = "";
 function postDomain() {
 	var d = document.getElementById("domain-template"); var dt = d.options[d.selectedIndex].text; var dv = d.options[d.selectedIndex].value; 
 	if (dt != 'No domain selected') {
-		var stamp = editMd.name + "|" + editMd.color + "|" + editMd.datetime + "|" + editMd.location + "\n";
-		signer(stamp + editMd.content, dv); }
+		var stamp = editMd.name + "|" + editMd.location + "|" + editMd.color + "|" + editMd.image + editMd.content;  //datetime?
+		
+		
+		alert(stamp);
+		
+		signer(stamp, dv); }
 	else { alert('No domain selected'); } }
 
 var signer = async function (content, ref) { //add key to message...
