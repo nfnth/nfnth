@@ -445,7 +445,7 @@ function setText() {
 }
 function setColor() { $("#markerx").css("background-color", document.getElementById('favcolor').value); editMd.color = document.getElementById('favcolor').value;
 }
-function setContent() { editMd.content = document.getElementById('pad').value;
+function setContent() { editMd.content = $("#pad").html();
 showView('mapper');	
 }
 function setPreview() {
