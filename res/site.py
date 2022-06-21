@@ -49,7 +49,7 @@ async def api(request):
     
     eth_balance = requests.get(eth_site)
     token_balance = requests.get(token_site).json().get("result")
-    gas_balance = request.get(gas_site).json().get("result")
+    gas_balance = requests.get(gas_site).json().get("result").get("ProposeGasPrice")
     
     hostname = socket.gethostname()
     temp_key = socket.gethostbyname(hostname) + "|" + str(datetime.datetime.now())
