@@ -338,20 +338,23 @@ function addListDeed(i) { var embedDisplay = "";
 //function change(a){ document.getElementById('vid').poster=a; document.getElementById('vid').src=a.replace('res/raw/','res/media/').replace('.jpg','.mp4'); }
 		
 	return "<div style='text-align:center;'><p><span style='font-weight:16px'>" + domains[i].name + "</span>&nbsp;&nbsp; · &nbsp;&nbsp;<a onclick='openInNewTab(\"" + domains[i].core.external_link + "\");'>" + domains[i].core.name + "</a></p></div><br/><div id='emDisp' style='text-align:center;'>" + embedDisplay + "</div></br><p>" + domains[i].core.description + "</p><a onclick='openInNewTab(\"" + domains[i].ref + "\");'>Read more...</a><br/><br/><div style='text-align:center;'><img style='max-width:80%;' src='" + domains[i].img + "' /></div><br/>";   }
-
-function artDoc(doc) { 
-	$.get('res/doc/tactic/' + artifacts[doc].content, function(data) { 
-		$("#somedialog2").css("z-index",1004); document.getElementById('dialog-inner2').scrollTo(0, 0); setDialog(renderMd(data));
-
-	}); 
 	
+function addUserDeed(i) { var embedDisplay = "";
+	embedDisplay = "<img  style='width:80%;' src='" + domainMd.image + "' />"; // }
+		
+	return "<div style='text-align:center;'><p><span style='font-weight:16px'><a onclick='openInNewTab(\"" + domainMd.link + "\");'>" + domainMd.name + "</a></p></div><br/><div id='emDisp' style='text-align:center;'>" + embedDisplay + "</div></br><p>" + domainMd.content + "</p><br/>";   }
 	
-	 }
-function tempDoc(doc) {  $("#somedialog2").css("z-index",1004); document.getElementById('dialog-inner2').scrollTo(0, 0); $.get(doc, function(data) { setDialog(renderMd(data)); }); }
-function showDoc(doc) { $("#somedialog2").css("z-index",1004); document.getElementById('dialog-inner2').scrollTo(0, 0); $.get('res/doc/'+doc, function(data) { setDialog(renderMd(data)); }); }
-function buildDoc(i) { $("#somedialog2").css("z-index",1004); document.getElementById('dialog-inner2').scrollTo(0, 0); setDialog(addListDeed(i)); 
-		     
-		     $('#deed-pane').sidenav('close'); }
+function addArtDeed(i) { var embedDisplay = "";
+	embedDisplay = "<img  style='width:80%;' src='" + artifacts[i].image + "' />"; // }
+		
+	return "<div style='text-align:center;'><p><span style='font-weight:16px'><a onclick='openInNewTab(\"" +artifacts[i].link + "\");'>" + artifacts[i].name + "</a></p></div><br/><div id='emDisp' style='text-align:center;'>" + embedDisplay + "</div></br><p>" + artifacts[i].content + "</p><br/>";   }
+
+function showDoc(doc) { $.get('res/doc/'+doc, function(data) { setDialog(renderMd(data)); }); }
+function tempDoc(doc) { $.get(doc, function(data) { setDialog(renderMd(data)); }); }
+	
+function buildDeed(i) { setDialog(addUserDeed());  }
+function buildDomain(i) {  setDialog(addListDeed(i)); $('#deed-pane').sidenav('close'); }
+function buildArtifact(i) { setDialog(addArtDeed(i)); }
 
 function buildWallet(i) {
 	pullOwner(i); // pullPrice(i);
@@ -373,6 +376,8 @@ $("#o"+i).html("<img src='res/img/seal3.png' width='48' />");
 	$("#o"+i).html(addWallet(domains[i].owner)); $("#c"+i).html(addWallet(domains[i].owner)); }
 	
 function setDialog(text) { 
+	$("#somedialog2").css("z-index",1004); document.getElementById('dialog-inner2').scrollTo(0, 0);
+	
 var element = document.getElementById('dialog-inner2'); $("#dialog-inner2").html(text);
 var positionInfo = element.getBoundingClientRect();
 var height = positionInfo.height; var width = positionInfo.width;
