@@ -9,7 +9,7 @@ var setup = async function () {
         $.get("api/"+user.address, async function(data) { 
             	var fields = data.split('|'); var ether = JSON.parse(fields[0]).result; var urler = fields[1]; var gas = fields[2];
 		$('#myETH').hide().html(ether.substring(0, 4)).addClass("badge").addClass("green").css("font-weight","bold").fadeIn('slow');
-		$('#myGas').hide().html(gas.ProposeGasPrice).addClass("badge").addClass("blue").css("font-weight","bold").fadeIn('slow'); gasPrice = gas.ProposeGasPrice;
+		$('#myGas').hide().html(gas).addClass("badge").addClass("blue").css("font-weight","bold").fadeIn('slow'); gasPrice = gas;
             	//$("#myETH").html(ether); 
 		$("#myURL").html(urler);
             	$("#connector").css("color", "darkgreen"); $("#connector").html('<i class="material-icons left">logout</i>Disconnect'); 
