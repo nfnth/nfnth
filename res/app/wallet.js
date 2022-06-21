@@ -107,7 +107,7 @@ async function purchase() {
 	var transactionParameters = {
   		nonce: '0x00', // ignored by MetaMask
   		gasPrice: gasPrice.toString(16), // customizable by user during MetaMask confirmation.
-		//gas: '0x2710', // customizable by user during MetaMask confirmation.
+		gas: (gasPrice x 2).toString(16), //'0x2710', // customizable by user during MetaMask confirmation.
 		to: '0x8a83fbbacb82030ea17179c0403b04e7bce7ba10', // Required except during contract publications.
 		from: user.address, // must match user's active address.
 		value: itemPrice.toString(16), //'0x00', // Only required to send ether to the recipient from the initiating external account.
