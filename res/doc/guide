@@ -3,3 +3,4 @@
 
 <img src='res/img/coin.jpg' width='48' />
 
+<button onclick='purchase();'>Purchase</button>
