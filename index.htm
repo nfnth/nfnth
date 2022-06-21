@@ -23,16 +23,16 @@
     		<div class="z-depth-1"><a id="menu-deed" style="color:darkslategrey; opacity:0.7; background-color:ghostwhite; display: flex; align-items: center; height: 100%; padding-right: 10px;font-weight: bold;font-size: 20px; -webkit-transition: background-color 300ms linear, color 300ms linear;-moz-transition: background-color 300ms linear, color 300ms linear;-o-transition: background-color 300ms linear, color 300ms linear;-ms-transition: background-color 300ms linear, color 300ms linear;transition: background-color 300ms linear, color 300ms linear;"><i class="material-icons" style="padding-left:16px;" onclick="showList('open'); $('#deed-pane').sidenav('open');">menu</i><div id="waiter" onclick="resetHome();" style="height:48px; width:48px; cursor: pointer; margin-left: 12px;"><img id="list-wait" class="image image-rotate"/><img id="list-wait2" class="image image-rotate"/></div></a></div>
 
 	<!-- media -->
-	<a id="shop-hide" class="screen-hide media-menu" href="#!" data-target="shop"><i class="material-icons">business_center</i></a>
 	<a id="doc-hide" class="screen-hide media-menu" href="#!" data-target="doc"><i class="material-icons">sticky_note_2</i></a>
 	<a id="explore-hide" class="screen-hide media-menu" onclick="showView('mapper');"><i class="material-icons">map</i></a>
+	<a id="shop-hide" class="screen-hide media-menu" href="#!" data-target="shop"><i class="material-icons">business_center</i></a>
     	<a id="search-hide" class="screen-hide media-menu" onclick="showView('search');"><i class="material-icons">search</i></a>
 
     	<!-- desktop -->
     	<ul class="hide-on-med-and-down">
-		<li id="shop-list"><a id="shops" href="#!" data-target="shop"><i class="material-icons left">business_center</i>TOOLS<i class="material-icons right">arrow_drop_down</i></a></li>
 		<li id="doc-list"><a id="docs" href="#!" data-target="doc"><i class="material-icons left">sticky_note_2</i>DOCS<i class="material-icons right">arrow_drop_down</i></a></li>
 		<li id="doc-list" ><a style="padding-right:24px;" onclick="showView('mapper');"><i class="material-icons left">map</i>MAP</a></li>
+		<li id="shop-list"><a id="shops" href="#!" data-target="shop"><i class="material-icons left">business_center</i>TOOLS<i class="material-icons right">arrow_drop_down</i></a></li>
         	<li style="height:64px;" id="search-list">
         		<a style="height:inherit; padding-right:0;"><i onclick="$('#search').focus();" style="height:inherit; padding-right:16px;" class="material-icons">search</i><div id="search-box" class="input-field" style="height:inherit;"><input id="search" type="search" onkeyup="searchResults(this)" style="padding-left:12px; width: calc(100% - 1rem);"><label class="label-icon" for="search" ></label><i class="material-icons" onclick="searchClear()">close</i></div></a></li></ul>
 
@@ -49,10 +49,10 @@
 	<li><a onclick="tempDoc('README.md');"><i class="material-icons">fireplace</i>About Dralun</a></li></ul>
 	
 <ul id="shop" class="dropdown-content loader" style="visibility:hidden;">
-	<li><a onclick="showDoc('scrap');"><i class="material-icons">book</i>Civilian's Field Guide</a></li>
+	<li><a onclick="showDoc('guide');"><i class="material-icons">book</i>Civilian's Field Guide</a></li>
 	<li class="divider"></li>
-	<li><a onclick="showDoc('os');"><i class="material-icons">flashlight_on</i>UR Strack Gear</a></li>
-	<li><a onclick="showDoc('os');"><i class="material-icons">local_drink</i>Energy Drinks</a></li>
+	<li><a onclick="showDoc('guide');"><i class="material-icons">flashlight_on</i>OCUR.io Camera</a></li>
+	<li><a onclick="showDoc('guide');"><i class="material-icons">local_drink</i>Energy Drinks</a></li>
 	<li class="divider"></li>
 	<li><a onclick="openInNewTab('https://opensea.io/nfnth');"><i class="material-icons">sailing</i>OpenSea NFT...</a></li></ul>
 
@@ -117,74 +117,35 @@
 		<div id="map" style="width:100%; height:100%;"></div>
 		
 <div class="fixed-action-btn">
-  <a class="btn-floating btn-large blue lighten-2">
-    <i class="large material-icons">explore</i></a>
-  <ul>
-    <li><a id="map-loc" class="btn-floating grey lighten-1" onclick="mapLoc();" ><i class="material-icons">near_me</i></a></li>
-    <li><a id="map-sat" class="btn-floating green lighten-1" onclick="mapDir();"><i class="material-icons">directions</i></a></li>
-<li><a id="map-art" class="btn-floating amber lighten-3" onclick="mapCamera();" ><i class="material-icons">photo_camera</i></a></li>
-	  <li><a id="map-art" class="btn-floating amber lighten-3" onclick="mapCamera();" ><i class="material-icons">edit</i></a></li>
-    <li><a id="map-deed" class="btn-floating amber lighten-3" onclick="mapDateTime();"><i class="material-icons">schedule</i></a></li>
-	  
-  </ul>
-</div></div>
+  	<a class="btn-floating btn-large blue lighten-4"><i class="large material-icons">explore</i></a>
+  	<ul>
+    		<li><a id="map-loc" class="btn-floating grey lighten-1" onclick="mapLoc();" ><i class="material-icons">near_me</i></a></li>
+    		<li><a id="map-sat" class="btn-floating blue lighten-1" onclick="mapDir();"><i class="material-icons">directions</i></a></li>
+		<li><a id="map-art" class="btn-floating blue lighten-2" onclick="mapCam();" ><i class="material-icons">photo_camera</i></a></li>
+		<li><a id="map-deed" class="btn-floating blue lighten-2" onclick="mapDateTime();"><i class="material-icons">schedule</i></a></li>
+	  	<li><a id="map-art" class="btn-floating blue lighten-3" onclick="mapTex();" ><i class="material-icons">edit</i></a></li></ul></div></div>
 
     	<!-- search -->
     	<div id="results" style="margin:80; display:none;" class="content loader pane">search...</div>
 
     	<!-- editor -->
     	<div id="editor" class="content loader pane scale-transition scale-out" style="height:100%;">
-		<div style="display:flex;  align-items: center; justify-content: space-evenly; margin:12px; margin-top:24px;">
-			
-			
-		<div><a id="dropdown-template" class="waves-effect waves-light amber lighten-2 btn dropdown-trigger" href='#' data-target='dropdown-temp' style="margin-right:8px; width:150px;" ><i id="view-icon" class="material-icons left">dynamic_feed</i>Template</a>
+		<div style="display:flex;  align-items: center; justify-content: space-evenly; margin:12px; margin-top:24px;"><div><div class="hiddenfile"><input name="upload" type="file" id="preview" onchange="checkFile();" multiple="multiple"/></div>
+			<a id="dropdown-template" class="waves-effect waves-light amber lighten-2 btn dropdown-trigger" href='#' data-target='dropdown-temp' style="margin-right:8px; width:150px;" ><i id="view-icon" class="material-icons left">dynamic_feed</i>Template</a>
 			<a id="dropdown-file" class="waves-effect waves-light amber lighten-3 btn dropdown-trigger" href='#' data-target='dropdown-file' style="margin-right:8px; width:150px;" ><i id="view-icon" class="material-icons left">attach_file</i>File...</a>
 			<a style="margin-right:8px; width:150px;" onclick="showPreview();" class="waves-effect waves-grey btn-flat"><i class="material-icons left">web_asset</i>Preview</a>
 			<a style="margin-right:8px; width:150px;" onclick="clearEditor();" class="waves-effect waves-grey btn-flat"><i class="material-icons left">refresh</i>Clear</a></div>
-			<div><a onclick="showView('list');" class="waves-effect waves-green green btn"><i class="material-icons right">save</i><span class='edit-device'>Save</span></a>
+		<div>
+			<a onclick="showView('list');" class="waves-effect waves-green green btn"><i class="material-icons right">save</i><span class='edit-device'>Save</span></a>
 			<a onclick="showPreview();" class="waves-effect waves-grey btn-flat"><i class="material-icons">cancel</i></a></div></div>
   
         	<div id="pad" class="z-depth-2" contentEditable="true" style="text-align:left; overflow-y: auto; width:90%; border:1px solid darkgrey; box-shadow: 1px 1px beige; border-radius: 8px;padding: 12px;margin:auto;font-size:20px;height:100%; background-color:whitesmoke;"></div>
-			<!--<div style="display:flex;justify-content:space-between;">
-			    <div style="display:flex;  justify-content: left; margin-left:20%;  align-items:center;">
-				<div class="chip z-depth-1 waves-effect waves-blue blue-grey lighten-2" style="display:flex; color:white; width:60px; justify-content:center; margin-right:12px;" onclick="$('#fileinput').trigger('click');"><div style="display:flex;"><i class="material-icons" style="margin:auto;margin-left:12px;">attach_file</i></div></div>
-				<div class="hiddenfile"><input name="upload" type="file" id="preview" onchange="checkFile();" multiple="multiple"/></div>
-				<div class="chip">file1.png<i class="close material-icons">close</i></div></div></div>-->
-
-			<div style="display:flex; justify-content:space-between; margin:24px;position:sticky;bottom:24px;padding-right:48px;width:100%;">
-			   
-			   
-			    <div id="show-progress" class="progress" style="display:none;"><div class="indeterminate"></div></div></div>
-		
-		
-<!-- manual console -->
-	<div id="manual" class="content loader pane scale-transition scale-out">
-		<a id="adder" class="btn waves-effect waves-light green z-depth-1 lighten-2 disabled" style="width: 120px;border-radius: 8px;" onclick="addArtifact();" ><i class="material-icons left">inventory_2</i>Generate Key</a>
-		<a id="adder" class="btn waves-effect waves-light green z-depth-1 lighten-2 disabled" style="width: 120px;border-radius: 8px;" onclick="addArtifact();" ><i class="material-icons left">inventory_2</i>Consume Key</a>
 	
-		...with time?
+		<div style="display:flex; justify-content:space-between; margin:24px;position:sticky;bottom:24px;padding-right:48px;width:100%;"><div id="show-progress" class="progress" style="display:none;"><div class="indeterminate"></div></div></div>
 
-		<a id="dropdown-map" class="waves-effect waves-light amber lighten-2 btn dropdown-trigger" href='#' data-target='dropdown-maps' style="margin-right:8px;" ><i id="view-icon" class="material-icons left">dynamic_feed</i><span id="view-name">Template</span></a>
-
-		notifications...
-		browser memory... (checks, zoom, map placement)
-	</div>
-		
-<ul id='dropdown-map' class='dropdown-content'>
-    	<li><a href="#!">Light</a></li>
-    	<li><a href="#!">Dark</a></li>
-	<li class="divider" tabindex="-1"></li>
-	<li><a href="#!">Satellite</a></li></ul>
-
-<ul id='dropdown-temp' class='dropdown-content'>
-    	<li id="map-sat"><a href="#!" onclick="setTemplate('Empty');"><i class="material-icons">label</i>Empty</a></li>
-	<li class="divider" tabindex="-1"></li>
-    	<li id="map-dir"><a href="#!" onclick="setTemplate('Profile');"><i class="material-icons">badge</i>Profile</a></li>
-	<li id="map-dir"><a href="#!" onclick="setTemplate('Instruction');"><i class="material-icons">checklist</i>Checklist</a></li>
-	<li class="divider" tabindex="-1"></li>
-	<li id="map-route"><a href="#!" onclick="setTemplate('Recipe');"><i class="material-icons">restaurant</i>Recipe</a></li>
-	<li id="map-route"><a href="#!" onclick="setTemplate('Sequence');"><i class="material-icons">dry_cleaning</i>Sequence</a></li>
-	<li id="map-route"><a href="#!" onclick="setTemplate('Graph');"><i class="material-icons">fort</i>Graph</a></li></ul></div>
+	<!-- console -->
+	<div id="manual" class="content loader pane scale-transition scale-out">
+		notifications... browser memory... (checks, zoom, map placement, map background)</div></div>
 
 <!-- items -->
 <ul id='dropdown-open' class='dropdown-content'>
@@ -208,6 +169,17 @@
 	<li class="divider" tabindex="-1"></li>
 	<li><a href="#!">Color &#8595;</a></li><li><a href="#!">Color &#8593;</a></li></ul>
 
+	<!-- template -->
+	<ul id='dropdown-temp' class='dropdown-content'>
+		<li id="map-sat"><a href="#!" onclick="setTemplate('Empty');"><i class="material-icons">label</i>Empty</a></li>
+		<li class="divider" tabindex="-1"></li>
+		<li id="map-dir"><a href="#!" onclick="setTemplate('Profile');"><i class="material-icons">badge</i>Profile</a></li>
+		<li id="map-dir"><a href="#!" onclick="setTemplate('Instruction');"><i class="material-icons">checklist</i>Checklist</a></li>
+		<li class="divider" tabindex="-1"></li>
+		<li id="map-route"><a href="#!" onclick="setTemplate('Recipe');"><i class="material-icons">restaurant</i>Recipe</a></li>
+		<li id="map-route"><a href="#!" onclick="setTemplate('Sequence');"><i class="material-icons">dry_cleaning</i>Sequence</a></li>
+		<li id="map-route"><a href="#!" onclick="setTemplate('Graph');"><i class="material-icons">fort</i>Graph</a></li></ul>
+
 <!-- dialog -->
 <div id="modal1" class="modal bottom-sheet content loader"><div id="domain-info" class="modal-content grey lighten-4" style="box-shadow: 1px 18px 24px 1px inset cornsilk" ></div></div>
 
@@ -223,16 +195,14 @@ function resetHome() {
 	else { $("#list-wait").addClass("image-rotate"); $("#list-wait2").addClass("image-rotate"); spinner = 0;} }
 
 function openInNewTab(url) { window.open(url, '_blank').focus(); } //window.location.href = url;
-function getParameter() { var path = window.location.href;
-	var domain = path.substring(path.indexOf("?/"), path.length-1); return domain;
-	//var pathArray = window.location.pathname.split('/'); switch (pathArray.length) { case 2: return pathArray[1]; break; default: return 'none'; } 
-			}
+function getParameter() { var path = window.location.href; var domain = path.substring(path.indexOf("?/"), path.length-1); return domain; }
 
 function redirect() { var page = getParameter();
 	switch (page) {
 		case 'action=about': showDoc('about'); break;
-		case 'mattdown.com': showDoc('mattdown'); break;
-		case 'nfnth.com': aboutDoc(); break;
+		case 'ur.land': showDoc('PLANME'); break;
+		case 'mattdown.com': showDoc('md'); break;
+		case 'nfnth.com': aboutDoc('README'); break;
 		case 'ocur.io': showDoc('os'); break; }  }
 	
 function domainFind() {
@@ -241,10 +211,10 @@ function domainFind() {
 //var elems = document.querySelectorAll('.modal'); var instances = M.Modal.init(elems); });
 
 function showFav(site) {
-    $('<link>').appendTo('head').attr({ class: 'ico', type: 'image/x-icon', rel: 'icon', href: "res/img/fav/favicon.ico" });
-    $('<link>').appendTo('head').attr({ class: 'ico', type: 'image/x-icon', rel: 'shortcut icon', href: "res/img/fav/favicon.ico" });
-    $('<link>').appendTo('head').attr({ class: 'ico', type: 'image/x-icon', rel: 'icon', sizes: "192x192", href: "res/img/fav/android-chrome-192x192.png" });
-    $('<link>').appendTo('head').attr({ class: 'ico', type: 'image/x-icon', rel: 'apple-touch-icon', sizes: "128x128", href: "res/img/fav/apple-touch-icon.png" }); }
+    	$('<link>').appendTo('head').attr({ class: 'ico', type: 'image/x-icon', rel: 'icon', href: "res/img/fav/favicon.ico" });
+    	$('<link>').appendTo('head').attr({ class: 'ico', type: 'image/x-icon', rel: 'shortcut icon', href: "res/img/fav/favicon.ico" });
+    	$('<link>').appendTo('head').attr({ class: 'ico', type: 'image/x-icon', rel: 'icon', sizes: "192x192", href: "res/img/fav/android-chrome-192x192.png" });
+    	$('<link>').appendTo('head').attr({ class: 'ico', type: 'image/x-icon', rel: 'apple-touch-icon', sizes: "128x128", href: "res/img/fav/apple-touch-icon.png" }); }
 			
 function copyClip(text) { navigator.clipboard.writeText(text); M.toast({html: 'Address copied.'}); }
 
@@ -531,7 +501,12 @@ function textStart() { showView('editor'); var div = document.getElementById('pa
 setTimeout(function() {
     div.focus();
 }, 0); }
-	
+
+function mapLoc() { }
+function mapDir() { }
+function mapDateTime() { }
+function mapTex() { }
+
 	//setDialog($("#editor").html()); }
 	
 function searchResults(text) { if(event.key === 'Enter') { openInNewTab('https://presearch.com/search?q=' + $(text).val()); }}</script>
