@@ -14,7 +14,9 @@ var setup = async function () {
 		$('#myURL').hide().html(urler + " UR").addClass("badge").addClass("amber").css("font-weight","bold").fadeIn('slow');
             	//$("#myETH").html(ether); 
 		//$("#myURL").html(urler);
-            	$("#connector").css("color", "darkred"); $("#connector").html('<i class="material-icons left">logout</i>Disconnect'); $("#connector").removeClass("green"); $("#connector").addClass("red");
+            	//$("#connector").css("color", "darkred"); 
+		$("#builder").removeClass("disabled");
+		$("#connector").html('<i class="material-icons left">logout</i>Disconnect'); $("#connector").removeClass("green"); $("#connector").addClass("red");
 		//disconnect = true; 
             	$("#wallet-area").removeClass("grey"); $("#wallet-area").addClass("green"); $("#wallet-icon").css("color","darkred"); } ); 
     	for (let i=0;i<opens.length;i++) { pullAssets(user, opens[i].core.slug); } }
@@ -55,7 +57,7 @@ function domainSelect() {
     	if (dt == 'No domain selected') { $("#poster").addClass("disabled"); $("#trader").addClass("disabled");$("#builder").addClass("disabled"); 
 		$('#myDomain').hide().html("My Domain Balance").removeClass("badge").removeClass("amber").css("font-weight","normal").fadeIn('slow');
 		$("#myArt").hide().html("My Domain Artifact").removeClass("badge").removeClass("blue").css("font-weight","normal").fadeIn('slow'); }
-    	else { $("#poster").removeClass("disabled");  $("#trader").removeClass("disabled"); $("#builder").removeClass("disabled");
+    	else { $("#poster").removeClass("disabled");  $("#trader").removeClass("disabled"); 
 	      $('#myDomain').hide().html("24,901 UR").addClass("badge").addClass("amber").css("font-weight","bold").fadeIn('slow');
 	      $('#myArt').hide().html("9 artifact").addClass("badge").addClass("blue").css("font-weight","bold").fadeIn('slow');
 	        
