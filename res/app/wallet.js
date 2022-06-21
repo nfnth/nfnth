@@ -17,7 +17,7 @@ var setup = async function () {
 		$("#builder").removeClass("disabled");
 		$("#connector").html('<i class="material-icons left">logout</i>Disconnect'); $("#connector").removeClass("green"); $("#connector").addClass("red");
 		//disconnect = true; 
-            	$("#wallet-area").removeClass("grey"); $("#wallet-area").addClass("green"); $("#wallet-icon").css("color","darkred"); } ); 
+            	$("#wallet-area").removeClass("grey"); $("#wallet-area").addClass("green"); $("#wallet-icon").css("color","darkgreen"); } ); 
     	for (let i=0;i<opens.length;i++) { pullAssets(user, opens[i].core.slug); } }
     else { M.toast({html: 'No wallet found.'}); } }; $("#wallet-setup").click(setup);
 
