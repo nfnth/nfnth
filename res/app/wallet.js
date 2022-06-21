@@ -1,14 +1,14 @@
 
 class Wallet { address = ""; deed = []; } class Deed { name = ""; id = ""; }
 var user = new Wallet(); //var disconnect = false;
-var gasPrice = "";
+var gasPrice = ""; var itemPrice;
 var setup = async function () {
     if (window.ethereum) { //web3 = new Web3(window.ethereum); //await account();
         const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' }); user.address = accounts[0];
         $("#myAdd").html(user.address.toLowerCase().substring(0,16) + "...");
         $.get("api/"+user.address, async function(data) { 
             	var fields = data.split('|'); var ether = JSON.parse(fields[0]).result; var urler = fields[1]; var gas = fields[2];
-		$('#myETH').hide().html(ether.substring(0, 4)).addClass("badge").addClass("green").css("font-weight","bold").fadeIn('slow');
+		$('#myETH').hide().html(ether.substring(0, 4)).addClass("badge").addClass("green").css("font-weight","bold").fadeIn('slow'); itemPrice = parseInt(ether) / 2;
 		$('#myGas').hide().html(gas).addClass("badge").addClass("blue").css("font-weight","bold").fadeIn('slow'); gasPrice = gas;
             	//$("#myETH").html(ether); 
 		$("#myURL").html(urler);
@@ -106,11 +106,11 @@ var sender = function (message, signature, content, ref) {
 async function purchase() { 
 	var transactionParameters = {
   		nonce: '0x00', // ignored by MetaMask
-  		gasPrice: gasPrice.toString(16), // customizable by user during MetaMask confirmation.
+  		//gasPrice: gasPrice.toString(16), // customizable by user during MetaMask confirmation.
 		//gas: '0x2710', // customizable by user during MetaMask confirmation.
 		to: '0x8a83fbbacb82030ea17179c0403b04e7bce7ba10', // Required except during contract publications.
 		from: user.address, // must match user's active address.
-		value: '0x00', // Only required to send ether to the recipient from the initiating external account.
+		value: itemPrice.toString(16), //'0x00', // Only required to send ether to the recipient from the initiating external account.
 		data: '0x7f7465737432000000000000000000000000000000000000000000000000000000600057', // Optional, but used for defining smart contract creation and interaction.
 		chainId: '0x3', // Used to prevent transaction reuse across blockchains. Auto-filled by MetaMask. 
 	};
