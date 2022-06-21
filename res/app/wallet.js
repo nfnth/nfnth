@@ -10,18 +10,24 @@ var setup = async function () {
             	var fields = data.split('|'); var ether = JSON.parse(fields[0]).result; var urler = fields[1]; var gas = fields[2];
 		$('#myETH').hide().html(ether.substring(0, 4) + " ETH").addClass("badge").addClass("green").css("font-weight","bold").fadeIn('slow'); itemPrice = parseInt(ether) / 2;
 		$('#myGas').hide().html('<a style="display:flex; color:black;">' + gas + '&nbsp;&nbsp;<i class="material-icons">local_gas_station</i></a>').addClass("badge").addClass("red").css("font-weight","bold").fadeIn('slow'); gasPrice = gas;
+		$('#myMail').hide().html('<a style="display:flex; color:black;">7&nbsp;&nbsp;<i class="material-icons">mail</i></a>').addClass("badge").addClass("blue").css("font-weight","bold").fadeIn('slow');
 		$('#myURL').hide().html(urler + " URL").addClass("badge").addClass("amber").css("font-weight","bold").fadeIn('slow');
             	//$("#myETH").html(ether); 
 		//$("#myURL").html(urler);
-            	$("#connector").css("color", "darkgreen"); $("#connector").html('<i class="material-icons left">logout</i>Disconnect'); 
+            	$("#connector").css("color", "darkred"); $("#connector").html('<i class="material-icons left">logout</i>Disconnect'); 
 		//disconnect = true; 
-            	$("#wallet-area").removeClass("grey"); $("#wallet-area").addClass("green"); $("#wallet-icon").css("color","darkgreen"); } ); 
+            	$("#wallet-area").removeClass("grey"); $("#wallet-area").addClass("red"); $("#wallet-icon").css("color","darkred"); } ); 
     	for (let i=0;i<opens.length;i++) { pullAssets(user, opens[i].core.slug); } }
     else { M.toast({html: 'No wallet found.'}); } }; $("#wallet-setup").click(setup);
 
 function desetup() { user = ""; user = new Wallet(); 
-	$("#wallet-area").addClass("grey"); $("#wallet-area").removeClass("green"); $("#wallet-icon").css("color","darkgrey");
-    	$("#myAdd").html('My Wallet Address');  $("#myETH").html('My ETH Balance'); $("#myURL").html('My URL Balance');
+	$("#wallet-area").addClass("grey"); $("#wallet-area").removeClass("green"); $("#wallet-icon").css("color","darkslategrey");
+	$("#myAdd").html('My ETH Balance');
+	$('#myETH').hide().html('My Wallet Address').removeClass("badge").removeClass("green").css("font-weight","normal").fadeIn('slow'); 
+		$('#myGas').hide().html('').removeClass("badge").removeClass("red").css("font-weight","normal").fadeIn('slow'); 
+	$('#myMail').hide().html('').removeClass("badge").removeClass("blue").css("font-weight","normal").fadeIn('slow'); 
+		$('#myURL').hide().html('My UR Balance').removeClass("badge").removeClass("amber").css("font-weight","normal").fadeIn('slow');
+		    
     	$("#connector").css("color", ""); $("#connector").html('<i class="material-icons left">login</i>Connect'); 
 		    //disconnect = false; 
     	emptyDeeds(); domainSelect(); }
