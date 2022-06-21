@@ -61,11 +61,11 @@ function showMark(coord, color, image, link, name, id, area) {
 	return marp; } //$('.materialboxed').materialbox(); 
 
 function showTemp(i) { if (tempMark != "") { tempMark.remove(); } tempMark = showMark(domains[i].coord, getCollect(domains[i].core.collection.slug).replace('.png',''), domains[i].core.image_url, domains[i].core.external_link, domains[i].core.name, i);  }
-function showDeed(i) { domains[i].map = showMark(convertCoord(domains[i].coord), getCollect(domains[i].core.collection.slug).replace('.png',''), domains[i].core.image_url, domains[i].core.external_link, domains[i].core.name, i, 'deed');  }
-function showArt(i) { artifacts[i].map = showMark(convertMark(artifacts[i].location), artifacts[i].color, artifacts[i].image, "", artifacts[i].name); }
+function showDomain(i) { domains[i].map = showMark(convertCoord(domains[i].coord), getCollect(domains[i].core.collection.slug).replace('.png',''), domains[i].core.image_url, domains[i].core.external_link, domains[i].core.name, i, 'domain');  }
+function showArt(i) { artifacts[i].map = showMark(convertMark(artifacts[i].location), artifacts[i].color, artifacts[i].image, "", artifacts[i].name, 'artifact'); }
 
-function deedMap() { for (let i=0;i<domains.length;i++) { if (domains[i].checked) { showDeed(i); } }  }
-function domainMap() { showMark(convertMark(domainMd.location), domainMd.color, 'res/img/shield.png', 'temp.com', domainMd.name, 'x'); }
+function deedMap() { for (let i=0;i<domains.length;i++) { if (domains[i].checked) { showDomain(i); } }  }
+function domainMap() { showMark(convertMark(domainMd.location), domainMd.color, 'res/img/shield.png', 'temp.com', domainMd.name, 'x', 'deed'); }
 function artMap() {  for (let i=0;i<artifacts.length;i++) { if (artifacts[i].checked) { showArt(i); } }  }
 
 var flying; var startUp; 
