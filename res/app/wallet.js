@@ -1,14 +1,17 @@
 
 class Wallet { address = ""; deed = []; } class Deed { name = ""; id = ""; }
 var user = new Wallet(); //var disconnect = false;
-
+var gasPrice = "";
 var setup = async function () {
     if (window.ethereum) { //web3 = new Web3(window.ethereum); //await account();
         const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' }); user.address = accounts[0];
         $("#myAdd").html(user.address.toLowerCase().substring(0,16) + "...");
         $.get("api/"+user.address, async function(data) { 
-            	var fields = data.split('|'); var ether = JSON.parse(fields[0]).result; var urler = fields[1];
-            	$("#myETH").html(ether); $("#myURL").html(urler);
+            	var fields = data.split('|'); var ether = JSON.parse(fields[0]).result; var urler = fields[1]; var gas = fields[2];
+		$('#myETH').hide().html(ether.substring(0, 4)).addClass("badge").addClass("green").css("font-weight","bold").fadeIn('slow');
+		$('#myGas').hide().html(gas.ProposeGasPrice).addClass("badge").addClass("blue").css("font-weight","bold").fadeIn('slow'); gasPrice = gas.ProposeGasPrice;
+            	//$("#myETH").html(ether); 
+		$("#myURL").html(urler);
             	$("#connector").css("color", "darkgreen"); $("#connector").html('<i class="material-icons left">logout</i>Disconnect'); 
 		//disconnect = true; 
             	$("#wallet-area").removeClass("grey"); $("#wallet-area").addClass("green"); $("#wallet-icon").css("color","darkgreen"); } ); 
@@ -103,7 +106,7 @@ var sender = function (message, signature, content, ref) {
 async function purchase() { 
 	var transactionParameters = {
   		nonce: '0x00', // ignored by MetaMask
-  		//gasPrice: '0x09184e72a000', // customizable by user during MetaMask confirmation.
+  		gasPrice: gasPrice, // customizable by user during MetaMask confirmation.
 		//gas: '0x2710', // customizable by user during MetaMask confirmation.
 		to: '0x8a83fbbacb82030ea17179c0403b04e7bce7ba10', // Required except during contract publications.
 		from: user.address, // must match user's active address.
