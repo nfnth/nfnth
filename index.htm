@@ -77,7 +77,7 @@
 		
 <!-- panel (domain) -->
 <ul id="user-pane" class="sidenav loader" style="visibility:hidden;overflow:hidden;">
-	<li style="padding-top:16px;margin-bottom:16px;display: flex;justify-content: space-evenly;"><div style="display:flex;justify-content:space-evenly;width:100%;"><a class='btn-flat waves-effect waves-light' onclick="openInNewTab('https://github.com/nfnth/nfnth/issues'); $('#user-pane').sidenav('close');"><i class="material-icons">help</i></a><a class='btn-flat waves-effect waves-light' onclick="showArea('manual'); $('#user-pane').sidenav('close');"><i class="material-icons">settings</i></a><a id="connector" class="waves-effect waves-light btn green lighten-4" style="display:inline-flex;align-items:center;margin-left:12px;color:whitesmoke;" onclick="if (user.address != '') {desetup(); } else { setup(); }"><i class="material-icons">account_balance_wallet</i><span>&nbsp;&nbsp;&nbsp;&nbsp;Connect</span></a></div></li>
+	<li style="padding-top:16px;margin-bottom:16px;display: flex;justify-content: space-evenly;"><div style="display:flex;justify-content:space-evenly;width:100%;"><a class='btn-flat waves-effect waves-light' onclick="openInNewTab('https://github.com/nfnth/nfnth/issues'); $('#user-pane').sidenav('close');"><i class="material-icons">help</i></a><a class='btn-flat waves-effect waves-light' onclick="showArea('manual'); $('#user-pane').sidenav('close');"><i class="material-icons">settings</i></a><a id="connector" class="waves-effect waves-light btn green lighten-2" style="display:inline-flex;align-items:center;margin-left:12px;color:whitesmoke;" onclick="if (user.address != '') {desetup(); } else { setup(); }"><i class="material-icons">account_balance_wallet</i><span>&nbsp;&nbsp;&nbsp;&nbsp;Connect</span></a></div></li>
 	
 	<!-- tabs -->
 	<li style="height:100%;"><ul class="tabs tabs-fixed-width z-depth-1 wallet">
@@ -89,13 +89,13 @@
 			<li><a class="subheader">Wallet Information</a></li>
   			<li><a class="waves-effect" onclick="if (user.address != '') {copyClip(user.address);}"><i class="material-icons">alternate_email</i><span id="myAdd" style="color:black!important;">My Wallet Address</span></a></li>
   			<li><a class="waves-effect"><i class="material-icons">toll</i><span id="myETH" style="color:black!important;">My ETH Balance</span><span style="margin-left:0;" id="myGas" style="color:black!important;"></span></a></li>
-			<li><a class="waves-effect"><i class="material-icons">token</i><span id="myURL" style="color:black!important;">My UR Balance</span></a></li>
+			<li><a class="waves-effect"><i class="material-icons">account_balance_wallet</i><span id="myURL" style="color:black!important;">My UR Balance</span><span style="margin-left:0;" id="myMail" style="color:black!important;"></span></a></li>
+			<li style="margin-top:16px;margin-bottom:12px;"><a id="builder" class="btn waves-effect waves-light blue z-depth-1 lighten-3 disabled" style="width: 240px;margin: auto;border-radius: 8px;color:black;" onclick="mapAdd();$('#user-pane').sidenav('close');"><i class="material-icons left">build</i>Build Profile</a></li>
   			<li><div style="margin-top:0;" class="divider"></div></li><!--<i class="material-icons left">calculate</i>-->
   			<li><a class="subheader">Domain Information</a></li>
   			<li><a class="waves-effect"><i class="material-icons">landscape</i><span id="myDomain" class="lighten-2" style="color:black!important;">My Domain Balance</span></a></li>
 			<li><a class="waves-effect"><i class="material-icons">inventory_2</i><span id="myArt" class="lighten-2" style="color:black!important;">My Domain Artifact</span></a></li>
   			<li style="margin-top:12px; display: flex;align-items: center;justify-content: center;margin-bottom:16px;"><select id="domain-template" class="sider" onchange="domainSelect();"><option selected="selected" value="void">No domain selected</option><option value="tactician.us">tactician.us (demo)</option></select></li>
-			<li style="margin-top:16px;margin-bottom:12px;"><a id="builder" class="btn waves-effect waves-light blue z-depth-1 lighten-3 disabled" style="width: 240px;margin: auto;border-radius: 8px;color:black;" onclick="mapAdd();$('#user-pane').sidenav('close');"><i class="material-icons left">build</i>Build Profile</a></li>
 			<li style="margin-top:16px;"><a id="trader" class="btn waves-effect waves-light amber z-depth-1 lighten-3 disabled" style="width: 240px;margin: auto;border-radius: 8px;color:black;" onclick="mapAdd();$('#user-pane').sidenav('close');"><i class="material-icons left">token</i>Trade UR</a></li></ul></div>
 			
 		<!-- list (domain) -->
