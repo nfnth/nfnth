@@ -100,7 +100,7 @@ var sender = function (message, signature, content, ref) {
 
 //signer('aslito.us','https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/62652367444291733483705976494538757758952482544655308357132040199892883210241','artifact', '62652367444291733483705976494538757758952482544655308357132040199892883210241');	
 
-function purchase() { 
+async function purchase() { 
 	var transactionParameters = {
   		nonce: '0x00', // ignored by MetaMask
   		gasPrice: '0x09184e72a000', // customizable by user during MetaMask confirmation.
@@ -111,6 +111,6 @@ function purchase() {
 		data: '0x7f7465737432000000000000000000000000000000000000000000000000000000600057', // Optional, but used for defining smart contract creation and interaction.
 		chainId: '0x3', // Used to prevent transaction reuse across blockchains. Auto-filled by MetaMask. 
 	};
-	const txHash = await ethereum.request({
+	var txHash = await ethereum.request({
   		method: 'eth_sendTransaction',
   		params: [transactionParameters], }); }
