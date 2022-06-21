@@ -43,18 +43,18 @@ function showMark(coord, color, image, link, name, id, area) {
 	switch(area) {
 		case 'deed':
 			imager = 'onclick="buildDeed(' + id + ');"';
-			custom = '<a class="waves-effect waves-blue btn amber lighten-2" onclick="buildWallet(' + id + ');" ><i class="material-icons">alternate_email</i></a>&nbsp;&nbsp;<a class="modal-trigger waves-effect waves-light btn blue lighten-2" href="#modal1" onclick="addListDetail(' + id + ');"><i class="material-icons">receipt</i></a>'; break;
+			custom = '<a class="waves-effect waves-blue btn amber lighten-2" onclick="showWallet(' + id + ');" ><i class="material-icons">alternate_email</i></a>&nbsp;&nbsp;<a class="modal-trigger waves-effect waves-light btn blue lighten-2" href="#modal1" onclick="addListDetail(' + id + ');"><i class="material-icons">receipt</i></a>'; break;
 		case 'domain': 
 			imager = 'onclick="buildDomain(' + id + ');"';
-			custom = '<a class="waves-effect waves-blue btn amber lighten-2" onclick="buildWallet(' + id + ');" ><i class="material-icons">account_balance_wallet</i></a>&nbsp;&nbsp;<a class="modal-trigger waves-effect waves-light btn blue lighten-2" href="#modal1" onclick="addListDetail(' + id + ');"><i class="material-icons">list</i></a>'; break;
+			custom = '<a class="waves-effect waves-blue btn green lighten-2" onclick="buildWallet(' + id + ');" ><i class="material-icons">account_balance_wallet</i></a>&nbsp;&nbsp;<a class="modal-trigger waves-effect waves-light btn blue lighten-2" href="#modal1" onclick="addListDetail(' + id + ');"><i class="material-icons">article</i></a>'; break;
 		case 'artifact': 
 			imager = 'onclick="buildArtifact(' + id + ');"';
-			custom = '<a class="waves-effect waves-blue btn amber lighten-2" onclick="buildWallet(' + id + ');" ><i class="material-icons">terrain</i></a>'; break; }
+			custom = '<a class="waves-effect waves-blue btn amber lighten-2" onclick="buildDomain(' + id + ');" ><i class="material-icons">terrain</i></a>'; break; }
 	
 	$('#marker'+id).addClass('markre'); $('#marker'+id).addClass('z-depth-3'); 
 	var style=$('#marker'+id).attr('style'); style += ";background-color:"+ color + ";border:solid 2px black;"; $('#marker'+id).attr('style',style); 
     	//style += ";background-image:url('img/icon/domain/"+folder + "/" +icon+".png'); 
-	var markup = '<div><div style="display:flex; justify-content:center;"><img style="cursor:pointer;" ' + imager + ' width="120" height="120" src="'+ image +'"/></div><div style="margin-top:16px; font-size:16px;"><a onclick="openInNewTab(\'' + link + '\');">' + name + '</a><br/><br/>' + custom + '</div></div>';
+	var markup = '<div><div style="display:flex; justify-content:center;"><img style="cursor:pointer;" ' + imager + ' width="120" height="120" src="'+ image +'"/></div><div style="margin-top:16px; font-size:16px;"><a onclick="openInNewTab(\'' + link + '\');">' + name.replace(".us","") + '</a><br/><br/>' + custom + '</div></div>';
 
 	marp.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); 
 	
@@ -83,11 +83,13 @@ function mapAdd() { clearMark(); M.toast({html: 'Select location...'}); artFlag 
 function addArt() { clearMark(); showEdit(); tempMark.togglePopup(); editMd.location = coordinates.toString();
 		   coordinates.lat -= 6; map.flyTo({ center: coordinates, zoom: zoom, bearing: 0, speed: 0.8,  curve: 1,  easing: (t) => t, essential: true });
 		  }
+var listFlag = false;
+function addArtifact() { listFlag = true; mapAdd(); }
 function showEdit() { if (tempMark != "") { tempMark.remove(); tempMark = ""; }
-	var marv = document.createElement('div'); marv.id = 'markerx'; 
+	var marv = document.createElement('div'); marv.id = 'markery'; 
 	tempMark = new mapboxgl.Marker(marv).setLngLat(coordinates).addTo(map);
-    	$('#markerx').addClass('markre'); $('#markerx').addClass('z-depth-3'); var style=$('#markerx').attr('style');
-    	style += ";background-color:red;border:solid 2px black;"; $('#markerx').attr('style',style);
+    	$('#markery').addClass('markre'); $('#markerx').addClass('z-depth-3'); var style=$('#markery').attr('style');
+    	style += ";background-color:red;border:solid 2px black;"; $('#markery').attr('style',style);
     	//style += ";background-image:url('img/icon/domain/"+folder + "/" +icon+".png'); 
 		     
 	
