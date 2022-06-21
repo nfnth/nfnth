@@ -51,14 +51,14 @@
 <ul id="shop" class="dropdown-content loader" style="visibility:hidden;">
 	<li><a onclick="showDoc('guide');"><i class="material-icons">book</i>Civilian's Field Guide</a></li>
 	<li class="divider"></li>
-	<li><a onclick="showDoc('guide');"><i class="material-icons">flashlight_on</i>OCUR.io Camera</a></li>
+	<li><a onclick="showDoc('guide');"><i class="material-icons">smartphone</i>OCUR Explorer</a></li>
 	<li><a onclick="showDoc('guide');"><i class="material-icons">local_drink</i>Energy Drinks</a></li>
 	<li class="divider"></li>
 	<li><a onclick="openInNewTab('https://opensea.io/nfnth');"><i class="material-icons">sailing</i>OpenSea NFT...</a></li></ul>
 
 <!-- panel (deed) -->
 <ul id="deed-pane" class="sidenav loader" style="visibility:hidden;overflow:hidden;">
-	<li><div class="user-view z-depth-1 amber lighten-5" style="display: flex;margin: auto; padding: 0;align-items: center; padding-left:12px;"><span id="ocuros" style="cursor: pointer;margin:auto; color:darkgreen!important; font-size:18px;border-radius: 8px; opacity: 0.7; height: 36px !important;display: flex;align-items: center;padding-top: 10px;" onclick="showDoc('os'); $('#deed-pane').sidenav('close');" class="badge grey lighten-2" data-badge-caption="v1.08"><img src="res/img/scroll_logo.png" style="width:24px; height:24px; margin-right:8px;" /><span style="font-weight:bold;">doc OS ·&nbsp;</span></span><img id="user-pic" style="opacity:0.6; height: 48px;position:absolute; right:0; margin: 12px; cursor:pointer;" onclick="showNfNth(); showList('open');"/><img id="user-pic2" style="opacity:0.6; height: 48px;cursor:pointer;margin:12px;" onclick="showNfNth(); showList('open');"/></div></li>
+	<li><div class="user-view z-depth-1 amber lighten-5" style="display: flex;margin: auto; padding: 0;align-items: center; padding-left:12px;"><span id="ocuros" style="cursor: pointer;margin:auto; color:darkgreen!important; font-size:18px;border-radius: 8px; opacity: 0.7; height: 36px !important;display: flex;align-items: center;padding-top: 10px;" onclick="showDoc('os'); $('#deed-pane').sidenav('close');" class="badge grey lighten-2" data-badge-caption="v1.08"><img src="res/img/scroll_logo.png" style="width:24px; height:24px; margin-right:8px;" /><span style="font-weight:bold;">docOS ·&nbsp;</span></span><img id="user-pic" style="opacity:0.6; height: 48px;position:absolute; right:0; margin: 12px; cursor:pointer;" onclick="showNfNth(); showList('open');"/><img id="user-pic2" style="opacity:0.6; height: 48px;cursor:pointer;margin:12px;" onclick="showNfNth(); showList('open');"/></div></li>
 	
 	<!-- tabs -->
 	<li style="height:100%;"><ul class="tabs tabs-fixed-width z-depth-1">
@@ -77,7 +77,7 @@
 		
 <!-- panel (domain) -->
 <ul id="user-pane" class="sidenav loader" style="visibility:hidden;overflow:hidden;">
-	<li style="padding-top:16px;margin-bottom:16px;display: flex;justify-content: space-evenly;"><div style="display:flex;justify-content:space-evenly;width:100%;"><a class='btn-flat waves-effect waves-light' onclick="openInNewTab('https://github.com/nfnth/nfnth/issues'); $('#user-pane').sidenav('close');"><i class="material-icons">help</i></a><a class='btn-flat waves-effect waves-light' onclick="openInNewTab('https://github.com/nfnth/nfnth/issues'); $('#user-pane').sidenav('close');"><i class="material-icons">settings</i></a><a id="connector" class="waves-effect waves-light btn green lighten-2" style="display:inline-flex;align-items:center;margin-left:12px;color:whitesmoke;" onclick="if (user.address != '') {desetup(); } else { setup(); }"><i class="material-icons">account_balance_wallet</i><span>&nbsp;&nbsp;&nbsp;&nbsp;Connect</span></a></div></li>
+	<li style="padding-top:16px;margin-bottom:16px;display: flex;justify-content: space-evenly;"><div style="display:flex;justify-content:space-evenly;width:100%;"><a class='btn-flat waves-effect waves-light' onclick="openInNewTab('https://github.com/nfnth/nfnth/issues'); $('#user-pane').sidenav('close');"><i class="material-icons">help</i></a><a class='btn-flat waves-effect waves-light' onclick="showArea('manual'); $('#user-pane').sidenav('close');"><i class="material-icons">settings</i></a><a id="connector" class="waves-effect waves-light btn green lighten-4" style="display:inline-flex;align-items:center;margin-left:12px;color:whitesmoke;" onclick="if (user.address != '') {desetup(); } else { setup(); }"><i class="material-icons">account_balance_wallet</i><span>&nbsp;&nbsp;&nbsp;&nbsp;Connect</span></a></div></li>
 	
 	<!-- tabs -->
 	<li style="height:100%;"><ul class="tabs tabs-fixed-width z-depth-1 wallet">
@@ -116,20 +116,20 @@
     	<div id="mapper" class="content loader pane" style="overflow-y: auto; height: 105%;">
 		<div id="map" style="width:100%; height:100%;"></div>
 		
-<div class="fixed-action-btn">
-  	<a class="btn-floating btn-large blue lighten-4"><i class="large material-icons">explore</i></a>
-  	<ul>
-    		<li><a id="map-loc" class="btn-floating grey lighten-1" onclick="mapLoc();" ><i class="material-icons">near_me</i></a></li>
-    		<li><a id="map-sat" class="btn-floating blue lighten-1" onclick="mapDir();"><i class="material-icons">directions</i></a></li>
-		<li><a id="map-art" class="btn-floating blue lighten-2" onclick="mapCam();" ><i class="material-icons">photo_camera</i></a></li>
-		<li><a id="map-deed" class="btn-floating blue lighten-2" onclick="mapDateTime();"><i class="material-icons">schedule</i></a></li>
-	  	<li><a id="map-art" class="btn-floating blue lighten-3" onclick="mapTex();" ><i class="material-icons">edit</i></a></li></ul></div></div>
+		<div class="fixed-action-btn">
+			<a class="btn-floating btn-large green lighten-2"><i class="large material-icons">explore</i></a>
+			<ul>
+				<li><a id="map-loc" class="btn-floating grey lighten-1" onclick="mapLoc();" ><i class="material-icons">near_me</i></a></li>
+				<li><a id="map-sat" class="btn-floating blue lighten-1" onclick="mapDir();"><i class="material-icons">directions</i></a></li>
+				<li><a id="map-art" class="btn-floating blue lighten-2" onclick="mapCam();" ><i class="material-icons">photo_camera</i></a></li>
+				<li><a id="map-deed" class="btn-floating blue lighten-2" onclick="mapDateTime();"><i class="material-icons">schedule</i></a></li>
+				<li><a id="map-art" class="btn-floating blue lighten-3" onclick="mapTex();" ><i class="material-icons">edit</i></a></li></ul></div></div>
 
     	<!-- search -->
     	<div id="results" style="margin:80; display:none;" class="content loader pane">search...</div>
 
     	<!-- editor -->
-    	<div id="editor" class="content loader pane scale-transition scale-out" style="height:100%;">
+    	<div id="editor" class="content loader pane scale-transition scale-out" style="height:90%;">
 		<div style="display:flex;  align-items: center; justify-content: space-evenly; margin:12px; margin-top:24px;"><div><div class="hiddenfile"><input name="upload" type="file" id="preview" onchange="checkFile();" multiple="multiple"/></div>
 			<a id="dropdown-template" class="waves-effect waves-light amber lighten-2 btn dropdown-trigger" href='#' data-target='dropdown-temp' style="margin-right:8px; width:150px;" ><i id="view-icon" class="material-icons left">dynamic_feed</i>Template</a>
 			<a id="dropdown-file" class="waves-effect waves-light amber lighten-3 btn dropdown-trigger" href='#' data-target='dropdown-file' style="margin-right:8px; width:150px;" ><i id="view-icon" class="material-icons left">attach_file</i>File...</a>
@@ -329,7 +329,8 @@ function addList(i){ var extra = ""; if(domains[i].checked == true) { extra = "c
 		$("#registry-domain").append("<a class='collection-item'><div style='display:flex;justify-content:space-between;'><div><img style='cursor:pointer;' onclick='showView(\"list\"); showList(\"domain\"); flyMark(" + i + ");' class='z-depth-1' width='52' height='30' src='" + domains[i].core.image_url + "'/></div><div style='display:flex; justify-content:space-between;align-items:center;'><span style='color:beige;' class='btn waves-effect waves-light amber lighten-4' onclick='buildWallet(" + i + ");'><i class='material-icons'>account_balance_wallet</i></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style='display:flex; flex-direction:column;'><label style='display:flex;'><input type='checkbox' " + extra + " onclick='setList(" + i + ");' /><span></span></label></div></div></div></a>"); } }
 
 function addListDetail(i) { //pullOwner(i); pullPrice(i);
-     	$("#domain-info").html('<div style="display:flex;justify-content:space-evenly;align-items:center;width:100%;padding-top:12px;"><div style="display: flex;flex-direction: column;text-align: left;align-items:center;width:100%;"><div style="display:flex; justify-content:space-evenly; width:360px; margin-bottom:12px;"><div style="cursor:pointer;" id="o'+ i + '"></div><div class="z-depth-1 " style="background-color:rgb(255,255,255,0.5); display:flex; flex-direction:column; justify-content:space-evenly;width:100%; align-items:center; padding:12px;box-shadow:8px -8px 12px 12px inset whitesmoke;" ><a onclick="showMark(\'' + i + '\'); showView(\'map\'); map.resize();" class="modal-close waves-effect waves-light btn amber lighten-1" style="width:200px;"><i class="material-icons right">inventory_2</i>View Artifact</a><a onclick="showMark(\'' + i + '\'); showView(\'map\'); map.resize();" class="modal-close waves-effect waves-light btn blue lighten-1" style="width:200px;" ><i class="material-icons right">sailing</i>View Deed...</a></div></div><div style="margin-bottom:16px;">' + domains[i].name + '&nbsp;&nbsp · &nbsp;&nbsp<a onclick="openInNewTab(\'' + domains[i].core.external_link + '\');">' + domains[i].core.name + '</a></div><br/></div></div>'); } 
+	pullStats(i);
+     	$("#domain-info").html('<div style="display:flex;justify-content:space-evenly;align-items:center;width:100%;padding-top:12px;"><div style="display: flex;flex-direction: column;text-align: left;align-items:center;width:100%;"><div style="display:flex; justify-content:space-evenly; width:360px; margin-bottom:12px;"><div style="cursor:pointer;" id="s'+ i + '"></div><div class="z-depth-1 " style="background-color:rgb(255,255,255,0.5); display:flex; flex-direction:column; justify-content:space-evenly;width:100%; align-items:center; padding:12px;box-shadow:8px -8px 12px 12px inset whitesmoke;" ><a onclick="showMark(\'' + i + '\'); showView(\'map\'); map.resize();" class="modal-close waves-effect waves-light btn amber lighten-1" style="width:200px;"><i class="material-icons right">inventory_2</i>View Artifact</a><br/><a onclick="showMark(\'' + i + '\'); showView(\'map\'); map.resize();" class="modal-close waves-effect waves-light btn blue lighten-1" style="width:200px;" ><i class="material-icons right">sailing</i>View Deed...</a></div></div><div style="margin-bottom:16px;">' + domains[i].name + '&nbsp;&nbsp · &nbsp;&nbsp<a onclick="openInNewTab(\'' + domains[i].core.external_link + '\');">' + domains[i].core.name + '</a></div><br/></div></div>'); } 
 	
 function addListDeed(i) { var embedDisplay = "";
 	//if (domains[i].core.animation_url != null) {  } else { 
@@ -348,6 +349,8 @@ function addArtDeed(i) { var embedDisplay = "";
 	embedDisplay = "<img  style='width:80%;' src='" + artifacts[i].image + "' />"; // }
 		
 	return "<div style='text-align:center;'><p><span style='font-weight:16px'><a onclick='openInNewTab(\"" +artifacts[i].link + "\");'>" + artifacts[i].name + "</a></p></div><br/><div id='emDisp' style='text-align:center;'>" + embedDisplay + "</div></br><p>" + artifacts[i].content + "</p><br/>";   }
+	
+function showArea(area) { setDialog($("#"+area).html()); $('#user-pane').sidenav('close'); }
 
 function showDoc(doc) { $.get('res/doc/'+doc, function(data) { setDialog(renderMd(data)); }); }
 function tempDoc(doc) { $.get(doc, function(data) { setDialog(renderMd(data)); }); }
@@ -363,7 +366,10 @@ function buildWallet(i) {
 function updateWallet(i) {
 	
 }
-	
+
+function pullStats(i) {
+	$("#s"+i).html("<span class='badge amber'>289 UR</span><br/><span class='badge green'>3 artifact</span>");
+}
 function updateInfo(i) { 
 	
 	if (domains[i].owner == "0x8a83fbbacb82030ea17179c0403b04e7bce7ba10") { M.toast({html: 'No owner found.'});
