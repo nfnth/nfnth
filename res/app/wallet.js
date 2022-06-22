@@ -140,11 +140,7 @@ async function purchase() {
   		method: 'eth_sendTransaction',
   		params: [transactionParameters], }); }
 
-const transactionParameters = {
-    from: accounts[0],
-    to: tokenContractAddress,
-    data: getDataFieldValue(tokenRecipientAddress, tokenAmount),
-};
+
 async function transfer() { 
 	var transactionParameters = {
     from: user.address,
