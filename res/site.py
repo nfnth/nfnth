@@ -97,6 +97,13 @@ async def data(request):
                 fout.write(content)
                 pass
             return web.Response(text='valid wallet',content_type="text/html")
+        elif content == "message":
+            path = DATA + 'receipt/' + domain + '/' + wallet
+            #path = DATA + 'receipt/' + wallet + '/' + domain
+            if os.path.exists(path):
+                return web.Response(text='messages found',content_type="text/html")
+            else:
+                return web.Response(text='no messages found',content_type="text/html")
         else:
             api_url = "https://api.opensea.io/api/v1/asset/0x495f947276749Ce646f68AC8c248420045cb7b5e/" + domain
             headers = {"X-API-KEY": OPEN_API_KEY}
@@ -105,15 +112,30 @@ async def data(request):
             x = requests.get(api_url, headers=headers).json().get("top_ownerships")[0].get("owner").get("address")
             print (x)
             if x.upper() == wallet.upper(): #owner authenticated
-                path = DATA + 'domain/' + domain
-                #request.app['locked'] = False
-                if os.path.exists(path): #backup?
-                    shutil.rmtree(path)
-                os.mkdir(path)
-                with open(path + '/doc', "wt") as fout:
-                    fout.write(content)
-                    pass
-                return web.Response(text='valid domain',content_type="text/html")
+                if content == "receipt":
+                    path = DATA + 'receipt/' + domain + '/' + wallet
+                    #mess = DATA + 'receipt/' + wallet + '/' + domain
+                    if not os.path.exists(path):
+                        os.mkdir(path)
+                    #if not os.path.exists(mess):
+                    #    os.mkdir(mess)
+                        
+                    with open(path + '/stamp', "wt") as fout:
+                        fout.write(message)
+                        pass
+                    #with open(mess + '/stamp', "wt") as fout:
+                    #    fout.write(message)
+                    #    pass
+                else:
+                    path = DATA + 'domain/' + domain
+                    #request.app['locked'] = False
+                    if os.path.exists(path): #backup?
+                        shutil.rmtree(path)
+                    os.mkdir(path)
+                    with open(path + '/doc', "wt") as fout:
+                        fout.write(content)
+                        pass
+                    return web.Response(text='valid domain',content_type="text/html")
             else:
                 return web.Response(text='invalid owner',content_type="text/html")
     else:
