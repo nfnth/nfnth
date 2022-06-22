@@ -101,7 +101,7 @@ async def data(request):
             path = DATA + 'receipt/' + domain + '/' + wallet
             #path = DATA + 'receipt/' + wallet + '/' + domain
             if os.path.exists(path):
-                return web.Response(text='messages found',content_type="text/html")
+                return web.Response(text='messages found',content_type="text/html") #allow post/retrieve...
             else:
                 return web.Response(text='no messages found',content_type="text/html")
         else:
@@ -113,19 +113,19 @@ async def data(request):
             print (x)
             if x.upper() == wallet.upper(): #owner authenticated
                 if content == "receipt":
-                    path = DATA + 'receipt/' + domain + '/' + wallet
-                    #mess = DATA + 'receipt/' + wallet + '/' + domain
+                    path = DATA + 'receipt/' + wallet + '/' + domain
                     if not os.path.exists(path):
-                        os.mkdir(path)
-                    #if not os.path.exists(mess):
-                    #    os.mkdir(mess)
-                        
-                    with open(path + '/stamp', "wt") as fout:
+                        os.mkdir(path)   
+                    with open(path + '/stamp', "wt") as fout: #add tx number?
                         fout.write(message)
                         pass
-                    #with open(mess + '/stamp', "wt") as fout:
-                    #    fout.write(message)
-                    #    pass
+                elif content == "message":
+                    path = DATA + 'receipt/' + domain + '/' + wallet
+                    if not os.path.exists(path):
+                        os.mkdir(path)
+                     with open(path + '/list', "wt") as fout: #add wallet destination, delete?
+                        fout.write(message)
+                        pass
                 else:
                     path = DATA + 'domain/' + domain
                     #request.app['locked'] = False
