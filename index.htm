@@ -197,14 +197,14 @@ function resetHome() {
 function openInNewTab(url) { window.open(url, '_blank').focus(); } //window.location.href = url;
 function getParameter() { var path = window.location.href; var domain = path.substring(path.indexOf("/")+1, path.length-1); return domain; }
 
-function redirect() { var path = window.location.href.replace('/','').replace('#','');
+function redirect() { var path = window.location.href.replace('/','').replace('#',''); alert(path);
 	switch (path) {
 		case 'ur.land': showDoc('PLANME'); break;
 		case 'mattdown.com': showDoc('md'); break;
 		case 'nfnth.com': aboutDoc('README'); break;
 		case 'ocur.io': showDoc('os'); break; }
 	
-	var page = getParameter(); 
+	var page = getParameter(); alert(page);
 	switch (page) {
 		case '?action=about': showDoc('about'); break; }  }
 	
