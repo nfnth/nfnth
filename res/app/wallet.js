@@ -10,7 +10,7 @@ var setup = async function () {
             	var fields = data.split('|'); var ether = JSON.parse(fields[0]).result; var urler = fields[1]; var gas = fields[2];
 		$('#myETH').hide().html(ether.substring(0, 4) + " ETH").addClass("badge").addClass("green").css("font-weight","bold").fadeIn('slow'); itemPrice = parseInt(ether) / 2;
 		$('#myGas').hide().html('<a style="display:flex; color:black;">' + gas + '&nbsp;&nbsp;<i class="material-icons">local_gas_station</i></a>').addClass("badge").addClass("green").addClass("lighten-2").css("font-weight","bold").fadeIn('slow'); gasPrice = gas;
-		$('#myURL').hide().html(urler + " UR" + '&nbsp;&nbsp;<i class="material-icons">token</i>').addClass("badge").addClass("amber").css("font-weight","bold").fadeIn('slow');
+		$('#myURL').hide().html('<a style="display:flex; color:black;">' + urler + " UR" + '&nbsp;&nbsp;<i class="material-icons">token</i>').addClass("badge").addClass("amber").css("font-weight","bold").fadeIn('slow');
             	//$("#myETH").html(ether); 
 		//$("#myURL").html(urler);
             	//$("#connector").css("color", "darkred"); 
@@ -57,8 +57,8 @@ function domainSelect() {
 		$('#myDomain').hide().html("My Domain Balance").removeClass("badge").removeClass("amber").css("font-weight","normal").fadeIn('slow');
 		$("#myArt").hide().html("My Domain Artifact").removeClass("badge").removeClass("blue").css("font-weight","normal").fadeIn('slow'); }
     	else { $("#poster").removeClass("disabled");  $("#trader").removeClass("disabled"); 
-	      $('#myDomain').hide().html("24,901 UR" + '&nbsp;&nbsp;<i class="material-icons">token</i>').addClass("badge").addClass("amber").css("font-weight","bold").fadeIn('slow');
-	      $('#myArt').hide().html("9 artifact" + '&nbsp;&nbsp;<i class="material-icons">inventory_2</i>').addClass("badge").addClass("blue").css("font-weight","bold").fadeIn('slow');
+	      $('#myDomain').hide().html('<a style="display:flex; color:black;">' + "24,901 UR" + '&nbsp;&nbsp;<i class="material-icons">token</i>').addClass("badge").addClass("amber").css("font-weight","bold").fadeIn('slow');
+	      $('#myArt').hide().html('<a style="display:flex; color:black;">' + "9 artifact" + '&nbsp;&nbsp;<i class="material-icons">inventory_2</i>').addClass("badge").addClass("blue").css("font-weight","bold").fadeIn('slow');
 	        
 	     
 	     } pullDomain(dv);  }
