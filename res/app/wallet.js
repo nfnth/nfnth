@@ -10,12 +10,12 @@ var setup = async function () {
             	var fields = data.split('|'); var ether = JSON.parse(fields[0]).result; var urler = fields[1]; var gas = fields[2];
 		$('#myETH').hide().html(ether.substring(0, 4) + " ETH").addClass("badge").addClass("green").css("font-weight","bold").fadeIn('slow'); itemPrice = parseInt(ether) / 2;
 		$('#myGas').hide().html('<a style="display:flex; color:black;">' + gas + '&nbsp;&nbsp;<i class="material-icons">local_gas_station</i></a>').addClass("badge").addClass("green").addClass("lighten-2").css("font-weight","bold").fadeIn('slow'); gasPrice = gas;
-		$('#myURL').hide().html(urler + " UR").addClass("badge").addClass("amber").css("font-weight","bold").fadeIn('slow');
+		$('#myURL').hide().html(urler + " UR" + '&nbsp;&nbsp;<i class="material-icons">token</i>').addClass("badge").addClass("amber").css("font-weight","bold").fadeIn('slow');
             	//$("#myETH").html(ether); 
 		//$("#myURL").html(urler);
             	//$("#connector").css("color", "darkred"); 
 		$("#builder").removeClass("disabled");
-		$("#connector").html('<i class="material-icons left">logout</i>Disconnect'); $("#connector").removeClass("green"); $("#connector").addClass("red");
+		$("#connector").html('<i class="material-icons left">logout</i>Disconnect'); $("#connector").removeClass("green"); $("#connector").addClass("red");$("#connector").css('color','black');
 		//disconnect = true; 
             	$("#wallet-area").removeClass("grey"); $("#wallet-area").addClass("green"); $("#wallet-icon").css("color","darkgreen"); } ); 
     	for (let i=0;i<opens.length;i++) { pullAssets(user, opens[i].core.slug); } }
@@ -26,10 +26,10 @@ function desetup() { user = ""; user = new Wallet();
 	$("#myAdd").html('My ETH Balance');
 	$('#myETH').hide().html('My Wallet Address').removeClass("badge").removeClass("green").css("font-weight","normal").fadeIn('slow'); 
 		$('#myGas').hide().html('').removeClass("badge").removeClass("red").css("font-weight","normal").fadeIn('slow'); 
-	 
+	 $("#builder").addClass("disabled");
 		$('#myURL').hide().html('My UR Balance').removeClass("badge").removeClass("amber").css("font-weight","normal").fadeIn('slow');
 		    
-    	$("#connector").css("color", ""); $("#connector").html('<i class="material-icons left">login</i>Connect'); 
+    	$("#connector").css("color", "darkgreen"); $("#connector").html('<i class="material-icons left">login</i>Connect'); 
 		    $("#connector").addClass("green"); $("#connector").removeClass("red");
 		    //disconnect = false; 
     	emptyDeeds(); domainSelect(); }
@@ -53,12 +53,12 @@ function emptyDeeds() { $('#domain-template').empty();
 
 function domainSelect() { 
 	var d = document.getElementById("domain-template"); var dt = d.options[d.selectedIndex].text; var dv = d.options[d.selectedIndex].value; 
-    	if (dt == 'No domain selected') { $("#poster").addClass("disabled"); $("#trader").addClass("disabled");$("#builder").addClass("disabled"); 
+    	if (dt == 'No domain selected') { $("#poster").addClass("disabled"); $("#trader").addClass("disabled"); 
 		$('#myDomain').hide().html("My Domain Balance").removeClass("badge").removeClass("amber").css("font-weight","normal").fadeIn('slow');
 		$("#myArt").hide().html("My Domain Artifact").removeClass("badge").removeClass("blue").css("font-weight","normal").fadeIn('slow'); }
     	else { $("#poster").removeClass("disabled");  $("#trader").removeClass("disabled"); 
-	      $('#myDomain').hide().html("24,901 UR").addClass("badge").addClass("amber").css("font-weight","bold").fadeIn('slow');
-	      $('#myArt').hide().html("9 artifact").addClass("badge").addClass("blue").css("font-weight","bold").fadeIn('slow');
+	      $('#myDomain').hide().html("24,901 UR" + '&nbsp;&nbsp;<i class="material-icons">token</i>').addClass("badge").addClass("amber").css("font-weight","bold").fadeIn('slow');
+	      $('#myArt').hide().html("9 artifact" + '&nbsp;&nbsp;<i class="material-icons">inventory_2</i>').addClass("badge").addClass("blue").css("font-weight","bold").fadeIn('slow');
 	        
 	     
 	     } pullDomain(dv);  }
@@ -86,7 +86,7 @@ function pullDomain(domain) { domainMd = ""; domainMd = new Md();
 
 var showArtifactOpen = true;
 function builder() { $("#registry-artifact").html(""); var extra = ""; 
-	if (artifacts.length == 0) { $("#registry-artifact").append("<a class='collection-item'>No deed selected.</a>"); }
+	if (artifacts.length == 0) { $("#registry-artifact").append("<a onclick='$(\"#domain-tabs\").tabs(\"select\", \"test4\");' class='collection-item'>No deed selected.</a>"); }
 	for (let i = 0; i < artifacts.length; i++) { if(artifacts[i].checked == true) { extra = "checked='checked'"; } 
 		if (showArtifactOpen) { $("#registry-artifact").append("<a class='collection-item'><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;' onclick='showView(\"list\"); showList(\"domain\"); flyArt(" + i + ");'>" + artifacts[i].name + "</div><div style='display:flex; justify-content:space-between;align-items:center;'><div style='display:flex;'><span style='color:aliceblue;' class='btn waves-effect waves-light blue lighten-4' onclick='artDoc(" + i + "); $(\"#user-pane\").sidenav(\"close\");'><i class='material-icons'>article</i></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style='display:flex;align-items:center;'><label style='display:flex;'><input type='checkbox' " + extra + " onclick='setList(" + i + ");' /><span></span></label></div></div></div></div></a>"); } 
 		else { $("#registry-artifact").append("<a class='collection-item'><div style='display:flex;justify-content:space-between;'><div><img style='cursor:pointer;' onclick='showView(\"list\"); showList(\"domain\"); flyArt(" + i + ");' class='z-depth-1' width='52' height='30' src='" + artifacts[i].image + "'/></div><div style='display:flex; justify-content:space-between;align-items:center;'><span style='color:beige;' class='btn waves-effect waves-light blue lighten-4' onclick='artDoc(" + i + ");'><i class='material-icons'>article</i></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style='display:flex; flex-direction:column;'><label style='display:flex;'><input type='checkbox' " + extra + " onclick='setList(" + i + ");' /><span></span></label></div></div></div></a>"); }	}  }
