@@ -139,3 +139,22 @@ async function purchase() {
 	var txHash = await ethereum.request({
   		method: 'eth_sendTransaction',
   		params: [transactionParameters], }); }
+
+async function transfer() { 
+	var recieverAddres = "0xB0D39Cd2a5Acc510529444B45a3ACa189D971c49"; var amount = 1000;
+	var TOKEN_CONTRACT_ADDRESS = "0xCcaB679860B1017589239BCeEEabe5CD45965aFc";
+	var txHash = await ethereum
+    .request({
+      method: "eth_sendTransaction",
+      params: [
+        {
+          from: user.address,
+          to: TOKEN_CONTRACT_ADDRESS,
+          data: tokenContract.methods
+            .transfer(receiverAddress, amount)
+            .encodeABI(),
+        },
+      ],
+    })
+    .then((result) =>  console.log(result))
+    .catch((error) => console.error(error));
