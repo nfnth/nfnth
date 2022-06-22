@@ -29,11 +29,11 @@
     	<a id="search-hide" class="screen-hide media-menu" onclick="showView('search');"><i class="material-icons">search</i></a>
 
     	<!-- desktop -->
-    	<ul id="desk-menu" class="hide-on-med-and-down">
-		<li id="doc-list"><a id="docs" href="#!" data-target="doc"><i class="material-icons left">sticky_note_2</i>DOCS<i class="material-icons right">arrow_drop_down</i></a></li>
-		<li id="doc-list" ><a style="padding-right:24px;" onclick="showView('mapper');"><i class="material-icons left">map</i>MAP</a></li>
-		<li id="shop-list"><a id="shops" href="#!" data-target="shop"><i class="material-icons left">business_center</i>TOOLS<i class="material-icons right">arrow_drop_down</i></a></li>
-        	<li style="height:64px;" id="search-list">
+    	<ul class="hide-on-med-and-down">
+		<li id="doc-list" class="desk-menu"><a id="docs" href="#!" data-target="doc"><i class="material-icons left">sticky_note_2</i>DOCS<i class="material-icons right">arrow_drop_down</i></a></li>
+		<li id="doc-list"  class="desk-menu"><a style="padding-right:24px;" onclick="showView('mapper');"><i class="material-icons left">map</i>MAP</a></li>
+		<li id="shop-list" class="desk-menu"><a id="shops" href="#!" data-target="shop"><i class="material-icons left">business_center</i>TOOLS<i class="material-icons right">arrow_drop_down</i></a></li>
+        	<li style="height:64px;" id="search-list" class="desk-menu">
         		<a style="height:inherit; padding-right:0;"><i onclick="$('#search').focus();" style="height:inherit; padding-right:16px;" class="material-icons">search</i><div id="search-box" class="input-field" style="height:inherit;"><input id="search" type="search" onkeyup="searchResults(this)" style="padding-left:12px; width: calc(100% - 1rem);"><label class="label-icon" for="search" ></label><i class="material-icons" onclick="searchClear()">close</i></div></a></li></ul>
 
     	<!-- user -->
@@ -603,8 +603,8 @@ div.active {opacity: 1;height: auto;}
 .open { cursor:default; }
 #domain-info { padding:0; }
 
-	#desk-menu li { height:101%; }
-nav ul a { color:darkgoldenrod; } nav ul a:hover { color:whitesmoke;  border-bottom: solid 2px green!important; background-color: goldenrod; }
+	.desk-menu { height:100%; } .desk-menu:hover { border-bottom: solid 2px green!important; }
+nav ul a { color:darkgoldenrod; } nav ul a:hover { color:whitesmoke;   background-color: goldenrod; }
 	
 dropdown-content li>a>i { margin:0 12px 0 0; } .dropdown-content li>a, .dropdown-content li>span { color:darkslategrey!important; }
 	#wallet-icon { color:darkslategrey; }
