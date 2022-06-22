@@ -195,15 +195,18 @@ function resetHome() {
 	else { $("#list-wait").addClass("image-rotate"); $("#list-wait2").addClass("image-rotate"); spinner = 0;} }
 
 function openInNewTab(url) { window.open(url, '_blank').focus(); } //window.location.href = url;
-function getParameter() { var path = window.location.href; var domain = path.substring(path.indexOf("/"), path.length-1); return domain; }
+function getParameter() { var path = window.location.href; var domain = path.substring(path.indexOf("/")+1, path.length-1); return domain; }
 
-function redirect() { var page = getParameter();
-	switch (page) {
-		case '?action=about': showDoc('about'); break;
+function redirect() { var path = window.location.href.replace('/','').replace('#','');
+	switch (path) {
 		case 'ur.land': showDoc('PLANME'); break;
 		case 'mattdown.com': showDoc('md'); break;
 		case 'nfnth.com': aboutDoc('README'); break;
-		case 'ocur.io': showDoc('os'); break; }  }
+		case 'ocur.io': showDoc('os'); break; }
+	
+	var page = getParameter(); 
+	switch (page) {
+		case '?action=about': showDoc('about'); break; }  }
 	
 function domainFind() {
     var domainName = window.location.host; var pathName = window.location.pathname.replaceAll('/',''); var searchName = window.location.search.replaceAll('?domain=','');
