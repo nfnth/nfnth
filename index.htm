@@ -29,7 +29,7 @@
     	<a id="search-hide" class="screen-hide media-menu" onclick="showView('search');"><i class="material-icons">search</i></a>
 
     	<!-- desktop -->
-    	<ul class="hide-on-med-and-down">
+    	<ul id="desk-menu" class="hide-on-med-and-down">
 		<li id="doc-list"><a id="docs" href="#!" data-target="doc"><i class="material-icons left">sticky_note_2</i>DOCS<i class="material-icons right">arrow_drop_down</i></a></li>
 		<li id="doc-list" ><a style="padding-right:24px;" onclick="showView('mapper');"><i class="material-icons left">map</i>MAP</a></li>
 		<li id="shop-list"><a id="shops" href="#!" data-target="shop"><i class="material-icons left">business_center</i>TOOLS<i class="material-icons right">arrow_drop_down</i></a></li>
@@ -603,7 +603,7 @@ div.active {opacity: 1;height: auto;}
 .open { cursor:default; }
 #domain-info { padding:0; }
 
-	nav #panel-menu ul li { height:101%; }
+	#desk-menu li { height:101%; }
 nav ul a { color:darkgoldenrod; } nav ul a:hover { color:whitesmoke;  border-bottom: solid 2px green!important; background-color: goldenrod; }
 	
 dropdown-content li>a>i { margin:0 12px 0 0; } .dropdown-content li>a, .dropdown-content li>span { color:darkslategrey!important; }
