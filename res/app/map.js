@@ -25,14 +25,16 @@ function convertCoord(coord) { //66°32′56″N 152°50′41″W  Degrees + ((M
 		if (isNaN(lat)) { final2 = 0; } else { final2 = parseInt(lat); } } else { final2 = parseInt(lat)  + (parseInt(add)/60) + (parseInt(add2)/3600); }
 	
 		     return [final, final2]; }
-
+//var base = [-101.69697959674477, 39.77108807140884];
+//showMark(coord, color, image, link, name, id, area)
+var tutorial = []; tutorial.push([[-102.69697959674477, 40.77108807140884],"green","res/img/barrel]); tutorial.push([[-100.69697959674477, 38.77108807140884],"blue",2]); tutorial.push([[-101.69697959674477, 42.77108807140884],"red",3]);
 function showIntro() {
 	var marv = document.createElement('div'); marv.id = 'markera'; tempMark = new mapboxgl.Marker(marv).setLngLat(base).addTo(map);
 	
 	$('#markera').addClass('markre'); $('#markera').addClass('z-depth-3'); 
 	var style = $('#markera').attr('style'); style += ";background-color:goldenrod;border:solid 2px black;"; $('#markera').attr('style',style);
     	//style += ";background-image:url('img/icon/domain/"+folder + "/" +icon+".png'); 
-	var markup = '<div><div style="display:flex; justify-content:center;"><img style="cursor:pointer;" onclick="showDoc(\'ur\');" width="48" height="48" src="res/img/seal3.png"/></div><div style="margin-top:16px; font-size:16px;"><a>UR.Land</a><br/><br/><a class="waves-effect waves-blue btn amber lighten-2" onclick="showDoc(\'ur\');"><i class="material-icons">landscape</i></a>&nbsp;&nbsp;<a class="modal-trigger waves-effect waves-light btn blue lighten-3" href="#modal1" ><i class="material-icons">article</i></a></div></div>';
+	var markup = '<div><div style="display:flex; justify-content:center;"><img style="cursor:pointer;" onclick="showDoc(\'ur\');" width="48" height="48" src="res/img/seal3.png"/></div><div style="margin-top:16px; font-size:16px;"><a onclick="showOwnLearn();">UR.Land</a><br/><br/><a class="waves-effect waves-blue btn amber lighten-2" onclick="showArtLearn();"><i class="material-icons">landscape</i></a>&nbsp;&nbsp;<a onclick="showListLearn();" class="modal-trigger waves-effect waves-light btn blue lighten-3" href="#modal1" ><i class="material-icons">article</i></a></div></div>';
 
 	
 	tempMark.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); tempMark.togglePopup(); }
