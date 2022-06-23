@@ -474,7 +474,7 @@ function postDeed() {
 function setText() {
 	editMd.name = document.getElementById('edit-name').value;
 }
-function setColor() { $("#markerx").css("background-color", document.getElementById('favcolor').value); editMd.color = document.getElementById('favcolor').value;
+function setColor() { $("#markery").css("background-color", document.getElementById('favcolor').value); editMd.color = document.getElementById('favcolor').value; $("#editColor").addClass("blue"); $("#editColor").removeClass("grey"); 
 }
 function setContent() { editMd.content = $("#pad").html();
 showView('mapper');	
