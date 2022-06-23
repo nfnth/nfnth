@@ -23,23 +23,28 @@
     		<div style="height:108%;" class="z-depth-1"><a id="menu-deed" style="color:darkslategrey; opacity:0.7; background-color:ghostwhite; display: flex; align-items: center; height: 100%; padding-right: 10px;font-weight: bold;font-size: 20px; -webkit-transition: background-color 300ms linear, color 300ms linear;-moz-transition: background-color 300ms linear, color 300ms linear;-o-transition: background-color 300ms linear, color 300ms linear;-ms-transition: background-color 300ms linear, color 300ms linear;transition: background-color 300ms linear, color 300ms linear;"><i class="material-icons" style="padding-left:16px;" onclick="showList('open'); $('#deed-pane').sidenav('open');">menu</i><div id="waiter" onclick="resetHome();" style="height:48px; width:48px; cursor: pointer; margin-left: 12px;"><img id="list-wait" class="image image-rotate"/><img id="list-wait2" class="image image-rotate"/></div></a></div>
 
 	<!-- media -->
+	<a id="set-hide" class="screen-hide media-menu" href="#!" data-target="set"><i class="material-icons">map</i></a>
 	<a id="doc-hide" class="screen-hide media-menu" href="#!" data-target="doc"><i class="material-icons">sticky_note_2</i></a>
 	<a id="shop-hide" class="screen-hide media-menu" href="#!" data-target="shop"><i class="material-icons">business_center</i></a>
-	<a id="map-hide" class="screen-hide media-menu" href="#!" data-target="shop"><i class="material-icons">map</i></a>
     	<a id="search-hide" class="screen-hide media-menu" onclick="showView('search');"><i class="material-icons">search</i></a>
 
     	<!-- desktop -->
     	<ul class="hide-on-med-and-down">
+		<li class="desk-menu" id="map-list"><a class="desk-link" id="sets" href="#!" data-target="set"><i class="material-icons left">map</i>MAP<i class="material-icons right">arrow_drop_down</i></a></li>
 		<li class="desk-menu" id="doc-list"><a class="desk-link" id="docs" href="#!" data-target="doc"><i class="material-icons left">sticky_note_2</i>DOCS<i class="material-icons right">arrow_drop_down</i></a></li>
 		<li class="desk-menu" id="shop-list"><a class="desk-link" id="shops" href="#!" data-target="shop"><i class="material-icons left">business_center</i>TOOLS<i class="material-icons right">arrow_drop_down</i></a></li>
-		<li class="desk-menu" id="map-list"><a class="desk-link" id="maps" href="#!" data-target="map"><i class="material-icons left">map</i>MAP<i class="material-icons right">arrow_drop_down</i></a></li>
-        	<li class="desk-menu" style="height:64px;" id="search-list">
-        		<a class="desk-link" style="height:inherit; padding-right:0;"><i onclick="$('#search').focus();" style="height:inherit; padding-right:16px;" class="material-icons">search</i><div id="search-box" class="input-field" style="height:inherit;"><input id="search" type="search" onkeyup="searchResults(this)" style="padding-left:12px; width: calc(100% - 1rem);"><label class="label-icon" for="search" ></label><i class="material-icons" onclick="searchClear()">close</i></div></a></li></ul>
+        	<li class="desk-menu" style="height:101%;" id="search-list">
+        		<a class="desk-link" style="height:101%; padding-right:0;"><i onclick="$('#search').focus();" style="height:inherit; padding-right:16px;" class="material-icons">search</i><div id="search-box" class="input-field" style="height:inherit;"><input id="search" type="search" onkeyup="searchResults(this)" style="padding-left:12px; width: calc(100% - 1rem);"><label class="label-icon" for="search" ></label><i class="material-icons" onclick="searchClear()">close</i></div></a></li></ul>
 
     	<!-- user -->
-        <div id="wallet-area" class="z-depth-1 grey lighten-1" style="opacity:0.75; display:flex;height:100%;" onclick="$('#user-pane').sidenav('open'); setup();"><ul><li id="setting-wallet" ><a id="wallet-icon" href="#" style="margin: 0;justify-items: center;display: flex;align-items: center; justify-content:center;" ><i class="material-icons">account_balance_wallet</i><span class="mobile-hide">&nbsp;CONNECT</span></a></li></ul></div></div></nav>
+        <div id="wallet-area" class="z-depth-1 grey lighten-1" style="opacity:0.75; display:flex;height:100%;" onclick="$('#user-pane').sidenav('open'); setup();"><ul><li id="setting-wallet" style="101%;"><a id="wallet-icon" href="#" style="margin: 0;justify-items: center;display: flex;align-items: center; justify-content:center; height:101%;" ><i class="material-icons">account_balance_wallet</i><span class="mobile-hide">&nbsp;CONNECT</span></a></li></ul></div></div></nav>
 
 <!-- dropdown -->
+<ul id="set" class="dropdown-content loader" style="visibility:hidden;">
+	<li><a onclick="showDoc('about');"><i class="material-icons">chair</i>Sketch View</a></li>
+	<li class="divider"></li>
+	<li><a onclick="tempDoc('PLANME.md');"><i class="material-icons">grass</i>Directions</a></li></ul>
+
 <ul id="doc" class="dropdown-content loader" style="visibility:hidden;">
 	<li><a onclick="showDoc('about');"><i class="material-icons">chair</i>On Deed to Domain</a></li>
 	<li class="divider"></li>
@@ -49,12 +54,10 @@
 	<li><a onclick="tempDoc('README.md');"><i class="material-icons">fireplace</i>About Dralun</a></li></ul>
 	
 <ul id="shop" class="dropdown-content loader" style="visibility:hidden;">
-	<li><a onclick="showDoc('guide');"><i class="material-icons">book</i>Civilian's Field Guide</a></li>
+	<li><a onclick="showDoc('guide');"><i class="material-icons">book</i>Civilian Field Guide</a></li>
 	<li class="divider"></li>
 	<li><a onclick="showArea('shopper');"><i class="material-icons">local_drink</i>Energy Drinks</a></li>
-	<li><a onclick="showDoc('guide');"><i class="material-icons">smartphone</i>OCUR Explorer</a></li>
-	<li class="divider"></li>
-	<li><a onclick="openInNewTab('https://opensea.io/nfnth');"><i class="material-icons">sailing</i>OpenSea NFT...</a></li></ul>
+	<li><a onclick="showDoc('guide');"><i class="material-icons">smartphone</i>OCUR Explorer</a></li></ul>
 
 <!-- panel (deed) -->
 <ul id="deed-pane" class="sidenav loader" style="visibility:hidden;overflow:hidden;">
@@ -117,7 +120,7 @@
 		<div id="map" style="width:100%; height:100%;"></div>
 		
 		<div class="fixed-action-btn">
-			<a class="btn-floating btn-large blue lighten-2"><i style="color:ghostwhite;" class="large material-icons">add</i></a>
+			<a class="btn-floating btn-large green lighten-2"><i style="color:ghostwhite;" class="large material-icons">add</i></a>
 			<ul>
 				<li><a id="map-loc" class="btn-floating grey lighten-1" onclick="mapLoc();" ><i class="material-icons">near_me</i></a></li>
 				<!--<li><a id="map-sat" class="btn-floating blue lighten-1" onclick="mapDir();"><i class="material-icons">directions</i></a></li>-->
@@ -246,6 +249,7 @@ async function initial() { $('body').css("background-color","lightgrey");
 	var gear3 = Math.floor(Math.random() * (42 - 1 + 1)) + 1; document.getElementById('user-pic').src = "res/img/gear/gear" + gear3.toString() + ".png";
 	var gear3b = Math.floor(Math.random() * (42 - 1 + 1)) + 1; document.getElementById('user-pic2').src = "res/img/gear/gear" + gear3b.toString() + ".png";
 	
+	$('#sets').dropdown({ constrainWidth: false, coverTrigger: false } ); $('#set-hide').dropdown({ constrainWidth: false, coverTrigger: false } );
     	$('#docs').dropdown({ constrainWidth: false, coverTrigger: false } ); $('#doc-hide').dropdown({ constrainWidth: false, coverTrigger: false } ); //hover: true 
 	$('#shops').dropdown({ constrainWidth: false, coverTrigger: false } ); $('#shop-hide').dropdown({ constrainWidth: false, coverTrigger: false } );
 	$('#dropdown-opener').dropdown({ constrainWidth: false }); $('#dropdown-domainer').dropdown({ constrainWidth: false });
