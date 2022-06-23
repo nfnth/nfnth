@@ -14,14 +14,14 @@ var setup = async function () {
             	//$("#myETH").html(ether); 
 		//$("#myURL").html(urler);
             	//$("#connector").css("color", "darkred"); 
-		$("#builder").removeClass("disabled"); $("#wallet-connect").html("&nbsp;Disconnect");
+		$("#builder").removeClass("disabled"); $("#wallet-connect").html("&nbsp;DISCONNECT");
 		$("#connector").html('<i class="material-icons left">logout</i>Disconnect'); $("#connector").removeClass("green"); $("#connector").addClass("red");$("#connector").css('color','black');
 		//disconnect = true; 
             	$("#wallet-area").removeClass("grey"); $("#wallet-area").addClass("green"); $("#wallet-icon").css("color","darkgreen"); } ); 
     	for (let i=0;i<opens.length;i++) { pullAssets(user, opens[i].core.slug); } }
     else { M.toast({html: 'No wallet found.'}); } }; $("#wallet-setup").click(setup);
 
-function desetup() { user = ""; user = new Wallet();  $("#wallet-connect").html("&nbsp;Connect");
+function desetup() { user = ""; user = new Wallet();  $("#wallet-connect").html("&nbsp;CONNECT");
 	$("#wallet-area").addClass("grey"); $("#wallet-area").removeClass("green"); $("#wallet-icon").css("color","darkslategrey");
 	$("#myAdd").html('My ETH Balance');
 	$('#myETH').hide().html('My Wallet Address').removeClass("badge").removeClass("green").css("font-weight","normal").fadeIn('slow'); 
