@@ -24,26 +24,28 @@
 
 	<!-- media -->
 	<a id="set-hide" class="screen-hide media-menu" href="#!" data-target="set"><i class="material-icons">map</i></a>
-	<a id="doc-hide" class="screen-hide media-menu" href="#!" data-target="doc"><i class="material-icons">sticky_note_2</i></a>
+	<a id="doc-hide" class="screen-hide media-menu" href="#!" data-target="doc"><i class="material-icons">book</i></a>
 	<a id="shop-hide" class="screen-hide media-menu" href="#!" data-target="shop"><i class="material-icons">business_center</i></a>
     	<a id="search-hide" class="screen-hide media-menu" onclick="showView('search');"><i class="material-icons">search</i></a>
 
     	<!-- desktop -->
     	<ul class="hide-on-med-and-down">
 		<li class="desk-menu" id="map-list"><a class="desk-link" id="sets" href="#!" data-target="set"><i class="material-icons left">map</i>MAP<i class="material-icons right">arrow_drop_down</i></a></li>
-		<li class="desk-menu" id="doc-list"><a class="desk-link" id="docs" href="#!" data-target="doc"><i class="material-icons left">sticky_note_2</i>DOCS<i class="material-icons right">arrow_drop_down</i></a></li>
+		<li class="desk-menu" id="doc-list"><a class="desk-link" id="docs" href="#!" data-target="doc"><i class="material-icons left">book</i>DOCS<i class="material-icons right">arrow_drop_down</i></a></li>
 		<li class="desk-menu" id="shop-list"><a class="desk-link" id="shops" href="#!" data-target="shop"><i class="material-icons left">business_center</i>TOOLS<i class="material-icons right">arrow_drop_down</i></a></li>
         	<li class="desk-menu" style="height:101%;" id="search-list">
         		<a class="desk-link" style="height:101%; padding-right:0;"><i onclick="$('#search').focus();" style="height:inherit; padding-right:16px;" class="material-icons">search</i><div id="search-box" class="input-field" style="height:inherit;"><input id="search" type="search" onkeyup="searchResults(this)" style="padding-left:12px; width: calc(100% - 1rem);"><label class="label-icon" for="search" ></label><i class="material-icons" onclick="searchClear()">close</i></div></a></li></ul>
 
     	<!-- user -->
-        <div id="wallet-area" class="z-depth-1 grey lighten-1" style="opacity:0.75; display:flex;height:100%;" onclick="$('#user-pane').sidenav('open'); setup();"><ul><li id="setting-wallet" style="101%;"><a id="wallet-icon" href="#" style="margin: 0;justify-items: center;display: flex;align-items: center; justify-content:center; height:101%;" ><i class="material-icons">account_balance_wallet</i><span class="mobile-hide">&nbsp;CONNECT</span></a></li></ul></div></div></nav>
+        <div id="wallet-area" class="z-depth-1 grey lighten-1" style="opacity:0.75; display:flex;height:100%;" onclick="$('#user-pane').sidenav('open'); setup();"><ul><li id="setting-wallet" style="height:101%;"><a id="wallet-icon" href="#" style="margin: 0;justify-items: center;display: flex;align-items: center; justify-content:center; height:101%;" ><i class="material-icons">account_balance_wallet</i><span class="mobile-hide">&nbsp;CONNECT</span></a></li></ul></div></div></nav>
 
 <!-- dropdown -->
 <ul id="set" class="dropdown-content loader" style="visibility:hidden;">
 	<li><a onclick="showDoc('about');"><i class="material-icons">chair</i>Sketch View</a></li>
 	<li class="divider"></li>
-	<li><a onclick="tempDoc('PLANME.md');"><i class="material-icons">grass</i>Directions</a></li></ul>
+	<li><a onclick="tempDoc('PLANME.md');"><i class="material-icons">gps_fixed</i>Location</a></li>
+	<li><a onclick="tempDoc('PLANME.md');"><i class="material-icons">grass</i>Directions</a></li>
+	<li><a onclick="tempDoc('PLANME.md');"><i class="material-icons">grass</i>Download</a></li></ul>
 
 <ul id="doc" class="dropdown-content loader" style="visibility:hidden;">
 	<li><a onclick="showDoc('about');"><i class="material-icons">chair</i>On Deed to Domain</a></li>
@@ -66,7 +68,7 @@
 	<!-- tabs -->
 	<li style="height:100%;"><ul id="token-tabs" class="tabs tabs-fixed-width z-depth-1">
 			<li class="tab blue-grey lighten-5" onclick="showList('open');"><a class="active" href="#test1">Class</a></li>
-			<li class="tab blue-grey lighten-5" onclick="showList('domain');"><a href="#test2">Token</a></li></ul><div class="card-content z-depth-1" style="height:100%;background-color:ghostwhite;">
+			<li class="tab blue-grey lighten-5" onclick="showList('domain');"><a href="#test2">&nbsp;Deed&nbsp;</a></li></ul><div class="card-content z-depth-1" style="height:100%;background-color:ghostwhite;">
 			
 		<!-- list (collect) -->
 		<div id="test1"><ul>
@@ -84,8 +86,8 @@
 	
 	<!-- tabs -->
 	<li style="height:100%;"><ul id="domain-tabs" class="tabs tabs-fixed-width z-depth-1 wallet">
-        	<li class="tab blue-grey lighten-5"><a class="active" href="#test4">&nbsp;&nbsp;&nbsp;Deed&nbsp;&nbsp;&nbsp;</a></li>
-		<li class="tab blue-grey lighten-5"><a href="#test5">Domain</a></li></ul><div class="card-content z-depth-1" style="height:100%;background-color:ghostwhite;">
+        	<li class="tab blue-grey lighten-5"><a class="active" href="#test4">Domain</a></li>
+		<li class="tab blue-grey lighten-5"><a href="#test5">&nbsp;&nbsp;&nbsp;Item&nbsp;&nbsp;&nbsp;</a></li></ul><div class="card-content z-depth-1" style="height:100%;background-color:ghostwhite;">
 			
 		<!-- list (deed) -->
 		<div id="test4"><ul>
@@ -97,13 +99,13 @@
   			<li><a class="subheader">Domain Information</a></li>
 			<li style="margin-top:12px; display: flex;align-items: center;justify-content: center;margin-bottom:16px;"><select id="domain-template" class="sider" onchange="domainSelect();"><option selected="selected" value="void">No domain selected</option><option value="tactician.us">tactician.us (demo)</option></select></li>
 			<li><a class="waves-effect" onclick='$("#domain-tabs").select("test5");'><i class="material-icons">inventory_2</i><span id="myArt" class="lighten-2" style="color:black!important;">My Domain Artifact</span></a></li>
-  			<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><i class="material-icons">token</i><span id="myDomain" class="lighten-2" style="color:black!important;">My UR Balance (Domain)</span></a></li>
-			<li style="margin-top:16px;"><a id="builder" class="btn waves-effect waves-light blue z-depth-1 lighten-3 disabled" style="width: 240px;margin: auto;border-radius: 8px;color:black;" onclick="mapAdd();$('#user-pane').sidenav('close');"><i class="material-icons left">build</i>Build Profile</a></li>
+  			<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><i class="material-icons">token</i><span id="myDomain" class="lighten-2" style="color:black!important;">My Domain Balance (UR)</span></a></li>
+			<li style="margin-top:16px;"><a id="builder" class="btn waves-effect waves-light blue z-depth-1 lighten-3 disabled" style="width: 240px;margin: auto;border-radius: 8px;color:black;" onclick="mapAdd();$('#user-pane').sidenav('close');"><i class="material-icons left">build</i>Build Domain</a></li>
 			<li style="margin-top:16px;"><a id="trader" class="btn waves-effect waves-light amber z-depth-1 lighten-3 disabled" style="width: 240px;margin: auto;border-radius: 8px;color:black;" onclick="mapAdd();$('#user-pane').sidenav('close');"><i class="material-icons left">landscape</i>Trade UR</a></li></ul></div>
 			
 		<!-- list (domain) -->
       		<div id="test5"><ul>
-			<li style="padding-top:16px;margin-bottom:12px;display: flex;justify-content: space-evenly;"><div style="display:flex;justify-content:space-evenly;width:100%;"><a id="homer" class="btn waves-effect waves-light amber z-depth-1 lighten-2 disabled" style="border-radius: 8px;" onclick="addArtifact();" ><i class="material-icons">gite</i></a><a id='selink' class='btn-flat disabled' ><i class="material-icons left">select_all</i></a><a id="dropdown-deeder" class='dropdown-trigger btn-flat disabled'  href='#' data-target='dropdown-deed'><i class="material-icons left">sort</i></a><a id="swilink" class="waves-effect waves-light btn blue lighten-2 disabled" style="display:inline-flex;align-items:center;" onclick="switchView();"><i id="view-icon2" class="material-icons">grid_view</i></a></div></li>
+			<li style="padding-top:16px;margin-bottom:12px;display: flex;justify-content: space-evenly;"><div style="display:flex;justify-content:space-evenly;width:100%;"><a id='selink' class='btn-flat disabled' ><i class="material-icons left">select_all</i></a><a id="dropdown-deeder" class='dropdown-trigger btn-flat disabled'  href='#' data-target='dropdown-deed'><i class="material-icons left">sort</i></a><a id="swilink" class="waves-effect waves-light btn blue lighten-2 disabled" style="display:inline-flex;align-items:center;" onclick="switchView();"><i id="view-icon2" class="material-icons">grid_view</i></a></div></li>
  			<li style="margin-top:16px;margin-bottom:12px;"><div style="display:flex;justify-content:space-evenly;padding-top:12px;padding-bottom:12px;"><a id="adder" class="btn waves-effect waves-light blue z-depth-1 lighten-2 disabled" style="border-radius: 8px;" onclick="addArtifact();" ><i class="material-icons left">inventory_2</i>+</a><a id="editer" class="btn-flat waves-effect waves-light z-depth-1 disabled"><i class="material-icons">edit</i></a><a id="deleter" class="btn-flat waves-effect waves-light z-depth-1 disabled"><i class="material-icons">delete</i></a></div></li>
 			<li><div id="registry-artifact" class="collection" style="overflow:auto;"><a onclick='$(#domain-tabs).select("test4");' class='collection-item'>No deed selected.</a></div></li></ul></div></div></div></li></ul>
 
@@ -343,8 +345,8 @@ function addOpenDeed(i) { $("#somedialog2").css("z-index",1004);
 	
 function addList(i){ var extra = ""; if(domains[i].checked == true) { extra = "checked='checked'"; } 
 	if (showListOpen) {
-    		$("#registry-domain").append("<a class='collection-item'><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;' onclick='showView(\"list\"); showList(\"domain\"); flyMark(" + i + ");'>" + domains[i].core.name.replace(".us","") + "</div><div style='display:flex; justify-content:space-between;align-items:center;'><div style='display:flex;'><span style='color:beige;' class='btn waves-effect waves-light amber lighten-4' onclick='buildWallet(" + i + ");'><i class='material-icons'>account_balance_wallet</i></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style='display:flex;align-items:center;'><label style='display:flex;'><input type='checkbox' " + extra + " onclick='setList(" + i + ");' /><span></span></label></div></div></div></div></a>"); } else {
-		$("#registry-domain").append("<a class='collection-item'><div style='display:flex;justify-content:space-between;'><div><img style='cursor:pointer;' onclick='showView(\"list\"); showList(\"domain\"); flyMark(" + i + ");' class='z-depth-1' width='52' height='30' src='" + domains[i].core.image_url + "'/></div><div style='display:flex; justify-content:space-between;align-items:center;'><span style='color:beige;' class='btn waves-effect waves-light amber lighten-4' onclick='buildWallet(" + i + ");'><i class='material-icons'>gite</i></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style='display:flex; flex-direction:column;'><label style='display:flex;'><input type='checkbox' " + extra + " onclick='setList(" + i + ");' /><span></span></label></div></div></div></a>"); } }
+    		$("#registry-domain").append("<a class='collection-item'><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;' onclick='showView(\"list\"); showList(\"domain\"); flyMark(" + i + ");'>" + domains[i].core.name.replace(".us","") + "</div><div style='display:flex; justify-content:space-between;align-items:center;'><div style='display:flex;'><span style='color:beige;' class='btn waves-effect waves-light amber lighten-4' onclick='buildWallet(" + i + ");'><i class='material-icons'>landscape</i></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style='display:flex;align-items:center;'><label style='display:flex;'><input type='checkbox' " + extra + " onclick='setList(" + i + ");' /><span></span></label></div></div></div></div></a>"); } else {
+		$("#registry-domain").append("<a class='collection-item'><div style='display:flex;justify-content:space-between;'><div><img style='cursor:pointer;' onclick='showView(\"list\"); showList(\"domain\"); flyMark(" + i + ");' class='z-depth-1' width='52' height='30' src='" + domains[i].core.image_url + "'/></div><div style='display:flex; justify-content:space-between;align-items:center;'><span style='color:beige;' class='btn waves-effect waves-light amber lighten-4' onclick='buildWallet(" + i + ");'><i class='material-icons'>landscape</i></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style='display:flex; flex-direction:column;'><label style='display:flex;'><input type='checkbox' " + extra + " onclick='setList(" + i + ");' /><span></span></label></div></div></div></a>"); } }
 
 function addListDetail(i) { //pullOwner(i); pullPrice(i);
 	var card = "";
