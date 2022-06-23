@@ -98,7 +98,7 @@ async def data(request):
                 pass
             return web.Response(text='valid wallet',content_type="text/html")
         elif content == "message":
-            path = DATA + 'receipt/' + domain + '/' + wallet
+            path = DATA + 'receipt/' + domain + '/' + wallet #wallet to wallet or wallet to domain
             #path = DATA + 'receipt/' + wallet + '/' + domain
             if os.path.exists(path):
                 return web.Response(text='messages found',content_type="text/html") #allow post/retrieve...
@@ -141,6 +141,32 @@ async def data(request):
     else:
         return web.Response(text='invalid wallet',content_type="text/html")
 
+async def ledger(area, ref, ur):
+    approve = False
+  
+    if area == "domain":
+        file_in = "/root/nfnth/domain"
+    else:
+        file_in = "/root/nfnth/wallet"
+        
+    file_out = file_in + "_out" #backup?
+    with open(file_in, "rt") as fin:
+        with open(file_out, "wt") as fout:
+            for line in fin:
+                if line.find(ref) == True:
+                    if (line.count("|") == 1): #overall sum > 0
+                        fout.write(line.strip() + str(uuid.uuid4()) + "|" + str(random.randrange(11111, 999999, 1)) + ', ' + str(random.randrange(1111, 4111, 1) / 100) + '\n')
+                        approve = True
+                    else:
+                        break
+                else:
+                    fout.write(line)
+    
+    if approve == True:
+        pass #switch files...
+    
+    return approve
+  
 # server
 import asyncio, aiohttp
 from aiohttp import web
