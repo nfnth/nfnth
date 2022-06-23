@@ -24,14 +24,12 @@
 
 	<!-- media -->
 	<a id="doc-hide" class="screen-hide media-menu" href="#!" data-target="doc"><i class="material-icons">sticky_note_2</i></a>
-	<a id="explore-hide" class="screen-hide media-menu" onclick="showView('mapper');"><i class="material-icons">map</i></a>
 	<a id="shop-hide" class="screen-hide media-menu" href="#!" data-target="shop"><i class="material-icons">business_center</i></a>
     	<a id="search-hide" class="screen-hide media-menu" onclick="showView('search');"><i class="material-icons">search</i></a>
 
     	<!-- desktop -->
     	<ul class="hide-on-med-and-down">
 		<li class="desk-menu" id="doc-list"><a class="desk-link" id="docs" href="#!" data-target="doc"><i class="material-icons left">sticky_note_2</i>DOCS<i class="material-icons right">arrow_drop_down</i></a></li>
-		<li class="desk-menu"><a class="desk-link" style="padding-right:24px;" onclick="showView('mapper');"><i class="material-icons left">map</i>MAP</a></li>
 		<li class="desk-menu" id="shop-list"><a class="desk-link" id="shops" href="#!" data-target="shop"><i class="material-icons left">business_center</i>TOOLS<i class="material-icons right">arrow_drop_down</i></a></li>
         	<li class="desk-menu" style="height:64px;" id="search-list">
         		<a class="desk-link" style="height:inherit; padding-right:0;"><i onclick="$('#search').focus();" style="height:inherit; padding-right:16px;" class="material-icons">search</i><div id="search-box" class="input-field" style="height:inherit;"><input id="search" type="search" onkeyup="searchResults(this)" style="padding-left:12px; width: calc(100% - 1rem);"><label class="label-icon" for="search" ></label><i class="material-icons" onclick="searchClear()">close</i></div></a></li></ul>
@@ -58,8 +56,7 @@
 
 <!-- panel (deed) -->
 <ul id="deed-pane" class="sidenav loader" style="visibility:hidden;overflow:hidden;">
-	<li><a href="https://opensea.io/nfnth" title="Buy on OpenSea" target="_blank"><img style="margin-left:24px; width:220px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="https://storage.googleapis.com/opensea-static/Logomark/Badge%20-%20Available%20On%20-%20Light.png" alt="Available on OpenSea" /></a>
-<div class="user-view z-depth-1 amber lighten-5" style="display: flex;margin: auto; padding: 0;align-items: center; padding-left:12px;"><img id="user-pic" style="opacity:0.6; height: 48px;position:absolute; right:0; margin: 12px; cursor:pointer;" onclick="showNfNth(); showList('open');"/><img id="user-pic2" style="opacity:0.6; height: 48px;cursor:pointer;margin:12px;" onclick="showNfNth(); showList('open');"/></div></li>
+	<li><span id="ocuros" style="cursor: pointer;margin:auto; color:darkgreen!important; font-size:18px;border-radius: 8px; opacity: 0.7; height: 36px !important;display: flex;align-items: center;padding-top: 10px;" onclick="openInNewTab('https://opensea.io/nfnth'); $('#deed-pane').sidenav('close');" class="badge grey lighten-2" data-badge-caption="nfnth"><i class="material-icons">sailing</i><span style="font-weight:bold;">OpenSea ·&nbsp;</span></span><div class="user-view z-depth-1 amber lighten-5" style="display: flex;margin: auto; padding: 0;align-items: center; padding-left:12px;"><img id="user-pic" style="opacity:0.6; height: 48px;position:absolute; right:0; margin: 12px; cursor:pointer;" onclick="showNfNth(); showList('open');"/><img id="user-pic2" style="opacity:0.6; height: 48px;cursor:pointer;margin:12px;" onclick="showNfNth(); showList('open');"/></div></li>
 	
 	<!-- tabs -->
 	<li style="height:100%;"><ul id="token-tabs" class="tabs tabs-fixed-width z-depth-1">
@@ -118,7 +115,7 @@
 		<div id="map" style="width:100%; height:100%;"></div>
 		
 		<div class="fixed-action-btn">
-			<a class="btn-floating btn-large green lighten-2"><i style="color:ghostwhite;" class="large material-icons">explore</i></a>
+			<a class="btn-floating btn-large green lighten-2"><i style="color:ghostwhite;" class="large material-icons">map</i></a>
 			<ul>
 				<li><a id="map-loc" class="btn-floating grey lighten-1" onclick="mapLoc();" ><i class="material-icons">near_me</i></a></li>
 				<li><a id="map-sat" class="btn-floating blue lighten-1" onclick="mapDir();"><i class="material-icons">directions</i></a></li>
@@ -253,8 +250,8 @@ async function initial() { $('body').css("background-color","lightgrey");
     $('#dropdown-template').dropdown({ constrainWidth: false });
 	$('#user-pane').sidenav({ edge: 'right' }); $('#deed-pane').sidenav({ edge: 'left', onCloseEnd: populateMap });  redirect();
     
-   	hideView(); 
-			  $('#news').show(); $("#stamper").show(); $("#world").show(); //searchClear();
+   	hideView(); showView('mapper');
+			  //$('#news').show(); $("#stamper").show(); $("#world").show(); //searchClear();
      //setNotice('...latest domain...');
     	setTimeout(function() { $(".loader").css("visibility", "visible"); redirect();  $('img').on('dragstart', function(evt) { return false; }); }  , 500); }
 
