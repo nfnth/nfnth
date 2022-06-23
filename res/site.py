@@ -128,8 +128,6 @@ async def data(request):
  
                 return web.Response(text='message handled',content_type="text/html")
             else:
-                return web.Response(text='no messages found',content_type="text/html")
-            else:
                 return web.Response(text='invalid UR (message)',content_type="text/html")
         else:
             api_url = "https://api.opensea.io/api/v1/asset/0x495f947276749Ce646f68AC8c248420045cb7b5e/" + domain
