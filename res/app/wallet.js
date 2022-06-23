@@ -14,14 +14,14 @@ var setup = async function () {
             	//$("#myETH").html(ether); 
 		//$("#myURL").html(urler);
             	//$("#connector").css("color", "darkred"); 
-		$("#builder").removeClass("disabled"); $("#wallet-connect").html("&nbsp;DISCONNECT");
+		$("#builder").removeClass("disabled"); 
 		$("#connector").html('<i class="material-icons left">logout</i>Disconnect'); $("#connector").removeClass("green"); $("#connector").addClass("red");$("#connector").css('color','black');
 		//disconnect = true; 
             	$("#wallet-area").removeClass("grey"); $("#wallet-area").addClass("green"); $("#wallet-icon").css("color","darkgreen"); } ); 
     	for (let i=0;i<opens.length;i++) { pullAssets(user, opens[i].core.slug); } }
     else { M.toast({html: 'No wallet found.'}); } }; $("#wallet-setup").click(setup);
 
-function desetup() { user = ""; user = new Wallet();  $("#wallet-connect").html("&nbsp;CONNECT");
+function desetup() { user = ""; user = new Wallet();  
 	$("#wallet-area").addClass("grey"); $("#wallet-area").removeClass("green"); $("#wallet-icon").css("color","darkslategrey");
 	$("#myAdd").html('My ETH Balance');
 	$('#myETH').hide().html('My Wallet Address').removeClass("badge").removeClass("green").css("font-weight","normal").fadeIn('slow'); 
@@ -86,7 +86,7 @@ function pullDomain(domain) { domainMd = ""; domainMd = new Md();
 
 var showArtifactOpen = true;
 function builder() { $("#registry-artifact").html(""); var extra = ""; 
-	if (artifacts.length == 0) { $("#registry-artifact").append("<a onclick='$(\"#domain-tabs\").tabs(\"select\", \"test4\");' class='collection-item'>No deed selected.</a>"); }
+	if (artifacts.length == 0) { $("#registry-artifact").append("<a onclick='$(\"#domain-tabs\").tabs(\"select\", \"test4\");' class='collection-item'>No domain selected.</a>"); }
 	for (let i = 0; i < artifacts.length; i++) { if(artifacts[i].checked == true) { extra = "checked='checked'"; } 
 		if (showArtifactOpen) { $("#registry-artifact").append("<a class='collection-item'><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;' onclick='showView(\"list\"); showList(\"domain\"); flyArt(" + i + ");'>" + artifacts[i].name + "</div><div style='display:flex; justify-content:space-between;align-items:center;'><div style='display:flex;'><span style='color:aliceblue;' class='btn waves-effect waves-light blue lighten-4' onclick='artDoc(" + i + "); $(\"#user-pane\").sidenav(\"close\");'><i class='material-icons'>article</i></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style='display:flex;align-items:center;'><label style='display:flex;'><input type='checkbox' " + extra + " onclick='setList(" + i + ");' /><span></span></label></div></div></div></div></a>"); } 
 		else { $("#registry-artifact").append("<a class='collection-item'><div style='display:flex;justify-content:space-between;'><div><img style='cursor:pointer;' onclick='showView(\"list\"); showList(\"domain\"); flyArt(" + i + ");' class='z-depth-1' width='52' height='30' src='" + artifacts[i].image + "'/></div><div style='display:flex; justify-content:space-between;align-items:center;'><span style='color:beige;' class='btn waves-effect waves-light blue lighten-4' onclick='artDoc(" + i + ");'><i class='material-icons'>article</i></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style='display:flex; flex-direction:column;'><label style='display:flex;'><input type='checkbox' " + extra + " onclick='setList(" + i + ");' /><span></span></label></div></div></div></a>"); }	}  }
