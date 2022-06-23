@@ -37,7 +37,7 @@
         		<a class="desk-link" style="height:inherit; padding-right:0;"><i onclick="$('#search').focus();" style="height:inherit; padding-right:16px;" class="material-icons">search</i><div id="search-box" class="input-field" style="height:inherit;"><input id="search" type="search" onkeyup="searchResults(this)" style="padding-left:12px; width: calc(100% - 1rem);"><label class="label-icon" for="search" ></label><i class="material-icons" onclick="searchClear()">close</i></div></a></li></ul>
 
     	<!-- user -->
-        <div id="wallet-area" class="z-depth-1 grey lighten-1" style="opacity:0.75; display:flex;height:100%;" onclick="$('#user-pane').sidenav('open'); setup();"><ul><li id="setting-wallet" ><a id="wallet-icon" href="#" style="margin: 0;justify-items: center;display: flex;align-items: center; justify-content:center;" ><i class="material-icons">account_balance_wallet</i><span class="mobile-hide">&nbsp;WALLET</span></a></li></ul></div></div></nav>
+        <div id="wallet-area" class="z-depth-1 grey lighten-1" style="opacity:0.75; display:flex;height:100%;" onclick="$('#user-pane').sidenav('open'); setup();"><ul><li id="setting-wallet" ><a id="wallet-icon" href="#" style="margin: 0;justify-items: center;display: flex;align-items: center; justify-content:center;" ><i class="material-icons">account_balance_wallet</i><span class="mobile-hide">&nbsp;CONNECT</span></a></li></ul></div></div></nav>
 
 <!-- dropdown -->
 <ul id="doc" class="dropdown-content loader" style="visibility:hidden;">
@@ -77,7 +77,7 @@
 		
 <!-- panel (domain) -->
 <ul id="user-pane" class="sidenav loader" style="visibility:hidden;overflow:hidden;">
-	<li style="padding-top:16px;margin-bottom:16px;display: flex;justify-content: space-evenly;"><div style="display:flex;justify-content:space-evenly;width:100%;"><a class='btn-flat waves-effect waves-light' onclick="openInNewTab('https://github.com/nfnth/nfnth/issues'); $('#user-pane').sidenav('close');"><i class="material-icons">help</i></a><span id="ocuros" style="cursor: pointer;margin:auto; color:darkgreen!important; font-size:18px;border-radius: 8px; opacity: 0.7; height: 36px !important;display: flex;align-items: center;padding-top: 10px;" onclick="showDoc('os'); $('#user-pane').sidenav('close');" class="badge grey lighten-2" data-badge-caption="v1.08"><img src="res/img/scroll_logo.png" style="width:24px; height:24px; margin-right:8px;" /><span style="font-weight:bold;">docOS ·&nbsp;</span></span></div></li>
+	<li style="padding-top:16px;margin-bottom:16px;display: flex;justify-content: space-evenly;"><div style="display:flex;justify-content:space-evenly;width:100%;"><a class='btn-flat waves-effect waves-light' onclick="openInNewTab('https://github.com/nfnth/nfnth/issues'); $('#user-pane').sidenav('close');"><i class="material-icons">help</i></a><span id="ocuros" style="cursor: pointer;margin:0; color:darkgreen!important; font-size:18px;border-radius: 8px; opacity: 0.7; height: 36px !important;display: flex;align-items: center;padding-top: 10px;" onclick="showDoc('os'); $('#user-pane').sidenav('close');" class="badge grey lighten-2" data-badge-caption="v1.08"><img src="res/img/scroll_logo.png" style="width:24px; height:24px; margin-right:8px;" /><span style="font-weight:bold;">docOS ·&nbsp;</span></span></div></li>
 	
 	<!-- tabs -->
 	<li style="height:100%;"><ul id="domain-tabs" class="tabs tabs-fixed-width z-depth-1 wallet">
@@ -87,15 +87,15 @@
 		<!-- list (deed) -->
 		<div id="test4"><ul>
 			<li><a class="subheader">Wallet Information</a></li>
-  			<li><a class="waves-effect" onclick="if (user.address != '') {copyClip(user.address);}"><i class="material-icons">alternate_email</i><span id="myAdd" style="color:black!important;">My Wallet Address</span></a></li>
-  			<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><i class="material-icons">toll</i><span id="myETH" style="color:black!important;">My ETH/UR Balance</span><span style="margin-left:0;" id="myGas" style="color:black!important;"></span></a></li>
-			<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><i class="material-icons">mail</i><span id="myURL" style="color:black!important;">My Messages</span></a></li>
-			<li style="margin-top:16px;margin-bottom:16px;"><a id="builder" class="btn waves-effect waves-light blue z-depth-1 lighten-3 disabled" style="width: 240px;margin: auto;border-radius: 8px;color:black;" onclick="mapAdd();$('#user-pane').sidenav('close');"><i class="material-icons left">build</i>Build Profile</a></li>
+  			<li><a class="waves-effect" onclick="if (user.address != '') {copyClip(user.address);}"><i class="material-icons">account_balance_wallet</i><span id="myAdd" style="color:black!important;">My Wallet Address</span></a></li>
+  			<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><i class="material-icons">toll</i><span id="myETH" style="color:black!important;">My ETH Balance</span><span style="margin-left:0;" id="myGas" style="color:black!important;"></span></a></li>
+			<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><i class="material-icons">token</i><span id="myURL" style="color:black!important;">My UR Balance</span></a></li>
   			<li><div style="margin-top:0;" class="divider"></div></li><!--<i class="material-icons left">calculate</i>-->
   			<li><a class="subheader">Domain Information</a></li>
 			<li style="margin-top:12px; display: flex;align-items: center;justify-content: center;margin-bottom:16px;"><select id="domain-template" class="sider" onchange="domainSelect();"><option selected="selected" value="void">No domain selected</option><option value="tactician.us">tactician.us (demo)</option></select></li>
 			<li><a class="waves-effect" onclick='$("#domain-tabs").select("test5");'><i class="material-icons">inventory_2</i><span id="myArt" class="lighten-2" style="color:black!important;">My Domain Artifact</span></a></li>
   			<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><i class="material-icons">token</i><span id="myDomain" class="lighten-2" style="color:black!important;">My UR Balance (Domain)</span></a></li>
+			<li style="margin-top:16px;"><a id="builder" class="btn waves-effect waves-light blue z-depth-1 lighten-3 disabled" style="width: 240px;margin: auto;border-radius: 8px;color:black;" onclick="mapAdd();$('#user-pane').sidenav('close');"><i class="material-icons left">build</i>Build Profile</a></li>
 			<li style="margin-top:16px;"><a id="trader" class="btn waves-effect waves-light amber z-depth-1 lighten-3 disabled" style="width: 240px;margin: auto;border-radius: 8px;color:black;" onclick="mapAdd();$('#user-pane').sidenav('close');"><i class="material-icons left">landscape</i>Trade UR</a></li></ul></div>
 			
 		<!-- list (domain) -->
