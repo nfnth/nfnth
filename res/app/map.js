@@ -29,7 +29,7 @@ function convertCoord(coord) { //66°32′56″N 152°50′41″W  Degrees + ((M
 var tutorial = []; tutorial.push([[-102.69697959674477, 40.77108807140884],"green","res/img/barrel.png","","Supply","a","artifact"]); tutorial.push([[-100.69697959674477, 38.77108807140884],"blue","res/img/barrel.png","","Fort","b","artifact"]); tutorial.push([[-101.69697959674477, 42.77108807140884],"red","res/img/barrel.png","","Land","c","artifact"]);
 
 function showArtLearn() { 
-for(int a = 0; a < tutorial.length; a++) { showMark(tutorial[a][0],tutorial[a][1],tutorial[a][2],tutorial[a][3],tutorial[a][4],tutorial[a][5],tutorial[a][6]); }	
+for(let a = 0; a < tutorial.length; a++) { showMark(tutorial[a][0],tutorial[a][1],tutorial[a][2],tutorial[a][3],tutorial[a][4],tutorial[a][5],tutorial[a][6]); }	
 }
 function showOwnLearn() {
 	showMark([-100.69697959674477, 40.77108807140884], "darkgoldenrod", "res/img/shield.png", "", "Dralun", "d", "deed");
