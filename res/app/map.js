@@ -26,14 +26,14 @@ function convertCoord(coord) { //66°32′56″N 152°50′41″W  Degrees + ((M
 	
 		     return [final, final2]; }
 //var base = [-101.69697959674477, 39.77108807140884];
-var tutorial = []; tutorial.push([[-102.69697959674477, 40.77108807140884],"green","res/img/barrel.png","","Supply","a","artifact"]); tutorial.push([[-100.69697959674477, 38.77108807140884],"blue","res/img/barrel.png","","Fort","b","artifact"]); tutorial.push([[-101.69697959674477, 42.77108807140884],"red","res/img/barrel.png","","Land","c","artifact"]);
 
 function showArtLearn() { 
-for(let a = 0; a < tutorial.length; a++) { showMark(tutorial[a][0],tutorial[a][1],tutorial[a][2],tutorial[a][3],tutorial[a][4],tutorial[a][5],tutorial[a][6]); }	
+	startPoint = base; endPoint = [-100.69697959674477, 38.77108807140884]; showPath('blue');
+showMark([-100.69697959674477, 38.77108807140884],"blue","res/img/barrel.png","","Fort","b","artifact");
 }
 function showOwnLearn() {
-	showMark([-100.69697959674477, 40.77108807140884], "darkgoldenrod", "res/img/shield.png", "", "Dralun", "d", "deed");
-	addBeacon([-100.69697959674477, 40.77108807140884]);
+	showMark([-99.69697959674477, 40.77108807140884], "blue", "res/img/shield.png", "", "Dralun", "d", "deed");
+	addBeacon([-99.69697959674477, 40.77108807140884]);
 }
 function showIntro() {
 	var marv = document.createElement('div'); marv.id = 'markera'; tempMark = new mapboxgl.Marker(marv).setLngLat(base).addTo(map);
@@ -61,13 +61,13 @@ function showMark(coord, color, image, link, name, id, area) {
 			imager = 'onclick="buildDomain(' + id + ');"';
 			custom = '<a id="lm' + id + '" style="color:' + filler + ' waves-effect waves-blue btn lighten-4" onclick="buildLand(' + id + ');" ><i class="material-icons">landscape</i></a>&nbsp;&nbsp;<a class="modal-trigger waves-effect waves-light btn blue lighten-3" href="#modal1" onclick="addListDetail(' + id + ');"><i class="material-icons">article</i></a>'; break;
 		case 'artifact': 
-			imager = 'onclick="buildArtifact(' + id + ');"';
-			custom = '<a class="waves-effect waves-blue btn amber lighten-2" onclick="buildDomain(' + id + ');" ><i class="material-icons">terrain</i></a>'; break; }
+			imager = 'onclick="showDoc("ur");';
+			custom = '<a class="waves-effect waves-blue btn amber lighten-2" onclick="showOwnLearn();" ><i class="material-icons">account_balance_wallet</i></a>'; break; }
 	
 	$('#marker'+id).addClass('markre'); $('#marker'+id).addClass('z-depth-3'); 
 	var style=$('#marker'+id).attr('style'); style += ";background-color:"+ color + ";border:solid 2px black;"; $('#marker'+id).attr('style',style); 
     	//style += ";background-image:url('img/icon/domain/"+folder + "/" +icon+".png'); 
-	var markup = '<div><div style="display:flex; justify-content:center;"><img style="cursor:pointer;" ' + imager + ' width="120" height="120" src="'+ image +'"/></div><div style="margin-top:16px; font-size:16px;"><a onclick="openInNewTab(\'' + link + '\');">' + name.replace(".us","") + '</a><br/><br/>' + custom + '</div></div>';
+	var markup = '<div><div style="display:flex; justify-content:center;"><img style="cursor:pointer;" ' + imager + ' width="100" height="100" src="'+ image +'"/></div><div style="margin-top:16px; font-size:16px;"><a onclick="openInNewTab(\'' + link + '\');">' + name.replace(".us","") + '</a><br/><br/>' + custom + '</div></div>';
 
 	marp.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); 
 	
@@ -181,7 +181,7 @@ function removeBeacon() {
 	map.removeLayer('layer-with-pulsing-dot');map.removeSource('dot-point');map.removeImage('pulsing-dot'); }
 
 //var beacon = false; var pather = false; var introMark; var nomadPath; var artifactPath; var setDomain; var currentContent = [];
-//function showPath(color) { addLine(color); nomadPath = requestAnimationFrame(drawLine); }
+function showPath(color) { addLine(color); nomadPath = requestAnimationFrame(drawLine); }
 //function showLandlord() { startPoint = fr; endPoint = fr2; showPath('green'); currentMarkers[0].togglePopup(); currentMarkers[1].togglePopup(); pather = true; currentToggle = 1; }
 //function showArt() { addBeacon(fr3); currentMarkers[1].togglePopup(); currentMarkers[2].togglePopup(); beacon = true; currentToggle = 2; }
 //function showBase() { currentMarkers[2].togglePopup(); currentMarkers[0].togglePopup(); currentToggle = 0; }
