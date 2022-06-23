@@ -4,7 +4,7 @@ mapboxgl.accessToken = "pk.eyJ1IjoibmZudGgiLCJhIjoiY2tweW1rNXlsMGFpYzJwcGt1cHh6d
 map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/mapbox/' + map_style[0], center: base, zoom: zoom, buffer_size: 0.2});
 
 var coordinates; var artFlag = false; var tempMark = ""; var tempMap = [];
-map.on('load', function (event) { showView('mapper');
+map.on('load', function (event) { showView('mapper'); showIntro();
 	map.on('click', function(e) { coordinates = e.lngLat; if(artFlag) { addArt(); artFlag = false; } $('.fixed-action-btn').floatingActionButton('close'); }); });
 
 function convertMark(coord) { 
