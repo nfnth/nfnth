@@ -39,15 +39,16 @@ function showMark(coord, color, image, link, name, id, area) {
 	var mark = coord;
 	var marv = document.createElement('div'); marv.id = 'marker' + id; 
 	var marp = new mapboxgl.Marker(marv).setLngLat(mark).addTo(map);
-	var imager = '';
+	var imager = ''; var filler = '';
 	
 	switch(area) {
 		case 'deed':
 			imager = 'onclick="buildDeed(' + id + ');"';
 			custom = '<a class="waves-effect waves-blue btn amber lighten-2" onclick="showWallet(' + id + ');" ><i class="material-icons">alternate_email</i></a>&nbsp;&nbsp;<a class="modal-trigger waves-effect waves-light btn blue lighten-2" href="#modal1" onclick="addListDetail(' + id + ');"><i class="material-icons">receipt</i></a>'; break;
 		case 'domain': 
+			if (domains[id].item) { filler = 'ghostwhite;" class="grey'; } else { filler = 'beige;" class="amber'; }
 			imager = 'onclick="buildDomain(' + id + ');"';
-			custom = '<a style="color:ghostwhite;" class="waves-effect waves-blue btn grey lighten-4" onclick="buildLand(' + id + ');" ><i class="material-icons">landscape</i></a>&nbsp;&nbsp;<a class="modal-trigger waves-effect waves-light btn blue lighten-3" href="#modal1" onclick="addListDetail(' + id + ');"><i class="material-icons">article</i></a>'; break;
+			custom = '<a id="lm' + id + '" style="color:' + filler + ' waves-effect waves-blue btn lighten-4" onclick="buildLand(' + id + ');" ><i class="material-icons">landscape</i></a>&nbsp;&nbsp;<a class="modal-trigger waves-effect waves-light btn blue lighten-3" href="#modal1" onclick="addListDetail(' + id + ');"><i class="material-icons">article</i></a>'; break;
 		case 'artifact': 
 			imager = 'onclick="buildArtifact(' + id + ');"';
 			custom = '<a class="waves-effect waves-blue btn amber lighten-2" onclick="buildDomain(' + id + ');" ><i class="material-icons">terrain</i></a>'; break; }
