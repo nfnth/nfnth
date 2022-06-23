@@ -25,12 +25,14 @@
 	<!-- media -->
 	<a id="doc-hide" class="screen-hide media-menu" href="#!" data-target="doc"><i class="material-icons">sticky_note_2</i></a>
 	<a id="shop-hide" class="screen-hide media-menu" href="#!" data-target="shop"><i class="material-icons">business_center</i></a>
+	<a id="map-hide" class="screen-hide media-menu" href="#!" data-target="shop"><i class="material-icons">map</i></a>
     	<a id="search-hide" class="screen-hide media-menu" onclick="showView('search');"><i class="material-icons">search</i></a>
 
     	<!-- desktop -->
     	<ul class="hide-on-med-and-down">
 		<li class="desk-menu" id="doc-list"><a class="desk-link" id="docs" href="#!" data-target="doc"><i class="material-icons left">sticky_note_2</i>DOCS<i class="material-icons right">arrow_drop_down</i></a></li>
 		<li class="desk-menu" id="shop-list"><a class="desk-link" id="shops" href="#!" data-target="shop"><i class="material-icons left">business_center</i>TOOLS<i class="material-icons right">arrow_drop_down</i></a></li>
+		<li class="desk-menu" id="map-list"><a class="desk-link" id="maps" href="#!" data-target="map"><i class="material-icons left">map</i>MAP<i class="material-icons right">arrow_drop_down</i></a></li>
         	<li class="desk-menu" style="height:64px;" id="search-list">
         		<a class="desk-link" style="height:inherit; padding-right:0;"><i onclick="$('#search').focus();" style="height:inherit; padding-right:16px;" class="material-icons">search</i><div id="search-box" class="input-field" style="height:inherit;"><input id="search" type="search" onkeyup="searchResults(this)" style="padding-left:12px; width: calc(100% - 1rem);"><label class="label-icon" for="search" ></label><i class="material-icons" onclick="searchClear()">close</i></div></a></li></ul>
 
@@ -75,7 +77,7 @@
 		
 <!-- panel (domain) -->
 <ul id="user-pane" class="sidenav loader" style="visibility:hidden;overflow:hidden;">
-	<li style="padding-top:16px;margin-bottom:16px;display: flex;justify-content: space-evenly;"><div style="display:flex;justify-content:space-evenly;width:100%;"><a class='btn-flat waves-effect waves-light' onclick="openInNewTab('https://github.com/nfnth/nfnth/issues'); $('#user-pane').sidenav('close');"><i class="material-icons">help</i></a><a class='btn-flat waves-effect waves-light' onclick="showArea('manual'); $('#user-pane').sidenav('close');"><i class="material-icons">restart_alt</i></a><span id="ocuros" style="cursor: pointer;margin:auto; color:darkgreen!important; font-size:18px;border-radius: 8px; opacity: 0.7; height: 36px !important;display: flex;align-items: center;padding-top: 10px;" onclick="showDoc('os'); $('#deed-pane').sidenav('close');" class="badge grey lighten-2" data-badge-caption="v1.08"><img src="res/img/scroll_logo.png" style="width:24px; height:24px; margin-right:8px;" /><span style="font-weight:bold;">docOS ·&nbsp;</span></span></div></li>
+	<li style="padding-top:16px;margin-bottom:16px;display: flex;justify-content: space-evenly;"><div style="display:flex;justify-content:space-evenly;width:100%;"><a class='btn-flat waves-effect waves-light' onclick="openInNewTab('https://github.com/nfnth/nfnth/issues'); $('#user-pane').sidenav('close');"><i class="material-icons">help</i></a><span id="ocuros" style="cursor: pointer;margin:auto; color:darkgreen!important; font-size:18px;border-radius: 8px; opacity: 0.7; height: 36px !important;display: flex;align-items: center;padding-top: 10px;" onclick="showDoc('os'); $('#user-pane').sidenav('close');" class="badge grey lighten-2" data-badge-caption="v1.08"><img src="res/img/scroll_logo.png" style="width:24px; height:24px; margin-right:8px;" /><span style="font-weight:bold;">docOS ·&nbsp;</span></span></div></li>
 	
 	<!-- tabs -->
 	<li style="height:100%;"><ul id="domain-tabs" class="tabs tabs-fixed-width z-depth-1 wallet">
