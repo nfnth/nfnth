@@ -46,7 +46,7 @@ function showMark(coord, color, image, link, name, id, area) {
 			imager = 'onclick="buildDeed(' + id + ');"';
 			custom = '<a class="waves-effect waves-blue btn amber lighten-2" onclick="showWallet(' + id + ');" ><i class="material-icons">alternate_email</i></a>&nbsp;&nbsp;<a class="modal-trigger waves-effect waves-light btn blue lighten-2" href="#modal1" onclick="addListDetail(' + id + ');"><i class="material-icons">receipt</i></a>'; break;
 		case 'domain': 
-			if (domains[id].item) { filler = 'ghostwhite;" class="grey'; } else { filler = 'beige;" class="amber'; }
+			if (domains[id].item) { filler = 'beige;" class="amber'; } else { filler = 'ghostwhite;" class="grey'; }
 			imager = 'onclick="buildDomain(' + id + ');"';
 			custom = '<a id="lm' + id + '" style="color:' + filler + ' waves-effect waves-blue btn lighten-4" onclick="buildLand(' + id + ');" ><i class="material-icons">landscape</i></a>&nbsp;&nbsp;<a class="modal-trigger waves-effect waves-light btn blue lighten-3" href="#modal1" onclick="addListDetail(' + id + ');"><i class="material-icons">article</i></a>'; break;
 		case 'artifact': 
