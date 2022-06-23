@@ -1,7 +1,11 @@
 
 var map; var map_style = ['satellite-streets-v11', 'light-v10', 'dark-v10']; var zoom = 5; var base = [-101.69697959674477, 39.77108807140884];
 mapboxgl.accessToken = "pk.eyJ1IjoibmZudGgiLCJhIjoiY2tweW1rNXlsMGFpYzJwcGt1cHh6dmxzcyJ9.ZJaFrGpPDv5froWZMLXXYQ";
-map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/mapbox/' + map_style[0], center: base, zoom: zoom, buffer_size: 0.2});
+map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/mapbox/' + map_style[0], center: base, pitch: 85,
+bearing: 80,
+			
+			
+			zoom: 13, buffer_size: 0.2});
 
 var coordinates; var artFlag = false; var tempMark = ""; var tempMap = [];
 map.on('load', function (event) { showView('mapper'); showIntro();
