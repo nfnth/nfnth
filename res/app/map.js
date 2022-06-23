@@ -93,7 +93,7 @@ function showEdit() { if (tempMark != "") { tempMark.remove(); tempMark = ""; }
 	var marv = document.createElement('div'); marv.id = 'markery'; 
 	tempMark = new mapboxgl.Marker(marv).setLngLat(coordinates).addTo(map);
     	$('#markery').addClass('markre'); $('#markerx').addClass('z-depth-3'); var style=$('#markery').attr('style');
-    	style += ";background-color:red;border:solid 2px black;"; $('#markery').attr('style',style);
+    	style += ";background-color:goldenrod;border:solid 2px black;"; $('#markery').attr('style',style);
     	//style += ";background-image:url('img/icon/domain/"+folder + "/" +icon+".png'); 
 		     
 	
