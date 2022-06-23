@@ -250,7 +250,7 @@ async function initial() { $('body').css("background-color","lightgrey");
     $('#dropdown-template').dropdown({ constrainWidth: false });
 	$('#user-pane').sidenav({ edge: 'right' }); $('#deed-pane').sidenav({ edge: 'left', onCloseEnd: populateMap });  redirect();
     
-   	hideView(); showView('mapper');
+   	hideView(); 
 			  //$('#news').show(); $("#stamper").show(); $("#world").show(); //searchClear();
      //setNotice('...latest domain...');
     	setTimeout(function() { $(".loader").css("visibility", "visible"); redirect();  $('img').on('dragstart', function(evt) { return false; }); }  , 500); }
@@ -544,7 +544,7 @@ function mapTex() { }
 	
 function searchResults(text) { if(event.key === 'Enter') { openInNewTab('https://presearch.com/search?q=' + $(text).val()); }}</script>
 <script src="res/app/map.js"></script>
-<script>pullOpens();</script>
+<script>pullOpens(); showView('mapper');</script>
 <style>
 	html { height:100%; }
 main {flex: 1 0 auto;}
