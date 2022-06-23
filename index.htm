@@ -23,16 +23,16 @@
     		<div style="height:108%;" class="z-depth-1"><a id="menu-deed" style="color:darkslategrey; opacity:0.7; background-color:ghostwhite; display: flex; align-items: center; height: 100%; padding-right: 10px;font-weight: bold;font-size: 20px; -webkit-transition: background-color 300ms linear, color 300ms linear;-moz-transition: background-color 300ms linear, color 300ms linear;-o-transition: background-color 300ms linear, color 300ms linear;-ms-transition: background-color 300ms linear, color 300ms linear;transition: background-color 300ms linear, color 300ms linear;"><i class="material-icons" style="padding-left:16px;" onclick="showList('open'); $('#deed-pane').sidenav('open');">menu</i><div id="waiter" onclick="resetHome();" style="height:48px; width:48px; cursor: pointer; margin-left: 12px;"><img id="list-wait" class="image image-rotate"/><img id="list-wait2" class="image image-rotate"/></div></a></div>
 
 	<!-- media -->
-	<a id="set-hide" class="screen-hide media-menu" href="#!" data-target="set"><i class="material-icons">map</i></a>
-	<a id="shop-hide" class="screen-hide media-menu" onclick="openInNewTab('');"><i class="material-icons">architecture</i></a>
 	<a id="doc-hide" class="screen-hide media-menu" href="#!" data-target="doc"><i class="material-icons">book</i></a>
+	<a id="shop-hide" class="screen-hide media-menu" onclick="openInNewTab('');"><i class="material-icons">architecture</i></a>
+	<a id="set-hide" class="screen-hide media-menu" href="#!" data-target="set"><i class="material-icons">map</i></a>
     	<a id="search-hide" class="screen-hide media-menu" onclick="showView('search');"><i class="material-icons">search</i></a>
 
     	<!-- desktop -->
     	<ul class="hide-on-med-and-down">
-		<li class="desk-menu" id="map-list"><a class="desk-link" id="sets" href="#!" data-target="set"><i class="material-icons left">map</i>MAP</a></li>
-		<li class="desk-menu" id="shop-list"><a class="desk-link" id="shops" onclick="openInNewTab('');"><i class="material-icons left">architecture</i>TOOL</a></li>
 		<li class="desk-menu" id="doc-list"><a class="desk-link" id="docs" href="#!" data-target="doc"><i class="material-icons left">book</i>DOCS<i class="material-icons right">arrow_drop_down</i></a></li>
+		<li class="desk-menu" id="shop-list"><a class="desk-link" id="shops" onclick="openInNewTab('');"><i class="material-icons left">architecture</i>TOOL</a></li>
+		<li class="desk-menu" id="map-list"><a class="desk-link" id="sets" href="#!" data-target="set"><i class="material-icons left">map</i>MAP</a></li>
 		
         	<li class="desk-menu" style="height:101%;" id="search-list">
         		<a class="desk-link" style="height:101%; padding-right:0;"><i onclick="$('#search').focus();" style="height:inherit; padding-right:16px;" class="material-icons">search</i><div id="search-box" class="input-field" style="height:inherit;"><input id="search" type="search" onkeyup="searchResults(this)" style="padding-left:12px; width: calc(100% - 1rem);"><label class="label-icon" for="search" ></label><i class="material-icons" onclick="searchClear()">close</i></div></a></li></ul>
@@ -87,8 +87,8 @@
 	
 	<!-- tabs -->
 	<li style="height:100%;"><ul id="domain-tabs" class="tabs tabs-fixed-width z-depth-1 wallet">
-        	<li class="tab blue-grey lighten-5"><a class="active" href="#test4">Domain</a></li>
-		<li class="tab blue-grey lighten-5"><a href="#test5">&nbsp;&nbsp;&nbsp;Item&nbsp;&nbsp;&nbsp;</a></li></ul><div class="card-content z-depth-1" style="height:100%;background-color:ghostwhite;">
+        	<li class="tab blue-grey lighten-5"><a class="active" href="#test4">&nbsp;&nbsp;Domain&nbsp;&nbsp;</a></li>
+		<li class="tab blue-grey lighten-5"><a href="#test5">Artifact</a></li></ul><div class="card-content z-depth-1" style="height:100%;background-color:ghostwhite;">
 			
 		<!-- list (deed) -->
 		<div id="test4"><ul>
@@ -99,9 +99,8 @@
   			<li><div style="margin-top:0;" class="divider"></div></li><!--<i class="material-icons left">calculate</i>-->
   			<li><a class="subheader">Domain Information</a></li>
 			<li style="margin-top:12px; display: flex;align-items: center;justify-content: center;margin-bottom:16px;"><select id="domain-template" class="sider" onchange="domainSelect();"><option selected="selected" value="void">No domain selected</option><option value="tactician.us">tactician.us (demo)</option></select></li>
-			<li><a class="waves-effect" onclick='$("#domain-tabs").select("test5");'><i class="material-icons">inventory_2</i><span id="myArt" class="lighten-2" style="color:black!important;">My Domain Artifact</span></a></li>
+			<li><a class="waves-effect" onclick='$("#domain-tabs").tabs("select", "test5");'><i class="material-icons">inventory_2</i><span id="myArt" class="lighten-2" style="color:black!important;">My Domain Artifact</span></a></li>
   			<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><i class="material-icons">token</i><span id="myDomain" class="lighten-2" style="color:black!important;">My Domain Balance (UR)</span></a></li>
-			<li style="margin-top:16px;"><a id="builder" class="btn waves-effect waves-light blue z-depth-1 lighten-3 disabled" style="width: 240px;margin: auto;border-radius: 8px;color:black;" onclick="mapAdd();$('#user-pane').sidenav('close');"><i class="material-icons left">build</i>Build Domain</a></li>
 			<li style="margin-top:16px;"><a id="trader" class="btn waves-effect waves-light amber z-depth-1 lighten-3 disabled" style="width: 240px;margin: auto;border-radius: 8px;color:black;" onclick="mapAdd();$('#user-pane').sidenav('close');"><i class="material-icons left">landscape</i>Trade UR</a></li></ul></div>
 			
 		<!-- list (domain) -->
@@ -189,7 +188,7 @@
 
 <script>
 function connect() {
-	if (user.address == "") { setup(); $('#user-pane').sidenav('open'); } else { desetup(); } 	
+	if (user.address == "") { setup(); }  $('#user-pane').sidenav('open');	
 }
 var spinner = 0; 
 function resetHome() { 
