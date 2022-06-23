@@ -90,70 +90,30 @@ async def data(request):
 
     if wallet.upper() == message_wallet.upper(): #wallet authenticated
         print ("authenticated...") #domain = request.host
-        if domain == "profile":
-            if ur > 100:
-                path = DATA + 'wallet/' + wallet.lower()
-                if os.path.exists(path):
+        api_url = "https://api.opensea.io/api/v1/asset/0x495f947276749Ce646f68AC8c248420045cb7b5e/" + domain
+        headers = {"X-API-KEY": OPEN_API_KEY}
+        x = requests.get(api_url, headers=headers).json().get("top_ownerships")[0].get("owner").get("address")
+
+        if x.upper() == wallet.upper(): #owner authenticated
+            if content == "receipt":
+                path = DATA + 'receipt/' + domain + '/' + wallet
+                if not os.path.exists(path):
+                    os.mkdir(path)   
+                with open(path + '/stamp', "wt") as fout: #add tx number? update ledger... optional address (deliver to previous owner?)
+                    fout.write(message)
+                    pass
+            else:
+                path = DATA + 'domain/' + domain
+                #request.app['locked'] = False
+                if os.path.exists(path): #backup?
                     shutil.rmtree(path)
                 os.mkdir(path)
-                with open(path + '/profile', "wt") as fout:
+                with open(path + '/doc', "wt") as fout:
                     fout.write(content)
                     pass
-                return web.Response(text='valid profile',content_type="text/html")
-            else:
-                return web.Response(text='invalid UR (profile)',content_type="text/html")
-        elif domain == "message": #test if another wallet address....
-            if ur > 1000:
-                path = DATA + 'message/' + wallet + '/' + domain #wallet to wallet or wallet to domain
-                mess = DATA + 'message/' + domain + '/' + wallet
-                
-                if action == "new":
-                    if not os.path.exists(path):
-                        os.mkdir(path)
-                    if not os.path.exists(mess):
-                        os.mkdir(mess)
-                    ref = str(datetime.datetime.now())
-                    with open(path + '/' + ref, "wt") as fout:
-                        fout.write(content)
-                        pass
-                    with open(mess + '/' + ref, "wt") as fout:
-                        fout.write(content)
-                        pass
-                elif action == "delete":
-                    if os.path.exists(path + '/' + ref):
-                        shutil.rmtree(path + '/' + ref)
-                elif action == "view":
-                    if os.path.exists(path + '/' + ref):
-                        return web.FileResponse(path + '/' + ref)
- 
-                return web.Response(text='message handled',content_type="text/html")
-            else:
-                return web.Response(text='invalid UR (message)',content_type="text/html")
+                return web.Response(text='valid domain',content_type="text/html")
         else:
-            api_url = "https://api.opensea.io/api/v1/asset/0x495f947276749Ce646f68AC8c248420045cb7b5e/" + domain
-            headers = {"X-API-KEY": OPEN_API_KEY}
-            x = requests.get(api_url, headers=headers).json().get("top_ownerships")[0].get("owner").get("address")
-
-            if x.upper() == wallet.upper(): #owner authenticated
-                if content == "receipt":
-                    path = DATA + 'receipt/' + domain + '/' + wallet
-                    if not os.path.exists(path):
-                        os.mkdir(path)   
-                    with open(path + '/stamp', "wt") as fout: #add tx number? update ledger... optional address (deliver to previous owner?)
-                        fout.write(message)
-                        pass
-                else:
-                    path = DATA + 'domain/' + domain
-                    #request.app['locked'] = False
-                    if os.path.exists(path): #backup?
-                        shutil.rmtree(path)
-                    os.mkdir(path)
-                    with open(path + '/doc', "wt") as fout:
-                        fout.write(content)
-                        pass
-                    return web.Response(text='valid domain',content_type="text/html")
-            else:
-                return web.Response(text='invalid owner',content_type="text/html")
+            return web.Response(text='invalid owner',content_type="text/html")
     else:
         return web.Response(text='invalid wallet',content_type="text/html")
 
