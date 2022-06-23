@@ -46,7 +46,7 @@ function showMark(coord, color, image, link, name, id, area) {
 			custom = '<a class="waves-effect waves-blue btn amber lighten-2" onclick="showWallet(' + id + ');" ><i class="material-icons">alternate_email</i></a>&nbsp;&nbsp;<a class="modal-trigger waves-effect waves-light btn blue lighten-2" href="#modal1" onclick="addListDetail(' + id + ');"><i class="material-icons">receipt</i></a>'; break;
 		case 'domain': 
 			imager = 'onclick="buildDomain(' + id + ');"';
-			custom = '<a style="color:beige;" class="waves-effect waves-blue btn amber lighten-4" onclick="buildWallet(' + id + ');" ><i class="material-icons">landscape</i></a>&nbsp;&nbsp;<a class="modal-trigger waves-effect waves-light btn blue lighten-3" href="#modal1" onclick="addListDetail(' + id + ');"><i class="material-icons">list</i></a>'; break;
+			custom = '<a style="color:beige;" class="waves-effect waves-blue btn amber lighten-4" onclick="buildWallet(' + id + ');" ><i class="material-icons">landscape</i></a>&nbsp;&nbsp;<a class="modal-trigger waves-effect waves-light btn blue lighten-3" href="#modal1" onclick="addListDetail(' + id + ');"><i class="material-icons">article</i></a>'; break;
 		case 'artifact': 
 			imager = 'onclick="buildArtifact(' + id + ');"';
 			custom = '<a class="waves-effect waves-blue btn amber lighten-2" onclick="buildDomain(' + id + ');" ><i class="material-icons">terrain</i></a>'; break; }
