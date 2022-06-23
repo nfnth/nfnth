@@ -30,9 +30,9 @@ function showIntro() {
 	var marv = document.createElement('div'); marv.id = 'markera'; tempMark = new mapboxgl.Marker(marv).setLngLat(base).addTo(map);
 	
 	$('#markera').addClass('markre'); $('#markera').addClass('z-depth-3'); 
-	var style = $('#markera').attr('style'); style += ";background-color:red;border:solid 2px black;"; $('#markera').attr('style',style);
+	var style = $('#markera').attr('style'); style += ";background-color:goldenrod;border:solid 2px black;"; $('#markera').attr('style',style);
     	//style += ";background-image:url('img/icon/domain/"+folder + "/" +icon+".png'); 
-	var markup = '<div><div style="display:flex; justify-content:center;"><img width="48" height="48" src="res/img/seal3.png"/></div><div style="margin-top:16px; font-size:16px;"><a>tactician.us</a><br/><br/><a class="waves-effect waves-blue btn amber lighten-2" onclick="showDoc(\'ur\');"><i class="material-icons">landscape</i></a>&nbsp;&nbsp;<a class="modal-trigger waves-effect waves-light btn blue lighten-2" href="#modal1" ><i class="material-icons">inventory_2</i></a></div></div>';
+	var markup = '<div><div style="display:flex; justify-content:center;"><img style="cursor:pointer;" onclick="showDoc(\'ur\');" width="48" height="48" src="res/img/seal3.png"/></div><div style="margin-top:16px; font-size:16px;"><a>UR.Land</a><br/><br/><a class="waves-effect waves-blue btn amber lighten-2" onclick="showDoc(\'ur\');"><i class="material-icons">landscape</i></a>&nbsp;&nbsp;<a class="modal-trigger waves-effect waves-light btn blue lighten-3" href="#modal1" ><i class="material-icons">article</i></a></div></div>';
 
 	
 	tempMark.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); tempMark.togglePopup(); }
