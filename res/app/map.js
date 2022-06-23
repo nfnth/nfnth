@@ -39,6 +39,7 @@ function showMark(coord, color, image, link, name, id, area) {
 	var mark = coord;
 	var marv = document.createElement('div'); marv.id = 'marker' + id; 
 	var marp = new mapboxgl.Marker(marv).setLngLat(mark).addTo(map);
+	var imager = '';
 	
 	switch(area) {
 		case 'deed':
@@ -60,7 +61,7 @@ function showMark(coord, color, image, link, name, id, area) {
 	
 	return marp; } //$('.materialboxed').materialbox(); 
 
-function showTemp(i) { if (tempMark != "") { tempMark.remove(); } tempMark = showMark(convertCoord(domains[i].coord), getCollect(domains[i].core.collection.slug).replace('.png',''), domains[i].core.image_url, domains[i].core.external_link, domains[i].core.name, i);  }
+function showTemp(i) { if (tempMark != "") { tempMark.remove(); } tempMark = showMark(convertCoord(domains[i].coord), getCollect(domains[i].core.collection.slug).replace('.png',''), domains[i].core.image_url, domains[i].core.external_link, domains[i].core.name, i, 'domain');  }
 function showDomain(i) { domains[i].map = showMark(convertCoord(domains[i].coord), getCollect(domains[i].core.collection.slug).replace('.png',''), domains[i].core.image_url, domains[i].core.external_link, domains[i].core.name, i, 'domain');  }
 function showArt(i) { artifacts[i].map = showMark(convertMark(artifacts[i].location), artifacts[i].color, artifacts[i].image, "", artifacts[i].name, 'artifact'); }
 
