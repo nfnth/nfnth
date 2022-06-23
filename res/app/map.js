@@ -30,7 +30,16 @@ map.addLayer({
 }
 });
 				 
-				 
+	map.addLayer(
+{
+'id': 'hillshading',
+'source': 'dem',
+'type': 'hillshade'
+// insert below waterway-river-canal-shadow;
+// where hillshading sits in the Mapbox Outdoors style
+},
+'waterway-river-canal-shadow'
+);			 
 				 
 	map.on('click', function(e) { coordinates = e.lngLat; if(artFlag) { addArt(); artFlag = false; } $('.fixed-action-btn').floatingActionButton('close'); }); });
 
