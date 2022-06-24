@@ -29,6 +29,12 @@ map.addLayer({
 'sky-atmosphere-sun-intensity': 15
 }
 });
+			
+				 map.addSource('dem', {
+'type': 'raster-dem',
+'url': 'mapbox://mapbox.mapbox-terrain-dem-v1'
+});
+				 
 				 
 	map.addLayer(
 {
