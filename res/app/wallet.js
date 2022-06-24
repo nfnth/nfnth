@@ -58,7 +58,7 @@ function domainSelect() {
 		$("#myArt").hide().html("My Domain Artifact").removeClass("badge").removeClass("blue").css("font-weight","normal").fadeIn('slow'); }
     	else { $("#poster").removeClass("disabled");  $("#trader").removeClass("disabled"); 
 	      $('#myDomain').hide().html('<a style="display:flex; color:black;">' + "24,901 UR" + '&nbsp;&nbsp;<i class="material-icons">token</i>').addClass("badge").addClass("amber").css("font-weight","bold").fadeIn('slow');
-	      $('#myArt').hide().html(badge('artifact','2').fadeIn('slow'); } pullDomain(dv);  }
+	      $('#myArt').hide().html(badge('artifact','2')).fadeIn('slow'); } pullDomain(dv);  }
 
 function badge(area,amount) {
 	switch(area) {
