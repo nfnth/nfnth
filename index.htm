@@ -143,6 +143,7 @@
 
 	<!-- shop -->
 	<div id="shopper" class="content loader pane">
+		<a id="dropdown-mapper" class="waves-effect waves-light blue lighten-2 btn dropdown-trigger" href='#' data-target='dropdown-map' style="margin-right:8px; width:150px;" ><i id="view-icon" class="material-icons left">dynamic_feed</i>Template</a>
 		<div class="row"><div class="input-field col s12">
           		<textarea id="textarea1" class="materialize-textarea"></textarea><label for="textarea1">Textarea</label></div></div></div></div>
 
@@ -178,6 +179,17 @@
 		<li id="map-route"><a href="#!" onclick="setTemplate('Recipe');"><i class="material-icons">restaurant</i>Recipe</a></li>
 		<li id="map-route"><a href="#!" onclick="setTemplate('Sequence');"><i class="material-icons">dry_cleaning</i>Sequence</a></li>
 		<li id="map-route"><a href="#!" onclick="setTemplate('Graph');"><i class="material-icons">fort</i>Graph</a></li></ul>
+	
+	<!-- map types -->
+	<ul id='dropdown-map' class='dropdown-content'>
+		<li id="map-sat"><a href="#!" onclick="setMap('empty');"><i class="material-icons">label</i>Empty</a></li>
+		<li class="divider" tabindex="-1"></li>
+		<li id="map-dir"><a href="#!" onclick="setMap('street');"><i class="material-icons">badge</i>Street</a></li>
+		<li id="map-dir"><a href="#!" onclick="setMap('building');"><i class="material-icons">checklist</i>Building</a></li>
+		<li class="divider" tabindex="-1"></li>
+		<li id="map-route"><a href="#!" onclick="setMap('satellite');"><i class="material-icons">restaurant</i>Satellite</a></li>
+		<li id="map-route"><a href="#!" onclick="setMap('terrain');"><i class="material-icons">dry_cleaning</i>Terrain</a></li>
+		<li id="map-route"><a href="#!" onclick="setMap('ocean');"><i class="material-icons">fort</i>Ocean</a></li></ul>
 
 <!-- dialog -->
 <div id="modal1" class="modal bottom-sheet content loader"><div id="domain-info" class="modal-content grey lighten-4" style="box-shadow: 1px 18px 24px 1px inset cornsilk" ></div></div>
@@ -241,7 +253,7 @@ async function initial() { $('body').css("background-color","lightgrey");
 	
 	$('#dropdown-opener').dropdown({ constrainWidth: false }); $('#dropdown-domainer').dropdown({ constrainWidth: false });
 	$('#dropdown-deeder').dropdown({ constrainWidth: false }); $('#dropdown-maper').dropdown({ constrainWidth: false }); $('#dropdown-mediaer').dropdown({ constrainWidth: false });  //$('#dropdown-full4').dropdown({ constrainWidth: false }); $('#dropdown-full5').dropdown({ constrainWidth: false });
-    $('#dropdown-template').dropdown({ constrainWidth: false });
+    $('#dropdown-template').dropdown({ constrainWidth: false }); $('#dropdown-mapper').dropdown({ constrainWidth: false });
 	$('#user-pane').sidenav({ edge: 'right' }); $('#deed-pane').sidenav({ edge: 'left', onCloseEnd: populateMap });  redirect();
     
    	hideView(); 
