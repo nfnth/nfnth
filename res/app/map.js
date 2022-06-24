@@ -34,7 +34,7 @@ function convertCoord(coord) { //66°32′56″N 152°50′41″W  Degrees + ((M
 //var base = [-101.69697959674477, 39.77108807140884];
 var learnArt = [-103.69697959674477, 37.77108807140884]; var popArt; var popOwn; var popPath; var popBase;
 var learnOwn = [-99.19697959674477, 40.17108807140884];
-var learnPath = [-100.69697959674477, 38.77108807140884];
+var learnPath = [-103.19697959674477, 37.47108807140884];
 var pather = false; var beacon = false;
 
 function showIntro() {
