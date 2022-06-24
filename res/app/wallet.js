@@ -62,7 +62,7 @@ function domainSelect() {
 
 function badge(area,amount) {
 	switch(area) {
-		case 'artifact': return '<a class="badge amber" style="display:flex; color:black; font-weight:bold;">' + amount + ' artifact&nbsp;&nbsp;<i class="material-icons" style="color:midnightblue;">landscape</i></a>'; } }
+		case 'artifact': return '<span class="badge amber" style="display:flex; color:black; font-weight:bold;">' + amount + ' artifact&nbsp;&nbsp;<i class="material-icons" style="color:midnightblue;">landscape</i></span>'; } }
 
 function pullDomain(domain) { domainMd = ""; domainMd = new Md(); 
 	$("#selink").removeClass("disabled"); $("#dropdown-deeder").removeClass("disabled"); $("#swilink").removeClass("disabled");
