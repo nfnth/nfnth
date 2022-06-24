@@ -54,15 +54,19 @@ function emptyDeeds() { $('#domain-template').empty();
 function domainSelect() { 
 	var d = document.getElementById("domain-template"); var dt = d.options[d.selectedIndex].text; var dv = d.options[d.selectedIndex].value; 
     	if (dt == 'No domain selected') { $("#poster").addClass("disabled"); $("#trader").addClass("disabled"); 
-		$('#myDomain').hide().html("My Domain Balance").removeClass("badge").removeClass("amber").css("font-weight","normal").fadeIn('slow');
-		$("#myArt").hide().html("My Domain Artifact").removeClass("badge").removeClass("blue").css("font-weight","normal").fadeIn('slow'); }
+		$('#myDomain').hide().html("My Domain Balance").fadeIn('slow');
+		$("#myArt").hide().html("My Domain Artifact").fadeIn('slow'); }
     	else { $("#poster").removeClass("disabled");  $("#trader").removeClass("disabled"); 
-	      $('#myDomain').hide().html('<a style="display:flex; color:black;">' + "24,901 UR" + '&nbsp;&nbsp;<i class="material-icons">token</i>').addClass("badge").addClass("amber").css("font-weight","bold").fadeIn('slow');
+	      $('#myDomain').hide().html(badge('ur','24,901').fadeIn('slow');
 	      $('#myArt').hide().html(badge('artifact','2')).fadeIn('slow'); } pullDomain(dv);  }
 
 function badge(area,amount) {
 	switch(area) {
-		case 'artifact': return '<span class="badge amber" style="display:flex; color:black; font-weight:bold;">' + amount + ' artifact&nbsp;&nbsp;<i class="material-icons" style="color:midnightblue;">landscape</i></span>'; } }
+		case 'artifact': return '<span class="badge green" style="display:flex; color:black; "><span style="font-weight:bold;">' + amount + '</span> artifact&nbsp;&nbsp;<i class="material-icons" style="color:midnightblue;">landscape</i></span>';
+		case 'ur': return '<span class="badge amber" style="display:flex; color:black; "><span style="font-weight:bold;">' + amount + '</span> UR&nbsp;&nbsp;<i class="material-icons" style="color:midnightblue;">toll</i></span>';
+		case 'eth': return '<span class="badge amber" style="display:flex; color:black; "><span style="font-weight:bold;">' + amount + '</span> ETH&nbsp;&nbsp;<i class="material-icons" style="color:midnightblue;">attach_money</i></span>';
+		case 'gas': return '<span class="badge red" style="display:flex; color:black; "><span style="font-weight:bold;">' + amount + '</span> GWEI&nbsp;&nbsp;<i class="material-icons" style="color:midnightblue;">local_gas_station</i></span>';
+		case 'deed': return '<span class="badge blue" style="display:flex; color:black; "><span style="font-weight:bold;">' + amount + '</span> ETH&nbsp;&nbsp;<i class="material-icons" style="color:midnightblue;">sailing</i></span>'; } }
 
 function pullDomain(domain) { domainMd = ""; domainMd = new Md(); 
 	$("#selink").removeClass("disabled"); $("#dropdown-deeder").removeClass("disabled"); $("#swilink").removeClass("disabled");
