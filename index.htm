@@ -102,7 +102,7 @@
 			<li style="margin-top:12px; display: flex;align-items: center;justify-content: center;margin-bottom:16px;"><select id="domain-template" class="sider" onchange="domainSelect();"><option selected="selected" value="void">No domain selected</option><option value="tactician.us">tactician.us (demo)</option></select></li>
 			<li><a class="waves-effect" onclick='$("#domain-tabs").tabs("select", "test5");'><i class="material-icons">landscape</i><span id="myArt" class="lighten-2" style="color:black!important;">My Domain Artifact</span></a></li>
   			<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><i class="material-icons">payments</i><span id="myDomain" class="lighten-2" style="color:black!important;">My Domain Balance (UR)</span></a></li>
-			<li style="margin-top:24px;"><a id="builder" class="btn waves-effect waves-light blue z-depth-1 lighten-3 disabled" style="width: 240px;margin: auto;border-radius: 8px;color:black;" onclick="mapAdd();$('#user-pane').sidenav('close');"><i class="material-icons left">inventory_2</i>Post Artifact</a></li>
+			<li style="margin-top:24px;"><a id="builder" class="btn waves-effect waves-light blue z-depth-1 lighten-3 disabled" style="width: 240px;margin: auto;border-radius: 8px;color:black;" onclick="mapAdd();$('#user-pane').sidenav('close');"><i class="material-icons left">gite</i>Build Domain</a></li>
 			<li style="margin-top:16px;"><a id="trader" class="btn waves-effect waves-light amber z-depth-1 lighten-3 disabled" style="width: 240px;margin: auto;border-radius: 8px;color:black;" onclick="mapAdd();$('#user-pane').sidenav('close');"><i class="material-icons left">sync_alt</i>Trade UR</a></li></ul></div>
 			
 		<!-- list (domain) -->
@@ -130,25 +130,25 @@
 
     	<!-- editor -->
     	<div id="editor" class="content loader pane scale-transition scale-out" style="height:90%;">
-		<div style="display:flex;  align-items: center; justify-content: space-evenly; margin:12px; margin-top:24px;">
-			<div>
+		<div  class="hide-on-med-and-down" style="display:flex;  align-items: center; justify-content: space-evenly; margin:12px; margin-top:24px;">
+			<div >
 				<div class="hiddenfile"><input name="upload" type="file" id="preview" onchange="checkFile();" multiple="multiple"/></div>
 			<a id="dropdown-template" class="waves-effect waves-light blue lighten-2 btn dropdown-trigger" href='#' data-target='dropdown-temp' style="margin-right:8px; width:150px;" ><i id="view-icon" class="material-icons left">dynamic_feed</i>Template</a>
-			<a id="dropdown-file" class="waves-effect waves-light blue lighten-4 btn dropdown-trigger" href='#' data-target='dropdown-file' style="margin-right:8px; width:150px;" ><i id="view-icon" class="material-icons left">attach_file</i>File...</a>
+			<a id="dropdown-file" class="waves-effect waves-light blue lighten-4 btn dropdown-trigger" href='#' data-target='dropdown-file' style="margin-right:8px; width:150px;" ><i id="view-icon" class="material-icons left">image</i>Image</a>
 			<a style="margin-right:8px; width:150px;" onclick="showPreview();" class="waves-effect waves-grey btn-flat"><i class="material-icons left">web_asset</i>Preview</a>
 			<a style="margin-right:8px; width:150px;" onclick="clearEditor();" class="waves-effect waves-grey btn-flat"><i class="material-icons left">refresh</i>Clear</a></div>
 			
 		<div>
-			<a onclick="setContent();" class="waves-effect waves-green green btn"><i class="material-icons right">save</i><span class='edit-device'>Save</span></a>
+			<a onclick="setContent();" class="waves-effect waves-green green btn"><i class="material-icons right">arrow_right</i><span class='edit-device'>Continue</span></a>
 			<a onclick="showPreview();" class="waves-effect waves-grey btn-flat"><i class="material-icons">cancel</i></a></div></div>
 		
-		
-		<div class="screen-hide">
+		<div  class="screen-hide" style="display:flex;  align-items: center; justify-content: space-evenly; margin:12px; margin-top:24px;">
+		<div >
 				<div class="hiddenfile"><input name="upload" type="file" id="preview" onchange="checkFile();" multiple="multiple"/></div>
-			<a id="dropdown-template" class="waves-effect waves-light blue lighten-2 btn dropdown-trigger" href='#' data-target='dropdown-temp' style="margin-right:8px; width:150px;" ><i id="view-icon" class="material-icons left">dynamic_feed</i>Template</a>
-			<a id="dropdown-file" class="waves-effect waves-light blue lighten-4 btn dropdown-trigger" href='#' data-target='dropdown-file' style="margin-right:8px; width:150px;" ><i id="view-icon" class="material-icons left">attach_file</i>File...</a>
-			<a style="margin-right:8px; width:150px;" onclick="showPreview();" class="waves-effect waves-grey btn-flat"><i class="material-icons left">web_asset</i>Preview</a>
-			<a style="margin-right:8px; width:150px;" onclick="clearEditor();" class="waves-effect waves-grey btn-flat"><i class="material-icons left">refresh</i>Clear</a></div>
+			<a id="dropdown-template" class="waves-effect waves-light blue lighten-2 btn dropdown-trigger" href='#' data-target='dropdown-temp' style="margin-right:8px; width:150px;" ><i id="view-icon" class="material-icons left">dynamic_feed</i></a>
+			<a id="dropdown-file" class="waves-effect waves-light blue lighten-4 btn dropdown-trigger" href='#' data-target='dropdown-file' style="margin-right:8px; width:150px;" ><i id="view-icon" class="material-icons left">attach_file</i></a>
+			<a style="margin-right:8px; width:150px;" onclick="showPreview();" class="waves-effect waves-grey btn-flat"><i class="material-icons left">web_asset</i></a>
+			<a style="margin-right:8px; width:150px;" onclick="clearEditor();" class="waves-effect waves-grey btn-flat"><i class="material-icons left">refresh</i>/a></div>
 			
 		<div>
 			<a onclick="setContent();" class="waves-effect waves-green green btn"><i class="material-icons right">save</i><span class='edit-device'>Save</span></a>
