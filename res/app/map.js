@@ -10,14 +10,7 @@ bearing: 80,
 var coordinates; var artFlag = false; var tempMark = ""; var tempMap = [];
 map.on('load', function (event) { showView('mapper'); showIntro();
 				 
-				 map.addSource('mapbox-dem', {
-'type': 'raster-dem',
-'url': 'mapbox://mapbox.mapbox-terrain-dem-v1',
-'tileSize': 512,
-'maxzoom': 14
-});
-// add the DEM source as a terrain layer with exaggerated height
-map.setTerrain({ 'source': 'mapbox-dem', 'exaggeration': 1.5 });
+				 
  
 // add a sky layer that will show when the map is highly pitched
 map.addLayer({
@@ -196,8 +189,18 @@ function setMap(map) { var center = map.getCenter();
 		case 'street': mapStyle = ''; break;
 		case 'building': mapStyle = ''; break;
 		case 'satellite': mapStyle = 'mapbox://styles/mapbox/satellite-streets-v11'; break;
-		case 'terrain': mapStyle = ''; break; }
-	map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/mapbox/' + mapStyle, center: satCenter, zoom: zoom, buffer_size: 0.2}); }
+		case 'terrain': mapStyle = 'cjaudgl840gn32rnrepcb9b9g'; break; }
+	map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/mapbox/' + mapStyle, center: satCenter, zoom: zoom, buffer_size: 0.2});
+		switch (map) {
+		case 'empty': mapStyle = ''; break;'satellite-streets-v11', 'light-v10', 'dark-v10'
+		case 'street': mapStyle = ''; break;
+		case 'building': mapStyle = ''; break;
+		case 'satellite': mapStyle = 'mapbox://styles/mapbox/satellite-streets-v11'; break;
+		case 'terrain': map.addSource('mapbox-dem', {'type': 'raster-dem','url': 'mapbox://mapbox.mapbox-terrain-dem-v1','tileSize': 512,'maxzoom': 14});		
+map.setTerrain({ 'source': 'mapbox-dem', 'exaggeration': 1.5 }); break; }     
+		     
+		     
+		     }
 
 function mapSat() { var satCenter = map.getCenter();
 	mapStyle = 'mapbox://styles/mapbox/satellite-streets-v11';
