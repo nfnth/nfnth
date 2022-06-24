@@ -44,7 +44,7 @@ function showIntro() {
 	$('#markera').addClass('markre'); $('#markera').addClass('z-depth-3'); 
 	var style = $('#markera').attr('style'); style += ";background-color:goldenrod;border:solid 2px black;"; $('#markera').attr('style',style);
     	//style += ";background-image:url('img/icon/domain/"+folder + "/" +icon+".png'); 
-	var markup = '<div><div style="display:flex; justify-content:center;"><img style="cursor:pointer;" onclick="showDoc(\'tactic/a\');" width="48" height="48" src="res/img/seal3.png"/></div><div style="margin-top:16px; font-size:16px;">Claim Deed<br/><br/><a onclick="showDoc(\'tactic/a\');" id="butIntro" class="waves-effect waves-blue btn blue lighten-2" onclick="tempMark.togglePopup(); showIntroArt();"><i class="material-icons right">arrow_forward</i>Next</a></div></div>';
+	var markup = '<div><div style="display:flex; justify-content:center;"><img style="cursor:pointer;" onclick="showDoc(\'tactic/a\');" width="48" height="48" src="res/img/seal3.png"/></div><div style="margin-top:16px; font-size:16px;"><span onclick="showDoc(\'tactic/a\');" style="cursor:pointer;">Purchase Deed</span><br/><br/><a id="butIntro" class="waves-effect waves-blue btn blue lighten-2" onclick="tempMark.togglePopup(); showIntroArt();"><i class="material-icons right">arrow_forward</i>Next</a></div></div>';
 
 	tempMark.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); tempMark.togglePopup(); }
 
@@ -55,7 +55,7 @@ function showIntroArt() { startPoint = base; endPoint = learnArt; showPath('gree
 	$('#markerb').addClass('markre'); $('#markerb').addClass('z-depth-3'); 
 	var style = $('#markerb').attr('style'); style += ";background-color:green;border:solid 2px black;"; $('#markerb').attr('style',style);
     	//style += ";background-image:url('img/icon/domain/"+folder + "/" +icon+".png'); 
-	var markup = '<div><div style="display:flex; justify-content:center;"><img style="cursor:pointer;" onclick="tempDoc(\'README.md\');" width="48" height="48" src="res/img/barrel.png"/></div><div style="margin-top:16px; font-size:16px;">Mark Domain<br/><br/><a id="butArt" class="waves-effect waves-blue btn blue lighten-2" onclick="tempMark.togglePopup(); showIntroOwn();"><i class="material-icons right">arrow_forward</i>Next</a></div></div>';
+	var markup = '<div><div style="display:flex; justify-content:center;"><img style="cursor:pointer;" onclick="showDoc(\'tactic/b\');" width="48" height="48" src="res/img/barrel.png"/></div><div style="margin-top:16px; font-size:16px;"><span onclick="showDoc(\'tactic/b\');" style="cursor:pointer;">Build Domain</span><br/><br/><a id="butArt" class="waves-effect waves-blue btn blue lighten-2" onclick="tempMark.togglePopup(); showIntroOwn();"><i class="material-icons right">arrow_forward</i>Next</a></div></div>';
 
 	tempMark.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); tempMark.togglePopup(); }
 
@@ -66,7 +66,7 @@ function showIntroOwn() { addBeacon(learnOwn); $("#butArt").addClass("disabled")
 	$('#markerc').addClass('markre'); $('#markerc').addClass('z-depth-3'); 
 	var style = $('#markerc').attr('style'); style += ";background-color:blue;border:solid 2px black;"; $('#markerc').attr('style',style);
     	//style += ";background-image:url('img/icon/domain/"+folder + "/" +icon+".png'); 
-	var markup = '<div><div style="display:flex; justify-content:center;"><img style="cursor:pointer;" onclick="tempDoc(\'README.md\');" width="48" height="48" src="res/img/shield.png"/></div><div style="margin-top:16px; font-size:16px;">Track Location<br/><br/><a id="butOwn" class="waves-effect waves-blue btn blue lighten-2" onclick="tempMark.togglePopup(); showIntroPath();"><i class="material-icons right">arrow_forward</i>Next</a></div></div>';
+	var markup = '<div><div style="display:flex; justify-content:center;"><img style="cursor:pointer;" onclick="showDoc(\'tactic/c\');" width="48" height="48" src="res/img/shield.png"/></div><div style="margin-top:16px; font-size:16px;"><span onclick="showDoc(\'tactic/c\');" style="cursor:pointer;">Mark Location</span><br/><br/><a id="butOwn" class="waves-effect waves-blue btn blue lighten-2" onclick="tempMark.togglePopup(); showIntroPath();"><i class="material-icons right">arrow_forward</i>Next</a></div></div>';
 
 	tempMark.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); tempMark.togglePopup(); }
 
@@ -77,7 +77,7 @@ function showIntroPath() { clearMap(); startPoint = learnOwn; endPoint = learnPa
 	$('#markerd').addClass('markre'); $('#markerd').addClass('z-depth-3'); 
 	var style = $('#markerd').attr('style'); style += ";background-color:red;border:solid 2px black;"; $('#markerd').attr('style',style);
     	//style += ";background-image:url('img/icon/domain/"+folder + "/" +icon+".png'); 
-	var markup = '<div><div style="display:flex; justify-content:center;"><img style="cursor:pointer;" onclick="tempDoc(\'README.md\');" width="48" height="48" src="res/img/seal3.png"/></div><div style="margin-top:16px; font-size:16px;">Explore Land<br/><br/><a id="butPath" class="waves-effect waves-blue btn amber lighten-2" onclick="clearMap(); clearLearn(); showIntro();"><i class="material-icons left">restart_alt</i>Restart</a></div></div>';
+	var markup = '<div><div style="display:flex; justify-content:center;"><img style="cursor:pointer;" onclick="showDoc(\'tactic/d\');" width="48" height="48" src="res/img/seal3.png"/></div><div style="margin-top:16px; font-size:16px;"><span onclick="showDoc(\'tactic/d\');" style="cursor:pointer;">Explore Land</span><br/><br/><a id="butPath" class="waves-effect waves-blue btn amber lighten-2" onclick="clearMap(); clearLearn(); showIntro();"><i class="material-icons left">restart_alt</i>Restart</a></div></div>';
 
 	tempMark.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); tempMark.togglePopup(); }
 
