@@ -49,9 +49,35 @@ function showIntro() {
 	$('#markera').addClass('markre'); $('#markera').addClass('z-depth-3'); 
 	var style = $('#markera').attr('style'); style += ";background-color:goldenrod;border:solid 2px black;"; $('#markera').attr('style',style);
     	//style += ";background-image:url('img/icon/domain/"+folder + "/" +icon+".png'); 
-	var markup = '<div><div style="display:flex; justify-content:center;"><img style="cursor:pointer;" onclick="tempDoc(\'README.md\');" width="48" height="48" src="res/img/seal3.png"/></div><div style="margin-top:16px; font-size:16px;"><a onclick="showOwnLearn();">UR.Land</a><br/><br/><a class="waves-effect waves-blue btn amber lighten-2" onclick="showArtLearn();showOwnLearn();"><i class="material-icons">arrow_forward</i></a></div></div>';
+	var markup = '<div><div style="display:flex; justify-content:center;"><img style="cursor:pointer;" onclick="tempDoc(\'README.md\');" width="48" height="48" src="res/img/seal3.png"/></div><div style="margin-top:16px; font-size:16px;"><a onclick="showOwnLearn();">UR.Land</a><br/><br/><a class="waves-effect waves-blue btn amber lighten-2" onclick="showIntroArt();"><i class="material-icons">arrow_forward</i></a></div></div>';
 
+	tempMark.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); tempMark.togglePopup(); }
+function showIntroArt() { startPoint = base; endPoint = learnArt; showPath('green');
+	var marv = document.createElement('div'); marv.id = 'markerb'; tempMark = new mapboxgl.Marker(marv).setLngLat(learnArt).addTo(map);
 	
+	$('#markerb').addClass('markre'); $('#markerb').addClass('z-depth-3'); 
+	var style = $('#markerb').attr('style'); style += ";background-color:green;border:solid 2px black;"; $('#markerb').attr('style',style);
+    	//style += ";background-image:url('img/icon/domain/"+folder + "/" +icon+".png'); 
+	var markup = '<div><div style="display:flex; justify-content:center;"><img style="cursor:pointer;" onclick="tempDoc(\'README.md\');" width="48" height="48" src="res/img/barrel.png"/></div><div style="margin-top:16px; font-size:16px;"><a onclick="showOwnLearn();">Fort</a><br/><br/><a class="waves-effect waves-blue btn amber lighten-2" onclick="showIntroOwn();"><i class="material-icons">arrow_forward</i></a></div></div>';
+
+	tempMark.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); tempMark.togglePopup(); }
+function showIntroOwn() { addBeacon(learnOwn);
+	var marv = document.createElement('div'); marv.id = 'markerc'; tempMark = new mapboxgl.Marker(marv).setLngLat(learnOwn).addTo(map);
+	
+	$('#markerc').addClass('markre'); $('#markerc').addClass('z-depth-3'); 
+	var style = $('#markerc').attr('style'); style += ";background-color:blue;border:solid 2px black;"; $('#markerc').attr('style',style);
+    	//style += ";background-image:url('img/icon/domain/"+folder + "/" +icon+".png'); 
+	var markup = '<div><div style="display:flex; justify-content:center;"><img style="cursor:pointer;" onclick="tempDoc(\'README.md\');" width="48" height="48" src="res/img/shield.png"/></div><div style="margin-top:16px; font-size:16px;"><a onclick="showOwnLearn();">Owner</a><br/><br/><a class="waves-effect waves-blue btn amber lighten-2" onclick="showIntroPath();"><i class="material-icons">arrow_forward</i></a></div></div>';
+
+	tempMark.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); tempMark.togglePopup(); }
+function showIntroPath() { startPoint = learnArt; endPoint = learnPath; showPath('red');
+	var marv = document.createElement('div'); marv.id = 'markerd'; tempMark = new mapboxgl.Marker(marv).setLngLat(learnPath).addTo(map);
+	
+	$('#markerd').addClass('markre'); $('#markerd').addClass('z-depth-3'); 
+	var style = $('#markerd').attr('style'); style += ";background-color:red;border:solid 2px black;"; $('#markerd').attr('style',style);
+    	//style += ";background-image:url('img/icon/domain/"+folder + "/" +icon+".png'); 
+	var markup = '<div><div style="display:flex; justify-content:center;"><img style="cursor:pointer;" onclick="tempDoc(\'README.md\');" width="48" height="48" src="res/img/seal3.png"/></div><div style="margin-top:16px; font-size:16px;"><a onclick="showOwnLearn();">UR.Land</a><br/><br/><a class="waves-effect waves-blue btn amber lighten-2" onclick=""><i class="material-icons">restart_alt</i></a></div></div>';
+
 	tempMark.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); tempMark.togglePopup(); }
 
 function showMark(coord, color, image, link, name, id, area) { 
