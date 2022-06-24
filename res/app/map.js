@@ -129,7 +129,7 @@ function setMap(area) { var center = map.getCenter();
 		case 'building': mapStyle = ''; break;
 		case 'satellite': mapStyle = 'mapbox://styles/mapbox/satellite-streets-v11'; break;
 		case 'terrain': mapStyle = 'cjaudgl840gn32rnrepcb9b9g'; break; }
-	map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/mapbox/' + mapStyle, center: satCenter, zoom: zoom, buffer_size: 0.2});
+	map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/mapbox/' + mapStyle, center: center, zoom: zoom, buffer_size: 0.2});
 		switch (area) {
 		case 'empty': mapStyle = ''; break;'satellite-streets-v11', 'light-v10', 'dark-v10'
 		case 'street': mapStyle = ''; break;
