@@ -34,7 +34,7 @@ function convertCoord(coord) { //66°32′56″N 152°50′41″W  Degrees + ((M
 //var base = [-101.69697959674477, 39.77108807140884];
 var learnArt = [-103.69697959674477, 37.77108807140884]; var popArt; var popOwn; var popPath; var popBase;
 var learnOwn = [-99.19697959674477, 40.17108807140884];
-var learnPath = [-103.19697959674477, 37.47108807140884];
+var learnPath = [-99.79697959674477, 37.47108807140884];
 var pather = false; var beacon = false;
 
 function showIntro() {
@@ -70,7 +70,7 @@ function showIntroOwn() { addBeacon(learnOwn); $("#butArt").addClass("disabled")
 
 	tempMark.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); tempMark.togglePopup(); }
 
-function showIntroPath() { clearMap(); startPoint = learnOwn; endPoint = learnPath; showPath('red'); pather = true; beacon = true; $("#butOwn").addClass("disabled");
+function showIntroPath() { clearMap(); startPoint = learnArt; endPoint = learnPath; showPath('red'); pather = true; beacon = true; $("#butOwn").addClass("disabled");
 	var marv = document.createElement('div'); marv.id = 'markerd'; tempMark = new mapboxgl.Marker(marv).setLngLat(learnPath).addTo(map);
 	popPath = tempMark;
 	
