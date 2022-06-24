@@ -44,40 +44,40 @@ function showIntro() {
 	$('#markera').addClass('markre'); $('#markera').addClass('z-depth-3'); 
 	var style = $('#markera').attr('style'); style += ";background-color:goldenrod;border:solid 2px black;"; $('#markera').attr('style',style);
     	//style += ";background-image:url('img/icon/domain/"+folder + "/" +icon+".png'); 
-	var markup = '<div><div style="display:flex; justify-content:center;"><img style="cursor:pointer;" onclick="tempDoc(\'README.md\');" width="48" height="48" src="res/img/seal3.png"/></div><div style="margin-top:16px; font-size:16px;">Claim Deed<br/><br/><a class="waves-effect waves-blue btn blue lighten-2" onclick="tempMark.togglePopup(); showIntroArt();"><i class="material-icons right">arrow_forward</i>Next</a></div></div>';
+	var markup = '<div><div style="display:flex; justify-content:center;"><img style="cursor:pointer;" onclick="tempDoc(\'README.md\');" width="48" height="48" src="res/img/seal3.png"/></div><div style="margin-top:16px; font-size:16px;">Claim Deed<br/><br/><a id="butIntro" class="waves-effect waves-blue btn blue lighten-2" onclick="tempMark.togglePopup(); showIntroArt();"><i class="material-icons right">arrow_forward</i>Next</a></div></div>';
 
 	tempMark.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); tempMark.togglePopup(); }
 
-function showIntroArt() { startPoint = base; endPoint = learnArt; showPath('green'); pather = true;
+function showIntroArt() { startPoint = base; endPoint = learnArt; showPath('green'); pather = true; $("#butIntro").addClass("disabled");
 	var marv = document.createElement('div'); marv.id = 'markerb'; tempMark = new mapboxgl.Marker(marv).setLngLat(learnArt).addTo(map);
 	popArt = tempMark;
 	
 	$('#markerb').addClass('markre'); $('#markerb').addClass('z-depth-3'); 
 	var style = $('#markerb').attr('style'); style += ";background-color:green;border:solid 2px black;"; $('#markerb').attr('style',style);
     	//style += ";background-image:url('img/icon/domain/"+folder + "/" +icon+".png'); 
-	var markup = '<div><div style="display:flex; justify-content:center;"><img style="cursor:pointer;" onclick="tempDoc(\'README.md\');" width="48" height="48" src="res/img/barrel.png"/></div><div style="margin-top:16px; font-size:16px;">Mark Domain<br/><br/><a class="waves-effect waves-blue btn blue lighten-2" onclick="tempMark.togglePopup(); showIntroOwn();"><i class="material-icons right">arrow_forward</i>Next</a></div></div>';
+	var markup = '<div><div style="display:flex; justify-content:center;"><img style="cursor:pointer;" onclick="tempDoc(\'README.md\');" width="48" height="48" src="res/img/barrel.png"/></div><div style="margin-top:16px; font-size:16px;">Mark Domain<br/><br/><a id="butArt" class="waves-effect waves-blue btn blue lighten-2" onclick="tempMark.togglePopup(); showIntroOwn();"><i class="material-icons right">arrow_forward</i>Next</a></div></div>';
 
 	tempMark.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); tempMark.togglePopup(); }
 
-function showIntroOwn() { addBeacon(learnOwn); 
+function showIntroOwn() { addBeacon(learnOwn); $("#butArt").addClass("disabled");
 	var marv = document.createElement('div'); marv.id = 'markerc'; tempMark = new mapboxgl.Marker(marv).setLngLat(learnOwn).addTo(map);
 	popOwn = tempMark; 
 	
 	$('#markerc').addClass('markre'); $('#markerc').addClass('z-depth-3'); 
 	var style = $('#markerc').attr('style'); style += ";background-color:blue;border:solid 2px black;"; $('#markerc').attr('style',style);
     	//style += ";background-image:url('img/icon/domain/"+folder + "/" +icon+".png'); 
-	var markup = '<div><div style="display:flex; justify-content:center;"><img style="cursor:pointer;" onclick="tempDoc(\'README.md\');" width="48" height="48" src="res/img/shield.png"/></div><div style="margin-top:16px; font-size:16px;">Track Location<br/><br/><a class="waves-effect waves-blue btn blue lighten-2" onclick="tempMark.togglePopup(); showIntroPath();"><i class="material-icons right">arrow_forward</i>Next</a></div></div>';
+	var markup = '<div><div style="display:flex; justify-content:center;"><img style="cursor:pointer;" onclick="tempDoc(\'README.md\');" width="48" height="48" src="res/img/shield.png"/></div><div style="margin-top:16px; font-size:16px;">Track Location<br/><br/><a id="butOwn" class="waves-effect waves-blue btn blue lighten-2" onclick="tempMark.togglePopup(); showIntroPath();"><i class="material-icons right">arrow_forward</i>Next</a></div></div>';
 
 	tempMark.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); tempMark.togglePopup(); }
 
-function showIntroPath() { clearMap(); startPoint = learnOwn; endPoint = learnPath; showPath('red'); pather = true; beacon = true;
+function showIntroPath() { clearMap(); startPoint = learnOwn; endPoint = learnPath; showPath('red'); pather = true; beacon = true; $("#butOwn").addClass("disabled");
 	var marv = document.createElement('div'); marv.id = 'markerd'; tempMark = new mapboxgl.Marker(marv).setLngLat(learnPath).addTo(map);
 	popPath = tempMark;
 	
 	$('#markerd').addClass('markre'); $('#markerd').addClass('z-depth-3'); 
 	var style = $('#markerd').attr('style'); style += ";background-color:red;border:solid 2px black;"; $('#markerd').attr('style',style);
     	//style += ";background-image:url('img/icon/domain/"+folder + "/" +icon+".png'); 
-	var markup = '<div><div style="display:flex; justify-content:center;"><img style="cursor:pointer;" onclick="tempDoc(\'README.md\');" width="48" height="48" src="res/img/seal3.png"/></div><div style="margin-top:16px; font-size:16px;">Explore Land<br/><br/><a class="waves-effect waves-blue btn amber lighten-2" onclick="clearMap(); clearLearn(); showIntro();"><i class="material-icons left">restart_alt</i>Restart</a></div></div>';
+	var markup = '<div><div style="display:flex; justify-content:center;"><img style="cursor:pointer;" onclick="tempDoc(\'README.md\');" width="48" height="48" src="res/img/seal3.png"/></div><div style="margin-top:16px; font-size:16px;">Explore Land<br/><br/><a id="butPath" class="waves-effect waves-blue btn amber lighten-2" onclick="clearMap(); clearLearn(); showIntro();"><i class="material-icons left">restart_alt</i>Restart</a></div></div>';
 
 	tempMark.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); tempMark.togglePopup(); }
 
