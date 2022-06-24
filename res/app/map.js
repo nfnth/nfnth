@@ -41,6 +41,36 @@ map.addLayer({
 'waterway-river-canal-shadow'
 );			 
 				 
+map.addSource('10m-bathymetry-81bsvj', {
+type: 'vector',
+url: 'mapbox://mapbox.9tm8dx88'
+});
+ 
+map.addLayer(
+{
+'id': '10m-bathymetry-81bsvj',
+'type': 'fill',
+'source': '10m-bathymetry-81bsvj',
+'source-layer': '10m-bathymetry-81bsvj',
+'layout': {},
+'paint': {
+'fill-outline-color': 'hsla(337, 82%, 62%, 0)',
+// cubic bezier is a four point curve for smooth and precise styling
+// adjust the points to change the rate and intensity of interpolation
+'fill-color': [
+'interpolate',
+['cubic-bezier', 0, 0.5, 1, 0.5],
+['get', 'DEPTH'],
+200,
+'#78bced',
+9000,
+'#15659f'
+]
+}
+},
+'land-structure-polygon'
+);
+				 
 	map.on('click', function(e) { coordinates = e.lngLat; if(artFlag) { addArt(); artFlag = false; } $('.fixed-action-btn').floatingActionButton('close'); }); });
 
 function convertMark(coord) { 
