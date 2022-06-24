@@ -319,11 +319,11 @@ function hideView() { $('.modal').modal('close'); window.scrollTo(0, 0); $("#map
 		     $("#help").removeClass("scale-in"); $("#help").removeClass("scale-out"); $("#help").addClass("scale-out");
 		     $("#shopper").removeClass("scale-in"); $("#shopper").removeClass("scale-out"); $("#shopper").addClass("scale-out");
 		     $('.pane').hide();}
-function showView(view) {  hideView(); $('#'+view).show();
+function showView(view) {  //hideView(); $('#'+view).show();
     switch (view) {
 	    case 'shopper': $("#shopper").addClass("scale-in"); break;
-        case 'editor': $("#editor").addClass("scale-in"); break;
-        case 'mapper': showList('domain'); $("#map-tool").show(); map.resize(); break; } }
+        case 'editor': hideView(); $('#'+view).show(); $("#editor").addClass("scale-in"); break;
+        case 'mapper': $("#editor").removeClass("scale-in"); $("#editor").removeClass("scale-out"); $("#editor").removeClass("scale-transition"); $("#editor").addClass("scale-transition"); $("#editor").addClass("scale-out");  $('#'+view).show(); showList('domain'); $("#map-tool").show(); map.resize(); break; } }
 
 var complete; var reset = false; var first = true; var nfnth = false;
 function showNfNth() { if (nfnth) {nfnth = false;} else {nfnth = true;}  }
