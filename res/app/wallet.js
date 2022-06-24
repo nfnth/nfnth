@@ -58,10 +58,11 @@ function domainSelect() {
 		$("#myArt").hide().html("My Domain Artifact").removeClass("badge").removeClass("blue").css("font-weight","normal").fadeIn('slow'); }
     	else { $("#poster").removeClass("disabled");  $("#trader").removeClass("disabled"); 
 	      $('#myDomain').hide().html('<a style="display:flex; color:black;">' + "24,901 UR" + '&nbsp;&nbsp;<i class="material-icons">token</i>').addClass("badge").addClass("amber").css("font-weight","bold").fadeIn('slow');
-	      $('#myArt').hide().html('<a style="display:flex; color:black;">' + "9 artifact" + '&nbsp;&nbsp;<i class="material-icons">inventory_2</i>').addClass("badge").addClass("blue").css("font-weight","bold").fadeIn('slow');
-	        
-	     
-	     } pullDomain(dv);  }
+	      $('#myArt').hide().html(badge('artifact','2').fadeIn('slow'); } pullDomain(dv);  }
+
+function badge(area,amount) {
+	switch(area) {
+		case 'artifact': return '<a class="badge amber" style="display:flex; color:black; font-weight:bold;">' + amount + ' artifact&nbsp;&nbsp;<i class="material-icons" style="color:midnightblue;">landscape</i></a>'; } }
 
 function pullDomain(domain) { domainMd = ""; domainMd = new Md(); 
 	$("#selink").removeClass("disabled"); $("#dropdown-deeder").removeClass("disabled"); $("#swilink").removeClass("disabled");
@@ -96,21 +97,9 @@ function postDomain(profile) {
 	
 	if (profile != true) {
 	var d = document.getElementById("domain-template"); var dt = d.options[d.selectedIndex].text; var dv = d.options[d.selectedIndex].value; 
-	if (dt != 'No domain selected') {
-		
-		
-		
-		//alert(stamp);
-		
-		signer(stamp, dv); }
+	if (dt != 'No domain selected') { signer(stamp, dv); }
 	else { alert('No domain selected'); } }
-	else {
-		
-		signer(stamp, 'profile');
-	}
-	
-	
-	}
+	else { signer(stamp, 'profile'); }}
 
 var signer = async function (content, ref) { //add key to message...
     	var messager = '{"domain":{"name":"UR.Land"},"message":{"contents":"Hello, key value for UR.Land"},"primaryType":"Mail","types":{"EIP712Domain":[{"name":"name","type":"string"}],"Mail":[{"name":"contents","type":"string"}]}}';
@@ -134,52 +123,19 @@ async function purchase() {
 		from: user.address, // must match user's active address.
 		value: itemPrice.toString(16), //'0x00', // Only required to send ether to the recipient from the initiating external account.
 		data: '0x7f7465737432000000000000000000000000000000000000000000000000000000600057', // Optional, but used for defining smart contract creation and interaction.
-		chainId: '0x3', // Used to prevent transaction reuse across blockchains. Auto-filled by MetaMask. 
-	};
-	var txHash = await ethereum.request({
-  		method: 'eth_sendTransaction',
-  		params: [transactionParameters], }); }
-
+		chainId: '0x3', };
+	var txHash = await ethereum.request({ method: 'eth_sendTransaction', params: [transactionParameters], }); }
 
 async function transfer() { 
 	var transactionParameters = {
-    from: user.address,
-    to: "0xCcaB679860B1017589239BCeEEabe5CD45965aFc",
-    data: getDataFieldValue("0xB0D39Cd2a5Acc510529444B45a3ACa189D971c49", 1000),
-};
-	
-	//var recieverAddres = "0xB0D39Cd2a5Acc510529444B45a3ACa189D971c49"; var amount = 1000;
-	//var TOKEN_CONTRACT_ADDRESS = "0xCcaB679860B1017589239BCeEEabe5CD45965aFc";
+    		from: user.address,
+    		to: "0xCcaB679860B1017589239BCeEEabe5CD45965aFc",
+    		data: getDataFieldValue("0xB0D39Cd2a5Acc510529444B45a3ACa189D971c49", 1000), };
+
 	var txHash = await ethereum.request({
-    method: 'eth_sendTransaction',
-    params: [transactionParameters],
-});
-	    
-	 //   await ethereum
- //   .request({
-   //   method: "eth_sendTransaction",
-     // params: [
-       // {
-         // from: user.address,
-//          to: TOKEN_CONTRACT_ADDRESS,
-  //        data: tokenContract.methods
-    //        .transfer(receiverAddress, amount)
-      //      .encodeABI(),
-//        },
-  //    ],
- //   })
- //   .then((result) =>  console.log(result))
- //   .catch((error) => console.error(error));
-}
+    		method: 'eth_sendTransaction',
+    		params: [transactionParameters], }); }
 
-
-
-
-function getDataFieldValue(tokenRecipientAddress, tokenAmount) {
-    const web3 = new Web3();
-    const TRANSFER_FUNCTION_ABI = {"constant":false,"inputs":[{"name":"_to","type":"address"},{"name":"_value","type":"uint256"}],"name":"transfer","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"};
-    return web3.eth.abi.encodeFunctionCall(TRANSFER_FUNCTION_ABI, [
-        tokenRecipientAddress,
-        tokenAmount
-    ]);
-}
+function getDataFieldValue(tokenRecipientAddress, tokenAmount) { const web3 = new Web3();
+    	const TRANSFER_FUNCTION_ABI = {"constant":false,"inputs":[{"name":"_to","type":"address"},{"name":"_value","type":"uint256"}],"name":"transfer","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"};
+    	return web3.eth.abi.encodeFunctionCall(TRANSFER_FUNCTION_ABI, [tokenRecipientAddress, tokenAmount ]); }
