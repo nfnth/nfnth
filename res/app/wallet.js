@@ -52,9 +52,9 @@ function domainSelect() {
 
 function badge(area,amount) {
 	switch(area) {
-		case 'artifact': return '<span class="badge green" style="display:flex; color:black!important; "><span style="font-weight:bold;margin-right:4px;">' + amount + '</span> artifact&nbsp;&nbsp;<i class="material-icons" style="color:darkgreen;">landscape</i></span>';
+		case 'artifact': return '<span class="badge green" style="display:flex; color:black!important; "><span style="font-weight:bold;margin-right:4px;">' + amount + '</span> artifact&nbsp;&nbsp;<i class="material-icons" style="color:darkgreen;">inventory_2</i></span>';
 		case 'ur': return '<span class="badge amber" style="display:flex; color:black!important; "><span style="font-weight:bold;margin-right:4px;">' + amount + '</span> UR&nbsp;&nbsp;<i class="material-icons" style="color:darkgoldenrod;">toll</i></span>';
-		case 'eth': return '<span class="badge green" style="display:flex; color:black!important; "><span style="font-weight:bold;margin-right:4px;">' + amount + '</span> ETH&nbsp;&nbsp;<i class="material-icons" style="color:darkgreen;">token</i></span>';
+		case 'eth': return '<span class="badge blue" style="display:flex; color:black!important; "><span style="font-weight:bold;margin-right:4px;">' + amount + '</span> ETH&nbsp;&nbsp;<i class="material-icons" style="color:midnightblue;">token</i></span>';
 		case 'gas': return '<span class="badge red" style="display:flex; color:black!important; "><span style="font-weight:bold;margin-right:4px;">' + amount + '</span> GWEI&nbsp;&nbsp;<i class="material-icons" style="color:darkred;">local_gas_station</i></span>';
 		case 'deed': return '<span class="badge blue" style="display:flex; color:black!important; "><span style="font-weight:bold;margin-right:4px;">' + amount + '</span> ETH&nbsp;&nbsp;<i class="material-icons" style="color:midnightblue;">sailing</i></span>'; } }
 
