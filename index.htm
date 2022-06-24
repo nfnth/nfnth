@@ -128,18 +128,23 @@
 
     	<!-- editor -->
     	<div id="editor" class="content loader pane scale-transition scale-out" style="height:90%;">
-		<div style="display:flex;  align-items: center; justify-content: space-evenly; margin:12px; margin-top:24px;"><div><div class="hiddenfile"><input name="upload" type="file" id="preview" onchange="checkFile();" multiple="multiple"/></div>
+		<div style="display:flex;  align-items: center; justify-content: space-evenly; margin:12px; margin-top:24px;">
+			<div>
+				<div class="hiddenfile"><input name="upload" type="file" id="preview" onchange="checkFile();" multiple="multiple"/></div>
 			<a id="dropdown-template" class="waves-effect waves-light blue lighten-2 btn dropdown-trigger" href='#' data-target='dropdown-temp' style="margin-right:8px; width:150px;" ><i id="view-icon" class="material-icons left">dynamic_feed</i>Template</a>
 			<a id="dropdown-file" class="waves-effect waves-light blue lighten-4 btn dropdown-trigger" href='#' data-target='dropdown-file' style="margin-right:8px; width:150px;" ><i id="view-icon" class="material-icons left">attach_file</i>File...</a>
 			<a style="margin-right:8px; width:150px;" onclick="showPreview();" class="waves-effect waves-grey btn-flat"><i class="material-icons left">web_asset</i>Preview</a>
 			<a style="margin-right:8px; width:150px;" onclick="clearEditor();" class="waves-effect waves-grey btn-flat"><i class="material-icons left">refresh</i>Clear</a></div>
+			
 		<div>
 			<a onclick="setContent();" class="waves-effect waves-green green btn"><i class="material-icons right">save</i><span class='edit-device'>Save</span></a>
 			<a onclick="showPreview();" class="waves-effect waves-grey btn-flat"><i class="material-icons">cancel</i></a></div></div>
   
         	<div id="pad" class="z-depth-2" contentEditable="true" style="text-align:left; overflow-y: auto; width:90%; border:1px solid darkgrey; box-shadow: 1px 1px beige; border-radius: 8px;padding: 12px;margin:auto;font-size:20px;height:100%; background-color:whitesmoke;"></div>
 	
-		<div style="display:flex; justify-content:space-between; margin:24px;position:sticky;bottom:24px;padding-right:48px;width:100%;"><div id="show-progress" class="progress" style="display:none;"><div class="indeterminate"></div></div></div>
+		<div style="display:flex; justify-content:space-between; margin:24px;position:sticky;bottom:24px;padding-right:48px;width:100%;">
+			<div id="show-progress" class="progress" style="display:none;"><div class="indeterminate"></div></div>
+		</div></div>
 
 	<!-- shop -->
 	<div id="shopper" class="content loader pane  scale-transition scale-out">
