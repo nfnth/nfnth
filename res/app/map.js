@@ -13,70 +13,20 @@ map.on('load', function (event) { showView('mapper'); showIntro();
 				 
  
 // add a sky layer that will show when the map is highly pitched
-map.addLayer({
-'id': 'sky',
-'type': 'sky',
-'paint': {
-'sky-type': 'atmosphere',
-'sky-atmosphere-sun': [0.0, 0.0],
-'sky-atmosphere-sun-intensity': 15
-}
-});
+map.addLayer({'id': 'sky','type': 'sky','paint': {'sky-type': 'atmosphere','sky-atmosphere-sun': [0.0, 0.0],'sky-atmosphere-sun-intensity': 15}});
 				 
-				 map.setFog({
-'range': [-1, 1.5],
-'color': 'white',
-'horizon-blend': 0.1
-});
+				 map.setFog({'range': [-1, 1.5],'color': 'white','horizon-blend': 0.1});
 			
-				 map.addSource('dem', {
-'type': 'raster-dem',
-'url': 'mapbox://mapbox.mapbox-terrain-dem-v1'
-});
+				 map.addSource('dem', {'type': 'raster-dem','url': 'mapbox://mapbox.mapbox-terrain-dem-v1'});
 				 
 				 
 				 
 				 
-	map.addLayer(
-{
-'id': 'hillshading',
-'source': 'dem',
-'type': 'hillshade'
-// insert below waterway-river-canal-shadow;
-// where hillshading sits in the Mapbox Outdoors style
-},
-'waterway-river-canal-shadow'
-);			 
+	map.addLayer({'id': 'hillshading','source': 'dem','type': 'hillshade'},'waterway-river-canal-shadow');			 
 				 
-map.addSource('10m-bathymetry-81bsvj', {
-type: 'vector',
-url: 'mapbox://mapbox.9tm8dx88'
-});
+map.addSource('10m-bathymetry-81bsvj', {type: 'vector',url: 'mapbox://mapbox.9tm8dx88'});
  
-map.addLayer(
-{
-'id': '10m-bathymetry-81bsvj',
-'type': 'fill',
-'source': '10m-bathymetry-81bsvj',
-'source-layer': '10m-bathymetry-81bsvj',
-'layout': {},
-'paint': {
-'fill-outline-color': 'hsla(337, 82%, 62%, 0)',
-// cubic bezier is a four point curve for smooth and precise styling
-// adjust the points to change the rate and intensity of interpolation
-'fill-color': [
-'interpolate',
-['cubic-bezier', 0, 0.5, 1, 0.5],
-['get', 'DEPTH'],
-200,
-'#78bced',
-9000,
-'#15659f'
-]
-}
-},
-'land-structure-polygon'
-);
+map.addLayer({'id': '10m-bathymetry-81bsvj','type': 'fill','source': '10m-bathymetry-81bsvj','source-layer': '10m-bathymetry-81bsvj','layout': {},'paint': {'fill-outline-color': 'hsla(337, 82%, 62%, 0)','fill-color': ['interpolate',['cubic-bezier', 0, 0.5, 1, 0.5],['get', 'DEPTH'],200,'#78bced',9000,'#15659f']}},'land-structure-polygon');
 				 
 	map.on('click', function(e) { coordinates = e.lngLat; if(artFlag) { addArt(); artFlag = false; } $('.fixed-action-btn').floatingActionButton('close'); }); });
 
