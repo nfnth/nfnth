@@ -29,8 +29,8 @@ function desetup() { user = ""; user = new Wallet();
 	 $("#builder").addClass("disabled");
 		$('#myURL').hide().html('My UR Balance').removeClass("badge").removeClass("amber").css("font-weight","normal").fadeIn('slow');
 		    
-    	$("#connector").css("color", "darkgreen"); $("#connector").html('<i class="material-icons left">login</i>Connect'); 
-		    $("#connector").addClass("green"); $("#connector").removeClass("red");
+    	//$("#connector").css("color", "darkgreen"); $("#connector").html('<i class="material-icons left">login</i>Connect'); 
+		//    $("#connector").addClass("green"); $("#connector").removeClass("red");
 		    //disconnect = false; 
     	emptyDeeds(); domainSelect(); }
 
@@ -57,7 +57,7 @@ function domainSelect() {
 		$('#myDomain').hide().html("My Domain Balance").fadeIn('slow');
 		$("#myArt").hide().html("My Domain Artifact").fadeIn('slow'); }
     	else { $("#poster").removeClass("disabled");  $("#trader").removeClass("disabled"); 
-	      $('#myDomain').hide().html(badge('ur','24,901').fadeIn('slow');
+	      $('#myDomain').hide().html(badge('ur','24,901')).fadeIn('slow');
 	      $('#myArt').hide().html(badge('artifact','2')).fadeIn('slow'); } pullDomain(dv);  }
 
 function badge(area,amount) {
