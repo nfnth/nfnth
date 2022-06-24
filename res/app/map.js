@@ -122,15 +122,15 @@ function showEdit() { if (tempMark != "") { tempMark.remove(); tempMark = ""; }
 
 var editContent = '<div id="header-logo" style="display: flex;justify-content: space-evenly;align-items: center; display: flex;margin-top:12px;"><div style="border-radius:12px; padding:12px;" class="z-depth-1 input-field col s6"><img width="48" height="48" id="thumb" src="res/img/barrel.png" onclick="$(\'#preview\').trigger(\'click\');" /></div><div style="display:flex; flex-direction:column;"><div id="editLoc" class="chip z-depth-1 waves-effect waves-light blue lighten-1" style="display:flex; color:white; align-items:center; justify-content:center; width:60px;" onclick="locStart();"><div style="display:flex;"><i id="pal" class="material-icons">place</i></div></div><div id="editColor" class="chip z-depth-1 waves-effect waves-light grey lighten-1" style="display:flex; color:white; align-items:center; justify-content:center; width:60px;" onclick="colorStart();"><div style="display:flex;"><i id="pal" class="material-icons">palette</i></div></div><div id="editText" class="chip z-depth-1 waves-effect waves-light grey lighten-1" style="display:flex; color:white; align-items:center; justify-content:center; width:60px;" onclick="textStart();"><div style="display:flex;"><i id="pal" class="material-icons">edit</i></div></div></div></div><div style="display:flex; justify-content:center;"><div class="input-field col s4"><input id="edit-name" type="text" class="validate" onchange="setText();"><label for="edit-name">Artifact Name</label></div></div><div class="hiddenfile"><input name="upload" type="file" id="preview" onchange="setPreview();" multiple="multiple"/><div style="visibility:hidden;width:0;position:absolute;top:0;"><input type="color" oninput="setColor();" id="favcolor" name="favcolor" value="#ff0000" style="width:0px; height:0px;opacity:0;" /></div></div><div style="display:flex;justify-content:space-evenly;margin-top:12px;margin-bottom:12px;"><label style="display:flex; align-items: center; margin-right: 24px; margin-left: 12px;"><input type="checkbox" class="filled-in" /><span><i class="material-icons">gite</i></span></label><a class="waves-effect waves-light btn-flat green lighten-1" onclick="postDomain(true);"><i class="material-icons right">upload</i>Upload</a></div></div>';
 
-function setMap(map) { var center = map.getCenter();
-	switch (map) {
+function setMap(area) { var center = map.getCenter();
+	switch (area) {
 		case 'empty': mapStyle = ''; break;'satellite-streets-v11', 'light-v10', 'dark-v10'
 		case 'street': mapStyle = ''; break;
 		case 'building': mapStyle = ''; break;
 		case 'satellite': mapStyle = 'mapbox://styles/mapbox/satellite-streets-v11'; break;
 		case 'terrain': mapStyle = 'cjaudgl840gn32rnrepcb9b9g'; break; }
 	map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/mapbox/' + mapStyle, center: satCenter, zoom: zoom, buffer_size: 0.2});
-		switch (map) {
+		switch (area) {
 		case 'empty': mapStyle = ''; break;'satellite-streets-v11', 'light-v10', 'dark-v10'
 		case 'street': mapStyle = ''; break;
 		case 'building': mapStyle = ''; break;
