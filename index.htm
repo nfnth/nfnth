@@ -24,15 +24,17 @@
 
 	<!-- media -->
 	<a id="doc-hide" class="screen-hide media-menu" href="#!" data-target="doc"><i class="material-icons">book</i></a>
-	<a id="shop-hide" class="screen-hide media-menu" onclick="showView('manual');"><i class="material-icons">inventory_2</i></a>
 	<a id="set-hide" class="screen-hide media-menu" onclick="showView('shopper');"><i class="material-icons">map</i></a>
+	<a id="shop-hide" class="screen-hide media-menu" onclick="showView('manual');"><i class="material-icons">inventory_2</i></a>
+	
     	<a id="search-hide" class="screen-hide media-menu" onclick="showView('search');"><i class="material-icons">search</i></a>
 
     	<!-- desktop -->
     	<ul class="hide-on-med-and-down">
 		<li class="desk-menu" id="doc-list"><a class="desk-link" id="docs" href="#!" data-target="doc"><i class="material-icons left">book</i>DOCS<i class="material-icons right">arrow_drop_down</i></a></li>
-		<li class="desk-menu" id="shop-list"><a class="desk-link" id="shops" onclick="showView('manual');"><i class="material-icons left">inventory_2</i>KIT</a></li>
 		<li class="desk-menu" id="map-list"><a class="desk-link" id="sets" onclick="showView('shopper');"><i class="material-icons left">map</i>MAP</a></li>
+		<li class="desk-menu" id="shop-list"><a class="desk-link" id="shops" onclick="showView('manual');"><i class="material-icons left">inventory_2</i>KIT</a></li>
+		
 		
         	<li class="desk-menu" style="height:101%;" id="search-list">
         		<a class="desk-link" style="height:101%; padding-right:0;"><i onclick="$('#search').focus();" style="height:inherit; padding-right:16px;" class="material-icons">search</i><div id="search-box" class="input-field" style="height:inherit;"><input id="search" type="search" onkeyup="searchResults(this)" style="padding-left:12px; width: calc(100% - 1rem);"><label class="label-icon" for="search" ></label><i class="material-icons" onclick="searchClear()">close</i></div></a></li></ul>
@@ -171,6 +173,14 @@
 
 <!-- manual -->
 	<div id="manual" class="content loader pane  scale-transition scale-out" style="margin-top:120px;">
+		<button onclick="showView('mapper');">Return</button>
+		<a id="dropdown-mapper" class="waves-effect waves-light blue lighten-2 btn dropdown-trigger" href='#' data-target='dropdown-map' style="margin-right:8px; width:150px;" ><i id="view-icon" class="material-icons left">dynamic_feed</i>Template</a>
+		<div class="row"><div class="input-field col s12">
+          		<textarea id="textarea1" class="materialize-textarea"></textarea><label for="textarea1">Textarea</label></div></div></div>
+
+
+<!-- help -->
+	<div id="help" class="content loader pane  scale-transition scale-out" style="margin-top:120px;">
 		<button onclick="showView('mapper');">Return</button>
 		<a id="dropdown-mapper" class="waves-effect waves-light blue lighten-2 btn dropdown-trigger" href='#' data-target='dropdown-map' style="margin-right:8px; width:150px;" ><i id="view-icon" class="material-icons left">dynamic_feed</i>Template</a>
 		<div class="row"><div class="input-field col s12">
