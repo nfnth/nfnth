@@ -43,10 +43,10 @@ function emptyDeeds() { $('#domain-template').empty();
 
 function domainSelect() { 
 	var d = document.getElementById("domain-template"); var dt = d.options[d.selectedIndex].text; var dv = d.options[d.selectedIndex].value; 
-    	if (dt == 'No domain selected') { $("#builder").addClass("disabled"); $("#trader").addClass("disabled"); 
+    	if (dt == 'No domain selected') { $("#builder").addClass("disabled"); $("#trader").addClass("disabled"); $("#map-add").addClass("disabled");
 		$('#myDomain').hide().html("My Domain Balance").fadeIn('slow');
 		$("#myArt").hide().html("My Domain Artifact").fadeIn('slow'); }
-    	else { $("#builder").removeClass("disabled");  $("#trader").removeClass("disabled"); 
+    	else { $("#builder").removeClass("disabled");  $("#trader").removeClass("disabled"); $("#map-add").removeClass("disabled");
 	      $('#myDomain').hide().html(badge('ur','24,901')).fadeIn('slow');
 	      $('#myArt').hide().html(badge('artifact','2')).fadeIn('slow'); } pullDomain(dv);  }
 
