@@ -44,7 +44,7 @@ function showIntro() {
 	$('#markera').addClass('markre'); $('#markera').addClass('z-depth-3'); 
 	var style = $('#markera').attr('style'); style += ";background-color:goldenrod;border:solid 2px black;"; $('#markera').attr('style',style);
     	//style += ";background-image:url('img/icon/domain/"+folder + "/" +icon+".png'); 
-	var markup = '<div><div style="display:flex; justify-content:center;"><img style="cursor:pointer;" onclick="tempDoc(\'README.md\');" width="48" height="48" src="res/img/seal3.png"/></div><div style="margin-top:16px; font-size:16px;">Claim Deed<br/><br/><a id="butIntro" class="waves-effect waves-blue btn blue lighten-2" onclick="tempMark.togglePopup(); showIntroArt();"><i class="material-icons right">arrow_forward</i>Next</a></div></div>';
+	var markup = '<div><div style="display:flex; justify-content:center;"><img style="cursor:pointer;" onclick="showDoc(\'tactic/a\');" width="48" height="48" src="res/img/seal3.png"/></div><div style="margin-top:16px; font-size:16px;">Claim Deed<br/><br/><a onclick="showDoc(\'tactic/a\');" id="butIntro" class="waves-effect waves-blue btn blue lighten-2" onclick="tempMark.togglePopup(); showIntroArt();"><i class="material-icons right">arrow_forward</i>Next</a></div></div>';
 
 	tempMark.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); tempMark.togglePopup(); }
 
