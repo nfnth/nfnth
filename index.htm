@@ -24,15 +24,15 @@
 
 	<!-- media -->
 	<a id="doc-hide" class="screen-hide media-menu" href="#!" data-target="doc"><i class="material-icons">book</i></a>
-	<a id="set-hide" class="screen-hide media-menu" onclick="showView('shopper');"><i class="material-icons">map</i></a>
+	<a id="set-hide" class="screen-hide media-menu" onclick="showView('shopper');"><i class="material-icons">dynamic_feed</i></a>
 	<a id="shop-hide" class="screen-hide media-menu" onclick="showView('manual');"><i class="material-icons">shopping_bag</i></a>
     	<a id="search-hide" class="screen-hide media-menu" onclick="showView('search');"><i class="material-icons">search</i></a>
 
     	<!-- desktop -->
     	<ul class="hide-on-med-and-down">
 		<li class="desk-menu" id="doc-list"><a class="desk-link" id="docs" href="#!" data-target="doc"><i class="material-icons left">book</i>DOCS<i class="material-icons right">arrow_drop_down</i></a></li>
-		<li class="desk-menu" id="map-list"><a class="desk-link" id="sets" onclick="showView('shopper');"><i class="material-icons left">map</i>MAP</a></li>
-		<li class="desk-menu" id="shop-list"><a class="desk-link" id="shops" onclick="showView('manual');"><i class="material-icons left">shopping_bag</i>KIT</a></li>
+		<li class="desk-menu" id="map-list"><a class="desk-link" id="sets" onclick="showView('shopper');"><i class="material-icons left">dynamic_feed</i>MAP</a></li>
+		<li class="desk-menu" id="shop-list"><a class="desk-link" id="shops" onclick="showView('manual');"><i class="material-icons left">shopping_bag</i>STORE</a></li>
 		
 		
         	<li class="desk-menu" style="height:101%;" id="search-list">
@@ -139,19 +139,19 @@
 			<a style="margin-right:8px; width:150px;" onclick="clearEditor();" class="waves-effect waves-grey btn-flat"><i class="material-icons left">refresh</i>Clear</a></div>
 			
 		<div>
-			<a onclick="setContent();" class="waves-effect waves-green green btn"><i class="material-icons right">arrow_right</i><span class='edit-device'>Continue</span></a>
+			<a onclick="setContent();" class="waves-effect waves-green green btn"><i class="material-icons right">arrow_forward</i><span class='edit-device'>Continue</span></a>
 			<a onclick="showPreview();" class="waves-effect waves-grey btn-flat"><i class="material-icons">cancel</i></a></div></div>
 		
-		<div  class="screen-hide" style="display:flex;  align-items: center; justify-content: space-evenly; margin:12px; margin-top:24px;">
-		<div >
+		<div  class="screen-hide edit-hide" style=" align-items: center; justify-content: space-evenly; margin:12px; margin-top:24px;">
+		<div>
 				<div class="hiddenfile"><input name="upload" type="file" id="preview" onchange="checkFile();" multiple="multiple"/></div>
-			<a id="dropdown-template" class="waves-effect waves-light blue lighten-2 btn dropdown-trigger" href='#' data-target='dropdown-temp' style="margin-right:8px; width:150px;" ><i id="view-icon" class="material-icons left">dynamic_feed</i></a>
-			<a id="dropdown-file" class="waves-effect waves-light blue lighten-4 btn dropdown-trigger" href='#' data-target='dropdown-file' style="margin-right:8px; width:150px;" ><i id="view-icon" class="material-icons left">attach_file</i></a>
+			<a id="dropdown-template" class="waves-effect waves-light blue lighten-2 btn dropdown-trigger" href='#' data-target='dropdown-temp' style="margin-right:8px; width:150px;" ><i id="view-icon" class="material-icons">dynamic_feed</i></a>
+			<a id="dropdown-file" class="waves-effect waves-light blue lighten-4 btn dropdown-trigger" href='#' data-target='dropdown-file' style="margin-right:8px; width:150px;" ><i id="view-icon" class="material-icons">attach_file</i></a>
 			<a style="margin-right:8px; width:150px;" onclick="showPreview();" class="waves-effect waves-grey btn-flat"><i class="material-icons left">web_asset</i></a>
-			<a style="margin-right:8px; width:150px;" onclick="clearEditor();" class="waves-effect waves-grey btn-flat"><i class="material-icons left">refresh</i>/a></div>
+			<a style="margin-right:8px; width:150px;" onclick="clearEditor();" class="waves-effect waves-grey btn-flat"><i class="material-icons left">refresh</i></a></div>
 			
 		<div>
-			<a onclick="setContent();" class="waves-effect waves-green green btn"><i class="material-icons right">save</i><span class='edit-device'>Save</span></a>
+			<a onclick="setContent();" class="waves-effect waves-green green btn"><i class="material-icons">arrow_forward</i><span class='edit-device'>Save</span></a>
 			<a onclick="showPreview();" class="waves-effect waves-grey btn-flat"><i class="material-icons">cancel</i></a></div></div>
 		
 		
@@ -641,7 +641,7 @@ nav ul a {display: flex!important; align-items: center; width:100%;}
 /* mobile */
 	.screen-hide {display:none;} 
 	.media-menu { color:darkgoldenrod; }
-	@media screen and (max-width: 999px) { .mobile-hide {display:none;} .screen-hide {display:block;} .card {width:100%!important;} #setting-wallet { width:60px; }}
+	@media screen and (max-width: 999px) { .mobile-hide {display:none;} .edit-hide {display:flex!important;} .screen-hide {display:block;} .card {width:100%!important;} #setting-wallet { width:60px; }}
 @media screen and (max-height: 450px) {.sidenav {padding-top: 15px;}.sidenav a {font-size: 18px;}}
 	
 @media screen and (max-width: 800px) {/* 8.5 x 11 with even centered 8 .logo { width: 36px; height:36px; }*/}
