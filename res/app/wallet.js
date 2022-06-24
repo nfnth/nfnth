@@ -8,30 +8,20 @@ var setup = async function () {
         $("#myAdd").html(user.address.toLowerCase().substring(0,16) + "...");
         $.get("api/"+user.address, async function(data) { 
             	var fields = data.split('|'); var ether = JSON.parse(fields[0]).result; var urler = fields[1]; var gas = fields[2];
-		$('#myETH').hide().html(ether.substring(0, 4) + " ETH").addClass("badge").addClass("green").css("font-weight","bold").fadeIn('slow'); itemPrice = parseInt(ether) / 2;
-		$('#myGas').hide().html('<a style="display:flex; color:black;">' + gas + '&nbsp;&nbsp;<i class="material-icons">local_gas_station</i></a>').addClass("badge").addClass("green").addClass("lighten-2").css("font-weight","bold").fadeIn('slow'); gasPrice = gas;
-		$('#myURL').hide().html('<a style="display:flex; color:black;">' + urler + " UR" + '&nbsp;&nbsp;<i class="material-icons">token</i>').addClass("badge").addClass("amber").css("font-weight","bold").fadeIn('slow');
-            	//$("#myETH").html(ether); 
-		//$("#myURL").html(urler);
-            	//$("#connector").css("color", "darkred"); 
-		$("#builder").removeClass("disabled"); 
-		$("#connector").html('<i class="material-icons left">logout</i>Disconnect'); $("#connector").removeClass("green"); $("#connector").addClass("red");$("#connector").css('color','black');
-		//disconnect = true; 
+		$('#myETH').hide().html(badge('eth',ether.substring(0, 4))).fadeIn('slow'); itemPrice = parseInt(ether) / 2;
+		$('#myGas').hide().html(badge('gas',gas)).fadeIn('slow'); gasPrice = gas;
+		$('#myURL').hide().html(badge('ur',urler)).fadeIn('slow');
             	$("#wallet-area").removeClass("grey"); $("#wallet-area").addClass("green"); $("#wallet-icon").css("color","darkgreen"); } ); 
     	for (let i=0;i<opens.length;i++) { pullAssets(user, opens[i].core.slug); } }
     else { M.toast({html: 'No wallet found.'}); } }; $("#wallet-setup").click(setup);
 
 function desetup() { user = ""; user = new Wallet();  
 	$("#wallet-area").addClass("grey"); $("#wallet-area").removeClass("green"); $("#wallet-icon").css("color","darkslategrey");
-	$("#myAdd").html('My ETH Balance');
-	$('#myETH').hide().html('My Wallet Address').removeClass("badge").removeClass("green").css("font-weight","normal").fadeIn('slow'); 
-		$('#myGas').hide().html('').removeClass("badge").removeClass("red").css("font-weight","normal").fadeIn('slow'); 
-	 $("#builder").addClass("disabled");
-		$('#myURL').hide().html('My UR Balance').removeClass("badge").removeClass("amber").css("font-weight","normal").fadeIn('slow');
+	$("#myAdd").hide().html('My ETH Balance').fadeIn('slow');
+	$('#myETH').hide().html('My Wallet Address').fadeIn('slow'); 
+	$('#myGas').hide().html('').fadeIn('slow'); 
+	$('#myURL').hide().html('My UR Balance').fadeIn('slow');
 		    
-    	//$("#connector").css("color", "darkgreen"); $("#connector").html('<i class="material-icons left">login</i>Connect'); 
-		//    $("#connector").addClass("green"); $("#connector").removeClass("red");
-		    //disconnect = false; 
     	emptyDeeds(); domainSelect(); }
 
 function listDeeds() {
@@ -53,19 +43,19 @@ function emptyDeeds() { $('#domain-template').empty();
 
 function domainSelect() { 
 	var d = document.getElementById("domain-template"); var dt = d.options[d.selectedIndex].text; var dv = d.options[d.selectedIndex].value; 
-    	if (dt == 'No domain selected') { $("#poster").addClass("disabled"); $("#trader").addClass("disabled"); 
+    	if (dt == 'No domain selected') { $("#builder").addClass("disabled"); $("#trader").addClass("disabled"); 
 		$('#myDomain').hide().html("My Domain Balance").fadeIn('slow');
 		$("#myArt").hide().html("My Domain Artifact").fadeIn('slow'); }
-    	else { $("#poster").removeClass("disabled");  $("#trader").removeClass("disabled"); 
+    	else { $("#builder").removeClass("disabled");  $("#trader").removeClass("disabled"); 
 	      $('#myDomain').hide().html(badge('ur','24,901')).fadeIn('slow');
 	      $('#myArt').hide().html(badge('artifact','2')).fadeIn('slow'); } pullDomain(dv);  }
 
 function badge(area,amount) {
 	switch(area) {
-		case 'artifact': return '<span class="badge green" style="display:flex; color:black; "><span style="font-weight:bold;">' + amount + '</span> artifact&nbsp;&nbsp;<i class="material-icons" style="color:midnightblue;">landscape</i></span>';
-		case 'ur': return '<span class="badge amber" style="display:flex; color:black; "><span style="font-weight:bold;">' + amount + '</span> UR&nbsp;&nbsp;<i class="material-icons" style="color:midnightblue;">toll</i></span>';
+		case 'artifact': return '<span class="badge green" style="display:flex; color:black; "><span style="font-weight:bold;">' + amount + '</span> artifact&nbsp;&nbsp;<i class="material-icons" style="color:darkgreen;">landscape</i></span>';
+		case 'ur': return '<span class="badge amber" style="display:flex; color:black; "><span style="font-weight:bold;">' + amount + '</span> UR&nbsp;&nbsp;<i class="material-icons" style="color:darkgoldenrod;">toll</i></span>';
 		case 'eth': return '<span class="badge amber" style="display:flex; color:black; "><span style="font-weight:bold;">' + amount + '</span> ETH&nbsp;&nbsp;<i class="material-icons" style="color:midnightblue;">attach_money</i></span>';
-		case 'gas': return '<span class="badge red" style="display:flex; color:black; "><span style="font-weight:bold;">' + amount + '</span> GWEI&nbsp;&nbsp;<i class="material-icons" style="color:midnightblue;">local_gas_station</i></span>';
+		case 'gas': return '<span class="badge red" style="display:flex; color:black; "><span style="font-weight:bold;">' + amount + '</span> GWEI&nbsp;&nbsp;<i class="material-icons" style="color:darkred;">local_gas_station</i></span>';
 		case 'deed': return '<span class="badge blue" style="display:flex; color:black; "><span style="font-weight:bold;">' + amount + '</span> ETH&nbsp;&nbsp;<i class="material-icons" style="color:midnightblue;">sailing</i></span>'; } }
 
 function pullDomain(domain) { domainMd = ""; domainMd = new Md(); 
