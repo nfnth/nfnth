@@ -56,7 +56,9 @@ function badge(area,amount) {
 		case 'ur': return '<span class="badge amber" style="display:flex; color:black!important; "><span style="font-weight:bold;margin-right:4px;">' + amount + '</span> UR&nbsp;&nbsp;<i class="material-icons" style="color:darkgoldenrod;">toll</i></span>';
 		case 'eth': return '<span class="badge green" style="display:flex; color:black!important; "><span style="font-weight:bold;margin-right:4px;">' + amount + '</span> ETH&nbsp;&nbsp;<i class="material-icons" style="color:darkgreen;">token</i></span>';
 		case 'gas': return '<span class="badge red" style="display:flex; color:black!important; "><span style="font-weight:bold;margin-right:4px;">' + amount + '</span> GWEI&nbsp;&nbsp;<i class="material-icons" style="color:darkred;">local_gas_station</i></span>';
-		case 'deed': return '<span class="badge blue" style="display:flex; color:black!important; "><span style="font-weight:bold;margin-right:4px;">' + amount + '</span> ETH&nbsp;&nbsp;<i class="material-icons" style="color:midnightblue;">sailing</i></span>'; } }
+		case 'deed': return '<span class="badge blue" style="display:flex; color:black!important; "><span style="font-weight:bold;margin-right:4px;">' + amount + '</span> ETH&nbsp;&nbsp;<i class="material-icons" style="color:midnightblue;">sailing</i></span>';
+		case 'wallet': return '<span class="badge brown" style="display:flex; color:black!important; "><span style="font-weight:bold;margin-right:4px;">' + amount + '</span>&nbsp;&nbsp;<i class="material-icons" style="color:beige;">account_balance_wallet</i></span>'; 
+		case 'coord': return '<span class="badge yellow" style="display:flex; color:black!important; "><span style="font-weight:bold;margin-right:4px;">' + amount + '</span> &nbsp;&nbsp;<i class="material-icons" style="color:darkyellow;">map</i></span>';} }
 
 function pullDomain(domain) { domainMd = ""; domainMd = new Md(); 
 	$("#selink").removeClass("disabled"); $("#dropdown-deeder").removeClass("disabled"); $("#swilink").removeClass("disabled");
