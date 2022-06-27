@@ -18,7 +18,7 @@
 <!-- menu -->
 <nav id="main-menu" style="position: fixed;top:0; z-index:2;visibility:hidden;" class="loader">
 	<!-- shop -->
-	<div id="panel-menu" class="nav-wrapper header z-depth-1 deep-orange lighten-4" style="display:flex; justify-content: space-between; color:black; border-bottom: solid 3px beige;">
+	<div id="panel-menu" class="nav-wrapper header z-depth-1 grey lighten-3" style="display:flex; justify-content: space-between; color:black; border-bottom: solid 3px slategrey;">
     		<div style="height:104%;" class="z-depth-1"><a id="menu-deed" style="color:darkslategrey; opacity:0.7; background-color:ghostwhite; display: flex; align-items: center; height: 100%; padding-right: 10px;font-weight: bold;font-size: 20px; -webkit-transition: background-color 300ms linear, color 300ms linear;-moz-transition: background-color 300ms linear, color 300ms linear;-o-transition: background-color 300ms linear, color 300ms linear;-ms-transition: background-color 300ms linear, color 300ms linear;transition: background-color 300ms linear, color 300ms linear;"><i class="material-icons" style="padding-left:16px;" onclick="showList('open'); $('#deed-pane').sidenav('open');">menu</i><div id="waiter" onclick="resetHome();" style="height:48px; width:48px; cursor: pointer; margin-left: 12px;"><img id="list-wait" class="image" src="res/img/seal3.png" /></div></a></div>
 
 	<!-- media -->
@@ -640,7 +640,7 @@ nav ul a {display: flex!important; align-items: center; width:100%;}
 
 /* mobile */
 	.screen-hide {display:none;} 
-	.media-menu { color:darkgoldenrod; }
+	.media-menu { color:darkslategrey; }
 	@media screen and (max-width: 999px) { .mobile-hide {display:none;} .edit-hide {display:flex!important;} .screen-hide {display:block;} .card {width:100%!important;} #setting-wallet { width:60px; }}
 @media screen and (max-height: 450px) {.sidenav {padding-top: 15px;}.sidenav a {font-size: 18px;}}
 	
@@ -679,14 +679,14 @@ div.active {opacity: 1;height: auto;}
 .open { cursor:default; }
 #domain-info { padding:0; }
 
-	.desk-menu { height:101%; } .desk-link:hover {height:101%; border-bottom: solid 2px darkgoldenrod!important; }
-nav ul a { color:darkgoldenrod; } nav ul a:hover { color:whitesmoke;   background-color: goldenrod!important; }
+	.desk-menu { height:101%; } .desk-link:hover {height:101%; border-bottom: solid 2px darkslategrey!important; }
+nav ul a { color:darkslategrey; } nav ul a:hover { color:whitesmoke;   background-color: slategrey!important; }
 	
 dropdown-content li>a>i { margin:0 12px 0 0; } .dropdown-content li>a, .dropdown-content li>span { color:darkslategrey!important; }
 	#wallet-icon { color:darkslategrey; }
 	
-	 nav ul a:hover #wallet-area:hover { background-color: green!important; }
-	 nav ul #setting-wallet a:hover {background-color: green!important; color:black!important;}
+	 nav ul a:hover #wallet-area:hover { background-color: grey!important; }
+	 nav ul #setting-wallet a:hover {background-color: grey!important; color:black!important;}
 	
 .tabs .tab a{ color:black; } /*Black color to the text*/
 .tabs .tab a:hover { background-color:lightgrey; color:white; } /*Text color on hover*/
@@ -707,7 +707,7 @@ dropdown-content li>a>i { margin:0 12px 0 0; } .dropdown-content li>a, .dropdown
 	.svg{ font: bold 24px Century Gothic, Arial; width  : 100%; height : 120px; }
 
 text{ fill: goldenrod; stroke: darkgoldenrod; stroke-width: .5px; stroke-linejoin : round; animation: 2s pulsate infinite; }
-	#menu-deed:hover {color:darkgoldenrod!important;background-color:antiquewhite!important;}
+	#menu-deed:hover {color:darkslategrey!important;background-color:lightgrey!important;}
 	.collection a.collection-item { color:black!important; }
 	.collected:hover { background-color:goldenrod; color:ghostwhite; }
 @keyframes pulsate {50%{ stroke-width:1px } }
