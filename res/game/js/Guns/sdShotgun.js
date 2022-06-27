@@ -1,3 +1,0 @@
-class sdShotgun extends sdGun
-{
-}
