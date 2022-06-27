@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><title>NfNth · infinite software</title>
+<head><title>Nf|Nth · "Wedged" software</title>
 
 <meta http-equiv="Content-Language" content="en-US">
 <meta charset="UTF-8" />
@@ -269,10 +269,22 @@ function showFav(site) {
     	$('<link>').appendTo('head').attr({ class: 'ico', type: 'image/x-icon', rel: 'apple-touch-icon', sizes: "128x128", href: "res/img/fav/apple-touch-icon.png" }); }
 			
 function copyClip(text) { navigator.clipboard.writeText(text); M.toast({html: 'Address copied.'}); }
+	
+function setTitle() { var emoji = Math.floor(Math.random() * (6 - 1 + 1)) + 1;
+	switch(emoji) {
+		case 1: update = "🙂🙂"; break;
+		case 2: update = "👓👓"; break;
+		case 3: update = "🧤🧤"; break;
+		case 4: update = "👖👖"; break;
+		case 5: update = "🧦🧦"; break;
+		case 6: update = "👟👟"; break; }
+	
+	document.title += " " + update;
+}
 
 var width = window.innerWidth; var height = window.innerHeight + 48;
 async function initial() { $('body').css("background-color","lightgrey");
-	$('.tabs').tabs();  $('select').formSelect();
+	$('.tabs').tabs();  $('select').formSelect(); setTitle();
 	$('.modal').modal(); //$('#dialog-inner2').css("height", window.innerHeight - 375);
 	$("#registry-open").css("height",(height - 120) + "px"); $("#registry-domain").css("height",(height - 120) + "px");
     	//$("#map").css("height",height + "px"); $("#registry").css("height",height + "px"); 
