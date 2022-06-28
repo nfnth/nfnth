@@ -11,7 +11,7 @@
 <meta name="author" content="nfnth" />
 
 <!-- resources -->
-<script src="res/app/all.js"></script><link rel="stylesheet" href="res/app/all.css"></script><script src="res/app/md.js"></script></head>
+<script src="res/app/all.js"></script><link rel="stylesheet" href="res/app/all.css"></script></head>
 
 <body style="overflow:overlay; background-color:whitesmoke;transition: background-color 1s linear;" >
 
@@ -49,10 +49,13 @@
 	<li><a onclick="tempDoc('README.md');"><i class="material-icons">fireplace</i>About Dralun</a></li></ul>
 	
 <ul id="set" class="dropdown-content loader" style="visibility:hidden;">
-	<li><a onclick="showDoc('guide');"><i class="material-icons">book</i>Civilian Field Guide</a></li>
+	<li><a onclick="openInTab('https://github.com/nfnth/ur');"><i class="material-icons">book</i>Dralun</a></li>
+	<li><a onclick="openInTab('https://github.com/nfnth/ur');"><i class="material-icons">landscape</i>UR.Land</a></li>
 	<li class="divider"></li>
-	<li><a onclick="showArea('shopper');"><i class="material-icons">local_drink</i>Energy Drinks</a></li>
-	<li><a onclick="showDoc('guide');"><i class="material-icons">smartphone</i>OCUR Explorer</a></li></ul>
+	<li><a onclick="openInTab('https://github.com/nfnth/md');"><i class="material-icons">edit</i>MattDown</a></li>
+	<li><a onclick="openInTab('https://github.com/nfnth/ocur');"><i class="material-icons">smartphone</i>OCUR OS</a></li>
+	<li class="divider"></li>
+	<li><a onclick="openInTab('https://github.com/nfnth/nfnth');"><i class="material-icons">bolt</i>NfNth</a></li></ul>
 
 <!-- panel (deed) -->
 <ul id="deed-pane" class="sidenav loader" style="visibility:hidden;overflow:hidden;">
@@ -75,7 +78,7 @@
 		
 <!-- panel (domain) -->
 <ul id="user-pane" class="sidenav loader" style="visibility:hidden;overflow:hidden;">
-	<li style="padding-top:16px;margin-bottom:16px;display: flex;justify-content: space-evenly;"><div style="display:flex;justify-content:space-evenly;width:100%;"><a style='margin-left:8px;' class='btn-flat waves-effect waves-light' onclick="openInNewTab('https://github.com/nfnth/nfnth/issues'); $('#user-pane').sidenav('close');"><i class="material-icons">settngs</i></a><a style='margin-right:8px;' class='btn-flat waves-effect waves-light' onclick="desetup(); $('#user-pane').sidenav('close');"><i class="material-icons">logout</i></a><span id="ocuros" style="cursor: pointer;margin:0; color:darkslategrey!important; font-size:16px;border-radius: 8px; opacity: 0.7; height: 32px !important;display: flex;align-items: center;padding-top: 8px; margin-right:12px;border: solid 1px darkslategre" onclick="showDoc('os'); $('#user-pane').sidenav('close');" class="badge grey lighten-2" data-badge-caption="v1.08"><img src="res/img/scroll_logo.png" style="width:20px; height:20px;" /><span style="font-weight:bold;margin-left:8px;">docOS ·&nbsp;</span></span></div></li>
+	<li style="padding-top:16px;margin-bottom:16px;display: flex;justify-content: space-evenly;"><div style="display:flex;justify-content:space-evenly;width:100%;"><a style='margin-left:8px;' class='btn-flat waves-effect waves-light' onclick="openInNewTab('https://github.com/nfnth/nfnth/issues'); $('#user-pane').sidenav('close');"><i class="material-icons">settngs</i></a><a style='margin-right:8px;' class='btn-flat waves-effect waves-light' onclick="desetup(); $('#user-pane').sidenav('close');"><i class="material-icons">logout</i></a><span id="ocuros" style="cursor: pointer;margin:0; color:darkslategrey!important; font-size:16px;border-radius: 8px; opacity: 0.7; height: 32px !important;display: flex;align-items: center;padding-top: 8px; margin-right:12px;border: solid 1px darkslategre" onclick="showDoc('os'); $('#user-pane').sidenav('close');" class="badge grey lighten-2" data-badge-caption="v1.08"><span style="font-weight:bold;margin-left:8px;">docOS ·&nbsp;</span></span></div></li>
 	
 	<!-- tabs -->
 	<li style="height:100%;"><ul id="domain-tabs" class="tabs tabs-fixed-width z-depth-1 wallet">
@@ -107,7 +110,7 @@
 
 	<!-- world -->
     	<div id="world" class="content loader pane blue-grey lighten-5" style="width:100%;background-color:ghostwhite;z-index:5;height:100%;" >
-        	<img src="res/img/world-min.jpg" class="z-depth-2" style="width:100%; margin-bottom:-6px;object-fit:cover;height:100%;" />
+        	<img src="res/img/card_deck.JPG" class="z-depth-2" style="width:100%; margin-bottom:-6px;object-fit:cover;height:100%;" />
 		<div id="backer" class="z-depth-4" style=" background-color:#f5f5dcc9; position: fixed;left: 0;bottom:48px;width: 100%;" ><div class="z-depth-1" style="cursor:pointer; font-size:24px;background-color: #f5f5dc36;padding-bottom: 24px;text-align: center;align-items: center;justify-content: center;width: 100%;cursor:pointer;" ><div id="test6" class="z-depth-1" style="background-color: #daa52075;height:80px;margin-bottom:16px;margin-top:3px;"><svg style="overflow:visible;" class="svg" viewBox="0 0 450 50"><text y="50%" x="50%" text-anchor="middle">//plan *note +calc [build] $sell</text></svg></div><div><span style="font-size:22px;color:black;">deed. domain. </span><span style="font-size:22px; color:black; font-weight:bold;">decentralized.</span><br/><a style="font-size:20px;margin-right:12px;" onclick="openInNewTab('https://github.com/nfnth');">NfNth Corp.</a><span style="font-size:16px; color:black; font-weight:bold;">© 2022 Copyright</span></div></div></div></div>
 
     	<!-- map -->
