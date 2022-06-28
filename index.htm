@@ -23,14 +23,14 @@
 
 	<!-- media -->
 	<a id="doc-hide" class="screen-hide media-menu" href="#!" data-target="doc"><i class="material-icons">book</i></a>
-	<a id="set-hide" class="screen-hide media-menu" href="#!" data-target="set"><i class="material-icons">terminal</i></a>
+	<a id="set-hide" class="screen-hide media-menu" href="#!" data-target="set"><i class="material-icons">hub</i></a>
 	<a id="shop-hide" class="screen-hide media-menu" onclick="openInNewTab('https://github.com/nfnth/nfnth/issues');"><i class="material-icons">help</i></a>
     	<a id="search-hide" class="screen-hide media-menu" onclick="showView('search');"><i class="material-icons">search</i></a>
 
     	<!-- desktop -->
     	<ul class="hide-on-med-and-down">
 		<li class="desk-menu" id="doc-list"><a class="desk-link" id="docs" href="#!" data-target="doc"><i class="material-icons left">book</i>DOCS<i class="material-icons right">arrow_drop_down</i></a></li>
-		<li class="desk-menu" id="map-list"><a class="desk-link" id="sets" href="#!" data-target="set"><i class="material-icons left">terminal</i>REPOS<i class="material-icons right">arrow_drop_down</i></a></li>
+		<li class="desk-menu" id="map-list"><a class="desk-link" id="sets" href="#!" data-target="set"><i class="material-icons left">hub</i>REPOS<i class="material-icons right">arrow_drop_down</i></a></li>
 		<li class="desk-menu" id="shop-list"><a class="desk-link" id="shops" onclick="openInNewTab('https://github.com/nfnth/nfnth/issues');"><i class="material-icons left">help</i>HELP</a></li>
 
         	<li class="desk-menu" style="height:101%;" id="search-list">
@@ -228,7 +228,7 @@ function addOpenDeed(i) { $("#somedialog2").css("z-index",1004);
 function addList(i){ var filler = ""; var extra = '';
 	if (true) { filler = "beige;' class='amber"; } else { filler = "ghostwhite;' class='grey"; }
 	if (showListOpen) {
-    		$("#registry-domain").append("<a class='collection-item'><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;' onclick='openInNewTab(\"https://" + assets[i][1] + "\");'>" + assets[i][0] + "</div><div style='display:flex; justify-content:space-between;align-items:center;'><div style='display:flex;'><span id='l" + i + "' style='color:" + filler + " btn waves-effect waves-light lighten-4' onclick='openInNewTab(\"https://github.com/nfnth/" + assets[i][2] + "\");'><i class='material-icons'>terminal</i></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style='display:flex;align-items:center;'><label style='display:flex;'><input type='checkbox' " + extra + " onclick='setList(" + i + ");' /><span></span></label></div></div></div></div></a>"); } else {
+    		$("#registry-domain").append("<a class='collection-item'><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;' onclick='openInNewTab(\"https://" + assets[i][1] + "\");'>" + assets[i][0] + "</div><div style='display:flex; justify-content:space-between;align-items:center;'><div style='display:flex;'><span id='l" + i + "' style='color:" + filler + " btn waves-effect waves-light lighten-4' onclick='openInNewTab(\"https://github.com/nfnth/" + assets[i][2] + "\");'><i class='material-icons'>hub</i></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style='display:flex;align-items:center;'><label style='display:flex;'><input type='checkbox' " + extra + " onclick='setList(" + i + ");' /><span></span></label></div></div></div></div></a>"); } else {
 		$("#registry-domain").append("<a class='collection-item'><div style='display:flex;justify-content:space-between;'><div><img style='cursor:pointer;' onclick='showView(\"list\"); showList(\"domain\"); flyMark(" + i + ");' class='z-depth-1' width='52' height='30' src='res/img/seal3.png'/></div><div style='display:flex; justify-content:space-between;align-items:center;'><span style='color:" + filler + " btn waves-effect waves-light lighten-4' onclick='buildLand(" + i + ");'><i class='material-icons'>landscape</i></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style='display:flex; flex-direction:column;'><label style='display:flex;'><input type='checkbox' " + extra + " onclick='setList(" + i + ");' /><span></span></label></div></div></div></a>"); } }
 	
 function addListDetail(i) {
