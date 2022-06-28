@@ -234,8 +234,8 @@ function addOpenDeed(i) { $("#somedialog2").css("z-index",1004);
 function addList(i){ var filler = ""; var extra = '';
 	if (true) { filler = "whitesmoke;' class='blue "; } else { filler = "ghostwhite;' class='grey"; }
 	if (showListOpen) {
-    		$("#registry-domain").append("<a class='collection-item'><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;' onclick='openInNewTab(\"https://" + assets[i][0] + "\");'>" + assets[i][0] + "</div><div style='display:flex; justify-content:space-between;align-items:center;'><div style='display:flex;'><span id='l" + i + "' style='color:" + filler + " btn waves-effect waves-light lighten-3' onclick='openInNewTab(\"https://github.com/nfnth/" + assets[i][2] + "\");'><i class='material-icons'>hub</i></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style='display:flex;align-items:center;'><span style='color:" + filler + " btn-flat waves-effect waves-light lighten-3' onclick='showAsset(\"" + assets[i][2] + "\");'><i class='material-icons'>hub</i></span></div></div></div></div></a>"); } else {
-		$("#registry-domain").append("<a class='collection-item'><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;' onclick='openInNewTab(\"https://" + assets[i][0] + "\");'>" + assets[i][1] + "</div><div style='display:flex; justify-content:space-between;align-items:center;'><div style='display:flex;'><span id='l" + i + "' style='color:" + filler + " btn waves-effect waves-light lighten-3' onclick='openInNewTab(\"https://github.com/nfnth/" + assets[i][2] + "\");'><i class='material-icons'>hub</i></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style='display:flex;align-items:center;'><span style='color:" + filler + " btn-flat waves-effect waves-light lighten-3' onclick='showAsset(\"" + assets[i][2] + "\");'><i class='material-icons'>hub</i></span></div></div></div></div></a>"); } }
+    		$("#registry-domain").append("<a class='collection-item'><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;' onclick='openInNewTab(\"https://" + assets[i][0] + "\");'>" + assets[i][0] + "</div><div style='display:flex; justify-content:space-between;align-items:center;'><div style='display:flex;'><span id='l" + i + "' style='color:whitesmoke' class='btn-flat waves-effect waves-light lighten-3' onclick='openInNewTab(\"https://github.com/nfnth/" + assets[i][2] + "\");'><i class='material-icons'>hub</i></span>&nbsp;&nbsp;&nbsp;&nbsp;<div style='display:flex;align-items:center;'><span style='color:whitesmoke' class='blue btn waves-effect waves-light lighten-3' onclick='showAsset(\"" + assets[i][2] + "\");'><i class='material-icons'>hub</i></span></div></div></div></div></a>"); } else {
+		$("#registry-domain").append("<a class='collection-item'><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;' onclick='openInNewTab(\"https://" + assets[i][0] + "\");'>" + assets[i][1] + "</div><div style='display:flex; justify-content:space-between;align-items:center;'><div style='display:flex;'><span id='l" + i + "' style='color:whitesmoke' class='btn-flat waves-effect waves-light lighten-3' onclick='openInNewTab(\"https://github.com/nfnth/" + assets[i][2] + "\");'><i class='material-icons'>hub</i></span>&nbsp;&nbsp;&nbsp;&nbsp;<div style='display:flex;align-items:center;'><span style='color:whitesmoke' class='blue btn waves-effect waves-light lighten-3' onclick='showAsset(\"" + assets[i][2] + "\");'><i class='material-icons'>hub</i></span></div></div></div></div></a>"); } }
 	
 function addListDetail(i) {
 	var card = "image_url";
@@ -338,29 +338,6 @@ setStatus = function (text) { //- year.day of year-time (hover to show month/day
 function setForm() { showView('editor'); }
 	//setDialog($("#former").html()); }
 $('#somedialog2').attr('style','z-index:99;');
-
-// console
-var onTime = false;
-function switchTime() {
-    	var current = new Date(); // timestamp, milliseconds since 1970 (?) vs. milliseconds (UTC)
-    	var yyyy = current.getFullYear(), MM = current.getMonth() + 1; if (MM < 10) { MM = "0" + MM.toString(); }
-    	var dd = current.getDate(), hh = current.getHours(), mm = current.getMinutes(), ss = current.getSeconds();
-    	var datestamp = yyyy + "." + MM + "." + dd; var timestamp = hh + ":" + mm + ":" + ss; // calendar?
-	return datestamp + "@" + timestamp; }
-
-function colorStart() { document.getElementById("favcolor").focus(); document.getElementById("favcolor").click(); }
-// add calculator... //replace youtube with html5 video?
-function textStart() { showView('editor'); var div = document.getElementById('pad');
-setTimeout(function() {
-    div.focus();
-}, 0); }
-
-function mapLoc() { }
-function mapDir() { }
-function mapDateTime() { }
-function mapTex() { }
-
-//setDialog($("#editor").html()); }
 	
 function searchResults(text) { if(event.key === 'Enter') { openInNewTab('https://presearch.com/search?q=' + $(text).val()); }}</script>
 
