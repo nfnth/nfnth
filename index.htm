@@ -59,21 +59,21 @@
 
 <!-- panel (deed) -->
 <ul id="deed-pane" class="sidenav loader" style="visibility:hidden;overflow:hidden;">
-	<li><div class="user-view z-depth-1 blue lighten-3" style="display: flex;margin: auto; padding: 0;align-items: center; padding-left:12px;"><span id="ocuros" style="cursor: pointer;margin:auto; color:blue!important; font-size:18px;border-radius: 8px; opacity: 0.7; height: 36px !important;display: flex;align-items: center;padding-top: 10px;color: darkslategrey!important;font-weight: bold!important;background-color: whitesmoke!important; border: solid 1px cadetblue;" onclick="openInNewTab('https://opensea.io/nfnth'); $('#deed-pane').sidenav('close');" class="badge grey lighten-2" data-badge-caption="nfnth"><i class="material-icons" style="color:royalblue;">gite</i><span style="font-weight:bold;">&nbsp;&nbsp;OpenSea ·&nbsp;</span></span><img id="user-pic" style="opacity:0.6; height: 48px;position:absolute; right:0; margin: 12px; cursor:pointer;" onclick="showNfNth(); showList('open');"/><img id="user-pic2" style="opacity:0.6; height: 48px;cursor:pointer;margin:12px;" onclick="showNfNth(); showList('open');"/></div></li>
+	<li><div class="user-view z-depth-1 blue lighten-3" style="display: flex;margin: auto; padding: 0;align-items: center; padding-left:12px;"><span id="ocuros" style="cursor: pointer;margin:auto; color:blue!important; font-size:18px;border-radius: 8px; opacity: 0.7; height: 36px !important;display: flex;align-items: center;padding-top: 10px;color: darkslategrey!important;font-weight: bold!important;background-color: whitesmoke!important; border: solid 1px cadetblue;" onclick="openInNewTab('https://github.com/nfnth'); $('#deed-pane').sidenav('close');" class="badge grey lighten-2" data-badge-caption="nfnth"><i class="material-icons" style="color:royalblue;">hub</i><span style="font-weight:bold;">&nbsp;&nbsp;GitHub ·&nbsp;</span></span><img id="user-pic" style="opacity:0.6; height: 48px;position:absolute; right:0; margin: 12px; cursor:pointer;" onclick="showNfNth(); showList('open');"/><img id="user-pic2" style="opacity:0.6; height: 48px;cursor:pointer;margin:12px;" onclick="showNfNth(); showList('open');"/></div></li>
 	
 	<!-- tabs -->
 	<li style="height:100%;"><ul id="token-tabs" class="tabs tabs-fixed-width z-depth-1">
-			<li class="tab blue-grey lighten-5" onclick="showList('open');"><a class="active" href="#test1">&nbsp;Site&nbsp;</a></li>
-			<li class="tab blue-grey lighten-5" onclick="showList('domain');"><a href="#test2">Asset</a></li></ul><div class="card-content z-depth-1" style="height:100%;background-color:ghostwhite;">
+			<li class="tab blue-grey lighten-5" onclick="showList('site');"><a class="active" href="#test1">&nbsp;Site&nbsp;</a></li>
+			<li class="tab blue-grey lighten-5" onclick="showList('asset');"><a href="#test2">Asset</a></li></ul><div class="card-content z-depth-1" style="height:100%;background-color:ghostwhite;">
 			
 		<!-- list (collect) -->
 		<div id="test1"><ul>
-			<li style="padding-top:16px;margin-bottom:12px;display: flex;justify-content: space-evenly;"><div style="display:flex;justify-content:space-evenly;width:100%;"><a class='btn-flat waves-effect waves-light' onclick="selOpen();"><i id="open-sel-icon" class="material-icons">select_all</i></a><a id="dropdown-opener" class='dropdown-trigger btn-flat' href='#' data-target='dropdown-open'><i class="material-icons">sort</i></a><a class="waves-effect waves-light btn amber lighten-2" style="display:inline-flex;align-items:center;" onclick="switchOpen();"><i id="open-icon" class="material-icons">grid_view</i><span id="open-name"></span></a></div></li>
+			<li style="padding-top:16px;margin-bottom:12px;display: flex;justify-content: space-evenly;"><div style="display:flex;justify-content:space-evenly;width:100%;"><a class='btn-flat waves-effect waves-light' onclick="selOpen();"><i id="open-sel-icon" class="material-icons">select_all</i></a><a id="dropdown-opener" class='dropdown-trigger btn-flat' href='#' data-target='dropdown-open'><i class="material-icons">sort</i></a><a class="waves-effect waves-light btn blue lighten-2" style="display:inline-flex;align-items:center;" onclick="switchOpen();"><i id="open-icon" class="material-icons">grid_view</i><span id="open-name"></span></a></div></li>
 			<li><div id="registry-open" class="collection" style="overflow:auto;"></div></li></ul></div>
 			
 		<!-- list (item) -->
 		<div id="test2"><ul>
-			<li style="padding-top:16px;margin-bottom:12px;display: flex;justify-content: space-evenly;"><div style="display:flex;justify-content:space-evenly;width:100%;"><a id='selLink' class='btn-flat disabled' onclick="selDomain();"><i id="domain-sel-icon" class="material-icons">select_all</i></a><a id="dropdown-domainer" class='dropdown-trigger btn-flat disabled' ref='#' data-target='dropdown-domain'><i class="material-icons">sort</i></a><a id='switchLink' class="waves-effect waves-light btn amber lighten-2 disabled" style="display:inline-flex;align-items:center;" onclick="switchDomain();"><i id="domain-icon" class="material-icons">grid_view</i><span id="domain-name"></span></a></div></li>
+			<li style="padding-top:16px;margin-bottom:12px;display: flex;justify-content: space-evenly;"><div style="display:flex;justify-content:space-evenly;width:100%;"><a id='selLink' class='btn-flat disabled' onclick="selDomain();"><i id="domain-sel-icon" class="material-icons">select_all</i></a><a id="dropdown-domainer" class='dropdown-trigger btn-flat disabled' ref='#' data-target='dropdown-domain'><i class="material-icons">sort</i></a><a id='switchLink' class="waves-effect waves-light btn blue lighten-2 disabled" style="display:inline-flex;align-items:center;" onclick="switchDomain();"><i id="domain-icon" class="material-icons">grid_view</i><span id="domain-name"></span></a></div></li>
 			<li><div id="registry-domain" class="collection" style="overflow:auto;"><a onclick='$(#token-tabs).select("test1");' class='collection-item'>No class selected.</a></div></li></ul></div></div></div></li></ul>	
 		
 <!-- panel (domain) -->
@@ -111,7 +111,7 @@
 	<!-- world -->
     	<div id="world" class="content loader pane blue-grey lighten-5" style="width:100%;background-color:ghostwhite;z-index:5;height:100%;" >
         	<img src="res/img/card_deck.JPG" class="z-depth-2" style="width:100%; margin-bottom:-6px;object-fit:cover;height:100%;" />
-		<div id="backer" class="z-depth-4" style=" background-color:#4ea7ffc9; position: fixed;left: 0;bottom:40%;width: 100%;" ><div class="z-depth-1" style="cursor:pointer; font-size:24px;background-color: #f5f5dc36;padding-bottom: 24px;text-align: center;align-items: center;justify-content: center;width: 100%;cursor:pointer;" ><div id="test6" class="z-depth-1" style="background-color:mediumgreen;height:80px;margin-bottom:16px;margin-top:3px;"><svg style="overflow:visible;" class="svg" viewBox="0 0 450 50"><text y="50%" x="50%" text-anchor="middle">//plan *note +calc [build] $sell</text></svg></div><div><span style="font-size:22px;color:black;">deed. domain. </span><span style="font-size:22px; color:black; font-weight:bold;">decentralized.</span><br/><a style="font-size:20px;margin-right:12px;" onclick="openInNewTab('https://github.com/nfnth');">NfNth Corp.</a><span style="font-size:16px; color:black; font-weight:bold;">© 2022 Copyright</span></div></div></div></div>
+		<div id="backer" class="z-depth-4" style=" background-color:#4ea7ffc9; position: fixed;left: 0;bottom:40%;width: 100%;" ><div class="z-depth-1" style="cursor:pointer; font-size:24px;background-color: mediumgreen;padding-bottom: 24px;text-align: center;align-items: center;justify-content: center;width: 100%;cursor:pointer;" ><div id="test6" class="z-depth-1" style="background-color:mediumgreen;height:80px;margin-bottom:16px;margin-top:3px;"><svg style="overflow:visible;" class="svg" viewBox="0 0 450 50"><text y="50%" x="50%" text-anchor="middle">//plan *note +calc [build] $sell</text></svg></div><div><span style="font-size:22px;color:black;">deed. domain. </span><span style="font-size:22px; color:black; font-weight:bold;">decentralized.</span><br/><a style="font-size:20px;margin-right:12px;" onclick="openInNewTab('https://github.com/nfnth');">NfNth Corp.</a><span style="font-size:16px; color:black; font-weight:bold;">© 2022 Copyright</span></div></div></div></div>
 
     	<!-- map -->
     	<div id="mapper" class="content loader pane" style="overflow-y: auto; height: 105%;">
@@ -325,17 +325,17 @@ var complete; var reset = false; var first = true; var nfnth = false;
 function showNfNth() { if (nfnth) {nfnth = false;} else {nfnth = true;}  }
 function showList(area) {  $("#registry").html(''); $("#registry").hide(); 
     switch (area) {
-        case "domain": $("#registry-domain").html(''); openDomain();
-		    sortSet = [area,domains,0,18,16]; for (let i=0;i<domains.length;i++) { if (domains[i].hide == false) addList(i); } 
+        case "asset": $("#registry-domain").html(''); 
+		    for (let i=0;i<assets.length;i++) { addList(i); } 
 		    $("#registry-domain").css("height",(height-16) + "px");
 		    //adjustSort(true); 
 		    break;
         case "filter":  sortSet = [area,domains,0,18,16]; domains = holder; for (let i=0;i<domains.length;i++) { 
 		if (domains[i].hide == false) addList(i); } adjustSort(true); break;
-        case "open": $("#registry-open").html(''); sortSet = [area,opens,0,18,16]; for (let i=0;i<opens.length;i++) { 
-		if (opens[i].core.slug != "nfnth") { addOpen(i); } else { if (nfnth == true) { addOpen(i); } else { opens[i].checked = false; } } } //adjustSort(false);  
+        case "site": $("#registry-open").html(''); 
+		    for (let i=0;i<sites.length;i++) { addOpen(i); } //adjustSort(false);  
 		    $("#registry-open").css("height",(height-16) + "px"); 
-		    showList('domain');
+		    
 		    break; }
     //$("#registry").css("height",height + "px");
     $("#registry").show(); $('img').on('dragstart', function(evt) { return false; }); }
@@ -376,8 +376,8 @@ function setOpen(i) { if (opens[i].checked == true) { opens[i].checked = false; 
 function setList(i) { if (domains[i].checked == true) { domains[i].checked = false; offLand(i); } else { domains[i].checked = true; onLand(i); } }
 function addOpen(i){ var extra = ""; if(opens[i].checked == true) { extra = "checked='checked'"; } 
 	if (showGridOpen) {
-    		$("#registry-open").append("<a class='collection-item open'><div style='display:flex;justify-content:space-between;align-items:center;'><div><img style='cursor:pointer;' onclick='addOpenDeed(" + i + ");' class='z-depth-1' width='52' height='32' src='" + opens[i].core.banner_image_url + "'/></div>&nbsp;&nbsp;<div style='display:flex;align-items:center;'><div style='display:flex;cursor:pointer;'><div onclick='openInNewTab(\"https://opensea.io/collection/" + opens[i].core.slug + "\");' style='cursor:pointer; width:100px;font-size: 14px;' class='z-depth-1 chip collected hoverable'><img src='res/img/key/" + getCollect(opens[i].core.slug) + "'>" + opens[i].core.slug + "</div></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div><label><input type='checkbox' " + extra + " id='check" + i + "' onclick='setOpen(" + i + ");' /><span>&nbsp;</span></label></div></div></div></a>");  } else {
-		$("#registry-open").append("<a class='collection-item open'><div style='display:flex;justify-content:space-between;'><div onclick='addOpenDeed(" + i + ");' style='display:flex; justify-content:space-between;align-items:center;cursor:pointer;'>" + opens[i].core.name + "</div><div style='display:flex;align-items:center;'><div class='chip z-depth-1 hoverable collected' style='font-size:14px;cursor:pointer;' onclick='openInNewTab(\"https://opensea.io/collection/" + opens[i].core.slug + "\");'>" + opens[i].core.slug + "&nbsp;·&nbsp;<span style='font-weight:bold;font-size:13px;'>" + opens[i].count + "</span></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div><label><input type='checkbox' " + extra + " id='check" + i + "' onclick='setOpen(" + i + ");' /><span>&nbsp;</span></label></div></div></div></div></a>");  } }
+    		$("#registry-open").append("<a class='collection-item open'><div style='display:flex;justify-content:space-between;align-items:center;'><div><img style='cursor:pointer;' onclick='addOpenDeed(" + i + ");' class='z-depth-1' width='52' height='32' src='res/img/seal3.png'/></div>&nbsp;&nbsp;<div style='display:flex;align-items:center;'><div style='display:flex;cursor:pointer;'><div onclick='' style='cursor:pointer; width:100px;font-size: 14px;' class='z-depth-1 chip collected hoverable'><img src='res/img/seal3.png'>property</div></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div><label><input type='checkbox' " + extra + " id='check" + i + "' onclick='setOpen(" + i + ");' /><span>&nbsp;</span></label></div></div></div></a>");  } else {
+		$("#registry-open").append("<a class='collection-item open'><div style='display:flex;justify-content:space-between;'><div onclick='addOpenDeed(" + i + ");' style='display:flex; justify-content:space-between;align-items:center;cursor:pointer;'>19500</div><div style='display:flex;align-items:center;'><div class='chip z-depth-1 hoverable collected' style='font-size:14px;cursor:pointer;' onclick=''>property&nbsp;·&nbsp;<span style='font-weight:bold;font-size:13px;'>1</span></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div><label><input type='checkbox' " + extra + " id='check" + i + "' onclick='setOpen(" + i + ");' /><span>&nbsp;</span></label></div></div></div></div></a>");  } }
 	
 function addOpenDeed(i) { $("#somedialog2").css("z-index",1004);
     setDialog("<div style='text-align:center;'><p><span style='font-weight:16px'>" + opens[i].core.name + "</span>&nbsp;&nbsp; · &nbsp;&nbsp;<a style='cursor:pointer;' onclick='openInNewTab(\"https://opensea.io/collection/" + opens[i].core.slug + "\");'>" + opens[i].core.slug + "</a></p></div><br/><div style='text-align:center;'><img style='width:80%;' src='" + opens[i].core.banner_image_url + "' /></div><br/><br/><div style='text-align:center;'><div style='display:flex;align-items:center;justify-content:center;'><img class='z-depth-2' onclick='openInNewTab(\"https://opensea.io/collection/" + opens[i].core.slug + "\");' style='cursor:pointer; margin-right:12px;display:none;' onload='adjustSize(this);' src='img/icon/key/" + getCollect(opens[i].core.slug) + "' /><span class='blue-grey lighten-3 badge z-depth-1' style='color:black!important;font-weight:bold;'>" + opens[i].count + "</span></div><br/><br/>" + renderMd(opens[i].core.description) + "</div><br/><br/>");
@@ -385,11 +385,11 @@ function addOpenDeed(i) { $("#somedialog2").css("z-index",1004);
 			$('#deed-pane').sidenav('close');
 			}
 	
-function addList(i){ var extra = ""; if(domains[i].checked == true) { extra = "checked='checked'"; } var filler = "";
-	if (domains[i].item) { filler = "beige;' class='amber"; } else { filler = "ghostwhite;' class='grey"; }
+function addList(i){ var filler = "";
+	if (true) { filler = "beige;' class='amber"; } else { filler = "ghostwhite;' class='grey"; }
 	if (showListOpen) {
-    		$("#registry-domain").append("<a class='collection-item'><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;' onclick='flyMark(" + i + ");'>" + domains[i].core.name + "</div><div style='display:flex; justify-content:space-between;align-items:center;'><div style='display:flex;'><span id='l" + i + "' style='color:" + filler + " btn waves-effect waves-light lighten-4' onclick='buildLand(" + i + ");'><i class='material-icons'>landscape</i></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style='display:flex;align-items:center;'><label style='display:flex;'><input type='checkbox' " + extra + " onclick='setList(" + i + ");' /><span></span></label></div></div></div></div></a>"); } else {
-		$("#registry-domain").append("<a class='collection-item'><div style='display:flex;justify-content:space-between;'><div><img style='cursor:pointer;' onclick='showView(\"list\"); showList(\"domain\"); flyMark(" + i + ");' class='z-depth-1' width='52' height='30' src='" + domains[i].core.image_url + "'/></div><div style='display:flex; justify-content:space-between;align-items:center;'><span style='color:" + filler + " btn waves-effect waves-light lighten-4' onclick='buildLand(" + i + ");'><i class='material-icons'>landscape</i></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style='display:flex; flex-direction:column;'><label style='display:flex;'><input type='checkbox' " + extra + " onclick='setList(" + i + ");' /><span></span></label></div></div></div></a>"); } }
+    		$("#registry-domain").append("<a class='collection-item'><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;' onclick='flyMark(" + i + ");'>mattdown.com</div><div style='display:flex; justify-content:space-between;align-items:center;'><div style='display:flex;'><span id='l" + i + "' style='color:" + filler + " btn waves-effect waves-light lighten-4' onclick='buildLand(" + i + ");'><i class='material-icons'>landscape</i></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style='display:flex;align-items:center;'><label style='display:flex;'><input type='checkbox' " + extra + " onclick='setList(" + i + ");' /><span></span></label></div></div></div></div></a>"); } else {
+		$("#registry-domain").append("<a class='collection-item'><div style='display:flex;justify-content:space-between;'><div><img style='cursor:pointer;' onclick='showView(\"list\"); showList(\"domain\"); flyMark(" + i + ");' class='z-depth-1' width='52' height='30' src='res/img/seal3.png'/></div><div style='display:flex; justify-content:space-between;align-items:center;'><span style='color:" + filler + " btn waves-effect waves-light lighten-4' onclick='buildLand(" + i + ");'><i class='material-icons'>landscape</i></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style='display:flex; flex-direction:column;'><label style='display:flex;'><input type='checkbox' " + extra + " onclick='setList(" + i + ");' /><span></span></label></div></div></div></a>"); } }
 	
 function buildLand(i) { if (domains[i].item == false) { onLand(i); } else { offLand(i); } }
 function onLand(i) { domains[i].item = true; $("#l"+i).css('color','beige'); $("#l"+i).addClass('amber'); $("#l"+i).removeClass('grey');
@@ -683,9 +683,9 @@ dropdown-content li>a>i { margin:0 12px 0 0; } .dropdown-content li>a, .dropdown
 	
 .tabs .tab a{ color:black; } /*Black color to the text*/
 .tabs .tab a:hover { background-color:lightgrey; color:white; } /*Text color on hover*/
-.tabs .tab a.active { background-color:royalblue; color:ghostwhite; } /*Background and text color when a tab is active*/
-.tabs .indicator { background-color:darkslategrey; } /*Color of underline*/
-.tabs .tab a:focus.active { color:white; /*Custom Text Color While Active*/ background-color: royalblue /*Custom Background Color While Active*/ }
+.tabs .tab a.active { background-color:cornflowerblue; color:ghostwhite; } /*Background and text color when a tab is active*/
+.tabs .indicator { background-color:royalblue; } /*Color of underline*/
+.tabs .tab a:focus.active { color:white; /*Custom Text Color While Active*/ background-color: cornflowerblue /*Custom Background Color While Active*/ }
 	
 .tabs.wallet .tab a{ color:black; } /*Black color to the text*/
 .tabs.wallet .tab a:hover { background-color:lightgrey; color:white; } /*Text color on hover*/
