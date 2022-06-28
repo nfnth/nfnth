@@ -24,7 +24,7 @@
 	<!-- media -->
 	<a id="doc-hide" class="screen-hide media-menu" href="#!" data-target="doc"><i class="material-icons">book</i></a>
 	<a id="set-hide" class="screen-hide media-menu" href="#!" data-target="set"><i class="material-icons">terminal</i></a>
-	<a id="shop-hide" class="screen-hide media-menu" onclick="showView('manual');"><i class="material-icons">help</i></a>
+	<a id="shop-hide" class="screen-hide media-menu" onclick="openInNewTab('https://github.com/nfnth/nfnth/issues');"><i class="material-icons">help</i></a>
     	<a id="search-hide" class="screen-hide media-menu" onclick="showView('search');"><i class="material-icons">search</i></a>
 
     	<!-- desktop -->
@@ -165,11 +165,11 @@ async function initial() { $('body').css("background-color","lightgrey");
 	//var gear3b = Math.floor(Math.random() * (42 - 1 + 1)) + 1; document.getElementById('user-pic2').src = "res/img/gear/gear" + gear3b.toString() + ".png";
 	
     	$('#docs').dropdown({ constrainWidth: false, coverTrigger: false } ); $('#doc-hide').dropdown({ constrainWidth: false, coverTrigger: false } ); //hover: true 
-	$('#sets').dropdown({ constrainWidth: false, coverTrigger: false } ); $('#doc-hide').dropdown({ constrainWidth: false, coverTrigger: false } );
+	$('#sets').dropdown({ constrainWidth: false, coverTrigger: false } ); $('#et-hide').dropdown({ constrainWidth: false, coverTrigger: false } );
 	
 	$('#dropdown-opener').dropdown({ constrainWidth: false }); $('#dropdown-domainer').dropdown({ constrainWidth: false });
-	$('#dropdown-deeder').dropdown({ constrainWidth: false }); $('#dropdown-maper').dropdown({ constrainWidth: false }); $('#dropdown-mediaer').dropdown({ constrainWidth: false });  //$('#dropdown-full4').dropdown({ constrainWidth: false }); $('#dropdown-full5').dropdown({ constrainWidth: false });
-    $('#dropdown-template').dropdown({ constrainWidth: false }); $('#dropdown-mapper').dropdown({ constrainWidth: false });
+	$('#dropdown-deeder').dropdown({ constrainWidth: false }); $('#dropdown-maper').dropdown({ constrainWidth: false }); $('#dropdown-mediaer').dropdown({ constrainWidth: false }); 
+
 	 $('#deed-pane').sidenav({ edge: 'left' });  redirect();
     
    	hideView(); 
@@ -185,20 +185,15 @@ function populateMap() {
 deedMap(); 
 }
 
-function hideView() { $('.modal').modal('close'); window.scrollTo(0, 0); $("#map-tool").hide();
-		     $("#editor").removeClass("scale-in");   
-		     $("#trade").removeClass("scale-in"); 
-		     $("#help").removeClass("scale-in"); 
-		     $("#shopper").removeClass("scale-in"); 
+function hideView() { $('.modal').modal('close'); window.scrollTo(0, 0); 
+		     //$("#editor").removeClass("scale-in");   
 		     $('.pane').hide();}
 function showView(view) {  hideView(); $('#'+view).show();
     switch (view) {
-	    case 'shopper': $("#shopper").addClass("scale-in"); break;
         case 'editor': $("#editor").addClass("scale-in"); break;
         case 'mapper': showList('domain'); $("#map-tool").show(); map.resize(); break; } }
 
 var complete; var reset = false; var first = true; var nfnth = false;
-function showNfNth() { if (nfnth) {nfnth = false;} else {nfnth = true;}  }
 function showList(area) {  $("#registry").html(''); $("#registry").hide(); 
     switch (area) {
         case "asset": $("#registry-domain").html(''); 
@@ -216,12 +211,14 @@ function showList(area) {  $("#registry").html(''); $("#registry").hide();
     //$("#registry").css("height",height + "px");
     $("#registry").show(); $('img').on('dragstart', function(evt) { return false; }); }
 
-	
-	
 var sites = [];
 var assets = [];
 	
-sites.push(['19500']); assets.push(['mattdown.com']);
+sites.push(['19500']); assets.push(['nfnth.com 👟👟']);
+assets.push(['dralun.com 👟👟']);
+assets.push(['ur.land']);
+assets.push(['ocur.io']);
+assets.push(['mattdown.com']);
 function openDomain() { var any = false;
 	
 	for (let i=0;i<domains.length;i++) { for (let j=0;j<opens.length;j++) { 
