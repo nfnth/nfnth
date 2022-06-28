@@ -49,13 +49,13 @@
 	<li><a onclick="tempDoc('README.md');"><i class="material-icons">fireplace</i>About Dralun</a></li></ul>
 	
 <ul id="set" class="dropdown-content loader" style="visibility:hidden;">
-	<li><a onclick="openInNewTab('https://github.com/nfnth/ur');"><i class="material-icons">history_edu</i>Dralun · <span style='font-weight:bold;'>&nbsp;nfnth/ur</span></a></li>
-	<li><a onclick="openInNewTab('https://github.com/nfnth/ur');"><i class="material-icons">landscape</i>UR.Land · <span style='font-weight:bold;'>&nbsp;nfnth/ur</span></a></li>
+	<li><a onclick="openInNewTab('https://github.com/nfnth/ur');"><i class="material-icons">history_edu</i>Dralun · <span style='font-weight:bold;'>&nbsp;ur</span></a></li>
+	<li><a onclick="openInNewTab('https://github.com/nfnth/ur');"><i class="material-icons">landscape</i>UR.Land · <span style='font-weight:bold;'>&nbsp;ur</span></a></li>
 	<li class="divider"></li>
-	<li><a onclick="openInNewTab('https://github.com/nfnth/md');"><i class="material-icons">edit</i>MattDown · <span style='font-weight:bold;'>&nbsp;nfnth/md</span></a></li>
-	<li><a onclick="openInNewTab('https://github.com/nfnth/ocur');"><i class="material-icons">smartphone</i>OCUR OS · <span style='font-weight:bold;'>&nbsp;nfnth/ocur</span></a></li>
+	<li><a onclick="openInNewTab('https://github.com/nfnth/md');"><i class="material-icons">edit</i>MattDown · <span style='font-weight:bold;'>&nbsp;md</span></a></li>
+	<li><a onclick="openInNewTab('https://github.com/nfnth/ocur');"><i class="material-icons">smartphone</i>OCUR OS · <span style='font-weight:bold;'>&nbsp;ocur</span></a></li>
 	<li class="divider"></li>
-	<li><a onclick="openInNewTab('https://github.com/nfnth/nfnth');"><i class="material-icons">toll</i>NfNth · <span style='font-weight:bold;'>&nbsp;nfnth/nfnth</span></a></li></ul>
+	<li><a onclick="openInNewTab('https://github.com/nfnth/nfnth');"><i class="material-icons">toll</i>NfNth · <span style='font-weight:bold;'>&nbsp;nfnth</span></a></li></ul>
 
 <!-- panel (deed) -->
 <ul id="deed-pane" class="sidenav loader" style="visibility:hidden;overflow:hidden;">
@@ -226,7 +226,7 @@ function addOpenDeed(i) { $("#somedialog2").css("z-index",1004);
 			}
 	
 function addList(i){ var filler = ""; var extra = '';
-	if (true) { filler = "cornflowerblue;' class='blue "; } else { filler = "ghostwhite;' class='grey"; }
+	if (true) { filler = "whitesmoke;' class='blue "; } else { filler = "ghostwhite;' class='grey"; }
 	if (showListOpen) {
     		$("#registry-domain").append("<a class='collection-item'><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;' onclick='openInNewTab(\"https://" + assets[i][1] + "\");'>" + assets[i][0] + "</div><div style='display:flex; justify-content:space-between;align-items:center;'><div style='display:flex;'><span id='l" + i + "' style='color:" + filler + " btn waves-effect waves-light lighten-3' onclick='openInNewTab(\"https://github.com/nfnth/" + assets[i][2] + "\");'><i class='material-icons'>hub</i></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style='display:flex;align-items:center;'><label style='display:flex;'><input type='checkbox' " + extra + " onclick='setList(" + i + ");' /><span></span></label></div></div></div></div></a>"); } else {
 		$("#registry-domain").append("<a class='collection-item'><div style='display:flex;justify-content:space-between;'><div><img style='cursor:pointer;' onclick='showView(\"list\"); showList(\"domain\"); flyMark(" + i + ");' class='z-depth-1' width='52' height='30' src='res/img/seal3.png'/></div><div style='display:flex; justify-content:space-between;align-items:center;'><span style='color:" + filler + " btn waves-effect waves-light lighten-4' onclick='buildLand(" + i + ");'><i class='material-icons'>landscape</i></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style='display:flex; flex-direction:column;'><label style='display:flex;'><input type='checkbox' " + extra + " onclick='setList(" + i + ");' /><span></span></label></div></div></div></a>"); } }
