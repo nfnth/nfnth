@@ -12,10 +12,13 @@ Runs on [Linode](https://cloud.linode.com) with [name.com](https://www.name.com)
 
 [Sponsor Nf·Nth](https://github.com/sponsors/nfnth) to be included as an **Affiliate** in one of the following repos,
 
-- [🌳🌳](https://xn--wh8ha.ws) [DRALUN](https://dralun.com), project to facilitate a historical guide (with map) to geocache and survey in the United States (and North America)
-  - [🏳🏴](https://xn--en8hc.ws) [🏳🏳](https://xn--en8ha.ws) UR.Land [🏴🏳](https://xn--en8hb.ws) [🏴🏴](https://xn--fn8ha.ws) *game*
-- [📚📚](https://xn--zt8ha.ws) [mattdown.com](https://mattdown.com) reference
-- [OCUR.io](https://ocur.io) browser-only OS stack
+|Site|Description|Repo|
+|-|-|-|
+|[🌳🌳](https://xn--wh8ha.ws) [DRALUN](https://dralun.com)|project to facilitate a historical guide (with map) to geocache and survey in the United States (and North America)|[ur]()
+|[🏳🏴](https://xn--en8hc.ws) [🏳🏳](https://xn--en8ha.ws) UR.Land [🏴🏳](https://xn--en8hb.ws) [🏴🏴](https://xn--fn8ha.ws)|game|[ur]()|
+|[📚📚](https://xn--zt8ha.ws) [mattdown.com](https://mattdown.com)|reference|[md]()|
+|[OCUR.io](https://ocur.io)|browser-only OS stack|[ocur]()|
+|[nfnth.com](https://nfnth.com)|company|[nfnth]()|
 
 Licensed as [**NfNth Corp**](https://secure.dor.wa.gov/) in the State of Washington, [19500 130th AV NE, Woodinville, WA 98072](https://blue.kingcounty.com/Assessor/eRealProperty/Dashboard.aspx?ParcelNbr=1428900123) *the Wedge, Kat corner to Woodin elementary*
 
@@ -25,11 +28,11 @@ This contract limits our liability, in acceptance, Holder agrees to use Operator
 
 #### Affiliates
 
-<a href="https://www.c-span.org" target="_blank"><img style="margin-left:24px; width:220px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="res/img/cspan.png" /></a>
+<a href="https://www.c-span.org" target="_blank"><img style="margin-left:24px; width:120px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="res/img/cspan.png" /></a>
 
-<a href="http://www.gutenberg.org" target="_blank"><img style="margin-left:24px; width:220px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="res/img/gutenberg.png" /></a>
+<a href="http://www.gutenberg.org" target="_blank"><img style="margin-left:24px; width:120px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="res/img/gutenberg.png" /></a>
 
-<a href="https://www.wikipedia.org/wiki/Special:Random" target="_blank"><img style="margin-left:24px; width:220px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="res/img/wikipedia.png" /></a>
+<a href="https://www.wikipedia.org/wiki/Special:Random" target="_blank"><img style="margin-left:24px; width:120px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="res/img/wikipedia.png" /></a>
 
 [C-SPAN](https://www.c-span.org) · [Gutenberg](http://www.gutenberg.org) · [Wikipedia](https://www.wikipedia.org/wiki/Special:Random) [news](https://wikipedia.org/wiki/Main_Page)
 
