@@ -15,13 +15,13 @@
 
 [Sponsor Nf·Nth](https://github.com/sponsors/nfnth) to be included as an **Affiliate** in one of the following repos,
 
-|Site|Icon|Description|Repo|
-|-|-|-|-|
-|[DRALUN](https://dralun.com)|[🌳🌳](https://xn--wh8ha.ws)|project to facilitate a historical guide (with map) to geocache and survey in the United States (and North America)|[ur](https://github.com/nfnth/ur)
-|UR.Land [🏴🏳](https://xn--en8hb.ws) [🏴🏴](https://xn--fn8ha.ws)|[🏳🏴](https://xn--en8hc.ws) [🏳🏳](https://xn--en8ha.ws) |game|[ur](https://github.com/nfnth/ur)|
-|[mattdown.com](https://mattdown.com)|[📚📚](https://xn--zt8ha.ws)|reference|[md](https://github.com/nfnth/md)|
-|[OCUR.io](https://ocur.io)||browser-only OS stack|[ocur](https://github.com/nfnth/ocur)|
-|[nfnth.com](https://nfnth.com)|👟👟|company|[nfnth](https://github.com/nfnth/nfnth)||
+|Site|Repo|Description|
+|-|-|-|
+|[DRALUN](https://dralun.com) [🌳🌳](https://xn--wh8ha.ws)|[ur](https://github.com/nfnth/ur)|map|
+|UR.Land [🏴🏳](https://xn--en8hb.ws) [🏴🏴](https://xn--fn8ha.ws) [🏳🏴](https://xn--en8hc.ws) [🏳🏳](https://xn--en8ha.ws)|[ur](https://github.com/nfnth/ur)|game|
+|[mattdown.com](https://mattdown.com) [📚📚](https://xn--zt8ha.ws)|[md](https://github.com/nfnth/md)|reference editor|
+|[OCUR.io](https://ocur.io) ⚙⚙ |[ocur](https://github.com/nfnth/ocur)|browser-only OS stack|
+|[nfnth.com](https://nfnth.com) 🙂🙂 👓👓 🧤🧤 👖👖 🧦🧦 👟👟|[nfnth](https://github.com/nfnth/nfnth)|company|
 
 Licensed as [**NfNth Corp**](https://secure.dor.wa.gov/) in the State of Washington, [19500 130th AV NE, Woodinville, WA 98072](https://blue.kingcounty.com/Assessor/eRealProperty/Dashboard.aspx?ParcelNbr=1428900123) *the Wedge, Kat corner to Woodin elementary*
 
