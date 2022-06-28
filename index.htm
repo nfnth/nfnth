@@ -24,15 +24,15 @@
     		<div style="height:101%;" class="z-depth-1"><a id="menu-deed" style="color:darkslategrey; opacity:0.7; background-color:ghostwhite; display: flex; align-items: center; height: 100%; padding-right: 10px;font-weight: bold;font-size: 20px; -webkit-transition: background-color 300ms linear, color 300ms linear;-moz-transition: background-color 300ms linear, color 300ms linear;-o-transition: background-color 300ms linear, color 300ms linear;-ms-transition: background-color 300ms linear, color 300ms linear;transition: background-color 300ms linear, color 300ms linear;"><i class="material-icons" style="padding-left:16px;" onclick="showList('tab'); $('#deed-pane').sidenav('open');">menu</i><div id="waiter" onclick="showList('tab'); $('#deed-pane').sidenav('open');" style="height:48px; width:48px; cursor: pointer; margin-left: 12px;"><img id="list-wait" class="image" src="res/img/seal3.png" /></div></a></div>
 
 	<!-- media -->
-	<a id="doc-hide" class="screen-hide media-menu" href="#!" data-target="doc"><i class="material-icons">book</i></a>
 	<a id="set-hide" class="screen-hide media-menu" href="#!" data-target="set"><i class="material-icons">tab</i></a>
+	<a id="doc-hide" class="screen-hide media-menu" href="#!" data-target="doc"><i class="material-icons">book</i></a>
 	<a id="shop-hide" class="screen-hide media-menu" onclick="openInNewTab('https://github.com/nfnth/nfnth/issues');"><i class="material-icons">help</i></a>
     	<a id="search-hide" class="screen-hide media-menu" onclick="showView('search');"><i class="material-icons">search</i></a>
 
     	<!-- desktop -->
     	<ul class="hide-on-med-and-down">
-		<li class="desk-menu" id="doc-list"><a class="desk-link" id="docs" href="#!" data-target="doc"><i class="material-icons left">book</i>DOCS<i class="material-icons right">arrow_drop_down</i></a></li>
 		<li class="desk-menu" id="map-list"><a class="desk-link" id="sets" href="#!" data-target="set"><i class="material-icons left">tab</i>SITES<i class="material-icons right">arrow_drop_down</i></a></li>
+		<li class="desk-menu" id="doc-list"><a class="desk-link" id="docs" href="#!" data-target="doc"><i class="material-icons left">book</i>DOCS<i class="material-icons right">arrow_drop_down</i></a></li>
 		<li class="desk-menu" id="shop-list"><a class="desk-link" id="shops" onclick="openInNewTab('https://github.com/nfnth/nfnth/issues');"><i class="material-icons left">help</i>HELP</a></li>
 
         	<li class="desk-menu" style="height:101%;" id="search-list">
@@ -200,8 +200,8 @@ var showGridOpen = false; var selectOpen = true; var selectDomain = true; var sh
 function switchOpen() { if (showGridOpen) { showGridOpen = false; showList('open'); $("#open-icon").html("grid_view");  } else { showGridOpen = true; showList('open'); $("#open-icon").html("view_list"); } }
 				
 function switchDomain() { 
-	if (showListOpen) { showListOpen = false; showList('asset'); $("#domain-icon").html("view_list");  } 
-	else { showListOpen = true; showList('asset');  $("#domain-icon").html("grid_view"); } }
+	if (showListOpen) { showListOpen = false; showList('tab'); $("#domain-icon").html("view_list");  } 
+	else { showListOpen = true; showList('tab');  $("#domain-icon").html("grid_view"); } }
 				
 function selOpen() { for (let i=0;i<opens.length;i++) { opens[i].checked = selectOpen; } showList('open');
 	if (selectOpen) { selectOpen = false;   $("#open-sel-icon").html("deselect"); } else { selectOpen = true;  $("#open-sel-icon").html("select_all");} }
