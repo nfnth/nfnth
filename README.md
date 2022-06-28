@@ -1,12 +1,5 @@
 
-### Nf·Nth
-
-🙂🙂<br/>
-👓👓<br/>
-🧤🧤<br/>
-👖👖<br/>
-🧦🧦<br/>
-👟👟
+### Nf·Nth // software on infinitive-basis
 
 - Runs on [Linode](https://cloud.linode.com)
 - Registers with [name.com](https://www.name.com)
@@ -21,7 +14,7 @@
 |UR.Land [🏴🏳](https://xn--en8hb.ws) [🏴🏴](https://xn--fn8ha.ws) [🏳🏴](https://xn--en8hc.ws) [🏳🏳](https://xn--en8ha.ws)|[ur](https://github.com/nfnth/ur)|game|
 |[mattdown.com](https://mattdown.com) [📚📚](https://xn--zt8ha.ws)|[md](https://github.com/nfnth/md)|reference editor|
 |[OCUR.io](https://ocur.io) ⚙⚙ |[ocur](https://github.com/nfnth/ocur)|browser-only OS stack|
-|[nfnth.com](https://nfnth.com) 🙂🙂 👓👓 🧤🧤 👖👖 🧦🧦 👟👟|[nfnth](https://github.com/nfnth/nfnth)|company|
+|[nfnth.com](https://nfnth.com)<br/>🙂🙂<br/>👓👓<br/>🧤🧤<br/>👖👖<br/>🧦🧦<br/>👟👟|[nfnth](https://github.com/nfnth/nfnth)|company|
 
 Licensed as [**NfNth Corp**](https://secure.dor.wa.gov/) in the State of Washington, [19500 130th AV NE, Woodinville, WA 98072](https://blue.kingcounty.com/Assessor/eRealProperty/Dashboard.aspx?ParcelNbr=1428900123) *the Wedge, Kat corner to Woodin elementary*
 
