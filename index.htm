@@ -59,12 +59,12 @@
 
 <!-- panel (deed) -->
 <ul id="deed-pane" class="sidenav loader" style="visibility:hidden;overflow:hidden;">
-	<li><div class="user-view z-depth-1 amber lighten-5" style="display: flex;margin: auto; padding: 0;align-items: center; padding-left:12px;"><span id="ocuros" style="cursor: pointer;margin:auto; color:blue!important; font-size:18px;border-radius: 8px; opacity: 0.7; height: 36px !important;display: flex;align-items: center;padding-top: 10px;color: darkslategrey!important;font-weight: bold!important;background-color: whitesmoke!important; border: solid 1px cadetblue;" onclick="openInNewTab('https://opensea.io/nfnth'); $('#deed-pane').sidenav('close');" class="badge grey lighten-2" data-badge-caption="nfnth"><i class="material-icons" style="color:royalblue;">sailing</i><span style="font-weight:bold;">&nbsp;&nbsp;OpenSea ·&nbsp;</span></span><img id="user-pic" style="opacity:0.6; height: 48px;position:absolute; right:0; margin: 12px; cursor:pointer;" onclick="showNfNth(); showList('open');"/><img id="user-pic2" style="opacity:0.6; height: 48px;cursor:pointer;margin:12px;" onclick="showNfNth(); showList('open');"/></div></li>
+	<li><div class="user-view z-depth-1 blue lighten-3" style="display: flex;margin: auto; padding: 0;align-items: center; padding-left:12px;"><span id="ocuros" style="cursor: pointer;margin:auto; color:blue!important; font-size:18px;border-radius: 8px; opacity: 0.7; height: 36px !important;display: flex;align-items: center;padding-top: 10px;color: darkslategrey!important;font-weight: bold!important;background-color: whitesmoke!important; border: solid 1px cadetblue;" onclick="openInNewTab('https://opensea.io/nfnth'); $('#deed-pane').sidenav('close');" class="badge grey lighten-2" data-badge-caption="nfnth"><i class="material-icons" style="color:royalblue;">gite</i><span style="font-weight:bold;">&nbsp;&nbsp;OpenSea ·&nbsp;</span></span><img id="user-pic" style="opacity:0.6; height: 48px;position:absolute; right:0; margin: 12px; cursor:pointer;" onclick="showNfNth(); showList('open');"/><img id="user-pic2" style="opacity:0.6; height: 48px;cursor:pointer;margin:12px;" onclick="showNfNth(); showList('open');"/></div></li>
 	
 	<!-- tabs -->
 	<li style="height:100%;"><ul id="token-tabs" class="tabs tabs-fixed-width z-depth-1">
-			<li class="tab blue-grey lighten-5" onclick="showList('open');"><a class="active" href="#test1">Class</a></li>
-			<li class="tab blue-grey lighten-5" onclick="showList('domain');"><a href="#test2">&nbsp;Deed&nbsp;</a></li></ul><div class="card-content z-depth-1" style="height:100%;background-color:ghostwhite;">
+			<li class="tab blue-grey lighten-5" onclick="showList('open');"><a class="active" href="#test1">&nbsp;Site&nbsp;</a></li>
+			<li class="tab blue-grey lighten-5" onclick="showList('domain');"><a href="#test2">Asset</a></li></ul><div class="card-content z-depth-1" style="height:100%;background-color:ghostwhite;">
 			
 		<!-- list (collect) -->
 		<div id="test1"><ul>
@@ -111,7 +111,7 @@
 	<!-- world -->
     	<div id="world" class="content loader pane blue-grey lighten-5" style="width:100%;background-color:ghostwhite;z-index:5;height:100%;" >
         	<img src="res/img/card_deck.JPG" class="z-depth-2" style="width:100%; margin-bottom:-6px;object-fit:cover;height:100%;" />
-		<div id="backer" class="z-depth-4" style=" background-color:#4ea7ffc9; position: fixed;left: 0;bottom:40%;width: 100%;" ><div class="z-depth-1" style="cursor:pointer; font-size:24px;background-color: #f5f5dc36;padding-bottom: 24px;text-align: center;align-items: center;justify-content: center;width: 100%;cursor:pointer;" ><div id="test6" class="z-depth-1" style="background-color: #daa52075;height:80px;margin-bottom:16px;margin-top:3px;"><svg style="overflow:visible;" class="svg" viewBox="0 0 450 50"><text y="50%" x="50%" text-anchor="middle">//plan *note +calc [build] $sell</text></svg></div><div><span style="font-size:22px;color:black;">deed. domain. </span><span style="font-size:22px; color:black; font-weight:bold;">decentralized.</span><br/><a style="font-size:20px;margin-right:12px;" onclick="openInNewTab('https://github.com/nfnth');">NfNth Corp.</a><span style="font-size:16px; color:black; font-weight:bold;">© 2022 Copyright</span></div></div></div></div>
+		<div id="backer" class="z-depth-4" style=" background-color:#4ea7ffc9; position: fixed;left: 0;bottom:40%;width: 100%;" ><div class="z-depth-1" style="cursor:pointer; font-size:24px;background-color: #f5f5dc36;padding-bottom: 24px;text-align: center;align-items: center;justify-content: center;width: 100%;cursor:pointer;" ><div id="test6" class="z-depth-1" style="background-color:mediumgreen;height:80px;margin-bottom:16px;margin-top:3px;"><svg style="overflow:visible;" class="svg" viewBox="0 0 450 50"><text y="50%" x="50%" text-anchor="middle">//plan *note +calc [build] $sell</text></svg></div><div><span style="font-size:22px;color:black;">deed. domain. </span><span style="font-size:22px; color:black; font-weight:bold;">decentralized.</span><br/><a style="font-size:20px;margin-right:12px;" onclick="openInNewTab('https://github.com/nfnth');">NfNth Corp.</a><span style="font-size:16px; color:black; font-weight:bold;">© 2022 Copyright</span></div></div></div></div>
 
     	<!-- map -->
     	<div id="mapper" class="content loader pane" style="overflow-y: auto; height: 105%;">
@@ -284,8 +284,6 @@ async function initial() { $('body').css("background-color","lightgrey");
 	$("#registry-open").css("height",(height - 120) + "px"); $("#registry-domain").css("height",(height - 120) + "px");
     	//$("#map").css("height",height + "px"); $("#registry").css("height",height + "px"); 
 			  showFav('scroller');
-	//$("#editor").css("height",height - 360 + "px");  //$("#pad").css("height",height - 360 + "px");//$('.materialboxed').materialbox();
-//$("#world").css("height", height - 80 + "px");
 
 	//var gear3 = Math.floor(Math.random() * (42 - 1 + 1)) + 1; document.getElementById('user-pic').src = "res/img/gear/gear" + gear3.toString() + ".png";
 	//var gear3b = Math.floor(Math.random() * (42 - 1 + 1)) + 1; document.getElementById('user-pic2').src = "res/img/gear/gear" + gear3b.toString() + ".png";
@@ -296,7 +294,7 @@ async function initial() { $('body').css("background-color","lightgrey");
 	$('#dropdown-opener').dropdown({ constrainWidth: false }); $('#dropdown-domainer').dropdown({ constrainWidth: false });
 	$('#dropdown-deeder').dropdown({ constrainWidth: false }); $('#dropdown-maper').dropdown({ constrainWidth: false }); $('#dropdown-mediaer').dropdown({ constrainWidth: false });  //$('#dropdown-full4').dropdown({ constrainWidth: false }); $('#dropdown-full5').dropdown({ constrainWidth: false });
     $('#dropdown-template').dropdown({ constrainWidth: false }); $('#dropdown-mapper').dropdown({ constrainWidth: false });
-	$('#user-pane').sidenav({ edge: 'right' }); $('#deed-pane').sidenav({ edge: 'left', onCloseEnd: populateMap });  redirect();
+	 $('#deed-pane').sidenav({ edge: 'left' });  redirect();
     
    	hideView(); 
 			  $('#news').show(); $("#stamper").show(); $("#world").show(); //searchClear();
@@ -685,9 +683,9 @@ dropdown-content li>a>i { margin:0 12px 0 0; } .dropdown-content li>a, .dropdown
 	
 .tabs .tab a{ color:black; } /*Black color to the text*/
 .tabs .tab a:hover { background-color:lightgrey; color:white; } /*Text color on hover*/
-.tabs .tab a.active { background-color:goldenrod; color:ghostwhite; } /*Background and text color when a tab is active*/
-.tabs .indicator { background-color:darkgoldenrod; } /*Color of underline*/
-.tabs .tab a:focus.active { color:white; /*Custom Text Color While Active*/ background-color: goldenrod /*Custom Background Color While Active*/ }
+.tabs .tab a.active { background-color:royalblue; color:ghostwhite; } /*Background and text color when a tab is active*/
+.tabs .indicator { background-color:darkslategrey; } /*Color of underline*/
+.tabs .tab a:focus.active { color:white; /*Custom Text Color While Active*/ background-color: royalblue /*Custom Background Color While Active*/ }
 	
 .tabs.wallet .tab a{ color:black; } /*Black color to the text*/
 .tabs.wallet .tab a:hover { background-color:lightgrey; color:white; } /*Text color on hover*/
@@ -704,7 +702,7 @@ dropdown-content li>a>i { margin:0 12px 0 0; } .dropdown-content li>a, .dropdown
 text{ fill: royalblue; stroke: midnightblue; stroke-width: .5px; stroke-linejoin : round; animation: 2s pulsate infinite; }
 	#menu-deed:hover {color:darkslategrey!important;background-color:lightgrey!important;}
 	.collection a.collection-item { color:black!important; }
-	.collected:hover { background-color:goldenrod; color:ghostwhite; }
+	.collected:hover { background-color:lightgrey; color:ghostwhite; }
 @keyframes pulsate {50%{ stroke-width:1px } }
 	
 	[type="checkbox"]:checked + span:not(.lever)::before { border-right: 2px solid black!important; border-bottom: 2px solid black!important; }
