@@ -25,6 +25,12 @@ This contract limits our liability, in acceptance, Holder agrees to use Operator
 
 #### Affiliates
 
+<a href="https://www.c-span.org" target="_blank"><img style="margin-left:24px; width:220px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="res/img/cspan.png" /></a>
+
+<a href="http://www.gutenberg.org" target="_blank"><img style="margin-left:24px; width:220px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="res/img/gutenberg.png" /></a>
+
+<a href="https://www.wikipedia.org/wiki/Special:Random" target="_blank"><img style="margin-left:24px; width:220px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="res/img/wikipedia.png" /></a>
+
 [C-SPAN](https://www.c-span.org) · [Gutenberg](http://www.gutenberg.org) · [Wikipedia](https://www.wikipedia.org/wiki/Special:Random) [news](https://wikipedia.org/wiki/Main_Page)
 
 Use 5% rule (FINRA) to [donate to Ukraine!](https://engine.presearch.org/search?q=donate+to+ukraine) and/or Zion/United Methodist.  *https://imagecompressor.com/* *https://regexr.com/* *https://boxy-svg.com/*
