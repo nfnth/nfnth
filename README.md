@@ -8,17 +8,20 @@
 🧦🧦<br/>
 👟👟
 
-Runs on [Linode](https://cloud.linode.com) with [name.com](https://www.name.com) and ships from [MPC](https://www.makeplayingcards.com) with [USPS](https://www.usps.com/business/web-tools-apis/documentation-updates.htm).
+- Runs on [Linode](https://cloud.linode.com)
+- Registers with [name.com](https://www.name.com)
+- Builds from [MPC](https://www.makeplayingcards.com) 
+- Ships with [USPS](https://www.usps.com/business/web-tools-apis/documentation-updates.htm).
 
 [Sponsor Nf·Nth](https://github.com/sponsors/nfnth) to be included as an **Affiliate** in one of the following repos,
 
-|Site|Description|Repo|
-|-|-|-|
-|[🌳🌳](https://xn--wh8ha.ws) [DRALUN](https://dralun.com)|project to facilitate a historical guide (with map) to geocache and survey in the United States (and North America)|[ur]()
-|[🏳🏴](https://xn--en8hc.ws) [🏳🏳](https://xn--en8ha.ws) UR.Land [🏴🏳](https://xn--en8hb.ws) [🏴🏴](https://xn--fn8ha.ws)|game|[ur]()|
-|[📚📚](https://xn--zt8ha.ws) [mattdown.com](https://mattdown.com)|reference|[md]()|
-|[OCUR.io](https://ocur.io)|browser-only OS stack|[ocur]()|
-|[nfnth.com](https://nfnth.com)|company|[nfnth]()|
+|Site|Icon|Description|Repo|
+|-|-|-|-|
+|[DRALUN](https://dralun.com)|[🌳🌳](https://xn--wh8ha.ws)|project to facilitate a historical guide (with map) to geocache and survey in the United States (and North America)|[ur](https://github.com/nfnth/ur)
+|UR.Land [🏴🏳](https://xn--en8hb.ws) [🏴🏴](https://xn--fn8ha.ws)|[🏳🏴](https://xn--en8hc.ws) [🏳🏳](https://xn--en8ha.ws) |game|[ur](https://github.com/nfnth/ur)|
+|[mattdown.com](https://mattdown.com)|[📚📚](https://xn--zt8ha.ws)|reference|[md](https://github.com/nfnth/md)|
+|[OCUR.io](https://ocur.io)||browser-only OS stack|[ocur](https://github.com/nfnth/ocur)|
+|[nfnth.com](https://nfnth.com)|👟👟|company|[nfnth](https://github.com/nfnth/nfnth)||
 
 Licensed as [**NfNth Corp**](https://secure.dor.wa.gov/) in the State of Washington, [19500 130th AV NE, Woodinville, WA 98072](https://blue.kingcounty.com/Assessor/eRealProperty/Dashboard.aspx?ParcelNbr=1428900123) *the Wedge, Kat corner to Woodin elementary*
 
@@ -28,15 +31,9 @@ This contract limits our liability, in acceptance, Holder agrees to use Operator
 
 #### Affiliates
 
-<a href="https://www.c-span.org" target="_blank"><img style="margin-left:24px; width:120px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="res/img/cspan.png" /></a>
+<a href="https://www.c-span.org" target="_blank"><img style="margin-left:24px; width:110px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="res/img/cspan.png" /></a><a href="http://www.gutenberg.org" target="_blank"><img style="margin-left:24px; width:80px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="res/img/gutenberg.png" /></a><a href="https://www.wikipedia.org/wiki/Special:Random" target="_blank"><img style="margin-left:24px; width:70px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="res/img/wikipedia.png" /></a>
 
-<a href="http://www.gutenberg.org" target="_blank"><img style="margin-left:24px; width:120px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="res/img/gutenberg.png" /></a>
-
-<a href="https://www.wikipedia.org/wiki/Special:Random" target="_blank"><img style="margin-left:24px; width:120px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="res/img/wikipedia.png" /></a>
-
-[C-SPAN](https://www.c-span.org) · [Gutenberg](http://www.gutenberg.org) · [Wikipedia](https://www.wikipedia.org/wiki/Special:Random) [news](https://wikipedia.org/wiki/Main_Page)
-
-Use 5% rule (FINRA) to [donate to Ukraine!](https://engine.presearch.org/search?q=donate+to+ukraine) and/or Zion/United Methodist.  *https://imagecompressor.com/* *https://regexr.com/* *https://boxy-svg.com/*
+[Wikipedia news](https://wikipedia.org/wiki/Main_Page), use 5% rule (FINRA) to [donate to Ukraine!](https://engine.presearch.org/search?q=donate+to+ukraine) and/or Zion/United Methodist.  *https://imagecompressor.com/* *https://regexr.com/* *https://boxy-svg.com/*
 
 Google domain, [BH](https://www.bhphotovideo.com/) with [Northern](https://www.northerntool.com/) [ACE](https://www.acehardware.com/)
 [China](https://www.made-in-china.com/products-search/hot-china-products/Intel_Tablet.html)
