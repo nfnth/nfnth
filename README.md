@@ -31,7 +31,7 @@ This contract limits our liability, in acceptance, Holder agrees to use Operator
 
 #### Affiliates
 
-<a href="https://www.c-span.org" target="_blank"><img style="margin-left:24px; width:110px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="res/img/cspan.png" /></a><a href="http://www.gutenberg.org" target="_blank"><img style="margin-left:24px; width:80px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="res/img/gutenberg.png" /></a><a href="https://www.wikipedia.org/wiki/Special:Random" target="_blank"><img style="margin-left:24px; width:70px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="res/img/wikipedia.png" /></a>
+<a href="https://www.c-span.org" target="_blank"><img style="margin-left:24px; width:110px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="res/img/cspan.png" /></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.gutenberg.org" target="_blank"><img style="margin-left:24px; width:60px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="res/img/gutenberg.png" /></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.wikipedia.org/wiki/Special:Random" target="_blank"><img style="margin-left:24px; width:70px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="res/img/wikipedia.png" /></a>
 
 [Wikipedia news](https://wikipedia.org/wiki/Main_Page), use 5% rule (FINRA) to [donate to Ukraine!](https://engine.presearch.org/search?q=donate+to+ukraine) and/or Zion/United Methodist.  *https://imagecompressor.com/* *https://regexr.com/* *https://boxy-svg.com/*
 
