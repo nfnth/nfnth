@@ -4,17 +4,17 @@
 - Runs on [Linode](https://cloud.linode.com)
 - Registers with [name.com](https://www.name.com)
 - Builds from [MPC](https://www.makeplayingcards.com) 
-- Ships with [USPS](https://www.usps.com/business/web-tools-apis/documentation-updates.htm).
+- Ships with [USPS](https://www.usps.com/business/web-tools-apis/documentation-updates.htm)
 
 [Sponsor Nf·Nth](https://github.com/sponsors/nfnth) to be included as an **Affiliate** in one of the following repos,
 
 |Site|Repo|Description|
 |-|-|-|
-|[DRALUN](https://dralun.com) [🌳🌳](https://xn--wh8ha.ws)|[ur](https://github.com/nfnth/ur)|map|
-|UR.Land [🏴🏳](https://xn--en8hb.ws) [🏴🏴](https://xn--fn8ha.ws) [🏳🏴](https://xn--en8hc.ws) [🏳🏳](https://xn--en8ha.ws)|[ur](https://github.com/nfnth/ur)|game|
-|[mattdown.com](https://mattdown.com) [📚📚](https://xn--zt8ha.ws)|[md](https://github.com/nfnth/md)|reference editor|
-|[OCUR.io](https://ocur.io) ⚙⚙ |[ocur](https://github.com/nfnth/ocur)|browser-only OS stack|
-|[nfnth.com](https://nfnth.com)<br/>🙂🙂<br/>👓👓<br/>🧤🧤<br/>👖👖<br/>🧦🧦<br/>👟👟|[nfnth](https://github.com/nfnth/nfnth)|company|
+|[🌳🌳](https://xn--wh8ha.ws) [Dralun](https://dralun.com)|[ur](https://github.com/nfnth/ur)|map|
+|[🏳🏴](https://xn--en8hc.ws) [🏳🏳](https://xn--en8ha.ws) [UR.Land](https://ur.land) [🏴🏳](https://xn--en8hb.ws) [🏴🏴](https://xn--fn8ha.ws)|[ur](https://github.com/nfnth/ur)|game|
+|[📚📚](https://xn--zt8ha.ws) [mattdown.com](https://mattdown.com)|[md](https://github.com/nfnth/md)|reference editor|
+|[⚙⚙]() [OCUR.io](https://ocur.io)|[ocur](https://github.com/nfnth/ocur)|browser-only OS stack|
+|[🙂🙂]() [nfnth.com](https://nfnth.com)<br/>👓👓<br/>🧤🧤<br/>👖👖<br/>🧦🧦<br/>👟👟|[nfnth](https://github.com/nfnth/nfnth)|company|
 
 Licensed as [**NfNth Corp**](https://secure.dor.wa.gov/) in the State of Washington, [19500 130th AV NE, Woodinville, WA 98072](https://blue.kingcounty.com/Assessor/eRealProperty/Dashboard.aspx?ParcelNbr=1428900123) *the Wedge, Kat corner to Woodin elementary*
 
