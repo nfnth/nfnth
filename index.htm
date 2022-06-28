@@ -193,11 +193,11 @@ var sites = [];
 var assets = [];
 	
 sites.push(['19500']); 
-assets.push(['nfnth.com 👟👟','nfnth.com','nfnth']);
-assets.push(['dralun.com 🌳🌳','dralun.com','ur']);
-assets.push(['ur.land 🏳🏴', 'ur.land','ur']);
-assets.push(['ocur.io ⚙⚙','ocur.io','ocur']);
-assets.push(['mattdown.com  📚📚','mattdown.com','md']);
+assets.push(['nfnth.com','🙂🙂 · 👓👓 · 🧤🧤 · 👖👖 · 🧦🧦 · 👟👟','nfnth']);
+assets.push(['dralun.com','🌳🌳','ur']);
+assets.push(['ur.land', '🏳🏴 · 🏳🏳 · 🏴🏳 · 🏴🏴','ur']);
+assets.push(['ocur.io','⚙⚙','ocur']);
+assets.push(['mattdown.com','📚📚','md']);
 	
 var showGrid = true; var gridSelect = false; 
 function switchView() { if (showGrid) { showList('open'); $("#view-icon2").html("view_list"); //$("#view-name2").html("&nbsp;&nbsp;List"); 
@@ -206,7 +206,11 @@ function switchView() { if (showGrid) { showList('open'); $("#view-icon2").html(
 
 var showGridOpen = false; var selectOpen = true; var selectDomain = true; var showListOpen = true;
 function switchOpen() { if (showGridOpen) { showGridOpen = false; showList('open'); $("#open-icon").html("grid_view");  } else { showGridOpen = true; showList('open'); $("#open-icon").html("view_list"); } }
-	function switchDomain() { if (showListOpen) { showListOpen = false; showList('domain'); $("#domain-icon").html("view_list");  } else { showListOpen = true; showList('domain');  $("#domain-icon").html("grid_view"); } }
+				
+function switchDomain() { 
+	if (showListOpen) { showListOpen = false; showList('asset'); $("#domain-icon").html("view_list");  } 
+	else { showListOpen = true; showList('asset');  $("#domain-icon").html("grid_view"); } }
+				
 function selOpen() { for (let i=0;i<opens.length;i++) { opens[i].checked = selectOpen; } showList('open');
 	if (selectOpen) { selectOpen = false;   $("#open-sel-icon").html("deselect"); } else { selectOpen = true;  $("#open-sel-icon").html("select_all");} }
 
@@ -230,8 +234,8 @@ function addOpenDeed(i) { $("#somedialog2").css("z-index",1004);
 function addList(i){ var filler = ""; var extra = '';
 	if (true) { filler = "whitesmoke;' class='blue "; } else { filler = "ghostwhite;' class='grey"; }
 	if (showListOpen) {
-    		$("#registry-domain").append("<a class='collection-item'><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;' onclick='openInNewTab(\"https://" + assets[i][1] + "\");'>" + assets[i][0] + "</div><div style='display:flex; justify-content:space-between;align-items:center;'><div style='display:flex;'><span id='l" + i + "' style='color:" + filler + " btn waves-effect waves-light lighten-3' onclick='openInNewTab(\"https://github.com/nfnth/" + assets[i][2] + "\");'><i class='material-icons'>hub</i></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style='display:flex;align-items:center;'><label style='display:flex;'><input type='checkbox' " + extra + " onclick='setList(" + i + ");' /><span></span></label></div></div></div></div></a>"); } else {
-		$("#registry-domain").append("<a class='collection-item'><div style='display:flex;justify-content:space-between;'><div><img style='cursor:pointer;' onclick='showView(\"list\"); showList(\"domain\"); flyMark(" + i + ");' class='z-depth-1' width='52' height='30' src='res/img/seal3.png'/></div><div style='display:flex; justify-content:space-between;align-items:center;'><span style='color:" + filler + " btn waves-effect waves-light lighten-4' onclick='buildLand(" + i + ");'><i class='material-icons'>landscape</i></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style='display:flex; flex-direction:column;'><label style='display:flex;'><input type='checkbox' " + extra + " onclick='setList(" + i + ");' /><span></span></label></div></div></div></a>"); } }
+    		$("#registry-domain").append("<a class='collection-item'><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;' onclick='openInNewTab(\"https://" + assets[i][0] + "\");'>" + assets[i][0] + "</div><div style='display:flex; justify-content:space-between;align-items:center;'><div style='display:flex;'><span id='l" + i + "' style='color:" + filler + " btn waves-effect waves-light lighten-3' onclick='openInNewTab(\"https://github.com/nfnth/" + assets[i][2] + "\");'><i class='material-icons'>hub</i></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style='display:flex;align-items:center;'><label style='display:flex;'><input type='checkbox' " + extra + " onclick='setList(" + i + ");' /><span></span></label></div></div></div></div></a>"); } else {
+		$("#registry-domain").append("<a class='collection-item'><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;' onclick='openInNewTab(\"https://" + assets[i][0] + "\");'>" + assets[i][1] + "</div><div style='display:flex; justify-content:space-between;align-items:center;'><div style='display:flex;'><span id='l" + i + "' style='color:" + filler + " btn waves-effect waves-light lighten-3' onclick='openInNewTab(\"https://github.com/nfnth/" + assets[i][2] + "\");'><i class='material-icons'>hub</i></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style='display:flex;align-items:center;'><label style='display:flex;'><input type='checkbox' " + extra + " onclick='setList(" + i + ");' /><span></span></label></div></div></div></div></a>"); } }
 	
 function addListDetail(i) {
 	var card = "image_url";
