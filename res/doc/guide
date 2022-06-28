@@ -1,9 +1,0 @@
-
-## Civilian's Field Guide
-
-<img src='res/img/coin.jpg' width='48' />
-
-<button onclick='purchase();'>Purchase</button>
-
-
-<button onclick='transfer();'>Transfer</button>
