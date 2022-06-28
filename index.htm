@@ -27,16 +27,12 @@
 	<a id="set-hide" class="screen-hide media-menu" href="#!" data-target="set"><i class="material-icons">tab</i></a>
 	<a id="doc-hide" class="screen-hide media-menu" href="#!" data-target="doc"><i class="material-icons">book</i></a>
 	<a id="shop-hide" class="screen-hide media-menu" onclick="openInNewTab('https://github.com/nfnth/nfnth/issues');"><i class="material-icons">help</i></a>
-    	<a id="search-hide" class="screen-hide media-menu" onclick="showView('search');"><i class="material-icons">search</i></a>
 
     	<!-- desktop -->
     	<ul class="hide-on-med-and-down">
 		<li class="desk-menu" id="map-list"><a class="desk-link" id="sets" href="#!" data-target="set"><i class="material-icons left">tab</i>SITES<i class="material-icons right">arrow_drop_down</i></a></li>
 		<li class="desk-menu" id="doc-list"><a class="desk-link" id="docs" href="#!" data-target="doc"><i class="material-icons left">book</i>DOCS<i class="material-icons right">arrow_drop_down</i></a></li>
-		<li class="desk-menu" id="shop-list"><a class="desk-link" id="shops" onclick="openInNewTab('https://github.com/nfnth/nfnth/issues');"><i class="material-icons left">help</i>HELP</a></li>
-
-        	<li class="desk-menu" style="height:101%;" id="search-list">
-        		<a class="desk-link" style="height:101%; padding-right:0;"><i onclick="$('#search').focus();" style="height:inherit; padding-right:16px;" class="material-icons">search</i><div id="search-box" class="input-field" style="height:inherit;"><input id="search" type="search" onkeyup="searchResults(this)" style="padding-left:12px; width: calc(100% - 1rem); height:99%;"><label class="label-icon" for="search" ></label><i class="material-icons" onclick="searchClear()">close</i></div></a></li></ul>
+		<li class="desk-menu" id="shop-list"><a class="desk-link" id="shops" onclick="openInNewTab('https://github.com/nfnth/nfnth/issues');"><i class="material-icons left">help</i>HELP</a></li></ul>
 
     	<!-- user -->
         <div id="wallet-area" class="z-depth-1 blue lighten-2" style="opacity:0.75; display:flex;height:100%;" onclick="openInNewTab('https://github.com/sponsors/nfnth');"><ul><li id="setting-wallet" style="height:101%;"><a id="wallet-icon" href="#" style="margin: 0;justify-items: center;display: flex;align-items: center; justify-content:center; height:101%;" ><i class="material-icons">toll</i><span id="wallet-connect" class="mobile-hide">&nbsp;&nbsp;&nbsp;&nbsp;SPONSOR</span></a></li></ul></div></div></nav>
