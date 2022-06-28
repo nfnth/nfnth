@@ -43,12 +43,10 @@
 
 <!-- dropdown -->
 <ul id="doc" class="dropdown-content loader" style="visibility:hidden;">
-	<li><a onclick="showDoc('about');"><i class="material-icons">chair</i>On Deed to Domain</a></li>
+	<li><a onclick="tempDoc('README.md');"><i class="material-icons">grass</i>README</a></li>
+	<li><a onclick="tempDoc('PLANME.md');"><i class="material-icons">park</i>PLANME</a></li>
 	<li class="divider"></li>
-	<li><a onclick="tempDoc('PLANME.md');"><i class="material-icons">grass</i>Use Domain Trade</a></li>
-	<li><a onclick="showDoc('ur');"><i class="material-icons">park</i>How to Trade UR</a></li>
-	<li class="divider"></li>
-	<li><a onclick="tempDoc('README.md');"><i class="material-icons">fireplace</i>About NfNth</a></li></ul>
+	<li><a onclick="showAsset('nfnth');"><i class="material-icons">fireplace</i>About NfNth</a></li></ul>
 	
 <ul id="set" class="dropdown-content loader" style="visibility:hidden;">
 	<li><a onclick="openInNewTab('https://github.com/nfnth/ur');"><i class="material-icons">history_edu</i>Dralun · <span style='font-weight:bold;'>&nbsp;ur</span></a></li>
@@ -240,7 +238,7 @@ function addList(i){ var filler = ""; var extra = '';
 function showArea(area) { setDialog($("#"+area).html()); $('#user-pane').sidenav('close'); }
 
 function showDoc(doc) { $.get('res/doc/'+doc, function(data) { setDialog(renderMd(data)); }); }
-function showAsset(doc) { $.get('res/doc/site/'+doc, function(data) { setDialog(renderMd(data)); }); }
+function showAsset(doc) { $.get('res/doc/'+doc, function(data) { setDialog(renderMd(data)); }); }
 function tempDoc(doc) { $.get(doc, function(data) { setDialog(renderMd(data)); }); }
 	
 function buildDeed(i) { setDialog(addUserDeed());  }
