@@ -37,7 +37,7 @@
         		<a class="desk-link" style="height:101%; padding-right:0;"><i onclick="$('#search').focus();" style="height:inherit; padding-right:16px;" class="material-icons">search</i><div id="search-box" class="input-field" style="height:inherit;"><input id="search" type="search" onkeyup="searchResults(this)" style="padding-left:12px; width: calc(100% - 1rem); height:99%;"><label class="label-icon" for="search" ></label><i class="material-icons" onclick="searchClear()">close</i></div></a></li></ul>
 
     	<!-- user -->
-        <div id="wallet-area" class="z-depth-1 grey lighten-1" style="opacity:0.75; display:flex;height:100%;" onclick="connect();"><ul><li id="setting-wallet" style="height:101%;"><a id="wallet-icon" href="#" style="margin: 0;justify-items: center;display: flex;align-items: center; justify-content:center; height:101%;" ><i class="material-icons">featured_video</i><span id="wallet-connect" class="mobile-hide">&nbsp;&nbsp;&nbsp;&nbsp;SPONSOR</span></a></li></ul></div></div></nav>
+        <div id="wallet-area" class="z-depth-1 grey lighten-1" style="opacity:0.75; display:flex;height:100%;" onclick="openInNewTab('https://github.com/sponsors/nfnth');"><ul><li id="setting-wallet" style="height:101%;"><a id="wallet-icon" href="#" style="margin: 0;justify-items: center;display: flex;align-items: center; justify-content:center; height:101%;" ><i class="material-icons">featured_video</i><span id="wallet-connect" class="mobile-hide">&nbsp;&nbsp;&nbsp;&nbsp;SPONSOR</span></a></li></ul></div></div></nav>
 
 <!-- dropdown -->
 <ul id="doc" class="dropdown-content loader" style="visibility:hidden;">
@@ -49,13 +49,13 @@
 	<li><a onclick="tempDoc('README.md');"><i class="material-icons">fireplace</i>About Dralun</a></li></ul>
 	
 <ul id="set" class="dropdown-content loader" style="visibility:hidden;">
-	<li><a onclick="openInTab('https://github.com/nfnth/ur');"><i class="material-icons">history_edu</i>Dralun · <span style='font-weight:bold;'>&nbsp;nfnth/ur</span></a></li>
-	<li><a onclick="openInTab('https://github.com/nfnth/ur');"><i class="material-icons">landscape</i>UR.Land · <span style='font-weight:bold;'>&nbsp;nfnth/ur</span></a></li>
+	<li><a onclick="openInNewTab('https://github.com/nfnth/ur');"><i class="material-icons">history_edu</i>Dralun · <span style='font-weight:bold;'>&nbsp;nfnth/ur</span></a></li>
+	<li><a onclick="openInNewTab('https://github.com/nfnth/ur');"><i class="material-icons">landscape</i>UR.Land · <span style='font-weight:bold;'>&nbsp;nfnth/ur</span></a></li>
 	<li class="divider"></li>
-	<li><a onclick="openInTab('https://github.com/nfnth/md');"><i class="material-icons">edit</i>MattDown · <span style='font-weight:bold;'>&nbsp;nfnth/md</span></a></li>
-	<li><a onclick="openInTab('https://github.com/nfnth/ocur');"><i class="material-icons">smartphone</i>OCUR OS · <span style='font-weight:bold;'>&nbsp;nfnth/ocur</span></a></li>
+	<li><a onclick="openInNewTab('https://github.com/nfnth/md');"><i class="material-icons">edit</i>MattDown · <span style='font-weight:bold;'>&nbsp;nfnth/md</span></a></li>
+	<li><a onclick="openInNewTab('https://github.com/nfnth/ocur');"><i class="material-icons">smartphone</i>OCUR OS · <span style='font-weight:bold;'>&nbsp;nfnth/ocur</span></a></li>
 	<li class="divider"></li>
-	<li><a onclick="openInTab('https://github.com/nfnth/nfnth');"><i class="material-icons">toll</i>NfNth · <span style='font-weight:bold;'>&nbsp;nfnth/nfnth</span></a></li></ul>
+	<li><a onclick="openInNewTab('https://github.com/nfnth/nfnth');"><i class="material-icons">toll</i>NfNth · <span style='font-weight:bold;'>&nbsp;nfnth/nfnth</span></a></li></ul>
 
 <!-- panel (deed) -->
 <ul id="deed-pane" class="sidenav loader" style="visibility:hidden;overflow:hidden;">
@@ -73,37 +73,8 @@
 			
 		<!-- list (item) -->
 		<div id="test2"><ul>
-			<li style="padding-top:16px;margin-bottom:12px;display: flex;justify-content: space-evenly;"><div style="display:flex;justify-content:space-evenly;width:100%;"><a id='selLink' class='btn-flat disabled' onclick="selDomain();"><i id="domain-sel-icon" class="material-icons">select_all</i></a><a id="dropdown-domainer" class='dropdown-trigger btn-flat disabled' ref='#' data-target='dropdown-domain'><i class="material-icons">sort</i></a><a id='switchLink' class="waves-effect waves-light btn blue lighten-2 disabled" style="display:inline-flex;align-items:center;" onclick="switchDomain();"><i id="domain-icon" class="material-icons">grid_view</i><span id="domain-name"></span></a></div></li>
+			<li style="padding-top:16px;margin-bottom:12px;display: flex;justify-content: space-evenly;"><div style="display:flex;justify-content:space-evenly;width:100%;"><a id='selLink' class='btn-flat' onclick="selDomain();"><i id="domain-sel-icon" class="material-icons">select_all</i></a><a id="dropdown-domainer" class='dropdown-trigger btn-flat ' ref='#' data-target='dropdown-domain'><i class="material-icons">sort</i></a><a id='switchLink' class="waves-effect waves-light btn blue lighten-2' style="display:inline-flex;align-items:center;" onclick="switchDomain();"><i id="domain-icon" class="material-icons">grid_view</i><span id="domain-name"></span></a></div></li>
 			<li><div id="registry-domain" class="collection" style="overflow:auto;"><a onclick='$(#token-tabs).select("test1");' class='collection-item'>No class selected.</a></div></li></ul></div></div></div></li></ul>	
-		
-<!-- panel (domain) -->
-<ul id="user-pane" class="sidenav loader" style="visibility:hidden;overflow:hidden;">
-	<li style="padding-top:16px;margin-bottom:16px;display: flex;justify-content: space-evenly;"><div style="display:flex;justify-content:space-evenly;width:100%;"><a style='margin-left:8px;' class='btn-flat waves-effect waves-light' onclick="openInNewTab('https://github.com/nfnth/nfnth/issues'); $('#user-pane').sidenav('close');"><i class="material-icons">settngs</i></a><a style='margin-right:8px;' class='btn-flat waves-effect waves-light' onclick="desetup(); $('#user-pane').sidenav('close');"><i class="material-icons">logout</i></a><span id="ocuros" style="cursor: pointer;margin:0; color:darkslategrey!important; font-size:16px;border-radius: 8px; opacity: 0.7; height: 32px !important;display: flex;align-items: center;padding-top: 8px; margin-right:12px;border: solid 1px darkslategre" onclick="showDoc('os'); $('#user-pane').sidenav('close');" class="badge grey lighten-2" data-badge-caption="v1.08"><span style="font-weight:bold;margin-left:8px;">docOS ·&nbsp;</span></span></div></li>
-	
-	<!-- tabs -->
-	<li style="height:100%;"><ul id="domain-tabs" class="tabs tabs-fixed-width z-depth-1 wallet">
-        	<li class="tab blue-grey lighten-5"><a class="active" href="#test4">&nbsp;&nbsp;Domain&nbsp;&nbsp;</a></li>
-		<li class="tab blue-grey lighten-5"><a href="#test5">Artifact</a></li></ul><div class="card-content z-depth-1" style="height:100%;background-color:ghostwhite;">
-			
-		<!-- list (deed) -->
-		<div id="test4"><ul>
-			<li><a class="subheader">Wallet Information</a></li>
-  			<li><a class="waves-effect" onclick="if (user.address != '') {copyClip(user.address);}"><i class="material-icons">account_balance_wallet</i><span id="myAdd" style="color:black!important;">My Wallet Address</span></a></li>
-  			<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><i class="material-icons">account_balance</i><span id="myETH" style="color:black!important;">My ETH Balance</span><span style="margin-left:0;" id="myGas" style="color:black!important;"></span></a></li>
-			<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><i class="material-icons">payments</i><span id="myURL" style="color:black!important;">My UR Balance</span></a></li>
-  			<li><div style="margin-top:0;" class="divider"></div></li><!--<i class="material-icons left">calculate</i>-->
-  			<li><a class="subheader">Domain Information</a></li>
-			<li style="margin-top:12px; display: flex;align-items: center;justify-content: center;margin-bottom:16px;"><select id="domain-template" class="sider" onchange="domainSelect();"><option selected="selected" value="void">No domain selected</option><option value="tactician.us">tactician.us (demo)</option></select></li>
-			<li><a class="waves-effect" onclick='$("#domain-tabs").tabs("select", "test5");'><i class="material-icons">landscape</i><span id="myArt" class="lighten-2" style="color:black!important;">My Domain Artifact</span></a></li>
-  			<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><i class="material-icons">payments</i><span id="myDomain" class="lighten-2" style="color:black!important;">My Domain Balance (UR)</span></a></li>
-			<li style="margin-top:24px;"><a id="builder" class="btn waves-effect waves-light blue z-depth-1 lighten-3 disabled" style="width: 240px;margin: auto;border-radius: 8px;color:black;" onclick="mapAdd();$('#user-pane').sidenav('close');"><i class="material-icons left">gite</i>Build Domain</a></li>
-			<li style="margin-top:16px;"><a id="trader" class="btn waves-effect waves-light amber z-depth-1 lighten-3 disabled" style="width: 240px;margin: auto;border-radius: 8px;color:black;" onclick="mapAdd();$('#user-pane').sidenav('close');"><i class="material-icons left">sync_alt</i>Trade UR</a></li></ul></div>
-			
-		<!-- list (domain) -->
-      		<div id="test5"><ul>
-			<li style="padding-top:16px;margin-bottom:12px;display: flex;justify-content: space-evenly;"><div style="display:flex;justify-content:space-evenly;width:100%;"><a id='selink' class='btn-flat disabled' ><i class="material-icons left">select_all</i></a><a id="dropdown-deeder" class='dropdown-trigger btn-flat disabled'  href='#' data-target='dropdown-deed'><i class="material-icons left">sort</i></a><a id="swilink" class="waves-effect waves-light btn blue lighten-2 disabled" style="display:inline-flex;align-items:center;" onclick="switchView();"><i id="view-icon2" class="material-icons">grid_view</i></a></div></li>
- 			<li style="margin-top:16px;margin-bottom:12px;"><div style="display:flex;justify-content:space-evenly;padding-top:12px;padding-bottom:12px;"><a id="adder" class="btn waves-effect waves-light blue z-depth-1 lighten-2 disabled" style="border-radius: 8px;color:aliceblue!important;" onclick="addArtifact();" ><i class="material-icons left">inventory_2</i>+</a><a id="editer" class="btn-flat waves-effect waves-light z-depth-1 disabled"><i class="material-icons">edit</i></a><a id="deleter" class="btn-flat waves-effect waves-light z-depth-1 disabled"><i class="material-icons">delete</i></a></div></li>
-			<li><div id="registry-artifact" class="collection" style="overflow:auto;"><a onclick='$("#domain-tabs").select("test4");' class='collection-item'>No domain selected.</a></div></li></ul></div></div></div></li></ul>
 
 <!-- view -->
 <div id="home" style="height:100%; text-align:center;visibility:hidden; width:100%; z-index:1; padding-top: 54px;" class="content loader print-help">
@@ -111,74 +82,10 @@
 	<!-- world -->
     	<div id="world" class="content loader pane blue-grey lighten-5" style="width:100%;background-color:ghostwhite;z-index:5;height:100%;" >
         	<img src="res/img/card_deck.JPG" class="z-depth-2" style="width:100%; margin-bottom:-6px;object-fit:cover;height:100%;" />
-		<div id="backer" class="z-depth-4" style=" background-color:#4ea7ffc9; position: fixed;left: 0;bottom:40%;width: 100%;" ><div class="z-depth-1" style="cursor:pointer; font-size:24px;padding-bottom: 24px;text-align: center;align-items: center;justify-content: center;width: 100%;cursor:pointer;" ><div id="test6" class="z-depth-1" style="background-color: mediumseagreen;height:80px;margin-bottom:16px;margin-top:3px;"><svg style="overflow:visible;" class="svg" viewBox="0 0 450 50"><text y="50%" x="50%" text-anchor="middle">Software on an infinitive-basis.</text></svg></div><div><span style="font-size:22px;color:black;">deed. domain. </span><span style="font-size:22px; color:black; font-weight:bold;">decentralized.</span><br/><a style="font-size:20px;margin-right:12px;color:whitesmoke;font-weight:bold;" onclick="openInNewTab('https://github.com/nfnth');">NfNth Corp.</a><span style="font-size:16px; color:black; font-weight:bold;">© 2022 Copyright</span></div></div></div></div>
-
-    	<!-- map -->
-    	<div id="mapper" class="content loader pane" style="overflow-y: auto; height: 105%;">
-		<div id="map" style="width:100%; height:100%;"></div></div>
+		<div id="backer" class="z-depth-4" style=" background-color:#4ea7ffc9; position: fixed;left: 0;bottom:40%;width: 100%;" ><div class="z-depth-1" style="cursor:pointer; font-size:24px;padding-bottom: 24px;text-align: center;align-items: center;justify-content: center;width: 100%;cursor:pointer;" ><div id="test6" class="z-depth-1" style="background-color: mediumseagreen;height:80px;margin-bottom:16px;margin-top:3px;"><svg style="overflow:visible;" class="svg" viewBox="0 0 450 50"><text y="50%" x="50%" text-anchor="middle">Software on infinitive-basis</text></svg></div><div><span style="font-size:22px;color:black;">deed. domain. </span><span style="font-size:22px; color:black; font-weight:bold;">decentralized.</span><br/><a style="font-size:20px;margin-right:12px;color:whitesmoke;font-weight:bold;" onclick="openInNewTab('https://github.com/nfnth');">NfNth Corp.</a><span style="font-size:16px; color:black; font-weight:bold;">© 2022 Copyright</span></div></div></div></div>
 
     	<!-- search -->
-    	<div id="results" style="margin:80; display:none;" class="content loader pane">search...</div>
-
-    	<!-- editor -->
-    	<div id="editor" class="content loader pane scale-transition scale-out" style="height:90%;">
-		<div  class="hide-on-med-and-down" style="display:flex;  align-items: center; justify-content: space-evenly; margin:12px; margin-top:24px;">
-			<div >
-				<div class="hiddenfile"><input name="upload" type="file" id="preview" onchange="checkFile();" multiple="multiple"/></div>
-			<a id="dropdown-template" class="waves-effect waves-light blue lighten-2 btn dropdown-trigger" href='#' data-target='dropdown-temp' style="margin-right:8px; width:150px;" ><i id="view-icon" class="material-icons left">dynamic_feed</i>Template</a>
-			<a id="dropdown-file" class="waves-effect waves-light blue lighten-4 btn dropdown-trigger" href='#' data-target='dropdown-file' style="margin-right:8px; width:150px;" ><i id="view-icon" class="material-icons left">image</i>Image</a>
-			<a style="margin-right:8px; width:150px;" onclick="showPreview();" class="waves-effect waves-grey btn-flat"><i class="material-icons left">web_asset</i>Preview</a>
-			<a style="margin-right:8px; width:150px;" onclick="clearEditor();" class="waves-effect waves-grey btn-flat"><i class="material-icons left">refresh</i>Clear</a></div>
-			
-		<div>
-			<a onclick="setContent();" class="waves-effect waves-green green btn"><i class="material-icons right">arrow_forward</i><span class='edit-device'>Continue</span></a>
-			<a onclick="showPreview();" class="waves-effect waves-grey btn-flat"><i class="material-icons">cancel</i></a></div></div>
-		
-		<div  class="screen-hide edit-hide" style=" align-items: center; justify-content: space-evenly; margin:12px; margin-top:24px;">
-		<div>
-				<div class="hiddenfile"><input name="upload" type="file" id="preview" onchange="checkFile();" multiple="multiple"/></div>
-			<a id="dropdown-template" class="waves-effect waves-light blue lighten-2 btn dropdown-trigger" href='#' data-target='dropdown-temp' style="margin-right:8px;" ><i id="view-icon" class="material-icons">dynamic_feed</i></a>
-			<a id="dropdown-file" class="waves-effect waves-light blue lighten-4 btn dropdown-trigger" href='#' data-target='dropdown-file' style="margin-right:8px;" ><i id="view-icon" class="material-icons">attach_file</i></a>
-			<a style="margin-right:8px;" onclick="showPreview();" class="waves-effect waves-grey btn-flat"><i class="material-icons">web_asset</i></a>
-			<a style="margin-right:8px;" onclick="clearEditor();" class="waves-effect waves-grey btn-flat"><i class="material-icons">refresh</i></a></div>
-			
-		<div>
-			<a onclick="setContent();" class="waves-effect waves-green green btn"><i class="material-icons">arrow_forward</i><span class='edit-device'></span></a>
-			<a onclick="showPreview();" class="waves-effect waves-grey btn-flat"><i class="material-icons">cancel</i></a></div></div>
-		
-        	<div id="pad" class="z-depth-2" contentEditable="true" style="text-align:left; overflow-y: auto; width:90%; border:1px solid darkgrey; box-shadow: 1px 1px beige; border-radius: 8px;padding: 12px;margin:auto;font-size:20px;height:100%; background-color:whitesmoke;"></div>
-	
-		<div style="display:flex; justify-content:space-between; margin:24px;position:sticky;bottom:24px;padding-right:48px;width:100%;">
-			<div id="show-progress" class="progress" style="display:none;"><div class="indeterminate"></div></div>
-		</div></div>
-
-	<!-- shop -->
-	<div id="shopper" class="content loader pane  scale-transition scale-out" style="margin-top:120px;">
-		<button onclick="showView('mapper');">Return</button>
-		<a id="dropdown-mapper" class="waves-effect waves-light blue lighten-2 btn dropdown-trigger" href='#' data-target='dropdown-map' style="margin-right:8px; width:150px;" ><i id="view-icon" class="material-icons left">dynamic_feed</i>Template</a>
-		<div class="row"><div class="input-field col s12">
-          		<textarea id="textarea1" class="materialize-textarea"></textarea><label for="textarea1">Textarea</label></div></div></div>
-
-<!-- manual -->
-	<div id="manual" class="content loader pane  scale-transition scale-out" style="margin-top:120px;">
-		<button onclick="showView('mapper');">Return</button>
-		<a id="dropdown-mapper" class="waves-effect waves-light blue lighten-2 btn dropdown-trigger" href='#' data-target='dropdown-map' style="margin-right:8px; width:150px;" ><i id="view-icon" class="material-icons left">dynamic_feed</i>Template</a>
-		<div class="row"><div class="input-field col s12">
-          		<textarea id="textarea1" class="materialize-textarea"></textarea><label for="textarea1">Textarea</label></div></div></div>
-
-<!-- trade -->
-	<div id="trade" class="content loader pane  scale-transition scale-out" style="margin-top:120px;">
-		<button onclick="showView('mapper');">Return</button>
-		<a id="dropdown-mapper" class="waves-effect waves-light blue lighten-2 btn dropdown-trigger" href='#' data-target='dropdown-map' style="margin-right:8px; width:150px;" ><i id="view-icon" class="material-icons left">dynamic_feed</i>Template</a>
-		<div class="row"><div class="input-field col s12">
-          		<textarea id="textarea1" class="materialize-textarea"></textarea><label for="textarea1">Textarea</label></div></div></div>
-
-<!-- help -->
-	<div id="help" class="content loader pane  scale-transition scale-out" style="margin-top:120px;">
-		<button onclick="showView('mapper');">Return</button>
-		<a id="dropdown-mapper" class="waves-effect waves-light blue lighten-2 btn dropdown-trigger" href='#' data-target='dropdown-map' style="margin-right:8px; width:150px;" ><i id="view-icon" class="material-icons left">dynamic_feed</i>Template</a>
-		<div class="row"><div class="input-field col s12">
-          		<textarea id="textarea1" class="materialize-textarea"></textarea><label for="textarea1">Textarea</label></div></div></div></div>
+    	<div id="results" style="margin:80; display:none;" class="content loader pane">search...</div></div>
 
 <!-- items -->
 <ul id='dropdown-open' class='dropdown-content'>
@@ -202,28 +109,6 @@
 	<li class="divider" tabindex="-1"></li>
 	<li><a href="#!">Color &#8595;</a></li><li><a href="#!">Color &#8593;</a></li></ul>
 
-	<!-- template -->
-	<ul id='dropdown-temp' class='dropdown-content'>
-		<li id="map-sat"><a href="#!" onclick="setTemplate('Empty');"><i class="material-icons">label</i>Empty</a></li>
-		<li class="divider" tabindex="-1"></li>
-		<li id="map-dir"><a href="#!" onclick="setTemplate('Profile');"><i class="material-icons">badge</i>Profile</a></li>
-		<li id="map-dir"><a href="#!" onclick="setTemplate('Instruction');"><i class="material-icons">checklist</i>Checklist</a></li>
-		<li class="divider" tabindex="-1"></li>
-		<li id="map-route"><a href="#!" onclick="setTemplate('Recipe');"><i class="material-icons">restaurant</i>Recipe</a></li>
-		<li id="map-route"><a href="#!" onclick="setTemplate('Sequence');"><i class="material-icons">dry_cleaning</i>Sequence</a></li>
-		<li id="map-route"><a href="#!" onclick="setTemplate('Graph');"><i class="material-icons">fort</i>Graph</a></li></ul>
-	
-	<!-- map types -->
-	<ul id='dropdown-map' class='dropdown-content'>
-		<li><a onclick="setMap('empty');"><i class="material-icons">label</i>Empty</a></li>
-		<li class="divider" tabindex="-1"></li>
-		<li><a onclick="setMap('street');"><i class="material-icons">badge</i>Street</a></li>
-		<li><a onclick="setMap('building');"><i class="material-icons">checklist</i>Building</a></li>
-		<li class="divider" tabindex="-1"></li>
-		<li><a onclick="setMap('satellite');"><i class="material-icons">restaurant</i>Satellite</a></li>
-		<li><a onclick="setMap('terrain');"><i class="material-icons">dry_cleaning</i>Terrain</a></li>
-		<li><a onclick="setMap('ocean');"><i class="material-icons">fort</i>Ocean</a></li></ul>
-
 <!-- dialog -->
 <div id="modal1" class="modal bottom-sheet content loader"><div id="domain-info" class="modal-content grey lighten-4" style="box-shadow: 1px 18px 24px 1px inset cornsilk" ></div></div>
 
@@ -232,15 +117,6 @@
 											C3.084,29.762,0,29.75,0,29.75z"></path></svg></div><div id="dialog-inner2" class="dialog-inner print-help hide-scrollbar" style="overflow:auto;"></div></div></div>
 
 <script>
-function connect() {
-	if (user.address == "") { setup(); }  $('#user-pane').sidenav('open');	
-}
-var spinner = 0; 
-function resetHome() { 
-	if (spinner == 0) {  $("#list-wait").removeClass("image-rotate"); $("#list-wait2").removeClass("image-rotate"); spinner = 1; } 
-	else if (spinner == 1) { hideView(); $('#news').show(); $("#stamper").show(); $("#world").show(); spinner = 2;} 
-	else { $("#list-wait").addClass("image-rotate"); $("#list-wait2").addClass("image-rotate"); spinner = 0;} }
-
 function openInNewTab(url) { window.open(url, '_blank').focus(); } //window.location.href = url;
 function getParameter() { var path = window.location.href.replace('https://',''); var domain = path.substring(path.indexOf("/")+1, path.length); return domain; }
 
