@@ -6,7 +6,7 @@
 - Builds from [MPC](https://www.makeplayingcards.com) 
 - Ships with [USPS](https://www.usps.com/business/web-tools-apis/documentation-updates.htm)
 
-Add flags emoji? pairs emoji?
+Add flags emoji? pairs emoji? UR.Land...
 
 [Sponsor Nf·Nth](https://github.com/sponsors/nfnth), to be included as an **Affiliate** in one of our repos.
 
