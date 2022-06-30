@@ -26,7 +26,7 @@ This contract limits our liability, in acceptance, Holder agrees to use Operator
 
 <a href="https://www.c-span.org" target="_blank"><img style="margin-left:24px; width:110px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="res/img/cspan.png" /></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.gutenberg.org" target="_blank"><img style="margin-left:24px; width:60px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="res/img/gutenberg.png" /></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.wikipedia.org/wiki/Special:Random" target="_blank"><img style="margin-left:24px; width:70px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="res/img/wikipedia.png" /></a>
 
-[Wikipedia news](https://wikipedia.org/wiki/Main_Page), use 5% rule (FINRA) to [donate to Ukraine!](https://engine.presearch.org/search?q=donate+to+ukraine) and/or Zion/United Methodist.  *https://imagecompressor.com/* *https://regexr.com/* *https://boxy-svg.com/*
+[Wikipedia news](https://wikipedia.org/wiki/Main_Page), use 5% rule (FINRA) to [donate to Ukraine!](https://engine.presearch.org/search?q=donate+to+ukraine) and/or Zion/United Methodist.  *https://imagecompressor.com/* *https://regexr.com/* *https://boxy-svg.com/* https://pixlr.com/x/#editor
 
 Google domain, [BH](https://www.bhphotovideo.com/) with [Northern](https://www.northerntool.com/) [ACE](https://www.acehardware.com/)
 [China](https://www.made-in-china.com/products-search/hot-china-products/Intel_Tablet.html)
