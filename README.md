@@ -25,7 +25,7 @@ This contract limits our liability, in acceptance, Holder agrees to use Operator
 
 [CSPAN](https://www.c-span.org) - [Gutenberg](http://www.gutenberg.org) [Wikipedia](https://www.wikipedia.org/wiki/Special:Random) [news](https://wikipedia.org/wiki/Main_Page)
 
-[Wikipedia news](https://wikipedia.org/wiki/Main_Page), use 5% rule (FINRA) to [donate to Ukraine!](https://engine.presearch.org/search?q=donate+to+ukraine) and/or Zion/United Methodist.  *https://imagecompressor.com/* *https://regexr.com/* *https://boxy-svg.com/* https://pixlr.com/x/#editor
+use 5% rule (FINRA) to [donate to Ukraine!](https://engine.presearch.org/search?q=donate+to+ukraine) and/or Zion/United Methodist.  *https://imagecompressor.com/* *https://regexr.com/* *https://boxy-svg.com/* https://pixlr.com/x/#editor
 
 Google domain, [BH](https://www.bhphotovideo.com/) with [Northern](https://www.northerntool.com/) [ACE](https://www.acehardware.com/)
 [China](https://www.made-in-china.com/products-search/hot-china-products/Intel_Tablet.html)
