@@ -30,3 +30,6 @@ This contract limits our liability, in acceptance, Holder agrees to use Operator
 
 Google domain, [BH](https://www.bhphotovideo.com/) with [Northern](https://www.northerntool.com/) [ACE](https://www.acehardware.com/)
 [China](https://www.made-in-china.com/products-search/hot-china-products/Intel_Tablet.html)
+
+https://www.cgtrader.com/3d-models?file_types[]=117&animated=1
+https://www.mixamo.com/#/?page=1&type=Motion%2CMotionPack
