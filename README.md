@@ -1,6 +1,8 @@
 
 ### Nf·Nth // software on infinitive-basis
 
+🙂🙂 👓👓 🧤🧤 👖👖 🧦🧦 👟👟 
+
 - Runs on [Linode](https://cloud.linode.com)
 - Registers with [name.com](https://www.name.com)
 - Builds from [MPC](https://www.makeplayingcards.com) 
