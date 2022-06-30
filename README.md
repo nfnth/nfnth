@@ -33,3 +33,36 @@ Google domain, [BH](https://www.bhphotovideo.com/) with [Northern](https://www.n
 
 https://www.cgtrader.com/3d-models?file_types[]=117&animated=1
 https://www.mixamo.com/#/?page=1&type=Motion%2CMotionPack
+
+### PLANME
+
+https://www.smartcontracts.tools/token-generator/ethereum/
+
+https://www.kayak.com/Cheap-Phoenix-Car-Rentals.18004.cars.ksp
+
+https://www.makeplayingcards.com/design/dn_texteditor_body.aspx?ssid=DC18FC38741B4CF8B8AA2BF0CBE53EF6
+
+https://www.vistaprint.com/business-cards
+
+### Upcoming Features
+
+|Project||
+|-|-|
+|property|bathroom remodel<br/>upstairs floors<br/>driveway seal<br/>vapor barrier/insulation<br/>ice maker<br/>garage|
+|other|[mortgage](loandepot.com), license with vending?|
+|[mail](https://mail.google.com/mail/u/0/#inbox)|[titan](https://app.titan.email/login/)|
+|[drive](https://drive.google.com/drive/my-drive)|SSD?|
+|[domains](https://domains.google.com/registrar/)|name.com?|
+
+youtube + steam
+
+COIN (VISA) to CHASE + INTL (AKAM) 
+Amtrak? with manual/electronic keypad lock (ABNB)? + GOOG GM/GE/GD/KR? Samsung? MSFT has GitHub
+
+use glassdoor.com
+
+AMD? https://store.chuwi.com/products/chuwi-rzbox
+
+https://store.chuwi.com/products/chuwi-hipad-x
+https://www.getdroidtips.com/unlock-bootloader-chuwi-hipad-x/
+
