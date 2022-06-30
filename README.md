@@ -6,9 +6,11 @@
 - Builds from [MPC](https://www.makeplayingcards.com) 
 - Ships with [USPS](https://www.usps.com/business/web-tools-apis/documentation-updates.htm)
 
+Add flags emoji? pairs emoji?
+
 [Sponsor Nf·Nth](https://github.com/sponsors/nfnth), to be included as an **Affiliate** in one of our repos.
 
-Licensed as [**NfNth Corp**](https://secure.dor.wa.gov/) in the State of Washington, [19500 130th AV NE, Woodinville, WA 98072](https://blue.kingcounty.com/Assessor/eRealProperty/Dashboard.aspx?ParcelNbr=1428900123) *the Wedge, Kat corner to Woodin elementary*
+Licensed as [**NfNth Corp**](https://secure.dor.wa.gov/) in the State of Washington, [19500 130th AV NE, Woodinville, WA 98072](https://blue.kingcounty.com/Assessor/eRealProperty/Dashboard.aspx?ParcelNbr=1428900123) *the Wedge app, Kat corner to Woodin elementary*
 
 <a href="https://opensea.io/nfnth" title="Buy on OpenSea" target="_blank"><img style="margin-left:24px; width:220px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="https://storage.googleapis.com/opensea-static/Logomark/Badge%20-%20Available%20On%20-%20Light.png" alt="Available on OpenSea" /></a>
 
