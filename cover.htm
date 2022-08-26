@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><title>OCUR.io ·</title>
+
+<meta http-equiv="Content-Language" content="en-US">
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="deed domains for sale, from deed to domain, collectible domains" />
+<meta name="keywords" content="domain, deed, urland, ocur, ocurio, crypto, dBay" />
+<meta name="author" content="urland" />
+
+<!-- resources -->
+<script src="res/app/all.js"></script><link rel="stylesheet" href="res/app/all.css"></script>
+<script src="res/app/md.js"></script><script src="res/app/open.js"></script><script src="res/app/wallet.js"></script><script src="res/app/map.js"></script><script src="res/app/ui.js"></script><script src="res/app/card.js"></script><script src="https://cdn.jsdelivr.net/gh/ushelp/EasyQRCodeJS/dist/easy.qrcode.min.js" ></script>
+ 
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet"></head>
+
+<body style="overflow:overlay; background-color:whitesmoke;transition: background-color 1s linear;" >
+
+<!-- menu -->
+<nav id="main-menu" style="position: fixed;top:0; z-index:2;visibility:hidden;" class="loader">
+	<div id="panel-menu" class="nav-wrapper header z-depth-1 grey lighten-5" style="display:flex; justify-content: left; color:black; border-bottom: solid 2px darkgoldenrod;">
+    		<div style="height:103%;border-bottom:solid 2px darkred;" class="z-depth-1"><a id="menu-deed" style="cursor:pointer; color:darkslategrey; opacity:0.7; background-color:ghostwhite; display: flex; align-items: center; height: 100%; padding-right: 10px;font-weight: bold;font-size: 20px; -webkit-transition: background-color 300ms linear, color 300ms linear;-moz-transition: background-color 300ms linear, color 300ms linear;-o-transition: background-color 300ms linear, color 300ms linear;-ms-transition: background-color 300ms linear, color 300ms linear;transition: background-color 300ms linear, color 300ms linear;"><i id="bars" class="material-icons" style="padding-left:16px;" onclick="showList('open');$('#deed-pane').sidenav('open');">menu</i><div id="waiter" style="height:48px; width:48px; cursor: pointer; margin-left: 12px;" onclick="showList('open');$('#deed-pane').sidenav('open');"><img id="list-wait" class="image" src="res/img/seal3.png" width="48" /></div></a></div>
+    		
+    		<div class="containerx greenx" style="background-color: green;    "><span class="button setter">📗</span>
+			  <div class="contentx">
+				<div class="head" style="display: flex;align-items: center;justify-content: center;"><a id="dropdown-mapper" style="width:210px; display: flex;justify-content: space-between;" class="mobile-width waves-effect waves-light green lighten-1 btn" onclick="showView('noter');"><!--<i class="material-icons left">menu_book</i>-->📒<span class='mobile-hide' style="margin-left:24px;">Open Notebook</span></a></div>
+				<div class="body" style="text-align:center;">
+				  <div style="display: flex;align-items: center;justify-content: space-evenly;"><span style="width:100px;" class="button extra removed hoverable z-depth-2">+ NOTE 📝</span><span style="width:100px;" class="button extra removed hoverable z-depth-2">📁 FILE ...</span></div>
+					<ul style="display: flex;flex-direction: column;">
+						<li><a class="subheader">Notebook Information</a></li>
+						<li><a class="waves-effect"><span id="myETH" style="color:black!important;">📜&nbsp;&nbsp;&nbsp;&nbsp;My Notes</span></a></li>
+						<li><a class="waves-effect"><span id="myURL" style="color:black!important;">🗃️&nbsp;&nbsp;&nbsp;&nbsp;My Attachments</span></a></li>
+						<li><div style="margin-top:0;" class="divider"></div></li>
+						</ul>
+				  <div class="action-bar"><a class="quick hoverable z-depth-1">✅📚</a><a class="quick hoverable z-depth-1">📝</a><a class="quick hoverable z-depth-1">🏡</a><a class="quick hoverable z-depth-1">⏳</a><a class="quick hoverable z-depth-1">🗓️</a></div></div></div></div>
+    		
+    		<div class="containerx bluex" style="background-color: royalblue;"><span class="button setter">🗺️</span>
+			  <div class="contentx">
+				<div class="head" style="display: flex;align-items: center;justify-content: center;"><a id="dropdown-mapper" style="width:210px; display: flex;justify-content: space-between;" class="waves-effect waves-light blue lighten-1 btn" onclick="showView('mapper');">🧭<span style="color:aliceblue;"  class='mobile-hide'>Explore Map</span></a></div>
+				<div class="body">
+					<div style="display: flex;align-items: center;justify-content: space-evenly;"><span style="width:100px;"class="button extra removed hoverable z-depth-2">+ MARK 📍</span><span style="width:100px;" class="button extra removed hoverable z-depth-2">🌎 POS ...</span></div>
+					
+				  <p>
+					<ul style="display: flex;flex-direction: column;">
+						<li><a class="subheader">Map Information</a></li>
+						<li><a class="waves-effect" onclick="if (user.address != '') {copyClip(user.address);}"><i class="material-icons">account_balance_wallet</i><span id="myAdd" style="color:black!important;">My Locations</span></a></li>
+						<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><i class="material-icons">account_balance</i><span id="myETH" style="color:black!important;">📦&nbsp;&nbsp;&nbsp;&nbsp;My Packages</span></a></li></ul></p>
+				  <div class="action-bar"><a class="quick hoverable z-depth-1">🧭</a><a class="quick hoverable z-depth-1">📦</a></div></div></div></div>
+    		
+    		<div class="containerx yellowx" style="background-color: goldenrod;left:50%;"><span class="button setter">🎒</span>
+			  <div class="contentx">
+				<div class="head" style="display: flex;align-items: center;justify-content: center;"><a id="dropdown-mapper" style="width:210px; display: flex;justify-content: space-between;" class="waves-effect waves-light amber lighten-1 btn">🪙<span class='mobile-hide'>Connect Wallet</span></a></div>
+				<div class="body">
+					<a id="dropdown-mapper" style="width:180px;" class="waves-effect waves-light green lighten-1 btn dropdown-trigger" href="#" data-target='dropdown-map'><i class="material-icons left">gps_fixed</i><span class='edit-device'>Use Location</span></a>
+				  <p>
+					<ul>
+						<li><a class="subheader">Wallet Information</a></li>
+						<li><a class="waves-effect" onclick="if (user.address != '') {copyClip(user.address);}"><i class="material-icons">account_balance_wallet</i><span id="myAdd" style="color:black!important;">My Wallet Address</span></a></li>
+						<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><i class="material-icons">account_balance</i><span id="myETH" style="color:black!important;">My ETH Balance</span><span style="margin-left:0;" id="myGas" style="color:black!important;"></span></a></li>
+						<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><i class="material-icons">toll</i><span id="myURL" style="color:black!important;">My OCUR Balance</span></a></li>
+						<li><div style="margin-top:0;" class="divider"></div></li>
+						<li><a class="subheader">App Information</a></li>
+						<li><a class="waves-effect" onclick='$("#domain-tabs").tabs("select", "test5");'><i class="material-icons">space_dashboard</i><span id="myArt" class="lighten-2" style="color:black!important;">My Card Deck</span></a></li>
+						<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><i class="material-icons">toll</i><span id="myDomain" class="lighten-2" style="color:black!important;">My OCUR Balance (Local)</span></a></li>
+						<li><div style="margin-top:0;" class="divider"></div></li><!--<i class="material-icons left">calculate</i>-->
+						<li><a class="subheader">Domain Information</a></li>
+						<li style="margin-top:12px; display: flex;align-items: center;justify-content: center;margin-bottom:16px;"><select id="domain-template" class="sider" onchange="domainSelect();"><option selected="selected" value="void">No domain selected</option><option value="tactician.us">tactician.us (demo)</option></select></li></ul></p>
+				  <div class="action-bar"><a>📮</a><a>🧾</a><a>💰🪙</a></div></div></div></div>
+		<div style="width:64px;margin-left:16px;"><a><div style="width:64px;"><img class="image image-rotate gear-image" id="gear-pic" style="opacity:0.6; height: 48px;position:absolute; margin: 4px; cursor:pointer;right:12px;top:4px;" onclick="showView('mapper');"/><img id="gear-pic2" class="image image-rotate gear-image" style="opacity:0.6; height: 48px;position:absolute;cursor:pointer;margin:4px;right:12px;top:4px;" onclick="showView('mapper');"/></div></a></div></div></nav>
+		
+<!-- panel -->
+<ul id="deed-pane" class="sidenav loader" style="visibility:hidden;overflow:hidden;">
+	<li><div class="user-view z-depth-1 blue-grey lighten-5" style="display: flex;margin: auto; padding: 0;align-items: center; justify-content: space-evenly; padding: 12px;height:72px;"><img id="leafy" onclick="showDoc('deed');" style="cursor:pointer; left:12px;opacity:0.9;" width="48"/></div></li>
+				
+	<!-- tabs -->
+	<li style="height:100%;"><ul id="token-tabs" class="tabs tabs-fixed-width z-depth-1 deed">
+			<li class="tab blue-grey lighten-5" onclick="showList('open');"><a class="active" href="#test1">&nbsp;&nbsp;Deed&nbsp;&nbsp;</a></li>
+			<li class="tab blue-grey lighten-5" onclick="showList('domain');"><a href="#test2">Domain</a></li></ul><div class="card-content z-depth-1" style="height:100%;background-color:ghostwhite;">
+			
+		<!-- list (collect) -->
+		<div id="test1"><ul>
+			<li style="padding-top:16px;margin-bottom:12px;display: flex;justify-content: space-evenly;"><div style="display:flex;justify-content:space-evenly;width:100%;"><a class='btn-flat waves-effect waves-light' onclick="selOpen();"><i id="open-sel-icon" class="material-icons">select_all</i></a><a id="dropdown-opener" class='dropdown-trigger btn-flat' href='#' data-target='dropdown-open'><i class="material-icons">sort</i></a><a class="waves-effect waves-light btn red lighten-2" style="display:inline-flex;align-items:center;" onclick="switchOpen();"><i id="open-icon" class="material-icons">grid_view</i><span id="open-name"></span></a></div></li>
+			<li><div id="registry-open" class="collection" style="overflow:auto;"></div></li></ul></div>
+			
+		<!-- list (item) -->
+		<div id="test2"><ul>
+			<li style="padding-top:16px;margin-bottom:12px;display: flex;justify-content: space-evenly;"><div style="display:flex;justify-content:space-evenly;width:100%;"><a id='selLink' class='btn-flat disabled' onclick="selDomain();"><i id="domain-sel-icon" class="material-icons">select_all</i></a><a id="dropdown-domainer" class='dropdown-trigger btn-flat disabled' ref='#' data-target='dropdown-domain'><i class="material-icons">sort</i></a><a id='switchLink' class="waves-effect waves-light btn red lighten-2 disabled" style="display:inline-flex;align-items:center;" onclick="switchDomain();"><i id="domain-icon" class="material-icons">grid_view</i><span id="domain-name"></span></a></div></li>
+			<li><div id="registry-domain" class="collection" style="overflow:auto;"><a onclick='$(#token-tabs).select("test1");' class='collection-item'>No domain found.</a></div></li></ul></div></div></div></li></ul>	
+
+<!-- view -->
+<div id="home" style="height:105%; text-align:center;visibility:hidden; width:100%; z-index:1; padding-top: 54px;" class="content loader print-help">
+	
+<div id="slider" class="slider content loader pane scale-transition scale-out">
+  <div class="items-group">
+    <div id="item0" class="item" >
+      <div class="block flip-card flip-card-inner" style="display:flex;align-items:center;" onclick="flipCard();">
+		  <div class="flip-card-front backer card-wrap" style="height:120px;background-color:whitesmoke;color:black;opacity:0.75;transition:all 0.5s!important;"><span class="circleLight"></span><div  class="text" style="display:flex; flex-direction:column;align-items:center;">
+			  <div style="display:flex;align-items:center;"><img src="res/img/seal3.png" style="width:48px; height:48px;" /><span style="margin-top:12px;margin-left:12px;">OCUR.io dee*d/omain</span></div><p  id="card-name0">I`m cool card</p></div></div>  
+		  <div class="flip-card-back backer"  ><span class="circleLight"></span><div class="text backer" style="transform: rotateY(180deg);"><h3>OCUR.io</h3><p>More card</p></div></div></div></div>
+    <div id="item1" class="item">
+      <div class="block flip-card flip-card-inner" style="display:flex;align-items:center;" onclick="flipCard();">
+		  <div class="flip-card-front backer card-wrap" style="height:120px;background-color:whitesmoke;color:black;opacity:0.75;transition:all 0.5s!important;"><span class="circleLight"></span><div  class="text" style="display:flex; flex-direction:column;align-items:center;">
+			  <div style="display:flex;align-items:center;"><img src="res/img/seal3.png" style="width:48px; height:48px;" /><span style="margin-top:12px;margin-left:12px;">OCUR.io</span></div><p  id="card-name1">I`m cool card</p></div></div>  
+		  <div class="flip-card-back backer"  ><span class="circleLight"></span><div class="text backer" style="transform: rotateY(180deg);"><h3>OCUR.io</h3><p>More card</p></div></div></div></div>
+          
+  <div class="navigations">
+    <ul class="dots"><li onclick="changeCard();"><a class="btn-flat amber lighten-2"><i class="material-icons">restart_alt</i></a></li></ul></div></div></div>
+
+
+<!-- map -->
+    	<div id="mapper" class="content loader pane scale-transition scale-out" style="overflow-y: auto; height: 130%;">
+			
+		<div id="map" style="width:100%; height:100%;"></div></div></div>
+
+<!-- items -->					
+<ul id='dropdown-open' class='dropdown-content'>
+    	<li><a href="#!" onclick="opens.sort(openAZ); showList('open');">Name&nbsp;&nbsp; &#8595;</a></li><li><a href="#!" onclick="opens.sort(openZA); showList('open');">Name&nbsp;&nbsp; &#8593;</a></li>
+    	<li style="margin-top:0;"class="divider" tabindex="-1"></li>
+    	<li><a href="#!" onclick="opens.sort(open90); showList('open');">Count&nbsp;&nbsp; &#8595;</a></li><li><a href="#!" onclick="opens.sort(open09); showList('open');">Count&nbsp;&nbsp; &#8593;</a></li>
+	<li style="margin-top:0;" class="divider" tabindex="-1"></li>
+	<li><a href="#!" onclick="opens.sort(openaz); showList('open');">Color&nbsp;&nbsp; &#8595;</a></li><li><a href="#!" onclick="opens.sort(openza); showList('open');">Color&nbsp;&nbsp; &#8593;</a></li></ul>
+
+<ul id='dropdown-domain' class='dropdown-content'>
+    	<li><a href="#!" onclick="domains.sort(domainAZ); showList('domain');">Name &#8595;</a></li><li><a href="#!" onclick="domains.sort(domainZA); showList('domain');">Name &#8593;</a></li>
+    	<li style="margin-top:0;"class="divider" tabindex="-1"></li>
+    	<li><a href="#!" onclick="domains.sort(domainaz); showList('domain');">Count &#8595;</a></li><li><a href="#!" onclick="domains.sort(domainza); showList('domain');">count &#8593;</a></li>
+	<li style="margin-top:0;" class="divider" tabindex="-1"></li>
+	<li><a href="#!" onclick="domains.sort(domain09); showList('domain');">Price &#8595;</a></li><li><a href="#!" onclick="domains.sort(domain90); showList('domain');">Price &#8593;</a></li></ul>
+
+<ul id='dropdown-tool' class='dropdown-content'>
+    	<li><a href="#!" onclick="domains.sort(domainAZ); showList('domain');">Name &#8595;</a></li><li><a href="#!" onclick="domains.sort(domainZA); showList('domain');">Name &#8593;</a></li>
+    	<li style="margin-top:0;"class="divider" tabindex="-1"></li>
+    	<li><a href="#!" onclick="domains.sort(domainaz); showList('domain');">Count &#8595;</a></li><li><a href="#!" onclick="domains.sort(domainza); showList('domain');">count &#8593;</a></li>
+	<li style="margin-top:0;" class="divider" tabindex="-1"></li>
+	<li><a href="#!" onclick="domains.sort(domain09); showList('domain');">Price &#8595;</a></li><li><a href="#!" onclick="domains.sort(domain90); showList('domain');">Price &#8593;</a></li></ul>
+	
+<ul id='dropdown-map' class='dropdown-content'>
+    	<li><a href="#!" onclick="setMap('satellite');"><i class="material-icons">satellite_alt</i>Satellite</a></li>
+    	<li style="margin-top:0;"class="divider" tabindex="-1"></li>
+    	<li><a href="#!" onclick="setMap('light');"><i class="material-icons">light_mode</i>Light</a></li><li><a href="#!" onclick="setMap('dark');"><i class="material-icons">dark_mode</i>Dark</a></li></ul>
+
+<ul id='dropdown-template' class='dropdown-content'>
+    	<li><a href="#!" onclick="domains.sort(domainAZ); showList('domain');"><i class="material-icons">event</i>Event</a></li><li><a href="#!" onclick="domains.sort(domainZA); showList('domain');"><i class="material-icons">task</i>Task</a></li>
+    	<li style="margin-top:0;"class="divider" tabindex="-1"></li>
+    	<li><a href="#!" onclick="domains.sort(domainaz); showList('domain');"><i class="material-icons">event</i>Instructions</a></li><li><a href="#!" onclick="domains.sort(domainza); showList('domain');"><i class="material-icons">directions</i>Directions</a></li>
+	<li style="margin-top:0;" class="divider" tabindex="-1"></li>
+	<li><a href="#!" onclick="domains.sort(domain09); showList('domain');"><i class="material-icons">restaurant_menu</i>Recipe</a></li><li><a href="#!" onclick="domains.sort(domain90); showList('domain');"><i class="material-icons">description</i>Article</a></li>
+	<li><a href="#!" onclick="domains.sort(domain09); showList('domain');"><i class="material-icons">list</i>List</a></li>
+	<li><a href="#!" onclick="domains.sort(domain09); showList('domain');"><i class="material-icons">list</i>Private</a></li>
+	<li><a href="#!" onclick="domains.sort(domain09); showList('domain');"><i class="material-icons">list</i>Address</a></li>
+	<li><a href="#!" onclick="domains.sort(domain09); showList('domain');"><i class="material-icons">list</i>Timer</a></li></ul>
+
+<script>
+	
+function showView(view) {  hideView(); $('#'+view).show(); 
+    switch (view) { 
+	    case 'world': $("#world").addClass("scale-in"); 
+		    $("#ads").css("height",(height/2).toString() + "px");
+		    break;
+		case 'slider': $("#slider").addClass("scale-in"); break;
+		case 'console': $("#console").addClass("scale-in"); break;
+	    case 'decker': $("#decker").addClass("scale-in"); 
+		     addCardIntro(); break;
+        case 'editor': $("#editor").addClass("scale-in");   break;
+        case 'mapper': $("#mapper").addClass("scale-in"); //showIntro(); 
+        setTimeout(function() { map.resize(); }, 500); break; } }
+function hideView() { $('.modal').modal('close'); window.scrollTo(0, 0); 
+		     //$("#map-tool").hide(); $("#waiter").off('click'); $("#bars").off('click'); $("#waiter").click(function() { $('#build-pane').sidenav('open'); }); 
+		     $("#slider").removeClass("scale-in");
+		     $("#world").removeClass("scale-in");
+		     $("#editor").removeClass("scale-in");   
+		     $("#mapper").removeClass("scale-in"); 
+		     $('.pane').hide();}
+	var slideCode = '<div class="block flip-card flip-card-inner" style="display:flex;align-items:center;" onclick="flipCard();"><div class="flip-card-front backer card-wrap" style="height:120px;background-color:whitesmoke;color:black;opacity:0.75;transition:all 0.5s!important;"><span class="circleLight"></span><div class="text" style="display:flex; flex-direction:column;align-items:center;"><div style="display:flex;align-items:center;"><img src="res/img/seal3.png" style="width:48px; height:48px;" /><span style="margin-top:12px;margin-left:12px;">OCUR.io</span></div><p  id="card-nameXXXX">I`m cool card</p></div></div>  <div class="flip-card-back backer"  ><span class="circleLight"></span><div class="text backer" style="transform: rotateY(180deg);"><h3>OCUR.io</h3><p>More card</p></div></div></div>';
+	var cardCode = '<div class="flip-card cardy"  ><div class="flip-card-inner" style="cursor:pointer;"><div class="flip-card-front z-depth-2" onclick="flipCard();"><img  src="XXXX" alt="Avatar" style="width:48px;height:48px;"></div><div class="flip-card-back z-depth-2" ><div id="tactb" style="opacity:0.75; display: flex;align-items: center;position: absolute;top: 4px;left: 4px;"><span id="tact1" style="font-size: 24px;margin-right: 8px;font-weight: bold;"></span><img style="cursor:pointer;" id="tacta" width="24" height="24" src="res/img/card/heart.png"/></div><div id="cardContent" style="cursor:pointer; color: dimgrey;font-size: 16px;font-weight: bold;font-family: \'Roboto\', sans-serif;" onclick="showDoc(\'tact/YYYY\');">📚 READ...</div><div id="tact2" class="rotate" style="opacity:0.75; display: flex;align-items: center;position: absolute;bottom: 4px;right: 4px;"></div></div></div>';
+
+var cardSwitch = true; var stationary = true;
+function flipCard() { if(stationary) { stationary = false; } else { //stationary = true;
+	$('.flip-card-inner').css("transform","rotateY(180deg)"); $('.flip-card-front').css("transform","rotateY(180deg)"); $('.text').removeClass("backer"); } }
+
+var pageNotFound = true; var namer; var pageSet = false; var cardNotFound = true;
+function setPage() { if (!(pageSet)) { pageSet = true; var page = window.location.href.replace('https://','').replace('/','').replace('#','').replace('!','');
+    switch(page){
+        case 'dralun.com': setTitle(); showDoc('ur'); break;
+        case 'nfnth.com': setTitle(); showDoc('ur'); break;
+        case 'ur.land': setLand(); break;
+        case 'ocur.io': setTitle();  break;
+        case 'ustat.us': setLand(); break;
+        default: 
+			for (let j = 0; j < domains.length; j++) { if (domains[j].core.external_link !== null) //&& data !== undefined "maahdaah.us 🕷"
+			if (domains[j].core.external_link.replace('https://','') == page) {  pageNotFound = false; 
+				var len = domains[j].core.name.length; 
+				document.title += " " + domains[j].core.name.replace(domains[j].core.external_link.replace('https://',''),"").replace(" ",""); flyMark(j); break; } } break;
+				} } }
+				
+function setLand() { var emoji = Math.floor(Math.random() * (4-1+1)) + 1;
+    switch (emoji) {
+        case 1: update = "🏳🏳"; break;
+        case 2: update = "🏳🏴"; break;
+        case 3: update = "🏴🏳"; break;
+        case 4: update = "🏴🏴"; break; }
+    document.title += " " + update; }
+    
+
+
+function showFav() {
+    	$('<link>').appendTo('head').attr({ class: 'ico', type: 'image/x-icon', rel: 'icon', href: "res/img/fav/favicon.ico" });
+    	$('<link>').appendTo('head').attr({ class: 'ico', type: 'image/x-icon', rel: 'shortcut icon', href: "res/img/fav/favicon.ico" });
+    	$('<link>').appendTo('head').attr({ class: 'ico', type: 'image/x-icon', rel: 'icon', sizes: "192x192", href: "res/img/fav/android-chrome-192x192.png" });
+    	$('<link>').appendTo('head').attr({ class: 'ico', type: 'image/x-icon', rel: 'apple-touch-icon', sizes: "128x128", href: "res/img/fav/apple-touch-icon.png" }); }
+	
+function showPanel() {
+	var gear = Math.floor(Math.random() * (42 - 1 + 1)) + 1; document.getElementById('gear-pic').src = "res/img/gear/gear" + gear.toString() + ".png";
+	gear = Math.floor(Math.random() * (42 - 1 + 1)) + 1; document.getElementById('gear-pic2').src = "res/img/gear/gear" + gear.toString() + ".png";
+	
+	var leaf = Math.floor(Math.random() * (16 - 1 + 1)) + 1; document.getElementById('leafy').src = "res/img/leaf/leaf" + leaf.toString() + ".png"; 
+				}
+				
+function copyClip(text) { navigator.clipboard.writeText(text); M.toast({html: 'Address copied.'}); }
+function openInNewTab(url) { window.open(url, '_blank').focus(); } //window.location.href = url;
+
+var width = window.innerWidth; var height = window.innerHeight + 48;
+async function initial() { $('body').css("background-color","lightgrey");  
+	//$('.carousel').carousel({ indicators: true, fullWidth: true });
+	$('.tabs').tabs(); showFav(); showPanel(); setLand();
+	$('.modal').modal(); 
+	//$("#registry-open").css("height",(height - 120) + "px"); $("#registry-domain").css("height",(height - 120) + "px");
+	
+    	//$('#docs').dropdown({ constrainWidth: false, coverTrigger: false } ); $('#doc-hide').dropdown({ constrainWidth: false, coverTrigger: false } ); //hover: true 
+	//$('#tools').dropdown({ constrainWidth: false, coverTrigger: false } ); $('#tool-hide').dropdown({ constrainWidth: false, coverTrigger: false } );
+	
+	$('#dropdown-opener').dropdown({ constrainWidth: false }); $('#dropdown-domainer').dropdown({ constrainWidth: false });
+	$('#dropdown-templater').dropdown({ constrainWidth: false });// $('#dropdown-mapper').dropdown({ constrainWidth: false }); 
+	$('#deed-pane').sidenav({ edge: 'left' }); //, onCloseEnd: deedMap});
+	// $('#user-pane').sidenav({ edge: 'right' }); showView('mapper');  pullOpens(); switchFeed(false);
+showView("slider");
+    	setTimeout(function() { $(".loader").css("visibility", "visible");  $('img').on('dragstart', function(evt) { return false; });  }  , 2000);
+    	
+    	pullOpens(); 
+    	
+    	 }
+
+initial(); //document.addEventListener('DOMContentLoaded', function() {  }); 
+
+var mouse = {X   : 0,Y   : 0,CX  : 0,CY  : 0 },
+    block = {X   : mouse.X,Y   : mouse.Y,CX  : mouse.CX,CY  : mouse.CY},
+    vmags = [ '', '']
+    imags = [
+      'https://images.pexels.com/photos/4245826/pexels-photo-4245826.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+      'https://images.pexels.com/photos/39811/pexels-photo-39811.jpeg?w=940&h=650&auto=compress&cs=tinysrgb',
+      'https://images.pexels.com/photos/210546/pexels-photo-210546.jpeg?w=940&h=650&auto=compress&cs=tinysrgb',
+      'https://images.pexels.com/photos/3244513/pexels-photo-3244513.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+    ];
+
+$('.block').on('mousemove', function(e) {mouse.X   = (e.pageX - $(this).offset().left) - $('.block').width() / 2;mouse.Y   = (e.pageY - $(this).offset().top) - $('.block').height() / 2;})
+$('.block').on('mouseleave', function(e) {mouse.X   = mouse.CX;mouse.Y   = mouse.CY;})
+
+var shiner = setInterval(function(){
+	
+	if (stationary) { 
+	block.CY   += (mouse.Y - block.CY) / 12;block.CX   += (mouse.X - block.CX) / 12;
+  $('.block .circleLight').css('background', 'radial-gradient(circle at ' + mouse.X + 'px ' + mouse.Y + 'px, #fff, transparent)')
+  $('.block').css({
+    transform : 'scale(1.03) translate(' + (block.CX * 0.05) + 'px, ' + (block.CY * 0.05) + 'px) rotateX(' + (block.CY * 0.05) + 'deg) rotateY(' + (block.CX * 0.05) + 'deg)'}) } else { 
+		//$('.flip-card-inner').css("transform","rotateY(180deg)"); $('.flip-card-front').css("transform","rotateY(180deg)"); 
+		//$('.flip-card-inner').css("background","black");
+		$('.flip-card-inner').addClass("card-background"); $(".card-wrap").css("margin-top","64px");
+		clearInterval(shiner); } }, 20);;
+
+function shakeCard(i) {
+	var dCard = Math.floor(Math.random() * (domains.length-1+1)); 
+	 imags[i] = domains[dCard].core.image_url; $("#card-name"+i).html(domains[dCard].name); 
+	 vmags[i] = domains[dCard].core.animation_url; }
+
+function setCards() { shakeCard(0); shakeCard(1); 
+$('.slider .item').each(function(i){
+  if(i == 0){$(this).addClass('active');$(this).next().addClass('next');$(this).prev().addClass('prev'); }
+  $(this).attr('id', 'slide-'+i);
+  $(this).prepend($('<div>', {class: 'blur', style: 'background-image: url(' + imags[i] + ');'}),$('<div>', {class: 'bg', style: 'background-image: url(' + imags[i] + ');'}))
+  if (vmags[i] != null) $(this).find('.block').css('background-image', 'url(' + vmags[i] + ')'); else $(this).find('.block').css('background-image', 'url(' + imags[i] + ')');
+  
+  //$('.navigations .dots').append($('<li>', {class: i == 0 ? 'active' : '', id: i}).on('click', function(){
+   // var cSlide = $('.slider #slide-'+$(this).attr('id'));
+    //  $('.navigations .dots li').removeClass('active');$(this).addClass('active');
+      //$('.slider .item').removeClass('active prev next');
+      //cSlide.addClass('active');cSlide.next().addClass('next');cSlide.prev().addClass('prev');}))
+      })
+}
+function setCard(id) { $("#slide-"+id).html(slideCode.replace("XXXX",id)); shakeCard(id);
+$('.slider .item').each(function(i){ if (i == id) {
+	$(this).attr('id', 'slide-'+i);
+  $(this).prepend($('<div>', {class: 'blur', style: 'background-image: url(' + imags[i] + ');'}),$('<div>', {class: 'bg', style: 'background-image: url(' + imags[i] + ');'}))
+  if (vmags[i] != null) $(this).find('.block').css('background-image', 'url(' + vmags[i] + ')'); else $(this).find('.block').css('background-image', 'url(' + imags[i] + ')'); } })}
+var switcher = false;
+function changeCard() { stationary = true; $('.flip-card-inner').css("transform",""); $('.flip-card-front').css("transform",""); $('.text').addClass("backer");
+	$('.flip-card-inner').removeClass("card-background"); $(".card-wrap").css("margin-top","0px");
+	setTimeout(function () {
+		
+		$('.block').on('mousemove', function(e) {mouse.X   = (e.pageX - $(this).offset().left) - $('.block').width() / 2;mouse.Y   = (e.pageY - $(this).offset().top) - $('.block').height() / 2;})
+$('.block').on('mouseleave', function(e) {mouse.X   = mouse.CX;mouse.Y   = mouse.CY;})
+		
+		 shiner = setInterval(function(){
+	
+	if (stationary) { 
+	block.CY   += (mouse.Y - block.CY) / 12;block.CX   += (mouse.X - block.CX) / 12;
+  $('.block .circleLight').css('background', 'radial-gradient(circle at ' + mouse.X + 'px ' + mouse.Y + 'px, #fff, transparent)')
+  $('.block').css({
+    transform : 'scale(1.03) translate(' + (block.CX * 0.05) + 'px, ' + (block.CY * 0.05) + 'px) rotateX(' + (block.CY * 0.05) + 'deg) rotateY(' + (block.CX * 0.05) + 'deg)'}) } else { 
+		//$('.flip-card-inner').css("transform","rotateY(180deg)"); $('.flip-card-front').css("transform","rotateY(180deg)"); 
+		//$('.flip-card-inner').css("background","black");
+		$('.flip-card-inner').addClass("card-background"); $("#card-wrap").css("margin-top","64px");
+		clearInterval(shiner); } }, 20); }, 1000);
+		
+		$('.slider .item').removeClass('active prev next');
+	if (switcher) { var cSlide = $('.slider #slide-0'); switcher = false; 
+      cSlide.addClass('active');cSlide.next().addClass('next');cSlide.prev().addClass('prev');  setTimeout(function() { setCard(1); }, 1000); } else { var cSlide = $('.slider #slide-1'); switcher = true; 
+      cSlide.addClass('active');cSlide.next().addClass('next');cSlide.prev().addClass('prev');  setTimeout(function() { setCard(0); }, 1000); }
+	 }
+      
+      
+var map; var map_style = ['satellite-streets-v11', 'light-v10', 'dark-v10']; var zoom = 5; var base = [-101.69697959674477, 35.77108807140884];
+mapboxgl.accessToken = "pk.eyJ1IjoibmZudGgiLCJhIjoiY2tweW1rNXlsMGFpYzJwcGt1cHh6dmxzcyJ9.ZJaFrGpPDv5froWZMLXXYQ";
+map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/mapbox/' + map_style[0], center: base, zoom: zoom, buffer_size: 0.2 }); //pitch: 85,bearing: 80,zoom: 13, buffer_size: 0.2});
+
+var coordinates; var artFlag = false; var tempMark = ""; var tempMap = [];
+map.on('load', function (event) { showIntroMap();
+				 
+//map.addLayer({'id': 'sky','type': 'sky','paint': {'sky-type': 'atmosphere','sky-atmosphere-sun': [0.0, 0.0],'sky-atmosphere-sun-intensity': 15}});
+//map.setFog({'range': [-1, 1.5],'color': 'white','horizon-blend': 0.1});
+						 
+	map.on('click', function(e) { coordinates = e.lngLat; if(artFlag) { addArt(); artFlag = false; } $('.fixed-action-btn').floatingActionButton('close'); }); });
+	
+	
+	$('.setter').click(function () {
+  $(this).parent().toggleClass('expand');     $('.extra').toggleClass('removed'); $('.extra').toggleClass('added'); 
+});
+
+if ($(window).width() < 700) { $('.material-icons').removeClass('left'); }
+</script>
+<style>
+	
+	.quick { background-color: green;
+		border:1px solid whitesmoke;
+    padding: 12px;
+    border-radius: 50%;
+   
+    
+    margin: 12px;}
+    .quick:hover { background-color: yellowgreen;
+		border:1px solid darkgreen; }
+	
+	.extra {  transition: 0.2s; opacity: 0;     background-color: yellowgreen;
+    border-radius: 16px; color:white; font-weight:bold;
+    transform: rotate(0deg)!important;
+    padding-left: 8px;
+    padding-right: 8px;
+    cursor: pointer;
+    border: 1px solid grey;     height: 48px;
+    display: flex;
+    align-items: center; }
+    .extra:hover { background-color:forestgreen; border: 1px solid ghostwhite; }
+	.added { opacity: 1!important; }
+	.removed { display:none; }
+	.over-icon { line-height:36px!important; }
+	.card-background { background: lightgray!important;}
+	
+	
+.slider {width: 100%;height: 100vh;}
+ .slider .items-group {width: 100%;height: 100%;position: relative;}
+ .slider .items-group .item {top: 0px;left: 0px;opacity: 0;width: 100%;height: 100%;display: flex;overflow: hidden;transition: 0.5s;visibility: hidden;position: relative;padding: 50px 20px;position: absolute;align-items: center;justify-content: center;box-sizing: border-box;}
+ .slider .items-group .item:hover .bg {opacity: 0.2;}
+ .slider .items-group .item:hover .block {box-shadow: 0px 0px 50px #333;}
+ .slider .items-group .item.active {opacity: 1;visibility: visible;}
+ .slider .items-group .item .bg {top: 0px;left: 0px;opacity: 1;z-index: -1;width: 100%;height: 100%;transition: 0.5s;position: absolute;transform: scale(1.03);background-size: cover;background-position: center;background-attachment: fixed;}
+ .slider .items-group .item .blur {top: 0px;left: 0px;z-index: -1;width: 100%;height: 100%; transition: 0.5s; filter: blur(5px);position: absolute;transform: scale(1.03);background-size: cover;background-position: center;background-attachment: fixed;}
+ .slider .items-group .item .block {width: 100%;height: 100%;color: #fff;transition: box-shadow 0.5s;max-width: 300px;overflow: hidden;max-height: 450px;border-radius: 10px;transform: scale(1.03);box-sizing: border-box;background-size: cover;background-position: center;background-attachment: fixed;box-shadow: none;}
+ .slider .items-group .item .block .circleLight { top: 0px;left: 0px;opacity: 0;
+	 content: &#39;
+	&#39;
+	;
+	 width: 100%;height: 100%;display: block;transition: 0.5s;position: absolute;border-radius: 10px;background: radial-gradient(circle at 80px 40px, #fff, transparent);}
+ .slider .items-group .item .block .text {width: 100%;height: 100%;display: flex;text-align: center;flex-direction: column;justify-content: center;background-position: center;background-attachment: fixed;}
+ .slider .items-group .item .block h2 {
+	 font-family: &#39;
+	Oswald&#39;
+	, sans-serif;font-size: 130px;margin-bottom: 0px;}
+ .slider .items-group .item .block p {
+	 font-family: &#39;
+	Open Sans&#39;
+	, sans-serif;font-size: 15px;}
+ .slider .items-group .item .block:hover {box-shadow: 0px 0px 70px #111;}
+ .slider .items-group .item .block:hover .circleLight {opacity: 0.4;}
+ .slider .navigations {bottom: 24px;width: 100%;position: absolute;}
+ .slider .navigations .dots {height: 50px;text-align: center;}
+ .slider .navigations .dots li {cursor: pointer;transition: 0.3s;background: #fff;border-radius: 50%;display: inline-block;vertical-align: middle;}
+ .slider .navigations .dots li + li {margin-left: 10px;}
+ .slider .navigations .dots li:hover {filter: blur(2px);}
+ .slider .navigations .dots li.active {width: 15px;height: 15px;}
+ .slider .navigations .dots li.active:hover {filter: blur(0px);}
+
+
+
+
+	html { height:100%; }
+main {flex: 1 0 auto;}
+body { height:100%; display: flex;flex-direction: column; -webkit-tap-highlight-color: transparent; margin: 0; top: 0; left: 0; overflow-x: hidden; overflow-y: hidden; padding: 0 0 0 0; font-family: Arial, Helvetica, sans-serif; }
+.hidden { display:none!important; height: 0; padding: 0!important; } .disappear { visibility: hidden; } .load { opacity: 0; } .gone { width:0; height:0; z-index:-400; position:absolute; top:-9999; left:-9999;}
+.fade {-webkit-animation-name: fade;-webkit-animation-duration: 1.5s;animation-name: fade;animation-duration: 1.5s;} @-webkit-keyframes fade {from {opacity: .4}to {opacity: 1}} @keyframes fade {from {opacity: .4}to {opacity: 1}}
+	
+img { -khtml-user-select: none;-o-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;}
+span {-khtml-user-select: none;-o-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;}
+div {-khtml-user-select: none;-o-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;}
+
+a { cursor:pointer; } a:focus { outline: 0; }
+
+*::-webkit-scrollbar, *::-webkit-scrollbar-thumb {width: 0px!important;border-radius: 1px;background-clip: padding-box;border: 10px solid transparent;height: 1px;    -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2); box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);} *::-webkit-scrollbar-thumb { box-shadow: inset 0 0 0 10px; }
+body { scrollbar-width: none!important; }
+
+#menu-logo {opacity:1; transition: opacity .8s linear;} #menu-logo:hover { opacity:0.5; }
+.stamp-image { margin-left: 64px; width:64px; height:64px;} .stamp-image:hover {opacity:0.5; cursor: pointer;}
+
+nav ul a {display: flex!important; align-items: center; width:100%;}
+.badge { margin-right: 12;border-radius: 12px;color: white!important; padding-right: 12px!important;padding-left: 12px!important; padding-bottom: 10px!important;box-shadow: black 0px 0px 2px!important;height: 24px!important;}
+.content div, .content span { transition:opacity 0.2s; -webkit-transition: opacity 0.2; } .hide-item { opacity: 0; }
+.input-field i, .input-field span, .input-field input, .input-field { cursor:pointer!important; } .input-field label { cursor:pointer!important; color:black!important;}
+
+.select-dropdown li img { width: 32px; height: 32px;float: right;margin: auto;bottom: 0;top: 0;margin-top: 12px;right: 0;margin-right: 12px;}
+.select-wrapper { width:45%; max-width:215px; }
+
+.hiddenfile { width: 0px;height: 0px;overflow: hidden;}
+
+/* mobile */
+	.screen-hide {display:none;} 
+	.media-menu { color:darkslategrey; }
+
+	@media screen and (max-width: 999px) { .gear-image { top:0px!important; } .mobile-width {width:auto;} .mobile-hide {display:none;} .edit-hide {display:flex!important;} .screen-hide {display:block;} .card {width:101%!important;} #setting-wallet { width:60px; }}
+@media screen and (max-height: 450px) {.sidenav {padding-top: 15px;}.sidenav a {font-size: 18px;}}
+	
+@media screen and (max-width: 800px) {/* 8.5 x 11 with even centered 8 .logo { width: 36px; height:36px; }*/}
+@media print { .breaker{break-after:always;} }
+@media print {#quick-button { display:none!important; }}
+
+code { white-space: break-spaces;}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+	#pad:focus { outline:none; }
+	
+::backdrop{background-color: white;}
+div.active {opacity: 1;height: auto;}
+
+.form-disable { pointer-events: none; opacity:0.5; }
+
+.btn { overflow: hidden; } .btn:hover:before { opacity:1; } .btn:before { content: ''; opacity: 0.5;  background-color: rgba(109, 109, 109, 0.6); position: absolute; width: 100%; height: 100%; left: 0; top: 0; transition: opacity .2s; z-index: -1;}
+
+.markre {  border: 3px solid ghostwhite; background-size: cover; width: 36px; height: 36px; cursor: pointer; transition: opacity 0.2s, border-radius 0.2s!important;}
+.mapboxgl-popup { max-width: 200px; }
+
+*::-webkit-scrollbar-track {-webkit-box-shadow: inset 0 0 0px rgba(0, 0, 0, 0.0);background-color: transparent;} *::-webkit-scrollbar {width: 6px;background-color: transparent;} *::-webkit-scrollbar-thumb {background-color: #000000;}
+
+@media print { body, .print-help {display: block !important;position: relative !important;width: auto !important;height: auto !important;overflow: visible !important;margin-left: 0 !important;}}
+
+.image {position: absolute;width: 48px;height: 48px;opacity: 0.95;transition: opacity .2s;}
+	.image:hover { opacity:0.75; }
+.image-rotate { -webkit-animation:spin 8s linear infinite; -moz-animation:spin 8s linear infinite;animation:spin 8s linear infinite; }
+@-moz-keyframes spin {100% { -moz-transform: rotate(360deg); }} @-webkit-keyframes spin {100% { -webkit-transform: rotate(360deg); }} @keyframes spin {100% {-webkit-transform: rotate(360deg);transform:rotate(360deg);}}
+
+.select-wrapper { width:100%!important; }
+
+.positioning-context { width:100%; height:100%; background-color:#CCCCCC; display:inline-block; float:left; position:relative; }
+.positioning-context img { max-width: 100%; max-height:100%; margin: auto; position:absolute;top:0;left:0;right:0;bottom:0; }
+	/*.material-placeholder { position:initial!important; }*/
+.open { cursor:default; }
+#domain-info { padding:0; }
+
+	.desk-menu { height:103%; } .desk-link:hover {height:103%; border-bottom: solid 2px darkslategrey!important; }
+nav ul a { color:darkslategray; } nav ul a:hover { color:darkslategrey;   background-color: lightgrey!important; }
+	
+dropdown-content li>a>i { margin:0 12px 0 0; } .dropdown-content li>a, .dropdown-content li>span { color:darkslategrey!important; }
+	#wallet-icon { color:darkslategrey; }
+	
+	 nav ul a:hover #wallet-area:hover { background-color: green!important; }
+	 #setting-wallet:hover {background-color: lightgrey!important; color:black!important;}
+
+.tabs.deed .tab a{ color:black; } 
+.tabs.deed .tab a:hover { background-color:darkred; color:white; }
+.tabs.deed .tab a.active { background-color:indianred; color:ghostwhite; }
+.tabs.deed .indicator { background-color:indianred; } 
+.tabs.deed .tab a:focus.active { color:white; background-color: indianred; }
+	
+	#doc li a { background-color:ghostwhite; }
+
+.hide-scrollbar { overflow: auto; -ms-overflow-style: none; /* IE 11 */ scrollbar-width: none; /* Firefox 64 */ }
+	.svg{ font: bold 24px Century Gothic, Arial; width  : 100%; height : 120px; }
+
+text{ fill: cornflowerblue; stroke: royalblue; stroke-width: .5px; stroke-linejoin : round; animation: 2s pulsate infinite; }
+	/* #menu-deed:hover {color:darkgreen!important;background-color:lightgrey!important;} */
+	.collection a.collection-item { color:black!important; }
+	.collected:hover { background-color:goldenrod; color:ghostwhite; }
+@keyframes pulsate {50%{ stroke-width:1px } }
+	
+	[type="checkbox"]:checked + span:not(.lever)::before { border-right: 2px solid black!important; border-bottom: 2px solid black!important; }
+	
+	.mapboxgl-popup-close-button { display:none!important; }
+	
+	
+
+.flip-card {
+  /*background-color: transparent;
+  width: 120px;
+  height: 120px;
+  border-radius:12px;*/
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  /*width: 100%;
+  height: 100%;
+  text-align: center;*/
+  transition: transform 0.8s, opacity 0.2s!important;
+  transform-style: preserve-3d;
+  
+}
+
+.flip-card-front, .flip-card-back { 
+  position: absolute;
+  width: 100%;
+  height: 100%;
+   
+  transition: transform 0.8s, opacity 0.2s!important;
+  transform-style: preserve-3d;
+  
+}
+
+.flip-card-front {
+
+  /*color: black;
+      display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    border: solid 2px darkseagreen;*/
+    
+   
+}
+
+.backer {-webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden; }
+
+.flip-card-back {
+  /*background-color: ghostwhite;
+  color: white;
+      display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    border: solid 1px gainsboro;*/
+
+  
+}
+
+.rotate {
+  
+  -webkit-transform: rotateX(180deg) rotateY(180deg);
+          transform: rotateX(180deg) rotateY(180deg);
+
+}
+
+.flipper {
+  transform: scaleX(-1), scaleY(-1);
+}
+
+[type="checkbox"].filled-in:checked+span:not(.lever):after { border: 2px solid steelblue!important; background-color: steelblue!important; }
+
+.video-hold{
+  
+
+  margin: auto;
+
+  height: 100px;
+  max-width:95%;
+  
+  overflow: hidden;
+  clip-path: 0 0;
+  transform: translatez(0);
+}
+
+.video-clip { height:100%; width:100%; object-fit:cover;}
+video::-internal-media-controls-overlay-cast-button {
+    display: none;
+}
+
+
+
+	
+.scene {
+	 width: 1000px;
+	 display: flex;
+	 justify-content: space-between;
+	 perspective: 800px;
+}
+ .scene .card {
+	 position: relative;
+	 width: 240px;
+	 height: 300px;
+	 color: white;
+	 cursor: pointer;
+	 transition: 1s ease-in-out;
+	 transform-style: preserve-3d;
+}
+ .scene .card:hover {
+	 transform: rotateY(0.5turn);
+}
+ .scene .card .card__face {
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	 width: 100%;
+	 height: 100%;
+	 backface-visibility: hidden;
+	 transition: 1s ease-in-out;
+	 -webkit-box-reflect: below 0 linear-gradient(transparent, transparent, rgba(0, 0, 0, 0.4));
+}
+ .scene .card .card__face img {
+	 width: 240px;
+	 height: 300px;
+	 object-fit: cover;
+}
+ .scene .card .card__face--back {
+	 transform: rotateY(0.5turn);
+}
+
+
+
+
+
+
+
+
+
+
+
+h1 {
+	 font-weight: 700;
+	 font-size: 64px;
+	 margin: 20px 0 0 0;
+	 padding: 0 20px;
+}
+ p {
+	 font-size: 16px;
+	 padding: 0 20px;
+}
+ em {
+	 font-style: normal;
+	 color: #ffc400;
+}
+ a {
+	 font-style: normal;
+	 color: #ffd740;
+	 text-decoration: none;
+	 padding-right: 10px;
+	 cursor: pointer;
+}
+ .sub {
+	 margin: 0;
+}
+ .setter {
+	 cursor: pointer;
+	 bottom: 10px;
+    position: relative;
+	 display: inline-block;
+	 font-size: 20px;
+	 line-height: 60px;
+	 font-weight: bold;
+	 transform: rotate(45deg);
+	 transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+ .expand .button {
+	 transform: rotate(630deg);
+	 transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+ .containerx {
+	 border: solid 2px ghostwhite; 
+	 margin: auto;
+	
+	 top: 12px;
+	 
+	 border-radius: 50%;
+	 width: 36px;
+	 max-width: 60px;
+	 height: 36px;
+	 text-align: center;
+	 box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+	 overflow: hidden;
+	 transition: all 0.2s 0.45s, border 0s, height 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0.25s, max-width 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0.35s, width 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0.35s;
+}
+
+.greenx:hover { border:solid 2px darkgreen; } .bluex:hover { border:solid 2px darkblue; } .yellowx:hover { border:solid 2px darkgoldenrod; }
+ .containerx.expand {
+	 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.17);
+	 border-radius: 0; border:solid 2px darkgreen; 
+	 width: 80%;
+	 height: 500px;
+	 max-width: 50%;
+	 padding: 0;
+	 transition: all 0.2s, max-width 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0.1s, height 0.3s ease 0.25s;
+}
+ .contentx {
+	 transform: translateY(100%);
+	 width: 100%;
+	 height: 100%;
+	 opacity: 0;
+	 text-align: left;
+	 transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s 0.2s;
+}
+ .expand .contentx {
+	 transform: translateY(0px);
+	 opacity: 1;
+	 transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.05s, opacity 0s;
+}
+
+
+ .contentx .head {
+	 padding: 0 0 20px 0;
+}
+ .contentx .body {
+	 color: #000;
+	 color: rgba(0, 0, 0, 0.87);
+	 background-color: #fff;
+	 width: 100%;
+	 height: 100%;
+	 padding: 10px 0;
+	 box-sizing: border-box;
+}
+ .action-bar {
+	 padding-left: 15px;
+	 border-top: 1px solid #e0e0e0;
+	 width: 100%;
+}
+ .action-bar a {
+	 text-transform: uppercase;
+	 line-height: 52px;
+	 color: #ffc400;
+}
+
+</style>
