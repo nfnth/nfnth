@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><title>NfNth ·</title>
+<head><title>Nf Nth ·</title>
 
 <meta http-equiv="Content-Language" content="en-US">
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="deed domains for sale, from deed to domain, collectible domains" />
-<meta name="keywords" content="domain, deed, urland, ocur, ocurio, crypto, dBay" />
+<meta name="keywords" content="domain, deed, urland, ocur, ocurio, crypto, dBay, nfnth" />
 <meta name="author" content="urland" />
 
 <!-- resources -->
@@ -24,9 +24,9 @@
 	<div id="panel-menu" class="nav-wrapper header z-depth-1 grey lighten-5" style="display:flex; justify-content: left; color:black; border-bottom: solid 2px darkgoldenrod;">
     		<div style="height:103%;border-bottom:solid 2px darkred;" class="z-depth-1"><a id="menu-deed" style="cursor:pointer; color:darkslategrey; opacity:0.7; background-color:ghostwhite; display: flex; align-items: center; height: 100%; padding-right: 10px;font-weight: bold;font-size: 20px; -webkit-transition: background-color 300ms linear, color 300ms linear;-moz-transition: background-color 300ms linear, color 300ms linear;-o-transition: background-color 300ms linear, color 300ms linear;-ms-transition: background-color 300ms linear, color 300ms linear;transition: background-color 300ms linear, color 300ms linear;"><i id="bars" class="material-icons" style="padding-left:16px;" onclick="showList('open');$('#deed-pane').sidenav('open');">menu</i><div id="waiter" style="height:48px; width:48px; cursor: pointer; margin-left: 12px;" onclick="showList('open');$('#deed-pane').sidenav('open');"><img id="list-wait" class="image" src="res/img/seal3.png" width="48" /></div></a></div>
     		
-    		<div class="containerx greenx" style="background-color: green;    "><span class="button setter">📗</span>
+    		<div class="containerx yellowx" style="background-color: goldenrod;"><span class="button setter">📒</span>
 			  <div class="contentx">
-				<div class="head" style="display: flex;align-items: center;justify-content: center;"><a id="dropdown-mapper" style="width:210px; display: flex;justify-content: space-between;" class="mobile-width waves-effect waves-light green lighten-1 btn" onclick="showView('noter');"><!--<i class="material-icons left">menu_book</i>-->📒<span class='mobile-hide' style="margin-left:24px;">Open Notebook</span></a></div>
+				<div class="head" style="display: flex;align-items: center;justify-content: center;"><a id="dropdown-mapper" style="width:210px; display: flex;justify-content: space-between;" class="mobile-width waves-effect waves-light amber lighten-1 btn">🪙<span class='mobile-hide'>Connect Wallet</span></a></div>
 				<div class="body" style="text-align:center;">
 				  <div style="display: flex;align-items: center;justify-content: space-evenly;"><span style="width:100px;" class="button extra removed hoverable z-depth-2">+ NOTE 📝</span><span style="width:100px;" class="button extra removed hoverable z-depth-2">📁 FILE ...</span></div>
 					<ul style="display: flex;flex-direction: column;">
@@ -41,7 +41,7 @@
 			  <div class="contentx">
 				<div class="head" style="display: flex;align-items: center;justify-content: center;"><a id="dropdown-mapper" style="width:210px; display: flex;justify-content: space-between;" class="waves-effect waves-light blue lighten-1 btn" onclick="showView('mapper');">🧭<span style="color:aliceblue;"  class='mobile-hide'>Explore Map</span></a></div>
 				<div class="body">
-					<div style="display: flex;align-items: center;justify-content: space-evenly;"><span style="width:100px;"class="button extra removed hoverable z-depth-2">+ MARK 📍</span><span style="width:100px;" class="button extra removed hoverable z-depth-2">🌎 POS ...</span></div>
+					<div style="display: flex;align-items: center;justify-content: space-evenly;"></div>
 					
 				  <p>
 					<ul style="display: flex;flex-direction: column;">
@@ -50,9 +50,8 @@
 						<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><i class="material-icons">account_balance</i><span id="myETH" style="color:black!important;">📦&nbsp;&nbsp;&nbsp;&nbsp;My Packages</span></a></li></ul></p>
 				  <div class="action-bar"><a class="quick hoverable z-depth-1">🧭</a><a class="quick hoverable z-depth-1">📦</a></div></div></div></div>
     		
-    		<div class="containerx yellowx" style="background-color: goldenrod;left:50%;"><span class="button setter">🎒</span>
-			  <div class="contentx">
-				<div class="head" style="display: flex;align-items: center;justify-content: center;"><a id="dropdown-mapper" style="width:210px; display: flex;justify-content: space-between;" class="waves-effect waves-light amber lighten-1 btn">🪙<span class='mobile-hide'>Connect Wallet</span></a></div>
+    		<div class="containerx yellowx" style="background-color: goldenrod;left:50%;"><span class="
+				<div class="head" style="display: flex;align-items: center;justify-content: center;"></div>
 				<div class="body">
 					<a id="dropdown-mapper" style="width:180px;" class="waves-effect waves-light green lighten-1 btn dropdown-trigger" href="#" data-target='dropdown-map'><i class="material-icons left">gps_fixed</i><span class='edit-device'>Use Location</span></a>
 				  <p>
@@ -203,8 +202,6 @@ function setLand() { var emoji = Math.floor(Math.random() * (4-1+1)) + 1;
         case 3: update = "🏴🏳"; break;
         case 4: update = "🏴🏴"; break; }
     document.title += " " + update; }
-    
-
 
 function showFav() {
     	$('<link>').appendTo('head').attr({ class: 'ico', type: 'image/x-icon', rel: 'icon', href: "res/img/fav/favicon.ico" });
@@ -319,8 +316,7 @@ $('.block').on('mouseleave', function(e) {mouse.X   = mouse.CX;mouse.Y   = mouse
       cSlide.addClass('active');cSlide.next().addClass('next');cSlide.prev().addClass('prev');  setTimeout(function() { setCard(1); }, 1000); } else { var cSlide = $('.slider #slide-1'); switcher = true; 
       cSlide.addClass('active');cSlide.next().addClass('next');cSlide.prev().addClass('prev');  setTimeout(function() { setCard(0); }, 1000); }
 	 }
-      
-      
+
 var map; var map_style = ['satellite-streets-v11', 'light-v10', 'dark-v10']; var zoom = 5; var base = [-101.69697959674477, 35.77108807140884];
 mapboxgl.accessToken = "pk.eyJ1IjoibmZudGgiLCJhIjoiY2tweW1rNXlsMGFpYzJwcGt1cHh6dmxzcyJ9.ZJaFrGpPDv5froWZMLXXYQ";
 map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/mapbox/' + map_style[0], center: base, zoom: zoom, buffer_size: 0.2 }); //pitch: 85,bearing: 80,zoom: 13, buffer_size: 0.2});
@@ -342,17 +338,10 @@ if ($(window).width() < 700) { $('.material-icons').removeClass('left'); }
 </script>
 <style>
 	
-	.quick { background-color: green;
-		border:1px solid whitesmoke;
-    padding: 12px;
-    border-radius: 50%;
-   
-    
-    margin: 12px;}
-    .quick:hover { background-color: yellowgreen;
-		border:1px solid darkgreen; }
-	
+	.quick { background-color: green; border:1px solid whitesmoke; padding: 12px; border-radius: 50%; margin: 12px;}
+    	.quick:hover { background-color: yellowgreen; border:1px solid darkgreen; }
 	.extra {  transition: 0.2s; opacity: 0;     background-color: yellowgreen;
+    
     border-radius: 16px; color:white; font-weight:bold;
     transform: rotate(0deg)!important;
     padding-left: 8px;
