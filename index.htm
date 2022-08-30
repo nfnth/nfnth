@@ -34,6 +34,16 @@
 						<li><a class="waves-effect"><span id="myETH" style="color:black!important;">📜&nbsp;&nbsp;&nbsp;&nbsp;My Notes</span></a></li>
 						<li><a class="waves-effect"><span id="myURL" style="color:black!important;">🗃️&nbsp;&nbsp;&nbsp;&nbsp;My Attachments</span></a></li>
 						<li><div style="margin-top:0;" class="divider"></div></li>
+						<li><a class="waves-effect" onclick="if (user.address != '') {copyClip(user.address);}"><i class="material-icons">account_balance_wallet</i><span id="myAdd" style="color:black!important;">My Wallet Address</span></a></li>
+						<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><i class="material-icons">account_balance</i><span id="myETH" style="color:black!important;">My ETH Balance</span><span style="margin-left:0;" id="myGas" style="color:black!important;"></span></a></li>
+						<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><i class="material-icons">toll</i><span id="myURL" style="color:black!important;">My OCUR Balance</span></a></li>
+						<li><div style="margin-top:0;" class="divider"></div></li>
+						<li><a class="subheader">App Information</a></li>
+						<li><a class="waves-effect" onclick='$("#domain-tabs").tabs("select", "test5");'><i class="material-icons">space_dashboard</i><span id="myArt" class="lighten-2" style="color:black!important;">My Card Deck</span></a></li>
+						<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><i class="material-icons">toll</i><span id="myDomain" class="lighten-2" style="color:black!important;">My OCUR Balance (Local)</span></a></li>
+						<li><div style="margin-top:0;" class="divider"></div></li><!--<i class="material-icons left">calculate</i>-->
+						<li><a class="subheader">Domain Information</a></li>
+						<li style="margin-top:12px; display: flex;align-items: center;justify-content: center;margin-bottom:16px;"><select id="domain-template" class="sider" onchange="domainSelect();"><option selected="selected" value="void">No domain selected</option><option value="tactician.us">tactician.us (demo)</option></select></li>
 						</ul>
 				  <div class="action-bar"><a class="quick hoverable z-depth-1">✅📚</a><a class="quick hoverable z-depth-1">📝</a><a class="quick hoverable z-depth-1">🏡</a><a class="quick hoverable z-depth-1">⏳</a><a class="quick hoverable z-depth-1">🗓️</a></div></div></div></div>
     		
@@ -50,24 +60,6 @@
 						<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><i class="material-icons">account_balance</i><span id="myETH" style="color:black!important;">📦&nbsp;&nbsp;&nbsp;&nbsp;My Packages</span></a></li></ul></p>
 				  <div class="action-bar"><a class="quick hoverable z-depth-1">🧭</a><a class="quick hoverable z-depth-1">📦</a></div></div></div></div>
     		
-    		<div class="containerx yellowx" style="background-color: goldenrod;left:50%;"><span class="
-				<div class="head" style="display: flex;align-items: center;justify-content: center;"></div>
-				<div class="body">
-					<a id="dropdown-mapper" style="width:180px;" class="waves-effect waves-light green lighten-1 btn dropdown-trigger" href="#" data-target='dropdown-map'><i class="material-icons left">gps_fixed</i><span class='edit-device'>Use Location</span></a>
-				  <p>
-					<ul>
-						<li><a class="subheader">Wallet Information</a></li>
-						<li><a class="waves-effect" onclick="if (user.address != '') {copyClip(user.address);}"><i class="material-icons">account_balance_wallet</i><span id="myAdd" style="color:black!important;">My Wallet Address</span></a></li>
-						<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><i class="material-icons">account_balance</i><span id="myETH" style="color:black!important;">My ETH Balance</span><span style="margin-left:0;" id="myGas" style="color:black!important;"></span></a></li>
-						<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><i class="material-icons">toll</i><span id="myURL" style="color:black!important;">My OCUR Balance</span></a></li>
-						<li><div style="margin-top:0;" class="divider"></div></li>
-						<li><a class="subheader">App Information</a></li>
-						<li><a class="waves-effect" onclick='$("#domain-tabs").tabs("select", "test5");'><i class="material-icons">space_dashboard</i><span id="myArt" class="lighten-2" style="color:black!important;">My Card Deck</span></a></li>
-						<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><i class="material-icons">toll</i><span id="myDomain" class="lighten-2" style="color:black!important;">My OCUR Balance (Local)</span></a></li>
-						<li><div style="margin-top:0;" class="divider"></div></li><!--<i class="material-icons left">calculate</i>-->
-						<li><a class="subheader">Domain Information</a></li>
-						<li style="margin-top:12px; display: flex;align-items: center;justify-content: center;margin-bottom:16px;"><select id="domain-template" class="sider" onchange="domainSelect();"><option selected="selected" value="void">No domain selected</option><option value="tactician.us">tactician.us (demo)</option></select></li></ul></p>
-				  <div class="action-bar"><a>📮</a><a>🧾</a><a>💰🪙</a></div></div></div></div>
 		<div style="width:64px;margin-left:16px;"><a><div style="width:64px;"><img class="image image-rotate gear-image" id="gear-pic" style="opacity:0.6; height: 48px;position:absolute; margin: 4px; cursor:pointer;right:12px;top:4px;" onclick="showView('mapper');"/><img id="gear-pic2" class="image image-rotate gear-image" style="opacity:0.6; height: 48px;position:absolute;cursor:pointer;margin:4px;right:12px;top:4px;" onclick="showView('mapper');"/></div></a></div></div></nav>
 		
 <!-- panel -->
