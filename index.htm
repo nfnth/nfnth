@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><title>Nf Nth ·</title>
+<head><title>. . .</title>
 
 <meta http-equiv="Content-Language" content="en-US">
 <meta charset="UTF-8" />
@@ -193,7 +193,15 @@ function setLand() { var emoji = Math.floor(Math.random() * (4-1+1)) + 1;
         case 2: update = "🏳🏴"; break;
         case 3: update = "🏴🏳"; break;
         case 4: update = "🏴🏴"; break; }
-    document.title += " " + update; }
+    document.title = "UR.Land · " + update; }
+	
+function setTitle() { var emoji = Math.floor(Math.random() * (4-1+1)) + 1;
+    switch (emoji) {
+        case 1: update = "👟👟"; break;
+        case 2: update = "👟👟"; break;
+        case 3: update = "👟👟"; break;
+        case 4: update = "👟👟"; break; }
+    document.title = "OCUR.io · " + update; }
 
 function showFav() {
     	$('<link>').appendTo('head').attr({ class: 'ico', type: 'image/x-icon', rel: 'icon', href: "res/img/fav/favicon.ico" });
@@ -213,8 +221,7 @@ function openInNewTab(url) { window.open(url, '_blank').focus(); } //window.loca
 
 var width = window.innerWidth; var height = window.innerHeight + 48;
 async function initial() { $('body').css("background-color","lightgrey");  
-	//$('.carousel').carousel({ indicators: true, fullWidth: true });
-	$('.tabs').tabs(); showFav(); showPanel(); setLand();
+	$('.tabs').tabs(); showFav(); showPanel(); if (window.location.hostname == "ur.land") { setLand(); } else { setTitle(); }
 	$('.modal').modal(); 
 	//$("#registry-open").css("height",(height - 120) + "px"); $("#registry-domain").css("height",(height - 120) + "px");
 	
@@ -382,9 +389,6 @@ if ($(window).width() < 700) { $('.material-icons').removeClass('left'); }
  .slider .navigations .dots li.active {width: 15px;height: 15px;}
  .slider .navigations .dots li.active:hover {filter: blur(0px);}
 
-
-
-
 	html { height:100%; }
 main {flex: 1 0 auto;}
 body { height:100%; display: flex;flex-direction: column; -webkit-tap-highlight-color: transparent; margin: 0; top: 0; left: 0; overflow-x: hidden; overflow-y: hidden; padding: 0 0 0 0; font-family: Arial, Helvetica, sans-serif; }
@@ -525,8 +529,6 @@ text{ fill: cornflowerblue; stroke: royalblue; stroke-width: .5px; stroke-linejo
     justify-content: center;
     border-radius: 12px;
     border: solid 2px darkseagreen;*/
-    
-   
 }
 
 .backer {-webkit-backface-visibility: hidden; /* Safari */
@@ -614,16 +616,6 @@ video::-internal-media-controls-overlay-cast-button {
  .scene .card .card__face--back {
 	 transform: rotateY(0.5turn);
 }
-
-
-
-
-
-
-
-
-
-
 
 h1 {
 	 font-weight: 700;
