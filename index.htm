@@ -88,8 +88,8 @@
   <div class="items-group">
     <div id="item0" class="item" >
       <div class="block flip-card flip-card-inner" style="display:flex;align-items:center;" onclick="flipCard();">
-	      <div id="carder"><video id="card-vid" style="width:100%;height:100%;" controls>
-  <source src="movie.mp4" type="video/mp4"></video></div>
+	      <div id="carder" style="width:100%;height:100%;"><video id="card-vid" style="width:100%;height:100%;" controls>
+  <source src="https://openseauserdata.com/files/83d939c2d34d81ec15b55d206284e7f2.mp4" type="video/mp4"></video></div>
 		  <div class="flip-card-front backer card-wrap" style="height:120px;background-color:whitesmoke;color:black;opacity:0.75;transition:all 0.5s!important;"><span class="circleLight"></span><div  class="text" style="display:flex; flex-direction:column;align-items:center;">
 			  <div style="display:flex;align-items:center;"><img src="res/img/seal3.png" style="width:48px; height:48px;" /><span style="margin-top:12px;margin-left:12px;">OCUR.io dee*d/omain</span></div><p  id="card-name0">I`m cool card</p></div></div>  
 		  <div class="flip-card-back backer"  ><span class="circleLight"></span><div class="text backer" style="transform: rotateY(180deg);"><h3>OCUR.io</h3><p>More card</p></div></div></div></div>
@@ -294,7 +294,7 @@ $('.slider .item').each(function(i){ if (i == id) {
   if (vmags[i] != null) $(this).find('.block').css('background-image', 'url(' + vmags[i] + ')'); else $(this).find('.block').css('background-image', 'url(' + imags[i] + ')'); } })}
 var switcher = false;
 function changeCard() { 
-	$("#card-vid").html('<source src="https://openseauserdata.com/files/83d939c2d34d81ec15b55d206284e7f2.mp4" type="video/mp4">');
+	//$("#card-vid").html('<source src="https://openseauserdata.com/files/83d939c2d34d81ec15b55d206284e7f2.mp4" type="video/mp4">');
 	stationary = true; $('.flip-card-inner').css("transform",""); $('.flip-card-front').css("transform",""); $('.text').addClass("backer");
 	$('.flip-card-inner').removeClass("card-background"); $(".card-wrap").css("margin-top","0px");
 	setTimeout(function () {
