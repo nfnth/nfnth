@@ -26,11 +26,11 @@
     		
     		<div class="containerx yellowx" style="background-color: goldenrod;"><span class="button setter">🪙</span>
 			  <div class="contentx">
-				<div class="head" style="display: flex;align-items: center;justify-content: center;"><a id="dropdown-mapper" style="width:210px; display: flex;justify-content: space-between;" class="mobile-width waves-effect waves-light amber lighten-1 btn">👛<span class='mobile-hide'>Connect</span></a>&nbsp;&nbsp;&nbsp;&nbsp;<a id="dropdown-mapper" style="width:210px; display: flex;justify-content: space-between;" class="mobile-width waves-effect waves-light amber lighten-1 btn">🗒️<span class='mobile-hide'>Post</span></a></div>
+				<div class="head" style="display: flex;align-items: center;justify-content: center;"><a id="dropdown-mapper" style="width:210px; display: flex;justify-content: space-between;" class="mobile-width waves-effect waves-light amber lighten-1 btn">👛<span class='mobile-hide'>Connect</span></a>&nbsp;&nbsp;&nbsp;&nbsp;<a id="dropdown-mapper" style="width:210px; display: flex;justify-content: space-between;" class="mobile-width waves-effect waves-light amber lighten-1 btn">📦<span class='mobile-hide'>Post</span></a></div>
 				<div class="body" style="text-align:center;">
 					<ul style="display: flex;flex-direction: column;">
 						<li><a class="subheader">Notebook Information</a></li>
-						<li><a class="waves-effect"><span id="myETH" style="color:black!important;">📜&nbsp;&nbsp;&nbsp;&nbsp;My Notes</span></a></li>
+						<li><a class="waves-effect"><span id="myETH" style="color:black!important;">🗒️&nbsp;&nbsp;&nbsp;&nbsp;My Notes</span></a></li>
 						<li><div style="margin-top:0;" class="divider"></div></li>
 						<li><a class="waves-effect" onclick="if (user.address != '') {copyClip(user.address);}"><i class="material-icons">account_balance_wallet</i><span id="myAdd" style="color:black!important;">My Wallet Address</span></a></li>
 						<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><i class="material-icons">account_balance</i><span id="myETH" style="color:black!important;">My ETH Balance</span><span style="margin-left:0;" id="myGas" style="color:black!important;"></span></a></li>
@@ -56,7 +56,7 @@
 					<ul style="display: flex;flex-direction: column;">
 						<li><a class="subheader">Map Information</a></li>
 						<li><a class="waves-effect" onclick="if (user.address != '') {copyClip(user.address);}"><i class="material-icons">account_balance_wallet</i><span id="myAdd" style="color:black!important;">My Locations</span></a></li>
-						<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><i class="material-icons">account_balance</i><span id="myETH" style="color:black!important;">📦&nbsp;&nbsp;&nbsp;&nbsp;My Packages</span></a></li></ul></p>
+						<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><i class="material-icons">account_balance</i><span id="myETH" style="color:black!important;"><div class="quick hoverable z-depth-1">🧭</div>&nbsp;&nbsp;&nbsp;&nbsp;How to Trade OCUR</span></a></li></ul></p>
 				  <div class="action-bar"><a class="quick hoverable z-depth-1">🧭</a><a class="quick hoverable z-depth-1">📦</a></div></div></div></div></div></li>
 				
 	<!-- tabs -->
@@ -326,24 +326,18 @@ map.on('load', function (event) { showIntroMap();
 	map.on('click', function(e) { coordinates = e.lngLat; if(artFlag) { addArt(); artFlag = false; } $('.fixed-action-btn').floatingActionButton('close'); }); });
 	
 	
-	$('.setter').click(function () {
-  $(this).parent().toggleClass('expand');     $('.extra').toggleClass('removed'); $('.extra').toggleClass('added'); 
-});
+$('.setter').click(function () {
+  $(this).parent().toggleClass('expand');     $('.extra').toggleClass('removed'); $('.extra').toggleClass('added');  });
 
 if ($(window).width() < 700) { $('.material-icons').removeClass('left'); }
 </script>
 <style>
 	
-	.quick { background-color: green; border:1px solid whitesmoke; padding: 12px; border-radius: 50%; margin: 12px;}
-    	.quick:hover { background-color: yellowgreen; border:1px solid darkgreen; }
-	.extra {  transition: 0.2s; opacity: 0;     background-color: yellowgreen;
-    
-    border-radius: 16px; color:white; font-weight:bold;
-    transform: rotate(0deg)!important;
-    padding-left: 8px;padding-right: 8px;
-    cursor: pointer;
-    border: 1px solid grey;     height: 48px;
-    display: flex;
+.quick { background-color: green; border:1px solid whitesmoke; padding: 12px; border-radius: 50%; margin: 12px;}
+.quick:hover { background-color: yellowgreen; border:1px solid darkgreen; }
+.extra {  transition: 0.2s; opacity: 0;     background-color: yellowgreen;
+    border-radius: 16px; color:white; font-weight:bold;transform: rotate(0deg)!important;padding-left: 8px;padding-right: 8px;
+    cursor: pointer; border: 1px solid grey;     height: 48px;display: flex;
     align-items: center; }
     .extra:hover { background-color:forestgreen; border: 1px solid ghostwhite; }
 	.added { opacity: 1!important; }
@@ -558,7 +552,7 @@ h1 {font-weight: 700;font-size: 64px; margin: 20px 0 0 0;padding: 0 20px;}
 	 overflow: hidden;
 	 transition: all 0.2s 0.45s, border 0s, height 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0.25s, max-width 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0.35s, width 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0.35s;}
 
-.redx:hover { border:solid 2px red; } .greenx:hover { border:solid 2px darkgreen; } .bluex:hover { border:solid 2px darkblue; } .yellowx:hover { border:solid 2px darkgoldenrod; }
+.redx:hover { border:solid 2px darkred; } .greenx:hover { border:solid 2px darkgreen; } .bluex:hover { border:solid 2px darkblue; } .yellowx:hover { border:solid 2px darkgoldenrod; }
 	.redx.expand { border:solid 2px darkred; } .yellowx.expand { border:solid 2px darkgoldenrod; }
  .containerx.expand {
 	 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.17);border-radius: 0;  width: 80%;
