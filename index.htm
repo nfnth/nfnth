@@ -26,9 +26,8 @@
     		
     		<div class="containerx yellowx" style="background-color: goldenrod;"><span class="button setter">🪙</span>
 			  <div class="contentx">
-				<div class="head" style="display: flex;align-items: center;justify-content: center;"><a id="dropdown-mapper" style="width:210px; display: flex;justify-content: space-between;" class="mobile-width waves-effect waves-light amber lighten-1 btn">🪙<span class='mobile-hide'>Connect Wallet</span></a></div>
+				<div class="head" style="display: flex;align-items: center;justify-content: center;"><a id="dropdown-mapper" style="width:210px; display: flex;justify-content: space-between;" class="mobile-width waves-effect waves-light amber lighten-1 btn">🪙<span class='mobile-hide'>Connect Wallet</span></a><a id="dropdown-mapper" style="width:210px; display: flex;justify-content: space-between;" class="mobile-width waves-effect waves-light amber lighten-1 btn">🗒️<span class='mobile-hide'>Post Note</span></a></div>
 				<div class="body" style="text-align:center;">
-				  <div style="display: flex;align-items: center;justify-content: space-evenly;"><span style="width:100px;" class="button extra removed hoverable z-depth-2">+ NOTE 🗒️</span><span style="width:100px;" class="button extra removed hoverable z-depth-2">📁 FILE ...</span></div>
 					<ul style="display: flex;flex-direction: column;">
 						<li><a class="subheader">Notebook Information</a></li>
 						<li><a class="waves-effect"><span id="myETH" style="color:black!important;">📜&nbsp;&nbsp;&nbsp;&nbsp;My Notes</span></a></li>
@@ -38,10 +37,7 @@
 						<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><i class="material-icons">account_balance</i><span id="myETH" style="color:black!important;">My ETH Balance</span><span style="margin-left:0;" id="myGas" style="color:black!important;"></span></a></li>
 						<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><i class="material-icons">toll</i><span id="myURL" style="color:black!important;">My OCUR Balance</span></a></li>
 						<li><div style="margin-top:0;" class="divider"></div></li>
-						<li><a class="subheader">App Information</a></li>
-						<li><a class="waves-effect" onclick='$("#domain-tabs").tabs("select", "test5");'><i class="material-icons">space_dashboard</i><span id="myArt" class="lighten-2" style="color:black!important;">My Card Deck</span></a></li>
-						<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><i class="material-icons">toll</i><span id="myDomain" class="lighten-2" style="color:black!important;">My OCUR Balance (Local)</span></a></li>
-						<li><div style="margin-top:0;" class="divider"></div></li><!--<i class="material-icons left">calculate</i>-->
+						<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><i class="material-icons">toll</i><span id="myDomain" class="lighten-2" style="color:black!important;">My OCUR Balance (Local)</span></a></li><!--<i class="material-icons left">calculate</i>-->
 						<li><a class="subheader">Domain Information</a></li>
 						<li style="margin-top:12px; display: flex;align-items: center;justify-content: center;margin-bottom:16px;"><select id="domain-template" class="sider" onchange="domainSelect();"><option selected="selected" value="void">No domain selected</option><option value="tactician.us">tactician.us (demo)</option></select></li>
 						</ul>
