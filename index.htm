@@ -231,6 +231,42 @@ showView("slider");
 
 initial(); //document.addEventListener('DOMContentLoaded', function() {  }); 
 
+function showDoc(doc) { $.get('res/doc/'+doc, function(data) { setDialog(renderMd(data)); }); }
+function setDialog(text) { 
+	$("#somedialog2").css("z-index",1004); document.getElementById('dialog-inner2').scrollTo(0, 0);
+
+var element = document.getElementById('dialog-inner2'); $("#dialog-inner2").html(text);
+var positionInfo = element.getBoundingClientRect();
+var height = positionInfo.height; var width = positionInfo.width;
+
+    var myDiv = document.getElementById('dialog-inner2'); myDiv.scrollTop = 0;
+    somedialog = document.getElementById( 'somedialog2' ); morphEl = somedialog.querySelector( '.morph-shape' );
+    s = Snap( morphEl.querySelector( 'svg' ) ); path = s.select( 'path' );
+    steps = { open : morphEl.getAttribute( 'data-morph-open' ), close : morphEl.getAttribute( 'data-morph-close' )};
+    dlg2 = new DialogFx( somedialog, {
+        onOpenDialog : function( instance ) { path.stop().animate( { 'path' : steps.open }, 400, mina.easeinout );},
+        onCloseDialog : function( instance ) { path.stop().animate( { 'path' : steps.close }, 400, mina.easeinout );	}	} ); dlg2.toggle(dlg2); }
+function setConfirm(text) { 
+	$("#somedialog1").css("z-index",1004); document.getElementById('dialog-inner1').scrollTo(0, 0);
+	
+
+var element = document.getElementById('dialog-inner1'); $("#dialog-inner1").html(text);
+var positionInfo = element.getBoundingClientRect();
+var height = positionInfo.height; var width = positionInfo.width;
+
+    var myDiv = document.getElementById('dialog-inner1'); myDiv.scrollTop = 0;
+    somedialog = document.getElementById( 'somedialog1' ); morphEl = somedialog.querySelector( '.morph-shape' );
+    s = Snap( morphEl.querySelector( 'svg' ) ); path = s.select( 'path' );
+    steps = { open : morphEl.getAttribute( 'data-morph-open' ), close : morphEl.getAttribute( 'data-morph-close' )};
+    dlg2 = new DialogFx( somedialog, {
+        onOpenDialog : function( instance ) { path.stop().animate( { 'path' : steps.open }, 400, mina.easeinout );},
+        onCloseDialog : function( instance ) { path.stop().animate( { 'path' : steps.close }, 400, mina.easeinout );	}	} ); dlg2.toggle(dlg2); }
+	
+	
+	
+	
+	
+	
 var mouse = {X   : 0,Y   : 0,CX  : 0,CY  : 0 },
     block = {X   : mouse.X,Y   : mouse.Y,CX  : mouse.CX,CY  : mouse.CY},
     vmags = [ '', '']
