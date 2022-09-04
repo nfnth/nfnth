@@ -31,13 +31,14 @@
 					<ul style="display: flex;flex-direction: column;">
 						<li><a class="subheader">Account Information</a></li>
 						
-						<li><a class="waves-effect" onclick="if (user.address != '') {copyClip(user.address);}"><span id="myAdd" style="color:black!important;">🏠&nbsp;&nbsp;&nbsp;&nbsp;My Wallet Address</span></a></li>
+						<li><a class="waves-effect" onclick="if (user.address != '') {copyClip(user.address);}"><span id="myAdd" style="color:black!important;">🔒&nbsp;&nbsp;&nbsp;&nbsp;My Wallet Address</span></a></li>
 						<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><span id="myETH" style="color:black!important;">🏦&nbsp;&nbsp;&nbsp;&nbsp;My ETH Balance</span><span style="margin-left:0;" id="myGas" style="color:black!important;"></span></a></li>
-						<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><span id="myURL" style="color:black!important;">💵&nbsp;&nbsp;&nbsp;&nbsp;My OCUR Balance</span></a></li>
+						<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><span id="myURL" style="color:black!important;">🏠&nbsp;&nbsp;&nbsp;&nbsp;My OCUR Balance</span></a></li>
 						<li><div style="margin-top:0;" class="divider"></div></li>
+						<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><span id="myDomain" class="lighten-2" style="color:black!important;">💵&nbsp;&nbsp;&nbsp;&nbsp;My Local Balance (OCUR)</span></a></li>
 						<li><a class="waves-effect"><span id="myETH" style="color:black!important;">🗒️&nbsp;&nbsp;&nbsp;&nbsp;My Notes</span></a></li>
 						
-						<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><i class="material-icons">toll</i><span id="myDomain" class="lighten-2" style="color:black!important;">🔒&nbsp;&nbsp;&nbsp;&nbsp;My OCUR Balance (Local)</span></a></li><!--<i class="material-icons left">calculate</i>--></ul></div></div></div>
+						<!--<i class="material-icons left">calculate</i>--></ul></div></div></div>
     		
 		<div style="width:64px;margin-left:16px;"><a><div style="width:64px;"><img class="image image-rotate gear-image" id="gear-pic" style="opacity:0.6; height: 48px;position:absolute; margin: 4px; cursor:pointer;right:12px;top:4px;" onclick="showView('mapper');"/><img id="gear-pic2" class="image image-rotate gear-image" style="opacity:0.6; height: 48px;position:absolute;cursor:pointer;margin:4px;right:12px;top:4px;" onclick="showView('mapper');"/></div></a></div></div></nav>
 		
@@ -47,12 +48,10 @@
 			  <div class="contentx">
 				<div class="head" style="display: flex;align-items: center;justify-content: center;"></div>
 				<div class="body">
-					<div style="display: flex;align-items: center;justify-content: space-evenly;"></div>
-					
 				  <p>
 					<ul style="display: flex;flex-direction: column;">
 						<li><a class="subheader">Guidebooks</a></li>
-						<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"> <div class="quick hoverable z-depth-1">🧭</div>&nbsp;&nbsp;&nbsp;&nbsp;Trade OCUR</a></li></ul></p>
+						<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect" style="display:flex;"> <div class="quick hoverable z-depth-1">🧭</div>&nbsp;&nbsp;&nbsp;&nbsp;Trade OCUR</a></li></ul></p>
 				  <div class="action-bar"><a class="quick hoverable z-depth-1">🧭</a><a class="quick hoverable z-depth-1">📦</a></div></div></div></div></div></li>
 				
 	<!-- tabs -->
