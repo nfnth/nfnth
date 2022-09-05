@@ -26,7 +26,7 @@
     		
     		<div class="containerx yellowx" style="background-color: goldenrod;"><span class="button setter">📜</span>
 			  <div class="contentx">
-				<div class="head" style="display: flex;align-items: center;justify-content: center;"><a id="dropdown-mapper" style="width:160px; display: flex;justify-content: space-between;" class="mobile-width waves-effect waves-light green lighten-1 btn"><span style="font-weight:bold;">·</span><span class='mobile-hide'>&nbsp;&nbsp;&nbsp;&nbsp;Connect</span>🪙</a>&nbsp;&nbsp;&nbsp;&nbsp;<a id="dropdown-mapper" style="width:160px; display: flex;justify-content: space-between;" class="mobile-width waves-effect waves-light blue lighten-1 btn"><span style="font-weight:bold;">+</span><span class='mobile-hide'>&nbsp;&nbsp;&nbsp;&nbsp;Map</span>🗺️</a></div>
+				<div class="head" style="display: flex;align-items: center;justify-content: center;"><a id="dropdown-mapper" style="width:160px; display: flex;justify-content: space-between;" class="mobile-width waves-effect waves-light green lighten-1 btn"><span style="font-weight:bold;">·</span><span class='mobile-hide'>&nbsp;&nbsp;&nbsp;&nbsp;Connect</span>🪙</a></div>
 				<div class="body" style="text-align:center;">
 					<ul style="display: flex;flex-direction: column;">
 						<li><a class="subheader">Account Information</a></li>
@@ -36,7 +36,7 @@
 						<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><span id="myURL" style="color:black!important;">🏠&nbsp;&nbsp;&nbsp;&nbsp;My OCUR Balance</span></a></li>
 						<li><div style="margin-top:0;" class="divider"></div></li>
 						<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><span id="myDomain" class="lighten-2" style="color:black!important;">💵&nbsp;&nbsp;&nbsp;&nbsp;My Local Balance (OCUR)</span></a></li>
-						<li><a class="waves-effect"><span id="myETH" style="color:black!important;">🗒️&nbsp;&nbsp;&nbsp;&nbsp;My Notes</span></a></li>
+						<li><a class="waves-effect"><span id="myETH" style="color:black!important;">🗺️&nbsp;&nbsp;&nbsp;&nbsp;My Profile</span></a></li>
 						
 						<!--<i class="material-icons left">calculate</i>--></ul></div></div></div>
     		
@@ -56,8 +56,8 @@
 				
 	<!-- tabs -->
 	<li style="height:100%;"><ul id="token-tabs" class="tabs tabs-fixed-width z-depth-1 deed">
-			<li class="tab blue-grey lighten-5" onclick="showList('open');"><a class="active" href="#test1">&nbsp;&nbsp;Deed&nbsp;&nbsp;</a></li>
-			<li class="tab blue-grey lighten-5" onclick="showList('domain');"><a href="#test2">Domain</a></li></ul><div class="card-content z-depth-1" style="height:100%;background-color:ghostwhite;">
+			<li class="tab blue-grey lighten-5" onclick="showList('open');"><a class="active" href="#test1">Class</a></li>
+			<li class="tab blue-grey lighten-5" onclick="showList('domain');"><a href="#test2">&nbsp;&nbsp;Deed&nbsp;&nbsp;</a></li></ul><div class="card-content z-depth-1" style="height:100%;background-color:ghostwhite;">
 			
 		<!-- list (collect) -->
 		<div id="test1"><ul>
@@ -525,19 +525,19 @@ text{ fill: cornflowerblue; stroke: royalblue; stroke-width: .5px; stroke-linejo
 	.mapboxgl-popup-close-button { display:none!important; }
 
 .flip-card {
-  /*background-color: transparent;
+  background-color: transparent;
   width: 120px;
   height: 120px;
-  border-radius:12px;*/
+  border-radius:12px;
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
 }
 
 /* This container is needed to position the front and back side */
 .flip-card-inner {
   position: relative;
-  /*width: 100%;
+  width: 100%;
   height: 100%;
-  text-align: center;*/
+  text-align: center;
   transition: transform 0.8s, opacity 0.2s!important;transform-style: preserve-3d;}
 
 .flip-card-front, .flip-card-back { position: absolute;width: 100%;height: 100%; transition: transform 0.8s, opacity 0.2s!important; transform-style: preserve-3d;}
