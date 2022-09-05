@@ -31,13 +31,13 @@
 					<ul style="display: flex;flex-direction: column;">
 						<li><a class="subheader">Account Information</a></li>
 						
-						<li><a class="waves-effect" onclick="if (user.address != '') {copyClip(user.address);}"><span id="myAdd" style="color:black!important;">👛&nbsp;&nbsp;&nbsp;&nbsp;My Wallet Address</span></a></li>
+						<li><a class="waves-effect" onclick="if (user.address != '') {copyClip(user.address);}"><span id="myAdd" style="color:black!important;">🏠&nbsp;&nbsp;&nbsp;&nbsp;My Wallet Address</span></a></li>
 						<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><span id="myETH" style="color:black!important;">🏦&nbsp;&nbsp;&nbsp;&nbsp;My ETH Balance</span><span style="margin-left:0;" id="myGas" style="color:black!important;"></span></a></li>
-						<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><span id="myURL" style="color:black!important;">🏠&nbsp;&nbsp;&nbsp;&nbsp;My OCUR Balance</span></a></li>
+						<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><span id="myURL" style="color:black!important;">👛&nbsp;&nbsp;&nbsp;&nbsp;My OCUR Balance</span></a></li>
 						<li><div style="margin-top:0;" class="divider"></div></li>
+						<li><a class="subheader">User Information</a></li>
 						<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><span id="myDomain" class="lighten-2" style="color:black!important;">💵&nbsp;&nbsp;&nbsp;&nbsp;My Local Balance</span></a></li>
-						<li><a class="waves-effect"><span id="myETH" style="color:black!important;">🗺️&nbsp;&nbsp;&nbsp;&nbsp;My Profile</span></a></li>
-						
+			<li><a id="dropdown-mapper" style="width:160px; display: flex;justify-content: space-between;" class="mobile-width waves-effect waves-light blue lighten-1 btn"><span style="font-weight:bold;">·</span><span>Profile</span>🏠</a></li>
 						<!--<i class="material-icons left">calculate</i>--></ul>
 				  <div class="action-bar"><br/><a id="dropdown-mapper" style="width:160px; display: flex;justify-content: space-between;" class="mobile-width waves-effect waves-light blue lighten-1 btn"><span style="font-weight:bold;">·</span><span>Profile</span>🏠</a><br/>
 					<a id="dropdown-mapper" style="width:160px; display: flex;justify-content: space-between;" class="mobile-width waves-effect waves-light blue lighten-1 btn"><span style="font-weight:bold;">·</span><span>Trade</span>💵</a></div></div></div></div>
