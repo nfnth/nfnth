@@ -29,14 +29,11 @@
 				<div class="head" style="display: flex;align-items: center;justify-content: center;"><a id="dropdown-mapper" style="width:160px; display: flex;justify-content: space-between;" class="mobile-width waves-effect waves-light blue lighten-1 btn" onclick="setup();"><span>Connect</span>🪙</a></div>
 				<div class="body" style="text-align:center;">
 					<ul style="display: flex;flex-direction: column;">
-						<li><a class="subheader">Deed Information</a></li>
-						
 						<li><a class="waves-effect" onclick="if (user.address != '') {copyClip(user.address);}"><span  style="color:black!important;">🏠&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="myAdd">My Wallet Address</span></a></li>
 						<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><span id="myETH" style="color:black!important;">🏦&nbsp;&nbsp;&nbsp;&nbsp;My ETH Balance</span><span style="margin-left:0;" id="myGas" style="color:black!important;"></span></a></li>
 						<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><span id="myURL" style="color:black!important;">🏣&nbsp;&nbsp;&nbsp;&nbsp;My OCUR Balance</span></a></li>
 						<li style="display:flex;justify-content:center;padding:12px;margin-top:8px;"><a id="dropdown-mapper" style="width:160px; display: flex;justify-content: space-between;" class="mobile-width waves-effect waves-light blue lighten-1 btn disabled"><span>Trade</span>💵</a></li>
 						<li><div style="margin-top:0;" class="divider"></div></li>
-						<li><a class="subheader">Domain Information</a></li>
 						<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><span id="myDomain" class="lighten-2" style="color:black!important;">🏤&nbsp;&nbsp;&nbsp;&nbsp;My Local Balance</span></a></li>
 						<li style="margin-top:12px; display: flex;align-items: center;justify-content: center;margin-bottom:16px;"><select id="domain-template" class="sider" onchange="domainSelect();"><option selected="selected" value="void">No domain selected</option><option value="tactician.us">tactician.us (demo)</option></select></li>
 						<li style="display:flex;justify-content:center;padding:12px;"><a id="dropdown-mapper" style="width:160px; display: flex;justify-content: space-between;margin-top:8px;" class="mobile-width waves-effect waves-light blue lighten-1 btn disabled"><span>POSt</span>📮</a></li>
