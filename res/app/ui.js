@@ -90,10 +90,10 @@ function addListDetail(i) { //pullOwner(i); pullPrice(i);
 function addListDeed(i) { var embedDisplay = "";
 	//if (domains[i].core.animation_url != null) {  } else { 
 		embedDisplay = "<img  style='width:80%;' src='" + domains[i].core.image_url + "' />"; // }
-		embedDisplay = '<video id="vid" style="width:80%;"  controls loop poster="' + domains[i].core.image_url + '"><source src="' + domains[i].core.animation_url + '" type="video/mp4"></video>';
+		//embedDisplay = '<video id="vid" style="width:80%;"  controls loop poster="' + domains[i].core.image_url + '"><source src="' + domains[i].core.animation_url + '" type="video/mp4"></video>';
 //function change(a){ document.getElementById('vid').poster=a; document.getElementById('vid').src=a.replace('res/raw/','res/media/').replace('.jpg','.mp4'); }
 		
-	return "<div style='text-align:center;'><p><span style='font-weight:16px'>" + domains[i].name + "</span>&nbsp;&nbsp; · &nbsp;&nbsp;<a onclick='openInNewTab(\"" + domains[i].core.external_link + "\");'>" + domains[i].core.name + "</a></p></div><br/><div id='emDisp' style='text-align:center;'>" + embedDisplay + "</div></br><p>" + domains[i].core.description + "</p><a onclick='openInNewTab(\"" + domains[i].ref + "\");'>Read more...</a><br/><br/><div style='text-align:center;'><img style='max-width:80%;' src='" + domains[i].img + "' /></div><br/>";   }
+	return "<div style='text-align:center;'><p><a style='font-weight:16px' onclick='openInNewTab(\"" + domains[i].core.external_link + "\");'>" + domains[i].core.name + "</span>&nbsp;&nbsp; · &nbsp;&nbsp;<a onclick='openInNewTab(\"" + domains[i].core.external_link + "\");'>" + domains[i].core.collection.name + "</a></p></div><br/><div id='emDisp' style='text-align:center;'>" + embedDisplay + "</div></br><p>" + domains[i].core.description + "</p>";   }
 	
 function addUserDeed(i) { var embedDisplay = "";
 	embedDisplay = "<img  style='width:80%;' src='" + domainMd.image + "' />"; // }
