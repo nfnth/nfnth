@@ -300,11 +300,11 @@ var shiner = setInterval(function(){
 		$('.flip-card-inner').addClass("card-background"); $(".card-wrap").css("margin-top","64px");
 		clearInterval(shiner); } }, 20);;
 
-function shakeCard(i) {
+function shakeCard(i) { 
 	var dCard = Math.floor(Math.random() * (domains.length-1+1)); 
 	 imags[i] = domains[dCard].core.image_url; $("#card-name"+i).html(domains[dCard].core.name); 
 	 vmags[i] = domains[dCard].core.image_url; 
-	fmags[i] = domains[dCard].core.permalink;
+	fmags[i] = domains[dCard].core.permalink; $("#flip"+i).click(function(){ openInNewTab(fmags[i]); });
 bmags[i] = getBack(domains[dCard].core.collection.slug);}
 
 function setCards() { shakeCard(0); shakeCard(1); 
@@ -325,7 +325,7 @@ var cardSwitch = true; var stationary = true;
 function flipCard() { if(stationary) { stationary = false; } else { //stationary = true;
 	$('.flip-card-inner').css("transform","rotateY(180deg)"); $('.flip-card-front').css("transform","rotateY(180deg)"); $('.text').removeClass("backer"); } }
 	
-function setCard(id) { $("#slide-"+id).html(slideCode.replace("XXXX",id).replace("XxX",id)); shakeCard(id);
+function setCard(id) { $("#slide-"+id).html(slideCode.replace("XXXX",id).replace("XXX",id)); shakeCard(id);
 		      $("#flip"+id).click(function(){ openInNewTab(fmags[id]); });
 $('.slider .item').each(function(i){ if (i == id) {
 	
