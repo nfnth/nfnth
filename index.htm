@@ -145,8 +145,8 @@
 
 <script>
 var introCard = true;
-function changeView() { if (introCard) { $("#gear-pic").removeClass('image-rotate'); $("#gear-pic").removeClass('image-rotate'); showView('mapper'); introCard = false; }
-		       else { $("#gear-pic").addClass('image-rotate'); $("#gear-pic").addClass('image-rotate'); showView('slider'); introCard = true; }
+function changeView() { if (introCard) { $("#gear-pic").removeClass('image-rotate'); $("#gear-pic2").removeClass('image-rotate'); showView('mapper'); introCard = false; }
+		       else { $("#gear-pic").addClass('image-rotate'); $("#gear-pic2").addClass('image-rotate'); showView('slider'); introCard = true; }
 	
 }
 function showView(view) {  hideView(); $('#'+view).show(); 
