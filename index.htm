@@ -12,10 +12,7 @@
 
 <!-- resources -->
 <script src="res/app/all.js"></script><link rel="stylesheet" href="res/app/all.css"></script>
-<script src="res/app/md.js"></script><script src="res/app/open.js"></script><script src="res/app/wallet.js"></script><script src="res/app/map.js"></script><script src="res/app/ui.js"></script><script src="res/app/card.js"></script><script src="https://cdn.jsdelivr.net/gh/ushelp/EasyQRCodeJS/dist/easy.qrcode.min.js" ></script>
- 
-<!--<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">--></head>
+<script src="res/app/md.js"></script><script src="res/app/open.js"></script><script src="res/app/wallet.js"></script><script src="res/app/map.js"></script><script src="res/app/ui.js"></script><script src="res/app/card.js"></script><script src="https://cdn.jsdelivr.net/gh/ushelp/EasyQRCodeJS/dist/easy.qrcode.min.js" ></script></head>
 
 <body style="overflow:overlay; background-color:whitesmoke;transition: background-color 1s linear;" >
 
@@ -29,14 +26,14 @@
 				<div class="head" style="display: flex;align-items: center;justify-content: center;"><a id="dropdown-mapper" style="width:160px; display: flex;justify-content: space-between;" class="mobile-width waves-effect waves-light blue lighten-1 btn" onclick="setup();"><span>Connect</span>👛</a></div>
 				<div class="body" style="text-align:center;">
 					<ul style="display: flex;flex-direction: column;">
-						<li><a class="waves-effect" onclick="if (user.address != '') {copyClip(user.address);}"><span  style="color:black!important;">🏦&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="myAdd" style="color:black!important;">My Address</span></a></li>
-						<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><span  style="color:black!important;">🏪&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="myETH" style="color:black!important;">My ETH</span><span style="margin-left:0;" id="myGas" style="color:black!important;"></span></a></li>
-						<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><span  style="color:black!important;">🏣&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="myURL" style="color:black!important;">My OCUR</span></a></li>
+						<li><a class="waves-effect" onclick="if (user.address != '') {copyClip(user.address);}"><span  style="color:black!important;">🏠&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="myAdd" style="color:black!important;">My Address</span></a></li>
+						<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><span  style="color:black!important;">🏦&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="myETH" style="color:black!important;">My ETH</span><span style="margin-left:0;" id="myGas" style="color:black!important;"></span></a></li>
+						<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><span  style="color:black!important;">🏪&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="myURL" style="color:black!important;">My OCUR</span></a></li>
 						<li style="display:flex;justify-content:center;padding:12px;margin-top:8px;"><a id="dropdown-mapper" style="width:160px; display: flex;justify-content: space-between;" class="mobile-width waves-effect waves-light blue lighten-1 btn disabled"><span>Trade</span>🪙</a></li>
 						<li><div style="margin-top:0;" class="divider"></div></li>
-						<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><span  class="lighten-2" style="color:black!important;">🏠&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="myDomain" style="color:black!important;">My Balance</span></a></li>
+						<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><span  class="lighten-2" style="color:black!important;">🏣&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="myDomain" style="color:black!important;">My Balance</span></a></li>
 						<li style="margin-top:12px; display: flex;align-items: center;justify-content: center;margin-bottom:16px;"><select id="domain-template" class="sider" onchange="domainSelect();"><option selected="selected" value="void">No domain selected</option><option value="tactician.us">tactician.us (demo)</option></select></li>
-						<li style="display:flex;justify-content:center;padding:12px;"><a id="dropdown-mapper" style="width:160px; display: flex;justify-content: space-between;margin-top:8px;" class="mobile-width waves-effect waves-light blue lighten-1 btn disabled"><span>POSt</span>📮</a></li>
+						<li style="display:flex;justify-content:center;padding:12px;"><a id="dropdown-mapper" style="width:160px; display: flex;justify-content: space-between;margin-top:8px;" class="mobile-width waves-effect waves-light blue lighten-1 btn disabled"><span>POST</span>📮</a></li>
 						<!--<i class="material-icons left">calculate</i>--></ul></div></div></div>
     		
 		<div style="width:64px;margin-left:16px;"><a><div style="width:64px;"><img class="image image-rotate gear-image" id="gear-pic" style="opacity:0.6; height: 48px;position:absolute; margin: 4px; cursor:pointer;right:12px;top:4px;" onclick="changeView();"/><img id="gear-pic2" class="image image-rotate gear-image" style="opacity:0.6; height: 48px;position:absolute;cursor:pointer;margin:4px;right:12px;top:4px;" onclick="changeView();"/></div></a></div></div></nav>
@@ -50,10 +47,10 @@
 				  <p>
 					<ul style="display: flex;flex-direction: column;">
 						<li><a class="subheader">Guides</a></li>
-						<li><a onclick="showDoc('deed');" class="waves-effect" style="display:flex;padding-left:0;"><span>🧭</span>&nbsp;&nbsp;&nbsp;&nbsp;Use Deed Domain</a></li>
-					<li><a onclick="showDoc('README');" class="waves-effect" style="display:flex;padding-left:0;"><span>📟</span>&nbsp;&nbsp;&nbsp;&nbsp;How to Build dApp</a></li>
-					<li><a onclick="showDoc('ocur');" class="waves-effect" style="display:flex;padding-left:0;"><span>📦</span>&nbsp;&nbsp;&nbsp;&nbsp;Trade OCUR</a></li>
-					<li><a onclick="showDoc('PLANME');" class="waves-effect" style="display:flex;padding-left:0;"><span>🏝️</span>&nbsp;&nbsp;&nbsp;&nbsp;About NfNth</a></li>
+						<li><a onclick="showDoc('deed');" class="waves-effect" style="display:flex;padding-left:0;"><div style="margin:12px;padding:12px;">🧭</div>&nbsp;&nbsp;&nbsp;&nbsp;Use Deed Domain</a></li>
+					<li><a onclick="showDoc('README');" class="waves-effect" style="display:flex;padding-left:0;"><div style="margin:12px;padding:12px;">📟</div>&nbsp;&nbsp;&nbsp;&nbsp;How to Build dApp</a></li>
+					<li><a onclick="showDoc('ocur');" class="waves-effect" style="display:flex;padding-left:0;"><div style="margin:12px;padding:12px;">📦</div>&nbsp;&nbsp;&nbsp;&nbsp;Trade OCUR</a></li>
+					<li><a onclick="showDoc('PLANME');" class="waves-effect" style="display:flex;padding-left:0;"><div style="margin:12px;padding:12px;">🏝️</div>&nbsp;&nbsp;&nbsp;&nbsp;About NfNth</a></li>
 						<li><div style="margin-top:0;" class="divider"></div></li>
 					<li><a class="subheader">Settings</a></li>
 					<li><a onclick="showDoc('README');" class="waves-effect" style="display:flex;padding-left:0;"> <div class="quick hoverable z-depth-1">📍</div>My Location</a></li>
