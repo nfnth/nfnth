@@ -1,5 +1,5 @@
 var complete; var reset = false; var first = true; var nfnth = false;
-function showNfNth() { if (nfnth) {nfnth = false;} else {nfnth = true;}  }
+function showNfNth() { if (nfnth) {nfnth = false;} else {nfnth = true;} showList('open'); }
 function showList(area) {  $("#registry").html(''); $("#registry").hide(); 
     switch (area) {
         case "domain": $("#registry-domain").html(''); openDomain();
