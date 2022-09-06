@@ -304,7 +304,7 @@ var shiner = setInterval(function(){
 
 function shakeCard(i) {
 	var dCard = Math.floor(Math.random() * (domains.length-1+1)); 
-	 imags[i] = domains[dCard].core.collection.image_url; $("#card-name"+i).html(domains[dCard].name); 
+	 imags[i] = domains[dCard].core.image_url; $("#card-name"+i).html(domains[dCard].name); 
 	 vmags[i] = domains[dCard].core.image_url; 
 	fmags[i] = getFront(domains[dCard].core.collection.slug);
 bmags[i] = getBack(domains[dCard].core.collection.slug);}
