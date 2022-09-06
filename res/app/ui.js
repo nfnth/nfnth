@@ -76,7 +76,8 @@ function onLand(i) { domains[i].item = true; $("#l"+i).css('color','beige'); $("
 	 $("#lm"+i).css('color','beige'); $("#lm"+i).addClass('amber'); $("#lm"+i).removeClass('grey'); }
 function offLand(i) { domains[i].item = false; $("#l"+i).css('color','ghostwhite'); $("#l"+i).addClass('grey'); $("#l"+i).removeClass('amber');
 	$("#lm"+i).css('color','ghostwhite'); $("#lm"+i).addClass('grey'); $("#lm"+i).removeClass('amber'); }
-	
+
+function buildDoc(i) { setDialog(addListDetail(i)); }
 function addListDetail(i) { //pullOwner(i); pullPrice(i);
 	pullOwner(i);
 	var card = "";
