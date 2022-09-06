@@ -114,6 +114,16 @@ function getColor(value) {
 	case 'tact': return 1; case 'patric': return 2; case 'elect': return 3; case 'sect': return 4; case 'civilia': return 5; case 'logicia': return 6; case 'clini': return 7; case 'librar': return 8; case 'agrar': return 9; case 'technic': return 10; case 'utili': return 11; case 'custo': return 12;
         default: return 'blue_swords.png'; }}
 
+function getFront(value) {
+    switch(value) {
+	case 'tact': return 'indianred'; case 'patric': return 'orange'; case 'elect': return 'yellow'; case 'sect': return 'green'; case 'civilia': return 'royalblue'; case 'logicia': return 'purple'; case 'clini': return 'pink'; case 'librar': return 'tan'; case 'agrar': return 'brown'; case 'technic': return 'white'; case 'utili': return 'gray'; case 'custo': return 'darkslategrey';
+        default: return 'blue_swords.png'; }}
+
+function getBack(value) {
+    switch(value) {
+	case 'tact': return 'darkred'; case 'patric': return 'darkorange'; case 'elect': return 'darkyellow'; case 'sect': return 'darkgreen'; case 'civilia': return 'darkblue'; case 'logicia': return 'magenta'; case 'clini': return 'darkpink'; case 'librar': return 'brown'; case 'agrar': return 'darkbrown'; case 'technic': return 'ghostwhite'; case 'utili': return 'darkgrey'; case 'custo': return 'black';
+        default: return 'blue_swords.png'; }}
+
 function openAZ(a, b) { if (a.core.name === b.core.name) {  return 0; } else { return (a.core.name < b.core.name) ? -1 : 1; } }
 function openZA(a, b) { if (a.core.name === b.core.name) {  return 0; } else { return (a.core.name > b.core.name) ? -1 : 1; } }
 function openaz(a, b) { if (getColor(a.core.slug) === getColor(b.core.slug)) {  return 0; } else { return (getColor(a.core.slug) < getColor(b.core.slug)) ? -1 : 1; } }
