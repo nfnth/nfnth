@@ -321,7 +321,7 @@ $('.slider .item').each(function(i){
 function setCard(id) { $("#slide-"+id).html(slideCode.replace("XXXX",id)); shakeCard(id);
 $('.slider .item').each(function(i){ if (i == id) {
 	$(this).attr('id', 'slide-'+i);
- // $(this).prepend($('<div>', {class: 'blur', style: 'background-image: url(' + imags[i] + ');'}),$('<div>', {class: 'bg', style: 'background-image: url(' + imags[i] + ');'}))
+  //$(this).prepend($('<div>', {class: 'blur', style: 'background-image: url(' + imags[i] + ');'}),$('<div>', {class: 'bg', style: 'background-image: url(' + imags[i] + ');'}))
 	$(this).prepend($('<div>', {class: 'blur', style: 'background-color: darkblue;'}),$('<div>', {class: 'bg', style: 'background-color: royalblue;'}))
   if (vmags[i] != null) $(this).find('.block').css('background-image', 'url(' + vmags[i] + ')'); else $(this).find('.block').css('background-image', 'url(' + imags[i] + ')'); 
 	
