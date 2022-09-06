@@ -37,9 +37,6 @@
 						<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><span id="myDomain" class="lighten-2" style="color:black!important;">🏤&nbsp;&nbsp;&nbsp;&nbsp;My Local Balance</span></a></li>
 						<li style="margin-top:12px; display: flex;align-items: center;justify-content: center;margin-bottom:16px;"><select id="domain-template" class="sider" onchange="domainSelect();"><option selected="selected" value="void">No domain selected</option><option value="tactician.us">tactician.us (demo)</option></select></li>
 						<li style="display:flex;justify-content:center;padding:12px;"><a id="dropdown-mapper" style="width:160px; display: flex;justify-content: space-between;margin-top:8px;" class="mobile-width waves-effect waves-light blue lighten-1 btn disabled"><span>POSt</span>📮</a></li>
-			
-			
-						
 						<!--<i class="material-icons left">calculate</i>--></ul></div></div></div>
     		
 		<div style="width:64px;margin-left:16px;"><a><div style="width:64px;"><img class="image image-rotate gear-image" id="gear-pic" style="opacity:0.6; height: 48px;position:absolute; margin: 4px; cursor:pointer;right:12px;top:4px;" onclick="showView('mapper');"/><img id="gear-pic2" class="image image-rotate gear-image" style="opacity:0.6; height: 48px;position:absolute;cursor:pointer;margin:4px;right:12px;top:4px;" onclick="showView('mapper');"/></div></a></div></div></nav>
@@ -60,8 +57,7 @@
 						<li><div style="margin-top:0;" class="divider"></div></li>
 					<li><a class="subheader">Settings</a></li>
 					<li><div style="display:flex;padding-left:0;" class="quick hoverable z-depth-1">🧭</div>My Location</li>
-						<li><div class="quick hoverable z-depth-1">📦</div></li></ul></p>
-				  </div></div></div></div></li>
+						<li><div class="quick hoverable z-depth-1">📦</div></li></ul></p></div></div></div></div></li>
 				
 	<!-- tabs -->
 	<li style="height:100%;"><ul id="token-tabs" class="tabs tabs-fixed-width z-depth-1 deed">
@@ -221,7 +217,7 @@ function showPanel() {
 	
 	//var leaf = Math.floor(Math.random() * (16 - 1 + 1)) + 1; document.getElementById('leafy').src = "res/img/leaf/leaf" + leaf.toString() + ".png"; 
 				}
-				
+		
 function copyClip(text) { navigator.clipboard.writeText(text); M.toast({html: 'Address copied.'}); }
 function openInNewTab(url) { window.open(url, '_blank').focus(); } //window.location.href = url;
 
@@ -278,11 +274,6 @@ var height = positionInfo.height; var width = positionInfo.width;
         onOpenDialog : function( instance ) { path.stop().animate( { 'path' : steps.open }, 400, mina.easeinout );},
         onCloseDialog : function( instance ) { path.stop().animate( { 'path' : steps.close }, 400, mina.easeinout );	}	} ); dlg2.toggle(dlg2); }
 	
-	
-	
-	
-	
-	
 var mouse = {X   : 0,Y   : 0,CX  : 0,CY  : 0 },
     block = {X   : mouse.X,Y   : mouse.Y,CX  : mouse.CX,CY  : mouse.CY},
     vmags = [ '', '']
@@ -330,8 +321,12 @@ $('.slider .item').each(function(i){
 function setCard(id) { $("#slide-"+id).html(slideCode.replace("XXXX",id)); shakeCard(id);
 $('.slider .item').each(function(i){ if (i == id) {
 	$(this).attr('id', 'slide-'+i);
-  $(this).prepend($('<div>', {class: 'blur', style: 'background-image: url(' + imags[i] + ');'}),$('<div>', {class: 'bg', style: 'background-image: url(' + imags[i] + ');'}))
-  if (vmags[i] != null) $(this).find('.block').css('background-image', 'url(' + vmags[i] + ')'); else $(this).find('.block').css('background-image', 'url(' + imags[i] + ')'); } })}
+ // $(this).prepend($('<div>', {class: 'blur', style: 'background-image: url(' + imags[i] + ');'}),$('<div>', {class: 'bg', style: 'background-image: url(' + imags[i] + ');'}))
+//  if (vmags[i] != null) $(this).find('.block').css('background-image', 'url(' + vmags[i] + ')'); else $(this).find('.block').css('background-image', 'url(' + imags[i] + ')'); 
+	$(this).prepend($('<div>', {class: 'blur', style: 'background-color: indianred;'}),$('<div>', {class: 'bg', style: 'background-image: url(' + imags[i] + ');'}))
+  if (vmags[i] != null) $(this).find('.block').css('background-color: indianred;'); else $(this).find('.block').css('background-color', 'royalblue'); 
+
+} })}
 var switcher = false;
 function changeCard() { 
 	//$("#card-vid").html('<source src="https://openseauserdata.com/files/83d939c2d34d81ec15b55d206284e7f2.mp4" type="video/mp4">');
@@ -366,13 +361,9 @@ map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/mapbox/' + map
 
 var coordinates; var artFlag = false; var tempMark = ""; var tempMap = [];
 map.on('load', function (event) { showIntroMap();
-				 
-//map.addLayer({'id': 'sky','type': 'sky','paint': {'sky-type': 'atmosphere','sky-atmosphere-sun': [0.0, 0.0],'sky-atmosphere-sun-intensity': 15}});
-//map.setFog({'range': [-1, 1.5],'color': 'white','horizon-blend': 0.1});
 						 
 	map.on('click', function(e) { coordinates = e.lngLat; if(artFlag) { addArt(); artFlag = false; } $('.fixed-action-btn').floatingActionButton('close'); }); });
-	
-	
+
 $('.setter').click(function () {
   $(this).parent().toggleClass('expand');     $('.extra').toggleClass('removed'); $('.extra').toggleClass('added');  });
 
