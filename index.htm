@@ -82,12 +82,12 @@
     <div id="item0" class="item" >
       <div class="block flip-card flip-card-inner" style="display:flex;align-items:center;">
 		  <div class="flip-card-front backer card-wrap" style="height:120px;background-color:whitesmoke;color:black;opacity:0.75;transition:all 0.5s!important;"><span class="circleLight"></span><div  class="text" style="display:flex; flex-direction:column;align-items:center;">
-			  <div style="display:flex;align-items:center;"><img src="res/img/seal3.png" style="width:48px; height:48px;" /><span style="margin-top:12px;margin-left:12px;color:indianred;font-weight:bold;">UR.Land </span><span style="margin-top:12px;margin-left:24px;font-weight:bold;">dee.d/omain</span></div><p  id="card-name0">I`m cool card</p></div></div>  
+			  <div style="display:flex;align-items:center;"><img src="res/img/seal3.png" style="width:48px; height:48px;" /><span style="margin-top:12px;margin-left:12px;color:indianred;font-weight:bold;font-size:16px;">UR.Land </span><span style="margin-top:12px;margin-left:24px;font-weight:bold;">dee.d/omain</span></div><p  id="card-name0">I`m cool card</p></div></div>  
 		  <div class="flip-card-back backer"  ><span class="circleLight"></span><div class="text backer" style="transform: rotateY(180deg);"><h3>OCUR.io</h3><p>More card</p></div></div></div></div>
     <div id="item1" class="item">
       <div class="block flip-card flip-card-inner" style="display:flex;align-items:center;" >
 		  <div class="flip-card-front backer card-wrap" style="height:120px;background-color:whitesmoke;color:black;opacity:0.75;transition:all 0.5s!important;"><span class="circleLight"></span><div  class="text" style="display:flex; flex-direction:column;align-items:center;">
-			  <div style="display:flex;align-items:center;"><img src="res/img/seal3.png" style="width:48px; height:48px;" /><span style="margin-top:12px;margin-left:12px;">UR.Land   dee.d/omain</span></div><p  id="card-name1">I`m cool card</p></div></div>  
+			  <div style="display:flex;align-items:center;"><img src="res/img/seal3.png" style="width:48px; height:48px;" /><span style="margin-top:12px;margin-left:12px;color:indianred;font-weight:bold;font-size:16px;">UR.Land </span><span style="margin-top:12px;margin-left:24px;font-weight:bold;">dee.d/omain</span></div><p  id="card-name1">I`m cool card</p></div></div>  
 		  <div class="flip-card-back backer"  ><span class="circleLight"></span><div class="text backer" style="transform: rotateY(180deg);"><h3>OCUR.io</h3><p>More card</p></div></div></div></div>
           
   <div class="navigations">
@@ -326,8 +326,9 @@ function flipCard() { if(stationary) { stationary = false; } else { //stationary
 	$('.flip-card-inner').css("transform","rotateY(180deg)"); $('.flip-card-front').css("transform","rotateY(180deg)"); $('.text').removeClass("backer"); } }
 	
 function setCard(id) { $("#slide-"+id).html(slideCode.replace("XXXX",id)); shakeCard(id);
+		      $("#item"+id).click(function(){ openInNewTab(fmags[id]); });
 $('.slider .item').each(function(i){ if (i == id) {
-	$(this).click(function(){ openInNewTab(fmags[i]); });
+	
 	$(this).attr('id', 'slide-'+i);
   $(this).prepend($('<div>', {class: 'blur', style: 'background-image: url(' + imags[i] + ');'}),$('<div>', {class: 'bg', style: 'background-image: url(' + imags[i] + ');'}))
 	//$(this).prepend($('<div>', {class: 'blur', style: 'background-color:' + bmags[i] + ';'}),$('<div>', {class: 'bg', style: 'background-color:' + fmags[i] + ';'}))
