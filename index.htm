@@ -54,13 +54,13 @@
 				  <p>
 					<ul style="display: flex;flex-direction: column;">
 						<li><a class="subheader">Guides</a></li>
-						<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect" style="display:flex;padding-left:0;"> <div class="quick hoverable z-depth-1">🧭</div>&nbsp;&nbsp;&nbsp;&nbsp;Use Deed Domain</a></li>
-					<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect" style="display:flex;padding-left:0;"> <div class="quick hoverable z-depth-1">📟</div>&nbsp;&nbsp;&nbsp;&nbsp;How to Build dApp</a></li>
+						<li><a onclick="showDoc('deed');" class="waves-effect" style="display:flex;padding-left:0;"> <div class="quick hoverable z-depth-1">🧭</div>&nbsp;&nbsp;&nbsp;&nbsp;Use Deed Domain</a></li>
+					<li><a onclick="showDoc('README');" class="waves-effect" style="display:flex;padding-left:0;"> <div class="quick hoverable z-depth-1">📟</div>&nbsp;&nbsp;&nbsp;&nbsp;How to Build dApp</a></li>
 					<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect" style="display:flex;padding-left:0;"> <div class="quick hoverable z-depth-1">📦</div>&nbsp;&nbsp;&nbsp;&nbsp;Trade OCUR</a></li>
 					<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect" style="display:flex;padding-left:0;"> <div class="quick hoverable z-depth-1">🏝️</div>&nbsp;&nbsp;&nbsp;&nbsp;About NfNth</a></li>
 						<li><div style="margin-top:0;" class="divider"></div></li>
 					<li><a class="subheader">Settings</a></li>
-					<li><div class="quick hoverable z-depth-1">🧭</div></li>
+					<li><div class="quick hoverable z-depth-1">🧭</div>My Location</li>
 						<li><div class="quick hoverable z-depth-1">📦</div></li></ul></p>
 				  </div></div></div></div></li>
 				
@@ -381,12 +381,12 @@ if ($(window).width() < 700) { $('.material-icons').removeClass('left'); }
 </script>
 <style>
 	
-.quick { background-color: green; border:1px solid whitesmoke; padding: 12px; border-radius: 50%; margin: 12px;     width: 24px;
+.quick { background-color: beige; border:1px solid whitesmoke; padding: 12px; border-radius: 50%; margin: 12px;     width: 24px;
     height: 24px;
     display: flex;
     justify-content: center;
     align-items: center;}
-.quick:hover { background-color: yellowgreen; border:1px solid darkgreen; }
+.quick:hover { background-color: indianred; border:1px solid darkred; }
 .extra {  transition: 0.2s; opacity: 0;     background-color: yellowgreen;
     border-radius: 16px; color:white; font-weight:bold;transform: rotate(0deg)!important;padding-left: 8px;padding-right: 8px;
     cursor: pointer; border: 1px solid grey;     height: 48px;display: flex;
