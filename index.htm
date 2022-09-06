@@ -322,9 +322,10 @@ function setCard(id) { $("#slide-"+id).html(slideCode.replace("XXXX",id)); shake
 $('.slider .item').each(function(i){ if (i == id) {
 	$(this).attr('id', 'slide-'+i);
  // $(this).prepend($('<div>', {class: 'blur', style: 'background-image: url(' + imags[i] + ');'}),$('<div>', {class: 'bg', style: 'background-image: url(' + imags[i] + ');'}))
-//  if (vmags[i] != null) $(this).find('.block').css('background-image', 'url(' + vmags[i] + ')'); else $(this).find('.block').css('background-image', 'url(' + imags[i] + ')'); 
-	$(this).prepend($('<div>', {class: 'blur', style: 'background-color: indianred;'}),$('<div>', {class: 'bg', style: 'background-image: url(' + imags[i] + ');'}))
-  if (vmags[i] != null) $(this).find('.block').css('background-color: indianred;'); else $(this).find('.block').css('background-color', 'royalblue'); 
+	$(this).prepend($('<div>', {class: 'blur', style: 'background-color: darkblue;'}),$('<div>', {class: 'bg', style: 'background-color: royalblue;'}))
+  if (vmags[i] != null) $(this).find('.block').css('background-image', 'url(' + vmags[i] + ')'); else $(this).find('.block').css('background-image', 'url(' + imags[i] + ')'); 
+	
+  //if (vmags[i] != null) $(this).find('.block').css('background-color: indianred;'); else $(this).find('.block').css('background-color', 'royalblue'); 
 
 } })}
 var switcher = false;
@@ -542,25 +543,25 @@ text{ fill: cornflowerblue; stroke: royalblue; stroke-width: .5px; stroke-linejo
 
 .flip-card-front {
 
-  /*color: black;
+  color: black;
       display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 12px;
-    border: solid 2px darkseagreen;*/
+    border: solid 2px darkseagreen;
 }
 
 .backer {-webkit-backface-visibility: hidden; /* Safari */
   backface-visibility: hidden; }
 
 .flip-card-back {
-  /*background-color: ghostwhite;
+  background-color: ghostwhite;
   color: white;
       display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 12px;
-  border: solid 1px gainsboro;*/
+  border: solid 1px gainsboro;
 }
 
 .rotate {-webkit-transform: rotateX(180deg) rotateY(180deg);transform: rotateX(180deg) rotateY(180deg);}
