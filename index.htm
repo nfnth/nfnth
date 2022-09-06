@@ -80,12 +80,12 @@
 <div id="slider" class="slider content loader pane scale-transition scale-out">
   <div class="items-group">
     <div id="item0" class="item" >
-      <div class="block flip-card flip-card-inner" style="display:flex;align-items:center;" onclick="flipCard();">
+      <div class="block flip-card flip-card-inner" style="display:flex;align-items:center;">
 		  <div class="flip-card-front backer card-wrap" style="height:120px;background-color:whitesmoke;color:black;opacity:0.75;transition:all 0.5s!important;"><span class="circleLight"></span><div  class="text" style="display:flex; flex-direction:column;align-items:center;">
 			  <div style="display:flex;align-items:center;"><img src="res/img/seal3.png" style="width:48px; height:48px;" /><span style="margin-top:12px;margin-left:12px;color:indianred;">UR.Land  </span><span style="margin-top:12px;margin-left:24px;font-weight:bold;">dee.d/omain</span></div><p  id="card-name0">I`m cool card</p></div></div>  
 		  <div class="flip-card-back backer"  ><span class="circleLight"></span><div class="text backer" style="transform: rotateY(180deg);"><h3>OCUR.io</h3><p>More card</p></div></div></div></div>
     <div id="item1" class="item">
-      <div class="block flip-card flip-card-inner" style="display:flex;align-items:center;" onclick="flipCard();">
+      <div class="block flip-card flip-card-inner" style="display:flex;align-items:center;" >
 		  <div class="flip-card-front backer card-wrap" style="height:120px;background-color:whitesmoke;color:black;opacity:0.75;transition:all 0.5s!important;"><span class="circleLight"></span><div  class="text" style="display:flex; flex-direction:column;align-items:center;">
 			  <div style="display:flex;align-items:center;"><img src="res/img/seal3.png" style="width:48px; height:48px;" /><span style="margin-top:12px;margin-left:12px;">UR.Land   dee.d/omain</span></div><p  id="card-name1">I`m cool card</p></div></div>  
 		  <div class="flip-card-back backer"  ><span class="circleLight"></span><div class="text backer" style="transform: rotateY(180deg);"><h3>OCUR.io</h3><p>More card</p></div></div></div></div>
@@ -170,9 +170,7 @@ function hideView() { $('.modal').modal('close'); window.scrollTo(0, 0);
 	var slideCode = '<div class="block flip-card flip-card-inner" style="display:flex;align-items:center;" onclick="flipCard();"><div class="flip-card-front backer card-wrap" style="height:120px;background-color:whitesmoke;color:black;opacity:0.75;transition:all 0.5s!important;"><span class="circleLight"></span><div class="text" style="display:flex; flex-direction:column;align-items:center;"><div style="display:flex;align-items:center;"><img src="res/img/seal3.png" style="width:48px; height:48px;" /><span style="margin-top:12px;margin-left:12px;">OCUR.io</span></div><p  id="card-nameXXXX">I`m cool card</p></div></div>  <div class="flip-card-back backer"  ><span class="circleLight"></span><div class="text backer" style="transform: rotateY(180deg);"><h3>OCUR.io</h3><p>More card</p></div></div></div>';
 	var cardCode = '<div class="flip-card cardy"  ><div class="flip-card-inner" style="cursor:pointer;"><div class="flip-card-front z-depth-2" onclick="flipCard();"><img  src="XXXX" alt="Avatar" style="width:48px;height:48px;"></div><div class="flip-card-back z-depth-2" ><div id="tactb" style="opacity:0.75; display: flex;align-items: center;position: absolute;top: 4px;left: 4px;"><span id="tact1" style="font-size: 24px;margin-right: 8px;font-weight: bold;"></span><img style="cursor:pointer;" id="tacta" width="24" height="24" src="res/img/card/heart.png"/></div><div id="cardContent" style="cursor:pointer; color: dimgrey;font-size: 16px;font-weight: bold;font-family: \'Roboto\', sans-serif;" onclick="showDoc(\'tact/YYYY\');">📚 READ...</div><div id="tact2" class="rotate" style="opacity:0.75; display: flex;align-items: center;position: absolute;bottom: 4px;right: 4px;"></div></div></div>';
 
-var cardSwitch = true; var stationary = true;
-function flipCard() { if(stationary) { stationary = false; } else { //stationary = true;
-	$('.flip-card-inner').css("transform","rotateY(180deg)"); $('.flip-card-front').css("transform","rotateY(180deg)"); $('.text').removeClass("backer"); } }
+
 
 var pageNotFound = true; var namer; var pageSet = false; var cardNotFound = true;
 function setPage() { if (!(pageSet)) { pageSet = true; var page = window.location.href.replace('https://','').replace('/','').replace('#','').replace('!','');
@@ -306,7 +304,7 @@ function shakeCard(i) {
 	var dCard = Math.floor(Math.random() * (domains.length-1+1)); 
 	 imags[i] = domains[dCard].core.image_url; $("#card-name"+i).html(domains[dCard].core.name); 
 	 vmags[i] = domains[dCard].core.image_url; 
-	fmags[i] = getFront(domains[dCard].core.collection.slug);
+	fmags[i] = domain[dCard].core.permalink;
 bmags[i] = getBack(domains[dCard].core.collection.slug);}
 
 function setCards() { shakeCard(0); shakeCard(1); 
@@ -323,8 +321,13 @@ $('.slider .item').each(function(i){
       //cSlide.addClass('active');cSlide.next().addClass('next');cSlide.prev().addClass('prev');}))
       })
 }
+var cardSwitch = true; var stationary = true;
+function flipCard() { if(stationary) { stationary = false; } else { //stationary = true;
+	$('.flip-card-inner').css("transform","rotateY(180deg)"); $('.flip-card-front').css("transform","rotateY(180deg)"); $('.text').removeClass("backer"); } }
+	
 function setCard(id) { $("#slide-"+id).html(slideCode.replace("XXXX",id)); shakeCard(id);
 $('.slider .item').each(function(i){ if (i == id) {
+	$(this).click(function(){ openInNewTab(fmags[i]); });
 	$(this).attr('id', 'slide-'+i);
   $(this).prepend($('<div>', {class: 'blur', style: 'background-image: url(' + imags[i] + ');'}),$('<div>', {class: 'bg', style: 'background-image: url(' + imags[i] + ');'}))
 	//$(this).prepend($('<div>', {class: 'blur', style: 'background-color:' + bmags[i] + ';'}),$('<div>', {class: 'bg', style: 'background-color:' + fmags[i] + ';'}))
