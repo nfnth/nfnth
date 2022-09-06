@@ -197,12 +197,13 @@ function setLand() { var emoji = Math.floor(Math.random() * (4-1+1)) + 1;
         case 4: update = "🏴🏴"; break; }
     document.title = "UR.Land · " + update; }
 	
-function setTitle() { var emoji = Math.floor(Math.random() * (4-1+1)) + 1;
+function setTitle() { var emoji = Math.floor(Math.random() * (5-1+1)) + 1;
     switch (emoji) {
-        case 1: update = "👟👟"; break;
-        case 2: update = "👟👟"; break;
-        case 3: update = "👟👟"; break;
-        case 4: update = "👟👟"; break; }
+	case 1: update = "👓👓"; break;
+        case 2: update = "🧤🧤"; break;
+        case 3: update = "👖👖"; break;
+        case 4: update = "🧦🧦"; break;
+        case 5: update = "👟👟"; break; }
     document.title = "OCUR.io · " + update; }
 
 function showFav() {
@@ -541,7 +542,7 @@ text{ fill: cornflowerblue; stroke: royalblue; stroke-width: .5px; stroke-linejo
 
 .flip-card-front, .flip-card-back { position: absolute;width: 100%;height: 100%; transition: transform 0.8s, opacity 0.2s!important; transform-style: preserve-3d;}
 
-.flip-card-front {
+.flip-card-frontx {
 
   color: black;
       display: flex;
@@ -554,7 +555,7 @@ text{ fill: cornflowerblue; stroke: royalblue; stroke-width: .5px; stroke-linejo
 .backer {-webkit-backface-visibility: hidden; /* Safari */
   backface-visibility: hidden; }
 
-.flip-card-back {
+.flip-card-backx {
   background-color: ghostwhite;
   color: white;
       display: flex;
