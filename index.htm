@@ -29,12 +29,12 @@
 				<div class="head" style="display: flex;align-items: center;justify-content: center;"><a id="dropdown-mapper" style="width:160px; display: flex;justify-content: space-between;" class="mobile-width waves-effect waves-light blue lighten-1 btn" onclick="setup();"><span>Connect</span>🪙</a></div>
 				<div class="body" style="text-align:center;">
 					<ul style="display: flex;flex-direction: column;">
-						<li><a class="waves-effect" onclick="if (user.address != '') {copyClip(user.address);}"><span  style="color:black!important;">🏠&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="myAdd" style="color:black!important;">My Address</span></a></li>
-						<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><span  style="color:black!important;">🏦&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="myETH" style="color:black!important;">My ETH</span><span style="margin-left:0;" id="myGas" style="color:black!important;"></span></a></li>
-						<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><span  style="color:black!important;">🏣&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="myURL" style="color:black!important;">My OCUR</span></a></li>
+						<li><a class="waves-effect" onclick="if (user.address != '') {copyClip(user.address);}"><span  style="color:black!important;">🏦&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="myAdd" style="color:black!important;">My Address</span></a></li>
+						<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><span  style="color:black!important;">🏣&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="myETH" style="color:black!important;">My ETH</span><span style="margin-left:0;" id="myGas" style="color:black!important;"></span></a></li>
+						<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><span  style="color:black!important;">🏤&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="myURL" style="color:black!important;">My OCUR</span></a></li>
 						<li style="display:flex;justify-content:center;padding:12px;margin-top:8px;"><a id="dropdown-mapper" style="width:160px; display: flex;justify-content: space-between;" class="mobile-width waves-effect waves-light blue lighten-1 btn disabled"><span>Trade</span>💵</a></li>
 						<li><div style="margin-top:0;" class="divider"></div></li>
-						<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><span  class="lighten-2" style="color:black!important;">🏤&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="myDomain" style="color:black!important;">My Balance</span></a></li>
+						<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><span  class="lighten-2" style="color:black!important;">🏠&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="myDomain" style="color:black!important;">My Balance</span></a></li>
 						<li style="margin-top:12px; display: flex;align-items: center;justify-content: center;margin-bottom:16px;"><select id="domain-template" class="sider" onchange="domainSelect();"><option selected="selected" value="void">No domain selected</option><option value="tactician.us">tactician.us (demo)</option></select></li>
 						<li style="display:flex;justify-content:center;padding:12px;"><a id="dropdown-mapper" style="width:160px; display: flex;justify-content: space-between;margin-top:8px;" class="mobile-width waves-effect waves-light blue lighten-1 btn disabled"><span>POSt</span>📮</a></li>
 						<!--<i class="material-icons left">calculate</i>--></ul></div></div></div>
@@ -82,7 +82,7 @@
     <div id="item0" class="item" >
       <div id="flip0" class="block flip-card flip-card-inner" style="display:flex;align-items:center;cursor:pointer;">
 		  <div class="flip-card-front backer card-wrap" style="height:120px;background-color:whitesmoke;color:black;opacity:0.75;transition:all 0.5s!important;"><span class="circleLight"></span><div  class="text" style="display:flex; flex-direction:column;align-items:center;">
-			  <div style="display:flex;align-items:center;"><img src="res/img/seal3.png" style="width:48px; height:48px;" /><span style="margin-top:12px;margin-left:12px;color:indianred;font-weight:bold;font-size:16px;">UR.Land </span><span style="margin-top:12px;margin-left:24px;font-weight:bold;">dee.d/omain</span></div><p  id="card-name0">I`m cool card</p></div></div>  
+			  <div style="display:flex;align-items:center;"><img src="res/img/seal3.png" style="width:48px; height:48px;" /><span style="margin-top:12px;margin-left:12px;color:indianred;font-weight:bold;font-size:16px;">UR.</span><span style="margin-top:12px;margin-left:12px;color:darkgoldenrod;font-weight:bold;font-size:16px;">Land </span><span style="margin-top:12px;margin-left:24px;font-weight:bold;">dee.d/omain</span></div><p  id="card-name0">I`m cool card</p></div></div>  
 		  <div class="flip-card-back backer"  ><span class="circleLight"></span><div class="text backer" style="transform: rotateY(180deg);"><h3>OCUR.io</h3><p>More card</p></div></div></div></div>
     <div id="item1" class="item">
       <div id="flip1" class="block flip-card flip-card-inner" style="display:flex;align-items:center;cursor:pointer;" >
