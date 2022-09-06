@@ -277,7 +277,9 @@ var height = positionInfo.height; var width = positionInfo.width;
 	
 var mouse = {X   : 0,Y   : 0,CX  : 0,CY  : 0 },
     block = {X   : mouse.X,Y   : mouse.Y,CX  : mouse.CX,CY  : mouse.CY},
-    vmags = [ '', '']
+    vmags = [ '', ''],
+    fmags = [ '', ''],
+    bmags = [ '', ''],
     imags = [
       'https://images.pexels.com/photos/4245826/pexels-photo-4245826.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
       'https://images.pexels.com/photos/39811/pexels-photo-39811.jpeg?w=940&h=650&auto=compress&cs=tinysrgb',
@@ -303,7 +305,9 @@ var shiner = setInterval(function(){
 function shakeCard(i) {
 	var dCard = Math.floor(Math.random() * (domains.length-1+1)); 
 	 imags[i] = domains[dCard].core.image_url; $("#card-name"+i).html(domains[dCard].name); 
-	 vmags[i] = domains[dCard].core.animation_url; }
+	 vmags[i] = domains[dCard].core.animation_url; 
+	fmags[i] = colorFront(domains[dCard].core.slug);
+bmags[i] = colorBack(domains[dCard].core.slug);}
 
 function setCards() { shakeCard(0); shakeCard(1); 
 $('.slider .item').each(function(i){
@@ -323,7 +327,7 @@ function setCard(id) { $("#slide-"+id).html(slideCode.replace("XXXX",id)); shake
 $('.slider .item').each(function(i){ if (i == id) {
 	$(this).attr('id', 'slide-'+i);
   //$(this).prepend($('<div>', {class: 'blur', style: 'background-image: url(' + imags[i] + ');'}),$('<div>', {class: 'bg', style: 'background-image: url(' + imags[i] + ');'}))
-	$(this).prepend($('<div>', {class: 'blur', style: 'background-color: darkblue;'}),$('<div>', {class: 'bg', style: 'background-color: royalblue;'}))
+	$(this).prepend($('<div>', {class: 'blur', style: 'background-color:' + bmags[i] + ';'}),$('<div>', {class: 'bg', style: 'background-color:' + fmags[i] + ';'}))
   if (vmags[i] != null) $(this).find('.block').css('background-image', 'url(' + vmags[i] + ')'); else $(this).find('.block').css('background-image', 'url(' + imags[i] + ')'); 
 	
   //if (vmags[i] != null) $(this).find('.block').css('background-color: indianred;'); else $(this).find('.block').css('background-color', 'royalblue'); 
