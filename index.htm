@@ -236,9 +236,9 @@ async function initial() { $('body').css("background-color","lightgrey");
 	$('#deed-pane').sidenav({ edge: 'left' }); //, onCloseEnd: deedMap});
 	// $('#user-pane').sidenav({ edge: 'right' }); showView('mapper');  pullOpens(); switchFeed(false);
 showView("slider");
-    	setTimeout(function() { $(".loader").css("visibility", "visible");  $('img').on('dragstart', function(evt) { return false; });  }  , 2000);
+    	setTimeout(function() { $(".loader").css("visibility", "visible");  $('img').on('dragstart', function(evt) { return false; }); setCards(); }  , 2000);
     	
-    	pullOpens(); setCards();
+    	pullOpens(); 
     	
     	 }
 
