@@ -53,11 +53,11 @@
 					<li><a onclick="showDoc('PLANME');" class="waves-effect" style="display:flex;align-items:center;"><div>🏝️</div>&nbsp;&nbsp;&nbsp;&nbsp;About NfNth</a></li>
 						<li><div style="margin-top:0;" class="divider"></div></li>
 					<li><a class="subheader">Settings</a></li>
-					<li><a onclick="showIntro();" class="waves-effect" style="display:flex;padding-left:0;"> <div class="quick hoverable z-depth-1">📚</div>Start Tutorial</a></li>
+					<li><a onclick="showIntro();" class="waves-effect" style="display:flex;padding-left:0;"><div id="set-1" class="quick hoverable z-depth-1">📚</div>Show Tutorial</a></li>
 					
-					<li><a onclick="showDoc('README');" class="waves-effect" style="display:flex;padding-left:0;"> <div class="quick hoverable z-depth-1">📍</div>Use Location</a></li>
-						<li><a onclick="showNfNth();" class="waves-effect" style="display:flex;padding-left:0;"> <div class="quick hoverable z-depth-1">🧧</div>Show NfNth</a></li>
-						<li><a onclick="showNfNth();" class="waves-effect" style="display:flex;padding-left:0;"> <div class="quick hoverable z-depth-1">🃏</div>Play Cards</a></li>
+					<li><a onclick="showDoc('README');" class="waves-effect" style="display:flex;padding-left:0;"> <div id="set-2" class="quick hoverable z-depth-1">📍</div>Use Location</a></li>
+						<li><a onclick="showNfNth();" class="waves-effect" style="display:flex;padding-left:0;"><div id="set-3" class="quick hoverable z-depth-1">🧧</div>Shop NfNth</a></li>
+						<li><a onclick="showNfNth();" class="waves-effect" style="display:flex;padding-left:0;"><div id="set-4" class="quick hoverable z-depth-1">🃏</div>Play Cards</a></li>
 					</ul></p></div></div></div></div></li>
 				
 	<!-- tabs -->
@@ -390,7 +390,8 @@ if ($(window).width() < 700) { $('.material-icons').removeClass('left'); }
     display: flex;
     justify-content: center;
     align-items: center;}
-.quick:hover { background-color: indianred; border:1px solid darkred; }
+.quick:hover { background-color: goldenrod; border:1px solid darkgoldenrod; }
+	.quicker { background-color: green!important; border:1px solid darkgreen!important; }
 .extra {  transition: 0.2s; opacity: 0;     background-color: yellowgreen;
     border-radius: 16px; color:white; font-weight:bold;transform: rotate(0deg)!important;padding-left: 8px;padding-right: 8px;
     cursor: pointer; border: 1px solid grey;     height: 48px;display: flex;
