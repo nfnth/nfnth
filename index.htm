@@ -21,7 +21,7 @@
 	<div id="panel-menu" class="nav-wrapper header z-depth-1 grey lighten-5" style="display:flex; justify-content: left; color:black; border-bottom: solid 1px gainsboro;">
     		<div style="height:103%;border-bottom:solid 2px darkred;" class="z-depth-1"><a id="menu-deed" style="cursor:pointer; color:darkslategrey; opacity:0.7; background-color:ghostwhite; display: flex; align-items: center; height: 100%; padding-right: 10px;font-weight: bold;font-size: 20px; -webkit-transition: background-color 300ms linear, color 300ms linear;-moz-transition: background-color 300ms linear, color 300ms linear;-o-transition: background-color 300ms linear, color 300ms linear;-ms-transition: background-color 300ms linear, color 300ms linear;transition: background-color 300ms linear, color 300ms linear;"><i id="bars" class="material-icons" style="padding-left:16px;" onclick="showList('open');$('#deed-pane').sidenav('open');">menu</i><div id="waiter" style="height:48px; width:48px; cursor: pointer; margin-left: 12px;" onclick="showList('open');$('#deed-pane').sidenav('open');"><img id="list-wait" class="image" src="res/img/seal3.png" width="48" /></div></a></div>
     		
-    		<div class="containerx bluex" style="background-color: royalblue;"><span class="button setter">🗺️</span>
+    		<div class="containerx bluex" style="background-color: royalblue;"><span id="connor" class="button setter">🗺️</span>
 			  <div class="contentx">
 				<div class="head" style="display: flex;align-items: center;justify-content: center;"><a style="width:160px; display: flex;justify-content: space-between;" class="mobile-width waves-effect waves-light blue lighten-1 btn" onclick="setup();"><span>Connect</span>👛</a></div>
 				<div class="body" style="text-align:center;">
@@ -109,11 +109,11 @@
 
 				<a id="dropdown-templater" style="margin-right:24px;width:148px;" class="waves-effect waves-blue blue lighten-1 btn dropdown-trigger" href="#" data-target='dropdown-template'><i class="material-icons left">add</i><i class="material-icons right">arrow_drop_down</i><span class='edit-device'>Add</span></a>
 				<a id="dropdown-file" class="waves-effect waves-light blue lighten-3 btn dropdown-trigger" href='#' data-target='dropdown-file' style="margin-right:8px;width:148px;" ><i id="view-icon" class="material-icons left">attachment</i><i class="material-icons right">arrow_drop_down</i>File</a>
-				<a onclick="showPreview();" class="waves-effect waves-grey btn-flat"><i class="material-icons left">web_asset</i></a>
+				
 				<a onclick=" clearPad();" class="waves-effect waves-grey btn-flat modal-trigger" href="#modal2"><i class="material-icons left">refresh</i></a></div>
 			
 		<div>
-			<a style="width:148px;" onclick="showView('mapper');" class="waves-effect waves-light grey btn"><i style="width:24px;" class="material-icons left">arrow_backward</i><span class='edit-device'>Back</span></a>
+			<a style="width:148px;" onclick="showPreview();" class="waves-effect waves-light grey btn"><i style="width:24px;" class="material-icons left">web_asset</i><span class='edit-device'>Preview</span></a>
 			<a style="width:148px;" onclick="showView('mapper');" class="waves-effect waves-green green btn"><i class="material-icons right">upload</i><span class='edit-device'>Upload</span></a></div></div>
 		
 		<div  class="screen-hide edit-hide" style=" align-items: center; justify-content: space-evenly; margin:12px; margin-top:24px;"><div><div class="hiddenfile"><input name="upload" type="file" id="preview" onchange="checkFile();" multiple="multiple"/></div>
@@ -250,7 +250,7 @@ function showView(view) {  hideView(); $('#'+view).show();
 		case 'console': $("#console").addClass("scale-in"); break;
 	    case 'decker': $("#decker").addClass("scale-in"); 
 		     addCardIntro(); break;
-        case 'editor': $("#editor").addClass("scale-in");   break;
+        case 'editor': $("#editor").addClass("scale-in"); document.getElementById('conner').click();  break;
         case 'mapper': $("#mapper").addClass("scale-in");
         setTimeout(function() { map.resize(); }, 500); break; } }
 function hideView() { $('.modal').modal('close'); window.scrollTo(0, 0); 
