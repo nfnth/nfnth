@@ -87,17 +87,17 @@ async def data(request):
         path = DATA + 'wallet/' + wallet
         
         if ref == "mail":
-	    path = DATA + 'mail/' + wallet
-	    action = request.match_info.get('action', '') #let get set det
-	    item = request.match_info.get('item', '')
+            path = DATA + 'mail/' + wallet
+            action = request.match_info.get('action', '') #let get set det
+            item = request.match_info.get('item', '')
 			
-	    if action == "let":
-	        return web.FileResponse(PATH + 'mail/' + wallet + '/doc')
-	    elif action == "get":
-	        return web.FileResponse(path + '/' + item)
-	    elif action == "set":
-	        path = DATA + 'mail/' + ref + '/' + wallet
-	        item = "XXXX"
+            if action == "let":
+                return web.FileResponse(PATH + 'mail/' + wallet + '/doc')
+            elif action == "get":
+                return web.FileResponse(path + '/' + item)
+            elif action == "set":
+                path = DATA + 'mail/' + ref + '/' + wallet
+                item = "XXXX"
                 with open(path + '/' + item, "wt") as fout:
                     fout.write(content)
                     pass
