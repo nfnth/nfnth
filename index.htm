@@ -29,11 +29,11 @@
 						<li><a class="waves-effect" onclick="if (user.address != '') {copyClip(user.address);}"><span  style="color:black!important;">🏠&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="myAdd" style="color:black!important;">My Address</span></a></li>
 						<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><span  style="color:black!important;">🏦&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="myETH" style="color:black!important;">My ETH</span><span style="margin-left:0;" id="myGas" style="color:black!important;"></span></a></li>
 						<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><span  style="color:black!important;">🏣&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="myURL" style="color:black!important;">My OCUR</span></a></li>
-						<li style="display:flex;justify-content:center;padding:12px;margin-top:8px;"><a style="width:160px; display: flex;justify-content: space-between;" class="mobile-width waves-effect waves-light blue lighten-1 btn disabled"><span>Trade</span>🪙</a></li>
+						<li style="display:flex;justify-content:center;padding:12px;margin-top:8px;"><a onclick="" style="width:160px; display: flex;justify-content: space-between;" class="mobile-width waves-effect waves-light amber lighten-1 btn"><span>Trade</span>🪙</a></li>
 						<li><div style="margin-top:0;" class="divider"></div></li>
 						<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><span  class="lighten-2" style="color:black!important;">📮&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="myDomain" style="color:black!important;">My Mailbox</span></a></li>
 						<li style="margin-top:12px; display: flex;align-items: center;justify-content: center;margin-bottom:16px;"><select id="domain-template" class="sider" onchange="domainSelect();"><option selected="selected" value="void">No domain selected</option><option value="tactician.us">tactician.us (demo)</option></select></li>
-						<li style="display:flex;justify-content:center;padding:12px;"><a style="width:160px; display: flex;justify-content: space-between;margin-top:8px;" class="mobile-width waves-effect waves-light blue lighten-1 btn disabled"><span>POST</span>📦</a></li>
+						<li style="display:flex;justify-content:center;padding:12px;"><a onclick="showView('editor');" style="width:160px; display: flex;justify-content: space-between;margin-top:8px;" class="mobile-width waves-effect waves-light green lighten-1 btn"><span>BUILD</span>🧱</a></li>
 						<!--<i class="material-icons left">calculate</i>--></ul></div></div></div>
     		
 		<div style="width:64px;margin-left:16px;"><a><div style="width:64px;"><img class="image image-rotate gear-image" id="gear-pic" style="opacity:0.6; height: 48px;position:absolute; margin: 4px; cursor:pointer;right:12px;top:4px;" onclick="changeView();"/><img id="gear-pic2" class="image image-rotate gear-image" style="opacity:0.6; height: 48px;position:absolute;cursor:pointer;margin:4px;right:12px;top:4px;" onclick="changeView();"/></div></a></div></div></nav>
@@ -98,7 +98,122 @@
 <!-- map -->
     	<div id="mapper" class="content loader pane scale-transition scale-out" style="overflow-y: auto; height: 130%;">
 			
-		<div id="map" style="width:100%; height:100%;"></div></div></div>
+		<div id="map" style="width:100%; height:100%;"></div></div>
+
+
+
+<!-- editor -->
+    	<div id="editor" class="content loader pane scale-transition scale-out" style="height:90%;">
+		<div  class="hide-on-med-and-down" style="display:flex;  align-items: center; justify-content: space-between; margin: 10%;margin-top: 24px;margin-bottom: 12px;width: 80%;">
+			<div ><div class="hiddenfile"><input name="upload" type="file" id="preview" onchange="checkFile();" multiple="multiple"/></div>
+
+				<a id="dropdown-templater" style="margin-right:24px;width:148px;" class="waves-effect waves-blue blue lighten-1 btn dropdown-trigger" href="#" data-target='dropdown-template'><i class="material-icons left">add</i><i class="material-icons right">arrow_drop_down</i><span class='edit-device'>Add</span></a>
+				<a id="dropdown-file" class="waves-effect waves-light blue lighten-3 btn dropdown-trigger" href='#' data-target='dropdown-file' style="margin-right:8px;width:148px;" ><i id="view-icon" class="material-icons left">attachment</i><i class="material-icons right">arrow_drop_down</i>File</a>
+				<a onclick="showPreview();" class="waves-effect waves-grey btn-flat"><i class="material-icons left">web_asset</i></a>
+				<a onclick=" clearPad();" class="waves-effect waves-grey btn-flat modal-trigger" href="#modal2"><i class="material-icons left">refresh</i></a></div>
+			
+		<div>
+			<a style="width:148px;" onclick="showView('mapper');" class="waves-effect waves-light grey btn"><i style="width:24px;" class="material-icons left">arrow_backward</i><span class='edit-device'>Back</span></a>
+			<a style="width:148px;" onclick="showView('mapper');" class="waves-effect waves-green green btn"><i class="material-icons right">upload</i><span class='edit-device'>Upload</span></a></div></div>
+		
+		<div  class="screen-hide edit-hide" style=" align-items: center; justify-content: space-evenly; margin:12px; margin-top:24px;"><div><div class="hiddenfile"><input name="upload" type="file" id="preview" onchange="checkFile();" multiple="multiple"/></div>
+			<a style="margin-right:8px;" onclick="setContent();" class="waves-effect waves-blue blue lighten-1 btn"><i class="material-icons">add</i><span class='edit-device'></span></a>
+			<a id="dropdown-file" class="waves-effect waves-light blue lighten-3 btn dropdown-trigger" href='#' data-target='dropdown-file' style="margin-right:8px;" ><i id="view-icon" class="material-icons">attach_file</i></a>
+			<a style="margin-right:16px;" onclick="showPreview();" class="waves-effect waves-grey btn-flat"><i class="material-icons">web_asset</i></a>
+			<a style="margin-right:8px;" onclick="clearPad();" class="waves-effect waves-grey btn-flat"><i class="material-icons">refresh</i></a></div>
+			
+		<div>
+			<a onclick="showView('mapper');" class="waves-effect waves-light grey btn"><i class="material-icons">arrow_backward</i><span class='edit-device'></span></a>
+			<a onclick="showView('mapper');" class="waves-effect waves-green green btn"><i class="material-icons">upload</i><span class='edit-device'></span></a></div></div>
+		
+        	<div id="pad" class="z-depth-2" contentEditable="true" style="text-align:left; overflow-y: auto; width:90%; border:1px solid darkgrey; box-shadow: 1px 1px beige; border-radius: 8px;padding: 12px;margin:auto;font-size:20px;height:90%; background-color:whitesmoke;"></div>
+	
+		<div style="display:flex; justify-content:space-between; margin:24px;position:sticky;bottom:24px;padding-right:48px;width:100%;">
+			<div id="show-progress" class="progress" style="display:none;"><div class="indeterminate"></div></div></div></div></div>
+
+<!-- dialog -->
+<div id="modal1" class="modal bottom-sheet content loader"><div id="domain-info" class="modal-content grey lighten-4" style="box-shadow: 1px 18px 24px 1px inset cornsilk" ></div></div>
+
+
+<div id="modal2" class="modal">
+    <div class="modal-content"><h4>Modal Header</h4><p>A bunch of text</p></div>
+	<div class="modal-footer"><a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a></div></div>
+	
+<div id="modal3" class="modal">
+    <div class="modal-content"><h4>Trade OCUR</h4><p>Enter amount to trade, gas price...</p>
+    
+    
+     <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <i class="material-icons prefix">toll</i>
+          <input id="ocur-amount" type="text" class="validate">
+          <label for="icon_prefix">OCUR amount</label>
+        </div>
+        
+      </div>
+    </form>
+  </div>
+    
+    
+    </div>
+	<div class="modal-footer">
+		<a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+		<a onclick="trade()" class="modal-close waves-effect waves-green green lighten-2 btn"><i class="material-icons left">account_balance_wallet</i>Trade OCUR</a></div></div>
+		
+<div id="modal4" class="modal">
+    <div class="modal-content"><h4>Send Note</h4><p>Enter address to send</p>
+    
+     <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="icon_prefix" type="text" class="validate">
+          <label for="icon_prefix">First Name</label>
+        </div>
+        <div class="input-field col s6">
+          <i class="material-icons prefix">phone</i>
+          <input id="icon_telephone" type="tel" class="validate">
+          <label for="icon_telephone">Telephone</label>
+        </div>
+      </div>
+    </form>
+  </div>
+    
+    
+    </div>
+	<div class="modal-footer">
+		<a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+		<a onclick="send();" class="modal-close waves-effect waves-green green lighten-2 btn">Send</a></div></div>
+		
+<div id="modal5" class="modal">
+    <div class="modal-content">
+		
+		 <div style="display:flex;justify-content:center;" class="switch" ><label id="feed-label" style="display:flex; align-items:center; color: lightgrey;font-weight: bold;font-size: 14px;" onclick="switchMap();setTimeout(function() { mapCheck = 0; }, 500);">Map View&nbsp;&nbsp;&nbsp;&nbsp;<i id="m-side" class="material-icons" style="color:blue;">map</i><input type="checkbox"><span id="view-lever" class="lever sweed"></span><i id="c-side" class="material-icons">space_dashboard</i>&nbsp;&nbsp;&nbsp;&nbsp;Card View</label></div><br/><br/>
+		
+		
+    <label style="display:flex; justify-content: flex-start;margin-left: 10%;" onclick="changeSetting('product');"><input id="product-setting" type="checkbox" class="filled-in" />
+        <span style="width:240px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Show Product Collection</span><i style="margin-left:-210px;" class="material-icons">inventory_2</i></label><br/>
+    <label style="display:flex;justify-content: flex-start;margin-left: 10%;" onclick="changeSetting('special');"><input id="special-setting" type="checkbox" class="filled-in" />
+        <span style="width:240px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Show Special Collection</span><i style="margin-left:-210px;" class="material-icons">stars</i></label><br/>
+  
+    
+    <label style="display:flex;justify-content: flex-start;margin-left: 10%;" onclick="changeSetting('scale');"><input type="checkbox" class="filled-in" />
+        <span style="width:240px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Show Scale</span><i style="margin-left:-210px;" class="material-icons">linear_scale</i></label><br/><br/>
+        
+        <div style="display:flex; justify-content:center;align-items:center;"><a id="dropdown-mapper" style="width:180px;" class="waves-effect waves-blue blue lighten-1 btn dropdown-trigger" href="#" data-target='dropdown-map'><i class="material-icons left">map</i><i class="material-icons right">arrow_drop_down</i><span class='edit-device'>Style</span></a><span id="map-type" style="margin-left:24px;">Satellite</span></div>
+    
+    </div>
+	<div class="modal-footer" style="display: flex;justify-content: space-between;padding-left: 48px;">
+		<a id="dropdown-mapper" style="width:180px;" class="waves-effect waves-light green lighten-1 btn dropdown-trigger" href="#" data-target='dropdown-map'><i class="material-icons left">gps_fixed</i><span class='edit-device'>Use Location</span></a>
+		<a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a></div></div>
+		
+<div id="modal6" class="modal">
+    <div class="modal-content"><h4>Card Game</h4><p>A bunch of text</p></div>
+	<div class="modal-footer"><a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a></div></div>
+
 
 <!-- items -->					
 <ul id='dropdown-open' class='dropdown-content'>
