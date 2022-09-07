@@ -103,7 +103,7 @@ async def data(request):
                     pass
                 return web.Response(text='mail set',content_type="text/html")
             elif action == "det":
-                os.remove(path + '/' + item):
+                os.remove(path + '/' + item)
                 return web.Response(text='mail det',content_type="text/html")
             else:
                 return web.Response(text='invalid action',content_type="text/html")
