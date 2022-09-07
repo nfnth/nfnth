@@ -45,6 +45,21 @@ AMD?
 
 [CSPAN](https://www.c-span.org) - [Gutenberg](http://www.gutenberg.org) [Wikipedia](https://www.wikipedia.org/wiki/Special:Random) [news](https://wikipedia.org/wiki/Main_Page)
 
+https://en.wikipedia.org/wiki/List_of_federally_recognized_tribes_in_the_United_States
+https://en.wikipedia.org/wiki/List_of_sovereign_states
+https://en.wikipedia.org/wiki/List_of_national_capitals
+https://www.google.com/search?q=famous+monuments&oq=famous+monuments&aqs=chrome..69i57j0i512l9.4931j0j7&sourceid=chrome&ie=UTF-8
+https://www.google.com/search?q=famous+islands&oq=famous+islands&aqs=chrome..69i57j0i512l9.3263j0j7&sourceid=chrome&ie=UTF-8
+
+https://emojiterra.com/list/
+
+https://discord.com/channels/@me/1016516484022939728
+
+https://news.google.com/topstories?hl=en-US&gl=US&ceid=US%3Aen
+
+https://family.titank12.com/
+
+https://seattle.craigslist.org/see/bod/d/seattle-live-aboard-trawler-for-sale/7528363509.html
 
 **UR.Land** // dee*d/omain
 
