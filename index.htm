@@ -33,7 +33,7 @@
 						<li><div style="margin-top:0;" class="divider"></div></li>
 						<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><span  class="lighten-2" style="color:black!important;">📮&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="myDomain" style="color:black!important;">My Mailbox</span></a></li>
 						<li style="margin-top:12px; display: flex;align-items: center;justify-content: center;margin-bottom:16px;"><select id="domain-template" class="sider" onchange="domainSelect();"><option selected="selected" value="void">No domain selected</option><option value="tactician.us">tactician.us (demo)</option></select></li>
-						<li style="display:flex;justify-content:center;padding:12px;"><a onclick="showView('editor');" style="width:160px; display: flex;justify-content: space-between;margin-top:8px;" class="mobile-width waves-effect waves-light green lighten-1 btn"><span>BUILD</span>🧱</a></li>
+						<li style="display:flex;justify-content:center;padding:12px;"><a onclick="showView('editor');" style="width:160px; display: flex;justify-content: space-between;margin-top:8px;" class="mobile-width waves-effect waves-light red lighten-1 btn"><span>BUILD</span>🧱</a></li>
 						<!--<i class="material-icons left">calculate</i>--></ul></div></div></div>
     		
 		<div style="width:64px;margin-left:16px;"><a><div style="width:64px;"><img class="image image-rotate gear-image" id="gear-pic" style="opacity:0.6; height: 48px;position:absolute; margin: 4px; cursor:pointer;right:12px;top:4px;" onclick="changeView();"/><img id="gear-pic2" class="image image-rotate gear-image" style="opacity:0.6; height: 48px;position:absolute;cursor:pointer;margin:4px;right:12px;top:4px;" onclick="changeView();"/></div></a></div></div></nav>
@@ -53,11 +53,11 @@
 					<li><a onclick="showDoc('PLANME');" class="waves-effect" style="display:flex;align-items:center;"><div>🏝️</div>&nbsp;&nbsp;&nbsp;&nbsp;About NfNth</a></li>
 						<li><div style="margin-top:0;" class="divider"></div></li>
 					<li><a class="subheader">Settings</a></li>
-					<li><a onclick="showIntro();" class="waves-effect" style="display:flex;padding-left:0;"><div id="set-1" class="quick hoverable z-depth-1">📚</div>Show Tutorial</a></li>
+					<li><a onclick="showIntro();" class="waves-effect" style="display:flex;padding-left:12px;"><div id="set-1" class="quick hoverable z-depth-1">📚</div>Show Tutorial</a></li>
 					
-					<li><a onclick="showDoc('README');" class="waves-effect" style="display:flex;padding-left:0;"> <div id="set-2" class="quick hoverable z-depth-1">📍</div>Use Location</a></li>
-						<li><a onclick="showNfNth();" class="waves-effect" style="display:flex;padding-left:0;"><div id="set-3" class="quick hoverable z-depth-1">🧧</div>Shop NfNth</a></li>
-						<li><a onclick="showNfNth();" class="waves-effect" style="display:flex;padding-left:0;"><div id="set-4" class="quick hoverable z-depth-1">🃏</div>Play Cards</a></li>
+					<li><a onclick="showDoc('README');" class="waves-effect" style="display:flex;padding-left:12px;"> <div id="set-2" class="quick hoverable z-depth-1">📍</div>Use Location</a></li>
+						<li><a onclick="showNfNth();" class="waves-effect" style="display:flex;padding-left:12px;"><div id="set-3" class="quick hoverable z-depth-1">🧧</div>Shop NfNth</a></li>
+						<li><a onclick="showNfNth();" class="waves-effect" style="display:flex;padding-left:12px;"><div id="set-4" class="quick hoverable z-depth-1">🃏</div>Play Cards</a></li>
 					</ul></p></div></div></div></div></li>
 				
 	<!-- tabs -->
@@ -698,10 +698,10 @@ h1 {font-weight: 700;font-size: 64px; margin: 20px 0 0 0;padding: 0 20px;}
 	 transition: all 0.2s 0.45s, border 0s, height 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0.25s, max-width 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0.35s, width 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0.35s;}
 
 .redx:hover { border:solid 2px darkred; } .greenx:hover { border:solid 2px darkgreen; } .bluex:hover { border:solid 2px darkblue; } .yellowx:hover { border:solid 2px darkgoldenrod; }
-	.redx.expand { border:solid 2px darkred; } .yellowx.expand { border:solid 2px darkgoldenrod; }
+	.redx.expand { border:solid 2px darkred; } .yellowx.expand { border:solid 2px darkgoldenrod; } .bluex.expand { border:solid 2px darkblue;}
  .containerx.expand {
 	 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.17);border-radius: 0;  width: 80%; max-width:800px;
-	 height: 640px; padding: 0; border:solid 2px darkblue;
+	 height: 640px; padding: 0; 
 	 transition: all 0.2s, max-width 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0.1s, height 0.3s ease 0.25s;}
 	
  .contentx { transform: translateY(100%);width: 100%;height: 100%; opacity: 0;text-align: left;transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s 0.2s;}
