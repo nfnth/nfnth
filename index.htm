@@ -282,20 +282,18 @@ function setPage() { if (!(pageSet)) { pageSet = true; var page = window.locatio
 				
 function setLand() { var emoji = Math.floor(Math.random() * (4-1+1)) + 1;
     switch (emoji) {
-        case 1: update = "🏳🏳"; break;
-        case 2: update = "🏳🏴"; break;
-        case 3: update = "🏴🏳"; break;
-        case 4: update = "🏴🏴"; break; }
-    document.title = "UR.Land · " + update; }
+        case 1: document.title = "🏳 UR.Land 🏳"; break;
+        case 2: document.title = "🏳 UR.Land 🏴"; break;
+        case 3: document.title = "🏴 UR.Land 🏳"; break;
+        case 4: document.title = "🏴 UR.Land 🏴"; break; } }
 	
 function setTitle() { var emoji = Math.floor(Math.random() * (5-1+1)) + 1;
     switch (emoji) {
-	case 1: update = "👓👓"; break;
-        case 2: update = "🧤🧤"; break;
-        case 3: update = "👖👖"; break;
-        case 4: update = "🧦🧦"; break;
-        case 5: update = "👟👟"; break; }
-    document.title = "OCUR.io · " + update; }
+	case 1: document.title = "👓 OCUR.io 👓"; break;
+        case 2: document.title = "🧤 OCUR.io 🧤"; break;
+        case 3: document.title = "👖 OCUR.io 👖"; break;
+        case 4: document.title = "🧦 OCUR.io 🧦"; break;
+        case 5: document.title = "👟 OCUR.io 👟"; break; } }
 
 function showFav() {
     	$('<link>').appendTo('head').attr({ class: 'ico', type: 'image/x-icon', rel: 'icon', href: "res/img/fav/favicon.ico" });
@@ -315,7 +313,7 @@ function openInNewTab(url) { window.open(url, '_blank').focus(); } //window.loca
 
 var width = window.innerWidth; var height = window.innerHeight + 48;
 async function initial() { $('body').css("background-color","lightgrey");  
-	$('.tabs').tabs(); showFav(); showPanel(); if (window.location.hostname == "ur.land") { setLand(); } else { setTitle(); }
+	$('.tabs').tabs(); showFav(); showPanel(); if (window.location.hostname == "ur.land") { setLand(); } else if (window.location.hostname == "ur.land") { setTitle(); } else { document.title = "📚 Nf·Nth 📚"; }
 	$('.modal').modal(); 
 	//$("#registry-open").css("height",(height - 120) + "px"); $("#registry-domain").css("height",(height - 120) + "px");
 	
