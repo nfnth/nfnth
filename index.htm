@@ -35,7 +35,7 @@
 						
 						<li style="margin-top:12px; display: flex;align-items: center;justify-content: center;margin-bottom:16px;"><select id="domain-template" class="sider" onchange="domainSelect();"><option selected="selected" value="void">Select domain...</option><option value="tactician.us">tactician.us (demo)</option></select></li>
 						<li style="display:flex;justify-content:center;padding:12px;"><a onclick="showView('editor');" style="width:160px; display: flex;justify-content: space-between;margin-top:8px;" class="mobile-width waves-effect waves-light red lighten-1 btn"><span>BUILD</span>🧱</a></li>
-						<li style="display:flex;justify-content:center;padding:12px;margin-top:8px;"><a onclick="" style="width:160px; display: flex;justify-content: space-between;" class="mobile-width waves-effect waves-light amber lighten-1 btn"><span>Trade</span>🪙</a></li>
+						<li style="display:flex;justify-content:center;padding:12px;margin-top:8px;"><a onclick="" style="width:160px; display: flex;justify-content: space-between;" class="mobile-width waves-effect waves-light amber lighten-1 btn modal-trigger" href="#modal3"><span>Trade</span>🪙</a></li>
 						<!--<i class="material-icons left">calculate</i>--></ul></div></div></div>
     		
 		<div style="width:64px;margin-left:16px;"><a><div style="width:64px;"><img class="image image-rotate gear-image" id="gear-pic" style="opacity:0.6; height: 48px;position:absolute; margin: 4px; cursor:pointer;right:12px;top:4px;" onclick="changeView();"/><img id="gear-pic2" class="image image-rotate gear-image" style="opacity:0.6; height: 48px;position:absolute;cursor:pointer;margin:4px;right:12px;top:4px;" onclick="changeView();"/></div></a></div></div></nav>
@@ -50,13 +50,13 @@
 					<ul style="display: flex;flex-direction: column;">
 						<li><a class="subheader">Guides</a></li>
 						<li><a onclick="showDoc('deed');" class="waves-effect" style="display:flex;align-items:center;"><div >🧭</div>&nbsp;&nbsp;&nbsp;&nbsp;Use Deed Domain</a></li>
-					<li><a onclick="showDoc('README');" class="waves-effect" style="display:flex;align-items:center;"><div >📟</div>&nbsp;&nbsp;&nbsp;&nbsp;How to Build dApp</a></li>
+					<li><a onclick="showDoc('README');" class="waves-effect" style="display:flex;align-items:center;"><div >📟</div>&nbsp;&nbsp;&nbsp;&nbsp;How to Build DApp</a></li>
 					<li><a onclick="showDoc('ocur');" class="waves-effect" style="display:flex;align-items:center;"><div >📦</div>&nbsp;&nbsp;&nbsp;&nbsp;Trade OCUR</a></li>
 					<li><a onclick="showDoc('PLANME');" class="waves-effect" style="display:flex;align-items:center;"><div>🏝️</div>&nbsp;&nbsp;&nbsp;&nbsp;About NfNth</a></li>
 						<li><div style="margin-top:0;" class="divider"></div></li>
 					<li><a class="subheader">Settings</a></li>
-					<li><a onclick="showIntro();" class="waves-effect" style="display:flex;padding-left:12px;"><div id="set-1" class="quick hoverable z-depth-1">📚</div>Show Tutorial</a></li>
-					
+					<li><a onclick="showIntro();" class="waves-effect" style="display:flex;padding-left:12px;"><div id="set-1" class="quick hoverable z-depth-1">📚</div>Start Tutorial</a></li>
+					<li><a onclick="showHistory();" class="waves-effect" style="display:flex;padding-left:12px;"><div id="set-1" class="quick hoverable z-depth-1">🏛️</div>Show History</a></li>
 					<li><a onclick="showDoc('README');" class="waves-effect" style="display:flex;padding-left:12px;"> <div id="set-2" class="quick hoverable z-depth-1">📍</div>Use Location</a></li>
 						<li><a onclick="showNfNth();" class="waves-effect" style="display:flex;padding-left:12px;"><div id="set-3" class="quick hoverable z-depth-1">🧧</div>Shop NfNth</a></li>
 						<li><a onclick="showNfNth();" class="waves-effect" style="display:flex;padding-left:12px;"><div id="set-4" class="quick hoverable z-depth-1">🃏</div>Play Cards</a></li>
@@ -111,11 +111,10 @@
 
 				<a id="dropdown-templater" style="margin-right:24px;width:148px;" class="waves-effect waves-blue blue lighten-1 btn dropdown-trigger" href="#" data-target='dropdown-template'><i class="material-icons left">add</i><i class="material-icons right">arrow_drop_down</i><span class='edit-device'>Add</span></a>
 				<a id="dropdown-file" class="waves-effect waves-light blue lighten-3 btn dropdown-trigger" href='#' data-target='dropdown-file' style="margin-right:8px;width:148px;" ><i id="view-icon" class="material-icons left">attachment</i><i class="material-icons right">arrow_drop_down</i>File</a>
-				
-				<a onclick=" clearPad();" class="waves-effect waves-grey btn-flat modal-trigger" href="#modal2"><i class="material-icons left">refresh</i></a></div>
-			
+				<a onclick=" clearPad();" class="waves-effect waves-grey btn-flat" ><i class="material-icons left">refresh</i></a></div>
+
 		<div>
-			<a style="width:148px;" onclick="showPreview();" class="waves-effect waves-light grey btn"><i style="width:24px;" class="material-icons left">web_asset</i><span class='edit-device'>Preview</span></a>
+			<a style="width:148px;margin-right:24px;" onclick="showPreview();" class="waves-effect waves-light grey btn"><i class="material-icons left">web_asset</i><span class='edit-device'>Preview</span></a>
 			<a style="width:148px;" onclick="showView('mapper');" class="waves-effect waves-green green btn"><i class="material-icons right">upload</i><span class='edit-device'>Upload</span></a></div></div>
 		
 		<div  class="screen-hide edit-hide" style=" align-items: center; justify-content: space-evenly; margin:12px; margin-top:24px;"><div><div class="hiddenfile"><input name="upload" type="file" id="preview" onchange="checkFile();" multiple="multiple"/></div>
@@ -391,7 +390,7 @@ var shiner = setInterval(function(){
 		//$('.flip-card-inner').css("transform","rotateY(180deg)"); $('.flip-card-front').css("transform","rotateY(180deg)"); 
 		//$('.flip-card-inner').css("background","black");
 		$('.flip-card-inner').addClass("card-background"); $(".card-wrap").css("margin-top","64px");
-		clearInterval(shiner); } }, 20);;
+		clearInterval(shiner); } }, 20);
 
 function shakeCard(i) { 
 	var dCard = Math.floor(Math.random() * (domains.length-1+1)); 
