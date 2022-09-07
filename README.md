@@ -1,11 +1,9 @@
 
 ### [Nf·Nth](https://nfnth.com) // software on infinitive-basis
 
-- [OCUR.io](https://ocur.io) 👓👓 🧤🧤 👖👖 🧦🧦 👟👟 
-- [UR.Land](https://ur.land) 🏳🏳 🏳🏴 🏴🏳 🏴🏴 
-- [mattdown.com](https://mattdown.com) 📚📚  *dralun.com?
+[🏳🏳](https://xn--en8ha.ws) [🏳🏴](https://xn--en8hc.ws) [UR.Land](https://ur.land) [🏴🏳](https://xn--en8hb.ws) [🏴🏴](https://xn--fn8ha.ws) with [📚📚](https://xn--zt8ha.ws) [OCUR.io](https://ocur.io) [👓👓](https://xn--4p8ha.ws) [🧤🧤](https://xn--uv9ha.ws) [👖👖](https://xn--7p8ha.ws) [🧦🧦](https://xn--wv9ha.ws) [👟👟](https://xn--hq8ha.ws)  
 
-Register with [name.com](https://www.name.com). Run on [Linode](https://cloud.linode.com). Ship with [USPS](https://www.usps.com/business/web-tools-apis/documentation-updates.htm)
+Register with [name.com](https://www.name.com). Run on [Linode](https://cloud.linode.com). Ship with [USPS](https://www.usps.com/business/web-tools-apis/documentation-updates.htm).
 
 <a href="https://opensea.io/urland" title="Buy on OpenSea" target="_blank"><img style="margin-left:24px; width:220px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);" src="https://storage.googleapis.com/opensea-static/Logomark/Badge%20-%20Available%20On%20-%20Light.png" alt="Available on OpenSea" /></a>
 
