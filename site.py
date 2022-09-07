@@ -124,9 +124,9 @@ async def data(request):
         #    shutil.rmtree(path)
         #os.mkdir(path)
         if not os.path.exists(path):
-			os.mkdir(path)
+            os.mkdir(path)
         if exists(path + '/doc'):
-			os.remove(path + '/doc')
+            os.remove(path + '/doc')
         with open(path + '/doc', "wt") as fout:
             fout.write(content)
             pass
