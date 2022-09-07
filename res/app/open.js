@@ -17,13 +17,13 @@ function pullOpen(name) {
       .then(response => { for (let i = 0; i < response.assets.length; i++) {
             var tmp = new Domain(); var asset = response.assets[i]; var traits = asset.traits;
             if (asset.name == "absaroka.us" || asset.name == "monocacy.us") { continue; } tmp.core = asset;
-            for (let a = 0; a < traits.length; a++) {
-                switch(traits[a].trait_type.toLowerCase()) {
-                    case 'name': tmp.name = traits[a].value.toString(); break;
-                    case 'pos': tmp.coord = traits[a].value.toString(); break;
-                    case 'res': tmp.img = traits[a].value.toString(); break;
-                    case 'ref': tmp.ref = traits[a].value.toString(); break;
-                    default: break; } }
+           // for (let a = 0; a < traits.length; a++) {
+               // switch(traits[a].trait_type.toLowerCase()) {
+                    //case 'name': tmp.name = traits[a].value.toString(); break;
+                    //case 'pos': tmp.coord = traits[a].value.toString(); break;
+                    //case 'res': tmp.img = traits[a].value.toString(); break;
+                    //case 'ref': tmp.ref = traits[a].value.toString(); break;
+                  //  default: break; } }
             domains.push(tmp);  }  updateCount(name, response.assets.length); } ).then(response => {
 				if (domains.length > 100) { if (pageNotFound) setPage(); if (cardNotFound) { cardNotFound = false; setCards(); } }
             	if (domains.length > 180) { 
