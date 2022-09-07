@@ -4,7 +4,7 @@ var gasPrice = ""; var itemPrice;
 var setup = async function () {
     if (window.ethereum) { //web3 = new Web3(window.ethereum); //await account();
         const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' }); user.address = accounts[0];
-        $("#myAdd").html(user.address.toLowerCase().substring(0,16) + "...");
+        $("#myAdd").html(user.address.toLowerCase().substring(0,10) + "...");
         $.get("api/"+user.address, async function(data) {  $("#logger").removeClass("disabled");
             	var fields = data.split('|'); var ether = JSON.parse(fields[0]).result; var urler = fields[1]; var gas = fields[2];
 		$('#myETH').hide().html(badge('eth',ether.substring(0, 4))).fadeIn('slow'); itemPrice = parseInt(ether) / 2;
