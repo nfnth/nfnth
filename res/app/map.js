@@ -155,7 +155,7 @@ function flyArt(i) { showArt(i);
 	startUp = function() {  tempMark.togglePopup(); }; $('#user-pane').sidenav('close'); fly(convertCoord(artifacts[i].location)); } 
 
 function mapAdd() { clearMark(); showView('mapper'); M.toast({html: 'Select location...'}); artFlag = true; } 
-function addArt() { showEdit(); tempMark.togglePopup(); resetArea(); editMd.location = coordinates.toString();
+function addArt(i) { showEdit(); tempMark.togglePopup(); resetArea(); editMd.location = coordinates.toString();
 	$(".switch.shape").find("input[type=checkbox]").on("change",function() { var status = $(this).prop('checked'); setShape(status); });
 		   coordinates.lat -= 6; map.flyTo({ center: coordinates, zoom: zoom, bearing: 0, speed: 0.8,  curve: 1,  easing: (t) => t, essential: true });
 		  }
