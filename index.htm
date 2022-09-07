@@ -250,7 +250,7 @@ function showView(view) {  hideView(); $('#'+view).show();
 		case 'console': $("#console").addClass("scale-in"); break;
 	    case 'decker': $("#decker").addClass("scale-in"); 
 		     addCardIntro(); break;
-        case 'editor': $("#editor").addClass("scale-in"); document.getElementById('conner').click();  break;
+        case 'editor': $("#editor").addClass("scale-in"); document.getElementById('connor').click();  break;
         case 'mapper': $("#mapper").addClass("scale-in");
         setTimeout(function() { map.resize(); }, 500); break; } }
 function hideView() { $('.modal').modal('close'); window.scrollTo(0, 0); 
