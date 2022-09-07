@@ -23,17 +23,17 @@
     		
     		<div class="containerx bluex" style="background-color: royalblue;"><span class="button setter">🗺️</span>
 			  <div class="contentx">
-				<div class="head" style="display: flex;align-items: center;justify-content: center;"><a id="dropdown-mapper" style="width:160px; display: flex;justify-content: space-between;" class="mobile-width waves-effect waves-light blue lighten-1 btn" onclick="setup();"><span>Connect</span>👛</a></div>
+				<div class="head" style="display: flex;align-items: center;justify-content: center;"><a style="width:160px; display: flex;justify-content: space-between;" class="mobile-width waves-effect waves-light blue lighten-1 btn" onclick="setup();"><span>Connect</span>👛</a></div>
 				<div class="body" style="text-align:center;">
 					<ul style="display: flex;flex-direction: column;">
 						<li><a class="waves-effect" onclick="if (user.address != '') {copyClip(user.address);}"><span  style="color:black!important;">🏠&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="myAdd" style="color:black!important;">My Address</span></a></li>
 						<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><span  style="color:black!important;">🏦&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="myETH" style="color:black!important;">My ETH</span><span style="margin-left:0;" id="myGas" style="color:black!important;"></span></a></li>
-						<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><span  style="color:black!important;">🏪&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="myURL" style="color:black!important;">My OCUR</span></a></li>
-						<li style="display:flex;justify-content:center;padding:12px;margin-top:8px;"><a id="dropdown-mapper" style="width:160px; display: flex;justify-content: space-between;" class="mobile-width waves-effect waves-light blue lighten-1 btn disabled"><span>Trade</span>🪙</a></li>
+						<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><span  style="color:black!important;">🏣&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="myURL" style="color:black!important;">My OCUR</span></a></li>
+						<li style="display:flex;justify-content:center;padding:12px;margin-top:8px;"><a style="width:160px; display: flex;justify-content: space-between;" class="mobile-width waves-effect waves-light blue lighten-1 btn disabled"><span>Trade</span>🪙</a></li>
 						<li><div style="margin-top:0;" class="divider"></div></li>
-						<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><span  class="lighten-2" style="color:black!important;">🏣&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="myDomain" style="color:black!important;">My Balance</span></a></li>
+						<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><span  class="lighten-2" style="color:black!important;">📮&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="myDomain" style="color:black!important;">My Balance</span></a></li>
 						<li style="margin-top:12px; display: flex;align-items: center;justify-content: center;margin-bottom:16px;"><select id="domain-template" class="sider" onchange="domainSelect();"><option selected="selected" value="void">No domain selected</option><option value="tactician.us">tactician.us (demo)</option></select></li>
-						<li style="display:flex;justify-content:center;padding:12px;"><a id="dropdown-mapper" style="width:160px; display: flex;justify-content: space-between;margin-top:8px;" class="mobile-width waves-effect waves-light blue lighten-1 btn disabled"><span>POST</span>📮</a></li>
+						<li style="display:flex;justify-content:center;padding:12px;"><a style="width:160px; display: flex;justify-content: space-between;margin-top:8px;" class="mobile-width waves-effect waves-light blue lighten-1 btn disabled"><span>POST</span>📦</a></li>
 						<!--<i class="material-icons left">calculate</i>--></ul></div></div></div>
     		
 		<div style="width:64px;margin-left:16px;"><a><div style="width:64px;"><img class="image image-rotate gear-image" id="gear-pic" style="opacity:0.6; height: 48px;position:absolute; margin: 4px; cursor:pointer;right:12px;top:4px;" onclick="changeView();"/><img id="gear-pic2" class="image image-rotate gear-image" style="opacity:0.6; height: 48px;position:absolute;cursor:pointer;margin:4px;right:12px;top:4px;" onclick="changeView();"/></div></a></div></div></nav>
@@ -53,8 +53,9 @@
 					<li><a onclick="showDoc('PLANME');" class="waves-effect" style="display:flex;align-items:center;"><div>🏝️</div>&nbsp;&nbsp;&nbsp;&nbsp;About NfNth</a></li>
 						<li><div style="margin-top:0;" class="divider"></div></li>
 					<li><a class="subheader">Settings</a></li>
-					<li><a onclick="showDoc('README');" class="waves-effect" style="display:flex;padding-left:0;"> <div class="quick hoverable z-depth-1">📍</div>My Location</a></li>
-						<li><a onclick="showNfNth();" class="waves-effect" style="display:flex;padding-left:0;"> <div class="quick hoverable z-depth-1">🧧</div>Show NfNth</a></li></ul></p></div></div></div></div></li>
+					<li><a onclick="showDoc('README');" class="waves-effect" style="display:flex;padding-left:0;"> <div class="quick hoverable z-depth-1">📍</div>Use Location</a></li>
+						<li><a onclick="showNfNth();" class="waves-effect" style="display:flex;padding-left:0;"> <div class="quick hoverable z-depth-1">🧧</div>Show NfNth</a></li>
+					<li><a onclick="showNfNth();" class="waves-effect" style="display:flex;padding-left:0;"> <div class="quick hoverable z-depth-1">📚</div>Start Tutorial</a></li></ul></p></div></div></div></div></li>
 				
 	<!-- tabs -->
 	<li style="height:100%;"><ul id="token-tabs" class="tabs tabs-fixed-width z-depth-1 deed">
@@ -237,7 +238,7 @@ async function initial() { $('body').css("background-color","lightgrey");
 showView("slider");
     	setTimeout(function() { $(".loader").css("visibility", "visible");  $('img').on('dragstart', function(evt) { return false; });  }  , 2000);
     	
-    	pullOpens(); 
+    	pullOpens(); setCards();
     	
     	 }
 
