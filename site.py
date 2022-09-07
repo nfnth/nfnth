@@ -18,7 +18,7 @@ from eth_account.messages import defunct_hash_message
 from eth_account import Account, messages
 
 DATA="/mnt/data/"
-PATH="/root/desk/app/"
+PATH="/root/desk/nfnth/"
 ETH_API_KEY=""
 OPEN_API_KEY=""
 TOKEN="0xCcaB679860B1017589239BCeEEabe5CD45965aFc"
