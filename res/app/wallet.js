@@ -10,7 +10,7 @@ var setup = async function () {
 		$('#myETH').hide().html(badge('eth',ether.substring(0, 4))).fadeIn('slow'); itemPrice = parseInt(ether) / 2;
 		//$('#myGas').hide().html(badge('gas',gas)).fadeIn('slow'); 
 							 gasPrice = gas; $("#trader").removeClass("disabled");
-		if (urler > 0) { $("#trader").removeClass("disabled");  } $("#signer").html("<span>Disconnect</span>🚪"); $("#signer").removeClass("amber"); $("#signer").addClass("red");
+		if (urler > 0) { $("#trader").removeClass("disabled");  } $("#signer").html("<span>Disconnect</span>🚪"); $("#signer").removeClass("lighten-2"); $("#signer").addClass("darken-1");
 							 document.getElementById("signer").onclick = desetup;
 		$('#myURL').hide().html(badge('ur',urler)).fadeIn('slow');
             	//$("#wallet-area").removeClass("grey"); $("#wallet-area").addClass("green"); $("#wallet-icon").css("color","darkgreen");
@@ -27,7 +27,7 @@ function desetup() { user = ""; user = new Wallet();  $("#trader").addClass("dis
 	$("#myAdd").hide().html('My ETH Balance').fadeIn('slow');document.getElementById("signer").onclick = setup;
 	$('#myETH').hide().html('My Wallet Address').fadeIn('slow'); 
 	//$('#myGas').hide().html('').fadeIn('slow'); 
-	$('#myURL').hide().html('My OCUR Balance').fadeIn('slow'); $("#signer").html("<span>Connect</span>👛"); $("#signer").removeClass("red"); $("#signer").addClass("amber");
+	$('#myURL').hide().html('My OCUR Balance').fadeIn('slow'); $("#signer").html("<span>Connect</span>🪙"); $("#signer").removeClass("darken-1"); $("#signer").addClass("lighten-2");
 		    
     	emptyDeeds(); domainSelect(); }
 
