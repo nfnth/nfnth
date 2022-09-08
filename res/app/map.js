@@ -174,8 +174,8 @@ const [file] = preview.files
         $("#editThumb").addClass("green");$("#editThumb").removeClass("blue-grey"); }}}
 
 function switchIcon() { var temp = Array.from($("#edit-name").val()); $("#markery").html(temp[temp.length-1]); }
-function resetArea() { $('.mapboxgl-popup-content').css('padding', '0');
-	switchTime(); $("#edit-name").val(domains[selectedDomain].core.name); 
+function resetArea() { $('.mapboxgl-popup-content').css('padding', '0'); alert(myDomain);
+	switchTime(); $("#edit-name").val(domains[myDomain].core.name); 
 	switchIcon();
 	//var length = $("#edit-name").val().length;
 	//var symbol = $("#edit-name").val().substring(length-1,length);
