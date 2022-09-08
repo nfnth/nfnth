@@ -68,8 +68,8 @@ function badge(area,amount) {
 		case 'coord': return '<span class="badge yellow badge-stamp z-depth-1"><span style="font-weight:bold;margin-right:4px;">' + amount + '</span> &nbsp;&nbsp;<i class="material-icons" style="color:darkyellow;">map</i></span>';} }
 
 
-var showArtifactOpen = true; var selectedDomain = 0;
-function builder(i) { $("#registry-artifact").html(""); var extra = ""; selectedDomain = i;
+var showArtifactOpen = true; var myDomain = 0;
+function builder(i) { $("#registry-artifact").html(""); var extra = ""; myDomain = i;
 		    
 		    $("#builder").removeClass("disabled");  //$("#trader").removeClass("disabled"); $("#map-add").removeClass("disabled");
 		    
