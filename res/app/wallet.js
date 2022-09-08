@@ -36,8 +36,8 @@ function listDeeds() {
 	$('#domain-template').append('<option>' + user.address.toLowerCase().substring(0,16) + "..." + '</option>');
     	for (let i = 0; i < user.deed.length; i++) { 
 	    	for (let j = 0; j < domains.length; j++) { 
-			if (domains[j].core.token_id == user.deed[i].id) {  user.deed[i].name = domains[j].core.name; j = domains.length;
-	$('#domain-template').append('<option selected="selected" value="' + j + '">' + user.deed[i].name + '</option>'); }} }
+			if (domains[j].core.token_id == user.deed[i].id) {  user.deed[i].name = domains[j].core.name; 
+	$('#domain-template').append('<option selected="selected" value="' + j + '">' + user.deed[i].name + '</option>'); j = domains.length; }} }
 
 	    	
 	
