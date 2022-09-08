@@ -416,7 +416,7 @@ function flipCard() { if(stationary) { stationary = false; } else { //stationary
 	$('.flip-card-inner').css("transform","rotateY(180deg)"); $('.flip-card-front').css("transform","rotateY(180deg)"); $('.text').removeClass("backer"); } }
 	
 function setCard(id) { $("#slide-"+id).html(slideCode.replace("XXXX",id).replace("XXX",id)); shakeCard(id);
-		      $("#flip"+id).click(function(){ openInNewTab(fmags[id]); });
+		      //$("#flip"+id).click(function(){ showDomain(id); });
 $('.slider .item').each(function(i){ if (i == id) {
 	
 	$(this).attr('id', 'slide-'+i);
