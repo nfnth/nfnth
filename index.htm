@@ -34,7 +34,7 @@
 						<li><div style="margin-top:0;" class="divider"></div></li>
 						
 						<li style="margin-top:12px; display: flex;align-items: center;justify-content: center;margin-bottom:16px;"><select id="domain-template" class="sider" onchange="domainSelect();"><option selected="selected" value="void">Select domain...</option><option value="tactician.us">tactician.us (demo)</option></select></li>
-						<li style="display:flex;justify-content:center;padding:12px;"><a id="builder" onclick="mapAdd();" style="width:160px; display: flex;justify-content: space-between;margin-top:8px;" class="mobile-width waves-effect waves-light red lighten-1 btn disabled"><span>BUILD</span>🧱</a></li>
+						<li style="display:flex;justify-content:center;padding:12px;"><a id="builder" onclick="mapAdd(); document.getElementById('connor').click();" style="width:160px; display: flex;justify-content: space-between;margin-top:8px;" class="mobile-width waves-effect waves-light red lighten-1 btn disabled"><span>BUILD</span>🧱</a></li>
 						<li style="display:flex;justify-content:center;padding:12px;margin-top:8px;"><a id="trader" onclick="" style="width:160px; display: flex;justify-content: space-between;" class="mobile-width waves-effect waves-light amber lighten-1 btn modal-trigger disabled" href="#modal3"><span>Trade</span>🪙</a></li>
 						<!--<i class="material-icons left">calculate</i>--></ul></div></div></div>
     		
@@ -249,7 +249,7 @@ function showView(view) {  hideView(); $('#'+view).show();
 		case 'console': $("#console").addClass("scale-in"); break;
 	    case 'decker': $("#decker").addClass("scale-in"); 
 		     addCardIntro(); break;
-        case 'editor': $("#editor").addClass("scale-in"); document.getElementById('connor').click();  break;
+        case 'editor': $("#editor").addClass("scale-in");   break;
         case 'mapper': $("#mapper").addClass("scale-in");
         setTimeout(function() { map.resize(); }, 500); break; } }
 function hideView() { $('.modal').modal('close'); window.scrollTo(0, 0); 
