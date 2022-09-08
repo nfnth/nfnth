@@ -34,8 +34,8 @@
 						<li><div style="margin-top:0;" class="divider"></div></li>
 						
 						<li style="margin-top:12px; display: flex;align-items: center;justify-content: center;margin-bottom:16px;"><select id="domain-template" class="sider" onchange="domainSelect();"><option selected="selected" value="void">Select domain...</option><option value="tactician.us">tactician.us (demo)</option></select></li>
-						<li style="display:flex;justify-content:center;padding:12px;"><a onclick="showView('editor');" style="width:160px; display: flex;justify-content: space-between;margin-top:8px;" class="mobile-width waves-effect waves-light red lighten-1 btn"><span>BUILD</span>🧱</a></li>
-						<li style="display:flex;justify-content:center;padding:12px;margin-top:8px;"><a onclick="" style="width:160px; display: flex;justify-content: space-between;" class="mobile-width waves-effect waves-light amber lighten-1 btn modal-trigger" href="#modal3"><span>Trade</span>🪙</a></li>
+						<li style="display:flex;justify-content:center;padding:12px;"><a id="builder" onclick="showView('editor');" style="width:160px; display: flex;justify-content: space-between;margin-top:8px;" class="mobile-width waves-effect waves-light red lighten-1 btn disabled"><span>BUILD</span>🧱</a></li>
+						<li style="display:flex;justify-content:center;padding:12px;margin-top:8px;"><a id="trader" onclick="" style="width:160px; display: flex;justify-content: space-between;" class="mobile-width waves-effect waves-light amber lighten-1 btn modal-trigger disabled" href="#modal3"><span>Trade</span>🪙</a></li>
 						<!--<i class="material-icons left">calculate</i>--></ul></div></div></div>
     		
 		<div style="width:64px;margin-left:16px;"><a><div style="width:64px;"><img class="image image-rotate gear-image" id="gear-pic" style="opacity:0.6; height: 48px;position:absolute; margin: 4px; cursor:pointer;right:12px;top:4px;" onclick="changeView();"/><img id="gear-pic2" class="image image-rotate gear-image" style="opacity:0.6; height: 48px;position:absolute;cursor:pointer;margin:4px;right:12px;top:4px;" onclick="changeView();"/></div></a></div></div></nav>
@@ -120,12 +120,11 @@
 		<div  class="screen-hide edit-hide" style=" align-items: center; justify-content: space-evenly; margin:12px; margin-top:24px;"><div><div class="hiddenfile"><input name="upload" type="file" id="preview" onchange="checkFile();" multiple="multiple"/></div>
 			<a style="margin-right:8px;" onclick="setContent();" class="waves-effect waves-blue blue lighten-1 btn"><i class="material-icons">add</i><span class='edit-device'></span></a>
 			<a id="dropdown-file" class="waves-effect waves-light blue lighten-3 btn dropdown-trigger" href='#' data-target='dropdown-file' style="margin-right:8px;" ><i id="view-icon" class="material-icons">attach_file</i></a>
-			<a style="margin-right:16px;" onclick="showPreview();" class="waves-effect waves-grey btn-flat"><i class="material-icons">web_asset</i></a>
 			<a style="margin-right:8px;" onclick="clearPad();" class="waves-effect waves-grey btn-flat"><i class="material-icons">refresh</i></a></div>
 			
 		<div>
-			<a onclick="showView('mapper');" class="waves-effect waves-light grey btn"><i class="material-icons">arrow_backward</i><span class='edit-device'></span></a>
-			<a onclick="showView('mapper');" class="waves-effect waves-green green btn"><i class="material-icons">upload</i><span class='edit-device'></span></a></div></div>
+			<a onclick="showView('mapper');" class="waves-effect waves-light grey btn"><i class="material-icons">web_asset</i></a>
+			<a onclick="showView('mapper');" class="waves-effect waves-green green btn"><i class="material-icons">upload</i></a></div></div>
 		
         	<div id="pad" class="z-depth-2" contentEditable="true" style="text-align:left; overflow-y: auto; width:90%; border:1px solid darkgrey; box-shadow: 1px 1px beige; border-radius: 8px;padding: 12px;margin:auto;font-size:20px;height:90%; background-color:whitesmoke;"></div>
 	
