@@ -123,7 +123,7 @@ X make plan`;
   function setTemplate(content) {
       switch(content) {
           case "task": $("#pad").html($("#pad").html()+templateTask); break;
-          case "Profile": $("#pad").html(profileBasic); break;
+          case "datetime": $("#pad").html($("#pad").html()+'\n\n2022...'); break;
           case "Listing": $("#pad").html(profileListing); break;
           case "Recipe": $("#pad").html(artifactRecipe); break;
           case "Instruction": $("#pad").html(artifactRecipe); break;
