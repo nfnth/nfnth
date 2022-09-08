@@ -120,6 +120,14 @@ graph TB
 var templateTask = `X buy milk
 X get cereal
 X make plan`;
+
+function switchTime() {
+    	var current = new Date(); // timestamp, milliseconds since 1970 (?) vs. milliseconds (UTC)
+    	var yyyy = current.getFullYear(), MM = current.getMonth() + 1; if (MM < 10) { MM = "0" + MM.toString(); }
+    	var dd = current.getDate(), hh = current.getHours(), mm = current.getMinutes(), ss = current.getSeconds();
+    	var datestamp = yyyy + "." + MM + "." + dd; var timestamp = hh + ":" + mm + ":" + ss; // calendar?
+	$("#edit-stamp").html(datestamp + "@" + timestamp); }
+
   function setTemplate(content) {
       switch(content) {
           case "task": $("#pad").html($("#pad").html()+templateTask); break;
