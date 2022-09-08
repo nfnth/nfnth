@@ -10,7 +10,8 @@ var setup = async function () {
 		$('#myETH').hide().html(badge('eth',ether.substring(0, 4))).fadeIn('slow'); itemPrice = parseInt(ether) / 2;
 		//$('#myGas').hide().html(badge('gas',gas)).fadeIn('slow'); 
 							 gasPrice = gas; $("#trader").removeClass("disabled");
-		if (urler > 0) { $("#trader").removeClass("disabled");  }
+		if (urler > 0) { $("#trader").removeClass("disabled");  } $("#signer").html("<span>Disconnect</span>🚪");
+							 document.getElementById("signer").onclick = desetup;
 		$('#myURL').hide().html(badge('ur',urler)).fadeIn('slow');
             	//$("#wallet-area").removeClass("grey"); $("#wallet-area").addClass("green"); $("#wallet-icon").css("color","darkgreen");
 		user.deed = []; for (let i=0;i<opens.length;i++) { pullAssets(user, opens[i].core.slug); } 
@@ -23,10 +24,10 @@ var setup = async function () {
 };
 function desetup() { user = ""; user = new Wallet();  $("#trader").addClass("disabled"); $("#logger").addClass("disabled");
 	//$("#wallet-area").addClass("grey"); $("#wallet-area").removeClass("green"); $("#wallet-icon").css("color","darkslategrey");
-	$("#myAdd").hide().html('My ETH Balance').fadeIn('slow');
+	$("#myAdd").hide().html('My ETH Balance').fadeIn('slow');document.getElementById("signer").onclick = setup;
 	$('#myETH').hide().html('My Wallet Address').fadeIn('slow'); 
 	//$('#myGas').hide().html('').fadeIn('slow'); 
-	$('#myURL').hide().html('My OCUR Balance').fadeIn('slow');
+	$('#myURL').hide().html('My OCUR Balance').fadeIn('slow'); $("#signer").html("<span>Connect</span>🚪");
 		    
     	emptyDeeds(); domainSelect(); }
 
