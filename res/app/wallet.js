@@ -27,7 +27,7 @@ function desetup() { user = ""; user = new Wallet();  $("#trader").addClass("dis
 	$("#myAdd").hide().html('My ETH Balance').fadeIn('slow');document.getElementById("signer").onclick = setup;
 	$('#myETH').hide().html('My Wallet Address').fadeIn('slow'); 
 	//$('#myGas').hide().html('').fadeIn('slow'); 
-	$('#myURL').hide().html('My OCUR Balance').fadeIn('slow'); $("#signer").html("<span>Connect</span>🚪");
+	$('#myURL').hide().html('My OCUR Balance').fadeIn('slow'); $("#signer").html("<span>Connect</span>👛");
 		    
     	emptyDeeds(); domainSelect(); }
 
@@ -55,7 +55,7 @@ function domainSelect() {
 					 $("#trader").addClass("disabled"); //$("#map-add").addClass("disabled");
 		$('#myDomain').hide().html("My Domain Balance").fadeIn('slow');
 		$("#myArt").hide().html("My Domain Artifact").fadeIn('slow'); }
-    	else { builder(); }   }
+    	else { builder(dv); }   }
 
 function badge(area,amount) {
 	switch(area) {
@@ -68,8 +68,8 @@ function badge(area,amount) {
 		case 'coord': return '<span class="badge yellow badge-stamp z-depth-1"><span style="font-weight:bold;margin-right:4px;">' + amount + '</span> &nbsp;&nbsp;<i class="material-icons" style="color:darkyellow;">map</i></span>';} }
 
 
-var showArtifactOpen = true;
-function builder() { $("#registry-artifact").html(""); var extra = ""; 
+var showArtifactOpen = true; var selectedDomain = 0;
+function builder(i) { $("#registry-artifact").html(""); var extra = ""; selectedDomain = i;
 		    
 		    $("#builder").removeClass("disabled");  //$("#trader").removeClass("disabled"); $("#map-add").removeClass("disabled");
 		    
