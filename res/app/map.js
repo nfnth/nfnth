@@ -81,7 +81,7 @@ function showMark(coord, color, image, link, name, id, area) { clearLearn();
 	var marv = document.createElement('div'); marv.id = 'marker' + id; 
 	var marp = new mapboxgl.Marker(marv).setLngLat(mark).addTo(map);
 	var imager = ''; var filler = '';
-	var symbol = name.replace(link.replace('https://',''),"").replace(" ","");
+	var symbol = name.substring(name.length-1, name.length);
 	var name = name.replace(symbol,"").replace(" ","");
 	
 	switch(area) {
@@ -99,7 +99,7 @@ function showMark(coord, color, image, link, name, id, area) { clearLearn();
 	$('#marker'+id).addClass('markre'); $('#marker'+id).addClass('z-depth-3'); $('#marker'+id).html(symbol); //color?
 	var style=$('#marker'+id).attr('style'); style += ";align-items: center;justify-content: center;display: flex;background-color: whitesmoke;border: 2px solid darkslategray;font-size: 16px;"; $('#marker'+id).attr('style',style); 
     	//style += ";background-image:url('img/icon/domain/"+folder + "/" +icon+".png'); 
-	var markup = '<div><div class="video-hold flip-card" style="display:flex; justify-content:center;" onclick="flipCard();"><div class="flip-card-inner" style="cursor:pointer;"><div class="flip-card-front z-depth-2" ><video style="width:100%; height:100%; object-fit:cover;" class="video-crop" id="vid' + id + '" autoplay muted loop preload playinline  style="cursor:pointer;" ' + imager + '><source src="' + image + '" type="video/mp4"></video></div><div class="flip-card-back z-depth-2" ><div id="o' + id + '" ></div></div></div></div></div><div style="margin-top:16px; font-size:16px;"><a onclick="openInNewTab(\'' + link + '\');">' + name + '</a><br/><br/>' + custom + '</div></div>';
+	var markup = '<div><div style="display:flex; justify-content:center;" ><div style="cursor:pointer;" class="z-depth-1"><img src="' + domains[id].core.image_url + '" style="width:48px;height:48px;" /></div><div style="margin-top:16px; font-size:16px;"><a onclick="openInNewTab(\'' + link + '\');">' + domains[id].core.name + '</a></div></div></div>';
 	var markup = markCode;
 
 	marp.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); pullOwner(id);
