@@ -3,7 +3,7 @@ var nfnth = false;
 function showNfNth() { if (nfnth) {nfnth = false; $("#set-3").removeClass("quicker"); } else {nfnth = true; $("#set-3").addClass("quicker");} showList('open'); }
 var hist = true;
 function showHistory() { if (hist) {hist = false; $("#set-1").removeClass("quicker"); } else {hist = true; $("#set-1").addClass("quicker");} }
-var loc = true;
+var loc = false;
 function showLoc() { if (loc) {loc = false; $("#set-2").removeClass("quicker"); } else {loc = true; $("#set-2").addClass("quicker");} }
 var card = true;
 function showCard() { if (card) {card = false; $("#set-4").removeClass("quicker"); } else {card = true; $("#set-4").addClass("quicker");} }
