@@ -115,16 +115,16 @@
 
 		<div>
 			<a style="width:148px;margin-right:24px;" onclick="showPreview();" class="waves-effect waves-light green btn lighten-3"><i class="material-icons left">web_asset</i><span class='edit-device'>Preview</span></a>
-			<a style="width:148px;" onclick="addMap(); showView('mapper');" class="waves-effect waves-green green btn"><i class="material-icons right">upload</i><span class='edit-device'>Build</span></a></div></div>
+			<a style="width:148px;" onclick="mapAdd();" class="waves-effect waves-green green btn"><i class="material-icons right">upload</i><span class='edit-device'>Post</span></a></div></div>
 		
 		<div  class="screen-hide edit-hide" style=" align-items: center; justify-content: space-evenly; margin:12px; margin-top:24px;"><div><div class="hiddenfile"><input name="upload" type="file" id="preview" onchange="checkFile();" multiple="multiple"/></div>
-			<a id="dropdown-templater" style="margin-right:8px;" onclick="setContent();" class="waves-effect waves-blue blue lighten-1 btn"><i class="material-icons">add</i><span class='edit-device'></span></a>
+			<a id="dropdown-templater" style="margin-right:8px;" class="waves-effect waves-blue blue lighten-1 btn"><i class="material-icons">add</i><span class='edit-device'></span></a>
 			<a id="dropdown-file" class="waves-effect waves-light blue lighten-3 btn dropdown-trigger" href='#' data-target='dropdown-file' style="margin-right:8px;" ><i id="view-icon" class="material-icons">attach_file</i></a>
 			<a style="margin-right:8px;" onclick="clearPad();" class="waves-effect waves-grey btn-flat"><i class="material-icons">refresh</i></a></div>
 			
 		<div>
-			<a onclick="showView('mapper');" class="waves-effect waves-light grey btn"><i class="material-icons">web_asset</i></a>
-			<a onclick="showView('mapper');" class="waves-effect waves-green green btn"><i class="material-icons">upload</i></a></div></div>
+			<a onclick="showPreview();" class="waves-effect waves-light grey btn"><i class="material-icons">web_asset</i></a>
+			<a onclick="mapAdd();" class="waves-effect waves-green green btn"><i class="material-icons">upload</i></a></div></div>
 		
         	<div id="pad" class="z-depth-2" contentEditable="true" style="text-align:left; overflow-y: auto; width:90%; border:1px solid darkgrey; box-shadow: 1px 1px beige; border-radius: 8px;padding: 12px;margin:auto;font-size:20px;height:90%; background-color:whitesmoke;"></div>
 	
