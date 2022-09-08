@@ -22,7 +22,13 @@ renderMd = function (text) {
     var tableCell = /\|([^\|\n]+)/gi; text = text.replace(tableStart, '<div><table><tr><td>$1</td></tr></table></div>').replaceAll("|", "</td><td>").replaceAll("<td>\n</td>","</tr><tr>").replaceAll("<td>-</td>","").replaceAll("<td></td>",""); text = text.replace(tableRow, '<tr>$1</tr>'); text = text.replace(tableCell, '<td>$1</td><td>$2</td>');
     var lineEx = /\n\n/gi; text = text.replace(lineEx, '<br/><br/>');
     var paragraphEx;
+    
+    
+    
     //const string = "something format_abc"; //const regexp = /(?:^|\s)format_(.*?)(?:\s|$)/g; //const matches = string.matchAll(regexp); //for (const match of matches) { console.log(match); console.log(match.index) }
+    
+    var taskStart = /\n\n(X .*)/gi; var taskEx = /X (.*)/gi; var taskEnd = /(X .*)\n\n/gi; text = text.replace(taskStart, '<br/><div><p><label><input type="checkbox" class="filled-in" /><span>$1</span></label></p>'); text = text.replace(taskEnd, '<p><label><input type="checkbox" class="filled-in" /><span>$1</span></label></p></div><br/>'); text = text.replace(taskEx, '<p><label><input type="checkbox" class="filled-in" /><span>$1</span></label></p>');
+    
     $('#dialog-inner2').find('li').addClass('browser-default'); $('#start').find('*').addClass('browser-default');
 
     return text;}
@@ -111,8 +117,12 @@ graph TB
      class di orange
 |`;
 
+var templateTask = `X buy milk
+X get cereal
+X make plan`;
   function setTemplate(content) {
       switch(content) {
+          case "task": $("#pad").html($("#pad").html()+templateTask); break;
           case "Profile": $("#pad").html(profileBasic); break;
           case "Listing": $("#pad").html(profileListing); break;
           case "Recipe": $("#pad").html(artifactRecipe); break;
