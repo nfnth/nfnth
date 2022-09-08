@@ -37,7 +37,7 @@ function listDeeds() {
     	for (let i = 0; i < user.deed.length; i++) { 
 	    	for (let j = 0; j < domains.length; j++) { 
 			if (domains[j].core.token_id == user.deed[i].id) {  user.deed[i].name = domains[j].core.name; j = domains.length;
-	$('#domain-template').append('<option selected="selected" value="' + user.deed[i].id + '">' + user.deed[i].name + '</option>'); }} }
+	$('#domain-template').append('<option selected="selected" value="' + j + '">' + user.deed[i].name + '</option>'); }} }
 
 	    	
 	
