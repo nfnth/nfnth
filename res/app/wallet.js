@@ -59,8 +59,8 @@ function domainSelect() {
 function badge(area,amount) {
 	switch(area) {
 		case 'artifact': return '<span class="badge blue badge-stamp z-depth-1"><span style="font-weight:bold;margin-right:4px;">' + amount + '</span> note&nbsp;&nbsp;<i class="material-icons" style="color:midnightblue;">article</i></span>';
-		case 'ur': amount = amount.toString().substring(0,5) + "..."; return '<span class="badge amber badge-stamp z-depth-1"><span style="font-weight:bold;margin-right:4px;">' + amount + '</span> OCUR&nbsp;&nbsp;<i class="material-icons" style="color:darkgoldenrod;">toll</i></span>';
-		case 'eth': return '<span class="badge green badge-stamp z-depth-1" ><span style="font-weight:bold;margin-right:4px;">' + amount + '</span> ETH&nbsp;&nbsp;<i class="material-icons" style="color:darkgreen;">token</i></span>';
+		case 'ur': amount = amount.toString().substring(0,5) + "..."; return '<span class="badge amber badge-stamp z-depth-1"><span style="font-weight:bold;margin-right:4px;">' + amount + '</span> OCUR</span>';
+		case 'eth': return '<span class="badge green badge-stamp z-depth-1" ><span style="font-weight:bold;margin-right:4px;">' + amount + '</span> ETH</span>';
 		case 'gas': return '<span class="badge red badge-stamp z-depth-1" ><span style="font-weight:bold;margin-right:4px;">' + amount + '</span> GWEI&nbsp;&nbsp;<i class="material-icons" style="color:darkred;">local_gas_station</i></span>';
 		case 'deed': return '<span class="badge blue badge-stamp z-depth-1"><span style="font-weight:bold;margin-right:4px;">' + amount + '</span> ETH&nbsp;&nbsp;<i class="material-icons" style="color:midnightblue;">sailing</i></span>';
 		case 'wallet': return '<span class="badge brown badge-stamp z-depth-1"><span style="font-weight:bold;margin-right:4px;">' + amount + '</span>&nbsp;&nbsp;<i class="material-icons" style="color:beige;">account_balance_wallet</i></span>'; 
