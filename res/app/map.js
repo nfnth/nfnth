@@ -1,28 +1,6 @@
 class Box { mapStyle = ""; product = false; special = false; scale = false; }
 var boxer = new Box();
-function convertMark(coord) { 
-	var raw = coord.replace('LngLat(','').replace(')','').replace(' ','').replace('[','').replace(']','');
-	return [raw.substring(0, raw.indexOf(',')), raw.substring(raw.indexOf(',')+1, raw.length)];
-}
-function convertMarker(coord) { 
-	var raw = coord.replace('LngLat(','').replace(')','').replace(' ','').replace('[','').replace(']','');
-	return [raw.substring(raw.indexOf(',')+1, raw.length), raw.substring(0, raw.indexOf(','))];
-}
-function convertCoord(coord) { //66°32′56″N 152°50′41″W  Degrees + ((Minutes / 60) + (Seconds / 3600)) 40°41′34″N 73°59′25″W
-	if (!(coord.includes('°'))) return convertMarker(coord);
-	var raw = coord; var lat, long; var add, add2; var sub, sub2; var final, final2;
-	if (raw.includes("N")) { lat = raw.substring(0, raw.indexOf('N')); add = lat.substring(lat.indexOf('°')+1, lat.indexOf('′')); add2 = lat.substring(lat.indexOf('′')+1, lat.indexOf('″')); lat = lat.substring(0, lat.indexOf('°')); }
-	else { lat = raw.substring(0, raw.indexOf('S')); add = lat.substring(lat.indexOf('°')+1, lat.indexOf('′')); add2 = lat.substring(lat.indexOf('′')+1, lat.indexOf('″')); lat = lat.substring(0, lat.indexOf('°')); lat = "-" + lat; }
 
-	if (raw.includes("E")) {  long = raw.substring(raw.indexOf(' ')+1, raw.indexOf('E')); sub = long.substring(long.indexOf('°')+1, long.indexOf('′')); sub2 = long.substring(long.indexOf('′')+1, long.indexOf('″')); long = long.substring(0, long.indexOf('°')); }
-	else { long = raw.substring(raw.indexOf(' ')+1, raw.indexOf('W')); sub = long.substring(long.indexOf('°')+1, long.indexOf('′')); sub2 = long.substring(long.indexOf('′')+1, long.indexOf('″')); long = long.substring(0, long.indexOf('°')); long = "-" + long; }
-	
-	if (isNaN(long) || isNaN(sub) || isNaN(sub2)) { 
-		if (isNaN(long)) { final = 0; } else { final = parseInt(long); } } else { final = parseInt(long) + (parseInt(sub)/60) + (parseInt(sub2)/3600); }
-	if (isNaN(lat) || isNaN(add) || isNaN(add2)) { 
-		if (isNaN(lat)) { final2 = 0; } else { final2 = parseInt(lat); } } else { final2 = parseInt(lat)  + (parseInt(add)/60) + (parseInt(add2)/3600); }
-	
-		     return [final, final2]; }
 //var base = [-101.69697959674477, 39.77108807140884];
 var learnArt = [-103.69697959674477, 37.77108807140884]; var popArt; var popOwn; var popPath; var popBase;
 var learnOwn = [-99.19697959674477, 40.17108807140884];
@@ -96,11 +74,8 @@ function clearLearn() { if (popBase) popBase.remove();
 	
 }
 
-var newMarkCode = '<div class="scene"><div class="card"><div class="card__face card__face--front"><img src="https://i.loli.net/2019/11/23/cnKl1Ykd5rZCVwm.jpg" /></div><div class="card__face card__face--back"><img src="https://i.loli.net/2019/11/16/cqyJiYlRwnTeHmj.jpg" /></div></div></div>';
-
 var markCode = '<div class="flip-card"  ><div class="flip-card-inner" style="cursor:pointer;"><div class="flip-card-frontx z-depth-2" onclick="flipCard();"><img src="XXXX" alt="Avatar" style="width:48px;height:48px;"></div><div class="flip-card-backx z-depth-2" ><div id="tactb" style="opacity:0.75; display: flex;align-items: center;position: absolute;top: 4px;left: 4px;"><span id="tact1" style="font-size: 24px;margin-right: 8px;font-weight: bold;"></span><img style="cursor:pointer;" id="tacta" width="24" height="24" src="res/img/card/heart.png"/></div><div id="cardContent" style="cursor:pointer; color: dimgrey;font-size: 16px;font-weight: bold;font-family: \'Roboto\', sans-serif;" onclick="showDoc(\'tact/YYYY\');">📚 READ... 📚</div><div id="tact2" class="rotate" style="opacity:0.75; display: flex;align-items: center;position: absolute;bottom: 4px;right: 4px;"></div></div></div>';
 
-var formCode = '<!-- heirarchy: #cuboid > form > div*4(cuboid faces) --><div id="cuboid"><form><!-- #1 hover button --><div><p class="cuboid-text">Subscribe</p></div><!-- #2 text input --><div><!-- Label to trigger #submit --><label for="submit" class="submit-icon"><i class="fa fa-chevron-right"></i></label><input type="text" id="email" class="cuboid-text" placeholder="Your Email" autocomplete="off"/><!-- hidden submit button --><input type="submit" id="submit" /></div><!-- #3 loading message --><div><p class="cuboid-text loader">Just a moment</p></div><!-- #4 success message --><div><!-- reset/retry button --><span class="reset-icon"><i class="fa fa-refresh"></i></span><p class="cuboid-text">Thankyou, we will be in touch</p></div></form></div>';
 function showMark(coord, color, image, link, name, id, area) { clearLearn();
 	var mark = coord;
 	var marv = document.createElement('div'); marv.id = 'marker' + id; 
@@ -125,7 +100,7 @@ function showMark(coord, color, image, link, name, id, area) { clearLearn();
 	var style=$('#marker'+id).attr('style'); style += ";align-items: center;justify-content: center;display: flex;background-color: whitesmoke;border: 2px solid darkslategray;font-size: 16px;"; $('#marker'+id).attr('style',style); 
     	//style += ";background-image:url('img/icon/domain/"+folder + "/" +icon+".png'); 
 	var markup = '<div><div class="video-hold flip-card" style="display:flex; justify-content:center;" onclick="flipCard();"><div class="flip-card-inner" style="cursor:pointer;"><div class="flip-card-front z-depth-2" ><video style="width:100%; height:100%; object-fit:cover;" class="video-crop" id="vid' + id + '" autoplay muted loop preload playinline  style="cursor:pointer;" ' + imager + '><source src="' + image + '" type="video/mp4"></video></div><div class="flip-card-back z-depth-2" ><div id="o' + id + '" ></div></div></div></div></div><div style="margin-top:16px; font-size:16px;"><a onclick="openInNewTab(\'' + link + '\');">' + name + '</a><br/><br/>' + custom + '</div></div>';
-	var markup = newMarkCode;
+	var markup = markCode;
 
 	marp.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); pullOwner(id);
 	
@@ -196,11 +171,6 @@ $("#cuboid form").submit(function(){
 	//prevent default form submisson
 	return false;
 })
-
-//reset/refresh functionality
-$(".reset-icon").click(function(){
-	$("#cuboid form").removeClass("complete");
-});
 	
 	//.setHTML(editContent));
 	
@@ -219,12 +189,7 @@ var editContent = '<div class="editMark" style="width:100%; height:48px;display:
 var isSquare = true;
 function setShape() { if (isSquare) { $("#markery").css("border-radius","50%"); $("#shape-icon").html("square"); isSquare = false; } else { $("#markery").css("border-radius",""); $("#shape-icon").html("circle"); isSquare = true; } }
 
-function switchTime() {
-    	var current = new Date(); // timestamp, milliseconds since 1970 (?) vs. milliseconds (UTC)
-    	var yyyy = current.getFullYear(), MM = current.getMonth() + 1; if (MM < 10) { MM = "0" + MM.toString(); }
-    	var dd = current.getDate(), hh = current.getHours(), mm = current.getMinutes(), ss = current.getSeconds();
-    	var datestamp = yyyy + "." + MM + "." + dd; var timestamp = hh + ":" + mm + ":" + ss; // calendar?
-	$("#edit-stamp").html(datestamp + "@" + timestamp); }
+
 
 function switchIcon() { var temp = Array.from($("#edit-name").val()); $("#markery").html(temp[temp.length-1]); }
 function resetArea() { $('.mapboxgl-popup-content').css('padding', '0');
@@ -235,11 +200,6 @@ function resetArea() { $('.mapboxgl-popup-content').css('padding', '0');
 	
 	
 }
-
-function setText() {
-	
-}
-
 
 function setMap(area) { var center = map.getCenter(); mapSelect = area;
 	switch (area) {
