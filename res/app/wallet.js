@@ -9,7 +9,7 @@ var setup = async function () {
             	var fields = data.split('|'); var ether = JSON.parse(fields[0]).result; var urler = fields[1]; var gas = fields[2];
 		$('#myETH').hide().html(badge('eth',ether.substring(0, 4))).fadeIn('slow'); itemPrice = parseInt(ether) / 2;
 		//$('#myGas').hide().html(badge('gas',gas)).fadeIn('slow'); 
-							 gasPrice = gas;
+							 gasPrice = gas; $("#trader").removeClass("disabled");
 		if (urler > 0) { $("#trader").removeClass("disabled");  }
 		$('#myURL').hide().html(badge('ur',urler)).fadeIn('slow');
             	//$("#wallet-area").removeClass("grey"); $("#wallet-area").addClass("green"); $("#wallet-icon").css("color","darkgreen");
@@ -31,7 +31,7 @@ function desetup() { user = ""; user = new Wallet();  $("#trader").addClass("dis
     	emptyDeeds(); domainSelect(); }
 
 function listDeeds() {
-    	$('#domain-template').empty(); $('#domain-template').append('<option selected="selected">No domain selected</option>');
+    	$('#domain-template').empty(); $('#domain-template').append('<option selected="selected">Select domain...</option>');
 	$('#domain-template').append('<option>' + user.address.toLowerCase().substring(0,16) + "..." + '</option>');
     	for (let i = 0; i < user.deed.length; i++) { 
 	    	for (let j = 0; j < domains.length; j++) { 
@@ -45,16 +45,16 @@ function listDeeds() {
 }
 
 function emptyDeeds() { $('#domain-template').empty();
-    	$('#domain-template').append('<option selected="selected">No domain selected</option>'); 
+    	$('#domain-template').append('<option selected="selected">Select domain...</option>'); 
 	$('#domain-template').append('<option>My Local Wallet</option>'); $("#domain-template").formSelect(); }
 
 function domainSelect() { 
 	var d = document.getElementById("domain-template"); var dt = d.options[d.selectedIndex].text; var dv = d.options[d.selectedIndex].value; 
-    	if (dt == 'No domain selected') { $("#builder").addClass("disabled"); 
-					 //$("#trader").addClass("disabled"); $("#map-add").addClass("disabled");
+    	if (dt == 'Select domain...') { $("#builder").addClass("disabled"); 
+					 $("#trader").addClass("disabled"); //$("#map-add").addClass("disabled");
 		$('#myDomain').hide().html("My Domain Balance").fadeIn('slow');
 		$("#myArt").hide().html("My Domain Artifact").fadeIn('slow'); }
-    	else { pullDomain(dv); }   }
+    	else { builder(); }   }
 
 function badge(area,amount) {
 	switch(area) {
@@ -66,28 +66,6 @@ function badge(area,amount) {
 		case 'wallet': return '<span class="badge brown badge-stamp z-depth-1"><span style="font-weight:bold;margin-right:4px;">' + amount + '</span>&nbsp;&nbsp;<i class="material-icons" style="color:beige;">account_balance_wallet</i></span>'; 
 		case 'coord': return '<span class="badge yellow badge-stamp z-depth-1"><span style="font-weight:bold;margin-right:4px;">' + amount + '</span> &nbsp;&nbsp;<i class="material-icons" style="color:darkyellow;">map</i></span>';} }
 
-function pullDomain(domain) { domainMd = ""; domainMd = new Md(); 
-	$("#selink").removeClass("disabled"); $("#dropdown-deeder").removeClass("disabled"); $("#swilink").removeClass("disabled");
-	$("#adder").removeClass("disabled"); $("#editer").removeClass("disabled"); $("#deleter").removeClass("disabled");
-			     
-	if (domain == "void") {
-		artifacts = [];
-		$("#selink").addClass("disabled"); $("#dropdown-deeder").addClass("disabled"); $("#swilink").addClass("disabled");
-		$("#adder").addClass("disabled"); $("#editer").addClass("disabled"); $("#deleter").addClass("disabled");
-	} else {
-		$.get('domain/' + domain + '/doc', function(data) { 
-			var lines = data.split(/\r?\n/); var fields = lines[0].split('|'); 
-			domainMd.name = fields[0]; domainMd.location = fields[1]; domainMd.color = fields[2]; 
-			domainMd.image = fields[3]; domainMd.content = fields[4]; domainMap();
-			for (let i = 1; i < lines.length - 1; i++) { 
-				temp = new Md(); fields = lines[i].split('|'); 
-				temp.name = fields[0]; temp.location = fields[1]; temp.color = fields[2]; temp.image = fields[3]; temp.content = fields[4];
-				artifacts.push(temp); }  
-			builder(); }).fail(function(){ artifacts = [];
-  builder();
-});
-	
-	}  }
 
 var showArtifactOpen = true;
 function builder() { $("#registry-artifact").html(""); var extra = ""; 
