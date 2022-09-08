@@ -100,7 +100,7 @@ function showMark(coord, color, image, link, name, id, area) { clearLearn();
 	var style=$('#marker'+id).attr('style'); style += ";align-items: center;justify-content: center;display: flex;background-color: whitesmoke;border: 2px solid darkslategray;font-size: 16px;"; $('#marker'+id).attr('style',style); 
     	//style += ";background-image:url('img/icon/domain/"+folder + "/" +icon+".png'); 
 	var markup = '<div><div style="display:flex; justify-content:center;" ><div style="cursor:pointer;" class="z-depth-1"><img src="' + domains[id].core.image_url + '" style="width:48px;height:48px;" /></div><div style="margin-top:16px; font-size:16px;"><a onclick="openInNewTab(\'' + link + '\');">' + domains[id].core.name + '</a></div></div></div>';
-	var markup = markCode;
+	//var markup = markCode;
 
 	marp.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); pullOwner(id);
 	
