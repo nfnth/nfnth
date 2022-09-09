@@ -12,8 +12,8 @@ var setup = async function () {
 								 if (local[i].to == "0x8a83fbbacb82030ea17179c0403b04e7bce7ba10")
 								 { localAmount += local[i].value; } } //timestamp?
 							  $('#myDomain').hide().html(badge('ur',localAmount)).fadeIn('slow');
-							 alert(ether);
-			var ether = parseInt(ether) / 100000; alert(ether);
+							 
+			var ether = parseInt(ether) / 1000000000000000000; 
 		$('#myETH').hide().html(badge('eth',ether.toString().substring(0, 4))).fadeIn('slow'); itemPrice = parseInt(ether) / 2;
 		//$('#myGas').hide().html(badge('gas',gas)).fadeIn('slow'); 
 							 gasPrice = gas; $("#trader").removeClass("disabled");
