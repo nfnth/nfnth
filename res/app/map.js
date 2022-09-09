@@ -161,7 +161,7 @@ function complete()
 {
 	$("#cuboid form").removeClass("loading").addClass("complete");
 }
-var editContent = '<div class="editMark" style="display:none!important; width:100%; height:48px;display:flex;"><a class="quick hoverable z-depth-1 crisp waves-effect waves-light btn" onclick="setShape();">🟢</a><a class="quick hoverable z-depth-1 crisp waves-effect waves-light btn" onclick="switchIcon();">🧸</a><a class="quick hoverable z-depth-1 crisp waves-effect waves-light btn" onclick="colorStart(this);">🎨</a><a class="quick hoverable z-depth-1 crisp waves-effect waves-light btn" onclick="outlineStart(this);">🔳</a></div><div id="header-logo" style="display: flex;justify-content: space-evenly;align-items: center; display: flex;margin-top:8px;"><div style="border-radius:12px; padding:12px;cursor:pointer;" class="z-depth-1"><img width="48" height="48" id="thumb" src="res/img/barrel.png" onclick="$(\'#preview\').trigger(\'click\');" /></div></div></div></div><div class="hiddenfile"><input name="upload" type="file" id="preview" onchange="setPreview();" multiple="multiple"/><div style="visibility:hidden;width:0;position:absolute;top:0;"><input type="color" oninput="setColor();" id="favcolor" name="favcolor" value="#ff0000" style="width:0px; height:0px;opacity:0;" /><input type="color" oninput="setOutline();" id="favcolor2" name="favcolor2" value="#ff0000" style="width:0px; height:0px;opacity:0;" /></div></div><div style="padding:12px; padding-top:0px; padding-bottom:0px; display:flex; justify-content:center;"><div style="margin-top:0px;margin-bottom:0px;" class="input-field col s4"><input id="edit-name" type="text" class="validate" onchange="setText();"></div></div><div style="display:flex;justify-content:space-evenly;margin-top:12px;margin-bottom:12px;align-items:center;"><a class="waves-effect waves-light btn-flat" onclick="resetArea();" style="padding:0px;"><i class="material-icons">refresh</i></a><a class="waves-effect waves-green green btn" onclick="showView(\'editor\');"><i class="material-icons right">arrow_forward</i>Editor</a></div></div>';
+var editContent = '<div class="editMark" style="width:100%; height:48px;display:flex;"><a class="quick hoverable z-depth-1 crisp waves-effect waves-light btn" onclick="setShape();">🟢</a><a class="quick hoverable z-depth-1 crisp waves-effect waves-light btn" onclick="switchIcon();">🧸</a><a class="quick hoverable z-depth-1 crisp waves-effect waves-light btn" onclick="colorStart(this);">🎨</a><a class="quick hoverable z-depth-1 crisp waves-effect waves-light btn" onclick="outlineStart(this);">🔳</a></div><div id="header-logo" style="display: flex;justify-content: space-evenly;align-items: center; display: flex;margin-top:8px;"><div style="border-radius:12px; padding:12px;cursor:pointer;" class="z-depth-1"><img width="48" height="48" id="thumb" src="res/img/barrel.png" onclick="$(\'#preview\').trigger(\'click\');" /></div></div></div></div><div class="hiddenfile"><input name="upload" type="file" id="preview" onchange="setPreview();" multiple="multiple"/><div style="visibility:hidden;width:0;position:absolute;top:0;"><input type="color" oninput="setColor();" id="favcolor" name="favcolor" value="#ff0000" style="width:0px; height:0px;opacity:0;" /><input type="color" oninput="setOutline();" id="favcolor2" name="favcolor2" value="#ff0000" style="width:0px; height:0px;opacity:0;" /></div></div><div style="padding:12px; padding-top:0px; padding-bottom:0px; display:flex; justify-content:center;"><div style="margin-top:0px;margin-bottom:0px;" class="input-field col s4"><input id="edit-name" type="text" class="validate" onchange="setText();"></div></div><div style="display:flex;justify-content:space-evenly;margin-top:12px;margin-bottom:12px;align-items:center;"><a class="waves-effect waves-light btn-flat" onclick="resetArea();" style="padding:0px;"><i class="material-icons">refresh</i></a><a class="waves-effect waves-green green btn" onclick="showView(\'editor\');"><i class="material-icons right">arrow_forward</i>Editor</a></div></div>';
 
 var isSquare = true;
 function setShape() { if (isSquare) { $("#markery").css("border-radius","50%"); $("#shape-icon").html("square"); isSquare = false; } else { $("#markery").css("border-radius",""); $("#shape-icon").html("circle"); isSquare = true; } }
@@ -178,6 +178,7 @@ const [file] = preview.files
 function switchIcon() { var temp = Array.from($("#edit-name").val()); $("#markery").html(temp[temp.length-1]); }
 function resetArea() { $('.mapboxgl-popup-content').css('padding', '0'); 
 	switchTime(); $("#edit-name").val(domains[myDomain].core.name); 
+		      $("#header-logo").src(domains[myDomain].core.image_url;
 	switchIcon();
 	//var length = $("#edit-name").val().length;
 	//var symbol = $("#edit-name").val().substring(length-1,length);
@@ -217,9 +218,9 @@ function mapSat() { var satCenter = map.getCenter();
 
 var tempCoord = [0,0];
 function mapLoc() { 
-	if (gpsSwitch) { clearMap(); gpsSwitch = false; $("#map-loc").addClass("grey"); $("#map-loc").removeClass("green"); } 
+	if (gpsSwitch) { clearMap(); } 
 	else { if(navigator.geolocation) { navigator.geolocation.getCurrentPosition(geoSuccess, geoError); } else { alert("Geolocation is not supported by this browser.");} } }
-function geoSuccess(position) {tempCoord[1] = position.coords.latitude;tempCoord[0] = position.coords.longitude; gpsSwitch = true; $("#map-loc").addClass("blue"); $("#map-loc").removeClass("grey"); setZoom = 8; fly(tempCoord); addBeacon(tempCoord); beacon = true; } 
+function geoSuccess(position) {tempCoord[1] = position.coords.latitude;tempCoord[0] = position.coords.longitude; setZoom = 8; fly(tempCoord); addBeacon(tempCoord); beacon = true; } 
 function geoError() { alert('No location'); }
 
 
