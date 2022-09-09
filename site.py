@@ -46,7 +46,7 @@ async def api(request):
     hostname = socket.gethostname() #ip_address = socket.gethostbyname(hostname)
     temp_key = socket.gethostbyname(hostname) + "|" + str(datetime.datetime.now()) + "|" + token_balance
     print (temp_key)
-    return web.Response(text=eth_balance.text+"|"+token_balance+"|"+gas_balance+"|"+str(SECRET.encrypt(str.encode(temp_key))+"|"+str(token_trans)),content_type="text/html")
+    return web.Response(text=eth_balance.text+"|"+token_balance+"|"+gas_balance+"|"+token_trans+"|"+str(SECRET.encrypt(str.encode(temp_key))),content_type="text/html")
 
 async def data(request):
     wallet = request.match_info.get('wallet', '')
