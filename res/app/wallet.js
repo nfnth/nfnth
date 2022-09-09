@@ -1,6 +1,6 @@
 class Wallet { address = ""; deed = []; } class Deed { name = ""; id = ""; }
 var user = new Wallet(); //var disconnect = false;
-var gasPrice = ""; var itemPrice;
+var gasPrice = ""; var itemPrice; var localAmount = 0;
 var setup = async function () {
     if (window.ethereum) { //web3 = new Web3(window.ethereum); //await account();
         const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' }); user.address = accounts[0];
@@ -10,14 +10,14 @@ var setup = async function () {
 							 var local = JSON.parse(fields[3]);
 							 for (let i = 0; i <local.length; i++) { 
 								 if (local[i].to == "0x8a83fbbacb82030ea17179c0403b04e7bce7ba10")
-									 alert(local[i].value); alert(local[i].timeStamp); }
-							 //{"status":"1","message":"OK","result":[{"blockNumber":"14555213","timeStamp":"1649556520","hash":"0x2e226bc4605acaad226c829ea070badeaf011fea198fc5f2d303dd6c9c043eaf","nonce":"19","blockHash":"0x0f3a598d5cfd5721c31e182ea7d9fbfe23023cab1e894d1ffce43132f92fad42","from":"0x0000000000000000000000000000000000000000","contractAddress":"0xccab679860b1017589239bceeeabe5cd45965afc","to":"0x8a83fbbacb82030ea17179c0403b04e7bce7ba10","value":"1000000000000000000000000000000","tokenName":"ocur.io","tokenSymbol":"OCUR","tokenDecimal":"18","transactionIndex":"33","gas":"938401","gasPrice":"27897095777","gasUsed":"721847","cumulativeGasUsed":"4568435","input":"deprecated","confirmations":"949235"},{"blockNumber":"15265871","timeStamp":"1659480535","hash":"0x47a4355d0af60995e5bd2042a42957a3cc80f4c71531efd52c44eb4fd6bd76fc","nonce":"21","blockHash":"0x8112b78dee329024964697725d2e4b63b00e3141c979caf25fd016dbd9074020","from":"0x8a83fbbacb82030ea17179c0403b04e7bce7ba10","contractAddress":"0xccab679860b1017589239bceeeabe5cd45965afc","to":"0x4dddb8e230c8180779c3ec6fd6fe51ef29f6ba63","value":"500000000000999894961081294099","tokenName":"ocur.io","tokenSymbol":"OCUR","tokenDecimal":"18","transactionIndex":"130","gas":"6305860","gasPrice":"8814448183","gasUsed":"5168876","cumulativeGasUsed":"20752452","input":"deprecated","confirmations":"238577"},{"blockNumber":"15266117","timeStamp":"1659483835","hash":"0xb380f4d7b81e59d2d200967982ee6bfe3d9e717ef375dc1f42cb5e7b82634618","nonce":"7","blockHash":"0x016e8b3d103f1dedcc12c79e2c0df63adbdeeccf4f27290d55e9838405ca520d","from":"0xb0d39cd2a5acc510529444b45a3aca189d971c49","contractAddress":"0xccab679860b1017589239bceeeabe5cd45965afc","to":"0x8a83fbbacb82030ea17179c0403b04e7bce7ba10","value":"999000000000000000000","tokenName":"ocur.io","tokenSymbol":"OCUR","tokenDecimal":"18","transactionIndex":"199","gas":"51712","gasPrice":"8381920770","gasUsed":"34475","cumulativeGasUsed":"18665364","input":"deprecated","confirmations":"238331"}]}
+								 { localAmount += local[i].value; } } //timestamp?
+							  $('#myDomain').hide().html(badge('ur',localAmount)).fadeIn('slow');
 		$('#myETH').hide().html(badge('eth',ether.substring(0, 4))).fadeIn('slow'); itemPrice = parseInt(ether) / 2;
 		//$('#myGas').hide().html(badge('gas',gas)).fadeIn('slow'); 
 							 gasPrice = gas; $("#trader").removeClass("disabled");
 		if (urler > 0) { $("#trader").removeClass("disabled");  } $("#signer").html("<span>Disconnect</span>🚪"); $("#signer").removeClass("lighten-2"); $("#signer").addClass("darken-1");
 							 document.getElementById("signer").onclick = desetup;
-		$('#myURL').hide().html(badge('ur',urler)).fadeIn('slow');
+		$('#myURL').hide().html(badge('ur',urler)).fadeIn('slow'); 
             	//$("#wallet-area").removeClass("grey"); $("#wallet-area").addClass("green"); $("#wallet-icon").css("color","darkgreen");
 		user.deed = []; for (let i=0;i<opens.length;i++) { pullAssets(user, opens[i].core.slug); } 
 	} ).fail(function() {
@@ -32,7 +32,7 @@ function desetup() { user = ""; user = new Wallet();  $("#trader").addClass("dis
 	$("#myAdd").hide().html('My ETH Balance').fadeIn('slow');document.getElementById("signer").onclick = setup;
 	$('#myETH').hide().html('My Wallet Address').fadeIn('slow'); 
 	//$('#myGas').hide().html('').fadeIn('slow'); 
-	$('#myURL').hide().html('My OCUR Balance').fadeIn('slow'); $("#signer").html("<span>Connect</span>🪙"); $("#signer").removeClass("darken-1"); $("#signer").addClass("lighten-2");
+	$('#myURL').hide().html('My OCUR Balance').fadeIn('slow'); $("#signer").html("<span>Connect</span>🪙"); $("#signer").removeClass("darken-1"); $("#signer").addClass("lighten-2"); $('#myDomain').hide().html("My Notebook").fadeIn('slow');
 		    
     	emptyDeeds(); domainSelect(); }
 
@@ -58,8 +58,7 @@ function domainSelect() {
 	var d = document.getElementById("domain-template"); var dt = d.options[d.selectedIndex].text; var dv = d.options[d.selectedIndex].value; 
     	if (dt == 'Select domain...') { $("#builder").addClass("disabled"); 
 					 $("#trader").addClass("disabled"); //$("#map-add").addClass("disabled");
-		$('#myDomain').hide().html("My Domain Balance").fadeIn('slow');
-		$("#myArt").hide().html("My Domain Artifact").fadeIn('slow'); }
+		 }
     	else { builder(dv); }   }
 
 function badge(area,amount) {
@@ -80,10 +79,10 @@ function builder(i) { $("#registry-artifact").html(""); var extra = ""; myDomain
 		    
 	if (artifacts.length == 0) { $("#registry-artifact").append("<a onclick='$(\"#domain-tabs\").tabs(\"select\", \"test4\");' class='collection-item'>No cards found.</a>");
 				   
-	      $('#myDomain').hide().html(badge('ur','0')).fadeIn('slow');
-	      $('#myArt').hide().html(badge('artifact','0')).fadeIn('slow');  }
+	      
+	       }
 		    
-	      $('#myDomain').hide().html(badge('ur','24,901')).fadeIn('slow');
+	      
 	      $('#myArt').hide().html(badge('artifact',artifacts.length.toString())).fadeIn('slow');
 		    
 	for (let i = 0; i < artifacts.length; i++) { if(artifacts[i].checked == true) { extra = "checked='checked'"; } 
@@ -112,9 +111,6 @@ var sender = function (message, signature, content, ref) {
 async function send() {
 	
 }
-
-//balance
-//[{"blockNumber": "15265903", "timeStamp": "1659480972", "hash": "0x4e4c96362eda51e22c61b06039c688f5baeff4062c3e859a7afa9bc0dc3941bc", "nonce": "6", "blockHash": "0x6687e9a09523eec3159993f50da6d791ba14b8de916b18a3aad3ddefef58adf6", "from": "0x4dddb8e230c8180779c3ec6fd6fe51ef29f6ba63", "contractAddress": "0xccab679860b1017589239bceeeabe5cd45965afc", "to": "0xb0d39cd2a5acc510529444b45a3aca189d971c49", "value": "7999054404488344947816010", "tokenName": "ocur.io", "tokenSymbol": "OCUR", "tokenDecimal": "18", "transactionIndex": "275", "gas": "208664", "gasPrice": "7541498669", "gasUsed": "148651", "cumulativeGasUsed": "24972346", "input": "deprecated", "confirmations": "4382"}, {"blockNumber": "15266117", "timeStamp": "1659483835", "hash": "0xb380f4d7b81e59d2d200967982ee6bfe3d9e717ef375dc1f42cb5e7b82634618", "nonce": "7", "blockHash": "0x016e8b3d103f1dedcc12c79e2c0df63adbdeeccf4f27290d55e9838405ca520d", "from": "0xb0d39cd2a5acc510529444b45a3aca189d971c49", "contractAddress": "0xccab679860b1017589239bceeeabe5cd45965afc", "to": "0x8a83fbbacb82030ea17179c0403b04e7bce7ba10", "value": "999000000000000000000", "tokenName": "ocur.io", "tokenSymbol": "OCUR", "tokenDecimal": "18", "transactionIndex": "199", "gas": "51712", "gasPrice": "8381920770", "gasUsed": "34475", "cumulativeGasUsed": "18665364", "input": "deprecated", "confirmations": "4168"}]
 
 //signer('aslito.us','https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/62652367444291733483705976494538757758952482544655308357132040199892883210241','artifact', '62652367444291733483705976494538757758952482544655308357132040199892883210241');	
 
