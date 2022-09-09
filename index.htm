@@ -98,29 +98,25 @@
 
 
 <!-- map -->
-    	<div id="mapper" class="content loader pane scale-transition scale-out" style="overflow-y: auto; height: 130%;">
-			
-		<div id="map" style="width:100%; height:100%;"></div></div>
-
-
+<div id="mapper" class="content loader pane scale-transition scale-out" style="overflow-y: auto; height: 130%;">
+	<div id="map" style="width:100%; height:100%;"></div></div>
 
 <!-- editor -->
-    	<div id="editor" class="content loader pane scale-transition scale-out" style="height:90%;">
-		<div  class="hide-on-med-and-down" style="display:flex;  align-items: center; justify-content: space-between; margin: 10%;margin-top: 24px;margin-bottom: 12px;width: 80%;">
-			<div ><div class="hiddenfile"><input name="upload" type="file" id="preview" onchange="checkFile();" multiple="multiple"/></div>
-
-				<a id="dropdown-templater" style="margin-right:24px;width:148px;" class="waves-effect waves-blue blue lighten-1 btn dropdown-trigger" href="#" data-target='dropdown-template'><i class="material-icons right">arrow_drop_down</i><span class='edit-device'>📏&nbsp;&nbsp;Add</span></a>
-				<a id="dropdown-file" class="waves-effect waves-light blue lighten-3 btn dropdown-trigger" href='#' data-target='dropdown-file' style="margin-right:8px;width:148px;" ><i class="material-icons right">arrow_drop_down</i>📁&nbsp;&nbsp;File</a>
-				<a onclick=" clearPad();" class="waves-effect waves-grey btn-flat" >🗑️</a></div>
+<div id="editor" class="content loader pane scale-transition scale-out" style="height:90%;">
+	<div  class="hide-on-med-and-down" style="display:flex;  align-items: center; justify-content: space-between; margin: 10%;margin-top: 24px;margin-bottom: 12px;width: 80%;">
+		<div ><div class="hiddenfile"><input name="upload" type="file" id="preview" onchange="checkFile();" multiple="multiple"/></div>
+<a onclick=" clearPad();" class="waves-effect waves-grey btn-flat" >🗑️</a>
+			<a id="dropdown-templater" style="margin-left:24px; margin-right:24px;width:148px;" class="waves-effect waves-blue blue lighten-1 btn dropdown-trigger" href="#" data-target='dropdown-template'><i class="material-icons right">arrow_drop_down</i><span class='edit-device'>📏&nbsp;&nbsp;Add</span></a>
+			<a id="dropdown-file" class="waves-effect waves-light blue lighten-3 btn dropdown-trigger" href='#' data-target='dropdown-file' style="margin-right:8px;width:148px;" ><i class="material-icons right">arrow_drop_down</i>📁&nbsp;&nbsp;File</a></div>
 
 		<div>
 			<a style="width:148px;margin-right:24px;" onclick="showPreview();" class="waves-effect waves-light green btn lighten-3">📃&nbsp;&nbsp;<span class='edit-device'>Preview</span></a>
 			<a style="width:148px;" onclick="mapAdd();" class="waves-effect waves-green green btn"><span class='edit-device'>Post&nbps;&nbsp;📮</span></a></div></div>
 		
 		<div  class="screen-hide edit-hide" style=" align-items: center; justify-content: space-evenly; margin:12px; margin-top:24px;"><div><div class="hiddenfile"><input name="upload" type="file" id="preview" onchange="checkFile();" multiple="multiple"/></div>
-			<a id="dropdown-templatey" style="margin-right:8px;" class="waves-effect waves-blue blue lighten-1 btn dropdown-trigger" href="#" data-target='dropdown-template'>📏<span class='edit-device'></span></a>
-			<a id="dropdown-file" class="waves-effect waves-light blue lighten-3 btn dropdown-trigger" href='#' data-target='dropdown-file' style="margin-right:8px;" >📁</a>
-			<a style="margin-right:8px;" onclick="clearPad();" class="waves-effect waves-grey btn-flat">🗑️</a></div>
+			<a onclick="clearPad();" class="waves-effect waves-grey btn-flat">🗑️</a>
+			<a id="dropdown-templatey" style="margin-left:8px; margin-right:8px;" class="waves-effect waves-blue blue lighten-1 btn dropdown-trigger" href="#" data-target='dropdown-template'>📏<span class='edit-device'></span></a>
+			<a id="dropdown-file" class="waves-effect waves-light blue lighten-3 btn dropdown-trigger" href='#' data-target='dropdown-file' style="margin-right:8px;" >📁</a></div>
 		<div>
 			<a onclick="showPreview();" style="margin-right:8px;" class="waves-effect waves-light grey btn">📃</a>
 			<a onclick="mapAdd();" class="waves-effect waves-green green btn">📮</a></div></div>
