@@ -100,7 +100,7 @@ function showMark(coord, color, image, link, name, id, area) { clearLearn();
 	$('#marker'+id).addClass('markre'); $('#marker'+id).addClass('z-depth-3'); $('#marker'+id).html(symbol); //color?
 	var style=$('#marker'+id).attr('style'); style += ";align-items: center;justify-content: center;display: flex;background-color: whitesmoke;border: 2px solid darkslategray;font-size: 16px;"; $('#marker'+id).attr('style',style); 
     	//style += ";background-image:url('img/icon/domain/"+folder + "/" +icon+".png'); 
-	var markup = '<div><div style="display:flex; justify-content:center; flex-direction:column; align-items:center;" ><div style="width:64px;height:64px;display:flex;margin-top:6px;border-radius:8px;cursor:pointer;" class="z-depth-1" ><img style="border-radius:8px;width:64px;height:64px;" src="' + domains[id].core.image_url + '" /></div><div style="margin-top:16px; font-size:16px;"><a onclick="openInNewTab(\'' + link + '\');">' + domains[id].core.name + '</a></div></div></div>';
+	var markup = '<div><div style="display:flex; justify-content:center; flex-direction:column; align-items:center;" ><div style="width:64px;height:64px;display:flex;margin-top:6px;border-radius:8px;cursor:pointer;" class="z-depth-1" onclick="buildDoc(\'' + i + '\');"><img style="border-radius:8px;width:64px;height:64px;" src="' + domains[id].core.image_url + '" /></div><div style="margin-top:16px; font-size:16px;"><a onclick="openInNewTab(\'' + link + '\');">' + domains[id].core.name + '</a></div></div></div>';
 	//var markup = markCode;
 
 	marp.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); //pullOwner(id);
@@ -143,7 +143,7 @@ function showEdit() { if (tempMark != "") { tempMark.remove(); tempMark = ""; }
 	var marv = document.createElement('div'); marv.id = 'markery';// coordinates.lat += 6;
 	tempMark = new mapboxgl.Marker(marv).setLngLat(coordinates).addTo(map);
     	$('#markery').addClass('markre'); $('#markerx').addClass('z-depth-3'); var style=$('#markery').attr('style');
-		     var front = getFront(domains[myDomain].core.collection.slug); var back = getBack(domains[myDomain].core.collection.slug);
+		     var front = "ghostwhite"; var back = getFront(domains[myDomain].core.collection.slug);
     	style += ";background-color:" + front + ";border:solid 2px " + back + ";display: flex;align-items: center;justify-content: center;font-size: 18px;"; $('#markery').attr('style',style);
     	//style += ";background-image:url('img/icon/domain/"+folder + "/" +icon+".png'); 
 		     
@@ -156,7 +156,6 @@ function showEdit() { if (tempMark != "") { tempMark.remove(); tempMark = ""; }
 		     //$("#markery").click(colorStart); 
 		     }
 
-//<div id="editColor" class="chip z-depth-1 waves-effect waves-light grey lighten-1" style="display:flex; color:white; align-items:center; justify-content:center; width:60px;" onclick="colorStart();"><div style="display:flex;"><i id="pal" class="material-icons">palette</i></div></div>
 function complete()
 {
 	$("#cuboid form").removeClass("loading").addClass("complete");
