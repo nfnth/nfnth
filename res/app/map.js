@@ -178,7 +178,7 @@ const [file] = preview.files
 function switchIcon() { var temp = Array.from($("#edit-name").val()); $("#markery").html(temp[temp.length-1]); }
 function resetArea() { $('.mapboxgl-popup-content').css('padding', '0'); 
 	switchTime(); $("#edit-name").val(domains[myDomain].core.name); 
-		      $("#header-logo").src(domains[myDomain].core.image_url;
+		      $("#header-logo").src(domains[myDomain].core.image_url);
 	switchIcon();
 	//var length = $("#edit-name").val().length;
 	//var symbol = $("#edit-name").val().substring(length-1,length);
