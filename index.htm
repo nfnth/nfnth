@@ -106,7 +106,7 @@
 	<div  class="hide-on-med-and-down" style="display:flex;  align-items: center; justify-content: space-between; margin: 10%;margin-top: 24px;margin-bottom: 12px;width: 80%;">
 		<div ><div class="hiddenfile"><input name="upload" type="file" id="preview" onchange="checkFile();" multiple="multiple"/></div>
 <a onclick=" clearPad();" class="waves-effect waves-grey btn-flat" >🗑️</a>
-			<a id="dropdown-templater" style="margin-left:24px; margin-right:24px;width:148px;" class="waves-effect waves-blue blue lighten-3 btn dropdown-trigger" href="#" data-target='dropdown-template'><i class="material-icons right">arrow_drop_down</i><span class='edit-device'>📏&nbsp;&nbsp;Add</span></a>
+			<a id="dropdown-templater" style="margin-left:24px; margin-right:8px;width:148px;" class="waves-effect waves-blue blue lighten-3 btn dropdown-trigger" href="#" data-target='dropdown-template'><i class="material-icons right">arrow_drop_down</i><span class='edit-device'>📏&nbsp;&nbsp;Add</span></a>
 			<a id="dropdown-file" class="waves-effect waves-light blue lighten-3 btn dropdown-trigger" href='#' data-target='dropdown-file' style="margin-right:8px;width:148px;" ><i class="material-icons right">arrow_drop_down</i>📁&nbsp;&nbsp;File</a>
 		<a style="width:148px;margin-right:24px;" onclick="showPreview();" class="waves-effect waves-light blue btn lighten-1">📃&nbsp;&nbsp;<span class='edit-device'>Preview</span></a></div>
 
@@ -141,24 +141,15 @@
     <div class="modal-content"><h4>Trade OCUR</h4><p>Enter amount to trade, gas price...</p>
     
     
-     <div class="row">
-    <form class="col s12">
-      <div class="row">
-        <div class="input-field col s6">
-          <i class="material-icons prefix">toll</i>
-          <input id="ocur-amount" type="text" class="validate">
-          <label for="icon_prefix">OCUR amount</label>
-        </div>
-        
-      </div>
-    </form>
-  </div>
+     <a onclick="showTutorial();" class="waves-effect" style="display:flex;padding-left:12px;"><div id="set-0" class="quick hoverable z-depth-1">🗺️</div>100 OcUR</a>
+	    <a onclick="showTutorial();" class="waves-effect" style="display:flex;padding-left:12px;"><div id="set-0" class="quick hoverable z-depth-1">🗺️</div>500 OCUR</a>
+	    <a onclick="showTutorial();" class="waves-effect" style="display:flex;padding-left:12px;"><div id="set-0" class="quick hoverable z-depth-1">🗺️</div>1000 OCUR</a>
     
     
     </div>
 	<div class="modal-footer">
-		<a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
-		<a onclick="trade()" class="modal-close waves-effect waves-green green lighten-2 btn"><i class="material-icons left">account_balance_wallet</i>Trade OCUR</a></div></div>
+		<a href="#!" class="modal-close waves-effect waves-green btn-flat">❌</a>
+		<a onclick="trade()" class="modal-close waves-effect waves-green green lighten-2 btn">Trade OCUR&nbsp;&nbsp;💵</a></div></div>
 		
 <div id="modal4" class="modal">
     <div class="modal-content"><h4>Send Note</h4><p>Enter address to send</p>
