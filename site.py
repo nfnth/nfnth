@@ -36,25 +36,17 @@ async def api(request):
     eth_site = 'https://api.etherscan.io/api?module=account&action=balance&address=' + wallet + '&tag=latest&apikey=' + ETH_API_KEY
     token_site = 'https://api.etherscan.io/api?module=account&action=tokenbalance&contractaddress=' + TOKEN + '&address=' + wallet + '&tag=latest&apikey=' + ETH_API_KEY
     gas_site = 'https://api.etherscan.io/api?module=gastracker&action=gasoracle&apikey=' + ETH_API_KEY
+    tran_site = 'https://api.etherscan.io/api?module=account&action=tokentx&contractaddress=0xCcaB679860B1017589239BCeEEabe5CD45965aFc&address=' + str(wallet) + '&page=1&offset=100&startblock=0&endblock=27025780&sort=asc&apikey=' + ETH_API_KEY
     
     eth_balance = requests.get(eth_site)
     token_balance = requests.get(token_site).json().get("result")
     gas_balance = requests.get(gas_site).json().get("result")["ProposeGasPrice"]
+    token_trans = json.dumps(requests.get(tran_site).json().get("result"))
     
     hostname = socket.gethostname() #ip_address = socket.gethostbyname(hostname)
     temp_key = socket.gethostbyname(hostname) + "|" + str(datetime.datetime.now()) + "|" + token_balance
     print (temp_key)
-    return web.Response(text=eth_balance.text+"|"+token_balance+"|"+gas_balance+"|"+str(SECRET.encrypt(str.encode(temp_key))),content_type="text/html")
-
-async def balance(request):
-    wallet = request.match_info.get('wallet', '')
-    tran_site = 'https://api.etherscan.io/api?module=account&action=tokentx&contractaddress=0xCcaB679860B1017589239BCeEEabe5CD45965aFc&address=' + str(wallet) + '&page=1&offset=100&startblock=0&endblock=27025780&sort=asc&apikey=' + ETH_API_KEY
-    print (tran_site)
-    #check local balance...
-    token_trans = json.dumps(requests.get(tran_site).json().get("result"))
-    #total_balance = requests.get(gas_site).json().get("result")["ProposeGasPrice"]
-    
-    return web.Response(text=token_trans,content_type="text/html")
+    return web.Response(text=eth_balance.text+"|"+token_balance+"|"+gas_balance+"|"+str(SECRET.encrypt(str.encode(temp_key))+token_trans),content_type="text/html")
 
 async def data(request):
     wallet = request.match_info.get('wallet', '')
@@ -160,7 +152,6 @@ async def site(port):
 
     app.add_routes([web.get('/', index)])
     app.add_routes([web.get('/api/{wallet}', api)])
-    app.add_routes([web.get('/balance/{wallet}', balance)])
     app.add_routes([web.get('/{route}', index)])
 
     app.add_routes([web.post('/data/{wallet}/{ref}', data)])
