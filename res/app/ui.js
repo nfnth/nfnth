@@ -94,7 +94,7 @@ function addListDetail(i) { //pullOwner(i); pullPrice(i);
 	for (var a = 0; a < opens.length; a++) { if (opens[a].core.slug == domains[i].core.collection.slug) card = opens[a].core.banner_image_url; }
 	
      	$("#domain-info").html('<div style="display:flex;justify-content:space-evenly;align-items:center;width:100%;padding-top:12px;"><div style="display: flex;flex-direction: column;text-align: left;align-items:center;width:100%;margin-top:12px;"><div style="display:flex; justify-content:center; width:80%;"><div style="cursor:pointer;align-items:center;margin-top:24px;flex-direction:column;margin-bottom:24px;"><div style="width:120px;height:120px;" class="z-depth-2" onclick="setDialog(addListDeed(' + i + '));"><img style="width:120px; height: 120px;object-fit: cover;" src="' + domains[i].core.image_url + '" /></div></div><div style="margin-left:24px; display:flex; flex-direction:column;justify-content:space-evenly; margin-top:12px; margin-bottom:12px; "><span style="color:green;" class="btn waves-effect waves-light lighten-4" onclick="buildLand(\'' + i + '\');"><i class="material-icons">article</i></span><span style="color:green;" class="btn waves-effect waves-light lighten-4" onclick="buildLand(\'' + i + '\');"><i class="material-icons">sailing</i></span><span style="color:green;" class="btn waves-effect waves-light lighten-4" onclick="buildLand(\'' + i + '\');"><i class="material-icons">send</i></span></div></div><div style="margin-top:24px; margin-bottom:16px;">' + domains[i].name + '&nbsp;&nbsp · &nbsp;&nbsp<a onclick="openInNewTab(\'' + domains[i].core.external_link + '\');">' + domains[i].core.name + '</a></div><br/></div></div>');
-
+$('#modal1').modal('open');
 } 
 	
 function addListDeed(i) { var embedDisplay = "";
