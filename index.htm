@@ -56,8 +56,7 @@
 						<li><div style="margin-top:0;" class="divider"></div></li>
 					<li><a class="subheader">Settings</a></li>
 					<li><a onclick="showTutorial();" class="waves-effect" style="display:flex;padding-left:12px;"><div id="set-0" class="quick hoverable z-depth-1">🗺️</div>Run Tutorial</a></li>
-					<li><a onclick="showHistory();" class="waves-effect" style="display:flex;padding-left:12px;"><div id="set-1" class="quick hoverable z-depth-1">🏛️</div>Show History</a></li>
-					<li><a onclick="mapLoc();" class="waves-effect" style="display:flex;padding-left:12px;"> <div id="set-2" class="quick hoverable z-depth-1">📍</div>Use Location</a></li>
+					<li><a onclick="showView('mapper'); mapLoc();" class="waves-effect" style="display:flex;padding-left:12px;"> <div id="set-2" class="quick hoverable z-depth-1">📍</div>Use Location</a></li>
 						<li><a onclick="showNfNth();" class="waves-effect" style="display:flex;padding-left:12px;"><div id="set-3" class="quick hoverable z-depth-1">🧧</div>Shop URLand</a></li>
 						<li><a onclick="showCard();" class="waves-effect" style="display:flex;padding-left:12px;"><div id="set-4" class="quick hoverable z-depth-1">🃏</div>Play Cards</a></li>
 					</ul></p></div></div></div></div></li>
@@ -112,7 +111,7 @@
 
 		<div>
 			
-			<a style="width:148px;" onclick="mapAdd();" class="waves-effect waves-green green btn"><span class='edit-device'>Post&nbsp;&nbsp;📮</span></a></div></div>
+			<a style="width:148px;" onclick="mapAdd();" class="waves-effect waves-green green btn"><span class='edit-device'>📮&nbsp;&nbsp;Post</span></a></div></div>
 		
 		<div  class="screen-hide edit-hide" style=" align-items: center; justify-content: space-evenly; margin:12px; margin-top:24px;"><div><div class="hiddenfile"><input name="upload" type="file" id="preview" onchange="checkFile();" multiple="multiple"/></div>
 			<a onclick="clearPad();" class="waves-effect waves-grey btn-flat">🗑️</a>
