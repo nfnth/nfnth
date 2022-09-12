@@ -44,17 +44,6 @@ renderMt = function (text) { MathJax.texReset();
 
 var meta = `//name=Max Hamish|image=default.png|icon=river1.png|location=56,-32|link=https://nfnth.com|description=`
 
-var meta = `
-//name=Max Hamish|image=default.png|icon=river1.png|location=56,-32|link=https://nfnth.com|description=
-`
-var profileBasic = `
-## Welcome to my profile
-
-- Start coding...
-`
-var profileListing = `
-...advanced...
-`
 var profileListingPreview = `
 ## Your Name
 
@@ -68,54 +57,6 @@ var profileListingPreview = `
 |New Shirt|500|
 
 `
-
-var artifactRecipe = `
-[!MATH]|
-\begin{align}
-\dot{x} & = \sigma(y-x) \\
-\dot{y} & = \rho x - y - xz \\
-\dot{z} & = -\beta z + xy
-\end{align}
-|
-`
-var artifactSequence = `
-[!MERMAID]|
-sequenceDiagram
-    participant Alice
-    participant Bob
-    Alice->>John: Hello John, how are you?
-    loop Healthcheck
-        John->>John: Fight against hypochondria
-    end
-    Note right of John: Rational thoughts <br/>prevail!
-    John-->>Alice: Great!
-    John->>Bob: How about you?
-    Bob-->>John: Jolly good!
-|`
-var artifactGraph = `
-[!MERMAID]|
-graph TB
-    sq[Square shape] --> ci((Circle shape))
-
-    subgraph A
-        od>Odd shape]-- Two line<br/>edge comment --> ro
-        di{Diamond with <br/> line break} -.-> ro(Rounded<br>square<br>shape)
-        di==>ro2(Rounded square shape)
-    end
-
-    %% Notice that no text in shape are added here instead that is appended further down
-    e --> od3>Really long text with linebreak<br>in an Odd shape]
-
-    %% Comments after double percent signs
-    e((Inner / circle<br>and some odd <br>special characters)) --> f(,.?!+-*ز)
-
-    cyr[Cyrillic]-->cyr2((Circle shape Начало));
-
-     classDef green fill:#9f6,stroke:#333,stroke-width:2px;
-     classDef orange fill:#f96,stroke:#333,stro ke-width:4px;
-     class sq,e green
-     class di orange
-|`;
 
 var templateTask = `X buy milk
 X get cereal
