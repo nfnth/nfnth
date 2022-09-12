@@ -20,9 +20,11 @@ function pullOpen(name) {
             for (let a = 0; a < traits.length; a++) {
                 switch(traits[a].trait_type.toLowerCase()) {
                     case 'name': tmp.name = traits[a].value.toString(); break;
-                    case 'item': tmp.coord = traits[a].value.toString(); break;
-                    case 'seal': tmp.img = traits[a].value.toString(); break;
+                    case 'pos': tmp.coord = traits[a].value.toString(); break;
+                    case 'icon': tmp.img = traits[a].value.toString(); break;
                     case 'ref': tmp.ref = traits[a].value.toString(); break;
+		    case 'res': tmp.res = traits[a].value.toString(); break;
+		    case 'desc': tmp.desc = traits[a].value.toString(); break;
                     default: break; } }
             domains.push(tmp);  }  updateCount(name, response.assets.length); } ).then(response => {
 				if (domains.length > 100) { if (pageNotFound) setPage(); if (cardNotFound) { cardNotFound = false; setCards(); } }
