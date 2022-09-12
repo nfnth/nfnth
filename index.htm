@@ -375,15 +375,16 @@ $('.block').on('mouseleave', function(e) {mouse.X   = mouse.CX;mouse.Y   = mouse
 
 var shiner = setInterval(function(){
 	
-	if (stationary) { 
+	//if (stationary) { 
 	block.CY   += (mouse.Y - block.CY) / 12;block.CX   += (mouse.X - block.CX) / 12;
   $('.block .circleLight').css('background', 'radial-gradient(circle at ' + mouse.X + 'px ' + mouse.Y + 'px, #fff, transparent)')
   $('.block').css({
-    transform : 'scale(1.03) translate(' + (block.CX * 0.05) + 'px, ' + (block.CY * 0.05) + 'px) rotateX(' + (block.CY * 0.05) + 'deg) rotateY(' + (block.CX * 0.05) + 'deg)'}) } else { 
+    transform : 'scale(1.03) translate(' + (block.CX * 0.05) + 'px, ' + (block.CY * 0.05) + 'px) rotateX(' + (block.CY * 0.05) + 'deg) rotateY(' + (block.CX * 0.05) + 'deg)'}) //} else { 
 		//$('.flip-card-inner').css("transform","rotateY(180deg)"); $('.flip-card-front').css("transform","rotateY(180deg)"); 
 		//$('.flip-card-inner').css("background","black");
-		$('.flip-card-inner').addClass("card-background"); $(".card-wrap").css("margin-top","64px");
-		clearInterval(shiner); } }, 20);
+		//$('.flip-card-inner').addClass("card-background"); $(".card-wrap").css("margin-top","64px");
+		//clearInterval(shiner); } 
+}, 20);
 
 function shakeCard(i) { 
 	var dCard = Math.floor(Math.random() * (domains.length-1+1)); 
