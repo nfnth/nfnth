@@ -78,16 +78,16 @@ function clearLearn() { if (popBase) popBase.remove();
 var markCode = '<div class="flip-card"  ><div class="flip-card-inner" style="cursor:pointer;"><div class="flip-card-frontx z-depth-2" onclick="flipCard();"><img src="XXXX" alt="Avatar" style="width:48px;height:48px;"></div><div class="flip-card-backx z-depth-2" ><div id="tactb" style="opacity:0.75; display: flex;align-items: center;position: absolute;top: 4px;left: 4px;"><span id="tact1" style="font-size: 24px;margin-right: 8px;font-weight: bold;"></span><img style="cursor:pointer;" id="tacta" width="24" height="24" src="res/img/card/heart.png"/></div><div id="cardContent" style="cursor:pointer; color: dimgrey;font-size: 16px;font-weight: bold;font-family: \'Roboto\', sans-serif;" onclick="showDoc(\'tact/YYYY\');">📚 READ... 📚</div><div id="tact2" class="rotate" style="opacity:0.75; display: flex;align-items: center;position: absolute;bottom: 4px;right: 4px;"></div></div></div>';
 
 function showHouse() { clearMap(); 
-	var marv = document.createElement('div'); marv.id = 'markerd'; tempMark = new mapboxgl.Marker(marv).setLngLat(house).addTo(map);
+	var marv = document.createElement('div'); marv.id = 'markerh'; tempMark = new mapboxgl.Marker(marv).setLngLat(house).addTo(map);
 	popPath = tempMark;
 	
-	$('#markerd').addClass('markre'); $('#markerd').addClass('z-depth-3'); 
-	var style = $('#markerd').attr('style'); style += ";background-image:url('res/img/coin.jpg');background-size:cover; border:solid 2px darkgoldenrod;border-radius:50%;"; $('#markerd').attr('style',style);
+	$('#markerh').addClass('markre'); $('#markerd').addClass('z-depth-3'); 
+	var style = $('#markerh').attr('style'); style += ";background-image:url('res/img/coin.jpg');background-size:cover; border:solid 2px darkgoldenrod;border-radius:50%;"; $('#markerh').attr('style',style);
     	//style += ";background-image:url('img/icon/domain/"+folder + "/" +icon+".png'); 
 	var leaf = Math.floor(Math.random() * (16 - 1 + 1)) + 1; var leafSrc = "res/img/leaf/leaf" + leaf.toString() + ".png"; 
 	var markup = '<div>' + cardCode.replace('XXXX',leafSrc).replace('YYYY','d') + '</div><div style="margin-top:16px; font-size:16px;"><span onclick="showDoc(\'PLANME\');" style="cursor:pointer;">NfNth</span><br/><br/><a id="butPath" class="waves-effect waves-light btn red lighten-2" onclick="clearMap(); clearLearn(); showIntroMap();"><i class="material-icons right">restart_alt</i>Reset</a></div></div>';
 
-	tempMark.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); tempMark.togglePopup(); }
+	tempMark.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); startup = tempMark.togglePopup(); flyTo(house); }
 
 function clearLearn() { if (popBase) popBase.remove();
 	 if (popArt) popArt.remove(); if (popOwn) popOwn.remove(); if (popPath) popPath.remove();
