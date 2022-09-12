@@ -19,9 +19,9 @@ function pullOpen(name) {
             if (asset.name == "absaroka.us" || asset.name == "monocacy.us") { continue; } tmp.core = asset;
             for (let a = 0; a < traits.length; a++) {
                 switch(traits[a].trait_type.toLowerCase()) {
-                    case 'key': tmp.name = traits[a].value.toString(); break;
-                    case 'serial': tmp.coord = traits[a].value.toString(); break;
-                    case 'symbol': tmp.img = traits[a].value.toString(); break;
+                    case 'name': tmp.name = traits[a].value.toString(); break;
+                    case 'item': tmp.coord = traits[a].value.toString(); break;
+                    case 'seal': tmp.img = traits[a].value.toString(); break;
                     case 'ref': tmp.ref = traits[a].value.toString(); break;
                     default: break; } }
             domains.push(tmp);  }  updateCount(name, response.assets.length); } ).then(response => {
