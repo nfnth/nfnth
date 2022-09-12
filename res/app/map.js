@@ -147,7 +147,7 @@ var editContent = '<div id="header-logo" style="display: flex;justify-content: s
 var isSquare = true;
 function setShape() { if (isSquare) { $("#markery").css("border-radius","50%"); $("#shape-icon").html("square"); isSquare = false; } else { $("#markery").css("border-radius",""); $("#shape-icon").html("circle"); isSquare = true; } }
 
-function setText(e) {
+function setText(e) {alert(e.target.value);
 	if (pickIcon) {
 	$("#markery").html(e.target.value); pickIcon = false; }
 }
