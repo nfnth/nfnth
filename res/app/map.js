@@ -153,7 +153,7 @@ function setText(e) {
 	var symbol = temp[temp.length-1];
 	$("#markery").html(symbol); pickIcon = false; 
 		//text = text.replace(/<br><br>$/, ''); str.lastIndexOf(',');
-		e.value = e.value.substring(0, e.value.lastIndexOf(symbol));
+		e.value = e.value.substring(0, e.value.lastIndexOf(symbol)); }
 }
 function setPreview() {
 var preview = document.getElementById("preview");
