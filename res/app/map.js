@@ -125,13 +125,12 @@ function showEdit() { if (tempMark != "") { tempMark.remove(); tempMark = ""; }
     	//style += ";background-image:url('img/icon/domain/"+folder + "/" +icon+".png'); 
 	tempMark.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(editContent)); }
 
+var pickIcon = false;
 function picMo() { 
 	
 	M.toast({html: 'Enter icon...'});
-	document.addEventListener("keypress", function(event){
-        var x = event.which || event.keyCode;
-      $("#markery").html(x);
-    });
+	pickIcon = true;
+
 	$("#edit-name").focus();
 $("#edit-name").click(); 
 	//trigger = document.getElementById('trigger');
@@ -148,6 +147,10 @@ var editContent = '<div id="header-logo" style="display: flex;justify-content: s
 var isSquare = true;
 function setShape() { if (isSquare) { $("#markery").css("border-radius","50%"); $("#shape-icon").html("square"); isSquare = false; } else { $("#markery").css("border-radius",""); $("#shape-icon").html("circle"); isSquare = true; } }
 
+function setText(e) {
+	if (pickIcon) {
+	$("#markery").html(e.target.value); pickIcon = false; }
+}
 function setPreview() {
 var preview = document.getElementById("preview");
 var thumb = document.getElementById("thumb");
