@@ -78,7 +78,7 @@ function showHouse() { clearMap();
 	
 	var markup = '<div>' + makeCard() + '</div><div style="margin-top:16px; font-size:16px;"><span onclick="showDoc(\'PLANME\');" style="cursor:pointer;">NfNth</span><br/><br/><a id="butPath" class="waves-effect waves-light btn red lighten-2" onclick="clearMap(); clearLearn(); showIntroMap();"><i class="material-icons right">restart_alt</i>Reset</a></div></div>';
 
-	tempMark.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); startup = tempMark.togglePopup(); fly(house); }
+	tempMark.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); startUp = tempMark.togglePopup(); fly(house); }
 
 function clearLearn() { if (popBase) popBase.remove();
 	 if (popArt) popArt.remove(); if (popOwn) popOwn.remove(); if (popPath) popPath.remove();
