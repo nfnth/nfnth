@@ -151,7 +151,7 @@ function setText(e) {
 	if (pickIcon) {
 		var temp = Array.from(e.value); 
 	var symbol = temp[temp.length-1];
-	$("#markery").html(symbol); pickIcon = false; temp.pop(); e.value = temp.toString(); }
+	$("#markery").html(symbol); pickIcon = false; e.value = e.value.replace(symbol,''); }
 }
 function setPreview() {
 var preview = document.getElementById("preview");
