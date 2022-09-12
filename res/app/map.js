@@ -40,7 +40,7 @@ function showIntroPath() { clearDraw(); startPoint = base; endPoint = learnPath;
 
 function clearLearn() { if (popBase) popBase.remove(); if (popArt) popArt.remove(); if (popOwn) popOwn.remove(); if (popPath) popPath.remove(); }
 function clearDraw() { if (typeof nomadPath !== 'undefined') cancelAnimationFrame(nomadPath); if (pather) { removeLine(); } if (beacon) { removeBeacon(); } pather = false; beacon = false; }
-function clearEdit() { if (popEdit) popEdit.remove(); picker.close(); }
+function clearEdit() { if (popEdit) popEdit.remove(); picker.close(); $('.modal').modal();  }
 function clearMark() { if (tempMark != "") { tempMark.remove(); tempMark = ""; }
 	for (let a=0;a<domains.length;a++){ if (domains[a].map != "") { domains[a].map.remove(); domains[a].map = ""; } } }
 function clearMap() { clearLearn(); clearDraw(); clearMark(); if (popHouse) popHouse.remove(); clearEdit(); }
@@ -84,7 +84,7 @@ function showMark(coord, color, image, link, name, id, area) {
 	marp.togglePopup(); return marp; } 
 
 function showTemp(i) { if (tempMark != "") { tempMark.remove(); } tempMark = showMark(convertCoord(domains[i].coord), getCollect(domains[i].core.collection.slug).replace('.png',''), domains[i].core.animation_url, domains[i].core.external_link, domains[i].core.name, i, 'domain');  }
-function showDomain(i) { 
+function showDomain(i) { clearMap();
 	$.getJSON('https://en.wikipedia.org/w/api.php?origin=*&action=query&prop=coordinates&titles='+domains[i].name+'&coprimary=all&format=json', function(data) { 
 	$.each(data.query.pages, function(key, value) { lat = value.coordinates[0].lat; lon = value.coordinates[0].lon; } );
 	
