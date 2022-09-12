@@ -84,13 +84,26 @@ function showMark(coord, color, image, link, name, id, area) {
 	marp.togglePopup(); return marp; } 
 
 function showTemp(i) { if (tempMark != "") { tempMark.remove(); } tempMark = showMark(convertCoord(domains[i].coord), getCollect(domains[i].core.collection.slug).replace('.png',''), domains[i].core.animation_url, domains[i].core.external_link, domains[i].core.name, i, 'domain');  }
-function showDomain(i) { clearMap();
-	$.getJSON('https://en.wikipedia.org/w/api.php?origin=*&action=query&prop=coordinates&titles='+domains[i].name+'&coprimary=all&format=json', function(data) { 
-	$.each(data.query.pages, function(key, value) { lat = value.coordinates[0].lat; lon = value.coordinates[0].lon; } );
+
+function converter(coord) { //66°32′56″N 152°50′41″W  Degrees + ((Minutes / 60) + (Seconds / 3600)) 40°41′34″N 73°59′25″W
+	//if (!(coord.includes('°'))) return convertMarker(coord);
+	var raw = coord; var lat, long; var add, add2; var sub, sub2; var final, final2;
+	if (raw.includes("N")) { lat = raw.substring(0, raw.indexOf('N')); add = lat.substring(lat.indexOf('°')+1, lat.indexOf('′')); add2 = lat.substring(lat.indexOf('′')+1, lat.indexOf('″')); lat = lat.substring(0, lat.indexOf('°')); }
+	else { lat = raw.substring(0, raw.indexOf('S')); add = lat.substring(lat.indexOf('°')+1, lat.indexOf('′')); add2 = lat.substring(lat.indexOf('′')+1, lat.indexOf('″')); lat = lat.substring(0, lat.indexOf('°')); lat = "-" + lat; }
+
+	if (raw.includes("E")) {  long = raw.substring(raw.indexOf(' ')+1, raw.indexOf('E')); sub = long.substring(long.indexOf('°')+1, long.indexOf('′')); sub2 = long.substring(long.indexOf('′')+1, long.indexOf('″')); long = long.substring(0, long.indexOf('°')); }
+	else { long = raw.substring(raw.indexOf(' ')+1, raw.indexOf('W')); sub = long.substring(long.indexOf('°')+1, long.indexOf('′')); sub2 = long.substring(long.indexOf('′')+1, long.indexOf('″')); long = long.substring(0, long.indexOf('°')); long = "-" + long; }
 	
-		startUp = function () { domains[i].map = showMark([lon,lat], getCollect(domains[i].core.collection.slug).replace('.png',''), domains[i].core.image_url, domains[i].core.external_link, domains[i].core.name, i, 'domain'); };
+	if (isNaN(long) || isNaN(sub) || isNaN(sub2)) { 
+		if (isNaN(long)) { final = 0; } else { final = parseInt(long); } } else { final = parseInt(long) + (parseInt(sub)/60) + (parseInt(sub2)/3600); }
+	if (isNaN(lat) || isNaN(add) || isNaN(add2)) { 
+		if (isNaN(lat)) { final2 = 0; } else { final2 = parseInt(lat); } } else { final2 = parseInt(lat)  + (parseInt(add)/60) + (parseInt(add2)/3600); }
+	
+		     return [final, final2]; }
+
+function showDomain(i) { clearMap(); startUp = function () { domains[i].map = showMark(convertor(domains[i].coord), getCollect(domains[i].core.collection.slug).replace('.png',''), domains[i].core.image_url, domains[i].core.external_link, domains[i].core.name, i, 'domain'); };
 		
-		fly([lon,lat]); });  }
+		fly(convertor(domains[i].coord)); }
 function hideDomain(i) { if (domains[i].map != "") { domains[i].map.remove(); domains[i].map = ""; }  }
 //function showArt(i) { artifacts[i].map = showMark(convertMark(artifacts[i].location), artifacts[i].color, artifacts[i].image, "", artifacts[i].name, 'artifact'); }
 
