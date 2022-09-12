@@ -160,12 +160,12 @@ function showEdit() { if (tempMark != "") { tempMark.remove(); tempMark = ""; }
 	
 	tempMark.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(editContent));
 		     
-		     var trigger = document.querySelector('.emoji-button');
+		     var trigger = document.querySelector('.emoji-button');var refer = document.querySelector('.edit-mark');
 
 var picker = picmoPopup.createPopup({
   // picker options go here
 }, {
-  referenceElement: trigger,
+  referenceElement: refer,
   triggerElement: trigger
 });
 		
