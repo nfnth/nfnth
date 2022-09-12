@@ -87,7 +87,7 @@ function showMark(coord, color, image, link, name, id, area) { clearLearn();
 
 function showTemp(i) { if (tempMark != "") { tempMark.remove(); } tempMark = showMark(convertCoord(domains[i].coord), getCollect(domains[i].core.collection.slug).replace('.png',''), domains[i].core.animation_url, domains[i].core.external_link, domains[i].core.name, i, 'domain');  }
 function showDomain(i) { 
-	$.getJSON('https://en.wikipedia.org/w/api.php?origin=*&action=query&prop=coordinates&titles='+domains[i].name+'&coprimary=all&format=json', function(data) { dataString = JSON.parse(data).stringify(); alert(dataString);
+	$.getJSON('https://en.wikipedia.org/w/api.php?origin=*&action=query&prop=coordinates&titles='+domains[i].name+'&coprimary=all&format=json', function(data) { dataString = data.query.pages; alert(dataString);
 	var later = dataString.indexOf('lat":') + 5; alert(later);
 	var loner = dataString.indexOf('lon":') + 5; alert(loner);
 	var lat = dataString.substring(later, dataString.indexOf(',',later)); alert(lat);
