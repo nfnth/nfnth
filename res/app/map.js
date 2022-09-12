@@ -20,11 +20,8 @@ function showIntroMap() {
 	var markup = '<div>' + makeCard() + '</div><div style="margin-top:16px; font-size:16px;"><span onclick="showDoc(\'tact/a\');" style="cursor:pointer;">Use Deed</span><br/><br/><a id="butIntro" class="waves-effect waves-light btn green lighten-2" onclick="tempMark.togglePopup(); showIntroArt();"><i class="material-icons right">arrow_forward</i>Next</a></div></div>';
 
 	tempMark.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); tempMark.togglePopup(); 
-	//$('#cardContent').unbind('click');
-		    // $("#cardContent").click(showDoc('tact/a')); 
+	//$('#cardContent').unbind('click'); $("#cardContent").click(showDoc('tact/a')); 
 	}
-
-
 
 function showIntroArt() { startPoint = base; endPoint = learnArt; showPath('green'); pather = true; $("#butIntro").addClass("disabled");
 	var marv = document.createElement('div'); marv.id = 'markerb'; tempMark = new mapboxgl.Marker(marv).setLngLat(learnArt).addTo(map);
@@ -74,16 +71,13 @@ function showHouse() { clearMap();
 	popPath = tempMark;
 	
 	$('#markerh').addClass('markre'); $('#markerd').addClass('z-depth-3'); 
-	var style = $('#markerh').attr('style'); style += ";background-image:url('res/img/seal3.png');background-size:cover; border:solid 2px darkgoldenrod;border-radius:50%;"; $('#markerh').attr('style',style);
+	var style = $('#markerh').attr('style'); style += ";background-image:url('res/img/seal3.png');background-size:cover; border:solid 2px indianred;border-radius:50%;"; $('#markerh').attr('style',style);
 	
 	var markup = '<div>' + makeCard() + '</div><div style="margin-top:16px; font-size:16px;"><span onclick="showDoc(\'PLANME\');" style="cursor:pointer;">NfNth</span><br/><br/><a id="butPath" class="waves-effect waves-light btn red lighten-2" onclick="clearMap(); clearLearn(); showIntroMap();"><i class="material-icons right">restart_alt</i>Reset</a></div></div>';
 
 	tempMark.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); startUp = function() { tempMark.togglePopup(); }; fly(house); }
 
-function clearLearn() { if (popBase) popBase.remove();
-	 if (popArt) popArt.remove(); if (popOwn) popOwn.remove(); if (popPath) popPath.remove();
-	
-}
+function clearLearn() { if (popBase) popBase.remove(); if (popArt) popArt.remove(); if (popOwn) popOwn.remove(); if (popPath) popPath.remove(); }
 
 function showMark(coord, color, image, link, name, id, area) { clearLearn();
 	var mark = coord;
@@ -157,38 +151,17 @@ function showEdit() { if (tempMark != "") { tempMark.remove(); tempMark = ""; }
 		     var front = getFront(domains[myDomain].core.collection.slug); var back = getBack(domains[myDomain].core.collection.slug);
     	style += ";background-color:" + front + ";border:solid 2px " + back + ";display: flex;align-items: center;justify-content: center;font-size: 18px;"; $('#markery').attr('style',style);
     	//style += ";background-image:url('img/icon/domain/"+folder + "/" +icon+".png'); 
-		     
-	
 	tempMark.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(editContent));
 		     
 	//.setHTML(editContent));
-	
-		    // $('#markery').unbind('click');
-		     //$("#markery").click(colorStart); 
-		     
-		     
-		    // const selectionContainer = document.querySelector('#selection-outer');
-//  const emoji = document.querySelector('#selection-emoji');
-  //const name = document.querySelector('#selection-name');
-
-
-		     
-		     
-		     
+		    // $('#markery').unbind('click'); $("#markery").click(colorStart); 
 		     }
 
 function picMo() {
 	  trigger = document.getElementById('trigger');
-
-  picker = picmoPopup.createPopup({}, {
-    referenceElement: trigger,
-    triggerElement: trigger,
-    position: 'right-end'
-  });
-
+  picker = picmoPopup.createPopup({}, { referenceElement: trigger, triggerElement: trigger, position: 'right-end' });
   picker.addEventListener('emoji:select', (selection) => {
-   // emoji.innerHTML = selection.emoji;
-   // name.textContent = selection.label;
+   // emoji.innerHTML = selection.emoji; name.textContent = selection.label;
 $("#markery").html(selection.emoji);
    // selectionContainer.classList.remove('empty');
   });
@@ -200,7 +173,7 @@ function complete()
 {
 	$("#cuboid form").removeClass("loading").addClass("complete");
 }
-var editContent = '<div id="header-logo" style="display: flex;justify-content: space-evenly;align-items: center; display: flex;margin-top:8px;margin-bottom:8px;"><div style="border-radius:12px; cursor:pointer;display:flex; height:64px; width:64px;margin-top:8px;" class="z-depth-1"><img width="64" height="64" id="thumb" src="res/img/barrel.png" onclick="$(\'#preview\').trigger(\'click\');" style="border-radius:8px;" /></div></div></div></div><div class="hiddenfile"><input name="upload" type="file" id="preview" onchange="setPreview();" multiple="multiple"/><div style="visibility:hidden;width:0;position:absolute;top:0;"><input type="color" oninput="setColor();" id="favcolor" name="favcolor" value="#ff0000" style="width:0px; height:0px;opacity:0;" /><input type="color" oninput="setOutline();" id="favcolor2" name="favcolor2" value="#ff0000" style="width:0px; height:0px;opacity:0;" /></div></div><div style="padding:12px; padding-top:0px; padding-bottom:0px; display:flex; justify-content:center;"><div style="margin-top:0px;margin-bottom:0px;" class="input-field col s4"><input id="edit-name" type="text" class="validate" onchange="setText();"></div></div><div class="editMark" style="width:100%; height:48px;display:flex;justify-content:center;margin-bottom:16px;"><a class="quickx hoverable z-depth-1 crisp waves-effect waves-light btn" onclick="setShape();">🔳</a><a id="trigger" class="quickx hoverable z-depth-1 crisp waves-effect waves-light btn" onclick="picMo();">🏳️</a><a class="quickx hoverable z-depth-1 crisp waves-effect waves-light btn" onclick="colorStart(this);">🟢</a><a class="quickx hoverable z-depth-1 crisp waves-effect waves-light btn" onclick="outlineStart(this);">🟩</a></div><div style="display:flex;justify-content:space-evenly;margin-top:12px;margin-bottom:12px;align-items:center;"><a class="waves-effect waves-light btn-flat" onclick="clearEdit();" style="padding:0px;">🗑️</a><a class="waves-effect waves-green green btn" onclick="showView(\'editor\');">Editor&nbsp;&nbsp;✏️</a></div></div>';
+var editContent = '<div id="header-logo" style="display: flex;justify-content: space-evenly;align-items: center; display: flex;margin-top:8px;margin-bottom:8px;"><div style="border-radius:12px; cursor:pointer;display:flex; height:64px; width:64px;margin-top:8px;" class="z-depth-1"><img width="64" height="64" id="thumb" src="res/img/barrel.png" onclick="$(\'#preview\').trigger(\'click\');" style="border-radius:8px;" /></div></div></div></div><div class="hiddenfile"><input name="upload" type="file" id="preview" onchange="setPreview();" multiple="multiple"/><div style="visibility:hidden;width:0;position:absolute;top:0;"><input type="color" oninput="setColor();" id="favcolor" name="favcolor" value="#ff0000" style="width:0px; height:0px;opacity:0;" /><input type="color" oninput="setOutline();" id="favcolor2" name="favcolor2" value="#ff0000" style="width:0px; height:0px;opacity:0;" /></div></div><div style="padding:12px; padding-top:0px; padding-bottom:0px; display:flex; justify-content:center;"><div style="margin-top:0px;margin-bottom:0px;" class="input-field col s4"><input id="edit-name" type="text" class="validate" onchange="setText();"></div></div><div class="editMark" style="width:100%; height:48px;display:flex;justify-content:center;margin-bottom:16px;"><a id="trigger" class="quickx hoverable z-depth-1 crisp waves-effect waves-light btn" onclick="picMo();">🏳️</a><a class="quickx hoverable z-depth-1 crisp waves-effect waves-light btn" onclick="colorStart(this);">🟢</a><a class="quickx hoverable z-depth-1 crisp waves-effect waves-light btn" onclick="outlineStart(this);">🟩</a><a class="quickx hoverable z-depth-1 crisp waves-effect waves-light btn" onclick="setShape();">🔳</a></div><div style="display:flex;justify-content:space-evenly;margin-top:12px;margin-bottom:12px;align-items:center;"><a class="waves-effect waves-light btn-flat" onclick="clearEdit();" style="padding:0px;">🗑️</a><a class="waves-effect waves-green green btn" onclick="showView(\'editor\');">Editor&nbsp;&nbsp;✏️</a></div></div>';
 
 var isSquare = true;
 function setShape() { if (isSquare) { $("#markery").css("border-radius","50%"); $("#shape-icon").html("square"); isSquare = false; } else { $("#markery").css("border-radius",""); $("#shape-icon").html("circle"); isSquare = true; } }
@@ -245,9 +218,7 @@ function setMap(area) { var center = map.getCenter(); mapSelect = area;
 map.addLayer({'id': '10m-bathymetry-81bsvj','type': 'fill','source': '10m-bathymetry-81bsvj','source-layer': '10m-bathymetry-81bsvj','layout': {},'paint': {'fill-outline-color': 'hsla(337, 82%, 62%, 0)','fill-color': ['interpolate',['cubic-bezier', 0, 0.5, 1, 0.5],['get', 'DEPTH'],200,'#78bced',9000,'#15659f']}},'land-structure-polygon'); break;
 		case 'satellite': mapStyle = 'mapbox://styles/mapbox/satellite-streets-v11'; break;
 		case 'terrain': map.addSource('dem', {'type': 'raster-dem','url': 'mapbox://mapbox.mapbox-terrain-dem-v1','tileSize': 512,'maxzoom': 14});	map.addLayer({'id': 'hillshading','source': 'dem','type': 'hillshade'},'waterway-river-canal-shadow');	
- break; }     
-		     });
-		     }
+ break; } }); }
 
 function mapSat() { var satCenter = map.getCenter();
 	mapStyle = 'mapbox://styles/mapbox/satellite-streets-v11';
@@ -260,8 +231,6 @@ function mapLoc() {
 	if(navigator.geolocation) { navigator.geolocation.getCurrentPosition(geoSuccess, geoError); } else { alert("Geolocation is not supported by this browser.");} } 
 function geoSuccess(position) {tempCoord[1] = position.coords.latitude;tempCoord[0] = position.coords.longitude; setZoom = 8; fly(tempCoord); addBeacon(tempCoord); beacon = true; } 
 function geoError() { alert('No location'); }
-
-
 
 //https://api.mapbox.com/directions/v5/mapbox/driving/-73.99472793733248%2C40.73149739904491%3B-73.99268258837725%2C40.733942291758495%3B-73.98966737911867%2C40.73255977417804?alternatives=true&geometries=geojson&language=en&overview=simplified&steps=true&access_token=YOUR_MAPBOX_ACCESS_TOKEN
 
