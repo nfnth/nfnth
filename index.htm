@@ -86,12 +86,12 @@
   <div class="items-group">
     <div id="item0" class="item" >
       <div id="flip0" class="block flip-card flip-card-inner" style="display:flex;align-items:center;cursor:pointer;">
-		  <div class="flip-card-fronty backer card-wrap" style="height:120px;background-color:whitesmoke;color:black;opacity:0.75;transition:all 0.5s!important;"><span class="circleLight"></span><div  class="text" style="display:flex; flex-direction:column;align-items:center;">
+		  <div class="flip-card-fronty backer card-wrap" style="height:120px;width:100%;background-color:whitesmoke;color:black;opacity:0.75;transition:all 0.5s!important;"><span class="circleLight"></span><div  class="text" style="display:flex; flex-direction:column;align-items:center;">
 			  <div style="display:flex;align-items:center;"><img src="res/img/seal3.png" style="width:48px; height:48px;" /><span style="margin-top:12px;margin-left:12px;color:indianred;font-weight:bold;font-size:16px;">UR.Land </span><span style="margin-top:12px;margin-left:24px;font-weight:bold;">dee.d/omain</span></div><p  id="card-name0" style="display:flex; align-items:center;">I`m cool card</p></div></div>  
 		  <div class="flip-card-backy backer"  ><span class="circleLight"></span><div class="text backer" style="transform: rotateY(180deg);"><h3>OCUR.io</h3><p>More card</p></div></div></div></div>
     <div id="item1" class="item">
       <div id="flip1" class="block flip-card flip-card-inner" style="display:flex;align-items:center;cursor:pointer;" >
-		  <div class="flip-card-fronty backer card-wrap" style="height:120px;background-color:whitesmoke;color:black;opacity:0.75;transition:all 0.5s!important;"><span class="circleLight"></span><div  class="text" style="display:flex; flex-direction:column;align-items:center;">
+		  <div class="flip-card-fronty backer card-wrap" style="height:120px;width:100%;background-color:whitesmoke;color:black;opacity:0.75;transition:all 0.5s!important;"><span class="circleLight"></span><div  class="text" style="display:flex; flex-direction:column;align-items:center;">
 			  <div style="display:flex;align-items:center;"><img src="res/img/seal3.png" style="width:48px; height:48px;" /><span style="margin-top:12px;margin-left:12px;color:indianred;font-weight:bold;font-size:16px;">UR.Land </span><span style="margin-top:12px;margin-left:24px;font-weight:bold;">dee.d/omain</span></div><p  id="card-name1" style="display:flex; align-items:center;">I`m cool card</p></div></div>  
 		  <div class="flip-card-backy backer"  ><span class="circleLight"></span><div class="text backer" style="transform: rotateY(180deg);"><h3>OCUR.io</h3><p>More card</p></div></div></div></div>
           
@@ -204,26 +204,6 @@
     	<li style="margin-top:0;"class="divider" tabindex="-1"></li>
     	<li><a href="#!" onclick="setMap('light');"><i class="material-icons">light_mode</i>Light</a></li><li><a href="#!" onclick="setMap('dark');"><i class="material-icons">dark_mode</i>Dark</a></li></ul>
 
-<ul id='dropdown-template' class='dropdown-content' style='max-height:none!important;'>
-    	<li><a href="#!" onclick="setTemplate('datetime');">⏳&nbsp;&nbsp;DateTime</a></li><li><a onclick="setTemplate('task');"><i class="material-icons">task</i>Task</a></li>
-    	<li style="margin-top:0;"class="divider" tabindex="-1"></li>
-    	<li><a href="#!" onclick="domains.sort(domainaz); showList('domain');"><i class="material-icons">event</i>Instructions</a></li><li><a href="#!" onclick="domains.sort(domainza); showList('domain');"><i class="material-icons">directions</i>Directions</a></li>
-	<li style="margin-top:0;" class="divider" tabindex="-1"></li>
-	<li><a href="#!" onclick="domains.sort(domain09); showList('domain');"><i class="material-icons">restaurant_menu</i>Recipe</a></li><li><a href="#!" onclick="domains.sort(domain90); showList('domain');"><i class="material-icons">description</i>Article</a></li>
-	<li><a href="#!" onclick="domains.sort(domain09); showList('domain');"><i class="material-icons">list</i>List</a></li>
-	<li><a href="#!" onclick="domains.sort(domain09); showList('domain');"><i class="material-icons">list</i>Address</a></li>
-	<li><a href="#!" onclick="domains.sort(domain09); showList('domain');"><i class="material-icons">list</i>Timer</a></li></ul>
-
-<ul id='dropdown-templatex' class='dropdown-content' style='max-height:none!important;'>
-    	<li><a href="#!" onclick="setTemplate('datetime');">⏳&nbsp;&nbsp;DateTime</a></li><li><a onclick="setTemplate('task');"><i class="material-icons">task</i>Task</a></li>
-    	<li style="margin-top:0;"class="divider" tabindex="-1"></li>
-    	<li><a href="#!" onclick="domains.sort(domainaz); showList('domain');"><i class="material-icons">event</i>Instructions</a></li><li><a href="#!" onclick="domains.sort(domainza); showList('domain');"><i class="material-icons">directions</i>Directions</a></li>
-	<li style="margin-top:0;" class="divider" tabindex="-1"></li>
-	<li><a href="#!" onclick="domains.sort(domain09); showList('domain');"><i class="material-icons">restaurant_menu</i>Recipe</a></li><li><a href="#!" onclick="domains.sort(domain90); showList('domain');"><i class="material-icons">description</i>Article</a></li>
-	<li><a href="#!" onclick="domains.sort(domain09); showList('domain');"><i class="material-icons">list</i>List</a></li>
-	<li><a href="#!" onclick="domains.sort(domain09); showList('domain');"><i class="material-icons">list</i>Address</a></li>
-	<li><a href="#!" onclick="domains.sort(domain09); showList('domain');"><i class="material-icons">list</i>Timer</a></li></ul>
-
 <div id="somedialog1" class="dialog print-help hide-scrollbar" style="z-index:99;"><div id="someoverlay" class="dialog__overlay hide-scrollbar"></div><div class="dialog__content print-help hide-scrollbar" style="width: 90%; height:40%; text-align:left;overflow:auto; padding:24px;"><div class="morph-shape" data-morph-open="M0,0h80c0,0,0,9.977,0,29.834c0,19.945,0,30.249,0,30.249H0c0,0,0-10.055,0-30.332C0,8.219,0,0,0,0z" data-morph-close="M0,29.75h80c0,0-3.083,0.014-3.083,0.041c0,0.028,3.083,0.042,3.083,0.042H0c0,0,3.084-0.014,3.084-0.042
 											C3.084,29.762,0,29.75,0,29.75z"><svg id='test-svg' xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 80 60" preserveAspectRatio="none"><path d="M0,29.75h80c0,0-3.083,0.014-3.083,0.041c0,0.028,3.083,0.042,3.083,0.042H0c0,0,3.084-0.014,3.084-0.042
 											C3.084,29.762,0,29.75,0,29.75z"></path></svg></div><div id="dialog-inner1" class="dialog-inner print-help hide-scrollbar" style="overflow:auto;"></div></div></div>
@@ -258,8 +238,7 @@ function hideView() { $('.modal').modal('close'); window.scrollTo(0, 0);
 		     $("#editor").removeClass("scale-in");   
 		     $("#mapper").removeClass("scale-in"); 
 		     $('.pane').hide();}
-	var slideCode = '<div id="flipXXX" class="block flip-card flip-card-inner" style="display:flex;align-items:center;cursor:pointer;"><div class="flip-card-fronty backer card-wrap" style="height:120px;background-color:whitesmoke;color:black;opacity:0.75;transition:all 0.5s!important;"><span class="circleLight"></span><div class="text" style="display:flex; flex-direction:column;align-items:center;"><div style="display:flex;align-items:center;"><img src="res/img/seal3.png" style="width:48px; height:48px;" /><span style="margin-top:12px;margin-left:12px;color:indianred;font-weight:bold;font-size:16px;">UR.Land </span><span style="margin-top:12px;margin-left:24px;font-weight:bold;">dee.d/omain</span></div><p  id="card-nameXXXX" style="display:flex; align-items:center;">I`m cool card</p></div></div>  <div class="flip-card-backy backer"  ><span class="circleLight"></span><div class="text backer" style="transform: rotateY(180deg);"><h3>OCUR.io</h3><p>More card</p></div></div></div>';
-
+	var slideCode = '<div id="flipXXX" class="block flip-card flip-card-inner" style="display:flex;align-items:center;cursor:pointer;"><div class="flip-card-fronty backer card-wrap" style="height:120px;width:100%;background-color:whitesmoke;color:black;opacity:0.75;transition:all 0.5s!important;"><span class="circleLight"></span><div class="text" style="display:flex; flex-direction:column;align-items:center;"><div style="display:flex;align-items:center;"><img src="res/img/seal3.png" style="width:48px; height:48px;" /><span style="margin-top:12px;margin-left:12px;color:indianred;font-weight:bold;font-size:16px;">UR.Land </span><span style="margin-top:12px;margin-left:24px;font-weight:bold;">dee.d/omain</span></div><p  id="card-nameXXXX" style="display:flex; align-items:center;">I`m cool card</p></div></div>  <div class="flip-card-backy backer"  ><span class="circleLight"></span><div class="text backer" style="transform: rotateY(180deg);"><h3>OCUR.io</h3><p>More card</p></div></div></div>';
 
 var pageNotFound = true; var namer; var pageSet = false; var cardNotFound = true;
 function setPage() { if (!(pageSet)) { pageSet = true; var page = window.location.href.replace('https://','').replace('/','').replace('#','').replace('!','');
@@ -299,10 +278,7 @@ function showFav() {
 	
 function showPanel() {
 	var gear = Math.floor(Math.random() * (42 - 1 + 1)) + 1; document.getElementById('gear-pic').src = "res/img/gear/gear" + gear.toString() + ".png";
-	gear = Math.floor(Math.random() * (42 - 1 + 1)) + 1; document.getElementById('gear-pic2').src = "res/img/gear/gear" + gear.toString() + ".png";
-	
-	//var leaf = Math.floor(Math.random() * (16 - 1 + 1)) + 1; document.getElementById('leafy').src = "res/img/leaf/leaf" + leaf.toString() + ".png"; 
-				}
+	gear = Math.floor(Math.random() * (42 - 1 + 1)) + 1; document.getElementById('gear-pic2').src = "res/img/gear/gear" + gear.toString() + ".png";  }
 		
 function copyClip(text) { navigator.clipboard.writeText(text); M.toast({html: 'Address copied.'}); }
 function openInNewTab(url) { window.open(url, '_blank').focus(); } //window.location.href = url;
@@ -312,13 +288,10 @@ async function initial() { $('body').css("background-color","lightgrey");
 	$('.tabs').tabs(); showFav(); showPanel(); if (window.location.hostname == "ur.land") { setLand(); } else if (window.location.hostname == "ocur.io") { setTitle(); } else { document.title = "📚 Nf·Nth 📚"; }
 	$('.modal').modal(); 
 	//$("#registry-open").css("height",(height - 120) + "px"); $("#registry-domain").css("height",(height - 120) + "px");
-	
     	//$('#docs').dropdown({ constrainWidth: false, coverTrigger: false } ); $('#doc-hide').dropdown({ constrainWidth: false, coverTrigger: false } ); //hover: true 
 	//$('#tools').dropdown({ constrainWidth: false, coverTrigger: false } ); $('#tool-hide').dropdown({ constrainWidth: false, coverTrigger: false } );
 	
 	$('#dropdown-opener').dropdown({ constrainWidth: false }); $('#dropdown-domainer').dropdown({ constrainWidth: false });
-	$('#dropdown-templater').dropdown({ constrainWidth: false }); $('#dropdown-templatey').dropdown({ constrainWidth: false }); 
-			  //$('#dropdown-templates').dropdown({ constrainWidth: false }); 
 	$('#deed-pane').sidenav({ edge: 'left' }); //, onCloseEnd: deedMap});
 	// $('#user-pane').sidenav({ edge: 'right' }); showView('mapper');  pullOpens(); switchFeed(false);
 showView("slider");
@@ -348,7 +321,6 @@ var height = positionInfo.height; var width = positionInfo.width;
 function setConfirm(text) { 
 	$("#somedialog1").css("z-index",1004); document.getElementById('dialog-inner1').scrollTo(0, 0);
 	
-
 var element = document.getElementById('dialog-inner1'); $("#dialog-inner1").html(text);
 var positionInfo = element.getBoundingClientRect();
 var height = positionInfo.height; var width = positionInfo.width;
@@ -364,8 +336,6 @@ var height = positionInfo.height; var width = positionInfo.width;
 var mouse = {X   : 0,Y   : 0,CX  : 0,CY  : 0 },
     block = {X   : mouse.X,Y   : mouse.Y,CX  : mouse.CX,CY  : mouse.CY},
     vmags = [ '', ''],
-    fmags = [ '', ''],
-    bmags = [ '', ''],
     imags = [
       'https://images.pexels.com/photos/4245826/pexels-photo-4245826.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
       'https://images.pexels.com/photos/39811/pexels-photo-39811.jpeg?w=940&h=650&auto=compress&cs=tinysrgb',
