@@ -40,10 +40,10 @@ function showIntroPath() { clearDraw(); startPoint = base; endPoint = learnPath;
 
 function clearLearn() { if (popBase) popBase.remove(); if (popArt) popArt.remove(); if (popOwn) popOwn.remove(); if (popPath) popPath.remove(); }
 function clearDraw() { if (typeof nomadPath !== 'undefined') cancelAnimationFrame(nomadPath); if (pather) { removeLine(); } if (beacon) { removeBeacon(); } pather = false; beacon = false; }
-
+function clearEdit() { if (popEdit) popEdit.remove(); picker.close(); }
 function clearMark() { if (tempMark != "") { tempMark.remove(); tempMark = ""; }
 	for (let a=0;a<domains.length;a++){ if (domains[a].map != "") { domains[a].map.remove(); domains[a].map = ""; } } }
-function clearMap() { clearLearn(); clearDraw(); clearMark(); if (popHouse) popHouse.remove(); if (popEdit) popEdit.remove(); }
+function clearMap() { clearLearn(); clearDraw(); clearMark(); if (popHouse) popHouse.remove(); clearEdit(); }
 
 function showHouse() { clearMap(); 
 	var marv = document.createElement('div'); marv.id = 'markerh'; popHouse = new mapboxgl.Marker(marv).setLngLat(house).addTo(map);
@@ -53,7 +53,7 @@ function showHouse() { clearMap();
 
 	popHouse.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); startUp = function() { popHouse.togglePopup(); }; fly(house); }
 
-function showMark(coord, color, image, link, name, id, area) { clearLearn();
+function showMark(coord, color, image, link, name, id, area) { 
 	var mark = coord;
 	var marv = document.createElement('div'); marv.id = 'marker' + id; 
 	var marp = new mapboxgl.Marker(marv).setLngLat(mark).addTo(map);
@@ -81,9 +81,7 @@ function showMark(coord, color, image, link, name, id, area) { clearLearn();
 
 	marp.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); //pullOwner(id);
 	
-	
-	marp.togglePopup();
-	return marp; } 
+	marp.togglePopup(); return marp; } 
 
 function showTemp(i) { if (tempMark != "") { tempMark.remove(); } tempMark = showMark(convertCoord(domains[i].coord), getCollect(domains[i].core.collection.slug).replace('.png',''), domains[i].core.animation_url, domains[i].core.external_link, domains[i].core.name, i, 'domain');  }
 function showDomain(i) { 
@@ -92,10 +90,7 @@ function showDomain(i) {
 	
 		startUp = function () { domains[i].map = showMark([lat,lon], getCollect(domains[i].core.collection.slug).replace('.png',''), domains[i].core.image_url, domains[i].core.external_link, domains[i].core.name, i, 'domain'); };
 		
-		fly([lat,lon]);
-	});
-	
-	  }
+		fly([lat,lon]); });  }
 function hideDomain(i) { if (domains[i].map != "") { domains[i].map.remove(); domains[i].map = ""; }  }
 //function showArt(i) { artifacts[i].map = showMark(convertMark(artifacts[i].location), artifacts[i].color, artifacts[i].image, "", artifacts[i].name, 'artifact'); }
 
@@ -110,11 +105,6 @@ function fly(dest) { const nowhere = [-75.10664162497726, 45.741025518671464];
     	map.on('moveend', function(e){ if(flying){ flying = false; startUp(); } });
     	map.flyTo({ center: dest, zoom: zoom, bearing: 0, speed: 0.8,  curve: 1,  easing: (t) => t, essential: true }); }
 
-function flyMark(i) {  showTemp(i); 
-	startUp = function() {  tempMark.togglePopup(); document.getElementById("vid"+i).play(); };  fly(convertCoord(domains[i].coord)); } 
-//function flyArt(i) { showArt(i); 
-//	startUp = function() {  tempMark.togglePopup(); }; $('#user-pane').sidenav('close'); fly(convertCoord(artifacts[i].location)); } 
-
 function mapAdd() { clearMark(); showView('mapper'); M.toast({html: 'Select location...'}); artFlag = true; } 
 function mapAdd(i) { clearMark(); showView('mapper'); M.toast({html: 'Select location...'}); artFlag = true; } 
 function addArt() { showEdit(); tempMark.togglePopup(); resetArea(); editMd.location = coordinates.toString();
@@ -124,7 +114,7 @@ function addArt() { showEdit(); tempMark.togglePopup(); resetArea(); editMd.loca
 		  }
 var listFlag = false;
 function addArtifact(i) { listFlag = true; mapAdd(); }
-function clearEdit() { if (tempMark != "") { tempMark.remove(); tempMark = ""; } }
+//function clearEdit() { if (tempMark != "") { tempMark.remove(); tempMark = ""; } }
 var picker; var trigger;
 function showEdit() { if (tempMark != "") { tempMark.remove(); tempMark = ""; }
 	var marv = document.createElement('div'); marv.id = 'markery';// coordinates.lat += 6;
@@ -135,17 +125,10 @@ function showEdit() { if (tempMark != "") { tempMark.remove(); tempMark = ""; }
     	//style += ";background-image:url('img/icon/domain/"+folder + "/" +icon+".png'); 
 	tempMark.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(editContent)); }
 
-function picMo() {
-	  trigger = document.getElementById('trigger');
-  picker = picmoPopup.createPopup({ showPreview: false, emojisPerRow: 6, showSearch: false}, { referenceElement: trigger, triggerElement: trigger, position: 'bottom-right' });
-  picker.addEventListener('emoji:select', (selection) => {
-   // emoji.innerHTML = selection.emoji; name.textContent = selection.label;
-$("#markery").html(selection.emoji);
-   // selectionContainer.classList.remove('empty');
-  });
-	
-	picker.toggle();
-}
+function picMo() { trigger = document.getElementById('trigger');
+	picker = picmoPopup.createPopup({ showPreview: false, emojisPerRow: 6, showSearch: false}, { referenceElement: trigger, triggerElement: trigger, position: 'bottom-right' });
+  	picker.addEventListener('emoji:select', (selection) => { $("#markery").html(selection.emoji); });
+	picker.toggle(); }
 
 var editContent = '<div id="header-logo" style="display: flex;justify-content: space-evenly;align-items: center; display: flex;margin-top:8px;margin-bottom:8px;"><div style="border-radius:12px; cursor:pointer;display:flex; height:64px; width:64px;margin-top:8px;" class="z-depth-1"><img width="64" height="64" id="thumb" src="res/img/barrel.png" onclick="$(\'#preview\').trigger(\'click\');" style="border-radius:8px;" /></div></div></div></div><div class="hiddenfile"><input name="upload" type="file" id="preview" onchange="setPreview();" multiple="multiple"/><div style="visibility:hidden;width:0;position:absolute;top:0;"><input type="color" oninput="setColor();" id="favcolor" name="favcolor" value="#ff0000" style="width:0px; height:0px;opacity:0;" /><input type="color" oninput="setOutline();" id="favcolor2" name="favcolor2" value="#ff0000" style="width:0px; height:0px;opacity:0;" /></div></div><div style="padding:12px; padding-top:0px; padding-bottom:0px; display:flex; justify-content:center;"><div style="margin-top:0px;margin-bottom:0px;" class="input-field col s4"><input id="edit-name" type="text" class="validate" onchange="setText();"></div></div><div class="editMark" style="width:100%; height:48px;display:flex;justify-content:center;margin-bottom:16px;"><a id="trigger" class="quickx hoverable z-depth-1 crisp waves-effect waves-light btn" onclick="picMo();">🏳️</a><a class="quickx hoverable z-depth-1 crisp waves-effect waves-light btn" onclick="colorStart(this);">🟢</a><a class="quickx hoverable z-depth-1 crisp waves-effect waves-light btn" onclick="outlineStart(this);">🟩</a><a class="quickx hoverable z-depth-1 crisp waves-effect waves-light btn" onclick="setShape();">🔳</a></div><div style="display:flex;justify-content:space-evenly;margin-top:12px;margin-bottom:12px;align-items:center;"><a class="waves-effect waves-light btn-flat" onclick="clearEdit();" style="padding:0px;">🗑️</a><a class="waves-effect waves-green green btn" onclick="showView(\'editor\');">Editor&nbsp;&nbsp;✏️</a></div></div>';
 
@@ -164,10 +147,6 @@ const [file] = preview.files
 function resetArea() { $('.mapboxgl-popup-content').css('padding', '0'); 
 	switchTime(); $("#edit-name").val(domains[myDomain].core.name); 
 		      $("#thumb").attr("src", domains[myDomain].core.image_url);
-	//var length = $("#edit-name").val().length;
-	//var symbol = $("#edit-name").val().substring(length-1,length);
-	
-	
 }
 
 function colorStart(event) { //event.stopPropagation(); 
@@ -215,9 +194,6 @@ function mapLoc() {
 	if(navigator.geolocation) { navigator.geolocation.getCurrentPosition(geoSuccess, geoError); } else { alert("Geolocation is not supported by this browser.");} } 
 function geoSuccess(position) {tempCoord[1] = position.coords.latitude;tempCoord[0] = position.coords.longitude; setZoom = 8; fly(tempCoord); addBeacon(tempCoord); beacon = true; } 
 function geoError() { alert('No location'); }
-
-//https://api.mapbox.com/directions/v5/mapbox/driving/-73.99472793733248%2C40.73149739904491%3B-73.99268258837725%2C40.733942291758495%3B-73.98966737911867%2C40.73255977417804?alternatives=true&geometries=geojson&language=en&overview=simplified&steps=true&access_token=YOUR_MAPBOX_ACCESS_TOKEN
-
 
 const geojsonDraw = { "type": "FeatureCollection","features": [{"type": "Feature", "geometry": { "type": "LineString", "coordinates": [] } }] };
 var startPoint; var endPoint; var framesPerSecond = 20; var initialOpacity = 1; var opacity = initialOpacity; var initialRadius = 4; var radius = initialRadius; var maxRadius = 15; var speedFactor = 100; var animation; var lineCoordinates=[]; var animationCounter=0;
