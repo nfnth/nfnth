@@ -128,7 +128,7 @@ function showEdit() { if (tempMark != "") { tempMark.remove(); tempMark = ""; }
 function picMo() { trigger = document.getElementById('trigger');
 	
 
-picmoPopup.globalConfig.injectStyles = false;
+picmo.globalConfig.injectStyles = false;
 	picker = picmoPopup.createPopup({ showPreview: false, emojisPerRow: 6, showSearch: false}, { referenceElement: trigger, triggerElement: trigger, position: 'bottom-right' });
   	picker.addEventListener('emoji:select', (selection) => { $("#markery").html(selection.emoji); });
 	picker.toggle(); }
