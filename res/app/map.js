@@ -126,9 +126,9 @@ function showEdit() { if (tempMark != "") { tempMark.remove(); tempMark = ""; }
 	tempMark.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(editContent)); }
 
 function picMo() { trigger = document.getElementById('trigger');
-		  import { globalConfig } from 'picmo';
+	
 
-globalConfig.injectStyles = false;
+picmoPopup.globalConfig.injectStyles = false;
 	picker = picmoPopup.createPopup({ showPreview: false, emojisPerRow: 6, showSearch: false}, { referenceElement: trigger, triggerElement: trigger, position: 'bottom-right' });
   	picker.addEventListener('emoji:select', (selection) => { $("#markery").html(selection.emoji); });
 	picker.toggle(); }
