@@ -166,7 +166,8 @@ var picker = picmoPopup.createPopup({
   // picker options go here
 }, {
   referenceElement: refer,
-  triggerElement: trigger
+  triggerElement: trigger,
+position: 'fixed'
 });
 		
 	//.setHTML(editContent));
