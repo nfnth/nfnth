@@ -40,7 +40,7 @@ function showIntroPath() { clearDraw(); startPoint = base; endPoint = learnPath;
 
 function clearLearn() { if (popBase) popBase.remove(); if (popArt) popArt.remove(); if (popOwn) popOwn.remove(); if (popPath) popPath.remove(); }
 function clearDraw() { if (typeof nomadPath !== 'undefined') cancelAnimationFrame(nomadPath); if (pather) { removeLine(); } if (beacon) { removeBeacon(); } pather = false; beacon = false; }
-function clearEdit() { if (popEdit) popEdit.remove(); picker.close(); $('.modal').modal();  }
+function clearEdit() { if (popEdit) popEdit.remove(); if (picker) picker.close(); $('.modal').modal();  }
 function clearMark() { if (tempMark != "") { tempMark.remove(); tempMark = ""; }
 	for (let a=0;a<domains.length;a++){ if (domains[a].map != "") { domains[a].map.remove(); domains[a].map = ""; } } }
 function clearMap() { clearLearn(); clearDraw(); clearMark(); if (popHouse) popHouse.remove(); clearEdit(); }
