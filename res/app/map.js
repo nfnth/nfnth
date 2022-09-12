@@ -170,7 +170,7 @@ function showEdit() { if (tempMark != "") { tempMark.remove(); tempMark = ""; }
 		    // const selectionContainer = document.querySelector('#selection-outer');
 //  const emoji = document.querySelector('#selection-emoji');
   //const name = document.querySelector('#selection-name');
-  trigger = document.getElementById('#trigger');
+  trigger = document.getElementById('trigger');
 
   picker = picmoPopup.createPopup({}, {
     referenceElement: trigger,
