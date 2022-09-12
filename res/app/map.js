@@ -171,7 +171,7 @@ function showEdit() { if (tempMark != "") { tempMark.remove(); tempMark = ""; }
   //const name = document.querySelector('#selection-name');
   const trigger = document.querySelector('#trigger');
 
-  const picker = createPopup({}, {
+  const picker = picmoPopup.createPopup({}, {
     referenceElement: trigger,
     triggerElement: trigger,
     position: 'right-end'
