@@ -89,10 +89,13 @@ function showTemp(i) { if (tempMark != "") { tempMark.remove(); } tempMark = sho
 function showDomain(i) { 
 	$.getJSON('https://en.wikipedia.org/w/api.php?origin=*&action=query&prop=coordinates&titles='+domains[i].name+'&coprimary=all&format=json', function(data) { 
 	$.each(data.query.pages, function(key, value) { lat = value.coordinates[0].lat; lon = value.coordinates[0].lon; } );
-	fly([lat,lon]);
+	
+		startUp = function () { domains[i].map = showMark([lat,lon], getCollect(domains[i].core.collection.slug).replace('.png',''), domains[i].core.image_url, domains[i].core.external_link, domains[i].core.name, i, 'domain'); };
+		
+		fly([lat,lon]);
 	});
 	
-	domains[i].map = showMark(learnPath, getCollect(domains[i].core.collection.slug).replace('.png',''), domains[i].core.image_url, domains[i].core.external_link, domains[i].core.name, i, 'domain');  }
+	  }
 function hideDomain(i) { if (domains[i].map != "") { domains[i].map.remove(); domains[i].map = ""; }  }
 //function showArt(i) { artifacts[i].map = showMark(convertMark(artifacts[i].location), artifacts[i].color, artifacts[i].image, "", artifacts[i].name, 'artifact'); }
 
