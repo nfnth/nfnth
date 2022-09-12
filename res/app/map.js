@@ -87,7 +87,7 @@ function showMark(coord, color, image, link, name, id, area) { clearLearn();
 
 function showTemp(i) { if (tempMark != "") { tempMark.remove(); } tempMark = showMark(convertCoord(domains[i].coord), getCollect(domains[i].core.collection.slug).replace('.png',''), domains[i].core.animation_url, domains[i].core.external_link, domains[i].core.name, i, 'domain');  }
 function showDomain(i) { 
-	$.get('https://en.wikipedia.org/w/api.php?action=query&prop=coordinates&titles='+domains[i].name+'&coprimary=all&format=json', function(data) { alert(data); });
+	$.getJSON('https://en.wikipedia.org/w/api.php?action=query&prop=coordinates&titles='+domains[i].name+'&coprimary=all&format=json', function(data) { alert(data); });
 	
 	domains[i].map = showMark(learnPath, getCollect(domains[i].core.collection.slug).replace('.png',''), domains[i].core.image_url, domains[i].core.external_link, domains[i].core.name, i, 'domain');  }
 function hideDomain(i) { if (domains[i].map != "") { domains[i].map.remove(); domains[i].map = ""; }  }
