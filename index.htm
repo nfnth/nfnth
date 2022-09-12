@@ -256,8 +256,6 @@ function hideView() { $('.modal').modal('close'); window.scrollTo(0, 0);
 		     $("#mapper").removeClass("scale-in"); 
 		     $('.pane').hide();}
 	var slideCode = '<div id="flipXXX" class="block flip-card flip-card-inner" style="display:flex;align-items:center;cursor:pointer;"><div class="flip-card-fronty backer card-wrap" style="height:120px;background-color:whitesmoke;color:black;opacity:0.75;transition:all 0.5s!important;"><span class="circleLight"></span><div class="text" style="display:flex; flex-direction:column;align-items:center;"><div style="display:flex;align-items:center;"><img src="res/img/seal3.png" style="width:48px; height:48px;" /><span style="margin-top:12px;margin-left:12px;color:indianred;font-weight:bold;font-size:16px;">UR.Land </span><span style="margin-top:12px;margin-left:24px;font-weight:bold;">dee.d/omain</span></div><p  id="card-nameXXXX" style="display:flex; align-items:center;">I`m cool card</p></div></div>  <div class="flip-card-backy backer"  ><span class="circleLight"></span><div class="text backer" style="transform: rotateY(180deg);"><h3>OCUR.io</h3><p>More card</p></div></div></div>';
-	var cardCode = '<div class="flip-card cardy"  ><div class="flip-card-inner" style="cursor:pointer;"><div class="flip-card-front z-depth-2" onclick="flipCard();"><img  src="XXXX" alt="Avatar" style="width:48px;height:48px;"></div><div class="flip-card-back z-depth-2" ><div id="tactb" style="opacity:0.75; display: flex;align-items: center;position: absolute;top: 4px;left: 4px;"><span id="tact1" style="font-size: 24px;margin-right: 8px;font-weight: bold;"></span><img style="cursor:pointer;" id="tacta" width="24" height="24" src="res/img/card/heart.png"/></div><div id="cardContent" style="cursor:pointer; color: dimgrey;font-size: 16px;font-weight: bold;font-family: \'Roboto\', sans-serif;" onclick="showDoc(\'tact/YYYY\');">📚 READ...</div><div id="tact2" class="rotate" style="opacity:0.75; display: flex;align-items: center;position: absolute;bottom: 4px;right: 4px;"></div></div></div>';
-
 
 
 var pageNotFound = true; var namer; var pageSet = false; var cardNotFound = true;
@@ -408,9 +406,7 @@ $('.slider .item').each(function(i){
       //cSlide.addClass('active');cSlide.next().addClass('next');cSlide.prev().addClass('prev');}))
       })
 }
-var cardSwitch = true; var stationary = true;
-function flipCard() { if(stationary) { stationary = false; } else { //stationary = true;
-	$('.flip-card-inner').css("transform","rotateY(180deg)"); $('.flip-card-front').css("transform","rotateY(180deg)"); $('.text').removeClass("backer"); } }
+
 	
 function setCard(id) { $("#slide-"+id).html(slideCode.replace("XXXX",id).replace("XXX",id)); shakeCard(id);
 		      //$("#flip"+id).click(function(){ showDomain(id); });
@@ -628,46 +624,20 @@ text{ fill: cornflowerblue; stroke: royalblue; stroke-width: .5px; stroke-linejo
 	
 	.mapboxgl-popup-close-button { display:none!important; }
 
-.flip-card {
-  background-color: transparent;
-  width: 120px;
-  height: 120px;
-  border-radius:12px;
-  perspective: 1000px; /* Remove this if you don't want the 3D effect */
-}
+.flip-card {background-color: transparent;width: 120px;height: 120px; border-radius:12px;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */}
 
 /* This container is needed to position the front and back side */
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.8s, opacity 0.2s!important;transform-style: preserve-3d;}
+.flip-card-inner {position: relative;width: 100%;height: 100%;text-align: center; transition: transform 0.8s, opacity 0.2s!important;transform-style: preserve-3d;}
 
 .flip-card-front, .flip-card-back { position: absolute;width: 100%;height: 100%; transition: transform 0.8s, opacity 0.2s!important; transform-style: preserve-3d;}
 
-.flip-card-front {
-
-  color: black;
-      display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 12px;
-    border: solid 2px darkseagreen;
-}
+.flip-card-front {color: black; display: flex; align-items: center;justify-content: center;border-radius: 12px;  border: solid 2px darkseagreen;}
 
 .backer {-webkit-backface-visibility: hidden; /* Safari */
   backface-visibility: hidden; }
 
-.flip-card-back {
-  background-color: ghostwhite;
-  color: white;
-      display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 12px;
-  border: solid 1px gainsboro;
-}
+.flip-card-back {background-color: ghostwhite; color: white;display: flex;align-items: center; justify-content: center; border-radius: 12px; border: solid 1px gainsboro;}
 
 .rotate {-webkit-transform: rotateX(180deg) rotateY(180deg);transform: rotateX(180deg) rotateY(180deg);}
 .flipper {transform: scaleX(-1), scaleY(-1);}
