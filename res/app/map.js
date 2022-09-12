@@ -162,7 +162,7 @@ function showEdit() { if (tempMark != "") { tempMark.remove(); tempMark = ""; }
 		     
 		     var trigger = document.querySelector('.emoji-button');
 
-var picker = createPopup({
+var picker = picmoPopup.createPopup({
   // picker options go here
 }, {
   referenceElement: trigger,
