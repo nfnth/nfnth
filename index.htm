@@ -431,7 +431,7 @@ map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/mapbox/' + map
 var coordinates; var artFlag = false; var tempMark = ""; var tempMap = [];
 map.on('load', function (event) { 
 						 
-	map.on('click', function(e) { coordinates = e.lngLat; if(artFlag) { addArt(); artFlag = false; } $('.fixed-action-btn').floatingActionButton('close'); }); });
+	map.on('click', function(e) { coordinates = e.lngLat; if(artFlag) { addArt(); artFlag = false; } }); });
 
 $('.setter').click(function () {
   $(this).parent().toggleClass('expand');     $('.extra').toggleClass('removed'); $('.extra').toggleClass('added');  });
