@@ -132,7 +132,8 @@ function picMo() {
         var x = event.which || event.keyCode;
       $("#markery").html(x);
     });
-	
+	$("#edit-name").focus();
+$("#edit-name").click(); 
 	//trigger = document.getElementById('trigger');
 	
 
