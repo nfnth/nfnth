@@ -147,11 +147,11 @@ var editContent = '<div id="header-logo" style="display: flex;justify-content: s
 var isSquare = true;
 function setShape() { if (isSquare) { $("#markery").css("border-radius","50%"); $("#shape-icon").html("square"); isSquare = false; } else { $("#markery").css("border-radius",""); $("#shape-icon").html("circle"); isSquare = true; } }
 
-function setText(e) {alert(e.value);
+function setText(e) {
 	if (pickIcon) {
 		var temp = Array.from(e.value); 
 	var symbol = temp[temp.length-1];
-	$("#markery").html(symbol); pickIcon = false; e.value = e.value.substring(0, e.value.length-1); }
+	$("#markery").html(symbol); pickIcon = false; temp.pop(); e.value = temp.toString(); }
 }
 function setPreview() {
 var preview = document.getElementById("preview");
