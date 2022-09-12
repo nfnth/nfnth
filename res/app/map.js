@@ -131,7 +131,8 @@ function mapAdd(i) { clearMark(); showView('mapper');
 		    tempMark = showMark(converter(domains[i].coord), getCollect(domains[i].core.collection.slug).replace('.png',''), domains[i].core.image_url, domains[i].core.external_link, domains[i].core.name, i, 'domain');
 		    
 		    M.toast({html: 'Select location...'}); artFlag = true; } 
-function addArt() { showEdit(); tempMark.togglePopup(); resetArea(); editMd.location = coordinates.toString();
+function addArt() { showEdit(); tempMark.togglePopup();// resetArea(); 
+		   editMd.location = coordinates.toString();
 		   
 		   startPoint = mapSpot; endPoint = coordinates.toString(); showPath('green'); pather = true;
 		   
