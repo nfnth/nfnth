@@ -87,11 +87,11 @@ function showMark(coord, color, image, link, name, id, area) { clearLearn();
 
 function showTemp(i) { if (tempMark != "") { tempMark.remove(); } tempMark = showMark(convertCoord(domains[i].coord), getCollect(domains[i].core.collection.slug).replace('.png',''), domains[i].core.animation_url, domains[i].core.external_link, domains[i].core.name, i, 'domain');  }
 function showDomain(i) { 
-	$.getJSON('https://en.wikipedia.org/w/api.php?origin=*&action=query&prop=coordinates&titles='+domains[i].name+'&coprimary=all&format=json', function(data) { 
-	var later = data.indexOf('lat":') + 5;
-	var loner = data.indexOf('lon":') + 5;
-	var lat = data.substring(later, data.indexOf(',',later));
-	var lon = data.substring(loner, data.indexOf(',',loner));
+	$.getJSON('https://en.wikipedia.org/w/api.php?origin=*&action=query&prop=coordinates&titles='+domains[i].name+'&coprimary=all&format=json', function(data) { dataString = data.toString();
+	var later = dataString.indexOf('lat":') + 5;
+	var loner = dataString.indexOf('lon":') + 5;
+	var lat = dataString.substring(later, dataString.indexOf(',',later));
+	var lon = dataString.substring(loner, dataString.indexOf(',',loner));
 	fly([lat,lon]);
 	});
 	
