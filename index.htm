@@ -55,7 +55,7 @@
 					<li><a onclick="showView('mapper'); showHouse();" class="waves-effect" style="display:flex;align-items:center;"><div>🧭</div>&nbsp;&nbsp;&nbsp;&nbsp;About UR.Land</a></li>
 						<li><div style="margin-top:0;" class="divider"></div></li>
 					<li><a class="subheader">Settings</a></li>
-					<li><a onclick="showView('mapper'); showIntro();" class="waves-effect" style="display:flex;padding-left:12px;"><div id="set-0" class="quick hoverable z-depth-1">🗺️</div>Learn Tutorial</a></li>
+					<li><a onclick="showView('mapper'); showIntroMap();" class="waves-effect" style="display:flex;padding-left:12px;"><div id="set-0" class="quick hoverable z-depth-1">🗺️</div>Learn Tutorial</a></li>
 					<li><a onclick="showView('mapper'); mapLoc();" class="waves-effect" style="display:flex;padding-left:12px;"> <div id="set-2" class="quick hoverable z-depth-1">📍</div>Use Location</a></li>
 						<li><a onclick="showNfNth();" class="waves-effect" style="display:flex;padding-left:12px;"><div id="set-3" class="quick hoverable z-depth-1">🧧</div>Shop URLand</a></li>
 						<li><a onclick="showCard();" class="waves-effect" style="display:flex;padding-left:12px;"><div id="set-4" class="quick hoverable z-depth-1">🃏</div>Play Cards</a></li>
@@ -105,7 +105,6 @@
 	<div  class="hide-on-med-and-down" style="display:flex;  align-items: center; justify-content: space-between; margin: 10%;margin-top: 24px;margin-bottom: 12px;width: 80%;">
 		<div ><div class="hiddenfile"><input name="upload" type="file" id="preview" onchange="checkFile();" multiple="multiple"/></div>
 <a onclick=" clearPad();" class="waves-effect waves-grey btn-flat" >🗑️</a>
-			<a id="dropdown-templater" style="margin-left:24px; margin-right:8px;width:148px;" class="waves-effect waves-blue blue lighten-3 btn dropdown-trigger" href="#" data-target='dropdown-template'><i class="material-icons right">arrow_drop_down</i><span class='edit-device'>📏&nbsp;&nbsp;Add</span></a>
 			<a id="dropdown-file" class="waves-effect waves-light blue lighten-3 btn dropdown-trigger" href='#' data-target='dropdown-file' style="margin-right:8px;width:148px;" ><i class="material-icons right">arrow_drop_down</i>📁&nbsp;&nbsp;File</a>
 		<a style="width:148px;margin-right:24px;" onclick="showPreview();" class="waves-effect waves-light blue btn lighten-1">📃&nbsp;&nbsp;<span class='edit-device'>Preview</span></a></div>
 
@@ -115,7 +114,6 @@
 		
 		<div  class="screen-hide edit-hide" style=" align-items: center; justify-content: space-evenly; margin:12px; margin-top:24px;"><div><div class="hiddenfile"><input name="upload" type="file" id="preview" onchange="checkFile();" multiple="multiple"/></div>
 			<a onclick="clearPad();" class="waves-effect waves-grey btn-flat">🗑️</a>
-			<a id="dropdown-templatey" style="margin-left:8px; margin-right:8px;" class="waves-effect waves-blue blue lighten-3 btn dropdown-trigger" href="#" data-target='dropdown-templatex'>📏<span class='edit-device'></span></a>
 			<a id="dropdown-file" class="waves-effect waves-light blue lighten-3 btn dropdown-trigger" href='#' data-target='dropdown-file' style="margin-right:8px;" >📁</a>
 			<a onclick="showPreview();"  class="waves-effect waves-light blue lighten-1 btn">📃</a></div>
 		<div>
@@ -459,7 +457,7 @@ mapboxgl.accessToken = "pk.eyJ1IjoibmZudGgiLCJhIjoiY2tweW1rNXlsMGFpYzJwcGt1cHh6d
 map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/mapbox/' + map_style[0], center: base, zoom: zoom, buffer_size: 0.2 }); //pitch: 85,bearing: 80,zoom: 13, buffer_size: 0.2});
 
 var coordinates; var artFlag = false; var tempMark = ""; var tempMap = [];
-map.on('load', function (event) { showIntroMap();
+map.on('load', function (event) { 
 						 
 	map.on('click', function(e) { coordinates = e.lngLat; if(artFlag) { addArt(); artFlag = false; } $('.fixed-action-btn').floatingActionButton('close'); }); });
 
