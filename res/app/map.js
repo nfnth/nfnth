@@ -1,83 +1,60 @@
 class Box { mapStyle = ""; product = false; special = false; scale = false; }
 var boxer = new Box();
 
+var popHouse; var popBase; var popArt; var popOwn; var popPath;  var popEdit;
 var house = [-122.1661845434948, 47.76905286802228];
 //var base = [-101.69697959674477, 39.77108807140884];
-var learnArt = [-103.69697959674477, 37.77108807140884]; var popArt; var popOwn; var popPath; var popBase;
+var learnArt = [-103.69697959674477, 37.77108807140884]; 
 var learnOwn = [-99.19697959674477, 40.17108807140884];
 var learnPath = [-99.79697959674477, 35.47108807140884];
 var pather = false; var beacon = false;
 
-function showIntro() { deedMap(); }
-function showIntroMap() { 
-	var marv = document.createElement('div'); marv.id = 'markera'; tempMark = new mapboxgl.Marker(marv).setLngLat(base).addTo(map);
-	popBase = tempMark;
-	
+function showIntroMap() { clearMap();
+	var marv = document.createElement('div'); marv.id = 'markera'; popBase = new mapboxgl.Marker(marv).setLngLat(base).addTo(map);
 	$('#markera').addClass('markre'); $('#markera').addClass('z-depth-3'); $('#markera').addClass('triangle-up'); 
-	var style = $('#markera').attr('style'); style += ";background-image:url('res/img/seal3.png');background-size:cover;border:solid 2px darkgrey;border-radius:50%;"; $('#markera').attr('style',style);
-    	//style += ";background-image:url('img/icon/domain/"+folder + "/" +icon+".png'); 
-
+	var style = $('#markera').attr('style'); style += ";background-image:url('res/img/seal3.png');background-size:cover;border:solid 2px darkgrey;border-radius:50%;"; $('#markera').attr('style',style); 
 	var markup = '<div>' + makeCard() + '</div><div style="margin-top:16px; font-size:16px;"><span onclick="showDoc(\'tact/a\');" style="cursor:pointer;">Use Deed</span><br/><br/><a id="butIntro" class="waves-effect waves-light btn green lighten-2" onclick="tempMark.togglePopup(); showIntroArt();"><i class="material-icons right">arrow_forward</i>Next</a></div></div>';
 
-	tempMark.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); tempMark.togglePopup(); 
-	//$('#cardContent').unbind('click'); $("#cardContent").click(showDoc('tact/a')); 
-	}
+	popBase.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); popBase.togglePopup(); }
 
 function showIntroArt() { startPoint = base; endPoint = learnArt; showPath('green'); pather = true; $("#butIntro").addClass("disabled");
-	var marv = document.createElement('div'); marv.id = 'markerb'; tempMark = new mapboxgl.Marker(marv).setLngLat(learnArt).addTo(map);
-	popArt = tempMark;
-	
+	var marv = document.createElement('div'); marv.id = 'markerb'; popArt = new mapboxgl.Marker(marv).setLngLat(learnArt).addTo(map);
 	$('#markerb').addClass('markre'); $('#markerb').addClass('z-depth-3'); $('#markerb').html("🏳");
 	var style = $('#markerb').attr('style'); style += ";background-color:green;border:solid 2px darkgreen;justify-content:center;align-items:center;display:flex;font-size:20px;"; $('#markerb').attr('style',style);
-	
 	var markup = '<div>' + makeCard() + '</div><div style="margin-top:16px; font-size:16px;"><span onclick="showDoc(\'tact/b\');" style="cursor:pointer;">Build Domain</span><br/><br/><a id="butArt" class="waves-effect waves-light btn blue lighten-2" onclick="tempMark.togglePopup(); showIntroOwn();"><i class="material-icons right">arrow_forward</i>Next</a></div></div>';
-
-	tempMark.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); tempMark.togglePopup();
-	$('#cardContent').unbind('click');
-		     $("#cardContent").click(showDoc('tactb')); 
-	 }
+//$('#cardContent').unbind('click');$("#cardContent").click(showDoc('tactb')); 
+	popArt.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); popArt.togglePopup(); }
 
 function showIntroOwn() { addBeacon(learnOwn); beacon = true; $("#butArt").addClass("disabled");
-	var marv = document.createElement('div'); marv.id = 'markerc'; tempMark = new mapboxgl.Marker(marv).setLngLat(learnOwn).addTo(map);
-	popOwn = tempMark; 
-	
+	var marv = document.createElement('div'); marv.id = 'markerc'; popOwn = new mapboxgl.Marker(marv).setLngLat(learnOwn).addTo(map);
 	$('#markerc').addClass('markre'); $('#markerc').addClass('z-depth-3'); $('#markerc').html("🏴");
 	var style = $('#markerc').attr('style'); style += ";background-color:blue;border:solid 2px mediumblue;border-radius:50%;justify-content:center;align-items:center;display:flex;font-size:20px;"; $('#markerc').attr('style',style);
-
 	var markup = '<div>' + makeCard() + '</div><div style="margin-top:16px; font-size:16px;"><span onclick="showDoc(\'tact/c\');" style="cursor:pointer;">Post Note</span><br/><br/><a id="butOwn" class="waves-effect waves-light btn amber lighten-2" onclick="tempMark.togglePopup(); showIntroPath();"><i class="material-icons right">arrow_forward</i>Next</a></div></div>';
 
-	tempMark.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); tempMark.togglePopup(); }
+	popOwn.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); popOwn.togglePopup(); }
 
-function showIntroPath() { clearMap(); startPoint = base; endPoint = learnPath; showPath('goldenrod'); pather = true;  $("#butOwn").addClass("disabled");
-	var marv = document.createElement('div'); marv.id = 'markerd'; tempMark = new mapboxgl.Marker(marv).setLngLat(learnPath).addTo(map);
-	popPath = tempMark;
-	
+function showIntroPath() { clearDraw(); startPoint = base; endPoint = learnPath; showPath('goldenrod'); pather = true;  $("#butOwn").addClass("disabled");
+	var marv = document.createElement('div'); marv.id = 'markerd'; popPath = new mapboxgl.Marker(marv).setLngLat(learnPath).addTo(map);
 	$('#markerd').addClass('markre'); $('#markerd').addClass('z-depth-3'); 
 	var style = $('#markerd').attr('style'); style += ";background-image:url('res/img/coin.jpg');background-size:cover; border:solid 2px darkgoldenrod;border-radius:50%;"; $('#markerd').attr('style',style);
+	var markup = '<div>' + makeCard() + '</div><div style="margin-top:16px; font-size:16px;"><span onclick="showDoc(\'tact/d\');" style="cursor:pointer;">Trade OCUR</span><br/><br/><a id="butPath" class="waves-effect waves-light btn red lighten-2" onclick="showIntroMap();"><i class="material-icons right">restart_alt</i>Reset</a></div></div>';
 
-	var markup = '<div>' + makeCard() + '</div><div style="margin-top:16px; font-size:16px;"><span onclick="showDoc(\'tact/d\');" style="cursor:pointer;">Trade OCUR</span><br/><br/><a id="butPath" class="waves-effect waves-light btn red lighten-2" onclick="clearMap(); clearLearn(); showIntroMap();"><i class="material-icons right">restart_alt</i>Reset</a></div></div>';
-
-	tempMark.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); tempMark.togglePopup(); }
-
-function clearLearn() { if (popBase) popBase.remove();
-	 if (popArt) popArt.remove(); if (popOwn) popOwn.remove(); if (popPath) popPath.remove();
-	
-}
-
-var markCode = '<div class="flip-card"  ><div class="flip-card-inner" style="cursor:pointer;"><div class="flip-card-frontx z-depth-2" onclick="flipCard();"><img src="XXXX" alt="Avatar" style="width:48px;height:48px;"></div><div class="flip-card-backx z-depth-2" ><div id="tactb" style="opacity:0.75; display: flex;align-items: center;position: absolute;top: 4px;left: 4px;"><span id="tact1" style="font-size: 24px;margin-right: 8px;font-weight: bold;"></span><img style="cursor:pointer;" id="tacta" width="24" height="24" src="res/img/card/heart.png"/></div><div id="cardContent" style="cursor:pointer; color: dimgrey;font-size: 16px;font-weight: bold;font-family: \'Roboto\', sans-serif;" onclick="showDoc(\'tact/YYYY\');">📚 READ... 📚</div><div id="tact2" class="rotate" style="opacity:0.75; display: flex;align-items: center;position: absolute;bottom: 4px;right: 4px;"></div></div></div>';
-
-function showHouse() { clearMap(); 
-	var marv = document.createElement('div'); marv.id = 'markerh'; tempMark = new mapboxgl.Marker(marv).setLngLat(house).addTo(map);
-	popPath = tempMark;
-	
-	$('#markerh').addClass('markre'); $('#markerd').addClass('z-depth-3'); 
-	var style = $('#markerh').attr('style'); style += ";background-image:url('res/img/seal3.png');background-size:cover; border:solid 2px indianred;border-radius:50%;"; $('#markerh').attr('style',style);
-	
-	var markup = '<div>' + makeCard() + '</div><div style="margin-top:16px; font-size:16px;"><span onclick="showDoc(\'PLANME\');" style="cursor:pointer;">NfNth</span><br/><br/><a id="butPath" class="waves-effect waves-light btn red lighten-2" onclick="clearMap(); clearLearn(); showIntroMap();"><i class="material-icons right">restart_alt</i>Reset</a></div></div>';
-
-	tempMark.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); startUp = function() { tempMark.togglePopup(); }; fly(house); }
+	popPath.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); popPath.togglePopup(); }
 
 function clearLearn() { if (popBase) popBase.remove(); if (popArt) popArt.remove(); if (popOwn) popOwn.remove(); if (popPath) popPath.remove(); }
+function clearDraw() { if (typeof nomadPath !== 'undefined') cancelAnimationFrame(nomadPath); if (pather) { removeLine(); } if (beacon) { removeBeacon(); } pather = false; beacon = false; }
+
+function clearMark() { if (tempMark != "") { tempMark.remove(); tempMark = ""; }
+	for (let a=0;a<domains.length;a++){ if (domains[a].map != "") { domains[a].map.remove(); domains[a].map = ""; } } }
+function clearMap() { clearLearn(); clearDraw(); clearMark(); if (popHouse) popHouse.remove(); if (popEdit) popEdit.remove(); }
+
+function showHouse() { clearMap(); 
+	var marv = document.createElement('div'); marv.id = 'markerh'; popHouse = new mapboxgl.Marker(marv).setLngLat(house).addTo(map);
+	$('#markerh').addClass('markre'); $('#markerd').addClass('z-depth-3'); 
+	var style = $('#markerh').attr('style'); style += ";background-image:url('res/img/seal3.png');background-size:cover; border:solid 2px indianred;border-radius:50%;"; $('#markerh').attr('style',style);
+	var markup = '<div>' + makeCard() + '</div><div style="margin-top:16px; font-size:16px;"><span onclick="showDoc(\'PLANME\');" style="cursor:pointer;">NfNth</span><br/><br/><a id="butPath" class="waves-effect waves-light btn red lighten-2" onclick="clearMap(); clearLearn(); showIntroMap();"><i class="material-icons right">restart_alt</i>Reset</a></div></div>';
+
+	popHouse.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); startUp = function() { popHouse.togglePopup(); }; fly(house); }
 
 function showMark(coord, color, image, link, name, id, area) { clearLearn();
 	var mark = coord;
@@ -102,20 +79,19 @@ function showMark(coord, color, image, link, name, id, area) { clearLearn();
 	
 	$('#marker'+id).addClass('markre'); $('#marker'+id).addClass('z-depth-3'); $('#marker'+id).html(symbol); //color?
 	var style=$('#marker'+id).attr('style'); style += ";align-items: center;justify-content: center;display: flex;background-color: whitesmoke;border: 2px solid darkslategray;font-size: 16px;"; $('#marker'+id).attr('style',style); 
-    	//style += ";background-image:url('img/icon/domain/"+folder + "/" +icon+".png'); 
-	var markup = '<div><div style="display:flex; justify-content:center; flex-direction:column; align-items:center;" ><div style="width:64px;height:64px;display:flex;margin-top:6px;border-radius:8px;cursor:pointer;" class="z-depth-1" onclick="buildDoc(\'' + id + '\');"><img style="border-radius:8px;width:64px;height:64px;" src="' + domains[id].core.image_url + '" /></div><div style="margin-top:16px; font-size:16px;"><a onclick="openInNewTab(\'' + link + '\');">' + name + '</a></div><div class="editMark" style="width:100%; height:48px;display:flex;justify-content:center;margin-bottom:16px;"><a class="quickx hoverable z-depth-1 crisp waves-effect waves-light btn" onclick="addListDetail(' + id + ');">🏠</a><a class="quickx hoverable z-depth-1 crisp waves-effect waves-light btn" onclick="mapAdd();">📦</a><a class="quickx hoverable z-depth-1 crisp waves-effect waves-light btn" >🏛️</a></div></div></div>';
+	var markup = '<div><div style="display:flex; justify-content:center; flex-direction:column; align-items:center;" ><div style="width:64px;height:64px;display:flex;margin-top:6px;border-radius:8px;cursor:pointer;" class="z-depth-1" onclick="buildDoc(\'' + id + '\');"><img style="border-radius:8px;width:64px;height:64px;" src="' + domains[id].core.image_url + '" /></div><div style="margin-top:16px; font-size:16px;"><a onclick="openInNewTab(\'' + link + '\');">' + name + '</a></div><div class="editMark" style="width:100%; height:48px;display:flex;justify-content:center;margin-bottom:16px;"><a class="quickx hoverable z-depth-1 crisp waves-effect waves-light btn" onclick="addListDetail(' + id + ');">🪙</a><a class="quickx hoverable z-depth-1 crisp waves-effect waves-light btn" onclick="mapAdd();">📦</a></div></div></div>';
 	//var markup = markCode;
 
 	marp.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); //pullOwner(id);
 	
 	
 	marp.togglePopup();
-	return marp; } //$('.materialboxed').materialbox(); 
+	return marp; } 
 
 function showTemp(i) { if (tempMark != "") { tempMark.remove(); } tempMark = showMark(convertCoord(domains[i].coord), getCollect(domains[i].core.collection.slug).replace('.png',''), domains[i].core.animation_url, domains[i].core.external_link, domains[i].core.name, i, 'domain');  }
 function showDomain(i) { domains[i].map = showMark(learnPath, getCollect(domains[i].core.collection.slug).replace('.png',''), domains[i].core.image_url, domains[i].core.external_link, domains[i].core.name, i, 'domain');  }
 function hideDomain(i) { if (domains[i].map != "") { domains[i].map.remove(); domains[i].map = ""; }  }
-function showArt(i) { artifacts[i].map = showMark(convertMark(artifacts[i].location), artifacts[i].color, artifacts[i].image, "", artifacts[i].name, 'artifact'); }
+//function showArt(i) { artifacts[i].map = showMark(convertMark(artifacts[i].location), artifacts[i].color, artifacts[i].image, "", artifacts[i].name, 'artifact'); }
 
 function deedMap() { var introRemove = false; for (let i=0;i<domains.length;i++) { if (domains[i].checked) { showDomain(i); introRemove = true; } else { hideDomain(i); } }  
 		   if (introRemove) { clearMap(); clearLearn(); } }
@@ -130,8 +106,8 @@ function fly(dest) { const nowhere = [-75.10664162497726, 45.741025518671464];
 
 function flyMark(i) {  showTemp(i); 
 	startUp = function() {  tempMark.togglePopup(); document.getElementById("vid"+i).play(); };  fly(convertCoord(domains[i].coord)); } 
-function flyArt(i) { showArt(i); 
-	startUp = function() {  tempMark.togglePopup(); }; $('#user-pane').sidenav('close'); fly(convertCoord(artifacts[i].location)); } 
+//function flyArt(i) { showArt(i); 
+//	startUp = function() {  tempMark.togglePopup(); }; $('#user-pane').sidenav('close'); fly(convertCoord(artifacts[i].location)); } 
 
 function mapAdd() { clearMark(); showView('mapper'); M.toast({html: 'Select location...'}); artFlag = true; } 
 function mapAdd(i) { clearMark(); showView('mapper'); M.toast({html: 'Select location...'}); artFlag = true; } 
@@ -151,11 +127,7 @@ function showEdit() { if (tempMark != "") { tempMark.remove(); tempMark = ""; }
 		     var front = getFront(domains[myDomain].core.collection.slug); var back = getBack(domains[myDomain].core.collection.slug);
     	style += ";background-color:" + front + ";border:solid 2px " + back + ";display: flex;align-items: center;justify-content: center;font-size: 18px;"; $('#markery').attr('style',style);
     	//style += ";background-image:url('img/icon/domain/"+folder + "/" +icon+".png'); 
-	tempMark.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(editContent));
-		     
-	//.setHTML(editContent));
-		    // $('#markery').unbind('click'); $("#markery").click(colorStart); 
-		     }
+	tempMark.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(editContent)); }
 
 function picMo() {
 	  trigger = document.getElementById('trigger');
@@ -169,10 +141,6 @@ $("#markery").html(selection.emoji);
 	picker.toggle();
 }
 
-function complete()
-{
-	$("#cuboid form").removeClass("loading").addClass("complete");
-}
 var editContent = '<div id="header-logo" style="display: flex;justify-content: space-evenly;align-items: center; display: flex;margin-top:8px;margin-bottom:8px;"><div style="border-radius:12px; cursor:pointer;display:flex; height:64px; width:64px;margin-top:8px;" class="z-depth-1"><img width="64" height="64" id="thumb" src="res/img/barrel.png" onclick="$(\'#preview\').trigger(\'click\');" style="border-radius:8px;" /></div></div></div></div><div class="hiddenfile"><input name="upload" type="file" id="preview" onchange="setPreview();" multiple="multiple"/><div style="visibility:hidden;width:0;position:absolute;top:0;"><input type="color" oninput="setColor();" id="favcolor" name="favcolor" value="#ff0000" style="width:0px; height:0px;opacity:0;" /><input type="color" oninput="setOutline();" id="favcolor2" name="favcolor2" value="#ff0000" style="width:0px; height:0px;opacity:0;" /></div></div><div style="padding:12px; padding-top:0px; padding-bottom:0px; display:flex; justify-content:center;"><div style="margin-top:0px;margin-bottom:0px;" class="input-field col s4"><input id="edit-name" type="text" class="validate" onchange="setText();"></div></div><div class="editMark" style="width:100%; height:48px;display:flex;justify-content:center;margin-bottom:16px;"><a id="trigger" class="quickx hoverable z-depth-1 crisp waves-effect waves-light btn" onclick="picMo();">🏳️</a><a class="quickx hoverable z-depth-1 crisp waves-effect waves-light btn" onclick="colorStart(this);">🟢</a><a class="quickx hoverable z-depth-1 crisp waves-effect waves-light btn" onclick="outlineStart(this);">🟩</a><a class="quickx hoverable z-depth-1 crisp waves-effect waves-light btn" onclick="setShape();">🔳</a></div><div style="display:flex;justify-content:space-evenly;margin-top:12px;margin-bottom:12px;align-items:center;"><a class="waves-effect waves-light btn-flat" onclick="clearEdit();" style="padding:0px;">🗑️</a><a class="waves-effect waves-green green btn" onclick="showView(\'editor\');">Editor&nbsp;&nbsp;✏️</a></div></div>';
 
 var isSquare = true;
@@ -187,15 +155,22 @@ const [file] = preview.files
         thumb.src = URL.createObjectURL(file); $("#press").html("done");
         $("#editThumb").addClass("green");$("#editThumb").removeClass("blue-grey"); }}}
 
-function switchIcon() { var temp = Array.from($("#edit-name").val()); $("#markery").html(temp[temp.length-1]); }
 function resetArea() { $('.mapboxgl-popup-content').css('padding', '0'); 
 	switchTime(); $("#edit-name").val(domains[myDomain].core.name); 
 		      $("#thumb").attr("src", domains[myDomain].core.image_url);
-	switchIcon();
 	//var length = $("#edit-name").val().length;
 	//var symbol = $("#edit-name").val().substring(length-1,length);
 	
 	
+}
+
+function colorStart(event) { //event.stopPropagation(); 
+	document.getElementById("favcolor").focus(); document.getElementById("favcolor").click(); }
+function setColor() { $("#markery").css("background-color", document.getElementById('favcolor').value); editMd.color = document.getElementById('favcolor').value;  
+}
+function outlineStart(event) { //event.stopPropagation(); 
+	document.getElementById("favcolor2").focus(); document.getElementById("favcolor2").click(); }
+function setOutline() { $("#markery").css("border", "solid 2px " + document.getElementById('favcolor2').value); //editMd.color = document.getElementById('favcolor').value;  
 }
 
 function setMap(area) { var center = map.getCenter(); mapSelect = area;
@@ -234,9 +209,6 @@ function geoError() { alert('No location'); }
 
 //https://api.mapbox.com/directions/v5/mapbox/driving/-73.99472793733248%2C40.73149739904491%3B-73.99268258837725%2C40.733942291758495%3B-73.98966737911867%2C40.73255977417804?alternatives=true&geometries=geojson&language=en&overview=simplified&steps=true&access_token=YOUR_MAPBOX_ACCESS_TOKEN
 
-function clearMark() { if (tempMark != "") { tempMark.remove(); tempMark = ""; }
-	for (let a=0;a<domains.length;a++){ if (domains[a].map != "") { domains[a].map.remove(); domains[a].map = ""; } } }
-function clearMap() { if (typeof nomadPath !== 'undefined') cancelAnimationFrame(nomadPath); if (pather) { removeLine(); } if (beacon) { removeBeacon(); } pather = false; beacon = false; }
 
 const geojsonDraw = { "type": "FeatureCollection","features": [{"type": "Feature", "geometry": { "type": "LineString", "coordinates": [] } }] };
 var startPoint; var endPoint; var framesPerSecond = 20; var initialOpacity = 1; var opacity = initialOpacity; var initialRadius = 4; var radius = initialRadius; var maxRadius = 15; var speedFactor = 100; var animation; var lineCoordinates=[]; var animationCounter=0;
@@ -286,25 +258,4 @@ function addBeacon(place) {
 function removeBeacon() { 
 	map.removeLayer('layer-with-pulsing-dot');map.removeSource('dot-point');map.removeImage('pulsing-dot'); }
 
-//var beacon = false; var pather = false; var introMark; var nomadPath; var artifactPath; var setDomain; var currentContent = [];
 function showPath(color) { addLine(color); nomadPath = requestAnimationFrame(drawLine); }
-//function showLandlord() { startPoint = fr; endPoint = fr2; showPath('green'); currentMarkers[0].togglePopup(); currentMarkers[1].togglePopup(); pather = true; currentToggle = 1; }
-//function showArt() { addBeacon(fr3); currentMarkers[1].togglePopup(); currentMarkers[2].togglePopup(); beacon = true; currentToggle = 2; }
-//function showBase() { currentMarkers[2].togglePopup(); currentMarkers[0].togglePopup(); currentToggle = 0; }
-
-//var currentMarkers=[]; var currentMark = 0; 
-//var addMark; 
-//var popups = []; var walletSwitch = true; var markCount = 0; //if (place == "") place = window.location.host;
-//function popMark(i) { domains[i].map.togglePopup();  }
-//var inputMark = "";
-
-//var selectedMark = -1; var mapMark = -1;
-
-function colorStart(event) { //event.stopPropagation(); 
-	document.getElementById("favcolor").focus(); document.getElementById("favcolor").click(); }
-function setColor() { $("#markery").css("background-color", document.getElementById('favcolor').value); editMd.color = document.getElementById('favcolor').value;  
-}
-function outlineStart(event) { //event.stopPropagation(); 
-	document.getElementById("favcolor2").focus(); document.getElementById("favcolor2").click(); }
-function setOutline() { $("#markery").css("border", "solid 2px " + document.getElementById('favcolor2').value); //editMd.color = document.getElementById('favcolor').value;  
-}
