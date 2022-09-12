@@ -149,6 +149,7 @@ function addArt() { showEdit(); tempMark.togglePopup(); resetArea(); editMd.loca
 var listFlag = false;
 function addArtifact(i) { listFlag = true; mapAdd(); }
 function clearEdit() { if (tempMark != "") { tempMark.remove(); tempMark = ""; } }
+var picker;
 function showEdit() { if (tempMark != "") { tempMark.remove(); tempMark = ""; }
 	var marv = document.createElement('div'); marv.id = 'markery';// coordinates.lat += 6;
 	tempMark = new mapboxgl.Marker(marv).setLngLat(coordinates).addTo(map);
@@ -171,7 +172,7 @@ function showEdit() { if (tempMark != "") { tempMark.remove(); tempMark = ""; }
   //const name = document.querySelector('#selection-name');
   var trigger = document.getElementById('#trigger');
 
-  var picker = picmoPopup.createPopup({}, {
+  picker = picmoPopup.createPopup({}, {
     referenceElement: trigger,
     triggerElement: trigger,
     position: 'right-end'
