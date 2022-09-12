@@ -16,20 +16,15 @@ function showIntroMap() {
 	$('#markera').addClass('markre'); $('#markera').addClass('z-depth-3'); $('#markera').addClass('triangle-up'); 
 	var style = $('#markera').attr('style'); style += ";background-image:url('res/img/seal3.png');background-size:cover;border:solid 2px darkgrey;border-radius:50%;"; $('#markera').attr('style',style);
     	//style += ";background-image:url('img/icon/domain/"+folder + "/" +icon+".png'); 
-    	var leaf = Math.floor(Math.random() * (16 - 1 + 1)) + 1; var leafSrc = "res/img/leaf/leaf" + leaf.toString() + ".png"; 
-	var markup = '<div>' + cardCode.replace('XXXX',leafSrc).replace('YYYY','a') + '</div><div style="margin-top:16px; font-size:16px;"><span onclick="showDoc(\'tact/a\');" style="cursor:pointer;">Use Deed</span><br/><br/><a id="butIntro" class="waves-effect waves-light btn green lighten-2" onclick="tempMark.togglePopup(); showIntroArt();"><i class="material-icons right">arrow_forward</i>Next</a></div></div>';
+
+	var markup = '<div>' + makeCard() + '</div><div style="margin-top:16px; font-size:16px;"><span onclick="showDoc(\'tact/a\');" style="cursor:pointer;">Use Deed</span><br/><br/><a id="butIntro" class="waves-effect waves-light btn green lighten-2" onclick="tempMark.togglePopup(); showIntroArt();"><i class="material-icons right">arrow_forward</i>Next</a></div></div>';
 
 	tempMark.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); tempMark.togglePopup(); 
 	//$('#cardContent').unbind('click');
 		    // $("#cardContent").click(showDoc('tact/a')); 
 	}
 
-var cardCode = '<div class="flip-card cardy"  ><div class="flip-card-inner" style="cursor:pointer;"><div class="flip-card-front flip-card-frontx z-depth-2" onclick="flipCard();"><img  src="XXXX" alt="Avatar" style="width:48px;height:48px;"></div><div class="flip-card-back flip-card-backx z-depth-2" ><div id="tactb" style="opacity:0.75; display: flex;align-items: center;position: absolute;top: 4px;left: 4px;"><span id="tact1" style="font-size: 24px;margin-right: 8px;font-weight: bold;"></span><img style="cursor:pointer;" id="tacta" width="24" height="24" src="res/img/card/heart.png"/></div><div id="cardContent" style="cursor:pointer; color: dimgrey;font-size: 16px;font-weight: bold;font-family: \'Roboto\', sans-serif;" onclick="showDoc(\'tact/YYYY\');">📚 READ...</div><div id="tact2" class="rotate" style="opacity:0.75; display: flex;align-items: center;position: absolute;bottom: 4px;right: 4px;"></div></div></div>';
-var suit = ['heart','diamond','club','spade']; var num = ['2','3','4','5','6','7','8','9','10','J','Q','K','A'];
-var cardSwitch = false;
-function flipCard() { var mySuit = Math.floor(Math.random() * (4 - 1 + 1)); var myNum = Math.floor(Math.random() * (13 - 1 + 1));
-	$("#tacta").attr("src","res/img/card/" + suit[mySuit] + ".png");$("#tact1").html(num[myNum]); if (mySuit > 1) { $("#tact1").css("color","black");  } else { $("#tact1").css("color","red");  } $('.flip-card-inner').css("transform","rotateY(180deg)"); $("#tact2").html($("#tactb").html());
-	}
+
 
 function showIntroArt() { startPoint = base; endPoint = learnArt; showPath('green'); pather = true; $("#butIntro").addClass("disabled");
 	var marv = document.createElement('div'); marv.id = 'markerb'; tempMark = new mapboxgl.Marker(marv).setLngLat(learnArt).addTo(map);
@@ -37,9 +32,8 @@ function showIntroArt() { startPoint = base; endPoint = learnArt; showPath('gree
 	
 	$('#markerb').addClass('markre'); $('#markerb').addClass('z-depth-3'); $('#markerb').html("🏳");
 	var style = $('#markerb').attr('style'); style += ";background-color:green;border:solid 2px darkgreen;justify-content:center;align-items:center;display:flex;font-size:20px;"; $('#markerb').attr('style',style);
-    	//style += ";background-image:url('img/icon/domain/"+folder + "/" +icon+".png'); 
-	var leaf = Math.floor(Math.random() * (16 - 1 + 1)) + 1; var leafSrc = "res/img/leaf/leaf" + leaf.toString() + ".png"; 
-	var markup = '<div>' + cardCode.replace('XXXX',leafSrc).replace('YYYY','b') + '</div><div style="margin-top:16px; font-size:16px;"><span onclick="showDoc(\'tact/b\');" style="cursor:pointer;">Build Domain</span><br/><br/><a id="butArt" class="waves-effect waves-light btn blue lighten-2" onclick="tempMark.togglePopup(); showIntroOwn();"><i class="material-icons right">arrow_forward</i>Next</a></div></div>';
+	
+	var markup = '<div>' + makeCard() + '</div><div style="margin-top:16px; font-size:16px;"><span onclick="showDoc(\'tact/b\');" style="cursor:pointer;">Build Domain</span><br/><br/><a id="butArt" class="waves-effect waves-light btn blue lighten-2" onclick="tempMark.togglePopup(); showIntroOwn();"><i class="material-icons right">arrow_forward</i>Next</a></div></div>';
 
 	tempMark.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); tempMark.togglePopup();
 	$('#cardContent').unbind('click');
@@ -52,9 +46,8 @@ function showIntroOwn() { addBeacon(learnOwn); beacon = true; $("#butArt").addCl
 	
 	$('#markerc').addClass('markre'); $('#markerc').addClass('z-depth-3'); $('#markerc').html("🏴");
 	var style = $('#markerc').attr('style'); style += ";background-color:blue;border:solid 2px mediumblue;border-radius:50%;justify-content:center;align-items:center;display:flex;font-size:20px;"; $('#markerc').attr('style',style);
-    	//style += ";background-image:url('img/icon/domain/"+folder + "/" +icon+".png'); 
-	var leaf = Math.floor(Math.random() * (16 - 1 + 1)) + 1; var leafSrc = "res/img/leaf/leaf" + leaf.toString() + ".png"; 
-	var markup = '<div>' + cardCode.replace('XXXX',leafSrc).replace('YYYY','c') + '</div><div style="margin-top:16px; font-size:16px;"><span onclick="showDoc(\'tact/c\');" style="cursor:pointer;">Post Note</span><br/><br/><a id="butOwn" class="waves-effect waves-light btn amber lighten-2" onclick="tempMark.togglePopup(); showIntroPath();"><i class="material-icons right">arrow_forward</i>Next</a></div></div>';
+
+	var markup = '<div>' + makeCard() + '</div><div style="margin-top:16px; font-size:16px;"><span onclick="showDoc(\'tact/c\');" style="cursor:pointer;">Post Note</span><br/><br/><a id="butOwn" class="waves-effect waves-light btn amber lighten-2" onclick="tempMark.togglePopup(); showIntroPath();"><i class="material-icons right">arrow_forward</i>Next</a></div></div>';
 
 	tempMark.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); tempMark.togglePopup(); }
 
@@ -64,9 +57,8 @@ function showIntroPath() { clearMap(); startPoint = base; endPoint = learnPath; 
 	
 	$('#markerd').addClass('markre'); $('#markerd').addClass('z-depth-3'); 
 	var style = $('#markerd').attr('style'); style += ";background-image:url('res/img/coin.jpg');background-size:cover; border:solid 2px darkgoldenrod;border-radius:50%;"; $('#markerd').attr('style',style);
-    	//style += ";background-image:url('img/icon/domain/"+folder + "/" +icon+".png'); 
-	var leaf = Math.floor(Math.random() * (16 - 1 + 1)) + 1; var leafSrc = "res/img/leaf/leaf" + leaf.toString() + ".png"; 
-	var markup = '<div>' + cardCode.replace('XXXX',leafSrc).replace('YYYY','d') + '</div><div style="margin-top:16px; font-size:16px;"><span onclick="showDoc(\'tact/d\');" style="cursor:pointer;">Trade OCUR</span><br/><br/><a id="butPath" class="waves-effect waves-light btn red lighten-2" onclick="clearMap(); clearLearn(); showIntroMap();"><i class="material-icons right">restart_alt</i>Reset</a></div></div>';
+
+	var markup = '<div>' + makeCard() + '</div><div style="margin-top:16px; font-size:16px;"><span onclick="showDoc(\'tact/d\');" style="cursor:pointer;">Trade OCUR</span><br/><br/><a id="butPath" class="waves-effect waves-light btn red lighten-2" onclick="clearMap(); clearLearn(); showIntroMap();"><i class="material-icons right">restart_alt</i>Reset</a></div></div>';
 
 	tempMark.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); tempMark.togglePopup(); }
 
@@ -82,10 +74,9 @@ function showHouse() { clearMap();
 	popPath = tempMark;
 	
 	$('#markerh').addClass('markre'); $('#markerd').addClass('z-depth-3'); 
-	var style = $('#markerh').attr('style'); style += ";background-image:url('res/img/coin.jpg');background-size:cover; border:solid 2px darkgoldenrod;border-radius:50%;"; $('#markerh').attr('style',style);
-    	//style += ";background-image:url('img/icon/domain/"+folder + "/" +icon+".png'); 
-	var leaf = Math.floor(Math.random() * (16 - 1 + 1)) + 1; var leafSrc = "res/img/leaf/leaf" + leaf.toString() + ".png"; 
-	var markup = '<div>' + cardCode.replace('XXXX',leafSrc).replace('YYYY','d') + '</div><div style="margin-top:16px; font-size:16px;"><span onclick="showDoc(\'PLANME\');" style="cursor:pointer;">NfNth</span><br/><br/><a id="butPath" class="waves-effect waves-light btn red lighten-2" onclick="clearMap(); clearLearn(); showIntroMap();"><i class="material-icons right">restart_alt</i>Reset</a></div></div>';
+	var style = $('#markerh').attr('style'); style += ";background-image:url('res/img/seal3.png');background-size:cover; border:solid 2px darkgoldenrod;border-radius:50%;"; $('#markerh').attr('style',style);
+	
+	var markup = '<div>' + makeCard() + '</div><div style="margin-top:16px; font-size:16px;"><span onclick="showDoc(\'PLANME\');" style="cursor:pointer;">NfNth</span><br/><br/><a id="butPath" class="waves-effect waves-light btn red lighten-2" onclick="clearMap(); clearLearn(); showIntroMap();"><i class="material-icons right">restart_alt</i>Reset</a></div></div>';
 
 	tempMark.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); startup = tempMark.togglePopup(); fly(house); }
 
