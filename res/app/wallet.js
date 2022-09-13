@@ -107,7 +107,7 @@ var signer = async function (content, ref) { //add key to message...
         	function (err, result) {console.log('TYPED SIGNED:' + JSON.stringify(result.result)); sender(messager, result.result, content, ref);});}
 
 var sender = function (message, signature, content, ref) {
-	content = "My profile|R|royalblue|red|[-103.69697959674477, 37.77108807140884]|" + content;
+	content = $("#edit-name").val() + "|" + $("#markery").html() + "|" + document.getElementById('favcolor').value + "|" + document.getElementById('favcolor2').value + "|[-103.69697959674477, 37.77108807140884]|" + content;
     	var formdata = new FormData(); formdata.append('message', message);formdata.append('signature', signature);formdata.append('content', content);formdata.append('key',secretKey);
 	
 	formdata.append('profile', $('#preview')[0].files[0]); 
