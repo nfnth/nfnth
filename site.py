@@ -68,8 +68,8 @@ async def data(request):
             key = (await field.read()).decode()
             pass
  
-    stamp = SECRET.decrypt(key)
-    print (stamp) #if not key == ...withen 1 hour? return invalid key... get UR
+    #stamp = SECRET.decrypt(key)
+    #print (stamp) #if not key == ...withen 1 hour? return invalid key... get UR
     
     encoded = eth_account.messages.encode_structured_data(text=message)
     message_wallet = Account.recover_message(encoded, signature=signature)
