@@ -12,10 +12,7 @@
 
 <!-- resources -->
 <script src="res/app/all.js"></script><link rel="stylesheet" href="res/app/all.css"></script>
-<script src="res/app/md.js"></script><script src="res/app/open.js"></script><script src="res/app/wallet.js"></script><script src="res/app/map.js"></script><script src="res/app/ui.js"></script><script src="res/app/card.js"></script><script src="https://cdn.jsdelivr.net/gh/ushelp/EasyQRCodeJS/dist/easy.qrcode.min.js" ></script>
-	
-	<script src="https://unpkg.com/picmo@latest/dist/umd/index.js"></script><script src="https://unpkg.com/@picmo/popup-picker@latest/dist/umd/index.js"></script>
-	</head>
+<script src="res/app/md.js"></script><script src="res/app/open.js"></script><script src="res/app/wallet.js"></script><script src="res/app/map.js"></script><script src="res/app/ui.js"></script><script src="res/app/card.js"></script><script src="https://cdn.jsdelivr.net/gh/ushelp/EasyQRCodeJS/dist/easy.qrcode.min.js" ></script></head>
 
 <body style="overflow:overlay; background-color:whitesmoke;transition: background-color 1s linear;" >
 
@@ -253,7 +250,6 @@ function setPage() { if (!(pageSet)) { pageSet = true; var page = window.locatio
         case 'nfnth.com': setTitle();  break;
         case 'ur.land': setLand(); break;
         case 'ocur.io': setTitle();  break;
-        case 'ustat.us': setLand(); break;
         default: 
 			for (let j = 0; j < domains.length; j++) { if (domains[j].core.external_link !== null) //&& data !== undefined "maahdaah.us 🕷"
 			if (domains[j].core.external_link.replace('https://','') == page) {  pageNotFound = false; 
