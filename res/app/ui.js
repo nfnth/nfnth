@@ -133,7 +133,7 @@ function getFront(value) {
 
 function getBack(value) {
     switch(value) {
-	case 'tact': return 'darkred'; case 'patric': return 'darkorange'; case 'elect': return 'darkyellow'; case 'sect': return 'darkgreen'; case 'civilia': return 'darkblue'; case 'logicia': return 'magenta'; case 'clini': return 'darkpink'; case 'librar': return 'brown'; case 'agrar': return 'darkbrown'; case 'technic': return 'ghostwhite'; case 'utili': return 'darkgrey'; case 'custo': return 'black';
+	case 'tact': return 'darkred'; case 'patric': return 'darkorange'; case 'elect': return 'lightyellow'; case 'sect': return 'darkgreen'; case 'civilia': return 'darkblue'; case 'logicia': return 'magenta'; case 'clini': return 'darkpink'; case 'librar': return 'brown'; case 'agrar': return 'darkbrown'; case 'technic': return 'ghostwhite'; case 'utili': return 'darkgrey'; case 'custo': return 'black';
         default: return 'blue_swords.png'; }}
 
 function openAZ(a, b) { if (a.core.name === b.core.name) {  return 0; } else { return (a.core.name < b.core.name) ? -1 : 1; } }
