@@ -103,7 +103,7 @@ function addListDeed(i) { var embedDisplay = "";
 		//embedDisplay = '<video id="vid" style="width:80%;"  controls loop poster="' + domains[i].core.image_url + '"><source src="' + domains[i].core.animation_url + '" type="video/mp4"></video>';
 //function change(a){ document.getElementById('vid').poster=a; document.getElementById('vid').src=a.replace('res/raw/','res/media/').replace('.jpg','.mp4'); }
 		
-	return "<div style='text-align:center;'><p><a style='font-weight:16px' onclick='openInNewTab(\"" + domains[i].core.external_link + "\");'>" + domains[i].core.name + "</span>&nbsp;&nbsp; · &nbsp;&nbsp;<img style='display:flex; cursor:pointer;' class='z-depth-1' width='30' height='30' src='res/img/key/" + getCollect(domains[i].core.collection.slug) + "'/></p></div><br/><div id='emDisp' style='text-align:center;'>" + embedDisplay + "</div></br><p>" + domains[i].core.description + "</p>";   }
+	return "<div style='text-align:center;display:flex;justify-content:center;'><p><a style='font-weight:16px;display:flex;' onclick='openInNewTab(\"" + domains[i].core.external_link + "\");'>" + domains[i].core.name + "</span>&nbsp;&nbsp; · &nbsp;&nbsp;<a>" + domains[i].core.collection.slug + "</a><img style='display:flex; cursor:pointer;' class='z-depth-1' width='30' height='30' src='res/img/key/" + getCollect(domains[i].core.collection.slug) + "'/></p></div><br/><div id='emDisp' style='text-align:center;'>" + embedDisplay + "</div></br><p>" + domains[i].desc + "</p><br/><p><img src='" + domains[i].res + "' />";   }
 	
 function addUserDeed(i) { var embedDisplay = "";
 	embedDisplay = "<img  style='width:80%;' src='" + domainMd.image + "' />"; // }
