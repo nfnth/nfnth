@@ -33,15 +33,6 @@ renderMd = function (text) {
 
     return text;}
 
-renderMr = function (text) { const code = text.trim().replace('|',''); // alert(code);
-    let insert = function (code) { return code; }; return mermaid.render("preparedScheme", code, insert); }
-
-renderMt = function (text) { MathJax.texReset();
-    var output = document.getElementById('mather'); var options = MathJax.getMetricsFor(output); //options.display = display.checked;
-    MathJax.tex2svgPromise(text.trim(), options).then(function (node) {
-    $("#mather").html(node);
-    MathJax.startup.document.clear(); MathJax.startup.document.updateDocument(); return $("#mather").html(); }); }
-
 var meta = `//name=Max Hamish|image=default.png|icon=river1.png|location=56,-32|link=https://nfnth.com|description=`
 
 var profileListingPreview = `
