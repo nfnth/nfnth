@@ -16,7 +16,7 @@ function pullOpen(name) {
       .then(response => response.json()) //.then(response => assets = response)
       .then(response => { for (let i = 0; i < response.assets.length; i++) {
             var tmp = new Domain(); var asset = response.assets[i]; var traits = asset.traits;
-            if (asset.name == "absaroka.us" || asset.name == "monocacy.us") { continue; } tmp.core = asset;
+            if (asset.name == "absaroka.us" || asset.name == "monocacy.us" || asset.name == "tactician.us") { continue; } tmp.core = asset;
             for (let a = 0; a < traits.length; a++) {
                 switch(traits[a].trait_type.toLowerCase()) {
                     case 'name': tmp.name = traits[a].value.toString(); break;
