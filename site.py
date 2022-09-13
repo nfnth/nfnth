@@ -125,7 +125,7 @@ async def data(request):
         with open(path + '/doc', "wt") as fout:
             fout.write(content)
             pass
-        with open(path = '/profile', "wt") as fout:
+        with open(path + '/profile', "wt") as fout:
             fout.write(profile)
             pass
         return web.Response(text='valid data',content_type="text/html")
