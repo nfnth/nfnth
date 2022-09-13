@@ -3,6 +3,7 @@ var domainFound = false; var tempArtifact;
 
 class Open { core = "api_object"; count = 0; checked = false; } //asset.name; image_url; banner_image_url; slug;
 class Domain { core = "api_object"; name = "civi"; coord = "key.png"; img = "scene.png"; ref = "wiki.htm"; owner = "me"; price = "0.1"; hide = false; checked = false; map = ""; art = []; item = false; } // asset.token_id; image_url; image_thumbnail_url; image_preview_url; name; description; external_link; permalink; creator.address; name; parseFloat(asset.sell_orders[0].base_price)/1000000000000000000;
+class Owner { wallet = ""; name = ""; icon = ""; front = ""; back = ""; coord = ""; content = ""; }
 
 function pullOpens() {
     fetch('https://api.opensea.io/api/v1/collections?asset_owner=0x8a83fbbacb82030ea17179c0403b04e7bce7ba10&offset=0&limit=300', options)
@@ -54,7 +55,11 @@ function pullAssets(owner, slug) {
 function pullOwner(i) { id = domains[i].core.token_id;
 	fetch('https://api.opensea.io/api/v1/asset/0x495f947276749ce646f68ac8c248420045cb7b5e/'+id, options)
       		.then(response => response.json()) //.then(response => assets = response)
-      		.then(response => {  domains[i].owner = response.top_ownerships[0].owner.address; }).catch(err => console.error(err)); }
+      		.then(response => {  domains[i].owner = new Owner(); domains[i].owner.wallet = response.top_ownerships[0].owner.address; 
+				  $.get('res/wallet/' + domains[i].owner.wallet + '/doc', function(data) { 
+					  var fields = data.split('|'); 
+					  domains[i].owner.name = fields[0]; domains[i].owner.icon = fields[1]; domains[i].owner.front = fields[2]; domains[i].owner.back = fields[3]; domains[i].owner.coord = fields[4]; domains[i].owner.content = fields[5];
+					  addListDetail(i); }); }).catch(err => console.error(err)); }
 
 function pullPrice(i) { id = domains[i].core.token_id;
 	fetch('https://api.opensea.io/api/v1/asset/0x495f947276749ce646f68ac8c248420045cb7b5e/'+id+'/listings', options)
