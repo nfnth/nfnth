@@ -1,13 +1,13 @@
 class Wallet { address = ""; deed = []; } class Deed { name = ""; id = ""; }
 var user = new Wallet(); //var disconnect = false;
-var gasPrice = ""; var itemPrice; var localAmount = 0;
+var gasPrice = ""; var itemPrice; var localAmount = 0; var secretKey;
 var setup = async function () {
     if (window.ethereum) { //web3 = new Web3(window.ethereum); //await account();
         const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' }); user.address = accounts[0];
         $("#myAdd").html(user.address.toLowerCase().substring(0,10) + "...");
         $.get("api/"+user.address, async function(data) {  $("#logger").removeClass("disabled");
             	var fields = data.split('|'); var ether = JSON.parse(fields[0]).result; var urler = fields[1]; var gas = fields[2];
-							 var local = JSON.parse(fields[3]);
+							 var local = JSON.parse(fields[3]); secretKey = fields[4];
 							 for (let i = 0; i <local.length; i++) { 
 								 if (local[i].to == "0x8a83fbbacb82030ea17179c0403b04e7bce7ba10")
 								 { localAmount += local[i].value; } } //timestamp?
@@ -107,7 +107,7 @@ var signer = async function (content, ref) { //add key to message...
         	function (err, result) {console.log('TYPED SIGNED:' + JSON.stringify(result.result)); sender(messager, result.result, content, ref);});}
 
 var sender = function (message, signature, content, ref) {
-    	var formdata = new FormData(); formdata.append('message', message);formdata.append('signature', signature);formdata.append('content', content);formdata.append('key','XXXXX');
+    	var formdata = new FormData(); formdata.append('message', message);formdata.append('signature', signature);formdata.append('content', content);formdata.append('key',secretKey);
 	
 	//formdata.append('image', $('input[type=file]')[0].files[0]); 
     	$.ajax({ url: "data/"+user.address+"/"+ref, type: "POST", data: formdata, processData: false, contentType: false, success: function(data) { alert(data); } }); }
