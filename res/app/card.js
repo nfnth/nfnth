@@ -2,7 +2,7 @@
 var suit = ['heart','diamond','club','spade']; var num = ['2','3','4','5','6','7','8','9','10','J','Q','K','A'];
 var cardSwitch = false;
 
-var cardCode = '<div class="flip-card cardy z-depth-1"><div class="flip-card-inner" style="cursor:pointer;"><div class="flip-card-front" onclick="flipCard();" style="z-index:1;"><img  src="XXXX" style="width:48px;height:48px;"></div><div class="flip-card-back" ><div id="tactb" style="opacity:0.75; display: flex;align-items: center;position: absolute;top: 4px;left: 4px;"><span id="tact1" style="font-size: 24px;margin-right: 8px;font-weight: bold;"></span><img style="cursor:pointer;" id="tacta" width="24" height="24" /></div><div id="tact2" style="opacity:0.75; display: flex;align-items: center;position: absolute;bottom: 4px;right: 4px;transform: rotateY(180deg);"></div></div></div>';
+var cardCode = '<div class="flip-card cardy"><div class="flip-card-inner z-depth-1" style="cursor:pointer;"><div class="flip-card-front" onclick="flipCard();" style="z-index:1;"><img  src="XXXX" style="width:48px;height:48px;"></div><div class="flip-card-back" style="transform: rotateY(180deg);"><div id="tactb" style="opacity:0.75; display: flex;align-items: center;position: absolute;top: 4px;left: 4px;"><span id="tact1" style="font-size: 24px;margin-right: 8px;font-weight: bold;"></span><img style="cursor:pointer;" id="tacta" width="24" height="24" /></div><div id="tact2" style="opacity:0.75; display: flex;align-items: center;position: absolute;bottom: 4px;right: 4px;"></div></div></div>';
 
 
 function flipCard() { var mySuit = Math.floor(Math.random() * (4 - 1 + 1)); var myNum = Math.floor(Math.random() * (13 - 1 + 1)); 
