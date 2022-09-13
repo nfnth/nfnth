@@ -76,7 +76,7 @@ function showMark(coord, color, image, link, name, id, area) {
 	
 	$('#marker'+id).addClass('markre'); $('#marker'+id).addClass('z-depth-3'); $('#marker'+id).html(symbol); //color?
 	var style=$('#marker'+id).attr('style'); style += ";align-items: center;justify-content: center;display: flex;background-color: whitesmoke;border: 2px solid darkslategray;font-size: 16px;"; $('#marker'+id).attr('style',style); 
-	var markup = '<div><div style="display:flex; justify-content:center; flex-direction:column; align-items:center;" ><div style="width:64px;height:64px;display:flex;margin-top:6px;border-radius:8px;cursor:pointer;" class="z-depth-1" onclick="buildDoc(\'' + id + '\');"><img style="border-radius:8px;width:64px;height:64px;" src="' + domains[id].core.image_url + '" /></div><div style="margin-top:16px; font-size:16px;"><a onclick="openInNewTab(\'' + link + '\');">' + name + '</a></div><div class="editMark" style="width:100%; height:48px;display:flex;justify-content:center;margin-bottom:16px;"><a class="quickx hoverable z-depth-1 crisp waves-effect waves-light btn" onclick="addListDetail(' + id + ');">🪙</a><a class="quickx hoverable z-depth-1 crisp waves-effect waves-light btn" onclick="mapAdd(' + id + ');">📦</a></div></div></div>';
+	var markup = '<div><div style="display:flex; justify-content:center; flex-direction:column; align-items:center;" ><div style="width:64px;height:64px;display:flex;margin-top:6px;border-radius:8px;cursor:pointer;" class="z-depth-1" onclick="buildDoc(\'' + id + '\');"><img style="border-radius:8px;width:64px;height:64px;" src="' + domains[id].core.image_url + '" /></div><div style="margin-top:16px; font-size:16px;"><a onclick="openInNewTab(\'' + link + '\');">' + name + '</a></div><div class="editMark" style="width:100%; height:48px;display:flex;justify-content:center;"><a class="quickx hoverable z-depth-1 crisp waves-effect waves-light btn" onclick="addListDetail(' + id + ');">📮</a><a class="quickx hoverable z-depth-1 crisp waves-effect waves-light btn" onclick="mapAdd(' + id + ');">📦</a></div></div></div>';
 	//var markup = markCode;
 
 	marp.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); //pullOwner(id);
@@ -85,8 +85,13 @@ function showMark(coord, color, image, link, name, id, area) {
 
 function showTemp(i) { if (tempMark != "") { tempMark.remove(); } tempMark = showMark(convertCoord(domains[i].coord), getCollect(domains[i].core.collection.slug).replace('.png',''), domains[i].core.animation_url, domains[i].core.external_link, domains[i].core.name, i, 'domain');  }
 
+function convertMarker(coord) { 
+	var raw = coord.replace('LngLat(','').replace(')','').replace(' ','').replace('[','').replace(']','');
+	return [raw.substring(raw.indexOf(',')+1, raw.length), raw.substring(0, raw.indexOf(','))];
+}
+
 function converter(coord) { //66°32′56″N 152°50′41″W  Degrees + ((Minutes / 60) + (Seconds / 3600)) 40°41′34″N 73°59′25″W
-	//if (!(coord.includes('°'))) return convertMarker(coord);
+	if (!(coord.includes('°'))) return convertMarker(coord);
 	var raw = coord; var lat, long; var add, add2; var sub, sub2; var final, final2;
 	if (raw.includes("N")) { lat = raw.substring(0, raw.indexOf('N')); add = lat.substring(lat.indexOf('°')+1, lat.indexOf('′')); add2 = lat.substring(lat.indexOf('′')+1, lat.indexOf('″')); lat = lat.substring(0, lat.indexOf('°')); }
 	else { lat = raw.substring(0, raw.indexOf('S')); add = lat.substring(lat.indexOf('°')+1, lat.indexOf('′')); add2 = lat.substring(lat.indexOf('′')+1, lat.indexOf('″')); lat = lat.substring(0, lat.indexOf('°')); lat = "-" + lat; }
@@ -102,8 +107,6 @@ function converter(coord) { //66°32′56″N 152°50′41″W  Degrees + ((Minu
 		     return [final, final2]; }
 
 function showDomain(i) { 
-	for (var a = 0; a < domains.length; a++) { if (domains[a].name = "Majorca") i = a; }
-	
 	clearMap(); startUp = function () { domains[i].map = showMark(converter(domains[i].coord), getCollect(domains[i].core.collection.slug).replace('.png',''), domains[i].core.image_url, domains[i].core.external_link, domains[i].core.name, i, 'domain'); };
 		
 		fly(converter(domains[i].coord)); }
