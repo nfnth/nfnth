@@ -16,5 +16,5 @@ function flipQR(i) { $("#tact1").html(domains[i].owner.wallet); }
 function makeCard() { var leaf = Math.floor(Math.random() * (16 - 1 + 1)) + 1; var leafSrc = "res/img/leaf/leaf" + leaf.toString() + ".png"; 
                    return cardCode.replace('XXXX',leafSrc); }
 
-function makeCardOwner() { var profileSrc = 'res/wallet/' + domains[i].owner.wallet + '/profile'; 
+function makeCardOwner(i) { var profileSrc = 'res/wallet/' + domains[i].owner.wallet + '/profile'; 
                    return cardCode.replace('XXXX',profileSrc); }
