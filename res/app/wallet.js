@@ -107,7 +107,9 @@ var signer = async function (content, ref) { //add key to message...
         	function (err, result) {console.log('TYPED SIGNED:' + JSON.stringify(result.result)); sender(messager, result.result, content, ref);});}
 
 var sender = function (message, signature, content, ref) {
-    	var formdata = new FormData(); formdata.append('message', message);formdata.append('signature', signature);formdata.append('content', content); 
+    	var formdata = new FormData(); formdata.append('message', message);formdata.append('signature', signature);formdata.append('content', content);formdata.append('key','XXXXX');
+	
+	//formdata.append('image', $('input[type=file]')[0].files[0]); 
     	$.ajax({ url: "data/"+user.address+"/"+ref, type: "POST", data: formdata, processData: false, contentType: false, success: function(data) { alert(data); } }); }
     	
 async function send() {
