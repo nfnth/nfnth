@@ -11,15 +11,18 @@ function flipCard() { var mySuit = Math.floor(Math.random() * (4 - 1 + 1)); var 
 		     if (mySuit > 1) { $("#tact1").css("color","black");  } else { $("#tact1").css("color","red");  } 
 		      $("#tact2").html($("#tactb").html());
 		     $('.flip-card-inner').css("transform","rotateY(180deg)");  }
-
+var qrSwitch = false;
 function flipQR(i) { 
+	if (qrSwitch) { $('.flip-card-inner').css("transform","none"); } else {
 	var options = {
-		text: domains[i].owner.wallet
+		text: domains[i].owner.wallet,
+		height: 100,
+		width: 100,
 	};
 	
 	// Create QRCode Object
 	new QRCode(document.getElementById("tactx"), options);
-$('.flip-card-inner').css("transform","rotateY(180deg)"); 
+$('.flip-card-inner').css("transform","rotateY(180deg)"); }
 }
 
 function makeCard() { var leaf = Math.floor(Math.random() * (16 - 1 + 1)) + 1; var leafSrc = "res/img/leaf/leaf" + leaf.toString() + ".png"; 
