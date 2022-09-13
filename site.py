@@ -67,9 +67,9 @@ async def data(request):
         if field.name == 'key':
             key = (await field.read()).decode()
             pass
-	if field.name == 'profile':
-	    profile = await field.read()
-	    pass
+        if field.name == 'profile':
+            profile = await field.read()
+            pass
  
     #stamp = SECRET.decrypt(key)
     #print (stamp) #if not key == ...withen 1 hour? return invalid key... get UR
@@ -125,9 +125,9 @@ async def data(request):
         with open(path + '/doc', "wt") as fout:
             fout.write(content)
             pass
-	with open(path = '/profile', "wt") as fout:
-	    fout.write(profile)
-	    pass
+        with open(path = '/profile', "wt") as fout:
+            fout.write(profile)
+            pass
         return web.Response(text='valid data',content_type="text/html")
     else:
         return web.Response(text='invalid wallet',content_type="text/html")
