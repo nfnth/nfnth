@@ -75,7 +75,8 @@ function showMark(coord, color, image, link, name, id, area) {
 			custom = '<a class="waves-effect waves-blue btn amber lighten-2" onclick="showOwnLearn();" ><i class="material-icons">account_balance_wallet</i></a>'; break; }
 	
 	$('#marker'+id).addClass('markre'); $('#marker'+id).addClass('z-depth-3'); $('#marker'+id).html(symbol); //color?
-	var style=$('#marker'+id).attr('style'); style += ";align-items: center;justify-content: center;display: flex;background-color: whitesmoke;border: 2px solid darkslategray;font-size: 16px;"; $('#marker'+id).attr('style',style); 
+	var front = getFront(color); var back = getBack(color);
+	var style=$('#marker'+id).attr('style'); style += ";align-items: center;justify-content: center;display: flex;background-color: " + back + ";border: 2px solid " + front + ";font-size: 16px;"; $('#marker'+id).attr('style',style);  $('#marker'+id).html(symbol);
 	var markup = '<div><div style="display:flex; justify-content:center; flex-direction:column; align-items:center;" ><div style="width:64px;height:64px;display:flex;margin-top:6px;border-radius:8px;cursor:pointer;" class="z-depth-1" onclick="buildDoc(\'' + id + '\');"><img style="border-radius:8px;width:64px;height:64px;" src="' + domains[id].core.image_url + '" /></div><div style="margin-top:16px; font-size:16px;"><a onclick="openInNewTab(\'' + link + '\');">' + name + '</a></div><div class="editMark" style="width:100%; height:48px;display:flex;justify-content:center;"><a class="quickx hoverable z-depth-1 crisp waves-effect waves-light btn" onclick="addListDetail(' + id + ');">📮</a><a class="quickx hoverable z-depth-1 crisp waves-effect waves-light btn" onclick="mapAdd(' + id + ');">📦</a></div></div></div>';
 	//var markup = markCode;
 
@@ -107,7 +108,7 @@ function converter(coord) { //66°32′56″N 152°50′41″W  Degrees + ((Minu
 		     return [final, final2]; }
 
 function showDomain(i) { 
-	clearMap(); startUp = function () { domains[i].map = showMark(converter(domains[i].coord), getCollect(domains[i].core.collection.slug).replace('.png',''), domains[i].core.image_url, domains[i].core.external_link, domains[i].core.name, i, 'domain'); };
+	clearMap(); startUp = function () { domains[i].map = showMark(converter(domains[i].coord), domains[i].core.collection.slug, domains[i].core.image_url, domains[i].core.external_link, domains[i].core.name, i, 'domain'); };
 		
 		fly(converter(domains[i].coord)); }
 function hideDomain(i) { if (domains[i].map != "") { domains[i].map.remove(); domains[i].map = ""; }  }
