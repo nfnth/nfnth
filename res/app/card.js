@@ -16,11 +16,15 @@ function flipQR(i) {
 	if (qrSwitch) { $('.flip-card-inner').css("transform","none"); qrSwitch = false; } else {
 	var options = {
 		text: domains[i].owner.wallet,
-		height: 100,
-		width: 100,
+		height: 80,
+		width: 80,
+		logo: 'res/img/seal3.png',
+		logoWidth: 12,
+		logoHeight: 12,
 	};
 	
 	// Create QRCode Object
+		$("#tactx").html("");
 	new QRCode(document.getElementById("tactx"), options);
 $('.flip-card-inner').css("transform","rotateY(180deg)"); qrSwitch = true; }
 }
