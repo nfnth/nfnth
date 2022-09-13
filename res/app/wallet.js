@@ -31,10 +31,10 @@ var setup = async function () {
 };
 function desetup() { user = ""; user = new Wallet();  $("#trader").addClass("disabled"); $("#logger").addClass("disabled");
 	//$("#wallet-area").addClass("grey"); $("#wallet-area").removeClass("green"); $("#wallet-icon").css("color","darkslategrey");
-	$("#myAdd").hide().html('My ETH Balance').fadeIn('slow');document.getElementById("signer").onclick = setup;
-	$('#myETH').hide().html('My Wallet Address').fadeIn('slow'); 
+	$("#myAdd").hide().html('My Wallet').fadeIn('slow');document.getElementById("signer").onclick = setup;
+	$('#myETH').hide().html('My ETH').fadeIn('slow'); 
 	//$('#myGas').hide().html('').fadeIn('slow'); 
-	$('#myURL').hide().html('My OCUR Balance').fadeIn('slow'); $("#signer").html("<span>Connect</span>🪙"); $("#signer").removeClass("darken-1"); $("#signer").addClass("lighten-2"); $('#myDomain').hide().html("My Notebook").fadeIn('slow');
+	$('#myURL').hide().html('My OCUR').fadeIn('slow'); $("#signer").html("<span>Connect</span>🪙"); $("#signer").removeClass("darken-1"); $("#signer").addClass("lighten-2"); $('#myDomain').hide().html("My OCUR (Local)").fadeIn('slow');
 		    
     	emptyDeeds(); domainSelect(); }
 
