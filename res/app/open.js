@@ -56,7 +56,7 @@ function pullOwner(i) { id = domains[i].core.token_id;
 	fetch('https://api.opensea.io/api/v1/asset/0x495f947276749ce646f68ac8c248420045cb7b5e/'+id, options)
       		.then(response => response.json()) //.then(response => assets = response)
       		.then(response => {  domains[i].owner = new Owner(); domains[i].owner.wallet = response.top_ownerships[0].owner.address; 
-				  $.get('res/wallet/' + domains[i].owner.wallet + '/doc', function(data) { 
+				  $.get('wallet/' + domains[i].owner.wallet + '/doc', function(data) { 
 					  var fields = data.split('|'); 
 					  domains[i].owner.name = fields[0]; domains[i].owner.icon = fields[1]; domains[i].owner.front = fields[2]; domains[i].owner.back = fields[3]; domains[i].owner.coord = fields[4]; domains[i].owner.content = fields[5];
 					  addListDetail(i); }); }).catch(err => console.error(err)); }
