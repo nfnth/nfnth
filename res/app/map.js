@@ -69,12 +69,12 @@ function showMark(coord, color, image, link, name, id, area) {
 		case 'domain': 
 			if (domains[id].item) { filler = 'beige;" class="amber'; } else { filler = 'ghostwhite;" class="grey'; }
 			imager = 'onclick="addListDetail(' + id + ');"';
-			custom = '<a id="lm' + id + '" style="color:' + filler + ' waves-effect waves-blue btn lighten-4" onclick="buildLand(' + id + ');" ><i class="material-icons">space_dashboard</i></a>&nbsp;&nbsp;<a style="color:honeydew;" class="modal-trigger waves-effect waves-light btn green lighten-3" href="#modal1" onclick="addListDetail(' + id + ');"><i class="material-icons">format_list_bulleted</i></a>'; break;
+			custom = '<a id="lm' + id + '" style="color:' + filler + ' waves-effect waves-blue btn lighten-4" onclick="buildLand(' + id + ');" ><i class="material-icons">space_dashboard</i></a>&nbsp;&nbsp;<a style="color:honeydew;" class="modal-trigger waves-effect waves-light btn green lighten-3" href="#modal1" onclick="pullOwner(' + id + ');"><i class="material-icons">format_list_bulleted</i></a>'; break;
 		case 'artifact': 
 			imager = 'onclick="showDoc("ur");';
 			custom = '<a class="waves-effect waves-blue btn amber lighten-2" onclick="showOwnLearn();" ><i class="material-icons">account_balance_wallet</i></a>'; break; }
 	
-	$('#marker'+id).addClass('markre'); $('#marker'+id).addClass('z-depth-3'); $('#marker'+id).html(symbol); //color?
+	$('#marker'+id).addClass('markre'); $('#marker'+id).addClass('z-depth-3'); //color?
 	var front = getFront(color); var back = getBack(color);
 	var style=$('#marker'+id).attr('style'); style += ";align-items: center;justify-content: center;display: flex;background-color: " + back + ";border: 2px solid " + front + ";font-size: 16px;"; $('#marker'+id).attr('style',style);  $('#marker'+id).html(symbol);
 	var markup = '<div><div style="display:flex; justify-content:center; flex-direction:column; align-items:center;" ><div style="width:64px;height:64px;display:flex;margin-top:6px;border-radius:8px;cursor:pointer;" class="z-depth-1" onclick="buildDoc(\'' + id + '\');"><img style="border-radius:8px;width:64px;height:64px;" src="' + domains[id].core.image_url + '" /></div><div style="margin-top:16px; font-size:16px;"><a onclick="openInNewTab(\'' + link + '\');">' + name + '</a></div><div class="editMark" style="width:100%; height:48px;display:flex;justify-content:center;"><a class="quickx hoverable z-depth-1 crisp waves-effect waves-light btn" onclick="addListDetail(' + id + ');">📮</a><a class="quickx hoverable z-depth-1 crisp waves-effect waves-light btn" onclick="mapAdd(' + id + ');">📦</a></div></div></div>';
@@ -152,7 +152,9 @@ function showEdit() { if (tempMark != "") { tempMark.remove(); tempMark = ""; }
 	var marv = document.createElement('div'); marv.id = 'markery';// coordinates.lat += 6;
 	tempMark = new mapboxgl.Marker(marv).setLngLat(coordinates).addTo(map);
     	$('#markery').addClass('markre'); $('#markerx').addClass('z-depth-3'); var style=$('#markery').attr('style');
-		     var front = getFront(domains[myDomain].core.collection.slug); var back = getBack(domains[myDomain].core.collection.slug);
+		     //var front = getFront(domains[myDomain].core.collection.slug); var back = getBack(domains[myDomain].core.collection.slug);
+		     //random?
+		     front = "indianred"; back = "ghostwhite";
     	style += ";background-color:" + front + ";border:solid 2px " + back + ";display: flex;align-items: center;justify-content: center;font-size: 18px;"; $('#markery').attr('style',style);
     	//style += ";background-image:url('img/icon/domain/"+folder + "/" +icon+".png'); 
 	tempMark.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(editContent)); }
