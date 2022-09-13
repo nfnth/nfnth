@@ -1,14 +1,10 @@
 var complete; var reset = false; var first = true; 
 var nfnth = false;
 function showNfNth() { if (nfnth) {nfnth = false; $("#set-3").removeClass("quicker"); } else {nfnth = true; $("#set-3").addClass("quicker");} showList('open'); }
-var hist = true;
-function showHistory() { if (hist) {hist = false; $("#set-1").removeClass("quicker"); } else {hist = true; $("#set-1").addClass("quicker");} }
 var loc = false;
 function showLoc() { if (loc) {loc = false; $("#set-2").removeClass("quicker"); } else {loc = true; $("#set-2").addClass("quicker");} }
 var card = true;
 function showCard() { if (card) {card = false; $("#set-4").removeClass("quicker"); } else {card = true; $("#set-4").addClass("quicker");} }
-var tutorial = true;
-function showTutorial() { if (tutorial) {tutorial = false; $("#set-0").removeClass("quicker"); } else {tutorial = true; $("#set-0").addClass("quicker");} }
 
 function showList(area) {  $("#registry").html(''); $("#registry").hide(); 
     switch (area) {
@@ -88,7 +84,7 @@ function offLand(i) { domains[i].item = false; $("#l"+i).css('color','ghostwhite
 	$("#lm"+i).css('color','ghostwhite'); $("#lm"+i).addClass('grey'); $("#lm"+i).removeClass('amber'); }
 
 function buildDoc(i) { setDialog(addListDeed(i)); }
-function addListDetail(i) { //pullOwner(i); pullPrice(i);
+function addListDetail(i) { 
 	var card = "";
 	for (var a = 0; a < opens.length; a++) { if (opens[a].core.slug == domains[i].core.collection.slug) card = opens[a].core.banner_image_url; }
 	
