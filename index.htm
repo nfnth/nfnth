@@ -35,7 +35,7 @@
 						
 						<li style="display: flex;align-items: center;justify-content: center;margin-top:12px;"><select id="domain-template" class="sider" onchange="domainSelect();"><option selected="selected" value="void">Select domain...</option><option value="tactician.us">tactician.us (demo)</option></select></li>
 						
-						<li style="display:flex;justify-content:center;padding:12px;"><a id="trader"  style="width:160px; display: flex;justify-content: space-between;" class="mobile-width waves-effect waves-light green lighten-1 btn modal-trigger" href="#modal4"><span>TRADE</span>📦</a></li>
+						<li style="display:flex;justify-content:center;padding:12px;"><a id="trader"  style="width:160px; display: flex;justify-content: space-between;" class="mobile-width waves-effect waves-light green lighten-1 btn modal-trigger disabled" href="#modal4"><span>TRADE</span>📦</a></li>
 						
 						<!--<i class="material-icons left">calculate</i>--></ul></div></div></div>
     		
@@ -49,20 +49,21 @@
 				<div class="body">
 				  <p>
 					<ul style="display: flex;flex-direction: column;">
-						<li><a class="subheader">Tours</a></li>
-					<li><a onclick="showView('mapper'); showIntroMap();" class="waves-effect" style="display:flex;align-items:center;"><div>🧭</div>&nbsp;&nbsp;&nbsp;&nbsp;Start Tutorial</a></li>
+						
+					<li><a onclick="showView('mapper'); showIntroMap();" class="waves-effect" style="display:flex;align-items:center;"><div>🧭</div>&nbsp;&nbsp;&nbsp;&nbsp;Explorer's Tour</a></li>
 					<li><a onclick="showView('mapper'); showHouse();" class="waves-effect" style="display:flex;align-items:center;"><div>🏝️</div>&nbsp;&nbsp;&nbsp;&nbsp;About UR.Land</a></li>
+						<li><a class="subheader">&nbsp;</a></li>
 						<li><div style="margin-top:0;" class="divider"></div></li>
 						<li><a class="subheader">Guides</a></li>
 						<li><a onclick="showDoc('deed');" class="waves-effect" style="display:flex;align-items:center;"><div>📕</div>&nbsp;&nbsp;&nbsp;&nbsp;On Deed Domain</a></li>
 					<li><a onclick="showDoc('ocur');" class="waves-effect" style="display:flex;align-items:center;"><div>📗</div>&nbsp;&nbsp;&nbsp;&nbsp;Trade OCUR</a></li>
-					<li><a onclick="showDoc('README');" class="waves-effect" style="display:flex;align-items:center;"><div>📘</div>&nbsp;&nbsp;&nbsp;&nbsp;Use Build Script</a></li>
+					<li><a onclick="showDoc('README');" class="waves-effect" style="display:flex;align-items:center;"><div>📘</div>&nbsp;&nbsp;&nbsp;&nbsp;Build DApp</a></li>
 					
 						<li><div style="margin-top:0;" class="divider"></div></li>
 					
 						<li><a class="subheader">&nbsp;</a></li>
-					<li style="display:flex;justify-items:center;"><a onclick="showLoc();" class="waves-effect" style="display:flex;padding-left:12px;"> <div id="set-2" class="quick hoverable z-depth-1">📍</div>Use Location</a></li>
-						<li style="display:flex;justify-items:center;"><a onclick="showNfNth();" class="waves-effect" style="display:flex;padding-left:12px;"><div id="set-3" class="quick hoverable z-depth-1">🧧</div>Shop Goods</a></li>
+					<li><a onclick="showLoc();" class="waves-effect" style="display:flex;padding-left:12px;justify-items:center;"> <div id="set-2" class="quick hoverable z-depth-1">📍</div>Use Location</a></li>
+						<li><a onclick="showNfNth();" class="waves-effect" style="display:flex;padding-left:12px;justify-items:center;"><div id="set-3" class="quick hoverable z-depth-1">🧧</div>Shop Goods</a></li>
 						
 					</ul></p></div></div></div></div></li>
 				
