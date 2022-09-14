@@ -235,10 +235,10 @@ function hideView() { $('.modal').modal('close'); window.scrollTo(0, 0);
 
 var pageNotFound = true; var namer; var pageSet = false; var cardNotFound = true;
 function getParameter() { var path = window.location.href.replace('https://',''); 
-	if (path.indexOf("/") > 0) { return path.substring(path.indexOf("/")+1, path.length); } else { return ""; } }
+	if (path.indexOf("/") > 0) { var keyDomain = path.substring(path.indexOf("/")+1, path.length);
+				   for (let j = 0; j < domains.length; j++) { if (domains[j].key == keyDomain) { flyDomain(j); break; } } } }
 function setPage() { if (!(pageSet)) { pageSet = true; 
-				      var keyDomain = getParameter();
-				      if (keyDomain != "") { for (let j = 0; j < domains.length; j++) { if (domains[j].key == keyDomain) { flyDomain(j); break; } } }
+				      
 				      
 				      var page = window.location.href.replace('https://','').replace('/','').replace('#','').replace('!','');
     switch(page){
