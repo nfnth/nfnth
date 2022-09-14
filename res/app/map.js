@@ -6,7 +6,7 @@ var learnOwn = [-99.19697959674477, 40.17108807140884];
 var learnPath = [-99.79697959674477, 35.47108807140884];
 var pather = false; var beacon = false;
 
-function showIntroMap() { clearMap();
+function showIntroMap() { clearMap(); document.getElementById('booker').click(); $('#deed-pane').sidenav('close');
 	var marv = document.createElement('div'); marv.id = 'markera'; popBase = new mapboxgl.Marker(marv).setLngLat(base).addTo(map);
 	$('#markera').addClass('markre'); $('#markera').addClass('z-depth-3'); $('#markera').addClass('triangle-up'); 
 	var style = $('#markera').attr('style'); style += ";background-image:url('res/img/seal3.png');background-size:cover;border:solid 2px darkgrey;border-radius:50%;"; $('#markera').attr('style',style); 
@@ -45,7 +45,7 @@ function clearMark() { if (tempMark != "") { tempMark.remove(); tempMark = ""; }
 	for (let a=0;a<domains.length;a++){ if (domains[a].map != "") { domains[a].map.remove(); domains[a].map = ""; } } }
 function clearMap() { clearLearn(); clearDraw(); clearMark(); if (popHouse) popHouse.remove(); clearEdit(); }
 
-function showHouse() { clearMap(); 
+function showHouse() { clearMap(); document.getElementById('booker').click(); $('#deed-pane').sidenav('close');
 	var marv = document.createElement('div'); marv.id = 'markerh'; popHouse = new mapboxgl.Marker(marv).setLngLat(house).addTo(map);
 	$('#markerh').addClass('markre'); $('#markerd').addClass('z-depth-3'); 
 	var style = $('#markerh').attr('style'); style += ";background-image:url('res/img/seal3.png');background-size:cover; border:solid 2px indianred;border-radius:50%;"; $('#markerh').attr('style',style);
