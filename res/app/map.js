@@ -108,9 +108,12 @@ function converter(coord) { //66°32′56″N 152°50′41″W  Degrees + ((Minu
 		     return [final, final2]; }
 
 function showDomain(i) { 
-	clearMap(); startUp = function () { domains[i].map = showMark(converter(domains[i].coord), domains[i].core.collection.slug, domains[i].core.image_url, domains[i].core.external_link, domains[i].core.name, i, 'domain'); };
+	clearMap(); startUp = function () { 
+		domains[i].map = showMark(converter(domains[i].coord), domains[i].core.collection.slug, domains[i].core.image_url, domains[i].core.external_link, domains[i].core.name, i, 'domain'); 
+	//};
 		
-		fly(converter(domains[i].coord)); }
+		//fly(converter(domains[i].coord)); 
+}
 function hideDomain(i) { if (domains[i].map != "") { domains[i].map.remove(); domains[i].map = ""; }  }
 //function showArt(i) { artifacts[i].map = showMark(convertMark(artifacts[i].location), artifacts[i].color, artifacts[i].image, "", artifacts[i].name, 'artifact'); }
 
