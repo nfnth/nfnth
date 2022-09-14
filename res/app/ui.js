@@ -2,7 +2,7 @@ var complete; var reset = false; var first = true;
 var nfnth = false;
 function showNfNth() { if (nfnth) {nfnth = false; $("#set-3").removeClass("quicker"); } else {nfnth = true; $("#set-3").addClass("quicker");} showList('open'); }
 var loc = false;
-function showLoc() { if (loc) {loc = false; $("#set-2").removeClass("quicker"); } else {loc = true; $("#set-2").addClass("quicker");} }
+function showLoc() { if (loc) {loc = false; $("#set-2").removeClass("quicker"); } else {loc = true; $("#set-2").addClass("quicker"); mapLoc();} }
 var card = true;
 function showCard() { if (card) {card = false; $("#set-4").removeClass("quicker"); } else {card = true; $("#set-4").addClass("quicker");} }
 
@@ -40,7 +40,7 @@ function switchView() { if (showGrid) { showList('open'); $("#view-icon2").html(
 
 var showGridOpen = false; var selectOpen = true; var selectDomain = true; var showListOpen = true;
 function switchOpen() { if (showGridOpen) { showGridOpen = false; showList('open'); $("#open-icon").html("grid_view");  } else { showGridOpen = true; showList('open'); $("#open-icon").html("view_list"); } }
-	function switchDomain() { if (showListOpen) { showListOpen = false; showList('domain'); $("#domain-icon").html("view_list");  } else { showListOpen = true; showList('domain');  $("#domain-icon").html("grid_view"); } }
+	function switchDomain() { if (showListOpen) { showListOpen = false; showList('domain'); $("#domain-icon").html("📮");  } else { showListOpen = true; showList('domain');  $("#domain-icon").html("🏛️"); } }
 function selOpen() { for (let i=0;i<opens.length;i++) { opens[i].checked = selectOpen; } showList('open');
 	if (selectOpen) { selectOpen = false;   $("#open-sel-icon").html("deselect"); } else { selectOpen = true;  $("#open-sel-icon").html("select_all");} }
 
