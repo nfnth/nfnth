@@ -82,7 +82,7 @@ function showMark(coord, color, image, link, name, id, area) {
 
 	marp.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); //pullOwner(id);
 	
-	marp.togglePopup(); return marp; } 
+	 return marp; } 
 
 function showTemp(i) { if (tempMark != "") { tempMark.remove(); } tempMark = showMark(convertCoord(domains[i].coord), getCollect(domains[i].core.collection.slug).replace('.png',''), domains[i].core.animation_url, domains[i].core.external_link, domains[i].core.name, i, 'domain');  }
 
@@ -106,9 +106,9 @@ function converter(coord) { //66°32′56″N 152°50′41″W  Degrees + ((Minu
 		if (isNaN(lat)) { final2 = 0; } else { final2 = parseInt(lat); } } else { final2 = parseInt(lat)  + (parseInt(add)/60) + (parseInt(add2)/3600); }
 	
 		     return [final, final2]; }
-
+function flyDomain(i) { clearMap(); showDomain(i); startUp = function() { domains[i].map.togglePopup(); }; fly(converter(domains[i].coord)); }
 function showDomain(i) { 
-	//clearMap(); //startUp = function () { 
+	//clearMap(); //startUp = function () {  
 		domains[i].map = showMark(converter(domains[i].coord), domains[i].core.collection.slug, domains[i].core.image_url, domains[i].core.external_link, domains[i].core.name, i, 'domain'); 
 	//};
 		
