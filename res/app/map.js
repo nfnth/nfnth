@@ -152,7 +152,7 @@ function addArtifact(i) { listFlag = true; mapAdd(); }
 //function clearEdit() { if (tempMark != "") { tempMark.remove(); tempMark = ""; } }
 function showMail() { if (tempMark != "") { tempMark.remove(); tempMark = ""; }
 	var marv = document.createElement('div'); marv.id = 'markery';// coordinates.lat += 6;
-	tempMark = new mapboxgl.Marker(marv).setLngLat(coordinates).addTo(map);
+	tempMark = new mapboxgl.Marker(marv).setLngLat(house).addTo(map);
     	$('#markery').addClass('markre'); $('#markerx').addClass('z-depth-3'); var style=$('#markery').attr('style');
 		     //var front = getFront(domains[myDomain].core.collection.slug); var back = getBack(domains[myDomain].core.collection.slug);
 		     //random?
