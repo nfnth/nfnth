@@ -236,8 +236,8 @@ function showView(view) {  hideView(); $('#'+view).show();
 	    case 'decker': $("#decker").addClass("scale-in"); 
 		     addCardIntro(); break;
         case 'editor': $("#editor").addClass("scale-in");   break;
-        case 'mapper': $("#mapper").addClass("scale-in");
-        setTimeout(function() { map.resize(); }, 500); break; } }
+        case 'mapper': $("#mapper").css("opacity","0"); $("#mapper").addClass("scale-in"); map.resize();
+        setTimeout(function() { $("#mapper").css("opacity","1"); }, 500); break; } }
 function hideView() { $('.modal').modal('close'); window.scrollTo(0, 0); 
 		     //$("#map-tool").hide(); $("#waiter").off('click'); $("#bars").off('click'); $("#waiter").click(function() { $('#build-pane').sidenav('open'); }); 
 		     $("#slider").removeClass("scale-in");
@@ -427,7 +427,7 @@ mapboxgl.accessToken = "pk.eyJ1IjoibmZudGgiLCJhIjoiY2tweW1rNXlsMGFpYzJwcGt1cHh6d
 map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/mapbox/' + map_style[0], center: base, zoom: zoom, buffer_size: 0.2 }); //pitch: 85,bearing: 80,zoom: 13, buffer_size: 0.2});
 
 var coordinates; var artFlag = false; var tempMark = ""; var tempMap = [];
-map.on('load', function (event) { map.resize();
+map.on('load', function (event) { 
 						 
 	map.on('click', function(e) { coordinates = e.lngLat; if(artFlag) { addArt(); artFlag = false; } }); });
 
