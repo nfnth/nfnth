@@ -108,7 +108,7 @@ function converter(coord) { //66°32′56″N 152°50′41″W  Degrees + ((Minu
 		     return [final, final2]; }
 
 function showDomain(i) { 
-	clearMap(); //startUp = function () { 
+	//clearMap(); //startUp = function () { 
 		domains[i].map = showMark(converter(domains[i].coord), domains[i].core.collection.slug, domains[i].core.image_url, domains[i].core.external_link, domains[i].core.name, i, 'domain'); 
 	//};
 		
