@@ -236,8 +236,8 @@ function showView(view) {  hideView(); $('#'+view).show();
 	    case 'decker': $("#decker").addClass("scale-in"); 
 		     addCardIntro(); break;
         case 'editor': $("#editor").addClass("scale-in");   break;
-        case 'mapper': $("#mapper").css("opacity","0"); $("#mapper").addClass("scale-in"); 
-        setTimeout(function() { map.resize(); $("#mapper").css("opacity","1"); }, 500); break; } }
+        case 'mapper': $("#mapper").hide(); $("#mapper").addClass("scale-in"); 
+        setTimeout(function() { map.resize(); $("#mapper").fadeIn('slow');  }, 500); break; } }
 function hideView() { $('.modal').modal('close'); window.scrollTo(0, 0); 
 		     //$("#map-tool").hide(); $("#waiter").off('click'); $("#bars").off('click'); $("#waiter").click(function() { $('#build-pane').sidenav('open'); }); 
 		     $("#slider").removeClass("scale-in");
