@@ -33,7 +33,7 @@
 						<li style="display:flex;justify-content:center;padding:12px;"><a id="mailer" onclick="" style="width:160px; display: flex;justify-content: space-between;" class="mobile-width waves-effect waves-light red lighten-1 btn disabled" ><span>MAIL</span>✉️</a></li>
 						<li><div style="margin-top:0;" class="divider"></div></li>
 						
-						<li style="display: flex;align-items: center;justify-content: center;"><select id="domain-template" class="sider" onchange="domainSelect();"><option selected="selected" value="void">Select domain...</option><option value="tactician.us">tactician.us (demo)</option></select></li>
+						<li style="display: flex;align-items: center;justify-content: center;margin-top:4px;"><select id="domain-template" class="sider" onchange="domainSelect();"><option selected="selected" value="void">Select domain...</option><option value="tactician.us">tactician.us (demo)</option></select></li>
 						<li style="display:flex;justify-content:center;padding:12px;padding-top:4px;"><a id="builder" onclick="mapAdd(); document.getElementById('connor').click();" style="width:160px; display: flex;justify-content: space-between;margin-top:8px;" class="mobile-width waves-effect waves-light blue lighten-1 btn disabled"><span>BUILD</span>🔧</a></li>
 						<li style="display:flex;justify-content:center;padding:12px;"><a id="trader"  style="width:160px; display: flex;justify-content: space-between;" class="mobile-width waves-effect waves-light green lighten-1 btn disabled"><span>TRADE</span>📦</a></li>
 						
@@ -292,7 +292,7 @@ function openInNewTab(url) { window.open(url, '_blank').focus(); } //window.loca
 var width = window.innerWidth; var height = window.innerHeight + 48;
 async function initial() { $('body').css("background-color","lightgrey");  
 	$('.tabs').tabs(); showFav(); showPanel(); if (window.location.hostname == "ur.land") { setLand(); } else if (window.location.hostname == "ocur.io") { setTitle(); } else { document.title = "📚 Nf·Nth 📚"; }
-	$('.modal').modal(); 
+	$('.modal').modal(); emptyDeeds();
 	//$("#registry-open").css("height",(height - 120) + "px"); $("#registry-domain").css("height",(height - 120) + "px");
     	//$('#docs').dropdown({ constrainWidth: false, coverTrigger: false } ); $('#doc-hide').dropdown({ constrainWidth: false, coverTrigger: false } ); //hover: true 
 	//$('#tools').dropdown({ constrainWidth: false, coverTrigger: false } ); $('#tool-hide').dropdown({ constrainWidth: false, coverTrigger: false } );
