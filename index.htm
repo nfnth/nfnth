@@ -234,7 +234,7 @@ function hideView() { $('.modal').modal('close'); window.scrollTo(0, 0);
 	var slideCode = '<div id="flipXXX" class="block flip-card flip-card-inner" style="display:flex;align-items:center;cursor:pointer;"><div class="flip-card-fronty backer card-wrap" style="height:120px;width:100%;background-color:whitesmoke;color:black;opacity:0.75;transition:all 0.5s!important;"><span class="circleLight"></span><div class="text" style="display:flex; flex-direction:column;align-items:center;"><div style="display:flex;align-items:center;"><img src="res/img/seal3.png" style="width:48px; height:48px;" /><span style="margin-top:12px;margin-left:12px;color:indianred;font-weight:bold;font-size:16px;">UR.Land </span><span style="margin-top:12px;margin-left:24px;font-weight:bold;">dee.d/omain</span></div><p  id="card-nameXXXX" style="display:flex; align-items:center;">I`m cool card</p></div></div>  <!--<div class="flip-card-backy backer"  ><span class="circleLight"></span><div class="text backer" style="transform: rotateY(180deg);"><h3>OCUR.io</h3><p>More card</p></div></div>--></div>';
 
 var pageNotFound = true; var namer; var pageSet = false; var cardNotFound = true;
-function getParameter() { var path = window.location.href.replace('https://',''); 
+function getParameter() { var path = window.location.href.replace('https://','').replace('!','').replace('#',''); 
 	if (path.indexOf("/") > 0) { var keyDomain = path.substring(path.indexOf("/")+1, path.length);
 				   for (let j = 0; j < domains.length; j++) { if (domains[j].key == keyDomain) { flyDomain(j); break; } } } }
 function setPage() { if (!(pageSet)) { pageSet = true; 
