@@ -25,7 +25,7 @@ function pullOpen(name) {
                     case 'icon': tmp.img = traits[a].value.toString(); break;
                     case 'ref': tmp.ref = traits[a].value.toString(); break;
 		    case 'res': tmp.res = traits[a].value.toString(); break;
-		    case 'desc': tmp.desc = traits[a].value.toString(); break;
+		    case 'key': tmp.desc = traits[a].value.toString(); break;
                     default: break; } }
             domains.push(tmp);  }  updateCount(name, response.assets.length); } ).then(response => {
 				if (domains.length > 100) { if (pageNotFound) setPage(); if (cardNotFound) { cardNotFound = false; setCards(); } }
