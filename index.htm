@@ -33,7 +33,7 @@
 						<li style="display:flex;justify-content:center;padding:12px;padding-top:4px;"><a id="builder" onclick="mapAdd(); document.getElementById('connor').click();" style="width:160px; display: flex;justify-content: space-between;margin-top:8px;" class="mobile-width waves-effect waves-light blue lighten-1 btn disabled"><span>BUILD</span>🔧</a></li>
 						<li><div style="margin-top:0;" class="divider"></div></li>
 						
-						<li style="display: flex;align-items: center;justify-content: center;margin-top:12px;"><select id="domain-template" class="sider" onchange="domainSelect();"><option selected="selected" value="void">Select domain...</option><option value="tactician.us">tactician.us (demo)</option></select></li>
+						<li style="display: flex;align-items: center;justify-content: center;margin-top:12px;"><select id="domain-template" class="sider disabled" onchange="domainSelect();"><option selected="selected" value="void">Select domain...</option><option value="tactician.us">tactician.us (demo)</option></select></li>
 						
 						<li style="display:flex;justify-content:center;padding:12px;"><a id="trader"  style="width:160px; display: flex;justify-content: space-between;" class="mobile-width waves-effect waves-light green lighten-1 btn modal-trigger disabled" href="#modal4"><span>TRADE</span>📦</a></li>
 						
@@ -50,15 +50,15 @@
 				  <p>
 					<ul style="display: flex;flex-direction: column;">
 						
-					<li><a onclick="showView('mapper'); showIntroMap();" class="waves-effect" style="display:flex;align-items:center;"><div>🧭</div>&nbsp;&nbsp;&nbsp;&nbsp;Explorer's Tour</a></li>
-					<li><a onclick="showView('mapper'); showHouse();" class="waves-effect" style="display:flex;align-items:center;"><div>🏝️</div>&nbsp;&nbsp;&nbsp;&nbsp;About UR.Land</a></li>
+					
+					
 						<li><a class="subheader">&nbsp;</a></li>
-						<li><div style="margin-top:0;" class="divider"></div></li>
 						<li><a class="subheader">Guides</a></li>
+						<li><a onclick="showView('mapper'); showIntroMap();" class="waves-effect" style="display:flex;align-items:center;"><div>🧭</div>&nbsp;&nbsp;&nbsp;&nbsp;Explorer's Tour</a></li>
 						<li><a onclick="showDoc('deed');" class="waves-effect" style="display:flex;align-items:center;"><div>📕</div>&nbsp;&nbsp;&nbsp;&nbsp;On Deed Domain</a></li>
 					<li><a onclick="showDoc('ocur');" class="waves-effect" style="display:flex;align-items:center;"><div>📗</div>&nbsp;&nbsp;&nbsp;&nbsp;Trade OCUR</a></li>
 					<li><a onclick="showDoc('README');" class="waves-effect" style="display:flex;align-items:center;"><div>📘</div>&nbsp;&nbsp;&nbsp;&nbsp;Build DApp</a></li>
-					
+					<li><a onclick="showView('mapper'); showHouse();" class="waves-effect" style="display:flex;align-items:center;"><div>🏝️</div>&nbsp;&nbsp;&nbsp;&nbsp;About UR.Land</a></li>
 						<li><div style="margin-top:0;" class="divider"></div></li>
 					
 						<li><a class="subheader">&nbsp;</a></li>
@@ -238,7 +238,8 @@ function hideView() { $('.modal').modal('close'); window.scrollTo(0, 0);
 var pageNotFound = true; var namer; var pageSet = false; var cardNotFound = true;
 function getParameter() { var path = window.location.href.replace('https://','').replace('!','').replace('#',''); 
 	if (path.indexOf("/") > 0) { var keyDomain = path.substring(path.indexOf("/")+1, path.length); 
-				   for (let j = 0; j < domains.length; j++) { if (domains[j].desc == keyDomain) { showView('mapper'); setTimeout(function() { flyDomain(j); }, 2000); break; } } } }
+				    if (keyDomain.length > 1) {
+				   for (let j = 0; j < domains.length; j++) { if (domains[j].desc == keyDomain) { showView('mapper'); setTimeout(function() { flyDomain(j); }, 2000); break; } } } } }
 function setPage() { if (!(pageSet)) { pageSet = true; 
 				      
 				      
