@@ -28,8 +28,7 @@ function pullOpen(name) {
 		    case 'key': tmp.desc = traits[a].value.toString(); break;
                     default: break; } }
             domains.push(tmp);  }  updateCount(name, response.assets.length); } ).then(response => {
-				if (domains.length > 100) { if (pageNotFound) setPage(); if (cardNotFound) { cardNotFound = false; setCards(); }
-							  getParameter();
+				if (domains.length > 50) { getParameter();
 							  }
             	if (domains.length > 180) { 
 			if (domainFound == false) { var domainPath = getParameter(); 
