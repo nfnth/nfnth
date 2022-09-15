@@ -13,6 +13,8 @@ var setup = async function () {
 								 { localAmount += local[i].value; } } //timestamp?
 							  $('#myDomain').hide().html(badge('locur',localAmount)).fadeIn('slow');
 							 document.getElementById("etherScan").onclick = function () { openInNewTab('https://etherscan.io/address/'+user.address); };
+							 document.getElementById("ocurScan").onclick = function () { showDoc('ocur'); };
+							 document.getElementById("locurScan").onclick = function () { $('#modal3').modal('open'); };
 			var ether = parseInt(ether) / 1000000000000000000; 
 		$('#myETH').hide().html(badge('eth',ether.toString().substring(0, 7))).fadeIn('slow'); itemPrice = parseInt(ether) / 2;
 		//$('#myGas').hide().html(badge('gas',gas)).fadeIn('slow'); 
@@ -34,6 +36,11 @@ function desetup() { user = ""; user = new Wallet();  $("#trader").addClass("dis
 	$("#myAdd").hide().html('My Wallet').fadeIn('slow');document.getElementById("signer").onclick = setup;
 	$('#myETH').hide().html('My ETH').fadeIn('slow'); 
 	//$('#myGas').hide().html('').fadeIn('slow'); 
+		    document.getElementById("etherScan").onclick = function () {  };
+							 document.getElementById("ocurScan").onclick = function () { };
+							 document.getElementById("locurScan").onclick = function () {  };
+		    
+		    
 	$('#myURL').hide().html('My OCUR').fadeIn('slow'); $("#signer").html("<span>Connect</span>🪙"); $("#signer").removeClass("darken-1"); $("#signer").addClass("lighten-2"); $('#myDomain').hide().html("My OCUR (Local)").fadeIn('slow');
 		    
     	emptyDeeds(); domainSelect(); }
