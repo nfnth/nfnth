@@ -19,7 +19,7 @@ var setup = async function () {
 		$('#myETH').hide().html(badge('eth',ether.toString().substring(0, 7))).fadeIn('slow'); itemPrice = parseInt(ether) / 2;
 		//$('#myGas').hide().html(badge('gas',gas)).fadeIn('slow'); 
 							 gasPrice = gas; 
-		if (urler > 0) { $("#builder").removeClass("disabled");  } $("#signer").html("<span>Disconnect</span>🚪"); $("#signer").removeClass("lighten-2"); $("#signer").addClass("darken-1");
+		if (urler > 0) { $("#builder").removeClass("disabled");  } $("#signer").html("<span>Disconnect</span>🚪"); $("#signer").removeClass("lighten-2"); $("#signer").addClass("darken-1");  $("#matter").removeClass("disabled"); 
 							 document.getElementById("signer").onclick = desetup;
 		$('#myURL').hide().html(badge('ur',urler)).fadeIn('slow'); 
             	//$("#wallet-area").removeClass("grey"); $("#wallet-area").addClass("green"); $("#wallet-icon").css("color","darkgreen");
@@ -31,7 +31,7 @@ var setup = async function () {
     	
     else { M.toast({html: 'No wallet found.'}); }  //$("#wallet-setup").click(setup);
 };
-function desetup() { user = ""; user = new Wallet();  $("#trader").addClass("disabled"); $("#builder").addClass("disabled");
+function desetup() { user = ""; user = new Wallet();  $("#trader").addClass("disabled"); $("#builder").addClass("disabled"); $("#matter").addClass("disabled");
 	//$("#wallet-area").addClass("grey"); $("#wallet-area").removeClass("green"); $("#wallet-icon").css("color","darkslategrey");
 	$("#myAdd").hide().html('My Wallet').fadeIn('slow');document.getElementById("signer").onclick = setup;
 	$('#myETH').hide().html('My ETH').fadeIn('slow'); 
@@ -67,7 +67,7 @@ function emptyDeeds() { $('#domain-template').empty();
 function domainSelect() { 
 	var d = document.getElementById("domain-template"); var dt = d.options[d.selectedIndex].text; var dv = d.options[d.selectedIndex].value; 
     	if (dt == 'Select domain...') { 
-					 $("#trader").addClass("disabled"); $("#matter").addClass("disabled");
+					 $("#trader").addClass("disabled"); 
 		 }
     	else { builder(dv); }   }
 
@@ -86,7 +86,7 @@ function badge(area,amount) {
 var showArtifactOpen = true; var myDomain = 0;
 function builder(i) { $("#registry-artifact").html(""); var extra = ""; myDomain = i;
 		    
-		    $("#trader").removeClass("disabled"); $("#matter").removeClass("disabled"); 
+		    $("#trader").removeClass("disabled");
 		    
 	if (artifacts.length == 0) { $("#registry-artifact").append("<a onclick='$(\"#domain-tabs\").tabs(\"select\", \"test4\");' class='collection-item'>No cards found.</a>");
 				   
