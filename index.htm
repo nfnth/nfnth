@@ -28,9 +28,9 @@
 					<ul style="display: flex;flex-direction: column;">
 						<li><a class="waves-effect" onclick="if (user.address != '') {copyClip(user.address);}"><span  style="color:black!important;">🏠&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="myAdd" style="color:black!important;">My Wallet</span></a></li>
 						<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><span  style="color:black!important;">🏦&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="myETH" style="color:black!important;">My ETH</span><span style="margin-left:0;" id="myGas" style="color:black!important;"></span></a></li>
-						<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><span  style="color:black!important;">🏢&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="myURL" style="color:black!important;">My OCUR</span></a></li>
-						<li><a class="waves-effect modal-trigger" href="#modal3"><span  class="lighten-2" style="color:black!important;">📮&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="myDomain" style="color:black!important;">My OCUR (Local)</span></a></li>
-						<li style="display:flex;justify-content:center;padding:12px;padding-top:4px;"><a id="builder" onclick="mapAdd(); document.getElementById('connor').click();" style="width:160px; display: flex;justify-content: space-between;margin-top:8px;" class="mobile-width waves-effect waves-light blue lighten-1 btn disabled"><span>BUILD</span>🔧</a></li>
+						<li><a onclick="showDoc('ocur');" class="waves-effect"><span  style="color:black!important;">🏢&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="myURL" style="color:black!important;">My OCUR</span></a></li>
+						<li><a class="waves-effect modal-trigger" href="#modal3"><span  class="lighten-2" style="color:black!important;">🏣&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="myDomain" style="color:black!important;">My LOCUR</span></a></li>
+						<li style="display:flex;justify-content:center;padding:12px;padding-top:4px;"><a id="builder" onclick="mapAdd(); document.getElementById('connor').click();" style="width:160px; display: flex;justify-content: space-between;margin-top:8px;" class="mobile-width waves-effect waves-light blue lighten-1 btn disabled"><span>BUILD</span>📮</a></li>
 						<li><div style="margin-top:0;" class="divider"></div></li>
 						
 						<li style="display: flex;align-items: center;justify-content: center;margin-top:12px;"><select id="domain-template" class="sider disabled" onchange="domainSelect();"><option selected="selected" value="void">Select domain...</option><option value="tactician.us">tactician.us (demo)</option></select></li>
@@ -49,18 +49,15 @@
 				<div class="body">
 				  <p>
 					<ul style="display: flex;flex-direction: column;">
-						
-					
-					
-						<li><a class="subheader">&nbsp;</a></li>
 						<li><a class="subheader">Guides</a></li>
-						<li><a onclick="showView('mapper'); showIntroMap();" class="waves-effect" style="display:flex;align-items:center;"><div>🧭</div>&nbsp;&nbsp;&nbsp;&nbsp;Explorer's Tour</a></li>
 						<li><a onclick="showDoc('deed');" class="waves-effect" style="display:flex;align-items:center;"><div>📕</div>&nbsp;&nbsp;&nbsp;&nbsp;On Deed Domain</a></li>
 					<li><a onclick="showDoc('ocur');" class="waves-effect" style="display:flex;align-items:center;"><div>📗</div>&nbsp;&nbsp;&nbsp;&nbsp;Trade OCUR</a></li>
 					<li><a onclick="showDoc('README');" class="waves-effect" style="display:flex;align-items:center;"><div>📘</div>&nbsp;&nbsp;&nbsp;&nbsp;Build DApp</a></li>
-					<li><a onclick="showView('mapper'); showHouse();" class="waves-effect" style="display:flex;align-items:center;"><div>🏝️</div>&nbsp;&nbsp;&nbsp;&nbsp;About UR.Land</a></li>
-						<li><div style="margin-top:0;" class="divider"></div></li>
 					
+						<li><div style="margin-top:0;" class="divider"></div></li>
+					<li><a class="subheader">Tours</a></li>
+						<li><a onclick="showView('mapper'); showIntroMap();" class="waves-effect" style="display:flex;align-items:center;"><div>🧭</div>&nbsp;&nbsp;&nbsp;&nbsp;Learn To Explore</a></li>
+						<li><a onclick="showView('mapper'); showHouse();" class="waves-effect" style="display:flex;align-items:center;"><div>🏝️</div>&nbsp;&nbsp;&nbsp;&nbsp;About UR.Land</a></li>
 						<li><a class="subheader">&nbsp;</a></li>
 					<li><a onclick="showLoc();" class="waves-effect" style="display:flex;padding-left:12px;justify-items:center;"> <div id="set-2" class="quick hoverable z-depth-1">📍</div>Use Location</a></li>
 						<li><a onclick="showNfNth();" class="waves-effect" style="display:flex;padding-left:12px;justify-items:center;"><div id="set-3" class="quick hoverable z-depth-1">🧧</div>Shop Goods</a></li>
@@ -79,7 +76,7 @@
 			
 		<!-- list (item) -->
 		<div id="test2"><ul>
-			<li style="padding-top:16px;margin-bottom:12px;display: flex;justify-content: space-evenly;"><div style="display:flex;justify-content:space-evenly;width:100%;"><a id='selLink' class='btn-flat disabled' onclick="selDomain();"><i id="domain-sel-icon" class="material-icons">select_all</i></a><a id="dropdown-domainer" class='dropdown-trigger btn-flat disabled' ref='#' data-target='dropdown-domain'><i class="material-icons">sort</i></a><a id='switchLink' class="waves-effect waves-light btn red lighten-2 disabled" style="display:inline-flex;align-items:center;" onclick="switchDomain();"><span id="domain-icon">🏛️</span></a></div></li>
+			<li style="padding-top:16px;margin-bottom:12px;display: flex;justify-content: space-evenly;"><div style="display:flex;justify-content:space-evenly;width:100%;"><a id='selLink' class='btn-flat disabled' onclick="selDomain();"><i id="domain-sel-icon" class="material-icons">select_all</i></a><a id="dropdown-domainer" class='dropdown-trigger btn-flat disabled' ref='#' data-target='dropdown-domain'><i class="material-icons">sort</i></a><a id='switchLink' class="waves-effect waves-light btn red lighten-2 disabled" style="display:inline-flex;align-items:center;" onclick="switchDomain();"><span id="domain-icon">📮</span></a></div></li>
 			<li><div id="registry-domain" class="collection" style="overflow:auto;"><a onclick='$(#token-tabs).select("test1");' class='collection-item'>No deed found.</a></div></li></ul></div></div></div></li></ul>	
 
 <!-- view -->
@@ -416,12 +413,12 @@ $('.block').on('mouseleave', function(e) {mouse.X   = mouse.CX;mouse.Y   = mouse
 var map; var map_style = ['satellite-streets-v11', 'light-v10', 'dark-v10']; var zoom = 5; var base = [-101.69697959674477, 35.77108807140884];
 mapboxgl.accessToken = "pk.eyJ1IjoibmZudGgiLCJhIjoiY2tweW1rNXlsMGFpYzJwcGt1cHh6dmxzcyJ9.ZJaFrGpPDv5froWZMLXXYQ";
 map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/mapbox/' + map_style[0], center: base, zoom: zoom, buffer_size: 0.2 }); //pitch: 85,bearing: 80,zoom: 13, buffer_size: 0.2});
-
+function searcher() { mapboxsearch.autofill({
+accessToken: 'pk.eyJ1IjoibmZudGgiLCJhIjoiY2tweW1rNXlsMGFpYzJwcGt1cHh6dmxzcyJ9.ZJaFrGpPDv5froWZMLXXYQ'
+});		  }
 var coordinates; var artFlag = false; var tempMark = ""; var tempMap = [];
 map.on('load', function (event) { 
-				 mapboxsearch.autofill({
-accessToken: 'pk.eyJ1IjoibmZudGgiLCJhIjoiY2tweW1rNXlsMGFpYzJwcGt1cHh6dmxzcyJ9.ZJaFrGpPDv5froWZMLXXYQ'
-});		 
+				 
 	map.on('click', function(e) { coordinates = e.lngLat; if(artFlag) { addArt(); artFlag = false; } }); });
 
 $('.setter').click(function () {
