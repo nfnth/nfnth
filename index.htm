@@ -64,7 +64,7 @@
 						<li><div style="margin-top:0;" class="divider"></div></li>
 						<li><a class="subheader">&nbsp;</a></li>
 						
-					<li><a onclick="showLoc();" class="waves-effect" style="display:flex;justify-items:center;"> <div id="set-2" class="quick hoverable z-depth-1">📍</div>Use Location</a></li>
+					<li><a onclick="showCard();" class="waves-effect" style="display:flex;justify-items:center;"> <div id="set-2" class="quick hoverable z-depth-1">🃏</div>Play Cards</a></li>
 						<li><a onclick="showNfNth();" class="waves-effect" style="display:flex;justify-items:center;"><div id="set-3" class="quick hoverable z-depth-1">🧧</div>Shop Goods</a></li>
 						
 					</ul></p></div></div></div></div></li>
@@ -103,6 +103,13 @@
   <div class="navigations">
     <ul class="dots"><li onclick="changeCard();"><a class="btn-flat amber lighten-4"><i class="material-icons" style="color:goldenrod;">restart_alt</i></a></li></ul></div></div></div>
 
+<!-- card -->
+<div id="carder" class="content loader pane scale-transition scale-out" style="overflow-y: auto; height: 130%;">
+	<div id="cards" style="width:100%; height:240px;position:absolute;bottom:240;left:0; background-color:royalblue;opacity:0.5;"></div></div>
+
+<!-- list -->
+<div id="lister" class="content loader pane scale-transition scale-out" style="overflow-y: auto; height: 130%;">
+	<div id="lists" style="width:100%; height:100%;"></div></div>
 
 <!-- map -->
 <div id="mapper" class="content loader pane scale-transition scale-out" style="overflow-y: auto; height: 130%;">
@@ -244,8 +251,9 @@ function showView(view) {  hideView(); $('#'+view).show();
 		    break;
 		case 'slider': $("#slider").addClass("scale-in"); break;
 		case 'console': $("#console").addClass("scale-in"); break;
-	    case 'decker': $("#decker").addClass("scale-in"); 
+	    case 'carder': $("#carder").addClass("scale-in"); 
 		     addCardIntro(); break;
+        case 'lister': $("#lister").addClass("scale-in");   break;
         case 'editor': $("#editor").addClass("scale-in");   break;
         case 'mapper': $("#mapper").css("opacity","0"); $("#mapper").addClass("scale-in"); 
         setTimeout(function() { map.resize(); $("#mapper").hide().css("opacity","1").fadeIn('slow');  }, 500); break; } }
@@ -256,6 +264,10 @@ function hideView() { $('.modal').modal('close'); window.scrollTo(0, 0);
 		     $("#editor").removeClass("scale-in");   
 		     $("#mapper").removeClass("scale-in"); 
 		     $('.pane').hide();}
+	
+function showCards() { $("#carder").addClass("scale-in"); }
+function hideCards() { $("#carder").removeClass("scale-in"); }
+	
 	var slideCode = '<div id="flipXXX" class="block flip-card flip-card-inner" style="display:flex;align-items:center;cursor:pointer;"><div class="flip-card-fronty backer card-wrap" style="height:120px;width:100%;background-color:whitesmoke;color:black;opacity:0.75;transition:all 0.5s!important;"><span class="circleLight"></span><div class="text" style="display:flex; flex-direction:column;align-items:center;"><div style="display:flex;align-items:center;"><img src="res/img/seal3.png" style="width:48px; height:48px;" /><span style="margin-top:12px;margin-left:12px;color:indianred;font-weight:bold;font-size:16px;">UR.Land </span><span style="margin-top:12px;margin-left:24px;font-weight:bold;">dee.d/omain</span></div><p  id="card-nameXXXX" style="display:flex; align-items:center;">I`m cool card</p></div></div>  <!--<div class="flip-card-backy backer"  ><span class="circleLight"></span><div class="text backer" style="transform: rotateY(180deg);"><h3>OCUR.io</h3><p>More card</p></div></div>--></div>';
 
 var pageNotFound = true; var namer; var pageSet = false; var cardNotFound = true;
