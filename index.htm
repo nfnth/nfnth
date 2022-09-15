@@ -152,24 +152,24 @@
 		<a onclick="trade()" class="modal-close waves-effect waves-green green lighten-2 btn">Execute&nbsp;&nbsp;💵</a></div></div>
 		
 <div id="modal4" class="modal">
-    <div class="modal-content"><p>Enter address to send</p>
+    <div class="modal-content"><p>📮 Enter address to send</p>
     
     <div id="header-logo" style="display: flex;justify-content: space-evenly;align-items: center; display: flex;margin-top:8px;margin-bottom:8px;flex-direction:column;">
 	    <ul>
 	    <li style="display: flex;align-items: center;justify-content: center;margin-top:12px;"><select id="loc-template"  onchange="locSelect();"><option selected="selected" value="void">No location</option><option value="text">Enter text... 📝</option><option value="map">Enter map... 🗺️</option></select></li></ul>
-	    <form><input disabled name="address" placeholder="Address" type="text" autocomplete="address-line1"/><input disabled name="apartment" placeholder="Apartment number" type="text" autocomplete="address-line2"/>
-		    <div style="display:flex;"><input disabled name="city" placeholder="City" type="text" autocomplete="address-level2"/><input disabled name="state" placeholder="State" type="text" autocomplete="address-level1"/><input disabled name="country" placeholder="Country" type="text" autocomplete="country"/><input disabled name="postcode" placeholder="Postcode" type="text" autocomplete="postal-code"/></div></form>
+	    <form><input disabled class="inputDisabled" name="address" placeholder="Address" type="text" autocomplete="address-line1"/><input disabled class="inputDisabled" name="apartment" placeholder="Apartment number" type="text" autocomplete="address-line2"/>
+		    <div style="display:flex;"><input disabled class="inputDisabled" name="city" placeholder="City" type="text" autocomplete="address-level2"/><input disabled  class="inputDisabled" name="state" placeholder="State" type="text" autocomplete="address-level1"/><input disabled class="inputDisabled" name="country" placeholder="Country" type="text" autocomplete="country"/><input disabled class="inputDisabled" name="postcode" placeholder="Postcode" type="text" autocomplete="postal-code"/></div></form>
 	    
 
 	    </div>
     
     
     </div>
-	<div class="modal-footer" style="display:flex;justify-content:space-between;">
-		<div><a onclick="mapAdd();" style="width:160px; display: flex;margin-top:8px;" class="mobile-width waves-effect waves-light blue lighten-1 btn"><span>CUSTOM...</span>📍</a>&nbsp;&nbsp;&nbsp;&nbsp;
-		<a onclick="mapAdd();" style="width:160px; display: flex;justify-content: space-between;margin-top:8px;" class="mobile-width waves-effect waves-light blue lighten-1 btn"><span>CUSTOM...</span>📝</a></div><div>
+	<div class="modal-footer" style="display:flex;justify-content:space-between;    padding-right: 24px;padding-left: 24px;margin-bottom: 12px;">
+		<div style="display:flex;"><a onclick="mapAdd();" style="width:160px; display: flex;margin-top:8px;" class="mobile-width waves-effect waves-light blue lighten-1 btn"><span>MARK...</span>📍</a>&nbsp;&nbsp;&nbsp;&nbsp;
+		<a onclick="mapAdd();" style="width:160px; display: flex;justify-content: space-between;margin-top:8px;" class="mobile-width waves-effect waves-light blue lighten-3 btn"><span>NOTE...</span>📝</a></div><div>
 		<a onclick="searcher();" class="waves-effect waves-green btn-flat">Cancel</a>
-		<a onclick="send();" class="modal-close waves-effect waves-green green lighten-2 btn">Send</a></div></div></div>
+		<a onclick="send();" class="modal-close waves-effect waves-green green lighten-2 btn">Trade&nbsp;&nbsp;📦</a></div></div></div>
 
 <!-- items -->					
 <ul id='dropdown-open' class='dropdown-content'>
@@ -212,7 +212,16 @@
 function postcard() {
 signer($("#pad").html(), "profile");	
 }
-	
+
+function locSelect() { 
+	var d = document.getElementById("loc-template"); var dt = d.options[d.selectedIndex].text; var dv = d.options[d.selectedIndex].value;
+	$('.inputDisabled').prop("disabled", true);
+    	if (dv == 'text') { 
+					 $('.inputDisabled').prop("disabled", false); 
+			    
+			    
+		 }
+    	else if (dv == 'map') { builder(dv); }   }
 	
 var introCard = true;
 function changeView() { if (introCard) { $("#gear-pic").removeClass('image-rotate'); $("#gear-pic2").removeClass('image-rotate'); showView('mapper'); introCard = false; }
