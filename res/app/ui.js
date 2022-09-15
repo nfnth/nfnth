@@ -16,7 +16,7 @@ function showList(area) {  $("#registry").html(''); $("#registry").hide();
         case "filter":  sortSet = [area,domains,0,18,16]; domains = holder; for (let i=0;i<domains.length;i++) { 
 		if (domains[i].hide == false) addList(i); } adjustSort(true); break;
         case "open": $("#registry-open").html(''); sortSet = [area,opens,0,18,16]; for (let i=0;i<opens.length;i++) { 
-		if (opens[i].core.slug != "ocur" && opens[i].core.slug != "nfnth") { addOpen(i); } else { if (opens[i].core.slug == "URLand" && nfnth == true) { addOpen(i); } else if (opens[i].core.slug == "urland" && boxer.special == true) { addOpen(i); } else { opens[i].checked = false; } } } //adjustSort(false);  
+		if (opens[i].core.slug != "ocur" && opens[i].core.slug != "nfnth") { addOpen(i); } else { if (opens[i].core.slug == "ocur" && nfnth == true) { addOpen(i); } else if (opens[i].core.slug == "urland" && boxer.special == true) { addOpen(i); } else { opens[i].checked = false; } } } //adjustSort(false);  
 		    $("#registry-open").css("height",(height-16) + "px"); 
 		    showList('domain');
 		    break; }
