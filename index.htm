@@ -152,23 +152,24 @@
 		<a onclick="trade()" class="modal-close waves-effect waves-green green lighten-2 btn">Execute&nbsp;&nbsp;💵</a></div></div>
 		
 <div id="modal4" class="modal">
-    <div class="modal-content"><h4>Send Note</h4><p>Enter address to send</p>
+    <div class="modal-content"><p>Enter address to send</p>
     
-    <div id="header-logo" style="display: flex;justify-content: space-evenly;align-items: center; display: flex;margin-top:8px;margin-bottom:8px;">
+    <div id="header-logo" style="display: flex;justify-content: space-evenly;align-items: center; display: flex;margin-top:8px;margin-bottom:8px;flex-direction:column;">
 	    <ul>
 	    <li style="display: flex;align-items: center;justify-content: center;margin-top:12px;"><select id="loc-template"  onchange="locSelect();"><option selected="selected" value="void">Select location...</option><option value="tactician.us">No location</option><option value="tactician.us">Text input 📝</option><option value="tactician.us">Map input 🗺️</option><option value="tactician.us">Satellite input 🧭</option></select></li></ul>
 	    <form><input name="address" placeholder="Address" type="text" autocomplete="address-line1"/><input name="apartment" placeholder="Apartment number" type="text" autocomplete="address-line2"/>
 		    <div style="display:flex;"><input name="city" placeholder="City" type="text" autocomplete="address-level2"/><input name="state" placeholder="State" type="text" autocomplete="address-level1"/><input name="country" placeholder="Country" type="text" autocomplete="country"/><input name="postcode" placeholder="Postcode" type="text" autocomplete="postal-code"/></div></form>
-	    <a onclick="mapAdd();" style="width:160px; display: flex;justify-content: space-between;margin-top:8px;" class="mobile-width waves-effect waves-light blue lighten-1 btn"><span>CUSTOM...</span>📍</a>
+	    
 
 	    </div>
     
     
     </div>
-	<div class="modal-footer">
-		<a onclick="mapAdd();" style="width:160px; display: flex;justify-content: space-between;margin-top:8px;" class="mobile-width waves-effect waves-light blue lighten-1 btn"><span>CUSTOM...</span>📝</a>
+	<div class="modal-footer" style="display:flex;justify-content:space-between;">
+		<div><a onclick="mapAdd();" style="width:160px; display: flex;justify-content: space-between;margin-top:8px;" class="mobile-width waves-effect waves-light blue lighten-1 btn"><span>CUSTOM...</span>📍</a>
+		<a onclick="mapAdd();" style="width:160px; display: flex;justify-content: space-between;margin-top:8px;" class="mobile-width waves-effect waves-light blue lighten-1 btn"><span>CUSTOM...</span>📝</a></div><div>
 		<a onclick="searcher();" class="waves-effect waves-green btn-flat">Cancel</a>
-		<a onclick="send();" class="modal-close waves-effect waves-green green lighten-2 btn">Send</a></div></div>
+		<a onclick="send();" class="modal-close waves-effect waves-green green lighten-2 btn">Send</a></div></div></div>
 
 <!-- items -->					
 <ul id='dropdown-open' class='dropdown-content'>
@@ -420,7 +421,7 @@ $('.block').on('mouseleave', function(e) {mouse.X   = mouse.CX;mouse.Y   = mouse
 var map; var map_style = ['satellite-streets-v11', 'light-v10', 'dark-v10']; var zoom = 5; var base = [-101.69697959674477, 35.77108807140884];
 mapboxgl.accessToken = "pk.eyJ1IjoibmZudGgiLCJhIjoiY2tweW1rNXlsMGFpYzJwcGt1cHh6dmxzcyJ9.ZJaFrGpPDv5froWZMLXXYQ";
 map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/mapbox/' + map_style[0], center: base, zoom: zoom, buffer_size: 0.2 }); //pitch: 85,bearing: 80,zoom: 13, buffer_size: 0.2});
-function searcher() { alert('start'); mapboxsearch.autofill({
+function searcher() {  $("#loc-template").formSelect(); mapboxsearch.autofill({
 accessToken: 'pk.eyJ1IjoibmZudGgiLCJhIjoiY2tweW1rNXlsMGFpYzJwcGt1cHh6dmxzcyJ9.ZJaFrGpPDv5froWZMLXXYQ'
 });		  }
 var coordinates; var artFlag = false; var tempMark = ""; var tempMap = [];
