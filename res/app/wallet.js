@@ -11,8 +11,8 @@ var setup = async function () {
 							 for (let i = 0; i <local.length; i++) { 
 								 if (local[i].to == "0x8a83fbbacb82030ea17179c0403b04e7bce7ba10")
 								 { localAmount += local[i].value; } } //timestamp?
-							  $('#myDomain').hide().html(badge('ur',localAmount)).fadeIn('slow');
-							 
+							  $('#myDomain').hide().html(badge('locur',localAmount)).fadeIn('slow');
+							 document.getElementById("etherScan").onclick = function () { openInNewTab('https://etherscan.io/address/'+user.address); };
 			var ether = parseInt(ether) / 1000000000000000000; 
 		$('#myETH').hide().html(badge('eth',ether.toString().substring(0, 7))).fadeIn('slow'); itemPrice = parseInt(ether) / 2;
 		//$('#myGas').hide().html(badge('gas',gas)).fadeIn('slow'); 
@@ -67,7 +67,8 @@ function domainSelect() {
 function badge(area,amount) {
 	switch(area) {
 		case 'artifact': return '<span class="badge blue badge-stamp z-depth-1"><span style="font-weight:bold;margin-right:4px;">' + amount + '</span> note&nbsp;&nbsp;<i class="material-icons" style="color:midnightblue;">article</i></span>';
-		case 'ur': amount = amount.toString().substring(0,5) + "..."; return '<span class="badge amber badge-stamp z-depth-1"><span style="font-weight:bold;margin-right:4px;">' + amount + '</span> OCUR</span>';
+		case 'ur': amount = amount.toString().substring(0,5) + "..."; return '<span class="badge blue lighten-1 badge-stamp z-depth-1"><span style="font-weight:bold;margin-right:4px;">' + amount + '</span> OCUR</span>';
+		case 'locur': amount = amount.toString().substring(0,5) + "..."; return '<span class="badge red lighten-2 badge-stamp z-depth-1"><span style="font-weight:bold;margin-right:4px;">' + amount + '</span> OCUR</span>';
 		case 'eth': return '<span class="badge green badge-stamp z-depth-1" ><span style="font-weight:bold;margin-right:4px;">' + amount + '</span> ETH</span>';
 		case 'gas': return '<span class="badge red badge-stamp z-depth-1" ><span style="font-weight:bold;margin-right:4px;">' + amount + '</span> GWEI&nbsp;&nbsp;<i class="material-icons" style="color:darkred;">local_gas_station</i></span>';
 		case 'deed': return '<span class="badge blue badge-stamp z-depth-1"><span style="font-weight:bold;margin-right:4px;">' + amount + '</span> ETH&nbsp;&nbsp;<i class="material-icons" style="color:midnightblue;">sailing</i></span>';
