@@ -3,8 +3,8 @@ var nfnth = false;
 function showNfNth() { if (nfnth) {nfnth = false; $("#set-3").removeClass("quicker"); } else {nfnth = true; $("#set-3").addClass("quicker");} showList('open'); }
 var loc = false;
 function showLoc() { if (loc) {loc = false; $("#set-2").removeClass("quicker"); } else {loc = true; $("#set-2").addClass("quicker"); mapLoc();} }
-var card = true;
-function showCard() { if (card) {card = false; $("#set-4").removeClass("quicker"); } else {card = true; $("#set-4").addClass("quicker");} }
+var card = false;
+function showCard() { if (card) {card = false; $("#set-4").removeClass("quicker"); hideCards(); } else {card = true; $("#set-4").addClass("quicker"); showCards(); } }
 
 function showList(area) {  $("#registry").html(''); $("#registry").hide(); 
     switch (area) {
