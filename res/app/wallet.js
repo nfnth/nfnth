@@ -67,7 +67,7 @@ function emptyDeeds() { $('#domain-template').empty();
 function domainSelect() { 
 	var d = document.getElementById("domain-template"); var dt = d.options[d.selectedIndex].text; var dv = d.options[d.selectedIndex].value; 
     	if (dt == 'Select domain...') { 
-					 $("#trader").addClass("disabled"); //$("#map-add").addClass("disabled");
+					 $("#trader").addClass("disabled"); $("#matter").addClass("disabled");
 		 }
     	else { builder(dv); }   }
 
@@ -86,7 +86,7 @@ function badge(area,amount) {
 var showArtifactOpen = true; var myDomain = 0;
 function builder(i) { $("#registry-artifact").html(""); var extra = ""; myDomain = i;
 		    
-		    $("#trader").removeClass("disabled"); 
+		    $("#trader").removeClass("disabled"); $("#matter").removeClass("disabled"); 
 		    
 	if (artifacts.length == 0) { $("#registry-artifact").append("<a onclick='$(\"#domain-tabs\").tabs(\"select\", \"test4\");' class='collection-item'>No cards found.</a>");
 				   
