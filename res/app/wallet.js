@@ -75,7 +75,7 @@ function badge(area,amount) {
 	switch(area) {
 		case 'artifact': return '<span class="badge blue badge-stamp z-depth-1"><span style="font-weight:bold;margin-right:4px;">' + amount + '</span> note&nbsp;&nbsp;<i class="material-icons" style="color:midnightblue;">article</i></span>';
 		case 'ur': amount = amount.toString().substring(0,5) + "..."; return '<span class="badge blue lighten-1 badge-stamp z-depth-1"><span style="font-weight:bold;margin-right:4px;">' + amount + '</span> OCUR</span>';
-		case 'locur': amount = amount.toString().substring(0,5) + "..."; return '<span class="badge red lighten-2 badge-stamp z-depth-1"><span style="font-weight:bold;margin-right:4px;">' + amount + '</span> OCUR</span>';
+		case 'locur': amount = amount.toString().substring(0,5) + "..."; return '<span class="badge red lighten-2 badge-stamp z-depth-1"><span style="font-weight:bold;margin-right:4px;">' + amount + '</span> LOCUR</span>';
 		case 'eth': return '<span class="badge green badge-stamp z-depth-1" ><span style="font-weight:bold;margin-right:4px;">' + amount + '</span> ETH</span>';
 		case 'gas': return '<span class="badge red badge-stamp z-depth-1" ><span style="font-weight:bold;margin-right:4px;">' + amount + '</span> GWEI&nbsp;&nbsp;<i class="material-icons" style="color:darkred;">local_gas_station</i></span>';
 		case 'deed': return '<span class="badge blue badge-stamp z-depth-1"><span style="font-weight:bold;margin-right:4px;">' + amount + '</span> ETH&nbsp;&nbsp;<i class="material-icons" style="color:midnightblue;">sailing</i></span>';
