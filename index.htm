@@ -30,14 +30,15 @@
 						<li><a id="etherScan" class="waves-effect"><span  style="color:black!important;">🏦&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="myETH" style="color:black!important;">My ETH</span><span style="margin-left:0;" id="myGas" style="color:black!important;"></span></a></li>
 						<li><a id="ocurScan" class="waves-effect"><span  style="color:black!important;">🏢&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="myURL" style="color:black!important;">My OCUR</span></a></li>
 						<li><a id="locurScan" class="waves-effect"><span  class="lighten-2" style="color:black!important;">🏠&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="myDomain" style="color:black!important;">My LOCUR</span></a></li>
-						<li style="display:flex;justify-content:center;padding:12px;padding-top:4px;"><a id="builder" onclick="searcher(); document.getElementById('connor').click();" style="width:160px; display: flex;justify-content: space-between;margin-top:8px;" class="mobile-width waves-effect waves-light red lighten-1 btn disabled"><span>MARK</span>📍</a></li>
+						
 						<li><div style="margin-top:0;" class="divider"></div></li>
 						
 						<li style="display: flex;align-items: center;justify-content: center;margin-top:12px;"><select id="domain-template" class="sider disabled" onchange="domainSelect();"><option selected="selected" value="void">Select domain...</option><option value="tactician.us">tactician.us (demo)</option></select></li>
 						
+						<li style="display:flex;justify-content:center;padding:12px;padding-top:4px;"><a id="builder" onclick="searcher(); document.getElementById('connor').click();" style="width:160px; display: flex;justify-content: space-between;margin-top:8px;" class="mobile-width waves-effect waves-light red lighten-1 btn disabled"><span>MARK</span>📍</a></li>
+						<li style="display:flex;justify-content:center;padding:12px;"><a id="matter"  style="width:160px; display: flex;justify-content: space-between;" class="mobile-width waves-effect waves-light blue lighten-1 btn disabled" onclick="showView('mapper'); document.getElementById('connor').click();"><span>MAP</span>🗺️</a></li>
+						<li style="display:flex;justify-content:center;padding:12px;"><a id="trader" onclick="showView('lister');" style="width:160px; display: flex;justify-content: space-between;" class="mobile-width waves-effect waves-light green lighten-1 btn disabled" ><span>TRADE</span>📦</a></li>
 						
-						<li style="display:flex;justify-content:center;padding:12px;"><a id="trader"  style="width:160px; display: flex;justify-content: space-between;" class="mobile-width waves-effect waves-light green lighten-1 btn modal-trigger disabled" href="#modal4"><span>TRADE</span>📦</a></li>
-						<li style="display:flex;justify-content:center;padding:12px;"><a id="matter"  style="width:160px; display: flex;justify-content: space-between;" class="mobile-width waves-effect waves-light blue lighten-1 btn disabled" onclick="addMap(); document.getElementById('connor').click();"><span>MAP</span>🗺️</a></li>
 						
 						<!--<i class="material-icons left">calculate</i>--></ul></div></div></div>
     		
