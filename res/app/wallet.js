@@ -16,8 +16,8 @@ var setup = async function () {
 			var ether = parseInt(ether) / 1000000000000000000; 
 		$('#myETH').hide().html(badge('eth',ether.toString().substring(0, 7))).fadeIn('slow'); itemPrice = parseInt(ether) / 2;
 		//$('#myGas').hide().html(badge('gas',gas)).fadeIn('slow'); 
-							 gasPrice = gas; $("#trader").removeClass("disabled");
-		if (urler > 0) { $("#trader").removeClass("disabled");  } $("#signer").html("<span>Disconnect</span>🚪"); $("#signer").removeClass("lighten-2"); $("#signer").addClass("darken-1");
+							 gasPrice = gas; 
+		if (urler > 0) { $("#builder").removeClass("disabled");  } $("#signer").html("<span>Disconnect</span>🚪"); $("#signer").removeClass("lighten-2"); $("#signer").addClass("darken-1");
 							 document.getElementById("signer").onclick = desetup;
 		$('#myURL').hide().html(badge('ur',urler)).fadeIn('slow'); 
             	//$("#wallet-area").removeClass("grey"); $("#wallet-area").addClass("green"); $("#wallet-icon").css("color","darkgreen");
@@ -29,7 +29,7 @@ var setup = async function () {
     	
     else { M.toast({html: 'No wallet found.'}); }  //$("#wallet-setup").click(setup);
 };
-function desetup() { user = ""; user = new Wallet();  $("#trader").addClass("disabled"); $("#logger").addClass("disabled");
+function desetup() { user = ""; user = new Wallet();  $("#trader").addClass("disabled"); $("#builder").addClass("disabled");
 	//$("#wallet-area").addClass("grey"); $("#wallet-area").removeClass("green"); $("#wallet-icon").css("color","darkslategrey");
 	$("#myAdd").hide().html('My Wallet').fadeIn('slow');document.getElementById("signer").onclick = setup;
 	$('#myETH').hide().html('My ETH').fadeIn('slow'); 
@@ -54,11 +54,12 @@ function listDeeds() {
 
 function emptyDeeds() { $('#domain-template').empty();
     	$('#domain-template').append('<option selected="selected">Select domain...</option>'); 
-	$('#domain-template').append('<option>My Local Wallet</option>'); $("#domain-template").formSelect(); }
+	//$('#domain-template').append('<option>My Local Wallet</option>'); 
+		       $("#domain-template").formSelect(); }
 
 function domainSelect() { 
 	var d = document.getElementById("domain-template"); var dt = d.options[d.selectedIndex].text; var dv = d.options[d.selectedIndex].value; 
-    	if (dt == 'Select domain...') { $("#builder").addClass("disabled"); 
+    	if (dt == 'Select domain...') { 
 					 $("#trader").addClass("disabled"); //$("#map-add").addClass("disabled");
 		 }
     	else { builder(dv); }   }
@@ -77,7 +78,7 @@ function badge(area,amount) {
 var showArtifactOpen = true; var myDomain = 0;
 function builder(i) { $("#registry-artifact").html(""); var extra = ""; myDomain = i;
 		    
-		    $("#builder").removeClass("disabled");  //$("#trader").removeClass("disabled"); $("#map-add").removeClass("disabled");
+		    $("#trader").removeClass("disabled"); 
 		    
 	if (artifacts.length == 0) { $("#registry-artifact").append("<a onclick='$(\"#domain-tabs\").tabs(\"select\", \"test4\");' class='collection-item'>No cards found.</a>");
 				   
