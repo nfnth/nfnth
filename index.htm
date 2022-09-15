@@ -64,7 +64,7 @@
 						<li><div style="margin-top:0;" class="divider"></div></li>
 						<li><a class="subheader">&nbsp;</a></li>
 						
-					<li><a onclick="showCard();" class="waves-effect" style="display:flex;justify-items:center;"> <div id="set-2" class="quick hoverable z-depth-1">🃏</div>Play Cards</a></li>
+					<li><a onclick="showCard();" class="waves-effect" style="display:flex;justify-items:center;"> <div id="set-4" class="quick hoverable z-depth-1">🃏</div>Play Cards</a></li>
 						<li><a onclick="showNfNth();" class="waves-effect" style="display:flex;justify-items:center;"><div id="set-3" class="quick hoverable z-depth-1">🧧</div>Shop Goods</a></li>
 						
 					</ul></p></div></div></div></div></li>
@@ -104,7 +104,7 @@
     <ul class="dots"><li onclick="changeCard();"><a class="btn-flat amber lighten-4"><i class="material-icons" style="color:goldenrod;">restart_alt</i></a></li></ul></div></div></div>
 
 <!-- card -->
-<div id="carder" class="content loader pane scale-transition scale-out" style="overflow-y: auto; height: 130%;">
+<div id="carder" class="card-deck content loader pane scale-transition scale-out" style="overflow-y: auto; height: 130%;">
 	<div id="cards" style="width:100%; height:240px;position:absolute;bottom:240;left:0; background-color:royalblue;opacity:0.5;"></div></div>
 
 <!-- list -->
@@ -265,8 +265,8 @@ function hideView() { $('.modal').modal('close'); window.scrollTo(0, 0);
 		     $("#mapper").removeClass("scale-in"); 
 		     $('.pane').hide();}
 	
-function showCards() { $("#carder").addClass("scale-in"); }
-function hideCards() { $("#carder").removeClass("scale-in"); }
+function showCards() { $("#carder").show(); $("#carder").addClass("scale-in"); }
+function hideCards() { $("#carder").removeClass("scale-in");$("#carder").hide(); }
 	
 	var slideCode = '<div id="flipXXX" class="block flip-card flip-card-inner" style="display:flex;align-items:center;cursor:pointer;"><div class="flip-card-fronty backer card-wrap" style="height:120px;width:100%;background-color:whitesmoke;color:black;opacity:0.75;transition:all 0.5s!important;"><span class="circleLight"></span><div class="text" style="display:flex; flex-direction:column;align-items:center;"><div style="display:flex;align-items:center;"><img src="res/img/seal3.png" style="width:48px; height:48px;" /><span style="margin-top:12px;margin-left:12px;color:indianred;font-weight:bold;font-size:16px;">UR.Land </span><span style="margin-top:12px;margin-left:24px;font-weight:bold;">dee.d/omain</span></div><p  id="card-nameXXXX" style="display:flex; align-items:center;">I`m cool card</p></div></div>  <!--<div class="flip-card-backy backer"  ><span class="circleLight"></span><div class="text backer" style="transform: rotateY(180deg);"><h3>OCUR.io</h3><p>More card</p></div></div>--></div>';
 
@@ -679,4 +679,5 @@ h1 {font-weight: 700;font-size: 64px; margin: 20px 0 0 0;padding: 0 20px;}
 	.mapboxgl-popup-content { box-shadow:none!important; }
 	.popupContainer { z-index:1; }
 	mapbox-search-listbox { z-index:1111!important; }
+	.card-deck {     height: 240px; width: 100%; position: absolute; left: 0;  bottom: 0; z-index: 2;}
 </style>
