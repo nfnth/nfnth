@@ -26,10 +26,10 @@
 				<div class="head" style="display: flex;align-items: center;justify-content: center;"><a id="signer" style="width:160px; display: flex;justify-content: space-between;" class="mobile-width waves-effect waves-light amber lighten-1 btn" onclick="setup();"><span>Connect</span>🪙</a></div>
 				<div class="body" style="text-align:center;">
 					<ul style="display: flex;flex-direction: column;">
-						<li><a class="waves-effect" onclick="if (user.address != '') {copyClip(user.address);}"><span  style="color:black!important;">🏠&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="myAdd" style="color:black!important;">My Wallet</span></a></li>
+						<li><a class="waves-effect" onclick="if (user.address != '') {copyClip(user.address);}"><span  style="color:black!important;">👜&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="myAdd" style="color:black!important;">My Wallet</span></a></li>
 						<li><a onclick="openInNewTab('https://etherscan.io');" class="waves-effect"><span  style="color:black!important;">🏦&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="myETH" style="color:black!important;">My ETH</span><span style="margin-left:0;" id="myGas" style="color:black!important;"></span></a></li>
 						<li><a onclick="showDoc('ocur');" class="waves-effect"><span  style="color:black!important;">🏢&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="myURL" style="color:black!important;">My OCUR</span></a></li>
-						<li><a class="waves-effect modal-trigger" href="#modal3"><span  class="lighten-2" style="color:black!important;">🏣&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="myDomain" style="color:black!important;">My LOCUR</span></a></li>
+						<li><a class="waves-effect modal-trigger" href="#modal3"><span  class="lighten-2" style="color:black!important;">🏠&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="myDomain" style="color:black!important;">My LOCUR</span></a></li>
 						<li style="display:flex;justify-content:center;padding:12px;padding-top:4px;"><a id="builder" onclick="mapAdd(); document.getElementById('connor').click();" style="width:160px; display: flex;justify-content: space-between;margin-top:8px;" class="mobile-width waves-effect waves-light blue lighten-1 btn disabled"><span>BUILD</span>📮</a></li>
 						<li><div style="margin-top:0;" class="divider"></div></li>
 						
@@ -155,12 +155,18 @@
     <div class="modal-content"><h4>Send Note</h4><p>Enter address to send</p>
     
     <div id="header-logo" style="display: flex;justify-content: space-evenly;align-items: center; display: flex;margin-top:8px;margin-bottom:8px;">
-	    <form><input name="address" placeholder="Address" type="text" autocomplete="address-line1"/><input name="apartment" placeholder="Apartment number" type="text" autocomplete="address-line2"/><input name="city" placeholder="City" type="text" autocomplete="address-level2"/><input name="state" placeholder="State" type="text" autocomplete="address-level1"/><input name="country" placeholder="Country" type="text" autocomplete="country"/><input name="postcode" placeholder="Postcode" type="text" autocomplete="postal-code"/></form></div>
+	    <ul>
+	    <li style="display: flex;align-items: center;justify-content: center;margin-top:12px;"><select id="loc-template"  onchange="locSelect();"><option selected="selected" value="void">Select location...</option><option value="tactician.us">No location</option><option value="tactician.us">Text input 📝</option><option value="tactician.us">Map input 🗺️</option><option value="tactician.us">Satellite input 🧭</option></select></li></ul>
+	    <form><input name="address" placeholder="Address" type="text" autocomplete="address-line1"/><input name="apartment" placeholder="Apartment number" type="text" autocomplete="address-line2"/>
+		    <div style="display:flex;"><input name="city" placeholder="City" type="text" autocomplete="address-level2"/><input name="state" placeholder="State" type="text" autocomplete="address-level1"/><input name="country" placeholder="Country" type="text" autocomplete="country"/><input name="postcode" placeholder="Postcode" type="text" autocomplete="postal-code"/></div></form>
+	    <a onclick="mapAdd();" style="width:160px; display: flex;justify-content: space-between;margin-top:8px;" class="mobile-width waves-effect waves-light blue lighten-1 btn"><span>CUSTOM...</span>📍</a>
+
+	    </div>
     
     
     </div>
 	<div class="modal-footer">
-		<a onclick="mapAdd();" style="width:160px; display: flex;justify-content: space-between;margin-top:8px;" class="mobile-width waves-effect waves-light blue lighten-1 btn"><span>CUSTOM...</span>🔧</a>
+		<a onclick="mapAdd();" style="width:160px; display: flex;justify-content: space-between;margin-top:8px;" class="mobile-width waves-effect waves-light blue lighten-1 btn"><span>CUSTOM...</span>📝</a>
 		<a onclick="searcher();" class="waves-effect waves-green btn-flat">Cancel</a>
 		<a onclick="send();" class="modal-close waves-effect waves-green green lighten-2 btn">Send</a></div></div>
 
