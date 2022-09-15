@@ -169,11 +169,11 @@ var picker; var trigger;
 function showEdit() { if (tempMark != "") { tempMark.remove(); tempMark = ""; }
 	var marv = document.createElement('div'); marv.id = 'markery';// coordinates.lat += 6;
 	tempMark = new mapboxgl.Marker(marv).setLngLat(coordinates).addTo(map);
-    	$('#markery').addClass('markre'); $('#markerx').addClass('z-depth-3'); var style=$('#markery').attr('style');
+    	$('#markery').addClass('markre'); $('#markerx').addClass('z-depth-3'); var style=$('#markery').attr('style'); 
 		     //var front = getFront(domains[myDomain].core.collection.slug); var back = getBack(domains[myDomain].core.collection.slug);
 		     //random?
 		     front = "indianred"; back = "ghostwhite";
-    	style += ";background-color:" + front + ";border:solid 2px " + back + ";display: flex;align-items: center;justify-content: center;font-size: 18px;"; $('#markery').attr('style',style);
+    	style += ";background-color:" + front + ";border:solid 2px " + back + ";display: flex;align-items: center;justify-content: center;font-size: 18px;border-radius:50%;"; $('#markery').attr('style',style);
     	//style += ";background-image:url('img/icon/domain/"+folder + "/" +icon+".png'); 
 	tempMark.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(editContent)); }
 
@@ -185,18 +185,12 @@ function picMo() {
 
 	$("#edit-name").focus();
 $("#edit-name").click(); 
-	//trigger = document.getElementById('trigger');
 	
-
-//picmo.globalConfig.injectStyles = false;
-	//picker = picmoPopup.createPopup({ showPreview: false, emojisPerRow: 6, showSearch: false}, { referenceElement: trigger, triggerElement: trigger, position: 'bottom-right' });
-  	//picker.addEventListener('emoji:select', (selection) => { $("#markery").html(selection.emoji); });
-	//picker.toggle(); 
 }
 
 var mailContent = '';
 
-var editContent = '<div id="header-logo" style="display: flex;justify-content: space-evenly;align-items: center; display: flex;margin-top:8px;margin-bottom:8px;"><div style="border-radius:12px; cursor:pointer;display:flex; height:64px; width:64px;margin-top:8px;" class="z-depth-1"><img width="64" height="64" id="thumb" src="res/img/barrel.png" onclick="$(\'#preview\').trigger(\'click\');" style="border-radius:8px;" /></div></div><div class="hiddenfile"><input name="upload" type="file" id="preview" onchange="setPreview();" multiple="multiple"/><div style="visibility:hidden;width:0;position:absolute;top:0;"><input type="color" oninput="setColor();" id="favcolor" name="favcolor" value="#ff0000" style="width:0px; height:0px;opacity:0;" /><input type="color" oninput="setOutline();" id="favcolor2" name="favcolor2" value="#ff0000" style="width:0px; height:0px;opacity:0;" /></div></div><div style="padding:12px; padding-top:0px; padding-bottom:0px; display:flex; justify-content:center;"><div style="margin-top:0px;margin-bottom:0px;" class="input-field col s4"><input id="edit-name" type="text" class="validate" oninput="setText(this);"></div></div><div class="editMark" style="width:100%; height:48px;display:flex;justify-content:center;margin-bottom:16px;"><a id="trigger" class="quickx hoverable z-depth-1 crisp waves-effect waves-light btn" onclick="">📍</a><a id="trigger" class="quickx hoverable z-depth-1 crisp waves-effect waves-light btn" onclick="picMo();">🏳️</a><a class="quickx hoverable z-depth-1 crisp waves-effect waves-light btn" onclick="colorStart(this);">🎨</a><a class="quickx hoverable z-depth-1 crisp waves-effect waves-light btn" onclick="outlineStart(this);">🔳</a></div><div style="display:flex;justify-content:space-evenly;margin-top:12px;margin-bottom:12px;align-items:center;"><a class="waves-effect waves-light btn-flat" onclick="clearEdit();" style="padding:0px;">🗑️</a><a class="waves-effect waves-green green btn" onclick="showView(\'editor\');">Next&nbsp;&nbsp;➡️</a></div></div>';
+var editContent = '<div id="header-logo" style="display: flex;justify-content: space-evenly;align-items: center; display: flex;margin-top:8px;margin-bottom:8px;"><div style="border-radius:12px; cursor:pointer;display:flex; height:80px; width:80px;margin-top:8px;" class="z-depth-1"><img width="80" height="80" id="thumb" src="res/img/seal3.png" onclick="$(\'#preview\').trigger(\'click\');" style="border-radius:8px;" /></div></div><div class="hiddenfile"><input name="upload" type="file" id="preview" onchange="setPreview();" multiple="multiple"/><div style="visibility:hidden;width:0;position:absolute;top:0;"><input type="color" oninput="setColor();" id="favcolor" name="favcolor" value="#ff0000" style="width:0px; height:0px;opacity:0;" /><input type="color" oninput="setOutline();" id="favcolor2" name="favcolor2" value="#ff0000" style="width:0px; height:0px;opacity:0;" /></div></div><div style="padding:12px; padding-top:0px; padding-bottom:0px; display:flex; justify-content:center;"><div style="margin-top:0px;margin-bottom:0px;" class="input-field col s4"><input id="edit-name" type="text" class="validate" oninput="setText(this);"></div></div><div class="editMark" style="width:100%; height:48px;display:flex;justify-content:center;margin-bottom:16px;"><a id="trigger" class="quickx hoverable z-depth-1 crisp waves-effect waves-light btn" onclick="picMo();">🏳️</a><a class="quickx hoverable z-depth-1 crisp waves-effect waves-light btn" onclick="colorStart(this);">🎨</a><a class="quickx hoverable z-depth-1 crisp waves-effect waves-light btn" onclick="outlineStart(this);">🔳</a></div><div style="display:flex;justify-content:space-evenly;margin-top:12px;margin-bottom:12px;align-items:center;"><a class="waves-effect waves-light btn-flat" onclick="clearEdit();" style="padding:0px;">🗑️</a><a class="waves-effect waves-green green btn" onclick="searcher();">Mark&nbsp;&nbsp;📍</a></div></div>';
 
 var isSquare = true;
 function setShape() { if (isSquare) { $("#markery").css("border-radius","50%"); $("#shape-icon").html("square"); isSquare = false; } else { $("#markery").css("border-radius",""); $("#shape-icon").html("circle"); isSquare = true; } }
