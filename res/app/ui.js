@@ -1,8 +1,8 @@
 var complete; var reset = false; var first = true; 
 var nfnth = false;
-function showNfNth() { if (nfnth) {nfnth = false; $("#set-3").removeClass("quickerr"); } else {nfnth = true; $("#set-3").addClass("quickerr");} showList('open'); }
+function showNfNth() { if (nfnth) {nfnth = false; $("#set-3").removeClass("quickerg"); } else {nfnth = true; $("#set-3").addClass("quickerg");} showList('open'); }
 var loc = false;
-function showLoc() { if (loc) {loc = false; $("#set-2").removeClass("quicker"); } else {loc = true; $("#set-2").addClass("quicker"); mapLoc();} }
+function showLoc() { if (loc) {loc = false; $("#set-2").removeClass("quickerr"); } else {loc = true; $("#set-2").addClass("quickerr"); mapLoc();} }
 var card = false;
 function showCard() { if (card) {card = false; $("#set-4").removeClass("quickerb"); hideCards(); } else {card = true; $("#set-4").addClass("quickerb"); showCards(); } }
 
