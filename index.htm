@@ -55,7 +55,7 @@
 						
 					<li><a class="subheader">Guide</a></li>
 						
-						<li><a onclick="showView('mapper'); showIntroSim();" class="waves-effect" style="display:flex;align-items:center;"><div>⏳</div>&nbsp;&nbsp;&nbsp;&nbsp;Run Sandbox</a></li>
+						<li><a onclick="showView('mapper'); showIntroSim();" class="waves-effect" style="display:flex;align-items:center;"><div>🪨</div>&nbsp;&nbsp;&nbsp;&nbsp;Run Outpost</a></li>
 						<li><a onclick="showView('mapper'); clearMap(); setTimeout(function() { showIntroMap(); }, 1000);" class="waves-effect" style="display:flex;align-items:center;"><div>🧭</div>&nbsp;&nbsp;&nbsp;&nbsp;Learn To Explore</a></li>
 						<li><a onclick="showView('mapper'); showHouse();" class="waves-effect" style="display:flex;align-items:center;"><div>🏝️</div>&nbsp;&nbsp;&nbsp;&nbsp;About UR.Land</a></li>
 						<li><div style="margin-top:0;" class="divider"></div></li>
@@ -111,7 +111,7 @@
 
 <!-- card -->
 <div id="carder" class="card-deck content loader pane scale-transition scale-out" style="overflow-y: auto; ">
-	<div id="cards" style="width:100%; height:240px;position:absolute;bottom:240;left:0; background-color:royalblue;opacity:0.5;">
+	<div id="cards" style="width:100%; height:240px;position:absolute;bottom:240;left:0; background-color:gainsboro;opacity:0.85;display:flex;justify-content:space-between;padding:48px;">
 		<div id="left-side"></div>
 		<div id="right-side"></div>
 	</div></div>
@@ -249,7 +249,7 @@ signer($("#pad").html(), "profile");
 }
 	
 function runCards() { 
-$("#left-side").html(makeCard('cadetblue'));	 $("#right-side").html(makeCard('indianred'));
+$("#left-side").html(makeCardGame('home'));	 $("#right-side").html(makeCardGame('away'));
 }
 
 function locSelect() { 
@@ -710,5 +710,5 @@ h1 {font-weight: 700;font-size: 64px; margin: 20px 0 0 0;padding: 0 20px;}
 	mapbox-search-listbox:first-child:nth-child(2):last-child { display:none!important; }
 	.card-deck {     height: 240px; width: 100%; position: absolute; left: 0;  bottom: 0; z-index: 2;}
 	
-	canvas { border-radius:8px; } .text { opacity:0.85!important;}
+	.text { opacity:0.85!important;}
 </style>
