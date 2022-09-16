@@ -26,7 +26,7 @@ function flipCard(role) { var mySuit = Math.floor(Math.random() * (4 - 1 + 1)); 
 		     if (mySuit > 1) { $("#tact1"+role).css("color","black"); $("#tact3"+role).css("color","black");  } else { $("#tact1"+role).css("color","red"); $("#tact3"+role).css("color","red"); } 
 		      //$("#tact2").html($("#tactb").html());
 		   // setTimeout(function() { 
-			    $('#myflip'+role).css("transform","rotateY(180deg)"); 
+			    $('#myFlip'+role).css("transform","rotateY(180deg)"); 
 		     $("#tact3"+role).css("transform","scale(-1, -1)"); $("#tactc"+role).css("transform","scale(-1, -1)");
 		     //-webkit-transform: rotateX(180deg); transform: rotateX(180deg);
 		    //},1000);  
