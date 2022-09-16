@@ -4,7 +4,7 @@ var cardSwitch = false;
 
 var cardCode = '<div class="flip-card cardy"><div class="flip-card-inner z-depth-1" style="cursor:pointer;border-radius:12px;"><div class="flip-card-front" onclick="flipCard();" style="z-index:1;border-radius:12px;border:solid 1px YYYY!important;"><img src="res/img/seal3.png" style="position:absolute; width:48px;height:48px;" /><img  src="XXXX" style="position:absolute; width:36px;height:36px;opacity:0.90;margin-top:24px;margin-left:24px;"></div><div class="flip-card-back" style="transform: rotateY(180deg);border-radius:12px;"><div id="tactb" style="opacity:0.75; display: flex; flex-direction:column; align-items: center;position: absolute;top: 4px;left: 4px;"><span id="tact1" style="font-size: 20px;font-weight: bold;"></span><img style="cursor:pointer;margin-top:2px;" id="tacta" width="16" height="16" /></div><div></div><div id="tact2" style="opacity:0.75; display: flex; flex-direction:column; align-items: center;position: absolute;bottom: 4px;right: 4px;"><img style="cursor:pointer;margin-top:2px;" id="tactc" width="16" height="16" /><span id="tact3" style="font-size: 20px;font-weight: bold;"></span></div></div></div>';
 
-var cardOwn = '<div class="flip-card cardy" onclick="flipQR(YYYY);"><div class="flip-card-inner z-depth-1" style="cursor:pointer;border-radius:12px;"><div class="flip-card-front"  style="z-index:1;border-radius:12px;"><img  src="XXXX" style="width:100%;height:100%;border-radius:8px;"></div><div class="flip-card-back" style="transform: rotateY(180deg);border-radius:12px;"><div id="tactb" style="opacity:0.75; display: flex;align-items: center;"><span id="tactx" style="font-size: 24px;font-weight: bold;"></span></div><div id="tact2" style="opacity:0.75; display: flex;align-items: center;position: absolute;bottom: 4px;right: 4px;"></div></div></div>';
+var cardOwn = '<div class="flip-card cardy" onclick="flipQR(YYYY);"><div class="flip-card-inner z-depth-1" style="cursor:pointer;border-radius:12px;border:solid 1px gainsboro!important;"><div class="flip-card-front"  style="z-index:1;border-radius:12px;"><img  src="XXXX" style="width:100%;height:100%;border-radius:8px;"></div><div class="flip-card-back" style="transform: rotateY(180deg);border-radius:12px;"><div id="tactb" style="opacity:0.75; display: flex;align-items: center;"><span id="tactx" style="font-size: 24px;font-weight: bold;"></span></div><div id="tact2" style="opacity:0.75; display: flex;align-items: center;position: absolute;bottom: 4px;right: 4px;"></div></div></div>';
 
 function flipCard() { var mySuit = Math.floor(Math.random() * (4 - 1 + 1)); var myNum = Math.floor(Math.random() * (13 - 1 + 1)); 
 	$("#tacta").attr("src","res/img/card/" + suit[mySuit] + ".png");$("#tact1").html(num[myNum]);
@@ -22,8 +22,8 @@ function flipQR(i) {
 	if (qrSwitch) { $('.flip-card-inner').css("transform","none"); qrSwitch = false; } else {
 	var options = {
 		text: domains[i].owner.wallet,
-		height: 100,
-		width: 100,
+		height: 90,
+		width: 90,
 		logo: 'res/img/seal3.png',
 		logoWidth: 32,
 		logoHeight: 32,
