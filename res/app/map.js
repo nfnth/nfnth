@@ -157,20 +157,6 @@ function addArt() { showEdit(); tempMark.togglePopup();// resetArea();
 		  }
 var listFlag = false;
 function addArtifact(i) { listFlag = true; mapAdd(); }
-//function clearEdit() { if (tempMark != "") { tempMark.remove(); tempMark = ""; } }
-function showMail() { if (tempMark != "") { tempMark.remove(); tempMark = ""; }
-	var marv = document.createElement('div'); marv.id = 'markery';// coordinates.lat += 6;
-	tempMark = new mapboxgl.Marker(marv).setLngLat(house).addTo(map);
-    	$('#markery').addClass('markre'); $('#markerx').addClass('z-depth-3'); var style=$('#markery').attr('style');
-		     //var front = getFront(domains[myDomain].core.collection.slug); var back = getBack(domains[myDomain].core.collection.slug);
-		     //random?
-		     front = "indianred"; back = "ghostwhite";
-    	style += ";background-color:" + front + ";border:solid 2px " + back + ";display: flex;align-items: center;justify-content: center;font-size: 18px;"; $('#markery').attr('style',style);
-    	//style += ";background-image:url('img/icon/domain/"+folder + "/" +icon+".png'); 
-	tempMark.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(mailContent));  tempMark.togglePopup();
-		    
-		   
-		    }
 
 
 var picker; var trigger;
@@ -186,15 +172,7 @@ function showEdit() { if (tempMark != "") { tempMark.remove(); tempMark = ""; }
 	tempMark.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(editContent)); }
 
 var pickIcon = false;
-function picMo() { 
-	
-	M.toast({html: 'Enter icon...'});
-	pickIcon = true;
-
-	$("#edit-name").focus();
-$("#edit-name").click(); 
-	
-}
+function picMo() { M.toast({html: 'Enter icon...'});pickIcon = true;$("#edit-name").focus();$("#edit-name").click(); }
 
 var mailContent = '';
 
