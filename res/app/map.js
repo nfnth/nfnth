@@ -17,7 +17,7 @@ function showIntroSim() { clearMap(); document.getElementById('booker').click();
 function showIntroMap() {  document.getElementById('booker').click(); $('#deed-pane').sidenav('close');
 	var marv = document.createElement('div'); marv.id = 'markera'; popBase = new mapboxgl.Marker(marv).setLngLat(base).addTo(map);
 	$('#markera').addClass('markre'); $('#markera').addClass('z-depth-3'); $('#markera').addClass('triangle-up'); 
-	var style = $('#markera').attr('style'); style += ";background-image:url('res/img/seal3.png');background-size:cover;border:solid 2px beige;border-radius:50%;"; $('#markera').attr('style',style); 
+	var style = $('#markera').attr('style'); style += ";background-image:url('res/img/seal3.png');background-size:cover;border:solid 2px indianred;border-radius:50%;"; $('#markera').attr('style',style); 
 	var markup = '<div style="display:flex;flex-direction:column;align-items:center">' + makeCard('gainsboro') + '</div><div style="margin-top:16px; font-size:16px;"><span onclick="showDoc(\'tact/a\');" style="cursor:pointer;">Hold Deed</span><br/><br/><a id="butIntro" class="waves-effect waves-light btn red lighten-2" onclick="popBase.togglePopup(); showIntroArt();"><i class="material-icons right">arrow_forward</i>Next</a></div></div>';
 
 	popBase.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); startUp = function() { popBase.togglePopup(); }; fly(base);  }
