@@ -262,7 +262,8 @@ function mapLoc() {
 	if(navigator.geolocation) { navigator.geolocation.getCurrentPosition(geoSuccess, geoError); } else { alert("Geolocation is not supported by this browser.");} } 
 function geoSuccess(position) {tempCoord[1] = position.coords.latitude;tempCoord[0] = position.coords.longitude; coordinates = tempCoord;
 			       clearMap(); showEdit();
-			       //setZoom = 8; fly(tempCoord); addBeacon(tempCoord); beacon = true; } 
+			       //setZoom = 8; fly(tempCoord); addBeacon(tempCoord); beacon = true; 
+			      } 
 function geoError() { alert('No location'); }
 
 const geojsonDraw = { "type": "FeatureCollection","features": [{"type": "Feature", "geometry": { "type": "LineString", "coordinates": [] } }] };
