@@ -21,7 +21,7 @@ var setup = async function () {
 							 gasPrice = gas; 
 		if (urler > 0) { $("#builder").removeClass("disabled");  } $("#signer").html("<span>Disconnect</span>🚪"); $("#signer").removeClass("lighten-2"); $("#signer").addClass("darken-1");  $("#matter").removeClass("disabled"); $("#trader").removeClass("disabled"); 
 							 document.getElementById("signer").onclick = desetup;
-		$('#myURL').hide().html(badge('ur',urler)).fadeIn('slow'); 
+		$('#myURL').hide().html(badge('ur',urler)).fadeIn('slow'); $("#pinPoint").removeClass("disabled"); 
             	//$("#wallet-area").removeClass("grey"); $("#wallet-area").addClass("green"); $("#wallet-icon").css("color","darkgreen");
 		user.deed = []; for (let i=0;i<opens.length;i++) { pullAssets(user, opens[i].core.slug); } 
 	} ).fail(function() {
@@ -34,7 +34,7 @@ var setup = async function () {
 function desetup() { user = ""; user = new Wallet();  $("#trader").addClass("disabled"); $("#builder").addClass("disabled"); $("#matter").addClass("disabled");
 	//$("#wallet-area").addClass("grey"); $("#wallet-area").removeClass("green"); $("#wallet-icon").css("color","darkslategrey");
 	$("#myAdd").hide().html('My Wallet').fadeIn('slow');document.getElementById("signer").onclick = setup;
-	$('#myETH').hide().html('My ETH').fadeIn('slow'); 
+	$('#myETH').hide().html('My ETH').fadeIn('slow');  $("#pinPoint").addClass("disabled"); 
 	//$('#myGas').hide().html('').fadeIn('slow'); 
 		    document.getElementById("etherScan").onclick = function () {  };
 							 document.getElementById("ocurScan").onclick = function () { };
