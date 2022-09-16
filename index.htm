@@ -54,20 +54,23 @@
 					<ul style="display: flex;flex-direction: column;">
 						
 					<li><a class="subheader">Guide</a></li>
-						<li><a onclick="showView('mapper'); showIntroSim();" class="waves-effect" style="display:flex;align-items:center;"><div>⏳</div>&nbsp;&nbsp;&nbsp;&nbsp;Run Sandbox</a></li>
 						<li><a onclick="showView('mapper'); showIntroMap();" class="waves-effect" style="display:flex;align-items:center;"><div>🧭</div>&nbsp;&nbsp;&nbsp;&nbsp;Learn To Explore</a></li>
+						<li><a onclick="showView('mapper'); showIntroSim();" class="waves-effect" style="display:flex;align-items:center;"><div>⏳</div>&nbsp;&nbsp;&nbsp;&nbsp;Run Sandbox</a></li>
 						<li><a onclick="showView('mapper'); showHouse();" class="waves-effect" style="display:flex;align-items:center;"><div>🏝️</div>&nbsp;&nbsp;&nbsp;&nbsp;About UR.Land</a></li>
 						<li><div style="margin-top:0;" class="divider"></div></li>
 						<li><a class="subheader">Manual</a></li>
+						<li><a onclick="showDoc('README');" class="waves-effect" style="display:flex;align-items:center;"><div>📕</div>&nbsp;&nbsp;&nbsp;&nbsp;Build DApp</a></li>
+						<li><a onclick="showDoc('ocur');" class="waves-effect" style="display:flex;align-items:center;"><div>📗</div>&nbsp;&nbsp;&nbsp;&nbsp;Trade OCUR</a></li>
 						<li><a onclick="showDoc('deed');" class="waves-effect" style="display:flex;align-items:center;"><div>📘</div>&nbsp;&nbsp;&nbsp;&nbsp;On Deed Domain</a></li>
-					<li><a onclick="showDoc('ocur');" class="waves-effect" style="display:flex;align-items:center;"><div>📗</div>&nbsp;&nbsp;&nbsp;&nbsp;Trade OCUR</a></li>
 					
-					<li><a onclick="showDoc('README');" class="waves-effect" style="display:flex;align-items:center;"><div>📕</div>&nbsp;&nbsp;&nbsp;&nbsp;Build DApp</a></li>
+					
+					
 						<li><div style="margin-top:0;" class="divider"></div></li>
 						
-						<li><a onclick="showNfNth();" class="waves-effect" style="display:flex;justify-items:center;margin-top:12px;"><div id="set-3" class="quick hoverable z-depth-1">📍</div>Use Location</a></li>
+						<li><a onclick="mapLoc();" class="waves-effect" style="display:flex;justify-items:center;margin-top:12px;"><div id="set-3" class="quick hoverable z-depth-1">📍</div>Use Location</a></li>
+						<li><a onclick="showNfNth();" class="waves-effect" style="display:flex;justify-items:center;"><div id="set-3" class="quickg hoverable z-depth-1">🎁</div>Shop Items</a></li>
 					<li><a onclick="showCard();" class="waves-effect" style="display:flex;justify-items:center;"> <div id="set-4" class="quickb hoverable z-depth-1">🃏</div>Play Cards</a></li>
-						<li><a onclick="showNfNth();" class="waves-effect" style="display:flex;justify-items:center;"><div id="set-3" class="quick hoverable z-depth-1">🎁</div>Shop Items</a></li>
+						
 						
 					</ul></p></div></div></div></div></li>
 				
@@ -475,16 +478,19 @@ if ($(window).width() < 700) { $('.material-icons').removeClass('left'); }
 </script>
 <style>
 .quick { background-color: beige; border:1px solid whitesmoke; padding: 12px; border-radius: 50%; margin: 12px;     width: 24px;height: 24px;display: flex;justify-content: center;  align-items: center;}
-.quick:hover { background-color: indianred; border:1px solid darkred; }
+.quick:hover { background-color: indianred; border:1px solid darkred; opacity:0.75; }
 .quicker { background-color: darkseagreen!important; border:1px solid green!important; }
 	.quickerr { background-color: indianred!important; border:1px solid darkred!important; }
 	.quickerb { background-color: cadetblue!important; border:1px solid blue!important; }
 	
+		.quickg { background-color: beige; border:1px solid whitesmoke; padding: 12px; border-radius: 50%; margin: 12px;     width: 24px;height: 24px;display: flex;justify-content: center;  align-items: center;}
+.quickg:hover { background-color: darkseagreen; border:1px solid darkgreen; opacity:0.75;}
+	
 	.quickb { background-color: beige; border:1px solid whitesmoke; padding: 12px; border-radius: 50%; margin: 12px;     width: 24px;height: 24px;display: flex;justify-content: center;  align-items: center;}
-.quickb:hover { background-color: cadetblue; border:1px solid blue; }
+.quickb:hover { background-color: cadetblue; border:1px solid blue; opacity:0.75;}
 	
 .quickx { background-color: beige; border:1px solid whitesmoke; padding: 12px; border-radius: 50%; margin: 12px;     width: 36px; height: 36px; display: flex; justify-content: center; align-items: center;}
-.quickx:hover { background-color: darkseagreen; border:1px solid green; }
+.quickx:hover { background-color: darkseagreen; border:1px solid green; opacity:0.75;}
 
 .extra {  transition: 0.2s; opacity: 0;     background-color: yellowgreen;
     border-radius: 16px; color:white; font-weight:bold;transform: rotate(0deg)!important;padding-left: 8px;padding-right: 8px;
@@ -672,7 +678,7 @@ h1 {font-weight: 700;font-size: 64px; margin: 20px 0 0 0;padding: 0 20px;}
 	.redx.expand { border:solid 2px darkred; } .yellowx.expand { border:solid 2px darkgoldenrod; } .bluex.expand { border:solid 2px darkblue;}
  .containerx.expand {
 	 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.17);border-radius: 0;  width: 80%; max-width:800px;
-	 height: 640px; padding: 0; 
+	 height: 680px; padding: 0; 
 	 transition: all 0.2s, max-width 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0.1s, height 0.3s ease 0.25s;}
 	
  .contentx { transform: translateY(100%);width: 100%;height: 100%; opacity: 0;text-align: left;transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s 0.2s;}
