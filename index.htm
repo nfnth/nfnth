@@ -58,13 +58,14 @@
 						<li><a onclick="showView('mapper'); showIntroMap();" class="waves-effect" style="display:flex;align-items:center;"><div>🧭</div>&nbsp;&nbsp;&nbsp;&nbsp;Learn To Explore</a></li>
 						<li><a onclick="showView('mapper'); showHouse();" class="waves-effect" style="display:flex;align-items:center;"><div>🏝️</div>&nbsp;&nbsp;&nbsp;&nbsp;About UR.Land</a></li>
 						<li><div style="margin-top:0;" class="divider"></div></li>
-						<li><a class="subheader">Reference</a></li>
+						<li><a class="subheader">Manual</a></li>
 						<li><a onclick="showDoc('deed');" class="waves-effect" style="display:flex;align-items:center;"><div>📘</div>&nbsp;&nbsp;&nbsp;&nbsp;On Deed Domain</a></li>
 					<li><a onclick="showDoc('ocur');" class="waves-effect" style="display:flex;align-items:center;"><div>📗</div>&nbsp;&nbsp;&nbsp;&nbsp;Trade OCUR</a></li>
 					
 					<li><a onclick="showDoc('README');" class="waves-effect" style="display:flex;align-items:center;"><div>📕</div>&nbsp;&nbsp;&nbsp;&nbsp;Build DApp</a></li>
 						<li><div style="margin-top:0;" class="divider"></div></li>
-						<li><a onclick="setLoc();" class="waves-effect" style="display:flex;justify-items:center;margin-top:12px;"> <div id="set-2" class="quickr hoverable z-depth-1">📍</div>Use Location</a></li>
+						
+						<li><a onclick="showNfNth();" class="waves-effect" style="display:flex;justify-items:center;margin-top:12px;"><div id="set-3" class="quick hoverable z-depth-1">📍</div>Use Location</a></li>
 					<li><a onclick="showCard();" class="waves-effect" style="display:flex;justify-items:center;"> <div id="set-4" class="quickb hoverable z-depth-1">🃏</div>Play Cards</a></li>
 						<li><a onclick="showNfNth();" class="waves-effect" style="display:flex;justify-items:center;"><div id="set-3" class="quick hoverable z-depth-1">🎁</div>Shop Items</a></li>
 						
@@ -459,7 +460,7 @@ var map; var map_style = ['satellite-streets-v11', 'light-v10', 'dark-v10']; var
 mapboxgl.accessToken = "pk.eyJ1IjoibmZudGgiLCJhIjoiY2tweW1rNXlsMGFpYzJwcGt1cHh6dmxzcyJ9.ZJaFrGpPDv5froWZMLXXYQ";
 map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/mapbox/' + map_style[0], center: base, zoom: zoom, buffer_size: 0.2 }); //pitch: 85,bearing: 80,zoom: 13, buffer_size: 0.2});
 	
-function searcher() {  $("#loc-template").formSelect(); mapboxsearch.autofill({
+function searcher(i) {  $("#loc-template").formSelect(); mapboxsearch.autofill({
 accessToken: 'pk.eyJ1IjoibmZudGgiLCJhIjoiY2tweW1rNXlsMGFpYzJwcGt1cHh6dmxzcyJ9.ZJaFrGpPDv5froWZMLXXYQ'
 });		  $('#modal4').modal('open'); }
 var coordinates; var artFlag = false; var tempMark = ""; var tempMap = [];
@@ -693,4 +694,6 @@ h1 {font-weight: 700;font-size: 64px; margin: 20px 0 0 0;padding: 0 20px;}
 	mapbox-search-listbox { z-index:1111!important; }
 	mapbox-search-listbox:first-child:nth-child(2):last-child { display:none!important; }
 	.card-deck {     height: 240px; width: 100%; position: absolute; left: 0;  bottom: 0; z-index: 2;}
+	
+	#tactx:first-child { border-radius:12px; }
 </style>
