@@ -17,12 +17,12 @@ function showIntroSim() { clearMap(); document.getElementById('booker').click();
 function showIntroMap() { clearMap(); document.getElementById('booker').click(); $('#deed-pane').sidenav('close');
 	var marv = document.createElement('div'); marv.id = 'markera'; popBase = new mapboxgl.Marker(marv).setLngLat(base).addTo(map);
 	$('#markera').addClass('markre'); $('#markera').addClass('z-depth-3'); $('#markera').addClass('triangle-up'); 
-	var style = $('#markera').attr('style'); style += ";background-image:url('res/img/seal3.png');background-size:cover;border:solid 2px darkgrey;border-radius:50%;"; $('#markera').attr('style',style); 
+	var style = $('#markera').attr('style'); style += ";background-image:url('res/img/seal3.png');background-size:cover;border:solid 2px darkred;border-radius:50%;"; $('#markera').attr('style',style); 
 	var markup = '<div style="display:flex;flex-direction:column;align-items:center">' + makeCard('darkseagreen') + '</div><div style="margin-top:16px; font-size:16px;"><span onclick="showDoc(\'tact/a\');" style="cursor:pointer;">Hold Deed</span><br/><br/><a id="butIntro" class="waves-effect waves-light btn red lighten-2" onclick="popBase.togglePopup(); showIntroArt();"><i class="material-icons right">arrow_forward</i>Next</a></div></div>';
 
 	popBase.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); startUp = function() { popBase.togglePopup(); }; fly(base);  }
 
-function showIntroArt() { startPoint = base; endPoint = learnArt; showPath('darkgoldenrod'); pather = true; $("#butIntro").addClass("disabled");
+function showIntroArt() { startPoint = base; endPoint = learnArt; showPath('goldenrod'); pather = true; $("#butIntro").addClass("disabled");
 	var marv = document.createElement('div'); marv.id = 'markerb'; popArt = new mapboxgl.Marker(marv).setLngLat(learnArt).addTo(map);
 	$('#markerb').addClass('markre'); $('#markerb').addClass('z-depth-3'); $('#markerb').html("🏳");
 	var style = $('#markerb').attr('style'); style += ";background-color:goldenrod;border:solid 2px darkgoldenrod;justify-content:center;align-items:center;display:flex;font-size:20px;"; $('#markerb').attr('style',style);
@@ -30,8 +30,7 @@ function showIntroArt() { startPoint = base; endPoint = learnArt; showPath('dark
 //$('#cardContent').unbind('click');$("#cardContent").click(showDoc('tactb')); 
 	popArt.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); popArt.togglePopup(); }
 
-function showIntroOwn() { clearDraw(); startPoint = learnArt; endPoint = learnOwn; showPath('darkseagreen'); pather = true;
-	addBeacon(learnOwn); beacon = true; $("#butArt").addClass("disabled");
+function showIntroOwn() { clearDraw(); startPoint = learnArt; endPoint = learnOwn; showPath('green'); pather = true; $("#butArt").addClass("disabled");
 	var marv = document.createElement('div'); marv.id = 'markerc'; popOwn = new mapboxgl.Marker(marv).setLngLat(learnOwn).addTo(map);
 	$('#markerc').addClass('markre'); $('#markerc').addClass('z-depth-3'); $('#markerc').html("🏴");
 	var style = $('#markerc').attr('style'); style += ";background-color:darkseagreen;border:solid 2px darkgreen;border-radius:50%;justify-content:center;align-items:center;display:flex;font-size:20px;"; $('#markerc').attr('style',style);
