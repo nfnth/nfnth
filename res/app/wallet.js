@@ -46,7 +46,7 @@ function desetup() { user = ""; user = new Wallet();  $("#trader").addClass("dis
     	emptyDeeds(); domainSelect(); }
 
 function listDeeds() {
-    	$('#domain-template').empty(); $('#domain-template').append('<option selected="selected">Select domain...</option>');
+    	$('#domain-template').empty(); //$('#domain-template').append('<option selected="selected">Select domain...</option>');
 	$('#domain-template').append('<option>' + user.address.toLowerCase().substring(0,16) + "..." + '</option>');
     	for (let i = 0; i < user.deed.length; i++) { 
 	    	for (let j = 0; j < domains.length; j++) { 
