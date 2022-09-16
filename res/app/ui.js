@@ -1,10 +1,10 @@
 var complete; var reset = false; var first = true; 
 var nfnth = false;
-function showNfNth() { if (nfnth) {nfnth = false; $("#set-3").removeClass("quicker"); } else {nfnth = true; $("#set-3").addClass("quicker");} showList('open'); }
+function showNfNth() { if (nfnth) {nfnth = false; $("#set-3").removeClass("quickerr"); } else {nfnth = true; $("#set-3").addClass("quickerr");} showList('open'); }
 var loc = false;
 function showLoc() { if (loc) {loc = false; $("#set-2").removeClass("quicker"); } else {loc = true; $("#set-2").addClass("quicker"); mapLoc();} }
 var card = false;
-function showCard() { if (card) {card = false; $("#set-4").removeClass("quicker"); hideCards(); } else {card = true; $("#set-4").addClass("quicker"); showCards(); } }
+function showCard() { if (card) {card = false; $("#set-4").removeClass("quickerb"); hideCards(); } else {card = true; $("#set-4").addClass("quickerb"); showCards(); } }
 
 function showList(area) {  $("#registry").html(''); $("#registry").hide(); 
     switch (area) {
