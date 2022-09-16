@@ -114,8 +114,9 @@
 
 <!-- map -->
 <div id="mapper" class="content loader pane scale-transition scale-out" style="overflow-y: auto; height: 130%;">
+	<a class="btn-floating btn-large waves-effect waves-light amber lighten-3" onclick="mapAdd();">📍</a>
 	<div id="map" style="width:100%; height:100%;"></div>
-	  <a class="btn-floating btn-large waves-effect waves-light blue lighten-1" onclick="mapAdd();">📍</a>
+	  
 </div>
 
 <!-- editor -->
@@ -123,6 +124,7 @@
 	<div  class="hide-on-med-and-down" style="display:flex;  align-items: center; justify-content: space-between; margin: 10%;margin-top: 24px;margin-bottom: 12px;width: 80%;">
 		<div ><div class="hiddenfile"><input name="upload" type="file" id="preview" onchange="checkFile();" multiple="multiple"/></div>
 <a onclick=" clearPad();" class="waves-effect waves-grey btn-flat" >🗑️</a>
+			<a id="dropdown-template" class="waves-effect waves-light blue lighten-1 btn dropdown-trigger" href='#' data-target='dropdown-file' style="margin-right:8px;width:148px;" ><i class="material-icons right">arrow_drop_down</i>📐&nbsp;&nbsp;Template</a>
 			<a id="dropdown-file" class="waves-effect waves-light blue lighten-3 btn dropdown-trigger" href='#' data-target='dropdown-file' style="margin-right:8px;width:148px;" ><i class="material-icons right">arrow_drop_down</i>📁&nbsp;&nbsp;File</a>
 		<a style="width:148px;margin-right:24px;" onclick="showPreview();" class="waves-effect waves-light blue btn lighten-1">📃&nbsp;&nbsp;<span class='edit-device'>Preview</span></a></div>
 
@@ -179,8 +181,10 @@
         <span style="padding-bottom: 5px;display: flex;align-items: center;">📝&nbsp;&nbsp;Use Manual Address</span>
       </label>
     </p>-->
-	    <form><input disabled class="inputDisabled" name="address" placeholder="Address" type="text" autocomplete="address-line1"/><input disabled class="inputDisabled" name="apartment" placeholder="Apartment number" type="text" autocomplete="address-line2"/>
-		    <div style="display:flex;"><input disabled class="inputDisabled" name="city" placeholder="City" type="text" autocomplete="address-level2"/><input disabled  class="inputDisabled" name="state" placeholder="State" type="text" autocomplete="address-level1"/><input disabled class="inputDisabled" name="country" placeholder="Country" type="text" autocomplete="country"/><input disabled class="inputDisabled" name="postcode" placeholder="Postcode" type="text" autocomplete="postal-code"/></div></form>
+	    <form>
+		    <input class="inputDisabled" name="name" placeholder="Name" type="text" />
+		    <input class="inputDisabled" name="address" placeholder="Address" type="text" autocomplete="address-line1"/><input  class="inputDisabled" name="apartment" placeholder="Apartment number" type="text" autocomplete="address-line2"/>
+		    <div style="display:flex;"><input class="inputDisabled" name="city" placeholder="City" type="text" autocomplete="address-level2"/><input class="inputDisabled" name="state" placeholder="State" type="text" autocomplete="address-level1"/><input class="inputDisabled" name="country" placeholder="Country" type="text" autocomplete="country"/><input class="inputDisabled" name="postcode" placeholder="Postcode" type="text" autocomplete="postal-code"/></div></form>
 	    
 
 	    </div>
@@ -189,10 +193,10 @@
     </div>
 	<div class="modal-footer" style="display:flex;justify-content:space-between;    padding-right: 24px;padding-left: 24px;margin-bottom: 12px;">
 		<div style="display:flex;">
-		<a onclick="showView('editor');" style="width:140px; display: flex;justify-content: space-between;margin-top:8px;" class="mobile-width waves-effect waves-light blue lighten-3 btn">📒&nbsp;&nbsp;<span>NOTE...</span></a></div>
+		<a onclick="showView('editor');" style="width:140px; display: flex;justify-content: space-between;margin-top:8px;" class="mobile-width waves-effect waves-light blue lighten-3 btn">📝&nbsp;&nbsp;<span class="hide-on-med-and-down">NOTE...</span></a></div>
 		<div style="display:flex;">
-		<a onclick="searcher();" class="waves-effect waves-green btn-flat">❌</a>&nbsp;&nbsp;
-		<a onclick="send();" style="width:140px; display: flex;justify-content: space-between;margin-top:8px;" class="modal-close waves-effect waves-green green lighten-1 btn">Post Mark&nbsp;&nbsp;📍</a></div></div></div>
+		<a href="#!" class="waves-effect waves-green btn-flat modal-close">❌</a>&nbsp;&nbsp;
+		<a onclick="send();" style="width:140px; display: flex;justify-content: space-between;margin-top:8px;" class="modal-close waves-effect waves-green green lighten-2 btn"><span class="hide-on-med-and-down">Mail&nbsp;&nbsp;</span>📮</a></div></div></div>
 
 <!-- items -->					
 <ul id='dropdown-open' class='dropdown-content'>
