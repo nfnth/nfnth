@@ -1,29 +1,28 @@
 
-### ocurOS manual
+### the ocurOS Manual
 
 Based on [Arch Linux](https://archlinux.org), **ocurOS** is a minimal, fast, easy-to-use, *browser-centric* distro.
 
-- easy to customize (*Gimp*, *Unreal*, *Android*, *Godot*, etc.)
-
-To install,
-
-1. Use **Arch Linux**, either,
+To install, run **Arch Linux**, use either,
 
    - a [Linode](https://linode.com) instance *(remote)*
    - an [ISO image](https://archlinux.org/download/) *(local)*
-      ```
+
+
+```
       wget http://mirror.rackspace.com/archlinux/iso/2021.06.01/archlinux-2021.06.01-x86_64.iso
       dd if=archlinux-2021.06.01-x86_64.iso of=/dev/sda status=progress #after inserting USB
       # reboot, and enter BIOS (use Esc or Del), then select the USB drive in the boot menu
-      ```
+```
 
-1. Connect to network, download package, then run,
+Next, connect to the network, download, and run:
 
-   ```
+
+```
    iwctl #station wlan0 connect <network> #exit *(local only)*
    pacman -Sy && wget https://ocur.io/ocuros.tar.xz && tar -xzf ocuros.tar.xz 
    chmod +x desk/build.sh && desk/build.sh #feel free to edit build.sh, desk/os, etc. to set parameters
-   ```
+```
 
 That's it. Enjoy!
 
