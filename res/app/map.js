@@ -18,7 +18,7 @@ function showIntroMap() {  document.getElementById('booker').click(); $('#deed-p
 	var marv = document.createElement('div'); marv.id = 'markera'; popBase = new mapboxgl.Marker(marv).setLngLat(base).addTo(map);
 	$('#markera').addClass('markre'); $('#markera').addClass('z-depth-3'); $('#markera').addClass('triangle-up'); 
 	var style = $('#markera').attr('style'); style += ";background-image:url('res/img/seal3.png');background-size:cover;border:solid 2px indianred;border-radius:50%;"; $('#markera').attr('style',style); 
-	var markup = '<div style="display:flex;flex-direction:column;align-items:center">' + makeCard('darkseagreen') + '</div><div style="margin-top:16px; font-size:16px;"><span onclick="showDoc(\'tact/a\');" style="cursor:pointer;">Hold Deed</span><br/><br/><a id="butIntro" class="waves-effect waves-light btn red lighten-2" onclick="popBase.togglePopup(); showIntroArt();"><i class="material-icons right">arrow_forward</i>Next</a></div></div>';
+	var markup = '<div style="display:flex;flex-direction:column;align-items:center">' + makeCard('gainsboro') + '</div><div style="margin-top:16px; font-size:16px;"><span onclick="showDoc(\'tact/a\');" style="cursor:pointer;">Hold Deed</span><br/><br/><a id="butIntro" class="waves-effect waves-light btn red lighten-2" onclick="popBase.togglePopup(); showIntroArt();"><i class="material-icons right">arrow_forward</i>Next</a></div></div>';
 
 	popBase.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); startUp = function() { popBase.togglePopup(); }; fly(base);  }
 
@@ -26,7 +26,7 @@ function showIntroArt() { startPoint = base; endPoint = learnArt; showPath('indi
 	var marv = document.createElement('div'); marv.id = 'markerb'; popArt = new mapboxgl.Marker(marv).setLngLat(learnArt).addTo(map);
 	$('#markerb').addClass('markre'); $('#markerb').addClass('z-depth-3'); 
 	var style = $('#markerb').attr('style'); style += ";background-color:goldenrod;border:solid 2px darkgoldenrod;background-image:url('res/img/coin.jpg');justify-content:center;align-items:center;display:flex;font-size:20px;border-radius:50%;"; $('#markerb').attr('style',style);
-	var markup = '<div style="display:flex;flex-direction:column;align-items:center">' + makeCard('darkseagreen') + '</div><div style="margin-top:16px; font-size:16px;"><span onclick="showDoc(\'tact/b\');" style="cursor:pointer;">Build Domain</span><br/><br/><a id="butArt" class="waves-effect waves-light btn amber lighten-2" onclick="popArt.togglePopup(); showIntroOwn();"><i class="material-icons right">arrow_forward</i>Next</a></div></div>';
+	var markup = '<div style="display:flex;flex-direction:column;align-items:center">' + makeCard('gainsboro') + '</div><div style="margin-top:16px; font-size:16px;"><span onclick="showDoc(\'tact/b\');" style="cursor:pointer;">Build Domain</span><br/><br/><a id="butArt" class="waves-effect waves-light btn amber lighten-2" onclick="popArt.togglePopup(); showIntroOwn();"><i class="material-icons right">arrow_forward</i>Next</a></div></div>';
 //$('#cardContent').unbind('click');$("#cardContent").click(showDoc('tactb')); 
 	popArt.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); popArt.togglePopup(); }
 
@@ -34,7 +34,7 @@ function showIntroOwn() { clearDraw(); startPoint = learnArt; endPoint = learnOw
 	var marv = document.createElement('div'); marv.id = 'markerc'; popOwn = new mapboxgl.Marker(marv).setLngLat(learnOwn).addTo(map);
 	$('#markerc').addClass('markre'); $('#markerc').addClass('z-depth-3'); $('#markerc').html("🏳");
 	var style = $('#markerc').attr('style'); style += ";background-color:darkseagreen;border:solid 2px darkgreen;justify-content:center;align-items:center;display:flex;font-size:20px;"; $('#markerc').attr('style',style);
-	var markup = '<div style="display:flex;flex-direction:column;align-items:center">' + makeCard('darkseagreen') + '</div><div style="margin-top:16px; font-size:16px;"><span onclick="showDoc(\'tact/c\');" style="cursor:pointer;">Post Note</span><br/><br/><a id="butOwn" class="waves-effect waves-light btn green lighten-2" onclick="popOwn.togglePopup(); showIntroPath();"><i class="material-icons right">arrow_forward</i>Next</a></div></div>';
+	var markup = '<div style="display:flex;flex-direction:column;align-items:center">' + makeCard('gainsboro') + '</div><div style="margin-top:16px; font-size:16px;"><span onclick="showDoc(\'tact/c\');" style="cursor:pointer;">Post Note</span><br/><br/><a id="butOwn" class="waves-effect waves-light btn green lighten-2" onclick="popOwn.togglePopup(); showIntroPath();"><i class="material-icons right">arrow_forward</i>Next</a></div></div>';
 
 	popOwn.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); popOwn.togglePopup(); }
 
@@ -42,8 +42,8 @@ function showIntroPath() {
 			  addBeacon(learnPath); beacon = true; $("#butOwn").addClass("disabled");
 	var marv = document.createElement('div'); marv.id = 'markerd'; popPath = new mapboxgl.Marker(marv).setLngLat(learnPath).addTo(map);
 	$('#markerd').addClass('markre'); $('#markerd').addClass('z-depth-3'); $('#markerd').html("🏴");
-	var style = $('#markerd').attr('style'); style += ";background-color:cadetblue;background-size:cover; border-radius:50%;border:solid 2px darkblue;"; $('#markerd').attr('style',style);
-	var markup = '<div style="display:flex;flex-direction:column;align-items:center">' + makeCard('darkseagreen') + '</div><div style="margin-top:16px; font-size:16px;"><span onclick="showDoc(\'tact/d\');" style="cursor:pointer;">Trade OCUR</span><br/><br/><a id="butPath" class="waves-effect waves-light btn blue lighten-2" onclick="clearMap(); showIntroMap();"><i class="material-icons right">restart_alt</i>Reset</a></div></div>';
+	var style = $('#markerd').attr('style'); style += ";background-color:cadetblue;background-size:cover; border-radius:50%;border:solid 2px blue;"; $('#markerd').attr('style',style);
+	var markup = '<div style="display:flex;flex-direction:column;align-items:center">' + makeCard('gainsboro') + '</div><div style="margin-top:16px; font-size:16px;"><span onclick="showDoc(\'tact/d\');" style="cursor:pointer;">Trade OCUR</span><br/><br/><a id="butPath" class="waves-effect waves-light btn blue lighten-2" onclick="clearMap(); showIntroMap();"><i class="material-icons right">restart_alt</i>Reset</a></div></div>';
 
 	popPath.setPopup(new AnimatedPopup({ offset: 25, openingAnimation: {duration: 1000, easing: 'easeOutElastic'}, closingAnimation: { duration: 200, easing: 'easeInBack' } }).setHTML(markup)); popPath.togglePopup(); }
 
