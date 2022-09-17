@@ -112,7 +112,7 @@
 <!-- card -->
 <div id="carder" class="card-deck content loader pane scale-transition scale-out" style="overflow-y: auto; ">
 	<div id="cards" style="width:100%; height:240px;position:absolute;bottom:240;left:0; background-color:gainsboro;opacity:0.85;display:flex;justify-content:space-between;padding:48px;">
-		<div id="left-side"></div>
+		<div id="left-side"></div><img id="explode" src="res/img/vuIDuM.gif" style="opacity:0;" /><div onclick="testEx();">test</div>
 		<div id="right-side"></div>
 	</div></div>
 
@@ -233,6 +233,17 @@
     	<li style="margin-top:0;"class="divider" tabindex="-1"></li>
     	<li><a href="#!" onclick="setMap('light');"><i class="material-icons">light_mode</i>Light</a></li><li><a href="#!" onclick="setMap('dark');"><i class="material-icons">dark_mode</i>Dark</a></li></ul>
 
+<ul id='dropdown-template' class='dropdown-content'>
+    	<li><a href="#!" onclick="domains.sort(domainAZ); showList('domain');"><i class="material-icons">event</i>Event</a></li><li><a href="#!" onclick="domains.sort(domainZA); showList('domain');"><i class="material-icons">task</i>Task</a></li>
+    	<li style="margin-top:0;"class="divider" tabindex="-1"></li>
+    	<li><a href="#!" onclick="domains.sort(domainaz); showList('domain');"><i class="material-icons">event</i>Instructions</a></li><li><a href="#!" onclick="domains.sort(domainza); showList('domain');"><i class="material-icons">directions</i>Directions</a></li>
+	<li style="margin-top:0;" class="divider" tabindex="-1"></li>
+	<li><a href="#!" onclick="domains.sort(domain09); showList('domain');"><i class="material-icons">restaurant_menu</i>Recipe</a></li><li><a href="#!" onclick="domains.sort(domain90); showList('domain');"><i class="material-icons">description</i>Article</a></li>
+	<li><a href="#!" onclick="domains.sort(domain09); showList('domain');"><i class="material-icons">list</i>List</a></li>
+	<li><a href="#!" onclick="domains.sort(domain09); showList('domain');"><i class="material-icons">list</i>Private</a></li>
+	<li><a href="#!" onclick="domains.sort(domain09); showList('domain');"><i class="material-icons">list</i>Address</a></li>
+	<li><a href="#!" onclick="domains.sort(domain09); showList('domain');"><i class="material-icons">list</i>Timer</a></li></ul>
+
 <div id="somedialog1" class="dialog print-help hide-scrollbar" style="z-index:99;"><div id="someoverlay" class="dialog__overlay hide-scrollbar"></div><div class="dialog__content print-help hide-scrollbar" style="width: 90%; height:40%; text-align:left;overflow:auto; padding:24px;"><div class="morph-shape" data-morph-open="M0,0h80c0,0,0,9.977,0,29.834c0,19.945,0,30.249,0,30.249H0c0,0,0-10.055,0-30.332C0,8.219,0,0,0,0z" data-morph-close="M0,29.75h80c0,0-3.083,0.014-3.083,0.041c0,0.028,3.083,0.042,3.083,0.042H0c0,0,3.084-0.014,3.084-0.042
 											C3.084,29.762,0,29.75,0,29.75z"><svg id='test-svg' xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 80 60" preserveAspectRatio="none"><path d="M0,29.75h80c0,0-3.083,0.014-3.083,0.041c0,0.028,3.083,0.042,3.083,0.042H0c0,0,3.084-0.014,3.084-0.042
 											C3.084,29.762,0,29.75,0,29.75z"></path></svg></div><div id="dialog-inner1" class="dialog-inner print-help hide-scrollbar" style="overflow:auto;"></div></div></div>
@@ -247,6 +258,8 @@
 function postcard() {
 signer($("#pad").html(), "profile");	
 }
+	
+	function testEx() { $("#explode").css("opacity","1"); }
 	
 function runCards() { 
 $("#left-side").html(makeCardGame('cadetblue','home'));	 $("#right-side").html(makeCardGame('indianred','away'));
