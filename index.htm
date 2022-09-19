@@ -249,9 +249,9 @@
 function postcard() { signer($("#pad").html(), "profile");	 }
 	
 var testSwitch = 0;
-function testEx() { if (testSwitch == 0) { $("#explode").src("res/img/fire.webp"); $("#explode").css("opacity","1"); testSwitch += 1; }
+function testEx() { if (testSwitch == 0) { $("#explode").attr("src", "res/img/fire.webp"); $("#explode").css("opacity","1"); testSwitch += 1; }
 		   else if (testSwitch == 1) {$("#explode").css("opacity","0"); testSwitch += 1; }
-		   else if (testSwitch == 2) { $("#explode").src("res/img/haste.webp"); $("#explode").css("opacity","1"); testSwitch = 0; }
+		   else if (testSwitch == 2) { $("#explode").attr("src", "res/img/haste.webp"); $("#explode").css("opacity","1"); testSwitch = 0; }
 		  
 		  }
 	
