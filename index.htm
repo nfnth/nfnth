@@ -81,7 +81,7 @@
 			
 		<!-- list (collect) -->
 		<div id="test1"><ul>
-			<li style="padding-top:16px;margin-bottom:12px;display: flex;justify-content: space-evenly;"><div style="display:flex;justify-content:space-evenly;width:100%;"><a class='btn-flat waves-effect waves-light' onclick="selOpen();"><i id="open-sel-icon" class="material-icons">select_all</i></a><a id="dropdown-opener" class='dropdown-trigger btn-flat' href='#' data-target='dropdown-open'><i class="material-icons">sort</i></a><a class="waves-effect waves-light btn red lighten-3" style="display:inline-flex;align-items:center;" onclick="switchOpen();"><span id="open-icon">🖼️</span></a></div></li>
+			<li style="padding-top:16px;margin-bottom:12px;display: flex;justify-content: space-evenly;"><div style="display:flex;justify-content:space-evenly;width:100%;"><a class='btn-flat waves-effect waves-light' onclick="selOpen();"><i id="open-sel-icon" class="material-icons">select_all</i></a><a id="dropdown-opener" class='dropdown-trigger btn-flat' href='#' data-target='dropdown-open'><i class="material-icons">sort</i></a><a class="waves-effect waves-light btn red lighten-3" style="display:inline-flex;align-items:center;" onclick="switchOpen();"><span id="open-icon">📑</span></a></div></li>
 			<li><div id="registry-open" class="collection" style="overflow:auto;"></div></li></ul></div>
 			
 		<!-- list (item) -->
@@ -93,7 +93,7 @@
 <div id="home" style="height:105%; text-align:center;visibility:hidden; width:100%; z-index:1; padding-top: 54px;" class="content loader print-help">
 	
 <div id="slider" class="slider content loader pane scale-transition scale-out">
-	<a id="pinPoint" class="btn-floating btn-large waves-effect waves-light amber lighten-3 disabled" onclick="showView('mapper');" style="position: absolute;right: 24px;top: 32px;">🗺️</a><a id="inPoint" class="btn-floating btn-large waves-effect waves-light amber lighten-3 disabled" onclick="showView('lister');" style="position: absolute;right: 24px;top: 54px;">🗒️</a>
+	<a id="pinPoint" class="btn-floating btn-large waves-effect waves-light green lighten-3" onclick="showView('lister');" style="position: absolute;right: 24px;top: 32px;">🗒️</a><a id="inPoint" class="btn-floating btn-large waves-effect waves-light blue lighten-3" onclick="showView('mapper');" style="position: absolute;right: 24px;top: 100px;">🗺️</a>
   <div class="items-group">
     <div id="item0" class="item" >
       <div id="flip0" class="block flip-card flip-card-inner" style="display:flex;align-items:center;cursor:pointer;">
@@ -248,7 +248,16 @@
 	
 function postcard() { signer($("#pad").html(), "profile");	 }
 	
-function testEx() { $("#explode").css("opacity","1"); }
+var testSwitch = 0;
+function testEx() { if (testSwitch == 0) {
+		  $("#explode").src("res/img/fire.webp"); $("#explode").css("opacity","1"); testSwitch += 1;
+	
+}
+		   else if (testSwitch == 1) {$("#explode").css("opacity","0"); testSwitch += 1; }
+		   else if (testSwitch == 2) {
+			   $("#explode").src("res/img/haste.webp"); $("#explode").css("opacity","1"); 
+		  
+		  }
 	
 function runCards() { $("#left-side").html(makeCardGame('cadetblue','home'));	 $("#right-side").html(makeCardGame('indianred','away')); }
 
