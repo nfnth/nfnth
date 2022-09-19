@@ -39,7 +39,7 @@ function switchView() { if (showGrid) { showList('open'); $("#view-icon2").html(
 								 $("#view-icon2").html("grid_view"); showGrid = true;} }
 
 var showGridOpen = false; var selectOpen = true; var selectDomain = true; var showListOpen = true;
-function switchOpen() { if (showGridOpen) { showGridOpen = false; showList('open'); $("#open-icon").html("🖼️");  } else { showGridOpen = true; showList('open'); $("#open-icon").html("📑"); } }
+function switchOpen() { if (showGridOpen) { showGridOpen = false; showList('open'); $("#open-icon").html("📑");  } else { showGridOpen = true; showList('open'); $("#open-icon").html("📄"); } }
 	function switchDomain() { if (showListOpen) { showListOpen = false; showList('domain'); $("#domain-icon").html("🏛️");  } else { showListOpen = true; showList('domain');  $("#domain-icon").html("📜"); } }
 function selOpen() { for (let i=0;i<opens.length;i++) { opens[i].checked = selectOpen; } showList('open');
 	if (selectOpen) { selectOpen = false;   $("#open-sel-icon").html("deselect"); } else { selectOpen = true;  $("#open-sel-icon").html("select_all");} }
