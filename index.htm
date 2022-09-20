@@ -538,11 +538,7 @@ const spritesheet = new PIXI.Spritesheet(
 	atlasData
 );
 
-// Generate all the Textures asynchronously
-spritesheet.parse(() => {
-	// spritesheet is ready to use!
-	const anim = new PIXI.AnimatedSprite(spritesheet.animations.enemy);
-});
+
 	
 	// Create the application helper and add its render target to the page
 let app = new PIXI.Application({ width: 640, height: 360 });
@@ -584,9 +580,7 @@ for (let i = 0; i < 25; i++) {
     maskContainer.addChild(bunny);
 }
 	// set speed, start playback and add it to the stage
-anim.animationSpeed = 0.167; 
-anim.play();
-app.stage.addChild(anim);
+
 		
 		// configure + start animation:
 //anim.updateAnchor = true;     // update anchor for each animation frame
@@ -600,6 +594,15 @@ const sprite = new PIXI.Sprite(rt);
 sprite.x = 450;
 sprite.y = 60;
 app.stage.addChild(sprite);
+	
+	// Generate all the Textures asynchronously
+spritesheet.parse(() => {
+	// spritesheet is ready to use!
+	const anim = new PIXI.AnimatedSprite(spritesheet.animations.enemy);
+	anim.animationSpeed = 0.167; 
+anim.play();
+app.stage.addChild(anim);
+});
 
 // Add a ticker callback to scroll the text up and down
 let elapsed = 0.0;
