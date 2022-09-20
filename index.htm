@@ -41,7 +41,7 @@
 						
 						<!--<i class="material-icons left">calculate</i>--></ul></div></div></div>
     		
-		<div style="width:64px;margin-left:16px;"><a><div style="width:64px;"><img class="image image-rotate gear-image" id="gear-pic" onclick="gearSwitch = 0; gearBox();" style="opacity:0.6; height: 48px;position:absolute; margin: 4px; cursor:pointer;right:12px;top:4px;" /><img id="gear-pic2" class="image image-rotate gear-image" style="opacity:0.6; height: 48px;position:absolute;cursor:pointer;margin:4px;right:12px;top:4px;" onclick="gearSwitch = 0; gearBox();" /></div></a></div></div></nav>
+		<div style="width:64px;margin-left:16px;"><a><div style="width:64px;"><img class="image image-rotate gear-image" id="gear-pic" onclick="gearSwitch = 0; gearBox(); $('#modal2').modal('open');" style="opacity:0.6; height: 48px;position:absolute; margin: 4px; cursor:pointer;right:12px;top:4px;" /><img id="gear-pic2" class="image image-rotate gear-image" style="opacity:0.6; height: 48px;position:absolute;cursor:pointer;margin:4px;right:12px;top:4px;" onclick="gearSwitch = 0; gearBox(); $('#modal2').modal('open');" /></div></a></div></div></nav>
 		
 <!-- panel -->
 <ul id="deed-pane" class="sidenav loader" style="visibility:hidden;overflow:hidden;">
@@ -81,7 +81,7 @@
 			
 		<!-- list (collect) -->
 		<div id="test1"><ul>
-			<li style="padding-top:16px;margin-bottom:12px;display: flex;justify-content: space-evenly;"><div style="display:flex;justify-content:space-evenly;width:100%;"><a class='btn-flat waves-effect waves-light' onclick="selOpen();"><i id="open-sel-icon" class="material-icons">select_all</i></a><a id="dropdown-opener" class='dropdown-trigger btn-flat' href='#' data-target='dropdown-open'><i class="material-icons">sort</i></a><a class="waves-effect waves-light btn red lighten-3" style="display:inline-flex;align-items:center;" onclick="switchOpen();"><span id="open-icon">📑</span></a></div></li>
+			<li style="padding-top:16px;margin-bottom:12px;display: flex;justify-content: space-evenly;"><div style="display:flex;justify-content:space-evenly;width:100%;"><a class='btn-flat waves-effect waves-light' onclick="selOpen();"><i id="open-sel-icon" class="material-icons">select_all</i></a><a id="dropdown-opener" class='dropdown-trigger btn-flat' href='#' data-target='dropdown-open'><i class="material-icons">sort</i></a><a class="waves-effect waves-light btn red lighten-3" style="display:inline-flex;align-items:center;" onclick="switchOpen();"><span id="open-icon">🗂️</span></a></div></li>
 			<li><div id="registry-open" class="collection" style="overflow:auto;"></div></li></ul></div>
 			
 		<!-- list (item) -->
@@ -123,7 +123,7 @@
 
 <!-- map -->
 <div id="mapper" class="content loader pane scale-transition scale-out" style="overflow-y: auto; height: 130%;">
-	<a id="pinPoint" class="btn-floating btn-large waves-effect waves-light amber lighten-3 disabled" onclick="mapAdd();" style="position: absolute;right: 24px;top: 32px;">📍</a><a id="inPoint" class="btn-floating btn-large waves-effect waves-light amber lighten-3 disabled" onclick="showView('lister');" style="position: absolute;right: 24px;top: 54px;">🎒</a>
+	<a id="pinPoint" class="btn-floating btn-large waves-effect waves-light amber lighten-3 disabled" onclick="mapAdd();" style="position: absolute;right: 24px;top: 32px;">📍</a><a id="inPoint" class="btn-floating btn-large waves-effect waves-light amber lighten-3 disabled" onclick="showView('lister');" style="position: absolute;right: 24px;top: 72px;">🎒</a>
 	<div id="map" style="width:100%; height:100%;"></div>
 	  
 </div>
@@ -133,21 +133,22 @@
 	<div  class="hide-on-med-and-down" style="display:flex;  align-items: center; justify-content: space-between; margin: 10%;margin-top: 24px;margin-bottom: 12px;width: 80%;">
 		<div ><div class="hiddenfile"><input name="upload" type="file" id="preview" onchange="checkFile();" multiple="multiple"/></div>
 <a onclick=" clearPad();" class="waves-effect waves-grey btn-flat" >🗑️</a>
-			<a id="dropdown-template" class="waves-effect waves-light blue lighten-1 btn dropdown-trigger" href='#' data-target='dropdown-file' style="margin-right:8px;width:148px;" ><i class="material-icons right">arrow_drop_down</i>📐&nbsp;&nbsp;Template</a>
+			<a id="dropdown-template" class="waves-effect waves-light blue lighten-1 btn dropdown-trigger" href='#' data-target='dropdown-file' style="margin-right:8px;width:148px;" ><i class="material-icons right">arrow_drop_down</i>📐&nbsp;&nbsp;Tool</a>
 			<a id="dropdown-file" class="waves-effect waves-light blue lighten-3 btn dropdown-trigger" href='#' data-target='dropdown-file' style="margin-right:8px;width:148px;" ><i class="material-icons right">arrow_drop_down</i>📁&nbsp;&nbsp;File</a>
-		<a style="width:148px;margin-right:24px;" onclick="showPreview();" class="waves-effect waves-light blue btn lighten-1">📃&nbsp;&nbsp;<span class='edit-device'>Preview</span></a></div>
+		<a style="width:148px;margin-right:24px;" onclick="showPreview();" class="waves-effect waves-light green btn lighten-3">📃&nbsp;&nbsp;<span class='edit-device'>Preview</span></a></div>
 
 		<div>
 			
-			<a style="width:148px;" onclick="postcard();" class="waves-effect waves-green green btn"><span class='edit-device'>💾</span></a></div></div>
+			<a style="width:148px;" onclick="postcard();" class="waves-effect waves-green green btn"><span class='edit-device'>📎</span>Attach</a></div></div>
 		
 		<div  class="screen-hide edit-hide" style=" align-items: center; justify-content: space-evenly; margin:12px; margin-top:24px;"><div><div class="hiddenfile"><input name="upload" type="file" id="preview" onchange="checkFile();" multiple="multiple"/></div>
 			<a onclick="clearPad();" class="waves-effect waves-grey btn-flat">🗑️</a>
+			<a id="dropdown-temper" class="waves-effect waves-light blue lighten-1 btn dropdown-trigger" href='#' data-target='dropdown-file' style="margin-right:8px;" >📐</a>
 			<a id="dropdown-file" class="waves-effect waves-light blue lighten-3 btn dropdown-trigger" href='#' data-target='dropdown-file' style="margin-right:8px;" >📁</a>
-			<a onclick="showPreview();"  class="waves-effect waves-light blue lighten-1 btn">📃</a></div>
+			<a onclick="showPreview();"  class="waves-effect waves-light green lighten-3 btn">📃</a></div>
 		<div>
 			
-			<a onclick="postcard();" class="waves-effect waves-green green btn">💾</a></div></div>
+			<a onclick="postcard();" class="waves-effect waves-green green btn">📎</a></div></div>
 		
         	<div id="pad" class="z-depth-2" contentEditable="true" style="text-align:left; overflow-y: auto; width:90%; border:1px solid darkgrey; box-shadow: 1px 1px beige; border-radius: 8px;padding: 12px;margin:auto;font-size:20px;height:90%; background-color:whitesmoke;"></div>
 	
@@ -161,12 +162,12 @@
 
 <div id="modal2" class="modal">
     <div class="modal-content">
-	    <div><img src="res/img/seal3.png" style="height:48px;width:48px;" /><p>OCUR Console</p></div></div>
+	    <div style="display:flex;align-items:center;justify-content:center;"><img src="res/img/seal3.png" style="height:48px;width:48px;" /><p>OCUR Console</p></div></div>
 	<div class="modal-footer" style="display:flex;justify-content:space-between;">
-		<a href="#!" class="modal-close waves-effect waves-light btn red" style="width:120px;" onclick="showView('carder');gearSwitch = 2; gearBox();"><span class="hide-on-med-and-down">War!&nbsp;&nbsp;</span>🎺</a>
-		<a href="#!" class="modal-close waves-effect waves-light btn amber" style="width:120px;" onclick="showView('slider');gearSwitch = 1; gearBox();"><span class="hide-on-med-and-down">Cards&nbsp;&nbsp;</span>🃏</a>
-		<a href="#!" class="modal-close waves-effect waves-light btn green" style="width:120px;" onclick="showView('lister');gearSwitch = 1; gearBox();"><span class="hide-on-med-and-down">Notepad&nbsp;&nbsp;</span>🗒️</a>
-		<a href="#!" class="modal-close waves-effect waves-light blue btn" style="width:120px;" onclick="showView('mapper'); gearSwitch = 1; gearBox();"><span class="hide-on-med-and-down">Map&nbsp;&nbsp;</span>🗺️</a></div></div>
+		<a href="#!" class="modal-close waves-effect waves-light btn red" style="width:120px;" onclick="showView('carder');">🎺<span class="hide-on-med-and-down">&nbsp;&nbsp;War!</span></a>
+		<a href="#!" class="modal-close waves-effect waves-light btn amber" style="width:120px;" onclick="showView('slider');">🃏<span class="hide-on-med-and-down">&nbsp;&nbsp;Deck</span></a>
+		<a href="#!" class="modal-close waves-effect waves-light btn green" style="width:120px;" onclick="showView('lister');">🗒️<span class="hide-on-med-and-down">&nbsp;&nbsp;Notepad</span></a>
+		<a href="#!" class="modal-close waves-effect waves-light blue btn" style="width:120px;" onclick="showView('mapper');">🗺️<span class="hide-on-med-and-down">&nbsp;&nbsp;Map</span></a></div></div>
 
 <div id="modal3" class="modal">
     <div class="modal-content"><p>Deposit OCUR to your Local OCUR ("LOCUR") account to post notes.</p>
@@ -203,7 +204,7 @@
 		<div style="display:flex;">
 		<a onclick="showView('editor');" style="width:140px; display: flex;justify-content: space-between;margin-top:8px;" class="mobile-width waves-effect waves-light blue lighten-3 btn">📝&nbsp;&nbsp;<span class="hide-on-med-and-down">NOTE...</span></a></div>
 		<div style="display:flex;">
-		<a href="#!" class="waves-effect waves-green btn-flat modal-close">🗑️</a>&nbsp;&nbsp;
+		<a href="#!" class="waves-effect waves-light btn-flat modal-close">🗑️</a>&nbsp;&nbsp;
 		<a onclick="send();" style="width:140px; display: flex;justify-content: space-between;margin-top:8px;" class="modal-close waves-effect waves-green green lighten-2 btn"><span class="hide-on-med-and-down">Mail&nbsp;&nbsp;</span>📮</a></div></div></div>
 
 <!-- items -->					
@@ -288,18 +289,18 @@ function locSelect() {
 var introCard = true;
 
 var gearSwitch = 0; function gearBox() { // 0 (stop, show dialog), 1 (rotate), 2 (rotate back)
-	if(gearSwitch == 0) { $("#gear-pic").removeClass("image-rotate"); $("#gear-pic2").removeClass("image-rotate"); $("#gear-pic").removeClass("image-rotate-back"); $("#gear-pic2").removeClass("image-rotate-back"); $('#modal2').modal('open'); } else if (gearSwitch == 1) {  $("#gear-pic").addClass("image-rotate"); $("#gear-pic2").addClass("image-rotate");  } else if (gearSwitch == 2) {  $("#gear-pic").addClass("image-rotate-back"); $("#gear-pic2").addClass("image-rotate-back"); }  }
+	if(gearSwitch == 0) { $("#gear-pic").removeClass("image-rotate"); $("#gear-pic2").removeClass("image-rotate"); $("#gear-pic").removeClass("image-rotate-back"); $("#gear-pic2").removeClass("image-rotate-back");  } else if (gearSwitch == 1) {  $("#gear-pic").addClass("image-rotate"); $("#gear-pic2").addClass("image-rotate");  } else if (gearSwitch == 2) {  $("#gear-pic").addClass("image-rotate-back"); $("#gear-pic2").addClass("image-rotate-back"); }  }
 	
 	var mode = "view"; //edit game
 function showView(view) {  hideView(); $('#'+view).show(); 
     switch (view) { 
 	case 'world': $("#world").addClass("scale-in"); $("#ads").css("height",(height/2).toString() + "px"); break;
-	case 'slider': $("#slider").addClass("scale-in"); break;
+	case 'slider': $("#slider").addClass("scale-in"); gearSwitch = 1; gearBox(); break;
 	case 'console': $("#console").addClass("scale-in"); break;
-	case 'carder': $("#carder").addClass("scale-in"); break;
-        case 'lister': $("#lister").addClass("scale-in"); break;
-        case 'editor': $("#editor").addClass("scale-in");   break;
-        case 'mapper': $("#mapper").css("opacity","0"); $("#mapper").addClass("scale-in"); 
+	case 'carder': $("#carder").addClass("scale-in"); gearSwitch = 2; gearBox(); break;
+        case 'lister': $("#lister").addClass("scale-in"); gearSwitch = 1; gearBox(); break;
+        case 'editor': $("#editor").addClass("scale-in"); gearSwitch = 0; gearBox();  break;
+        case 'mapper': $("#mapper").css("opacity","0"); $("#mapper").addClass("scale-in"); gearSwitch = 1; gearBox();
         	setTimeout(function() { map.resize(); $("#mapper").hide().css("opacity","1").fadeIn('slow');  }, 500); break; } }
 function hideView() { $('.modal').modal('close'); window.scrollTo(0, 0); 
 		     $("#slider").removeClass("scale-in"); $("#world").removeClass("scale-in"); $("#editor").removeClass("scale-in"); $("#mapper").removeClass("scale-in"); $("#carder").removeClass("scale-in"); $("#lister").removeClass("scale-in");
