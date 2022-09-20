@@ -1,11 +1,11 @@
 
 var suit = ['heart','diamond','club','spade']; var num = ['2','3','4','5','6','7','8','9','10','J','Q','K','A'];
 class Card { suiter = 0; nummer = 0 }
-class Deck { carder = [52]; } var myDeck = new Deck(); 
+class Deck { carder = []; } var myDeck;
 
-for (let a = 0; a < myDeck.carder.length; a++) { 
-	for (let b = 0; b < suit.length; b++) {
-		for (let c = 0; c < num.length; c++) { myDeck.carder[a] = new Card(); myDeck.carder[a].suiter = b; myDeck.carder[a].nummer = c; } } }
+function makeDeck() { myDeck = new Deck(); 
+	for (let a = 0; a < suit.length; a++) {
+		for (let b = 0; b < num.length; b++) { var newCard = new Card(); newCard.suiter = a; newCard.nummer = b; myDeck.carder.push(newCard);  } } } 
 
 function shuffle(array) { let currentIndex = array.length,  randomIndex;
   while (currentIndex != 0) { randomIndex = Math.floor(Math.random() * currentIndex); currentIndex--;
