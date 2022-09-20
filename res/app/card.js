@@ -5,7 +5,7 @@ class Deck { carder = [52]; } var myDeck = new Deck();
 
 for (let a = 0; a < myDeck.carder.length; a++) { 
 	for (let b = 0; b < suit.length; b++) {
-		for (let c = 0; c < num.length; c++) { myDeck.carder[a] = new Card; myDeck.carder[a].suiter = b; myDek.carder[a].nummer = c; } } }
+		for (let c = 0; c < num.length; c++) { myDeck.carder[a] = new Card; myDeck.carder[a].suiter = b; myDeck.carder[a].nummer = c; } } }
 
 function shuffle(array) { let currentIndex = array.length,  randomIndex;
   while (currentIndex != 0) { randomIndex = Math.floor(Math.random() * currentIndex); currentIndex--;
