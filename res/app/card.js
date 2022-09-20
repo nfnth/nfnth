@@ -7,8 +7,8 @@ function makeDeck() { myDeck = new Deck();
 	for (let a = 0; a < suit.length; a++) { alert(a);
 		for (let b = 0; b < num.length; b++) { var newCard = new Card(); newCard.suiter = a; newCard.nummer = b; myDeck.carder.push(newCard);  } }
 		    
-		    //shuffle(myDeck); 
-		     leftDeck = myDeck.slice(0,26); rightDeck = myDeck.slice(27);
+		    shuffle(myDeck.carder); 
+		     leftDeck = new Deck(); rightDeck = new Deck(); leftDeck.carder = myDeck.carder.slice(0,26); rightDeck.carder = myDeck.carder.slice(27);
 		    } 
 
 function shuffle(array) { let currentIndex = array.length,  randomIndex;
