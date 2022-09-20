@@ -41,8 +41,8 @@ function flipCard() { var mySuit = Math.floor(Math.random() * (4 - 1 + 1)); var 
 		    }
 
 function flipCard(role) { var mySuit = Math.floor(Math.random() * (4 - 1 + 1)); var myNum = Math.floor(Math.random() * (13 - 1 + 1)); 
-			 if (role == 'left') { mySuit = leftDeck.carder.suiter; myNum = leftDeck.carder.nummer; } else 
-			 { mySuit = rightDeck.carder.suiter; myNum = leftDeck.carder.nummer;
+			 if (role == 'left') { mySuit = leftDeck.carder[0].suiter; myNum = leftDeck.carder[0].nummer; } else 
+			 { mySuit = rightDeck.carder[0].suiter; myNum = rightDeck.carder[0].nummer; }
 	$("#tacta"+role).attr("src","res/img/card/" + suit[mySuit] + ".png");$("#tact1"+role).html(num[myNum]);
 		     $("#tactc"+role).attr("src","res/img/card/" + suit[mySuit] + ".png");$("#tact3"+role).html(num[myNum]);
 		     if (mySuit > 1) { $("#tact1"+role).css("color","black"); $("#tact3"+role).css("color","black");  } else { $("#tact1"+role).css("color","red"); $("#tact3"+role).css("color","red"); } 
