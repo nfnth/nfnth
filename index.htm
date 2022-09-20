@@ -469,6 +469,7 @@ $('.setter').click(function () {
 
 if ($(window).width() < 700) { $('.material-icons').removeClass('left'); }
 
+	/*
 let app = new PIXI.Application({ width: 640, height: 360 });
 	document.getElementById('gamer').appendChild(app.view);
 	let sprite = PIXI.Sprite.from('res/img/game/char/a_idle.gif');
@@ -484,10 +485,10 @@ let app = new PIXI.Application({ width: 640, height: 360 });
     // by 50 to slow the animation down a bit...
     sprite.x = 100.0 + Math.cos(elapsed/50.0) * 100.0;
   });
-/*	
+*/
 	// Create the application helper and add its render target to the page
 let app = new PIXI.Application({ width: 640, height: 360 });
-document.body.appendChild(app.view);
+document.getElementById('gamer').appendChild(app.view);
 
 // Create window frame
 let frame = new PIXI.Graphics();
@@ -515,19 +516,24 @@ maskContainer.position.set(4,4);
 // And add the container to the window!
 frame.addChild(maskContainer);
 
-// Create contents for the masked container
-let text = new PIXI.Text(
-  'This text will scroll up and be masked, so you can see how masking works.  Lorem ipsum and all that.\n\n' +
-  'You can put anything in the container and it will be masked!',
-  {
-    fontSize: 24,
-    fill: 0x1010ff,
-    wordWrap: true,
-    wordWrapWidth: 180
-  }
-);
-text.x = 10;
-maskContainer.addChild(text);
+const texture = PIXI.Texture.from('res/img/game/char/a_idle.gif');
+
+for (let i = 0; i < 25; i++) {
+    const bunny = new PIXI.Sprite(texture);
+    bunny.x = (i % 5) * 30;
+    bunny.y = Math.floor(i / 5) * 30;
+    bunny.rotation = Math.random() * (Math.PI * 2);
+    container.addChild(bunny);
+}
+
+const brt = new PIXI.BaseRenderTexture(300, 300, PIXI.SCALE_MODES.LINEAR, 1);
+const rt = new PIXI.RenderTexture(brt);
+
+const sprite = new PIXI.Sprite(rt);
+
+sprite.x = 450;
+sprite.y = 60;
+app.stage.addChild(sprite);
 
 // Add a ticker callback to scroll the text up and down
 let elapsed = 0.0;
@@ -535,7 +541,7 @@ app.ticker.add((delta) => {
   // Update the text's y coordinate to scroll it
   elapsed += delta;
   text.y = 10 + -100.0 + Math.cos(elapsed/50.0) * 100.0;
-});*/
+});
 
 </script>
 <style>
