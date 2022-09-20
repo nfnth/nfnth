@@ -41,7 +41,7 @@
 						
 						<!--<i class="material-icons left">calculate</i>--></ul></div></div></div>
     		
-		<div style="width:64px;margin-left:16px;"><a><div style="width:64px;"><img class="image image-rotate gear-image" id="gear-pic" onclick="showView('slider');" style="opacity:0.6; height: 48px;position:absolute; margin: 4px; cursor:pointer;right:12px;top:4px;" /><img id="gear-pic2" class="image image-rotate gear-image" style="opacity:0.6; height: 48px;position:absolute;cursor:pointer;margin:4px;right:12px;top:4px;" onclick="showView('slider');" /></div></a></div></div></nav>
+		<div style="width:64px;margin-left:16px;"><a><div style="width:64px;"><img class="image image-rotate gear-image" id="gear-pic" onclick="gearSwitch = 0; gearBox();" style="opacity:0.6; height: 48px;position:absolute; margin: 4px; cursor:pointer;right:12px;top:4px;" /><img id="gear-pic2" class="image image-rotate gear-image" style="opacity:0.6; height: 48px;position:absolute;cursor:pointer;margin:4px;right:12px;top:4px;" onclick="gearSwitch = 0; gearBox();" /></div></a></div></div></nav>
 		
 <!-- panel -->
 <ul id="deed-pane" class="sidenav loader" style="visibility:hidden;overflow:hidden;">
@@ -93,7 +93,6 @@
 <div id="home" style="height:105%; text-align:center;visibility:hidden; width:100%; z-index:1; padding-top: 54px;" class="content loader print-help">
 	
 <div id="slider" class="slider content loader pane scale-transition scale-out">
-	<a id="pinPoint" class="btn-floating btn-large waves-effect waves-light green lighten-3" onclick="showView('lister');" style="position: absolute;right: 24px;top: 32px;">🗒️</a><a id="inPoint" class="btn-floating btn-large waves-effect waves-light blue lighten-3" onclick="showView('mapper');" style="position: absolute;right: 24px;top: 100px;">🗺️</a>
   <div class="items-group">
     <div id="item0" class="item" >
       <div id="flip0" class="block flip-card flip-card-inner" style="display:flex;align-items:center;cursor:pointer;">
@@ -117,9 +116,6 @@
 		<div onclick="testEx();">test</div>
 		<img id="righter" class="enemy" src="res/img/game/char/a_run.gif" />
 		<div id="right-side"></div></div>
-	
-	
-	
 
 <!-- list -->
 <div id="lister" class="content loader pane scale-transition scale-out" style="overflow-y: auto; height: 130%;">
@@ -164,9 +160,9 @@
 
 
 <div id="modal2" class="modal">
-    <div class="modal-content"><h6>Modal Header</h6><p>A bunch of text</p></div>
-	<div class="modal-footer"><a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a></div></div>
-	
+    <div class="modal-content"><p>OCUR Console</p></div>
+	<div class="modal-footer"><a href="#!" class="modal-close waves-effect waves-light blue btn" onclick="showView('mapper'); gearSwitch = 1; gearBox();"><span class="hide-on-med-and-down">Map&nbsp;&nbsp;</span>🗺️</a><a href="#!" class="modal-close waves-effect waves-light btn green" onclick="showView('lister');gearSwitch = 1; gearBox();"><span class="hide-on-med-and-down">Notepad&nbsp;&nbsp;</span>🗒️</a><a href="#!" class="modal-close waves-effect waves-light btn red" onclick="showView('carder');gearSwitch = 2; gearBox();"><span class="hide-on-med-and-down">Cards&nbsp;&nbsp;</span>🃏</a></div></div>
+
 <div id="modal3" class="modal">
     <div class="modal-content"><p>Deposit OCUR to your Local OCUR ("LOCUR") account to post notes.</p>
     
@@ -285,20 +281,23 @@ function locSelect() {
 		$('.inputDisabled').prop("disabled", false); searcher(); } else {$('.inputDisabled').prop("disabled", true); } }
 	
 var introCard = true;
-function changeView() { if (introCard) { $("#gear-pic").removeClass('image-rotate'); $("#gear-pic2").removeClass('image-rotate'); showView('mapper'); introCard = false; }
-		       else { $("#gear-pic").addClass('image-rotate'); $("#gear-pic2").addClass('image-rotate'); showView('slider'); introCard = true; } }
+
+var gearSwitch = 0; function gearBox() { // 0 (stop, show dialog), 1 (rotate), 2 (rotate back)
+	if(gearSwitch == 0) { $("#gear-pic").removeClass("image-rotate"); $("#gear-pic2").removeClass("image-rotate"); $("#gear-pic").removeClass("image-rotate-back"); $("#gear-pic2").removeClass("image-rotate-back"); $('#modal2').modal('open'); } else if (gearSwitch == 1) {  $("#gear-pic").addClass("image-rotate"); $("#gear-pic2").addClass("image-rotate");  } else if (gearSwitch == 2) {  $("#gear-pic").addClass("image-rotate-back"); $("#gear-pic2").addClass("image-rotate-back"); }  }
+	
+	var mode = "view"; //edit game
 function showView(view) {  hideView(); $('#'+view).show(); 
     switch (view) { 
 	case 'world': $("#world").addClass("scale-in"); $("#ads").css("height",(height/2).toString() + "px"); break;
 	case 'slider': $("#slider").addClass("scale-in"); break;
 	case 'console': $("#console").addClass("scale-in"); break;
 	case 'carder': $("#carder").addClass("scale-in"); addCardIntro(); break;
-        case 'lister': $("#lister").addClass("scale-in");   break;
+        case 'lister': $("#lister").addClass("scale-in"); break;
         case 'editor': $("#editor").addClass("scale-in");   break;
         case 'mapper': $("#mapper").css("opacity","0"); $("#mapper").addClass("scale-in"); 
         	setTimeout(function() { map.resize(); $("#mapper").hide().css("opacity","1").fadeIn('slow');  }, 500); break; } }
 function hideView() { $('.modal').modal('close'); window.scrollTo(0, 0); 
-		     $("#slider").removeClass("scale-in"); $("#world").removeClass("scale-in"); $("#editor").removeClass("scale-in"); $("#mapper").removeClass("scale-in"); 
+		     $("#slider").removeClass("scale-in"); $("#world").removeClass("scale-in"); $("#editor").removeClass("scale-in"); $("#mapper").removeClass("scale-in"); $("#carder").removeClass("scale-in"); $("#lister").removeClass("scale-in");
 		     $('.pane').hide();}
 	
 function showCards() { $("#carder").show(); $("#carder").addClass("scale-in"); }
@@ -575,6 +574,8 @@ div.active {opacity: 1;height: auto;}
 	.image:hover { opacity:0.75; }
 .image-rotate { -webkit-animation:spin 8s linear infinite; -moz-animation:spin 8s linear infinite;animation:spin 8s linear infinite; }
 @-moz-keyframes spin {100% { -moz-transform: rotate(360deg); }} @-webkit-keyframes spin {100% { -webkit-transform: rotate(360deg); }} @keyframes spin {100% {-webkit-transform: rotate(360deg);transform:rotate(360deg);}}
+.image-rotate-back { -webkit-animation:spin-back 8s linear infinite; -moz-animation:spin 8s linear infinite;animation:spin 8s linear infinite; }
+@-moz-keyframes spin-back {100% { -moz-transform: rotate(-360deg); }} @-webkit-keyframes spin {100% { -webkit-transform: rotate(-360deg); }} @keyframes spin {100% {-webkit-transform: rotate(=360deg);transform:rotate(-360deg);}}
 
 .select-wrapper { width:100%!important; }
 
