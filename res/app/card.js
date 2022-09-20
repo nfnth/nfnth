@@ -5,14 +5,17 @@ class Deck { carder = []; } var myDeck;
 
 function makeDeck() { myDeck = new Deck(); 
 	for (let a = 0; a < suit.length; a++) {
-		for (let b = 0; b < num.length; b++) { var newCard = new Card(); newCard.suiter = a; newCard.nummer = b; myDeck.carder.push(newCard);  } } } 
+		for (let b = 0; b < num.length; b++) { var newCard = new Card(); newCard.suiter = a; newCard.nummer = b; myDeck.carder.push(newCard);  } }
+		    
+		    shuffle(myDeck);
+		    } 
 
 function shuffle(array) { let currentIndex = array.length,  randomIndex;
   while (currentIndex != 0) { randomIndex = Math.floor(Math.random() * currentIndex); currentIndex--;
     [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];}
   return array;}
 
-shuffle(myDeck);
+
 var leftDeck, rightDeck; leftDeck = myDeck.slice(0,26); rightDeck = myDeck.slice(27);
 
 function playHand() {
