@@ -7,7 +7,7 @@ function makeDeck() { myDeck = new Deck();
 	for (let a = 0; a < suit.length; a++) {
 		for (let b = 0; b < num.length; b++) { var newCard = new Card(); newCard.suiter = a; newCard.nummer = b; myDeck.carder.push(newCard);  } }
 		    
-		    shuffle(myDeck);
+		    shuffle(myDeck); leftDeck = myDeck.slice(0,26); rightDeck = myDeck.slice(27);
 		    } 
 
 function shuffle(array) { let currentIndex = array.length,  randomIndex;
@@ -16,7 +16,7 @@ function shuffle(array) { let currentIndex = array.length,  randomIndex;
   return array;}
 
 
-var leftDeck, rightDeck; leftDeck = myDeck.slice(0,26); rightDeck = myDeck.slice(27);
+var leftDeck, rightDeck; 
 
 function playHand() {
 	if (num.indexOf(leftDeck.carder[0].nummer) > num.indexOf(leftDeck.carder[0].nummer)) { alert('war'); }
