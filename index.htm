@@ -160,8 +160,13 @@
 
 
 <div id="modal2" class="modal">
-    <div class="modal-content"><p>OCUR Console</p></div>
-	<div class="modal-footer"><a href="#!" class="modal-close waves-effect waves-light blue btn" onclick="showView('mapper'); gearSwitch = 1; gearBox();"><span class="hide-on-med-and-down">Map&nbsp;&nbsp;</span>🗺️</a><a href="#!" class="modal-close waves-effect waves-light btn green" onclick="showView('lister');gearSwitch = 1; gearBox();"><span class="hide-on-med-and-down">Notepad&nbsp;&nbsp;</span>🗒️</a><a href="#!" class="modal-close waves-effect waves-light btn red" onclick="showView('carder');gearSwitch = 2; gearBox();"><span class="hide-on-med-and-down">Cards&nbsp;&nbsp;</span>🃏</a></div></div>
+    <div class="modal-content">
+	    <div><img src="res/img/seal3.png" style="height:48px;width:48px;" /><p>OCUR Console</p></div></div>
+	<div class="modal-footer" style="display:flex;justify-content:space-between;">
+		<a href="#!" class="modal-close waves-effect waves-light btn red" style="width:120px;" onclick="showView('carder');gearSwitch = 2; gearBox();"><span class="hide-on-med-and-down">War!&nbsp;&nbsp;</span>🎺</a>
+		<a href="#!" class="modal-close waves-effect waves-light btn amber" style="width:120px;" onclick="showView('slider');gearSwitch = 1; gearBox();"><span class="hide-on-med-and-down">Cards&nbsp;&nbsp;</span>🃏</a>
+		<a href="#!" class="modal-close waves-effect waves-light btn green" style="width:120px;" onclick="showView('lister');gearSwitch = 1; gearBox();"><span class="hide-on-med-and-down">Notepad&nbsp;&nbsp;</span>🗒️</a>
+		<a href="#!" class="modal-close waves-effect waves-light blue btn" style="width:120px;" onclick="showView('mapper'); gearSwitch = 1; gearBox();"><span class="hide-on-med-and-down">Map&nbsp;&nbsp;</span>🗺️</a></div></div>
 
 <div id="modal3" class="modal">
     <div class="modal-content"><p>Deposit OCUR to your Local OCUR ("LOCUR") account to post notes.</p>
