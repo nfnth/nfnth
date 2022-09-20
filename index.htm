@@ -485,7 +485,65 @@ let app = new PIXI.Application({ width: 640, height: 360 });
     // by 50 to slow the animation down a bit...
     sprite.x = 100.0 + Math.cos(elapsed/50.0) * 100.0;
   });
-*/
+
+	PIXI.loader
+    .add("images/spritesheet.json")
+    .load(setup);
+	
+	function setup() {
+    // get a reference to the sprite sheet we've just loaded:
+    let sheet = PIXI.loader.resources["images/spritesheet.json"];
+
+    // initialize background sprite
+    background = new PIXI.Sprite(sheet.textures["background.png"]);
+    
+    // add it to the stage
+    app.stage.addChild(background);
+		
+		/ create an animated sprite
+animatedCapguy = new PIXI.AnimatedSprite(sheet.animations["capguy"]);
+
+
+}
+	*/
+	// Create object to store sprite sheet data
+const atlasData = {
+	frames: {
+		enemy1: {
+			frame: { x: 0, y:0, w:32, h:32 },
+			sourceSize: { w: 32, h: 32 },
+			spriteSourceSize: { x: 0, y: 0, w: 32, h: 32 }
+		},
+		enemy2: {
+			frame: { x: 32, y:0, w:32, h:32 },
+			sourceSize: { w: 32, h: 32 },
+			spriteSourceSize: { x: 0, y: 0, w: 32, h: 32 }
+		},
+	},
+	meta: {
+		image: 'res/img/game/char/Priest_Laugh_2048x2048.png',
+		format: 'RGBA8888',
+		size: { w: 2048, h: 2048 },
+		scale: 1
+	},
+	animations: {
+		enemy: ['enemy1','enemy2'] //array of frames by name
+	}
+}
+
+
+// Create the SpriteSheet from data and image
+const spritesheet = new PIXI.Spritesheet(
+	PIXI.BaseTexture.from(atlasData.meta.image),
+	atlasData
+);
+
+// Generate all the Textures asynchronously
+spritesheet.parse(() => {
+	// spritesheet is ready to use!
+	const anim = new PIXI.AnimatedSprite(spritesheet.animations.enemy);
+});
+	
 	// Create the application helper and add its render target to the page
 let app = new PIXI.Application({ width: 640, height: 360 });
 document.getElementById('gamer').appendChild(app.view);
@@ -525,6 +583,14 @@ for (let i = 0; i < 25; i++) {
     bunny.rotation = Math.random() * (Math.PI * 2);
     maskContainer.addChild(bunny);
 }
+	// set speed, start playback and add it to the stage
+anim.animationSpeed = 0.167; 
+anim.play();
+app.stage.addChild(anim);
+		
+		// configure + start animation:
+//anim.updateAnchor = true;     // update anchor for each animation frame
+//animatedCapguy.play();
 
 const brt = new PIXI.BaseRenderTexture(300, 300, PIXI.SCALE_MODES.LINEAR, 1);
 const rt = new PIXI.RenderTexture(brt);
