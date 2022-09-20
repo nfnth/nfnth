@@ -3,7 +3,7 @@ var suit = ['heart','diamond','club','spade']; var num = ['2','3','4','5','6','7
 class Card { suiter = 0; nummer = 0 }
 class Deck { carder = [52]; } var myDeck = new Deck(); 
 
-for (let a = 0; i < myDeck.carder.length; a++) { 
+for (let a = 0; a < myDeck.carder.length; a++) { 
 	for (let b = 0; b < suit.length; b++) {
 		for (let c = 0; c < num.length; c++) { myDeck.carder[a] = new Card; myDeck.carder[a].suiter = b; myDek.carder[a].nummer = c; } } }
 
