@@ -1,7 +1,7 @@
 
 var suit = ['heart','diamond','club','spade']; var num = ['2','3','4','5','6','7','8','9','10','J','Q','K','A'];
 class Card { suiter = 0; nummer = 0 }
-class Deck { carder = [52]; } var myDeck = new Deck; 
+class Deck { carder = [52]; } var myDeck = new Deck(); 
 
 for (let a = 0; i < myDeck.carder.length; a++) { 
 	for (let b = 0; b < suit.length; b++) {
