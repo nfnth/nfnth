@@ -110,14 +110,14 @@
 <!-- card -->
 <div id="carder" class="card-deck content loader pane scale-transition scale-out" style="overflow-y: auto; ">
 	<div id="cards" style="height:240px;position:absolute;bottom:240;left:0; background-color:gainsboro;opacity:0.85;display:flex;justify-content:space-between;" class="scrolling-image-container">
-		<div class="scrolling-image">
+		<div class="scrolling-image1"></div><div class="scrolling-image2"></div><div class="scrolling-image3"></div><div class="scrolling-image4"></div><div class="scrolling-image5"></div><div class="scrolling-image6"></div><div class="scrolling-image7"></div></div>
 		<div id="left-side"></div><img id="explode" src="res/img/vuIDuM.gif" style="opacity:0;" />
 		
 		<img id="lefter" src="res/img/game/char/a_run.gif" />
 		<div onclick="testEx();">test</div>
 		<img id="righter" class="enemy" src="res/img/game/char/a_run.gif" />
 		<div id="right-side"></div></div>
-	</div></div>
+	
 	
 	
 
@@ -697,11 +697,37 @@ h1 {font-weight: 700;font-size: 64px; margin: 20px 0 0 0;padding: 0 20px;}
   overflow: hidden;
 }
 	
-	.scrolling-image {
-  background: url('res/img/Fort-of-Illusionx3.png') repeat-x;
-  width: 7680px;background-size: contain;background-repeat: repeat-x;}
+	.scrolling-image1 {
+  background: url('res/img/l1.png') repeat-x;
+  width: 7680px;background-size: contain;background-repeat: repeat-x;
+	animation: slide 10s linear infinite;}
+		.scrolling-image2 {
+  background: url('res/img/l2.png') repeat-x;
+  width: 7680px;background-size: contain;background-repeat: repeat-x;
+	animation: slide2 10s linear infinite;}
+		.scrolling-image3 {
+  background: url('res/img/l3.png') repeat-x;
+  width: 7680px;background-size: contain;background-repeat: repeat-x;
+	animation: slide 9s linear infinite;}
+		.scrolling-image4 {
+  background: url('res/img/l4.png') repeat-x;
+  width: 7680px;background-size: contain;background-repeat: repeat-x;
+	animation: slide2 9s linear infinite;}
+		.scrolling-image5 {
+  background: url('res/img/l5.png') repeat-x;
+  width: 7680px;background-size: contain;background-repeat: repeat-x;
+	animation: slide 8s linear infinite;}
+		.scrolling-image6 {
+  background: url('res/img/l6.png') repeat-x;
+  width: 7680px;background-size: contain;background-repeat: repeat-x;
+	animation: slide2 8s linear infinite;}
+		.scrolling-image7 {
+  background: url('res/img/l7.png') repeat-x;
+  width: 7680px;background-size: contain;background-repeat: repeat-x;
+	animation: slide 7s linear infinite;}
 	
 	@keyframes slide {0% { transform: translate(0);}100% {transform: translate(-3840px); /* The image width */}}
+	@keyframes slide2 {0% { transform: translate(0);}100% {transform: translate(3840px); /* The image width */}}
 
-.scrolling-image {animation: slide 10s linear infinite;}
+.scrolling-image {}
 </style>
