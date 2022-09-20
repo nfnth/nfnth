@@ -20,8 +20,8 @@ function shuffle(array) { let currentIndex = array.length,  randomIndex;
 var leftDeck, rightDeck; 
 
 function playHand() {
-	if (num.indexOf(leftDeck.carder[0].nummer) == num.indexOf(rightDeck.carder[0].nummer)) { alert('war'); }
-	else if (num.indexOf(leftDeck.carder[0].nummer) > num.indexOf(rightDeck.carder[0].nummer)) { 
+	if (leftDeck.carder[0].nummer == rightDeck.carder[0].nummer) { alert('war'); }
+	else if (leftDeck.carder[0].nummer > rightDeck.carder[0].nummer) { 
 		leftDeck.carder.push(leftDeck.carder.shift()); leftDeck.carder.push(rightDeck.carder.shift()); }
 	else {rightDeck.carder.push(rightDeck.carder.shift()); rightDeck.carder.push(leftDeck.carder.shift()); } }
 
