@@ -21,8 +21,8 @@ var leftDeck, rightDeck;
 
 function playHand() {
 	if (num.indexOf(leftDeck.carder[0].nummer) > num.indexOf(leftDeck.carder[0].nummer)) { alert('war'); }
-	else if (num.indexOf(leftDeck.carder[0].nummer) > num.indexOf(leftDeck.carder[0].nummer)) { leftDeck.push(rightDeck.shift()); }
-	else { rightDeck.push(leftDeck.shift()); } }
+	else if (num.indexOf(leftDeck.carder[0].nummer) > num.indexOf(leftDeck.carder[0].nummer)) { leftDeck.carder.push(rightDeck.carder.shift()); }
+	else { rightDeck.carder.push(leftDeck.carder.shift()); } }
 
 var cardSwitch = false;
 
