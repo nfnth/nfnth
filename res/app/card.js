@@ -4,7 +4,7 @@ class Card { suiter = 0; nummer = 0 }
 class Deck { carder = []; } var myDeck;
 
 function makeDeck() { myDeck = new Deck(); 
-	for (let a = 0; a < suit.length; a++) { alert(a);
+	for (let a = 0; a < suit.length; a++) { 
 		for (let b = 0; b < num.length; b++) { var newCard = new Card(); newCard.suiter = a; newCard.nummer = b; myDeck.carder.push(newCard);  } }
 		    
 		    shuffle(myDeck.carder); 
@@ -44,7 +44,14 @@ function flipCard() { var mySuit = Math.floor(Math.random() * (4 - 1 + 1)); var 
 		    //},1000);  
 		    }
 
-function flipCard(role) { var mySuit = Math.floor(Math.random() * (4 - 1 + 1)); var myNum = Math.floor(Math.random() * (13 - 1 + 1)); 
+var leftFlip = false; var rightFlip = false;
+function flipCard(role) { 
+	
+	if (leftFlip && rightFlip) { $('#myFlipleft').css("transform","none"); $('#myFlipright').css("transform","none"); 
+				    playHand(); leftFlip = false; rightFlip = false;
+		return true; }
+	
+	var mySuit = Math.floor(Math.random() * (4 - 1 + 1)); var myNum = Math.floor(Math.random() * (13 - 1 + 1)); 
 			 if (role == 'left') { mySuit = leftDeck.carder[0].suiter; myNum = leftDeck.carder[0].nummer; } else 
 			 { mySuit = rightDeck.carder[0].suiter; myNum = rightDeck.carder[0].nummer; }
 	$("#tacta"+role).attr("src","res/img/card/" + suit[mySuit] + ".png");$("#tact1"+role).html(num[myNum]);
@@ -56,6 +63,7 @@ function flipCard(role) { var mySuit = Math.floor(Math.random() * (4 - 1 + 1)); 
 		     $("#tact3"+role).css("transform","scale(-1, -1)"); $("#tactc"+role).css("transform","scale(-1, -1)");
 		     //-webkit-transform: rotateX(180deg); transform: rotateX(180deg);
 		    //},1000);  
+	if (role == 'left') { leftFlip = true; } if (role == 'right') { rightFlip = true; }
 		    }
 
 var qrSwitch = false;
