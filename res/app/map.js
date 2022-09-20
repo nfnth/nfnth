@@ -6,7 +6,7 @@ var learnOwn = [-99.19697959674477, 40.17108807140884];
 var learnPath = [-99.79697959674477, 35.47108807140884];
 var pather = false; var beacon = false;
 
-function showIntroSim() { clearMap(); document.getElementById('booker').click(); $('#deed-pane').sidenav('close');
+function showIntroSim() { clearMap(); makeDeck(); document.getElementById('booker').click(); $('#deed-pane').sidenav('close');
 	var marv = document.createElement('div'); marv.id = 'markera'; popBase = new mapboxgl.Marker(marv).setLngLat(base).addTo(map);
 	$('#markera').addClass('markre'); $('#markera').addClass('z-depth-3'); $('#markera').addClass('triangle-up'); 
 	var style = $('#markera').attr('style'); style += ";background-image:url('res/img/ezgif.com-gif-maker.gif');background-size:cover;border:solid 2px darkgrey;border-radius:50%;"; $('#markera').attr('style',style); 
