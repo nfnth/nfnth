@@ -4,10 +4,11 @@ class Card { suiter = 0; nummer = 0 }
 class Deck { carder = []; } var myDeck;
 
 function makeDeck() { myDeck = new Deck(); 
-	for (let a = 0; a < suit.length; a++) {
+	for (let a = 0; a < suit.length; a++) { alert(a);
 		for (let b = 0; b < num.length; b++) { var newCard = new Card(); newCard.suiter = a; newCard.nummer = b; myDeck.carder.push(newCard);  } }
 		    
-		    shuffle(myDeck); leftDeck = myDeck.slice(0,26); rightDeck = myDeck.slice(27);
+		    //shuffle(myDeck); 
+		     leftDeck = myDeck.slice(0,26); rightDeck = myDeck.slice(27);
 		    } 
 
 function shuffle(array) { let currentIndex = array.length,  randomIndex;
