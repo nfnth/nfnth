@@ -469,80 +469,47 @@ $('.setter').click(function () {
 
 if ($(window).width() < 700) { $('.material-icons').removeClass('left'); }
 
-	/*
-let app = new PIXI.Application({ width: 640, height: 360 });
-	document.getElementById('gamer').appendChild(app.view);
-	let sprite = PIXI.Sprite.from('res/img/game/char/a_idle.gif');
-	app.stage.addChild(sprite);
-	// Add a variable to count up the seconds our demo has been running
-  let elapsed = 0.0;
-  // Tell our application's ticker to run a new callback every frame, passing
-  // in the amount of time that has passed since the last tick
-  app.ticker.add((delta) => {
-    // Add the time to our total elapsed time
-    elapsed += delta;
-    // Update the sprite's X position based on the cosine of our elapsed time.  We divide
-    // by 50 to slow the animation down a bit...
-    sprite.x = 100.0 + Math.cos(elapsed/50.0) * 100.0;
-  });
-
-	PIXI.loader
-    .add("images/spritesheet.json")
-    .load(setup);
-	
-	function setup() {
-    // get a reference to the sprite sheet we've just loaded:
-    let sheet = PIXI.loader.resources["images/spritesheet.json"];
-
-    // initialize background sprite
-    background = new PIXI.Sprite(sheet.textures["background.png"]);
-    
-    // add it to the stage
-    app.stage.addChild(background);
-		
-		/ create an animated sprite
-animatedCapguy = new PIXI.AnimatedSprite(sheet.animations["capguy"]);
-
-
-}
-	*/
-	// Create object to store sprite sheet data
-const atlasData = {
-	frames: {
-		enemy1: {
-			frame: { x: 0, y:0, w:32, h:32 },
-			sourceSize: { w: 32, h: 32 },
-			spriteSourceSize: { x: 0, y: 0, w: 32, h: 32 }
-		},
-		enemy2: {
-			frame: { x: 32, y:0, w:32, h:32 },
-			sourceSize: { w: 32, h: 32 },
-			spriteSourceSize: { x: 0, y: 0, w: 32, h: 32 }
-		},
-	},
-	meta: {
-		image: 'res/img/game/char/Priest_Laugh_2048x2048.png',
-		format: 'RGBA8888',
-		size: { w: 2048, h: 2048 },
-		scale: 1
-	},
-	animations: {
-		enemy: ['enemy1','enemy2'] //array of frames by name
-	}
-}
-
-
-// Create the SpriteSheet from data and image
-const spritesheet = new PIXI.Spritesheet(
-	PIXI.BaseTexture.from(atlasData.meta.image),
-	atlasData
-);
-
-
-	
 	// Create the application helper and add its render target to the page
-let app = new PIXI.Application({ width: 640, height: 360 });
+let app = new PIXI.Application({ width: 640, height: 640 });
 document.getElementById('gamer').appendChild(app.view);
+
+// Add the assets to load
+PIXI.Assets.add('deer', 'res/img/runx.gif');
+PIXI.Assets.add('explode', 'res/img/explodex.gif');
+
+// Allow the assets to load in the background
+PIXI.Assets.backgroundLoad(['deer', 'explode']);
+
+
+// If the background load hasn't loaded this asset yet, calling load forces this asset to load now.
+PIXI.Assets.load('deer').then((texture) => {
+    // auxiliar flag for toggling the texture
+    let bol = true;
+
+    // create a new Sprite from the resolved loaded texture
+    const dude = new PIXI.Sprite(texture);
+    dude.anchor.set(0.5);
+    dude.x = app.screen.width / 2;
+    dude.y = app.screen.height / 2;
+    app.stage.addChild(dude);
+
+    dude.interactive = true;
+    dude.buttonMode = true;
+
+    dude.on('pointertap', async () => {
+        bol = !bol;
+
+        // These promise are already resolved in the cache.
+        if (bol) {
+            dude.texture = await PIXI.Assets.load('deer');
+        } else {
+            dude.texture = await PIXI.Assets.load('explode');
+        }
+    });
+});
+
+	
+
 
 // Create window frame
 let frame = new PIXI.Graphics();
@@ -550,7 +517,7 @@ frame.beginFill(0x666666);
 frame.lineStyle({ color: 0xffffff, width: 4, alignment: 0 });
 frame.drawRect(0, 0, 208, 208);
 frame.position.set(320 - 100, 180 - 100);
-app.stage.addChild(frame);
+//app.stage.addChild(frame);
 
 // Create a graphics object to define our mask
 let mask = new PIXI.Graphics();
@@ -593,7 +560,7 @@ const sprite = new PIXI.Sprite(rt);
 
 sprite.x = 450;
 sprite.y = 60;
-app.stage.addChild(sprite);
+//app.stage.addChild(sprite);
 	
 	// Generate all the Textures asynchronously
 spritesheet.parse(() => {
@@ -601,7 +568,7 @@ spritesheet.parse(() => {
 	const anim = new PIXI.AnimatedSprite(spritesheet.animations.enemy);
 	anim.animationSpeed = 0.167; 
 anim.play();
-app.stage.addChild(anim);
+//app.stage.addChild(anim);
 });
 
 // Add a ticker callback to scroll the text up and down
