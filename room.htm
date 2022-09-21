@@ -70,7 +70,7 @@ var grab;
 
     // load fbx model and texture                                               
     const objs = [];
-    const loader = new THREE.FBXLoader();
+    const loader = new THREE.FBXLoader2();
     loader.load("room.fbx", model => {
         // model is a THREE.Group (THREE.Object3D)                              
         const mixer = new THREE.AnimationMixer(model);
