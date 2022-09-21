@@ -113,7 +113,11 @@
 
 <!-- card -->
 <div id="carder" class="card-deck content loader pane scale-transition scale-out" style="overflow-y: auto; ">
-													    <div id="gamer"><div><img src="res/1658975514131.mp4" /><img src="res/River-3.png" /></div></div>
+													    <div id="gamer"><div><video controls> 
+
+  <source src="res/1658975514131.mp4" type="video/mp4">
+
+</video><img src="res/River-3.png" /></div></div>
 	<div id="cards" style="height:240px;bottom:240;left:0; background-color:gainsboro;opacity:0.85;display:none;justify-content:space-between;" class="scrolling-image-container">
 		<div class="scrolling-image1 parax"></div><div class="scrolling-image2 parax"></div><div class="scrolling-image3 parax"></div><div class="scrolling-image4 parax"></div><div class="scrolling-image5 parax"></div><div class="scrolling-image6 parax"></div><div class="scrolling-image7 parax"></div></div>
 		<div id="left-side"></div><img id="explode" src="res/img/vuIDuM.gif" style="opacity:0;" />
@@ -476,6 +480,9 @@ if ($(window).width() < 700) { $('.material-icons').removeClass('left'); }
 
 	// Create the application helper and add its render target to the page
 let app = new PIXI.Application({ width: 640, height: 640 });
+
+var renderer = PIXI.autoDetectRenderer(800, 600, { transparent: true });
+
 document.getElementById('gamer').appendChild(app.view);
 PIXI.Loader.registerPlugin(PIXI.gif.AnimatedGIFLoader);
  const loader = new PIXI.Loader();
