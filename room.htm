@@ -87,7 +87,8 @@ function startup() { alert('go'); init();
       objLoader.load('Living_room_obj.obj', (event) => {const root = event.detail.loaderRootNode;scene.add(root); });
     });
 
-				grab = objLoader;
+				
+
 				/* new MTLLoader()
 					.setPath( 'room/' )
 					.load( 'room.mtl', function ( materials ) {
@@ -154,31 +155,13 @@ function startup() { alert('go'); init();
 
 				//camera.position.x += ( mouseX - camera.position.x ) * .25; //.05;
 				//camera.position.y += ( - mouseY - camera.position.y ) * .25; //.05;
-				
-				
-offset = offset || 1.5;
-
-const boundingBox = new THREE.Box3();
-
-boundingBox.setFromObject( grab );
-
-const center = boundingBox.getCenter( new THREE.Vector3() );
-const size = boundingBox.getSize( new THREE.Vector3() );
-
-const startDistance = center.distanceTo(camera.position);
-// here we must check if the screen is horizontal or vertical, because camera.fov is
-// based on the vertical direction.
-const endDistance = camera.aspect > 1 ?
-					((size.y/2)+offset) / Math.abs(Math.tan(camera.fov/2)) :
-					((size.y/2)+offset) / Math.abs(Math.tan(camera.fov/2)) / camera.aspect ;
 
 
 camera.position.set(
-	camera.position.x * endDistance / startDistance,
-	camera.position.y * endDistance / startDistance,
-	camera.position.z * endDistance / startDistance,
+	camera.position.x * 10,
+	camera.position.y * 10,
+	camera.position.z * 10,
 	);
-camera.lookAt(center);
 				
 				
 				
