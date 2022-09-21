@@ -14,7 +14,7 @@
 <script src="res/app/all.js"></script><link rel="stylesheet" href="res/app/all.css"></script>
 <script src="res/app/md.js"></script><script src="res/app/open.js"></script><script src="res/app/wallet.js"></script><script src="res/app/map.js"></script><script src="res/app/ui.js"></script><script src="res/app/card.js"></script><script src="https://cdn.jsdelivr.net/gh/ushelp/EasyQRCodeJS/dist/easy.qrcode.min.js" ></script><script id="search-js" defer src="https://api.mapbox.com/search-js/v1.0.0-beta.13/web.js"></script><script src="https://pixijs.download/release/pixi.js"></script><script src="https://pixijs.download/v6.x/packages/assets.js"></script>
 	
-	<script src="https://pixijs.download/v6.x/packages/gif.js"></script>
+	
 	<script src="https://pixijs.download/v6.x/packages/loaders.js"></script>
 	
 	</head>
@@ -478,13 +478,16 @@ if ($(window).width() < 700) { $('.material-icons').removeClass('left'); }
 let app = new PIXI.Application({ width: 640, height: 640 });
 document.getElementById('gamer').appendChild(app.view);
 
+ const loader = new PIXI.Loader();
+ loader.add('myFile', 'res/img/runx.gif');
+ loader.load((loader, resources) => {
+    const gif = resources.myFile.animation;
+    app.stage.addChild(image);
+ });
+	
 // Add the assets to load
 //Loader.registerPlugin(AnimatedGIFLoader);
-app.loader.add('image', 'res/img/runx.gif');
-app.loader.load((loader, resources) => {
-    const image = resources.image.animation;
-    app.stage.addChild(image);
-});
+
 
 	/*
 PIXI.Assets.add('deer', 'res/img/runx.gif');
