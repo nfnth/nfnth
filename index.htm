@@ -479,7 +479,7 @@ let app = new PIXI.Application({ width: 640, height: 640 });
 document.getElementById('gamer').appendChild(app.view);
 
 // Add the assets to load
-Loader.registerPlugin(AnimatedGIFLoader);
+//Loader.registerPlugin(AnimatedGIFLoader);
 app.loader.add('image', 'res/img/runx.gif');
 app.loader.load((loader, resources) => {
     const image = resources.image.animation;
