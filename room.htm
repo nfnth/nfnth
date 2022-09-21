@@ -82,9 +82,9 @@ function startup() { alert('go'); init();
 				};
 				
 				const objLoader = new THREE.OBJLoader2();
-    objLoader.loadMtl('room.mtl', null, (materials) => {
+    objLoader.loadMtl('Living_room_obj.mtl', null, (materials) => {
       objLoader.setMaterials(materials);
-      objLoader.load('room.obj', (event) => {const root = event.detail.loaderRootNode;scene.add(root); });
+      objLoader.load('Living_room_obj.obj', (event) => {const root = event.detail.loaderRootNode;scene.add(root); });
     });
 
 				/* new MTLLoader()
