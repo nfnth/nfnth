@@ -12,7 +12,12 @@
 
 <!-- resources -->
 <script src="res/app/all.js"></script><link rel="stylesheet" href="res/app/all.css"></script>
-<script src="res/app/md.js"></script><script src="res/app/open.js"></script><script src="res/app/wallet.js"></script><script src="res/app/map.js"></script><script src="res/app/ui.js"></script><script src="res/app/card.js"></script><script src="https://cdn.jsdelivr.net/gh/ushelp/EasyQRCodeJS/dist/easy.qrcode.min.js" ></script><script id="search-js" defer src="https://api.mapbox.com/search-js/v1.0.0-beta.13/web.js"></script><script src="https://pixijs.download/release/pixi.js"></script><script src="https://pixijs.download/v6.x/packages/assets.js"></script></head>
+<script src="res/app/md.js"></script><script src="res/app/open.js"></script><script src="res/app/wallet.js"></script><script src="res/app/map.js"></script><script src="res/app/ui.js"></script><script src="res/app/card.js"></script><script src="https://cdn.jsdelivr.net/gh/ushelp/EasyQRCodeJS/dist/easy.qrcode.min.js" ></script><script id="search-js" defer src="https://api.mapbox.com/search-js/v1.0.0-beta.13/web.js"></script><script src="https://pixijs.download/release/pixi.js"></script><script src="https://pixijs.download/v6.x/packages/assets.js"></script>
+	
+	<script src="https://pixijs.download/v6.x/packages/gif.js"></script>
+	<script src="https://pixijs.download/v6.x/packages/loaders.js"></script>
+	
+	</head>
 
 <body style="overflow:overlay; background-color:whitesmoke;transition: background-color 1s linear;" >
 
@@ -474,11 +479,19 @@ let app = new PIXI.Application({ width: 640, height: 640 });
 document.getElementById('gamer').appendChild(app.view);
 
 // Add the assets to load
+Loader.registerPlugin(AnimatedGIFLoader);
+app.loader.add('image', 'res/img/runx.gif');
+app.loader.load((loader, resources) => {
+    const image = resources.image.animation;
+    app.stage.addChild(image);
+});
+
+	/*
 PIXI.Assets.add('deer', 'res/img/runx.gif');
 PIXI.Assets.add('explode', 'res/img/explodex.gif');
 
 // Allow the assets to load in the background
-PIXI.Assets.backgroundLoad(['deer', 'explode']);
+//PIXI.Assets.backgroundLoad(['deer', 'explode']);
 
 
 // If the background load hasn't loaded this asset yet, calling load forces this asset to load now.
@@ -507,7 +520,7 @@ PIXI.Assets.load('deer').then((texture) => {
         }
     });
 });
-
+*/
 	
 /*
 
