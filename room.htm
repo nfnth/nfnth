@@ -128,7 +128,8 @@ function startup() { alert('go'); init();
 				windowHalfX = window.innerWidth / 2;
 				windowHalfY = window.innerHeight / 2;
 
-				camera.aspect = window.innerWidth / window.innerHeight;
+				//camera.aspect = window.innerWidth / window.innerHeight;
+				camera.aspect = 2;
 				camera.updateProjectionMatrix();
 
 				renderer.setSize( window.innerWidth, window.innerHeight );
@@ -153,8 +154,8 @@ function startup() { alert('go'); init();
 
 			function render() {
 
-				camera.position.x += ( mouseX - camera.position.x ) * .45; //.05;
-				camera.position.y += ( - mouseY - camera.position.y ) * .45; //.05;
+				//camera.position.x += ( mouseX - camera.position.x ) * .45; //.05;
+				//camera.position.y += ( - mouseY - camera.position.y ) * .45; //.05;
 
 
 //camera.position.set(
