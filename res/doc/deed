@@ -52,18 +52,7 @@ Use the map to visit a continent filled with amazing peoples and lands, and foll
 <br/>
 
 
-<button style="background-color:#6772E5;color:#FFF;border:0;border-radius:4px;font-size:1em;cursor:pointer" id="checkout-button-price_1NCnkuHtnEEsiKCN9RRuHv4h" role="link" type="button">Checkout</button>
+<button onclick="buyThing();" style="background-color:#6772E5;color:#FFF;border:0;border-radius:4px;font-size:1em;cursor:pointer" id="checkout-button-price_1NCnkuHtnEEsiKCN9RRuHv4h" role="link" type="button">Checkout</button>
 
 <div id="error-message"></div>
 
-<script>
-(function() {
-  var stripe = Stripe('pk_live_51LsD4eHtnEEsiKCNaOlvv3Hh54aEX2GjPhrtcdMZcDPFFl4EttcqC5bhxTOUBSJ9lvstkxzqz4GLOe4vJKLrrHft00veYVOXU7');
-  var checkoutButton = document.getElementById('checkout-button-price_1NCnkuHtnEEsiKCN9RRuHv4h');
-  checkoutButton.addEventListener('click', function () {
-    stripe.redirectToCheckout({
-      lineItems: [{price: 'price_1NCnkuHtnEEsiKCN9RRuHv4h', quantity: 1}],
-      mode: 'payment',  successUrl: window.location.protocol + '//mattdown.com/success',cancelUrl: window.location.protocol + '//mattdown.com/canceled', })
-    .then(function (result) {
-      if (result.error) {
-        var displayError = document.getElementById('error-message'); displayError.textContent = result.error.message; } }); });})();</script>
