@@ -44,3 +44,8 @@ fdisk -l #show drives
 |22|SSH|
 |80|http *(site)*|
 |443|https *(seure socket layer)*|
+
+
+<button onclick="buyThing();" style="background-color:#6772E5;color:#FFF;border:0;border-radius:4px;font-size:1em;cursor:pointer" id="checkout-button-price_1NCnkuHtnEEsiKCN9RRuHv4h" role="link" type="button">Checkout</button>
+
+<div id="error-message"></div>
