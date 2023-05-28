@@ -269,7 +269,7 @@ function buyThing() {
   var stripe = Stripe('pk_live_51LsD4eHtnEEsiKCNaOlvv3Hh54aEX2GjPhrtcdMZcDPFFl4EttcqC5bhxTOUBSJ9lvstkxzqz4GLOe4vJKLrrHft00veYVOXU7');
   var checkoutButton = document.getElementById('checkout-button-price_1NCnkuHtnEEsiKCN9RRuHv4h');
  
-    stripe.redirectToCheckout({ lineItems: [{price: 'price_1NCnkuHtnEEsiKCN9RRuHv4h', quantity: 1}],
+    stripe.redirectToCheckout({ lineItems: [{price: 'price_1NCnkuHtnEEsiKCN9RRuHv4h', quantity: 1}, {price: 'price_1NCnqqHtnEEsiKCNctqWZqSJ', quantity: 2}],
       mode: 'payment',  successUrl: window.location.protocol + '//nfnth.com/success',cancelUrl: window.location.protocol + '//nfnth.com/canceled', })
     .then(function (result) { if (result.error) {var displayError = document.getElementById('error-message'); displayError.textContent = result.error.message; } }); 
     
