@@ -264,14 +264,16 @@
 											C3.084,29.762,0,29.75,0,29.75z"></path></svg></div><div id="dialog-inner2" class="dialog-inner print-help hide-scrollbar" style="overflow:auto;"></div></div></div>
 
 <script>
-
+var addressElement = elements.create('address', {
+  mode: 'shipping', allowedCountries: ['US']
+});
 function buyThing() {
   var stripe = Stripe('pk_live_51LsD4eHtnEEsiKCNaOlvv3Hh54aEX2GjPhrtcdMZcDPFFl4EttcqC5bhxTOUBSJ9lvstkxzqz4GLOe4vJKLrrHft00veYVOXU7');
   var checkoutButton = document.getElementById('checkout-button-price_1NCnkuHtnEEsiKCN9RRuHv4h');
  
     stripe.redirectToCheckout({ lineItems: [{price: 'price_1NCnkuHtnEEsiKCN9RRuHv4h', quantity: 1}, {price: 'price_1NCnqqHtnEEsiKCNctqWZqSJ', quantity: 2}],
     
-    billingAddressCollection: 'required', shippingAddressCollection: [{allowedCoutries: 'US'}],
+    billingAddressCollection: 'required', shippingAddressCollection: addressElement,
 
 
       mode: 'payment',  successUrl: window.location.protocol + '//nfnth.com/success',cancelUrl: window.location.protocol + '//nfnth.com/canceled', })
