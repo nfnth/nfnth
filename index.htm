@@ -271,7 +271,7 @@ function buyThing() {
  
     stripe.redirectToCheckout({ lineItems: [{price: 'price_1NCnkuHtnEEsiKCN9RRuHv4h', quantity: 1}, {price: 'price_1NCnqqHtnEEsiKCNctqWZqSJ', quantity: 2}],
     
-    billingAddressCollection: 'required', shippingAddressCollection: ['US'],
+    billingAddressCollection: 'required', shippingAddressCollection: [{allowedCoutries: 'US'}],
 
 
       mode: 'payment',  successUrl: window.location.protocol + '//nfnth.com/success',cancelUrl: window.location.protocol + '//nfnth.com/canceled', })
