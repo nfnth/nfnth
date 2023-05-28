@@ -270,7 +270,7 @@ function buyThing() {
   var checkoutButton = document.getElementById('checkout-button-price_1NCnkuHtnEEsiKCN9RRuHv4h');
  
     stripe.redirectToCheckout({ lineItems: [{price: 'price_1NCnkuHtnEEsiKCN9RRuHv4h', quantity: 1}],
-      mode: 'payment',  successUrl: window.location.protocol + '//mattdown.com/success',cancelUrl: window.location.protocol + '//mattdown.com/canceled', })
+      mode: 'payment',  successUrl: window.location.protocol + '//nfnth.com/success',cancelUrl: window.location.protocol + '//nfnth.com/canceled', })
     .then(function (result) { if (result.error) {var displayError = document.getElementById('error-message'); displayError.textContent = result.error.message; } }); 
     
     }
