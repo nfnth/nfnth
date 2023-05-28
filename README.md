@@ -5,4 +5,4 @@ Licensed as [**NfNth Corp**](https://secure.dor.wa.gov/) in the State of Washing
 
 ... *in the Wedge, diagonal to Woodin elementary*
 
-sponsor mattdown.com or use 1950.app to run ads
+sponsor or use 1950.app to run ads
