@@ -1,7 +1,7 @@
 
 ### [🥚](https://xn--wr9h.ws) [nf/nth](https://nfnth.com) (new foundations)
 
-Build a **map** on <img src="img/island.png" style="width:40px;height:40px;" /> [**UR**.Land](https://ur.land) and post **content** to the [**OCUR**.app](https://ocur.app), see the **tutorial** at [**iOCUR**.com](https://iocur.com).
+Build a <img src="img/island.png" style="width:40px;height:40px;" /> [**UR**.Land map](https://ur.land) and post **content** to [**OCUR**.app](https://ocur.app), see the **tutorial** at [**iOCUR**.com](https://iocur.com).
 
 Hold an <img src="img/opensea.png" style="width:40px;height:40px;" /> [**OpenSea** deed domain](https://opensea.io/urland) to increase **profile** rank.
 
