@@ -3,7 +3,7 @@
 
 <br/>
 
-Build <img src="img/island.png" style="width:40px;height:40px;" /> [**UR**.Land map](https://ur.land) with the [**OCUR**.app](https://ocur.app), see **tutorial** at [**iOCUR**.com](https://iocur.com).
+Build <img src="img/island.png" style="width:40px;height:40px;" /> [**UR**.Land map](https://ur.land) with the [🪨](https://xn--g19h.ws) [**OCUR**.app](https://ocur.app), see **tutorial** at [**iOCUR**.com](https://iocur.com).
 
 <p align="center"><img src="img/par.png" style="width:120px;height:120px;" /><img src="img/wash.png" style="width:120px;height:120px;" /><img src="img/sphinx.png" style="width:120px;height:120px;" /><img src="img/charm.png" style="width:120px;height:120px;" /></p>
 
