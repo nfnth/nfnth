@@ -1,7 +1,7 @@
 
 ### [🥚](https://xn--wr9h.ws) [nf/nth](https://nfnth.com) (new foundations)
 
-Build **map** on [**UR**.Land](https://ur.land) and post **content** with the [**OCUR**.app](https://ocur.app). To begin, run the **tutorial** at [**iOCUR**.com](https://iocur.com).
+Build a **map** on [**UR**.Land](https://ur.land) and post **content** with the [**OCUR**.app](https://ocur.app). To begin, see the **tutorial** at [**iOCUR**.com](https://iocur.com).
 
 <img src="img/field.gif" style="width:240px;height:120px;" />
 
