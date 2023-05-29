@@ -9,4 +9,6 @@ Visit [UR.Land](https://ur.land) to build maps, then post content with the [**OC
 
 Explore *deed domain* at [Open Sea](https://opensea.io/urland) and trade the [**OCUR** map token](https://ocur.io) on [Uniswap]() and/or [SushiSwap]().
 
+<img src="img/uniswap.png" style="width:120px;height:60px;" />
+
 To *run print ads*, use the [**1950** app](https://1950.app), to *display digital ads*, become a [**GitHub** sponsor](https://github.com/sponsors/nfnth).
