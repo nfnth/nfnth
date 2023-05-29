@@ -19,10 +19,10 @@ Install the <img src="img/meta.png" style="width:40px;height:40px;" /> [**MetaMa
 
 To display **ads**, select either,
 
-- For **print** and/or **digital**, use the [**1950**.app](https://1950.app)
+- For **print** and/or **digital**, use the <img src="res/img/seal3.png" style="width:32px;height:32px;" /> [**1950**.app](https://1950.app)
 - For **digital only**, become a [**GitHub** sponsor](https://github.com/sponsors/nfnth)
 
-<img src="res/img/seal3.png" style="width:32px;height:32px;" />
+<img src="res/img/leaf/leaf1.png" style="width:60px;height:60px;" /><img src="res/img/leaf/leaf2.png" style="width:60px;height:60px;" /><img src="res/img/leaf/leaf3.png" style="width:60px;height:60px;" /><img src="res/img/leaf/leaf4.png" style="width:60px;height:60px;" />
 
 <br/>
 
@@ -31,8 +31,6 @@ To display **ads**, select either,
 <img src="img/field.gif" style="width:240px;height:120px;" />
 
 ... headquartered in the **Wedge**, diagonal to **Woodin** elementary
-
-<img src="res/img/leaf/leaf1.png" style="width:60px;height:60px;" /><img src="res/img/leaf/leaf2.png" style="width:60px;height:60px;" /><img src="res/img/leaf/leaf3.png" style="width:60px;height:60px;" /><img src="res/img/leaf/leaf4.png" style="width:60px;height:60px;" />
 
 <br/>
 
