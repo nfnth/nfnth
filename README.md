@@ -6,9 +6,7 @@
 
 <br/>
 
-#### Shop
-
-To shop items,
+#### Items
 
 - **physical** - go to [**nfnth**.com](https://nfnth.com) and select the top-right <img src="res/img/leaf/leaf2.png" style="width:40px;height:40px;" /> icon
 - **digital** - go to <img src="img/opensea.png" style="width:40px;height:40px;" /> [OpenSea](https://opensea.io/urland)
