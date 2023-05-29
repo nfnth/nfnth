@@ -3,11 +3,11 @@
 
 <img src="img/field.gif" style="width:240px;height:120px;" />
 
-Visit [UR.Land](https://ur.land) to build maps, then post content with the [**OCUR** app](https://ocur.app).
+Use [**UR.Land**](https://ur.land) to build maps and post content with the [**OCUR** app](https://ocur.app).
 
-Explore *deed domain* at <img src="img/opensea.png" style="width:80px;height:80px;" /> [Open Sea](https://opensea.io/urland)
+Explore *deed domain* on <img src="img/opensea.png" style="width:60px;height:60px;" /> [Open Sea](https://opensea.io/urland)
 
-Trade the [**OCUR** map token](https://ocur.io) with <img src="img/meta.png" style="width:60px;height:60px;" /> MetaMask on <img src="img/uniswap.png" style="width:80px;height:80px;" /> [Uniswap]() and/or <img src="img/sushi.png" style="width:80px;height:80px;" /> [SushiSwap]().
+Trade the [**OCUR** map token](https://ocur.io) with <img src="img/meta.png" style="width:40px;height:40px;" /> MetaMask on <img src="img/uniswap.png" style="width:40px;height:40px;" /> [Uniswap]() and/or <img src="img/sushi.png" style="width:40px;height:40px;" /> [SushiSwap]().
 
 Licensed as [**NfNth Corp**](https://secure.dor.wa.gov/) in the State of Washington, [19500 130th AV NE, Woodinville, WA 98072](https://blue.kingcounty.com/Assessor/eRealProperty/Dashboard.aspx?ParcelNbr=1428900123) 
 
