@@ -1,7 +1,5 @@
 ### [🥚](https://xn--wr9h.ws) [**nf/nth**](https://nfnth.com) *new foundations*
 
-<img src="img/field.gif" style="width:240px;height:120px;" />
-
 ... is a privately-held company, located in **Seattle, Washington** at [19500 130th AV NE, Woodinville, WA 98072](https://blue.kingcounty.com/Assessor/eRealProperty/Dashboard.aspx?ParcelNbr=1428900123) in the **Wedge**, diagonal to **Woodin** elementary, view the [**Wellfound** profile](https://wellfound.com/u/urland).
 
 <br/>
@@ -12,6 +10,8 @@ To buy ads,
 - **digital only** - become a [**GitHub** sponsor](https://github.com/sponsors/nfnth)
 
 <br/>
+
+<img src="img/field.gif" style="width:240px;height:120px;" />
 
 #### Projects
 
