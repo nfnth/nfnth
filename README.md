@@ -3,11 +3,11 @@
 
 <br/>
 
-Build <img src="img/island.png" style="width:40px;height:40px;" /> [**UR**.Land map](https://ur.land) with the [🪨](https://xn--g19h.ws) [**OCUR**.app](https://ocur.app), see **tutorial** at [**iOCUR**.com](https://iocur.com).
+Build <img src="img/island.png" style="width:40px;height:40px;" /> [**UR**.Land map](https://ur.land) with the [🪨](https://xn--g19h.ws) [**OCUR**.app](https://ocur.app), view guided tutorial at [**iOCUR**.com](https://iocur.com).
 
 <p align="center"><img src="img/par.png" style="width:120px;height:120px;" /><img src="img/wash.png" style="width:120px;height:120px;" /><img src="img/sphinx.png" style="width:120px;height:120px;" /><img src="img/charm.png" style="width:120px;height:120px;" /></p>
 
-Hold <img src="img/opensea.png" style="width:40px;height:40px;" /> [**OpenSea** deed domain](https://opensea.io/urland) to increase your **profile** rank.
+Hold <img src="img/opensea.png" style="width:40px;height:40px;" /> [**OpenSea** deed domain](https://opensea.io/urland) to keep virtual space.
 
 <p align="center"><img src="res/img/key/red.png" style="width:80px;height:80px;" /><img src="res/img/key/yellow.png" style="width:80px;height:80px;" /><img src="res/img/key/green.png" style="width:80px;height:80px;" /><img src="res/img/key/blue.png" style="width:80px;height:80px;" /></p>
 
@@ -17,7 +17,7 @@ Install <img src="img/meta.png" style="width:40px;height:40px;" /> [**MetaMask**
 
 <br/>
 
-To buy **ads**,
+To buy ads,
 
 - **print** and/or **digital** - open the <img src="res/img/seal3.png" style="width:32px;height:32px;" /> [**1950**.app](https://1950.app)
 - **digital only** - become a [**GitHub** sponsor](https://github.com/sponsors/nfnth)
@@ -32,10 +32,10 @@ To buy **ads**,
 
 ... headquarters at [19500 130th AV NE, Woodinville, WA 98072](https://blue.kingcounty.com/Assessor/eRealProperty/Dashboard.aspx?ParcelNbr=1428900123) in the **Wedge**, diagonal to **Woodin** elementary, view the [**Wellfound** profile](https://wellfound.com/u/urland).
 
-### Sponsors
+#### Sponsors
 
 No sponsors yet, become a [**GitHub** sponsor](https://github.com/sponsors/nfnth) now.
 
-### Coming soon
+#### Coming soon
 
 Play <img src="res/img/card/club.png" style="width:40px;height:40px;" /><img src="res/img/card/diamond.png" style="width:40px;height:40px;" /><img src="res/img/card/heart.png" style="width:40px;height:40px;" /><img src="res/img/card/spade.png" style="width:40px;height:40px;" /> [**Dralun**.com](https://dralun.com), a Western-themed card game.
