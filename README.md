@@ -20,7 +20,7 @@ To display **ads**, select either,
 - For **print** and/or **digital**, use the [**1950**.app](https://1950.app)
 - For **digital only**, become a [**GitHub** sponsor](https://github.com/sponsors/nfnth)
 
-<p align="center"><img src="res/img/leaf/leaf1.png" style="width:60px;height:60px;" /><img src="res/img/leaf/leaf2.png" style="width:60px;height:60px;" /><img src="res/img/leaf/leaf3.png" style="width:60px;height:60px;" /><img src="res/img/leaf/leaf4.png" style="width:60px;height:60px;" /></p>
+<p align="center"><img src="res/img/gear/gear5.png" style="width:60px;height:60px;" /><img src="res/img/gear/gear6.png" style="width:60px;height:60px;" /><img src="res/img/gear/gear7.png" style="width:60px;height:60px;" /><img src="res/img/gear/gear8.png" style="width:60px;height:60px;" /></p>
 
 [**nf/nth**](https://nfnth.com) is a privately-held company, located in Washington state, at [19500 130th AV NE, Woodinville, WA 98072](https://blue.kingcounty.com/Assessor/eRealProperty/Dashboard.aspx?ParcelNbr=1428900123) 
 
@@ -28,6 +28,8 @@ To display **ads**, select either,
 
 ... headquartered in the **Wedge**, diagonal to **Woodin** elementary
 
+<p align="center"><img src="res/img/leaf/leaf1.png" style="width:60px;height:60px;" /><img src="res/img/leaf/leaf2.png" style="width:60px;height:60px;" /><img src="res/img/leaf/leaf3.png" style="width:60px;height:60px;" /><img src="res/img/leaf/leaf4.png" style="width:60px;height:60px;" /></p>
+
 View founder's profile at [**Wellfound**](https://wellfound.com/u/urland).
 
-<p align="center"><img src="res/img/card/club.png" style="width:60px;height:60px;" /><img src="res/img/card/diamond.png" style="width:60px;height:60px;" /><img src="res/img/card/heart.png" style="width:60px;height:60px;" /><img src="res/img/card/spade.png" style="width:60px;height:60px;" /></p>
+<img src="res/img/card/club.png" style="width:60px;height:60px;" /><img src="res/img/card/diamond.png" style="width:60px;height:60px;" /><img src="res/img/card/heart.png" style="width:60px;height:60px;" /><img src="res/img/card/spade.png" style="width:60px;height:60px;" />
