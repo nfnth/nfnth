@@ -13,10 +13,10 @@ Use a <img src="img/meta.png" style="width:40px;height:40px;" /> [**MetaMask** w
 
 <br/>
 
-For ads, select either,
+For ads, choose either,
 
 - To run print, use the [**1950**.app](https://1950.app)
-- To display digital, become a [**GitHub** sponsor](https://github.com/sponsors/nfnth).
+- To display digital, become a [**GitHub** sponsor](https://github.com/sponsors/nfnth)
 
 <br/>
 
