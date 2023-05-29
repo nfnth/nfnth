@@ -26,12 +26,12 @@ Install <img src="img/meta.png" style="width:40px;height:40px;" /> [**MetaMask**
 
 - **physical** 
   - go to [**nfnth**.com](https://nfnth.com) and select <img src="res/img/leaf/leaf2.png" style="width:40px;height:40px;" /> (*top-right*)
-- **virtual** 
+- **digital** 
   - go to [**nfnth**.com](https://nfnth.com) and select <img src="res/img/seal3.png" style="width:40px;height:40px;" /> (*top-left*)
   - visit <img src="img/opensea.png" style="width:40px;height:40px;" /> [OpenSea](https://opensea.io/urland)
 - **ads**
-  - **print** and/or **digital** - open the <img src="res/img/leaf/leaf1.png" style="width:40px;height:40px;" /> [**1950**.app](https://1950.app)
-  - **digital only** - become a [**GitHub** sponsor](https://github.com/sponsors/nfnth)
+  - **print** and/or **brand** - open the <img src="res/img/leaf/leaf1.png" style="width:40px;height:40px;" /> [**1950**.app](https://1950.app)
+  - **brand only** - become a [**GitHub** sponsor](https://github.com/sponsors/nfnth)
 
 <br/>
 
