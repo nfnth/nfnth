@@ -5,11 +5,11 @@ Licensed as [**NfNth Corp**](https://secure.dor.wa.gov/) in the State of Washing
 
 ... located in the **Wedge**, diagonal to **Woodin** elementary
 
-<div style="width:100%;display:flex;align-items:center;justify-content:center;"><img src="img/field.gif" style="width:240px;height:120px;" /></div>
+<div style="width:100%;display:flex;align-items:center;justify-content:center;text-align:center;"><img src="img/field.gif" style="width:240px;height:120px;" /></div>
 
 Visit [UR.Land](https://ur.land) to build maps, then post content with the [**OCUR** app](https://ocur.app).
 
-Tested  with <img src="img/meta.png" style="width:600px;height:60px;" />
+Tested  with <img src="img/meta.png" style="width:60px;height:60px;" />
 
 Explore *deed domain* at [Open Sea](https://opensea.io/urland) and trade the [**OCUR** map token](https://ocur.io) on [Uniswap]() and/or [SushiSwap]().
 
