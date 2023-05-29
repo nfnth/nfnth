@@ -11,7 +11,7 @@ Hold an <img src="img/opensea.png" style="width:40px;height:40px;" /> [**OpenSea
 
 Install the <img src="img/meta.png" style="width:40px;height:40px;" /> [**MetaMask** wallet](https://metamask.io) to **trade** the [**OCUR**.io token](https://ocur.io), now available on <img src="img/uniswap.png" style="width:40px;height:40px;" /> [**Uniswap**](https://app.uniswap.org/#/tokens/ethereum/0xccab679860b1017589239bceeeabe5cd45965afc) and/or <img src="img/sushi.png" style="width:40px;height:40px;" /> [**SushiSwap**](https://www.sushi.com/swap).
 
-<br/>
+<p align="center"><img src="res/img/leaf/leaf1.png" style="width:60px;height:60px;" /><img src="res/img/leaf/leaf2.png" style="width:60px;height:60px;" /><img src="res/img/leaf/leaf3.png" style="width:60px;height:60px;" /><img src="res/img/leaf/leaf4.png" style="width:60px;height:60px;" /></p>
 
 To display **ads**, select either,
 
