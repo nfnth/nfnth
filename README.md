@@ -29,7 +29,7 @@ Install <img src="img/meta.png" style="width:40px;height:40px;" /> [**MetaMask**
 - **digital** 
   - go to [**nfnth**.com](https://nfnth.com) and select <img src="res/img/seal3.png" style="width:40px;height:40px;" /> (*top-left*)
   - visit <img src="img/opensea.png" style="width:40px;height:40px;" /> [OpenSea](https://opensea.io/urland)
-- **advertisement**
+- **ad**
   - open the <img src="res/img/leaf/leaf1.png" style="width:40px;height:40px;" /> [**1950**.app](https://1950.app) (*print and/or brand*)
   - become a [**GitHub** sponsor](https://github.com/sponsors/nfnth) (*brand only*)
 
