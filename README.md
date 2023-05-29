@@ -3,6 +3,8 @@
 
 Build a <img src="img/island.png" style="width:40px;height:40px;" /> [**UR**.Land map](https://ur.land) and post **content** to [**OCUR**.app](https://ocur.app), see the **tutorial** at [**iOCUR**.com](https://iocur.com).
 
+<img src="img/par.png" style="width:120px;height:120px;" />
+
 Hold an <img src="img/opensea.png" style="width:40px;height:40px;" /> [**OpenSea** deed domain](https://opensea.io/urland) to increase **profile** rank.
 
 Install the <img src="img/meta.png" style="width:40px;height:40px;" /> [**MetaMask** wallet](https://metamask.io) to **trade** the [**OCUR**.io token](https://ocur.io), now available on <img src="img/uniswap.png" style="width:40px;height:40px;" /> [**Uniswap**](https://app.uniswap.org/#/tokens/ethereum/0xccab679860b1017589239bceeeabe5cd45965afc) and/or <img src="img/sushi.png" style="width:40px;height:40px;" /> [**SushiSwap**](https://www.sushi.com/swap).
