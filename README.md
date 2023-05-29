@@ -3,7 +3,7 @@
 
 Build a **map** on [**UR**.Land](https://ur.land) and post **content** with the [**OCUR**.app](https://ocur.app). To begin, see the **tutorial** at [**iOCUR**.com](https://iocur.com).
 
-<img src="img/field.gif" style="width:240px;height:120px;" />
+<img src="img/island.png" style="width:48px;height:48px;" />
 
 Hold an <img src="img/opensea.png" style="width:40px;height:40px;" /> [**OpenSea** deed domain](https://opensea.io/urland) to increase **profile** rank.
 
