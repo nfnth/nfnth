@@ -12,12 +12,8 @@
 
 <!-- resources -->
 <script src="res/app/all.js"></script><link rel="stylesheet" href="res/app/all.css"></script>
-<script src="res/app/md.js"></script><script src="res/app/open.js"></script><script src="res/app/wallet.js"></script><script src="res/app/map.js"></script><script src="res/app/ui.js"></script><script src="res/app/card.js"></script><script src="https://cdn.jsdelivr.net/gh/ushelp/EasyQRCodeJS/dist/easy.qrcode.min.js" ></script><script id="search-js" defer src="https://api.mapbox.com/search-js/v1.0.0-beta.13/web.js"></script><script src="https://pixijs.download/release/pixi.js"></script><script src="https://pixijs.download/v6.x/packages/assets.js"></script>
-	<script src="https://js.stripe.com/v3"></script>
-	<script src="https://pixijs.io/gif/dist/pixi-gif.js""></script>
-
-	
-	</head>
+<script src="res/app/md.js"></script><script src="res/app/open.js"></script><script src="res/app/ui.js"></script><script src="res/app/card.js"></script>
+<script src="https://js.stripe.com/v3"></script></head>
 
 <body style="overflow:overlay; background-color:whitesmoke;transition: background-color 1s linear;" >
 
@@ -26,7 +22,7 @@
 	<div id="panel-menu" class="nav-wrapper header z-depth-1 grey lighten-5" style="padding-top:0px!important; padding-bottom:0px!important; display:flex; justify-content: left; color:black; border-bottom: solid 1px gainsboro;">
     		<div style="height:103%;border-bottom:solid 2px darkred;" class="z-depth-1"><a id="menu-deed" style="cursor:pointer; color:darkslategrey; opacity:0.7; background-color:ghostwhite; display: flex; align-items: center; height: 100%; padding-right: 10px;font-weight: bold;font-size: 20px; -webkit-transition: background-color 300ms linear, color 300ms linear;-moz-transition: background-color 300ms linear, color 300ms linear;-o-transition: background-color 300ms linear, color 300ms linear;-ms-transition: background-color 300ms linear, color 300ms linear;transition: background-color 300ms linear, color 300ms linear;"><i id="bars" class="material-icons" style="padding-left:16px;" onclick="showList('open');$('#deed-pane').sidenav('open');">menu</i><div id="waiter" style="height:48px; width:48px; cursor: pointer; margin-left: 12px;" onclick="showList('open');$('#deed-pane').sidenav('open');"><img id="list-wait" class="image" src="res/img/seal3.png" width="48" /></div></a></div>
     		
-    		<div class="containerx yellowx" style="background-color: goldenrod;"><span id="connor" class="button setter">📜</span>
+    		<div class="containerx yellowx" style="background-color: goldenrod;"><span id="connor" class="button setter">🥚</span>
 			  <div class="contentx">
 				<div class="head" style="display: flex;align-items: center;justify-content: center;"><a id="signer" style="width:160px; display: flex;justify-content: space-between;" class="mobile-width waves-effect waves-light amber lighten-1 btn" onclick="setup();"><span>Connect</span>🪙</a></div>
 				<div class="body" style="text-align:center;">
@@ -484,13 +480,7 @@ $('.block').on('mouseleave', function(e) {mouse.X   = mouse.CX;mouse.Y   = mouse
       cSlide.addClass('active');cSlide.next().addClass('next');cSlide.prev().addClass('prev');  setTimeout(function() { setCard(1); }, 1000); } else { var cSlide = $('.slider #slide-1'); switcher = true; 
       cSlide.addClass('active');cSlide.next().addClass('next');cSlide.prev().addClass('prev');  setTimeout(function() { setCard(0); }, 1000); } }
 
-var map; var map_style = ['satellite-streets-v11', 'light-v10', 'dark-v10']; var zoom = 5; var base = [-101.69697959674477, 35.77108807140884];
-mapboxgl.accessToken = "pk.eyJ1IjoibmZudGgiLCJhIjoiY2tweW1rNXlsMGFpYzJwcGt1cHh6dmxzcyJ9.ZJaFrGpPDv5froWZMLXXYQ";
-map = new mapboxgl.Map({container: 'map', style: 'mapbox://styles/mapbox/' + map_style[0], center: base, zoom: zoom, buffer_size: 0.2 }); //pitch: 85,bearing: 80,zoom: 13, buffer_size: 0.2});
 	
-function searcher(i) {  $("#loc-template").formSelect(); mapboxsearch.autofill({
-accessToken: 'pk.eyJ1IjoibmZudGgiLCJhIjoiY2tweW1rNXlsMGFpYzJwcGt1cHh6dmxzcyJ9.ZJaFrGpPDv5froWZMLXXYQ'
-});		  $('#modal4').modal('open'); }
 var coordinates; var artFlag = false; var tempMark = ""; var tempMap = [];
 map.on('load', function (event) { 		 
 	map.on('click', function(e) { coordinates = e.lngLat; if(artFlag) { addArt(); artFlag = false; } }); });
@@ -500,133 +490,7 @@ $('.setter').click(function () {
 
 if ($(window).width() < 700) { $('.material-icons').removeClass('left'); }
 
-	// Create the application helper and add its render target to the page
-let app = new PIXI.Application({ width: 640, height: 640 });
 
-var renderer = PIXI.autoDetectRenderer(800, 600, { transparent: true });
-
-document.getElementById('gamer').appendChild(app.view);
-PIXI.Loader.registerPlugin(PIXI.gif.AnimatedGIFLoader);
- const loader = new PIXI.Loader();
- 
-	//loader.registerPlugin(AnimatedGIFLoader);
- loader.add('myFile', 'res/img/runx.gif');
- loader.load((loader, resources) => {
-    const gif = resources.myFile.animation;
-    gif.scale.set(0.2);
-    app.stage.addChild(gif);
- });
-	
-// Add the assets to load
-//Loader.registerPlugin(AnimatedGIFLoader);
-
-
-	/*
-PIXI.Assets.add('deer', 'res/img/runx.gif');
-PIXI.Assets.add('explode', 'res/img/explodex.gif');
-
-// Allow the assets to load in the background
-//PIXI.Assets.backgroundLoad(['deer', 'explode']);
-
-
-// If the background load hasn't loaded this asset yet, calling load forces this asset to load now.
-PIXI.Assets.load('deer').then((texture) => {
-    // auxiliar flag for toggling the texture
-    let bol = true;
-
-    // create a new Sprite from the resolved loaded texture
-    const dude = new PIXI.Sprite(texture);
-    dude.anchor.set(0.5);
-    dude.x = app.screen.width / 2;
-    dude.y = app.screen.height / 2;
-    app.stage.addChild(dude);
-
-    dude.interactive = true;
-    dude.buttonMode = true;
-
-    dude.on('pointertap', async () => {
-        bol = !bol;
-
-        // These promise are already resolved in the cache.
-        if (bol) {
-            dude.texture = await PIXI.Assets.load('deer');
-        } else {
-            dude.texture = await PIXI.Assets.load('explode');
-        }
-    });
-});
-*/
-	
-/*
-
-// Create window frame
-let frame = new PIXI.Graphics();
-frame.beginFill(0x666666);
-frame.lineStyle({ color: 0xffffff, width: 4, alignment: 0 });
-frame.drawRect(0, 0, 208, 208);
-frame.position.set(320 - 100, 180 - 100);
-//app.stage.addChild(frame);
-
-// Create a graphics object to define our mask
-let mask = new PIXI.Graphics();
-// Add the rectangular area to show
-mask.beginFill(0xffffff);
-mask.drawRect(0,0,200,200);
-mask.endFill();
-
-// Add container that will hold our masked content
-let maskContainer = new PIXI.Container();
-// Set the mask to use our graphics object from above
-maskContainer.mask = mask;
-// Add the mask as a child, so that the mask is positioned relative to its parent
-maskContainer.addChild(mask);
-// Offset by the window's frame width
-maskContainer.position.set(4,4);
-// And add the container to the window!
-frame.addChild(maskContainer);
-
-const texture = PIXI.Texture.from('res/img/game/char/a_idle.gif');
-
-for (let i = 0; i < 25; i++) {
-    const bunny = new PIXI.Sprite(texture);
-    bunny.x = (i % 5) * 30;
-    bunny.y = Math.floor(i / 5) * 30;
-    bunny.rotation = Math.random() * (Math.PI * 2);
-    maskContainer.addChild(bunny);
-}
-	// set speed, start playback and add it to the stage
-
-		
-		// configure + start animation:
-//anim.updateAnchor = true;     // update anchor for each animation frame
-//animatedCapguy.play();
-
-const brt = new PIXI.BaseRenderTexture(300, 300, PIXI.SCALE_MODES.LINEAR, 1);
-const rt = new PIXI.RenderTexture(brt);
-
-const sprite = new PIXI.Sprite(rt);
-
-sprite.x = 450;
-sprite.y = 60;
-//app.stage.addChild(sprite);
-	
-	// Generate all the Textures asynchronously
-spritesheet.parse(() => {
-	// spritesheet is ready to use!
-	const anim = new PIXI.AnimatedSprite(spritesheet.animations.enemy);
-	anim.animationSpeed = 0.167; 
-anim.play();
-//app.stage.addChild(anim);
-});
-
-// Add a ticker callback to scroll the text up and down
-let elapsed = 0.0;
-app.ticker.add((delta) => {
-  // Update the text's y coordinate to scroll it
-  elapsed += delta;
-  //text.y = 10 + -100.0 + Math.cos(elapsed/50.0) * 100.0;
-});
-*/
 </script>
 <style>
 .quick { background-color: beige; border:1px solid whitesmoke; padding: 12px; border-radius: 50%; margin: 12px;     width: 24px;height: 24px;display: flex;justify-content: center;  align-items: center;}
