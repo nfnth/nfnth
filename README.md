@@ -4,9 +4,14 @@
 
 <img src="img/field.gif" style="width:240px;height:120px;" />
 
+<br/>
+
+#### Features
+
 To shop items,
 
-- **lighters** - go to [**nfnth**.com](https://nfnth.com) and select the top-right <img src="res/img/leaf/leaf2.png" style="width:40px;height:40px;" /> icon
+- **physical** - go to [**nfnth**.com](https://nfnth.com) and select the top-right <img src="res/img/leaf/leaf2.png" style="width:40px;height:40px;" /> icon
+- **digital** - go to <img src="img/opensea.png" style="width:40px;height:40px;" /> [OpenSea](https://opensea.io/urland)
 
 <br/>
 
