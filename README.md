@@ -6,19 +6,15 @@
 
 <br/>
 
-#### Features
+#### Shop
 
 To shop items,
 
 - **physical** - go to [**nfnth**.com](https://nfnth.com) and select the top-right <img src="res/img/leaf/leaf2.png" style="width:40px;height:40px;" /> icon
 - **digital** - go to <img src="img/opensea.png" style="width:40px;height:40px;" /> [OpenSea](https://opensea.io/urland)
-
-<br/>
-
-To buy ads,
-
-- **print** and/or **digital** - open the <img src="res/img/leaf/leaf1.png" style="width:40px;height:40px;" /> [**1950**.app](https://1950.app)
-- **digital only** - become a [**GitHub** sponsor](https://github.com/sponsors/nfnth)
+- **ads**
+  - **print** and/or **digital** - open the <img src="res/img/leaf/leaf1.png" style="width:40px;height:40px;" /> [**1950**.app](https://1950.app)
+  - **digital only** - become a [**GitHub** sponsor](https://github.com/sponsors/nfnth)
 
 <br/>
 
