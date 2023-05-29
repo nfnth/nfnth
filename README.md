@@ -3,7 +3,7 @@
 
 <br/>
 
-Build a <img src="img/island.png" style="width:40px;height:40px;" /> [**UR**.Land map](https://ur.land) to post content with the [**OCUR**.app](https://ocur.app), see **tutorial** at [**iOCUR**.com](https://iocur.com).
+Build a <img src="img/island.png" style="width:40px;height:40px;" /> [**UR**.Land map](https://ur.land) with the [**OCUR**.app](https://ocur.app), see **tutorial** at [**iOCUR**.com](https://iocur.com).
 
 <p align="center"><img src="img/par.png" style="width:120px;height:120px;" /><img src="img/wash.png" style="width:120px;height:120px;" /><img src="img/sphinx.png" style="width:120px;height:120px;" /><img src="img/charm.png" style="width:120px;height:120px;" /></p>
 
@@ -34,8 +34,12 @@ To buy **ads**,
 
 <br/>
 
-View the <img src="res/img/card/club.png" style="width:40px;height:40px;" /><img src="res/img/card/diamond.png" style="width:40px;height:40px;" /><img src="res/img/card/heart.png" style="width:40px;height:40px;" /><img src="res/img/card/spade.png" style="width:40px;height:40px;" /> [**Wellfound** profile](https://wellfound.com/u/urland).
+View the [**Wellfound** profile](https://wellfound.com/u/urland).
 
 ### Sponsors
 
 No sponsors yet, become a [**GitHub** sponsor](https://github.com/sponsors/nfnth) now.
+
+### Coming soon
+
+Play <img src="res/img/card/club.png" style="width:40px;height:40px;" /><img src="res/img/card/diamond.png" style="width:40px;height:40px;" /><img src="res/img/card/heart.png" style="width:40px;height:40px;" /><img src="res/img/card/spade.png" style="width:40px;height:40px;" /> [**Dralun**.com](https://dralun.com), a Western-themed card game.
