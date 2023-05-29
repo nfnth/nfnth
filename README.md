@@ -24,9 +24,9 @@ Install <img src="img/meta.png" style="width:40px;height:40px;" /> [**MetaMask**
 
 #### Items
 
-- **physical** - go to [**nfnth**.com](https://nfnth.com) and select the top-right <img src="res/img/leaf/leaf2.png" style="width:40px;height:40px;" /> icon
-- **digital** 
-  - go to [**nfnth**.com](https://nfnth.com) and select the top-left <img src="res/img/seal3.png" style="width:40px;height:40px;" /> icon
+- **physical** - go to [**nfnth**.com](https://nfnth.com) and select <img src="res/img/leaf/leaf2.png" style="width:40px;height:40px;" /> (*top-right*)
+- **virtual** 
+  - go to [**nfnth**.com](https://nfnth.com) and select <img src="res/img/seal3.png" style="width:40px;height:40px;" /> (*top-left*)
   - visit <img src="img/opensea.png" style="width:40px;height:40px;" /> [OpenSea](https://opensea.io/urland)
 - **ads**
   - **print** and/or **digital** - open the <img src="res/img/leaf/leaf1.png" style="width:40px;height:40px;" /> [**1950**.app](https://1950.app)
