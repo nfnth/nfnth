@@ -13,9 +13,9 @@ Use the <img src="img/meta.png" style="width:40px;height:40px;" /> [**MetaMask**
 
 <br/>
 
+- To run print ads, use the [**1950**.app](https://1950.app)
+- To display digital ads, become a [**GitHub** sponsor](https://github.com/sponsors/nfnth).
+
 Licensed as [**NfNth Corp**](https://secure.dor.wa.gov/) in the State of Washington, at [19500 130th AV NE, Woodinville, WA 98072](https://blue.kingcounty.com/Assessor/eRealProperty/Dashboard.aspx?ParcelNbr=1428900123) 
 
 ... located in the **Wedge**, diagonal to **Woodin** elementary
-
-- To run print ads, use the [**1950**.app](https://1950.app)
-- To display digital ads, become a [**GitHub** sponsor](https://github.com/sponsors/nfnth).
