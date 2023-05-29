@@ -37,10 +37,7 @@
 						
 						<li style="display:flex;justify-content:center;padding:12px;padding-top:4px;"><a id="matter" onclick="showView('lister'); document.getElementById('connor').click();" style="width:160px; display: flex;justify-content: space-between;margin-top:8px;" class="mobile-width waves-effect waves-light red lighten-1 btn disabled"><span>POST</span>📮</a></li>
 						<li style="display:flex;justify-content:center;padding:12px;"><a id="builder"  style="width:160px; display: flex;justify-content: space-between;" class="mobile-width waves-effect waves-light blue lighten-1 btn disabled" onclick="showView('mapper'); document.getElementById('connor').click();"><span>BUILD</span>🔧</a></li>
-						<li style="display:flex;justify-content:center;padding:12px;"><a id="trader" onclick="showView('lister');document.getElementById('connor').click();" style="width:160px; display: flex;justify-content: space-between;" class="mobile-width waves-effect waves-light green lighten-1 btn disabled" ><span>TRADE</span>📦</a></li>
-						
-						
-						<!--<i class="material-icons left">calculate</i>--></ul></div></div></div>
+						<li style="display:flex;justify-content:center;padding:12px;"><a id="trader" onclick="showView('lister');document.getElementById('connor').click();" style="width:160px; display: flex;justify-content: space-between;" class="mobile-width waves-effect waves-light green lighten-1 btn disabled" ><span>TRADE</span>📦</a></li></ul></div></div></div>
     		
 		<div style="width:64px;margin-left:16px;"><a><div style="width:64px;"><img class="image image-rotate gear-image" id="gear-pic" onclick="gearSwitch = 0; gearBox(); $('#modal2').modal('open');" style="opacity:0.6; height: 48px;position:absolute; margin: 4px; cursor:pointer;right:12px;top:4px;" /><img id="gear-pic2" class="image image-rotate gear-image" style="opacity:0.6; height: 48px;position:absolute;cursor:pointer;margin:4px;right:12px;top:4px;" onclick="gearSwitch = 0; gearBox(); $('#modal2').modal('open');" /></div></a></div></div></nav>
 		
@@ -70,10 +67,7 @@
 						
 						<li><a onclick="showLoc();" class="waves-effect" style="display:flex;justify-items:center;margin-top:12px;"><div id="set-2" class="quick hoverable z-depth-1">📍</div>Use Location</a></li>
 						<li><a onclick="showNfNth();" class="waves-effect" style="display:flex;justify-items:center;"><div id="set-3" class="quickg hoverable z-depth-1">🎁</div>Shop Items</a></li>
-					<li><a onclick="showCard(); runCards();" class="waves-effect" style="display:flex;justify-items:center;"> <div id="set-4" class="quickb hoverable z-depth-1">🃏</div>Play Cards</a></li>
-						
-						
-					</ul></p></div></div></div></div></li>
+					<li><a onclick="showCard(); runCards();" class="waves-effect" style="display:flex;justify-items:center;"> <div id="set-4" class="quickb hoverable z-depth-1">🃏</div>Play Cards</a></li></ul></p></div></div></div></div></li>
 				
 	<!-- tabs -->
 	<li style="height:100%;"><ul id="token-tabs" class="tabs tabs-fixed-width z-depth-1 deed">
@@ -117,7 +111,6 @@
 <!-- dialog -->
 <div id="modal1" class="modal bottom-sheet content loader"><div id="domain-info" class="modal-content grey lighten-4" style="box-shadow: 1px 18px 24px 1px inset cornsilk" ></div></div>
 
-
 <div id="modal2" class="modal">
     <div class="modal-content">
 	    <div style="display:flex;align-items:center;justify-content:center;"><img src="res/img/seal3.png" style="height:48px;width:48px;" /><p>OCUR Console</p></div></div>
@@ -126,44 +119,6 @@
 		<a href="#!" class="modal-close waves-effect waves-light btn amber" style="width:120px; display: flex; justify-content: space-between;" onclick="showView('slider');">🃏<span class="hide-on-med-and-down">&nbsp;&nbsp;Deck</span></a>
 		<a href="#!" class="modal-close waves-effect waves-light btn green" style="width:120px; display: flex; justify-content: space-between;" onclick="showView('lister');">🗒️<span class="hide-on-med-and-down">&nbsp;&nbsp;Notepad</span></a>
 		<a href="#!" class="modal-close waves-effect waves-light blue btn" style="width:120px; display: flex; justify-content: space-between;" onclick="showView('mapper');">🗺️<span class="hide-on-med-and-down">&nbsp;&nbsp;Map</span></a></div></div>
-
-<div id="modal3" class="modal">
-    <div class="modal-content"><p>Deposit OCUR to your Local OCUR ("LOCUR") account to post notes.</p>
-    
-    
-     <a class="waves-effect" style="display:flex;padding-left:12px;align-items:center;color:black;"><div id="set-0" class="quickx z-depth-1">🟢</div>100 OCUR</a>
-	    <a class="waves-effect" style="display:flex;padding-left:12px;align-items:center;color:black;"><div id="set-0" class="quickx z-depth-1">🟡</div>500 OCUR</a>
-	    <a class="waves-effect" style="display:flex;padding-left:12px;align-items:center;color:black;"><div id="set-0" class="quickx z-depth-1">🔴</div>1000 OCUR</a>
-    
-    
-    </div>
-	<div class="modal-footer" style="margin-bottom:12px;padding-right:24px;">
-		<a href="#!" class="modal-close waves-effect waves-green btn-flat">🗑️</a>&nbsp;&nbsp;&nbsp;&nbsp;
-		<a onclick="trade()" class="modal-close waves-effect waves-green green lighten-2 btn">Deposit&nbsp;&nbsp;💵</a></div></div>
-		
-<div id="modal4" class="modal">
-    <div class="modal-content">
-    <div id="header-logo" style="display: flex;justify-content: space-evenly;align-items: center; display: flex;margin-top:8px;margin-bottom:8px;flex-direction:column;">
-	   <!--  <p style="display:flex;">
-      <label>
-        <input type="checkbox" class="filled-in" checked="checked" />
-	      <span >🏠</span><span class="hide-on-med-and-down" style="padding-bottom: 5px;display: flex;align-items: center;">&nbsp;&nbsp;Set Address Profile</span>
-      </label>
-		  &nbsp;&nbsp;&nbsp;&nbsp;   <label>
-        <input id="manualAddress" type="checkbox" class="filled-in" onclick="locSelect();"/>
-        <span style="padding-bottom: 5px;display: flex;align-items: center;">📝&nbsp;&nbsp;Use Manual Address</span>
-      </label>
-    </p>-->
-	    <form>
-		    <input class="inputDisabled" name="name" placeholder="Name" type="text" />
-		    <input class="inputDisabled" name="address" placeholder="Address" type="text" autocomplete="address-line1"/><input  class="inputDisabled" name="apartment" placeholder="Apartment number" type="text" autocomplete="address-line2"/>
-		    <div style="display:flex;"><input class="inputDisabled" name="city" placeholder="City" type="text" autocomplete="address-level2"/><input class="inputDisabled" name="state" placeholder="State" type="text" autocomplete="address-level1"/><input class="inputDisabled" name="country" placeholder="Country" type="text" autocomplete="country"/><input class="inputDisabled" name="postcode" placeholder="Postcode" type="text" autocomplete="postal-code"/></div></form></div></div>
-	<div class="modal-footer" style="display:flex;justify-content:space-between;    padding-right: 24px;padding-left: 24px;margin-bottom: 12px;">
-		<div style="display:flex;">
-		<a onclick="showView('editor');" style="width:140px; display: flex;justify-content: space-between;margin-top:8px;" class="mobile-width waves-effect waves-light blue lighten-3 btn">📝&nbsp;&nbsp;<span class="hide-on-med-and-down">NOTE...</span></a></div>
-		<div style="display:flex;">
-		<a href="#!" class="waves-effect waves-light btn-flat modal-close">🗑️</a>&nbsp;&nbsp;
-		<a onclick="send();" style="width:140px; display: flex;justify-content: space-between;margin-top:8px;" class="modal-close waves-effect waves-green green lighten-2 btn"><span class="hide-on-med-and-down">Mail&nbsp;&nbsp;</span>📮</a></div></div></div>
 
 <!-- items -->					
 <ul id='dropdown-open' class='dropdown-content'>
@@ -186,22 +141,6 @@
     	<li><a href="#!" onclick="domains.sort(domainaz); showList('domain');">Count &#8595;</a></li><li><a href="#!" onclick="domains.sort(domainza); showList('domain');">count &#8593;</a></li>
 	<li style="margin-top:0;" class="divider" tabindex="-1"></li>
 	<li><a href="#!" onclick="domains.sort(domain09); showList('domain');">Price &#8595;</a></li><li><a href="#!" onclick="domains.sort(domain90); showList('domain');">Price &#8593;</a></li></ul>
-	
-<ul id='dropdown-map' class='dropdown-content'>
-    	<li><a href="#!" onclick="setMap('satellite');"><i class="material-icons">satellite_alt</i>Satellite</a></li>
-    	<li style="margin-top:0;"class="divider" tabindex="-1"></li>
-    	<li><a href="#!" onclick="setMap('light');"><i class="material-icons">light_mode</i>Light</a></li><li><a href="#!" onclick="setMap('dark');"><i class="material-icons">dark_mode</i>Dark</a></li></ul>
-
-<ul id='dropdown-template' class='dropdown-content'>
-    	<li><a href="#!" onclick="domains.sort(domainAZ); showList('domain');"><i class="material-icons">event</i>Event</a></li><li><a href="#!" onclick="domains.sort(domainZA); showList('domain');"><i class="material-icons">task</i>Task</a></li>
-    	<li style="margin-top:0;"class="divider" tabindex="-1"></li>
-    	<li><a href="#!" onclick="domains.sort(domainaz); showList('domain');"><i class="material-icons">event</i>Instructions</a></li><li><a href="#!" onclick="domains.sort(domainza); showList('domain');"><i class="material-icons">directions</i>Directions</a></li>
-	<li style="margin-top:0;" class="divider" tabindex="-1"></li>
-	<li><a href="#!" onclick="domains.sort(domain09); showList('domain');"><i class="material-icons">restaurant_menu</i>Recipe</a></li><li><a href="#!" onclick="domains.sort(domain90); showList('domain');"><i class="material-icons">description</i>Article</a></li>
-	<li><a href="#!" onclick="domains.sort(domain09); showList('domain');"><i class="material-icons">list</i>List</a></li>
-	<li><a href="#!" onclick="domains.sort(domain09); showList('domain');"><i class="material-icons">list</i>Private</a></li>
-	<li><a href="#!" onclick="domains.sort(domain09); showList('domain');"><i class="material-icons">list</i>Address</a></li>
-	<li><a href="#!" onclick="domains.sort(domain09); showList('domain');"><i class="material-icons">list</i>Timer</a></li></ul>
 
 <div id="somedialog1" class="dialog print-help hide-scrollbar" style="z-index:99;"><div id="someoverlay" class="dialog__overlay hide-scrollbar"></div><div class="dialog__content print-help hide-scrollbar" style="width: 90%; height:40%; text-align:left;overflow:auto; padding:24px;"><div class="morph-shape" data-morph-open="M0,0h80c0,0,0,9.977,0,29.834c0,19.945,0,30.249,0,30.249H0c0,0,0-10.055,0-30.332C0,8.219,0,0,0,0z" data-morph-close="M0,29.75h80c0,0-3.083,0.014-3.083,0.041c0,0.028,3.083,0.042,3.083,0.042H0c0,0,3.084-0.014,3.084-0.042
 											C3.084,29.762,0,29.75,0,29.75z"><svg id='test-svg' xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 80 60" preserveAspectRatio="none"><path d="M0,29.75h80c0,0-3.083,0.014-3.083,0.041c0,0.028,3.083,0.042,3.083,0.042H0c0,0,3.084-0.014,3.084-0.042
@@ -347,7 +286,7 @@ function shakeCard(i) {
 	var dCard = Math.floor(Math.random() * (domains.length-1+1)); 
 	 imags[i] = domains[dCard].core.image_url; $("#card-name"+i).html(domains[dCard].core.name + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div><img style='display:flex;border-radius:8px; cursor:pointer;' onclick='addOpenDeed(" + i + ");' class='z-depth-1' width='30' height='30' src='res/img/key/" + getCollect(domains[dCard].core.collection.slug) + "'/></div>"); 
 	 vmags[i] = domains[dCard].core.image_url; 
-	fmags[i] = domains[dCard].core.permalink; $("#flip"+i).click(function(){ showView('mapper'); setTimeout(function() { flyDomain(dCard); }, 2000); });
+	fmags[i] = domains[dCard].core.permalink; $("#flip"+i).click(function(){ buildDoc(dCard); });
 bmags[i] = getBack(domains[dCard].core.collection.slug);}
 
 function setCards() { shakeCard(0); shakeCard(1); 
@@ -610,54 +549,14 @@ h1 {font-weight: 700;font-size: 64px; margin: 20px 0 0 0;padding: 0 20px;}
 	
 	.dropdown-content { max-height:180px; }
 	.select-wrapper { max-width:200px!important;}
-	.mapboxgl-popup-content { box-shadow:none!important; }
+
 	.popupContainer { z-index:1; }
-	mapbox-search-listbox { z-index:1111!important; }
-	mapbox-search-listbox:first-child:nth-child(2):last-child { display:none!important; }
+
 	.card-deck {     height: 240px; width: 100%; position: absolute; left: 0;  bottom: 0; z-index: 2;}
 	
 	.text { opacity:0.85!important;}
 	
-	.enemy { transform: scaleX(-1);
-		filter: hue-rotate(180deg); }
-	
-	.scrolling-image-container {
-  overflow: hidden;
-}
-	
-	.scrolling-image1 {
-  background: url('res/img/l1_background.png') repeat-x;
-  width: 7680px;background-size: contain;background-repeat: repeat-x;
-	animation: slide 10s linear infinite;}
-		.scrolling-image2 {
-  background: url('res/img/l2_hills.png') repeat-x;
-  width: 7680px;background-size: contain;background-repeat: repeat-x;
-	animation: slide2 10s linear infinite;}
-		.scrolling-image3 {
-  background: url('res/img/l3_clouds.png') repeat-x;
-  width: 7680px;background-size: contain;background-repeat: repeat-x;
-	animation: slide 9s linear infinite;}
-		.scrolling-image4 {
-  background: url('res/img/l4_ruin.png') repeat-x;
-  width: 7680px;background-size: contain;background-repeat: repeat-x;
-	animation: slide2 9s linear infinite;}
-		.scrolling-image5 {
-  background: url('res/img/l5_ground.png') repeat-x;
-  width: 7680px;background-size: contain;background-repeat: repeat-x;
-	animation: slide 8s linear infinite;}
-		.scrolling-image6 {
-  background: url('res/img/l6_houses.png') repeat-x;
-  width: 7680px;background-size: contain;background-repeat: repeat-x;
-	animation: slide2 8s linear infinite;}
-		.scrolling-image7 {
-  background: url('res/img/l7_details.png') repeat-x;
-  width: 7680px;background-size: contain;background-repeat: repeat-x;
-	animation: slide 7s linear infinite;}
-	
-	@keyframes slide {0% { transform: translate(0);}100% {transform: translate(-3840px); /* The image width */}}
-	@keyframes slide2 {0% { transform: translate(0);}100% {transform: translate(3840px); /* The image width */}}
-	
-	.parax { position:absolute; bottom:0; left:0; height:240px; }
 
-.scrolling-image {}
+	
+	
 </style>
