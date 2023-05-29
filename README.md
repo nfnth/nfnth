@@ -4,6 +4,10 @@
 
 <img src="img/field.gif" style="width:240px;height:120px;" />
 
+To shop items,
+
+- **lighters** - go to [**nfnfth**.com](https://nfnth.com), select the <img src="res/img/leaf/leaf2.png" style="width:40px;height:40px;" /> icon in the top-right
+
 To buy ads,
 
 - **print** and/or **digital** - open the <img src="res/img/leaf/leaf1.png" style="width:40px;height:40px;" /> [**1950**.app](https://1950.app)
