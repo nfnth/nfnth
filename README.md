@@ -5,7 +5,6 @@ Licensed as [**NfNth Corp**](https://secure.dor.wa.gov/) in the State of Washing
 
 ... located in the *Wedge*, diagonal to *Woodin* elementary
 
-To run ads, either,
+To run digital ads, become a [GitHub sponsor](https://github.com/sponsors/nfnth)
 
-- become a [sponsor](https://github.com/sponsors/nfnth) *digital*
-- use the [1950 app](https://1950.app) *print*
+To run  print ads, use the [1950 app](https://1950.app)
