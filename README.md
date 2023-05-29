@@ -8,7 +8,7 @@
 
 #### Projects
 
-Build <img src="img/island.png" style="width:40px;height:40px;" /> [**UR**.Land map](https://ur.land) with [🪨](https://xn--g19h.ws) [**OCUR**.app](https://ocur.app), see the guided tutorial at <img src="res/img/gear/gear1.png" style="width:40px;height:40px;" /> [**iOCUR**.com](https://iocur.com).
+Build <img src="img/island.png" style="width:40px;height:40px;" /> [**UR**.Land map](https://ur.land) with [🪨](https://xn--g19h.ws) [**OCUR**.app](https://ocur.app), see the guided tour at <img src="res/img/gear/gear1.png" style="width:40px;height:40px;" /> [**iOCUR**.com](https://iocur.com).
 
 <p align="center"><img src="img/par.png" style="width:120px;height:120px;" /><img src="img/wash.png" style="width:120px;height:120px;" /><img src="img/sphinx.png" style="width:120px;height:120px;" /><img src="img/charm.png" style="width:120px;height:120px;" /></p>
 
@@ -24,7 +24,8 @@ Install <img src="img/meta.png" style="width:40px;height:40px;" /> [**MetaMask**
 
 #### Items
 
-- **physical** - go to [**nfnth**.com](https://nfnth.com) and select <img src="res/img/leaf/leaf2.png" style="width:40px;height:40px;" /> (*top-right*)
+- **physical** 
+  - go to [**nfnth**.com](https://nfnth.com) and select <img src="res/img/leaf/leaf2.png" style="width:40px;height:40px;" /> (*top-right*)
 - **virtual** 
   - go to [**nfnth**.com](https://nfnth.com) and select <img src="res/img/seal3.png" style="width:40px;height:40px;" /> (*top-left*)
   - visit <img src="img/opensea.png" style="width:40px;height:40px;" /> [OpenSea](https://opensea.io/urland)
