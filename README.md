@@ -3,7 +3,7 @@
 
 <img src="img/field.gif" style="width:240px;height:120px;" />
 
-Build maps on [**UR.Land**](https://ur.land) and post content with the [**OCUR**.app](https://ocur.app), run tutorial at [**iOCUR**.com](https://iocur.com).
+Build maps on [**UR**.Land](https://ur.land) and post content with the [**OCUR**.app](https://ocur.app), run tutorial at [**iOCUR**.com](https://iocur.com).
 
 <br/>
 
@@ -20,6 +20,6 @@ For **ads**, choose either,
 
 <br/>
 
-[**nf/nth**](https://nfnth.com) is a privately-held company, located in the State of Washington, at [19500 130th AV NE, Woodinville, WA 98072](https://blue.kingcounty.com/Assessor/eRealProperty/Dashboard.aspx?ParcelNbr=1428900123) 
+[**nf/nth**](https://nfnth.com) is a privately-held company, located in Washington state, at [19500 130th AV NE, Woodinville, WA 98072](https://blue.kingcounty.com/Assessor/eRealProperty/Dashboard.aspx?ParcelNbr=1428900123) 
 
 ... headquartered in the **Wedge**, diagonal to **Woodin** elementary
