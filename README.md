@@ -19,18 +19,18 @@ Install <img src="img/meta.png" style="width:40px;height:40px;" /> [**MetaMask**
 
 To buy **ads**, use either,
 
-- **print** and/or **digital**, open the <img src="res/img/seal3.png" style="width:32px;height:32px;" /> [**1950**.app](https://1950.app)
-- **digital only**, become a [**GitHub** sponsor](https://github.com/sponsors/nfnth)
+- **print** and/or **digital** - open the <img src="res/img/seal3.png" style="width:32px;height:32px;" /> [**1950**.app](https://1950.app)
+- **digital only** - become a [**GitHub** sponsor](https://github.com/sponsors/nfnth)
 
 <p align="center"><img src="res/img/leaf/leaf1.png" style="width:60px;height:60px;" /><img src="res/img/leaf/leaf2.png" style="width:60px;height:60px;" /><img src="res/img/leaf/leaf3.png" style="width:60px;height:60px;" /><img src="res/img/leaf/leaf4.png" style="width:60px;height:60px;" /></p>
 
 <br/>
 
-[**nf/nth**](https://nfnth.com) is a privately-held company, located in **Seattle, Washington**, at [19500 130th AV NE, Woodinville, WA 98072](https://blue.kingcounty.com/Assessor/eRealProperty/Dashboard.aspx?ParcelNbr=1428900123) 
+[**nf/nth**](https://nfnth.com) is a privately-held company, located in **Seattle, Washington** ...
 
 <img src="img/field.gif" style="width:240px;height:120px;" />
 
-... headquartered in the **Wedge**, diagonal to **Woodin** elementary
+... headquartered at [19500 130th AV NE, Woodinville, WA 98072](https://blue.kingcounty.com/Assessor/eRealProperty/Dashboard.aspx?ParcelNbr=1428900123) in the **Wedge**, diagonal to **Woodin** elementary
 
 <br/>
 
