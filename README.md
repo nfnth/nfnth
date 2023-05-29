@@ -3,11 +3,11 @@
 
 <img src="img/field.gif" style="width:240px;height:120px;" />
 
-Explore [**UR.Land**](https://ur.land) to build maps and post content with the [**OCUR** app](https://ocur.app).
+Build maps on [**UR.Land**](https://ur.land) and post content with the [**OCUR** app](https://ocur.app).
 
 Hold an <img src="img/opensea.png" style="width:60px;height:60px;" /> [**OpenSea** deed domain](https://opensea.io/urland) to increase profile rank.
 
-Use the <img src="img/meta.png" style="width:40px;height:40px;" /> [**MetaMask** wallet](https://metamask.org) to trade the [**OCUR** map token](https://ocur.io) on <img src="img/uniswap.png" style="width:40px;height:40px;" /> [**Uniswap**]() and/or <img src="img/sushi.png" style="width:40px;height:40px;" /> [**SushiSwap**]().
+Use the <img src="img/meta.png" style="width:40px;height:40px;" /> [**MetaMask** wallet](https://metamask.org) to trade the [**OCUR** map token](https://ocur.io) available on <img src="img/uniswap.png" style="width:40px;height:40px;" /> [**Uniswap**]() and/or <img src="img/sushi.png" style="width:40px;height:40px;" /> [**SushiSwap**]().
 
 <br/>
 
