@@ -6,16 +6,6 @@
 
 <br/>
 
-#### Items
-
-- **physical** - go to [**nfnth**.com](https://nfnth.com) and select the top-right <img src="res/img/leaf/leaf2.png" style="width:40px;height:40px;" /> icon
-- **digital** - go to <img src="img/opensea.png" style="width:40px;height:40px;" /> [OpenSea](https://opensea.io/urland)
-- **ads**
-  - **print** and/or **digital** - open the <img src="res/img/leaf/leaf1.png" style="width:40px;height:40px;" /> [**1950**.app](https://1950.app)
-  - **digital only** - become a [**GitHub** sponsor](https://github.com/sponsors/nfnth)
-
-<br/>
-
 #### Projects
 
 Build <img src="img/island.png" style="width:40px;height:40px;" /> [**UR**.Land map](https://ur.land) with [🪨](https://xn--g19h.ws) [**OCUR**.app](https://ocur.app), see the guided tutorial at <img src="res/img/gear/gear1.png" style="width:40px;height:40px;" /> [**iOCUR**.com](https://iocur.com).
@@ -32,12 +22,22 @@ Install <img src="img/meta.png" style="width:40px;height:40px;" /> [**MetaMask**
 
 <br/>
 
+#### Items
+
+- **physical** - go to [**nfnth**.com](https://nfnth.com) and select the top-right <img src="res/img/leaf/leaf2.png" style="width:40px;height:40px;" /> icon
+- **digital** - go to <img src="img/opensea.png" style="width:40px;height:40px;" /> [OpenSea](https://opensea.io/urland)
+- **ads**
+  - **print** and/or **digital** - open the <img src="res/img/leaf/leaf1.png" style="width:40px;height:40px;" /> [**1950**.app](https://1950.app)
+  - **digital only** - become a [**GitHub** sponsor](https://github.com/sponsors/nfnth)
+
+<br/>
+
 #### Sponsors
 
 No sponsors yet, become a [**GitHub** sponsor](https://github.com/sponsors/nfnth) now.
 
 <br/>
 
-#### Coming soon
+#### Pending
 
 Play <img src="res/img/card/club.png" style="width:40px;height:40px;" /><img src="res/img/card/diamond.png" style="width:40px;height:40px;" /><img src="res/img/card/heart.png" style="width:40px;height:40px;" /><img src="res/img/card/spade.png" style="width:40px;height:40px;" /> [**Dralun**.com](https://dralun.com), a Western-themed card game.
