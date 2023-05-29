@@ -3,11 +3,11 @@
 
 <br/>
 
-Build a <img src="img/island.png" style="width:40px;height:40px;" /> [**UR**.Land map](https://ur.land) to post **content** with the [**OCUR**.app](https://ocur.app), see the **tutorial** at [**iOCUR**.com](https://iocur.com).
+Build <img src="img/island.png" style="width:40px;height:40px;" /> [**UR**.Land maps](https://ur.land) to post content with the [**OCUR**.app](https://ocur.app), see the **tutorial** at [**iOCUR**.com](https://iocur.com).
 
 <p align="center"><img src="img/par.png" style="width:120px;height:120px;" /><img src="img/wash.png" style="width:120px;height:120px;" /><img src="img/sphinx.png" style="width:120px;height:120px;" /><img src="img/charm.png" style="width:120px;height:120px;" /></p>
 
-Hold a <img src="img/opensea.png" style="width:40px;height:40px;" /> [**OpenSea** deed domain](https://opensea.io/urland) to increase your **profile** rank.
+Hold <img src="img/opensea.png" style="width:40px;height:40px;" /> [**OpenSea** deed domains](https://opensea.io/urland) to increase your **profile** rank.
 
 <p align="center"><img src="res/img/key/red.png" style="width:80px;height:80px;" /><img src="res/img/key/yellow.png" style="width:80px;height:80px;" /><img src="res/img/key/green.png" style="width:80px;height:80px;" /><img src="res/img/key/blue.png" style="width:80px;height:80px;" /></p>
 
@@ -17,16 +17,16 @@ Install <img src="img/meta.png" style="width:40px;height:40px;" /> [**MetaMask**
 
 <br/>
 
-To buy **ads**, select either,
+To buy **ads**, use either,
 
-- **print** and/or **digital**, use the <img src="res/img/seal3.png" style="width:32px;height:32px;" /> [**1950**.app](https://1950.app)
+- **print** and/or **digital**, open the <img src="res/img/seal3.png" style="width:32px;height:32px;" /> [**1950**.app](https://1950.app)
 - **digital only**, become a [**GitHub** sponsor](https://github.com/sponsors/nfnth)
 
 <p align="center"><img src="res/img/leaf/leaf1.png" style="width:60px;height:60px;" /><img src="res/img/leaf/leaf2.png" style="width:60px;height:60px;" /><img src="res/img/leaf/leaf3.png" style="width:60px;height:60px;" /><img src="res/img/leaf/leaf4.png" style="width:60px;height:60px;" /></p>
 
 <br/>
 
-[**nf/nth**](https://nfnth.com) is a privately-held company, located in **Seattle, Washington** at [19500 130th AV NE, Woodinville, WA 98072](https://blue.kingcounty.com/Assessor/eRealProperty/Dashboard.aspx?ParcelNbr=1428900123) 
+[**nf/nth**](https://nfnth.com) is a privately-held company, located in **Seattle, Washington**, at [19500 130th AV NE, Woodinville, WA 98072](https://blue.kingcounty.com/Assessor/eRealProperty/Dashboard.aspx?ParcelNbr=1428900123) 
 
 <img src="img/field.gif" style="width:240px;height:120px;" />
 
@@ -38,4 +38,4 @@ View the <img src="res/img/card/club.png" style="width:40px;height:40px;" /><img
 
 ### Sponsors
 
-No sponsors yet, become a [**GitHub** sponsor](https://github.com/sponsors/nfnth).
+No sponsors yet, become a [**GitHub** sponsor](https://github.com/sponsors/nfnth) now.
