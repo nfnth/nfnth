@@ -2,7 +2,7 @@
 
 ... is a privately-held company, located in **Seattle, Washington** at [19500 130th AV NE, Woodinville, WA 98072](https://blue.kingcounty.com/Assessor/eRealProperty/Dashboard.aspx?ParcelNbr=1428900123) in the **Wedge**, diagonal to **Woodin** elementary, view the [**Wellfound** profile](https://wellfound.com/u/urland).
 
-<br/>
+<img src="img/field.gif" style="width:240px;height:120px;" />
 
 To buy ads,
 
@@ -11,11 +11,9 @@ To buy ads,
 
 <br/>
 
-<img src="img/field.gif" style="width:240px;height:120px;" />
-
 #### Projects
 
-Build <img src="img/island.png" style="width:40px;height:40px;" /> [**UR**.Land map](https://ur.land) with the [🪨](https://xn--g19h.ws) [**OCUR**.app](https://ocur.app), see a guided tutorial at <img src="res/img/gear/gear1.png" style="width:40px;height:40px;" /> [**iOCUR**.com](https://iocur.com).
+Build <img src="img/island.png" style="width:40px;height:40px;" /> [**UR**.Land map](https://ur.land) with [🪨](https://xn--g19h.ws) [**OCUR**.app](https://ocur.app), see the guided tutorial at <img src="res/img/gear/gear1.png" style="width:40px;height:40px;" /> [**iOCUR**.com](https://iocur.com).
 
 <p align="center"><img src="img/par.png" style="width:120px;height:120px;" /><img src="img/wash.png" style="width:120px;height:120px;" /><img src="img/sphinx.png" style="width:120px;height:120px;" /><img src="img/charm.png" style="width:120px;height:120px;" /></p>
 
