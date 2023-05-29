@@ -1,4 +1,6 @@
-[🥚](https://xn--wr9h.ws) [**nf/nth**](https://nfnth.com), *new foundations*, is a privately-held company, located in **Seattle, Washington** ...
+### [🥚](https://xn--wr9h.ws) [**nf/nth**](https://nfnth.com)
+
+**nf/nfth** *new foundations*, is a privately-held company, located in **Seattle, Washington** ...
 
 <img src="img/field.gif" style="width:240px;height:120px;" />
 
@@ -13,7 +15,7 @@ To buy ads,
 
 <br/>
 
-### Projects
+#### Projects
 
 Build <img src="img/island.png" style="width:40px;height:40px;" /> [**UR**.Land map](https://ur.land) with the [🪨](https://xn--g19h.ws) [**OCUR**.app](https://ocur.app), see a guided tutorial at <img src="res/img/gear/gear1.png" style="width:40px;height:40px;" /> [**iOCUR**.com](https://iocur.com).
 
