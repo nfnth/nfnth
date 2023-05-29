@@ -3,7 +3,7 @@
 
 <img src="img/field.gif" style="width:240px;height:120px;" />
 
-Build maps on [**UR.Land**](https://ur.land) and post content with the [**OCUR** app](https://ocur.app).
+Build maps with [**UR.Land**](https://ur.land) and post content on the [**OCUR** app](https://ocur.app).
 
 <br/>
 
@@ -15,6 +15,8 @@ Use the <img src="img/meta.png" style="width:40px;height:40px;" /> [**MetaMask**
 
 - To run print ads, use the [**1950**.app](https://1950.app)
 - To display digital ads, become a [**GitHub** sponsor](https://github.com/sponsors/nfnth).
+
+<br/>
 
 Licensed as [**NfNth Corp**](https://secure.dor.wa.gov/) in the State of Washington, at [19500 130th AV NE, Woodinville, WA 98072](https://blue.kingcounty.com/Assessor/eRealProperty/Dashboard.aspx?ParcelNbr=1428900123) 
 
