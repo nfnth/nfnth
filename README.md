@@ -19,8 +19,8 @@ Install the <img src="img/meta.png" style="width:40px;height:40px;" /> [**MetaMa
 
 To display **ads**, select either,
 
-- For **print** and/or **digital**, use the <img src="res/img/seal3.png" style="width:32px;height:32px;" /> [**1950**.app](https://1950.app)
-- For **digital only**, become a [**GitHub** sponsor](https://github.com/sponsors/nfnth)
+- for **print** and/or **digital**, use the <img src="res/img/seal3.png" style="width:32px;height:32px;" /> [**1950**.app](https://1950.app)
+- for **digital only**, become a [**GitHub** sponsor](https://github.com/sponsors/nfnth)
 
 <p align="center"><img src="res/img/leaf/leaf1.png" style="width:60px;height:60px;" /><img src="res/img/leaf/leaf2.png" style="width:60px;height:60px;" /><img src="res/img/leaf/leaf3.png" style="width:60px;height:60px;" /><img src="res/img/leaf/leaf4.png" style="width:60px;height:60px;" /></p>
 
@@ -34,4 +34,4 @@ To display **ads**, select either,
 
 <br/>
 
-View <img src="res/img/card/club.png" style="width:40px;height:40px;" /><img src="res/img/card/diamond.png" style="width:40px;height:40px;" /><img src="res/img/card/heart.png" style="width:40px;height:40px;" /><img src="res/img/card/spade.png" style="width:40px;height:40px;" /> **founder** profile at [**Wellfound**](https://wellfound.com/u/urland).
+View the <img src="res/img/card/club.png" style="width:40px;height:40px;" /><img src="res/img/card/diamond.png" style="width:40px;height:40px;" /><img src="res/img/card/heart.png" style="width:40px;height:40px;" /><img src="res/img/card/spade.png" style="width:40px;height:40px;" /> [**Wellfound** founder profile](https://wellfound.com/u/urland).
