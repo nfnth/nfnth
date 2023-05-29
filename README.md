@@ -11,7 +11,7 @@ Install the <img src="img/meta.png" style="width:40px;height:40px;" /> [**MetaMa
 
 <br/>
 
-To run **ads**, select either,
+To display **ads**, select either,
 
 - For **print**, use the [**1950**.app](https://1950.app)
 - For **digital**, become a [**GitHub** sponsor](https://github.com/sponsors/nfnth)
