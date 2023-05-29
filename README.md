@@ -20,6 +20,6 @@ For **ads**, choose either,
 
 <br/>
 
-Licensed as [**NfNth Corp**](https://secure.dor.wa.gov/) in the State of Washington, at [19500 130th AV NE, Woodinville, WA 98072](https://blue.kingcounty.com/Assessor/eRealProperty/Dashboard.aspx?ParcelNbr=1428900123) 
+**nf/nth** is a private company, located in the State of Washington, at [19500 130th AV NE, Woodinville, WA 98072](https://blue.kingcounty.com/Assessor/eRealProperty/Dashboard.aspx?ParcelNbr=1428900123) 
 
-... located in the **Wedge**, diagonal to **Woodin** elementary
+... headquartered in the **Wedge**, diagonal to **Woodin** elementary
