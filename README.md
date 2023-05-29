@@ -3,7 +3,7 @@
 
 Build a <img src="img/island.png" style="width:40px;height:40px;" /> [**UR**.Land map](https://ur.land) and post **content** to [**OCUR**.app](https://ocur.app), see the **tutorial** at [**iOCUR**.com](https://iocur.com).
 
-<img src="img/par.png" style="width:120px;height:120px;" />
+<img src="img/par.png" style="width:120px;height:120px;" /><img src="img/wash.png" style="width:120px;height:120px;" /><img src="img/sphinx.png" style="width:120px;height:120px;" /><img src="img/charm.png" style="width:120px;height:120px;" />
 
 Hold an <img src="img/opensea.png" style="width:40px;height:40px;" /> [**OpenSea** deed domain](https://opensea.io/urland) to increase **profile** rank.
 
@@ -23,3 +23,5 @@ To display **ads**, select either,
 <img src="img/field.gif" style="width:240px;height:120px;" />
 
 ... headquartered in the **Wedge**, diagonal to **Woodin** elementary
+
+View founder's profile at [**Wellfound**](https://wellfound.com/u/urland).
