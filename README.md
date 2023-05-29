@@ -1,17 +1,17 @@
 
 ### [🥚](https://xn--wr9h.ws) [nf/nth](https://nfnth.com) (new foundations)
 
-Build **maps** on [**UR**.Land](https://ur.land) and post **content** with the [**OCUR**.app](https://ocur.app), run the **tutorial** at [**iOCUR**.com](https://iocur.com).
+Build **map** on [**UR**.Land](https://ur.land) and post **content** with the [**OCUR**.app](https://ocur.app). To begin, run the **tutorial** at [**iOCUR**.com](https://iocur.com).
 
 <img src="img/field.gif" style="width:240px;height:120px;" />
 
-Hold an <img src="img/opensea.png" style="width:40px;height:40px;" /> [**OpenSea** deed domain](https://opensea.io/urland) to increase profile rank.
+Hold an <img src="img/opensea.png" style="width:40px;height:40px;" /> [**OpenSea** deed domain](https://opensea.io/urland) to increase **profile** rank.
 
-Install the <img src="img/meta.png" style="width:40px;height:40px;" /> [**MetaMask** wallet](https://metamask.io) to trade the [**OCUR**.io token](https://ocur.io), now available on <img src="img/uniswap.png" style="width:40px;height:40px;" /> [**Uniswap**](https://app.uniswap.org/#/tokens/ethereum/0xccab679860b1017589239bceeeabe5cd45965afc) and/or <img src="img/sushi.png" style="width:40px;height:40px;" /> [**SushiSwap**](https://www.sushi.com/swap).
+Install the <img src="img/meta.png" style="width:40px;height:40px;" /> [**MetaMask** wallet](https://metamask.io) to **trade** the [**OCUR**.io token](https://ocur.io), now available on <img src="img/uniswap.png" style="width:40px;height:40px;" /> [**Uniswap**](https://app.uniswap.org/#/tokens/ethereum/0xccab679860b1017589239bceeeabe5cd45965afc) and/or <img src="img/sushi.png" style="width:40px;height:40px;" /> [**SushiSwap**](https://www.sushi.com/swap).
 
 <br/>
 
-To run **ads**, use either,
+To run **ads**, select either,
 
 - For **print**, use the [**1950**.app](https://1950.app)
 - For **digital**, become a [**GitHub** sponsor](https://github.com/sponsors/nfnth)
