@@ -3,6 +3,6 @@
 
 Licensed as [**NfNth Corp**](https://secure.dor.wa.gov/) in the State of Washington, [19500 130th AV NE, Woodinville, WA 98072](https://blue.kingcounty.com/Assessor/eRealProperty/Dashboard.aspx?ParcelNbr=1428900123) 
 
-... *in the Wedge, diagonal to Woodin elementary*
+... located in the *Wedge*, diagonal to *Woodin* elementary
 
-sponsor or use 1950.app to run ads
+[Sponsor](https://github.com/sponsors/nfnth) or use the [1950 app](https://1950.app) to run print ads
