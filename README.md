@@ -3,11 +3,11 @@
 
 <img src="img/field.gif" style="width:240px;height:120px;" />
 
-Use [**UR.Land**](https://ur.land) to build maps and post content with the [**OCUR** app](https://ocur.app).
+Explore [**UR.Land**](https://ur.land) to build maps and post content with the [**OCUR** app](https://ocur.app).
 
-Hold a [deed domain](https://iocur.com) on <img src="img/opensea.png" style="width:60px;height:60px;" /> [**OpenSea**](https://opensea.io/urland) to increase profile rank.
+Hold an <img src="img/opensea.png" style="width:60px;height:60px;" /> [**OpenSea** deed domain](https://opensea.io/urland) to increase profile rank.
 
-Trade the [**OCUR** map token](https://ocur.io) with <img src="img/meta.png" style="width:40px;height:40px;" /> [**MetaMask**](https://metamask.org) on <img src="img/uniswap.png" style="width:40px;height:40px;" /> [**Uniswap**]() and/or <img src="img/sushi.png" style="width:40px;height:40px;" /> [**SushiSwap**]().
+Use the <img src="img/meta.png" style="width:40px;height:40px;" /> [**MetaMask** wallet](https://metamask.org) to trade the [**OCUR** map token](https://ocur.io) on <img src="img/uniswap.png" style="width:40px;height:40px;" /> [**Uniswap**]() and/or <img src="img/sushi.png" style="width:40px;height:40px;" /> [**SushiSwap**]().
 
 <br/>
 
@@ -15,5 +15,5 @@ Licensed as [**NfNth Corp**](https://secure.dor.wa.gov/) in the State of Washing
 
 ... located in the **Wedge**, diagonal to **Woodin** elementary
 
-- To run print ads, use the [**1950** app](https://1950.app)
+- To run print ads, use [**1950**.app](https://1950.app)
 - To display digital ads, become a [**GitHub** sponsor](https://github.com/sponsors/nfnth).
