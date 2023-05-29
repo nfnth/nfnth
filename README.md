@@ -1,9 +1,4 @@
-
-### [🥚](https://xn--wr9h.ws) [nf/nth](https://nfnth.com) (new foundations)
-
-<br/>
-
-Build <img src="img/island.png" style="width:40px;height:40px;" /> [**UR**.Land map](https://ur.land) with the [🪨](https://xn--g19h.ws) [**OCUR**.app](https://ocur.app), see guided tutorial at <img src="res/img/gear/gear1.png" style="width:40px;height:40px;" /> [**iOCUR**.com](https://iocur.com).
+Build <img src="img/island.png" style="width:40px;height:40px;" /> [**UR**.Land map](https://ur.land) with the [🪨](https://xn--g19h.ws) [**OCUR**.app](https://ocur.app), see a guided tutorial at <img src="res/img/gear/gear1.png" style="width:40px;height:40px;" /> [**iOCUR**.com](https://iocur.com).
 
 <p align="center"><img src="img/par.png" style="width:120px;height:120px;" /><img src="img/wash.png" style="width:120px;height:120px;" /><img src="img/sphinx.png" style="width:120px;height:120px;" /><img src="img/charm.png" style="width:120px;height:120px;" /></p>
 
@@ -17,7 +12,7 @@ Install <img src="img/meta.png" style="width:40px;height:40px;" /> [**MetaMask**
 
 <br/>
 
-[🥚](https://xn--wr9h.ws) [**nf/nth**](https://nfnth.com) is a privately-held company, located in **Seattle, Washington** ...
+[🥚](https://xn--wr9h.ws) [**nf/nth**](https://nfnth.com), *new foundations*, is a privately-held company, located in **Seattle, Washington** ...
 
 <img src="img/field.gif" style="width:240px;height:120px;" />
 
