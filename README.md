@@ -6,7 +6,9 @@
 
 To shop items,
 
-- **lighters** - go to [**nfnfth**.com](https://nfnth.com), select the <img src="res/img/leaf/leaf2.png" style="width:40px;height:40px;" /> icon in the top-right
+- **lighters** - go to [**nfnth**.com](https://nfnth.com) and select the top-right <img src="res/img/leaf/leaf2.png" style="width:40px;height:40px;" /> icon
+
+<br/>
 
 To buy ads,
 
