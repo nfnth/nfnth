@@ -38,6 +38,6 @@ No sponsors yet, become a [**GitHub** sponsor](https://github.com/sponsors/nfnth
 
 <br/>
 
-#### Pending
+#### Previews
 
 Play <img src="res/img/card/club.png" style="width:40px;height:40px;" /><img src="res/img/card/diamond.png" style="width:40px;height:40px;" /><img src="res/img/card/heart.png" style="width:40px;height:40px;" /><img src="res/img/card/spade.png" style="width:40px;height:40px;" /> [**Dralun**.com](https://dralun.com), a Western-themed card game.
