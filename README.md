@@ -1,6 +1,8 @@
 
 ### [🥚](https://xn--wr9h.ws) [nf/nth](https://nfnth.com) (new foundations)
 
+<br/>
+
 Build a <img src="img/island.png" style="width:40px;height:40px;" /> [**UR**.Land map](https://ur.land) and post **content** to [**OCUR**.app](https://ocur.app), see the **tutorial** at [**iOCUR**.com](https://iocur.com).
 
 <p align="center"><img src="img/par.png" style="width:120px;height:120px;" /><img src="img/wash.png" style="width:120px;height:120px;" /><img src="img/sphinx.png" style="width:120px;height:120px;" /><img src="img/charm.png" style="width:120px;height:120px;" /></p>
@@ -27,3 +29,5 @@ To display **ads**, select either,
 ... headquartered in the **Wedge**, diagonal to **Woodin** elementary
 
 View founder's profile at [**Wellfound**](https://wellfound.com/u/urland).
+
+<p align="center"><img src="res/img/card/club.png" style="width:60px;height:60px;" /><img src="res/img/card/diamond.png" style="width:60px;height:60px;" /><img src="res/img/card/heart.png" style="width:60px;height:60px;" /><img src="res/img/card/spade.png" style="width:60px;height:60px;" /></p>
