@@ -3,7 +3,7 @@
 
 <img src="img/field.gif" style="width:240px;height:120px;" />
 
-Build maps on [**UR**.Land](https://ur.land) and post content with the [**OCUR**.app](https://ocur.app), see **tutorial** at [**iOCUR**.com](https://iocur.com).
+Build maps on [**UR**.Land](https://ur.land) to post content with the [**OCUR**.app](https://ocur.app), see **tutorial** at [**iOCUR**.com](https://iocur.com).
 
 <br/>
 
@@ -15,8 +15,8 @@ Use the <img src="img/meta.png" style="width:40px;height:40px;" /> [**MetaMask**
 
 For **ads**, choose either,
 
-- To **display print**, use the [**1950**.app](https://1950.app)
-- To **post digital**, become a [**GitHub** sponsor](https://github.com/sponsors/nfnth)
+- To use **print**, open the [**1950**.app](https://1950.app)
+- To use **digital**, become a [**GitHub** sponsor](https://github.com/sponsors/nfnth)
 
 <br/>
 
