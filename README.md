@@ -5,7 +5,7 @@
 
 Visit [UR.Land](https://ur.land) to build maps, then post content with the [**OCUR** app](https://ocur.app).
 
-Tested  with <img src="img/meta.png" style="width:60px;height:60px;" />
+<p align="center">Tested  with <img src="img/meta.png" style="width:60px;height:60px;" /> MetaMask wallet extension.</p>
 
 Explore *deed domain* at [Open Sea](https://opensea.io/urland) and trade the [**OCUR** map token](https://ocur.io) on [Uniswap]() and/or [SushiSwap]().
 
