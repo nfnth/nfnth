@@ -241,9 +241,9 @@ async function initial() { $('body').css("background-color","lightgrey");
 	//$("#registry-open").css("height",(height - 120) + "px"); $("#registry-domain").css("height",(height - 120) + "px");
     	//$('#docs').dropdown({ constrainWidth: false, coverTrigger: false } ); $('#doc-hide').dropdown({ constrainWidth: false, coverTrigger: false } ); //hover: true 
 	//$('#tools').dropdown({ constrainWidth: false, coverTrigger: false } ); $('#tool-hide').dropdown({ constrainWidth: false, coverTrigger: false } );
-	
-$(".dropdown-trigger").dropdown({ constrainWidth: false });
-	//$('#dropdown-opener').dropdown({ constrainWidth: false }); $('#dropdown-domainer').dropdown({ constrainWidth: false });
+	$('#dropdown1').dropdown({ constrainWidth: false });
+//$(".dropdown-trigger").dropdown({ constrainWidth: false });
+	$('#dropdown-opener').dropdown({ constrainWidth: false }); $('#dropdown-domainer').dropdown({ constrainWidth: false });
 	$('#deed-pane').sidenav({ edge: 'left' }); //, onCloseEnd: deedMap});
 	// $('#user-pane').sidenav({ edge: 'right' }); showView('mapper');  pullOpens(); switchFeed(false);
 showView("slider");
