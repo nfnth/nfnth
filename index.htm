@@ -39,7 +39,7 @@
 						<li style="display:flex;justify-content:center;padding:12px;"><a id="builder"  style="width:160px; display: flex;justify-content: space-between;" class="mobile-width waves-effect waves-light blue lighten-1 btn disabled" onclick="showView('mapper'); document.getElementById('connor').click();"><span>BUILD</span>🔧</a></li>
 						<li style="display:flex;justify-content:center;padding:12px;"><a id="trader" onclick="showView('lister');document.getElementById('connor').click();" style="width:160px; display: flex;justify-content: space-between;" class="mobile-width waves-effect waves-light green lighten-1 btn disabled" ><span>TRADE</span>📦</a></li></ul></div></div></div>
     		
-		<div style="width:64px;margin-left:16px;"><a><div style="width:64px;"><img class="image image-rotate gear-image" id="gear-pic" onclick="gearSwitch = 0; gearBox(); $('#modal2').modal('open');" style="opacity:0.6; height: 48px;position:absolute; margin: 4px; cursor:pointer;right:12px;top:4px;" /><img id="gear-pic2" class="image image-rotate2 gear-image" style="opacity:0.6; height: 48px;position:absolute;cursor:pointer;margin:4px;right:12px;top:4px;" onclick="gearSwitch = 0; gearBox(); $('#modal2').modal('open');" /></div></a></div></div></nav>
+		<div style="width:64px;margin-left:16px;"><a><div style="width:64px;"><img class="image image-rotate gear-image" id="gear-pic" onclick="gearSwitch = 0; gearBox(); $('#modal2').modal('open');" style="opacity:0.6; height: 80px; width:80px;position:absolute; cursor:pointer;bottom:-10px;" /><img id="gear-pic2" class="image image-rotate2 gear-image" style="opacity:0.6; height: 32px;width:32px;position:absolute;cursor:pointer;top:16px;margin-left:-4px;" onclick="gearSwitch = 0; gearBox(); $('#modal2').modal('open');" /></div></a></div></div></nav>
 		
 <!-- panel -->
 <ul id="deed-pane" class="sidenav loader" style="visibility:hidden;overflow:hidden;">
@@ -441,10 +441,10 @@ div.active {opacity: 1;height: auto;}
 @-moz-keyframes spin {100% { -moz-transform: rotate(360deg); }} @-webkit-keyframes spin {100% { -webkit-transform: rotate(360deg); }} @keyframes spin {100% {-webkit-transform: rotate(360deg);transform:rotate(360deg);}}
 .image-rotate-back { -webkit-animation:spin-back 8s linear infinite; -moz-animation:spin-back 8s linear infinite;animation:spin-back 8s linear infinite; }
 @-moz-keyframes spin-back {100% { -moz-transform: rotate(-360deg); }} @-webkit-keyframes spin-back {100% { -webkit-transform: rotate(-360deg); }} @keyframes spin-back {100% {-webkit-transform: rotate(=360deg);transform:rotate(-360deg);}}
-.image-rotate2 { -webkit-animation:spin 6s linear infinite; -moz-animation:spin 6s linear infinite;animation:spin 6s linear infinite; }
-@-moz-keyframes spin {100% { -moz-transform: rotate(360deg); }} @-webkit-keyframes spin {100% { -webkit-transform: rotate(360deg); }} @keyframes spin {100% {-webkit-transform: rotate(360deg);transform:rotate(360deg);}}
+.image-rotate2 { -webkit-animation:spin2 6s linear infinite; -moz-animation:spin2 6s linear infinite;animation:spin2 6s linear infinite; }
+@-moz-keyframes spin2 {100% { -moz-transform: rotate(-360deg); }} @-webkit-keyframes spin2 {100% { -webkit-transform: rotate(-360deg); }} @keyframes spin2 {100% {-webkit-transform: rotate(-360deg);transform:rotate(-360deg);}}
 .image-rotate2-back { -webkit-animation:spin-back 6s linear infinite; -moz-animation:spin-back 6s linear infinite;animation:spin-back 6s linear infinite; }
-@-moz-keyframes spin-back {100% { -moz-transform: rotate(-360deg); }} @-webkit-keyframes spin-back {100% { -webkit-transform: rotate(-360deg); }} @keyframes spin-back {100% {-webkit-transform: rotate(=360deg);transform:rotate(-360deg);}}
+@-moz-keyframes spin2-back {100% { -moz-transform: rotate(360deg); }} @-webkit-keyframes spin2-back {100% { -webkit-transform: rotate(360deg); }} @keyframes spin2-back {100% {-webkit-transform: rotate(360deg);transform:rotate(360deg);}}
 
 .select-wrapper { width:100%!important; }
 
@@ -481,8 +481,6 @@ text{ fill: cornflowerblue; stroke: royalblue; stroke-width: .5px; stroke-linejo
 @keyframes pulsate {50%{ stroke-width:1px } }
 	
 	[type="checkbox"]:checked + span:not(.lever)::before { border-right: 2px solid black!important; border-bottom: 2px solid black!important; }
-	
-	.mapboxgl-popup-close-button { display:none!important; }
 
 .flip-card {background-color: transparent;width: 100px;height: 100px; border-radius:12px;
   perspective: 1000px; /* Remove this if you don't want the 3D effect */}
