@@ -22,26 +22,24 @@
 	<div id="panel-menu" class="nav-wrapper header z-depth-1 grey lighten-5" style="padding-top:0px!important; padding-bottom:0px!important; display:flex; justify-content: left; color:black; border-bottom: solid 1px gainsboro;">
     		<div style="height:103%;border-bottom:solid 2px darkred;" class="z-depth-1"><a id="menu-deed" style="cursor:pointer; color:darkslategrey; opacity:0.7; background-color:ghostwhite; display: flex; align-items: center; height: 100%; padding-right: 10px;font-weight: bold;font-size: 20px; -webkit-transition: background-color 300ms linear, color 300ms linear;-moz-transition: background-color 300ms linear, color 300ms linear;-o-transition: background-color 300ms linear, color 300ms linear;-ms-transition: background-color 300ms linear, color 300ms linear;transition: background-color 300ms linear, color 300ms linear;"><i id="bars" class="material-icons" style="padding-left:16px;" onclick="showList('open');$('#deed-pane').sidenav('open');">menu</i><div id="waiter" style="height:48px; width:48px; cursor: pointer; margin-left: 12px;" onclick="showList('open');$('#deed-pane').sidenav('open');"><img id="list-wait" class="image" src="img/seal(1).png" width="48" /></div></a></div>
     		
-    		<div class="containerx bluex" style="background-color: beige;"><span id="connor" class="button setter">🪨</span>
+    		<!-- profile -->
+    	<div id="egger" class="containerx yellowx golden" style="background-color: beige;display:none;"><span id="connor" class="button setter">🪨</span>
 			  <div class="contentx">
-				<div class="head" style="display: flex;align-items: center;justify-content: center;"><a id="signer" style="width:160px; display: flex;justify-content: space-between;" class="mobile-width waves-effect waves-light amber lighten-1 btn" onclick="setup();"><span>Connect</span>🪙</a></div>
+				<div id="walleter" class="head" style="display: flex;align-items: center;justify-content: space-evenly;">
+					<a id="dropdown-user" href="#" data-target="dropdown-use" style="border-radius:8px; width:160px; display: flex;justify-content: space-between;" class="dropdown-trigger waves-effect waves-light amber btn" onclick="playGame(); closeTop();"><span class="mobile-hide">PROFILE</span><span>🪪</span></a>
+					<a id="mapper" style="border-radius:8px; width:160px; display: flex;justify-content: space-between;" class="waves-effect waves-light amber lighten-1 btn" onclick="closeTop(); showView('lister');"><span class="mobile-hide">CART</span><span>🛒</span></a></div>
 				<div class="body" style="text-align:center;">
 					<ul style="display: flex;flex-direction: column;">
-						<li><a class="waves-effect" onclick="if (user.address != '') {copyClip(user.address);}"><span  style="color:black!important;">👜&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="myAdd" style="color:black!important;">My Wallet</span></a></li>
-						<li><a id="etherScan" class="waves-effect"><span  style="color:black!important;">🏦&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="myETH" style="color:black!important;">My ETH</span><span style="margin-left:0;" id="myGas" style="color:black!important;"></span></a></li>
-						<li><a id="ocurScan" class="waves-effect"><span  style="color:black!important;">🏢&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="myURL" style="color:black!important;">My OCUR</span></a></li>
-						<li><a id="locurScan" class="waves-effect"><span  class="lighten-2" style="color:black!important;">🏠&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="myDomain" style="color:black!important;">My LOCUR</span></a></li>
+						<li class="edger"><a onclick="closeTop(); openInNewTab('https://dralun.com');" class="edger waves-effect"><span  style="color:black!important;">✉️&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color:black!important;">Mail</span></a></li>
+						<li class="edger"><a id="locurScan" onclick="closeTop(); showDoc('manifest');" class="edger waves-effect"><span  class="lighten-2" style="color:black!important;">📄&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="myDomain" style="color:black!important;">Notes</span></a></li>
+						<li class="edger"><a onclick="closeTop(); openInNewTab('https://ocur.io');" class="edger waves-effect"><span  style="color:black!important;">📮&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color:black!important;">Posts</span></a></li>
+						<li class="edger"><a class="edger waves-effect" onclick="closeTop(); openInNewTab('https://iocur.com');" ><span  style="color:black!important;">📦&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="myAdd" style="color:black!important;">Shipments</span></a></li>
 						<li><div style="margin-top:0;" class="divider"></div></li>
-						
-						<li style="display: flex;align-items: center;justify-content: center;margin-top:12px;"><select id="domain-template" class="sider disabled" onchange="domainSelect();"><option selected="selected" value="void">Select domain...</option><option value="tactician.us">tactician.us (demo)</option></select></li>
-						
-						<li style="display:flex;justify-content:center;padding:12px;padding-top:4px;"><a id="matter" onclick="showView('lister'); document.getElementById('connor').click();" style="width:160px; display: flex;justify-content: space-between;margin-top:8px;" class="mobile-width waves-effect waves-light red lighten-1 btn disabled"><span>POST</span>📮</a></li>
-						<li style="display:flex;justify-content:center;padding:12px;"><a id="builder"  style="width:160px; display: flex;justify-content: space-between;" class="mobile-width waves-effect waves-light blue lighten-1 btn disabled" onclick="showView('mapper'); document.getElementById('connor').click();"><span>BUILD</span>🔧</a></li>
-						<li style="display:flex;justify-content:center;padding:12px;"><a id="trader" onclick="showView('lister');document.getElementById('connor').click();" style="width:160px; display: flex;justify-content: space-between;" class="mobile-width waves-effect waves-light green lighten-1 btn disabled" ><span>TRADE</span>📦</a></li></ul></div></div></div>
+						<li id="deeder" class="mobile-stat" style="display: flex; align-items: center; margin:12px;justify-content:center;">No profile connected.</li></ul></div></div></div>
     		
 		<!--<div style="width:64px;margin-left:16px;"><a><div style="width:64px;"><img class="image gear-image" style="opacity:0.6; height: 48px;position:absolute; margin: 4px; cursor:pointer;right:12px;top:4px;" src="img/egg(1).png" /></div></a></div>-->
 	
-	<ul class="right hide-on-med-and-down">
+	<ul >
    
       <li><a class="dropdown-trigger" href="#!" data-target="dropdown1"><img class="image gear-image" style="opacity:0.6; height: 48px;cursor:pointer;" src="img/compass3(1).png" /><i class="material-icons right">arrow_drop_down</i></a></li>
     </ul>
@@ -536,28 +534,27 @@ h1 {font-weight: 700;font-size: 64px; margin: 20px 0 0 0;padding: 0 20px;}
  em { font-style: normal;color: #ffc400;}
  a {font-style: normal;text-decoration: none;padding-right: 10px;cursor: pointer;}
  .sub { margin: 0;}
- .setter { cursor: pointer;bottom: 10px; position: relative;display: inline-block;font-size: 20px;line-height: 60px;font-weight: bold; transform: rotate(45deg); transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);}
- .expand .button {transform: rotate(630deg);transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);}
- .containerx {
-	 border: solid 1px lightgrey; margin: auto; top: 12px;border-radius: 50%; height: 36px; text-align: center; width:36px; max-width:800px;
-	 box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-	 overflow: hidden;
-	 transition: all 0.2s 0.45s, border 0s, height 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0.25s, max-width 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0.35s, width 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0.35s;}
+.setter {cursor: pointer;bottom: 10px;position: relative;display: inline-block;font-size: 20px;line-height: 60px;font-weight: bold;transform: rotate(45deg);transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);}
+.expand .button {transform: rotate(630deg);transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);}
+.containerx {border: solid 1px lightgrey;margin: auto;top: 12px;border-radius: 50%;height: 36px;text-align: center;width:36px;max-width:800px;box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);overflow: hidden;transition: all 0.2s 0.45s, border 0s, height 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0.25s, max-width 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0.35s, width 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0.35s;}.containerx.yellowx {background: rgb(231,188,120);background: linear-gradient(153deg, rgba(231,188,120,1) 35%, rgba(173,149,103,1) 100%);}
+.containerx.whitex { background: rgb(94,153,209); background: linear-gradient(167deg, rgba(94,153,209,1) 0%, rgba(127,179,227,1) 35%, rgba(119,177,218,1) 100%);}
+/*.shadow { box-shadow:none!important; }*/
 
-.redx:hover { border:solid 2px darkred; } .greenx:hover { border:solid 2px darkgreen; } .bluex:hover { border:solid 2px darkblue; } .yellowx:hover { border:solid 2px darkgoldenrod; }
-	.redx.expand { border:solid 2px darkred; } .yellowx.expand { border:solid 2px darkgoldenrod; } .bluex.expand { border:solid 2px darkblue;}
- .containerx.expand {
-	 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.17);border-radius: 0;  width: 80%; max-width:800px;
-	 height: 680px; padding: 0; 
-	 transition: all 0.2s, max-width 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0.1s, height 0.3s ease 0.25s;}
-	
- .contentx { transform: translateY(100%);width: 100%;height: 100%; opacity: 0;text-align: left;transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s 0.2s;}
- .expand .contentx {transform: translateY(0px); opacity: 1; transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.05s, opacity 0s;}
- .contentx .head {padding: 0 0 20px 0;}
- .contentx .body {color: #000;color: rgba(0, 0, 0, 0.87);background-color: #fff;width: 100%;height: 100%;box-sizing: border-box;}
- .action-bar {padding-left: 15px;border-top: 1px solid #e0e0e0; width: 100%;}
- .action-bar a {text-transform: uppercase;line-height: 52px;color: #ffc400;}
-	
+
+
+.whitex.expand { height: 580px; } .redx.expand { height: 610px; }
+
+.containerx.redx {background: rgb(245,141,141);background: linear-gradient(153deg, rgba(245,141,141,1) 35%, rgba(212,110,94,1) 100%);}.greenx {background: rgb(130,219,130);background: linear-gradient(153deg, rgba(130,219,130,1) 35%, rgba(103,173,109,1) 100%);}.containerx.bluex {background: rgb(113,149,207);background: linear-gradient(153deg, rgba(113,149,207,1) 35%, rgba(74,90,119,1) 100%);}
+
+.redx.expand:hover {border:solid 1px transparent;}.greenx.expand:hover {border:solid 1px transparent;}.bluex:hover {border:solid 1px transparent;}.yellowx.expand:hover {border:solid 1px transparent;} .whitex.expand:hover {border:solid 1px transparent;} 
+.redx:hover {border:solid 1px indianred;}.greenx:hover {border:solid 2px darkgreen;}.bluex:hover {border:solid 2px darkblue;}.yellowx:hover {border:solid 1px darkgoldenrod;}.whitex:hover {border:solid 1px darksteelblue;}
+
+/*.whitex.expand {border:solid 2px lightsteelblue!important;} .redx.expand {border:solid 2px indianred!important;}.bluex.expand {border:solid 2px darkblue;}*/
+
+.containerx.expand {box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.17);border-radius: 0px 0px 8px 8px;width: 80%;max-width:800px;padding: 0;transition: all 0.2s, max-width 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0.1s, height 0.3s ease 0.25s;}.containerx.expand.golden {height:560px!important;border-radius: 0px 0px 8px 8px;}.contentx {transform: translateY(100%);width: 100%;height: 100%;opacity: 0;text-align: left;transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s 0.2s;}
+
+.expand .contentx {transform: translateY(0px);opacity: 1;transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.05s, opacity 0s;}.contentx .head {padding: 0 0 20px 0;}.contentx .body {color: #000;color: rgba(0, 0, 0, 0.87);background-color: #fff;width: 100%;height: 100%;box-sizing: border-box;}.action-bar {padding-left: 15px;border-top: 1px solid #e0e0e0;width: 100%;}.action-bar a {text-transform: uppercase;line-height: 52px;color: #ffc400;}.badge-stamp {display: flex!important;align-items: center;justify-content: center;padding-top: 8px!important;}.dropdown-content {max-height:180px;}.select-wrapper {max-width:200px!important;} .popupContainer {z-index:1;}
+
 	.badge-stamp { display: flex!important;
     align-items: center;
     justify-content: center;
@@ -573,6 +570,16 @@ h1 {font-weight: 700;font-size: 64px; margin: 20px 0 0 0;padding: 0 20px;}
 	.text { opacity:0.85!important;}
 	
 
-	
+	.tabber {color: dimgrey;}  .active .tabber { color:indianred; } .tabby {color: darkgrey;}  .active .tabby { color:darkred; }
+
+
+.edger {border-left:solid 4px white!important; -webkit-transition: .3s ease-out;
+    transition: .3s ease-out; }
+.edger:hover {border-left:solid 4px goldenrod!important;}
+
+.booker { border-left:solid 4px white!important; -webkit-transition: .3s ease-out;
+    transition: .3s ease-out; }
+.booker:hover { border-left:solid 4px indianred!important; }
+
 	
 </style>
