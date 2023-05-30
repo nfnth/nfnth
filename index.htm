@@ -20,9 +20,9 @@
 <!-- menu -->
 <nav id="main-menu" style="position: fixed;top:0; z-index:2;visibility:hidden;" class="loader">
 	<div id="panel-menu" class="nav-wrapper header z-depth-1 grey lighten-5" style="padding-top:0px!important; padding-bottom:0px!important; display:flex; justify-content: left; color:black; border-bottom: solid 1px gainsboro;">
-    		<div style="height:103%;border-bottom:solid 2px darkred;" class="z-depth-1"><a id="menu-deed" style="cursor:pointer; color:darkslategrey; opacity:0.7; background-color:ghostwhite; display: flex; align-items: center; height: 100%; padding-right: 10px;font-weight: bold;font-size: 20px; -webkit-transition: background-color 300ms linear, color 300ms linear;-moz-transition: background-color 300ms linear, color 300ms linear;-o-transition: background-color 300ms linear, color 300ms linear;-ms-transition: background-color 300ms linear, color 300ms linear;transition: background-color 300ms linear, color 300ms linear;"><i id="bars" class="material-icons" style="padding-left:16px;" onclick="showList('open');$('#deed-pane').sidenav('open');">menu</i><div id="waiter" style="height:48px; width:48px; cursor: pointer; margin-left: 12px;" onclick="showList('open');$('#deed-pane').sidenav('open');"><img id="list-wait" class="image" src="img/seal(1).png" width="48" /></div></a></div>
+    	<div style="height:103%;border-bottom:solid 2px darkred;" class="z-depth-1"><a id="menu-deed" style="cursor:pointer; color:darkslategrey; opacity:0.7; background-color:ghostwhite; display: flex; align-items: center; height: 100%; padding-right: 10px;font-weight: bold;font-size: 20px; -webkit-transition: background-color 300ms linear, color 300ms linear;-moz-transition: background-color 300ms linear, color 300ms linear;-o-transition: background-color 300ms linear, color 300ms linear;-ms-transition: background-color 300ms linear, color 300ms linear;transition: background-color 300ms linear, color 300ms linear;"><i id="bars" class="material-icons" style="padding-left:16px;" onclick="showList('open');$('#deed-pane').sidenav('open');">menu</i><div id="waiter" style="height:48px; width:48px; cursor: pointer; margin-left: 12px;" onclick="showList('open');$('#deed-pane').sidenav('open');"><img id="list-wait" class="image" src="res/img/seal.png" width="48" /></div></a></div>
     		
-    		<!-- profile -->
+    	<!-- profile -->
     	<div id="egger" class="containerx yellowx golden" style="background-color: beige;display:none;"><span id="connor" class="button setter">🪨</span>
 			  <div class="contentx">
 				<div id="walleter" class="head" style="display: flex;align-items: center;justify-content: space-evenly;">
@@ -36,14 +36,9 @@
 						<li class="edger"><a class="edger waves-effect" onclick="closeTop(); openInNewTab('https://iocur.com');" ><span  style="color:black!important;">📦&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="myAdd" style="color:black!important;">Shipments</span></a></li>
 						<li><div style="margin-top:0;" class="divider"></div></li>
 						<li id="deeder" class="mobile-stat" style="display: flex; align-items: center; margin:12px;justify-content:center;">No profile connected.</li></ul></div></div></div>
-    		
 
-	
-	<ul >
-   
-      <li><a id="dropdown-tooler" class="dropdown-trigger" href="#!" data-target="dropdown-tool"><img class="image gear-image" style="opacity:0.6; height: 36px; width:36px; margin-right:-12px;cursor:pointer;" src="img/compass3(1).png" /><i class="material-icons right">arrow_drop_down</i></a></li>
-    </ul>
-	</div></nav>
+		<!-- tool -->
+		<ul><li><a id="dropdown-tooler" class="dropdown-trigger" href="#!" data-target="dropdown-tool"><img class="image gear-image" style="opacity:0.6; height: 36px; width:36px; margin-right:-12px;cursor:pointer;" src="img/compass3(1).png" /><i class="material-icons left">arrow_drop_down</i></a></li></ul></div></nav>
 		
 <!-- panel -->
 <ul id="deed-pane" class="sidenav loader" style="visibility:hidden;overflow:hidden;">
@@ -85,7 +80,7 @@
 <div id="home" style="height:105%; text-align:center;visibility:hidden; width:100%; z-index:1; padding-top: 54px;" class="content loader print-help">
 
 <!-- load -->
-	<div id="loader" class="" >
+	<div id="loader" class="content loader pane scale-transition scale-out" >
 		<div class="loaderx">
 			<div style="color:indianred; font-weight:bold; font-size:18px;margin-top:-100px;display:flex;justify-content:center;">LOADING <div style="margin-left:12px;  color:black; font-weight:none;" id="brand"></div></div>
 			<div class="loader-bg z-depth-1">
