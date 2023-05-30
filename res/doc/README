@@ -136,3 +136,135 @@ function download(text, name, type) {
 
 <a href="" id="a">click here to download your file</a>
 <button onclick="download('file text', 'myfilename.txt', 'text/plain')">Create file
+
+opencv
+
+192.168.10.1 (wifi extend)
+
+app.titan.email
+
+cloud.ibm.com
+
+artstation
+itch.io
+
+
+
+
+grep -R "term" file/folder
+
+
+netstat -tulpn
+
+apk add ufw
+ufw allow 465/tcp
+
+apk add  busybox-extras
+telnet ocur.io 25
+
+#ffmpeg.org
+
+wikipedia articles
+...Ocurio (m@nfnth.com)
+en.wikipedia.org/wiki/User:Ocurio (also /sandbox)
+
+about:preferences
+
+
+http://localhost:631/
+
+dynu.com
+
+apk del <package>
+
+apk add curl
+
+apk add redis
+
+
+$ telnet mail.sinisterriot.com 25
+
+Add the HELO command to tell the server which domain you are coming from:
+
+HELO sinisterriot.com
+
+Next is the sender. This ID can be added with the MAIL FROM command:
+
+MAIL FROM: somewhere@sinisteriot.com
+
+This entry is followed by the recipient, and you can add more than one by using the RCPT TO command multiple times:
+
+RCPT TO: someone@sinisterriot.com
+
+Finally, we can add the content of the message. To reach the content mode, we add the prefix DATA on a line by itself, followed by the Subject line, and the body message. Listed below is an example:
+
+DATA
+
+Subject: This is a test message  
+
+Hello,
+
+This is a test message
+
+.
+
+In order to finish the message body and close it, you need to add a single period (.) or dot on a line by itself. 
+
+
+
+...webui-rest example
+
+curl localhost:8000/api/f1
+{"result": 123}
+
+The button on the right sends an HTTP request using the POST method to the URI /api/sum, containing a JSON array [1, 2] in the BODY; then shows the results. We can simulate that manually by connecting to the REST API with curl, for example:
+
+curl localhost:8000/api/sum -d '[123, 456]'
+{"result":579}
+
+...use smtp example also...
+
+mongoose.ws
+
+wiki.alpinelinux.org/wiki/Setting_up_postfix_with_virtual_domains
+
+curl.se/libcurl/c
+
+#include <stdio.h>
+#include <curl/curl.h>
+ 
+int main(void)
+{
+  CURL *curl;
+  CURLcode res;
+ 
+  /* In windows, this will init the winsock stuff */
+  curl_global_init(CURL_GLOBAL_ALL);
+ 
+  /* get a curl handle */
+  curl = curl_easy_init();
+  if(curl) {
+    /* First set the URL that is about to receive our POST. This URL can
+       just as well be an https:// URL if that is what should receive the
+       data. */
+    curl_easy_setopt(curl, CURLOPT_URL, "http://postit.example.com/moo.cgi");
+    /* Now specify the POST data */
+    curl_easy_setopt(curl, CURLOPT_POSTFIELDS, "name=daniel&project=curl");
+ 
+    /* Perform the request, res will get the return code */
+    res = curl_easy_perform(curl);
+    /* Check for errors */
+    if(res != CURLE_OK)
+      fprintf(stderr, "curl_easy_perform() failed: %s\n",
+              curl_easy_strerror(res));
+ 
+    /* always cleanup */
+    curl_easy_cleanup(curl);
+  }
+  curl_global_cleanup();
+  return 0;
+}
+
+name.com and dynu.com, RapidSSL?
+
+swisscows.com
