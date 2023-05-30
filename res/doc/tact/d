@@ -17,3 +17,29 @@ For example, say you decide to list a product as an NFT on OpenSea. When a clien
 Another example is you want to associate your physical address with a wallet address. Purchase a **deed domain** and create a profile with your address for people to view by visiting the domain.
 
 All exchanged notes are validated via signature to guarantee wallet authentication. Although secure message delivery is guaranteed, it is up to the recipient's discretion to not disclose your information.
+
+### How To Use OCUR
+
+**OCUR** is the token used to exchange information on **OCUR.io**.
+
+For example, to send question regarding an artifact and/or submit address information after purchasing an artifact, uses **OCUR** with the connected wallet.
+
+To trade **OCUR**, in the **Wallet** <span style="font-size:32px;">🥚</span> menu, select **OCUR** for instructions on how to purchase, then select **LOCUR* to transfer the amount needed.
+
+After transfer, select **Trade 📦**, to view and/or send messages to any deed and/or artifact.
+
+All information sent is private and only viewable by the owner of the deed and/or artifact.
+
+The **OCUR** token to used to help facilitate the trade feature and either a minimum amount of 1000 **OCUR**/**LOCUR** and/or a **deed** is required to send messages.
+
+Transactions supported include,
+
+
+|**Transaction**|**Description**|
+|-|-|-|
+|*wallet to wallet*|user messages are sent to the owner's wallet|
+|*wallet to domain*|user messages are sent to the owner's domain|
+|*domain to wallet*|domain messages are sent to a user's wallet|
+|*domain to domain*|domain messages are sent to another owner's domain|
+
+All messages are validated via the connected wallet's signature to guarantee authenticity. 
