@@ -1,32 +1,48 @@
 
-### the ocurOS Manual
+### ✏️ the NfNth Manual 📒
 
-Based on [Arch Linux](https://archlinux.org), **ocurOS** is a minimal, fast, easy-to-use, *browser-centric* distro.
+Built on [Alpine Linux](https://alpinelinux.org), **nfnth** is a fast, minimal, *browser-centric* distro.
 
-To install, run **Arch Linux**, use either,
 
-   - a [Linode](https://linode.com) instance *(remote)*
-   - an [ISO image](https://archlinux.org/download/) *(local)*
-
+To install base, 
 
 ```
-      wget http://mirror.rackspace.com/archlinux/iso/2021.06.01/archlinux-2021.06.01-x86_64.iso
-      dd if=archlinux-2021.06.01-x86_64.iso of=/dev/sda status=progress #after inserting USB
-      # reboot, and enter BIOS (use Esc or Del), then select the USB drive in the boot menu
+wget https://dl-cdn.alpinelinux.org/alpine/v3.17/releases/x86_64/alpine-extended-3.17.2-x86_64.iso
+fdisk -l # list USB drive, ie. /dev/sdb
+dd if=alpine_linux_version.iso of=/dev/sdb 
+# reboot, use ESC/DEL in BIOS to boot into USB
+setup-alpine 
+# reboot again
 ```
 
-Next, connect to the network, download, and run:
+#apk add pwgen
+#pwgen 12 10 -1 -y
 
+#ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa_aws_$(date +%Y-%m-%d) -C "AWS key for abc corp clients" #stored in /root/.ssh/authorized_keys
+#ssh-copy-id -i /root/.ssh/id_rsa.pub root@192.168.34.26
 
-```
-   iwctl #station wlan0 connect <network> #exit *(local only)*
-   pacman -Sy && wget https://ocur.io/ocuros.tar.xz && tar -xzf ocuros.tar.xz 
-   chmod +x desk/build.sh && desk/build.sh #feel free to edit build.sh, desk/os, etc. to set parameters
-```
+- To setup client, 
+
+        ```
+        setup-xorg-base
+        apk add seatd wayland weston weston-terminal weston-shell-desktop weston-backend-drm chromium font-noto-emoji rsync
+        mkdir /root/.config # location for weston.ini
+        /etc/init.d/seatd start
+        export XDG_RUNTIME_DIR=/tmp/ && /usr/bin/weston
+        ```
+
+- To setup server, 
+
+        ```
+        apk add haproxy certbot gcc cmake python3 py3-pip openssh musl-dev rsync varnish
+        pip3 install aiohttp asyncio web3 pdf2image poppler-utils
+        mkdir /etc/haproxy/cert
+        ```
 
 That's it. Enjoy!
 
-#### Useful commands (ports)
+
+#### Additional commands (ports) and known issues
 
 ```
 vim <file> #press (i) to insert and make changes, (Esc) to escape
@@ -39,13 +55,84 @@ ping nfnth.com -c 2 #test network
 fdisk -l #show drives
 ```
 
-|Port|Function|
-|-|-|
-|22|SSH|
-|80|http *(site)*|
-|443|https *(seure socket layer)*|
+
+#### Affiliates
+
+Register to [name.com](https://www.name.com) with mail from [Titan](https://app.titan.email). Run on [Linode](https://cloud.linode.com). Ship with [USPS](https://www.usps.com/business/web-tools-apis/documentation-updates.htm) and [EasyShip](https://app.easyship.com). 
+
+[image](https://imagecompressor.com/) [regex](https://regexr.com/) [crop](https://pixlr.com/x/#editor), 3D file marketplace?
+...https://tinypng.com, emojiterra.com
+
+[Wikipedia](https://www.wikipedia.org/wiki/Special:Random) [news](https://wikipedia.org/wiki/Main_Page), [Gutenberg](http://www.gutenberg.org) |library, national archives?|lookup.icann.org
+
+apk add alsa-utils alsa-lib
+...alsamixer (m to unmute)
+
+lsmod
+...search /lib/modules
+...use modprobe <name> or rmmod <name>
+...also dmesg and lsusb
+
+wiki.alpinelinux.org/wiki/Printer_Setup
+
+apk add cups cups-libs cups-client cups-filters #cups-pdf
+/etc/init.d/cupsd start
+apk add shadow
+usermod -aG lpadmin root
+tar -xf drivers.tar.gz
+check /var/log/cups/error_log
+ldd <filter> #currently musl only, needs glibc support or vice-versa
 
 
-<button onclick="buyThing();" style="background-color:#6772E5;color:#FFF;border:0;border-radius:4px;font-size:1em;cursor:pointer" id="checkout-button-price_1NCnkuHtnEEsiKCN9RRuHv4h" role="link" type="button">Checkout</button>
+#ffmpeg -i input.mp4 -ss 00:01:10 -t 00:01:05 -c:v copy -c:a copy output.mp4
+#This will extract 1min5sec (using the -t flag) starting from 1min10sec (the -ss flag) in the file.
+#Keyframe seeking
+#I have sometimes experienced that the above commands leave black frames at the beginning of the video. After some digging around I found that this may be because of lacking keyframes. So a trick is to move the -ss command before -i in the example above:
+#ffmpeg -ss 01:19:27 -i input.mp4 -to 02:18:51 -c:v copy -c:a copy output.mp4
 
-<div id="error-message"></div>
+#wpa_passphrase 'SSID' 'password' > /etc/wpa_supplicant/wpa_supplicant.conf
+#wpa_supplicant -i wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf
+
+#df -H
+#...check available drive space
+
+apk add ttf-dejavu ttf-liberation ttf-opensans ttf-font-awesome ttf-freefont
+
+    #ssh user@hostB "ls -la"
+    #scp api.py build.sh root@${api}:/root
+
+# ...docs.kernel.org...
+
+#Next, connect to the network, download, and run:
+#   iwctl #station wlan0 connect <network> #exit *(local only)*
+#   wget https://ocur.io/ocuros.tar.xz && tar -xzf ocuros.tar.xz 
+
+nano /etc/apk/repositories
+apk update
+apk upgrade <package>
+
+/sys/class/drm
+
+apk add iwd
+rc-service iwd start
+iwctl station wlan0 connect <network>
+
+apk add certbot dovecot
+ 
+ Sometimes, you have to use ZIP archives, or worse, RAR archives (curse them!), with one significant annoyance: zip, unzip, rar and unrar use a rather uncommon command line convention, compared to the usual tar, cpio and pax.
+
+This is where bsdtar and bsdcpio come handy: these two equivalent tools from FreeBSD do not directly implement any archive format, relying on libarchive to do that instead. That allows you to do thinks like:
+
+% bsdtar -tf crap.rar
+% bsdtar -xf crap.rar
+% bsdtar --format zip -cf stuff.zip stuff
+
+function download(text, name, type) {
+  var a = document.getElementById("a");
+  var file = new Blob([text], {type: type});
+  a.href = URL.createObjectURL(file);
+  a.download = name;
+}
+
+<a href="" id="a">click here to download your file</a>
+<button onclick="download('file text', 'myfilename.txt', 'text/plain')">Create file
