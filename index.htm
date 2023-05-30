@@ -39,7 +39,13 @@
 						<li style="display:flex;justify-content:center;padding:12px;"><a id="builder"  style="width:160px; display: flex;justify-content: space-between;" class="mobile-width waves-effect waves-light blue lighten-1 btn disabled" onclick="showView('mapper'); document.getElementById('connor').click();"><span>BUILD</span>🔧</a></li>
 						<li style="display:flex;justify-content:center;padding:12px;"><a id="trader" onclick="showView('lister');document.getElementById('connor').click();" style="width:160px; display: flex;justify-content: space-between;" class="mobile-width waves-effect waves-light green lighten-1 btn disabled" ><span>TRADE</span>📦</a></li></ul></div></div></div>
     		
-		<div style="width:64px;margin-left:16px;"><a><div style="width:64px;"><img class="image gear-image" style="opacity:0.6; height: 48px;position:absolute; margin: 4px; cursor:pointer;right:12px;top:4px;" src="img/egg(1).png" /></div></a></div></div></nav>
+		<!--<div style="width:64px;margin-left:16px;"><a><div style="width:64px;"><img class="image gear-image" style="opacity:0.6; height: 48px;position:absolute; margin: 4px; cursor:pointer;right:12px;top:4px;" src="img/egg(1).png" /></div></a></div>-->
+	
+	<ul class="right hide-on-med-and-down">
+   
+      <li><a class="dropdown-trigger" href="#!" data-target="dropdown1"><img class="image gear-image" style="opacity:0.6; height: 48px;cursor:pointer;" src="img/egg(1).png" /><i class="material-icons right">arrow_drop_down</i></a></li>
+    </ul>
+	</div></nav>
 		
 <!-- panel -->
 <ul id="deed-pane" class="sidenav loader" style="visibility:hidden;overflow:hidden;">
@@ -120,7 +126,14 @@
 		<a href="#!" class="modal-close waves-effect waves-light btn green" style="width:120px; display: flex; justify-content: space-between;" onclick="showView('lister');">🗒️<span class="hide-on-med-and-down">&nbsp;&nbsp;Notepad</span></a>
 		<a href="#!" class="modal-close waves-effect waves-light blue btn" style="width:120px; display: flex; justify-content: space-between;" onclick="showView('mapper');">🗺️<span class="hide-on-med-and-down">&nbsp;&nbsp;Map</span></a></div></div>
 
-<!-- items -->					
+<!-- items -->
+<ul id="dropdown1" class="dropdown-content">
+  <li><a href="#!">one</a></li>
+  <li><a href="#!">two</a></li>
+  <li class="divider"></li>
+  <li><a href="#!">three</a></li>
+</ul>
+
 <ul id='dropdown-open' class='dropdown-content'>
     	<li><a href="#!" onclick="opens.sort(openAZ); showList('open');">Name&nbsp;&nbsp; &#8595;</a></li><li><a href="#!" onclick="opens.sort(openZA); showList('open');">Name&nbsp;&nbsp; &#8593;</a></li>
     	<li style="margin-top:0;"class="divider" tabindex="-1"></li>
@@ -231,7 +244,8 @@ async function initial() { $('body').css("background-color","lightgrey");
     	//$('#docs').dropdown({ constrainWidth: false, coverTrigger: false } ); $('#doc-hide').dropdown({ constrainWidth: false, coverTrigger: false } ); //hover: true 
 	//$('#tools').dropdown({ constrainWidth: false, coverTrigger: false } ); $('#tool-hide').dropdown({ constrainWidth: false, coverTrigger: false } );
 	
-	$('#dropdown-opener').dropdown({ constrainWidth: false }); $('#dropdown-domainer').dropdown({ constrainWidth: false });
+$(".dropdown-trigger").dropdown({ constrainWidth: false });
+	//$('#dropdown-opener').dropdown({ constrainWidth: false }); $('#dropdown-domainer').dropdown({ constrainWidth: false });
 	$('#deed-pane').sidenav({ edge: 'left' }); //, onCloseEnd: deedMap});
 	// $('#user-pane').sidenav({ edge: 'right' }); showView('mapper');  pullOpens(); switchFeed(false);
 showView("slider");
