@@ -1,0 +1,213 @@
+
+
+
+Civilian Complex · An Ocurious Guide to Deed Domain
+
+An exercise in armchair centrism and the use of a personal tactician.
+
+To understand the tacit needs and concerns of middle-class comfort, so as an average citizen can create monsters at will, it is these demons that also must be vanquished.
+
+To present itself as a need of self-propagation and infinitive-basis so that in the utopian watchmaker's workshop we can begin to build and destroy such things.
+
+To know yet unfortunately, that despite such grand endeavors, the limitation of time is always present.
+
+
+<div style="width:100%;display:flex;justify-content:center;"><img id="tv" src="res/img/dralun/int/tv/TV_Horror.gif" style="width:64px; height:64px;" />
+<img id="retro" src="res/img/dralun/int/tv/TV_Horror.gif" style="height:48px;" />
+<img id="pet" src="res/img/dralun/int/tv/TV_Horror.gif" style="width:64px; height:64px;" />
+<img id="fire" src="res/img/dralun/int/tv/TV_Horror.gif" style="width:64px; height:64px;" /></div>
+
+<button onclick="changeChannel();">Channel</button>
+
+<script>
+// foods = res/img/dralun/icon/food/f (1).png ... to 228
+// deserts = res/img/dralun/icon/desert/d (1).png ... to 64
+var remote = 0; var remote1 = 0; var remote2 = 0; var remote3 = 0;
+var channels = ['Horror.gif','cooking_breakfast','cooking_dessert','cooking_snack','cooking_soup','drama','sports','weather_cloudy','weather_rain','weather_snow','weather_sun','weather_thunder'];
+var retros = ['drama','horror','sports','static','weather_cloudy','weather_rain','weather_snow','weather_sun','weather_thunder'];
+var pets = ['bird/budgie_blue','bird/budgie_green_yellow','bird/budgie_grey','bird/budgie_turquoise','bird/budgie_yellow','bird/budgie_yellow_blue','bird/budgie_yellow_green','fish/aquarium16x16','fish/aquarium_betta','fish/aquarium_saltwater','hamster/hamstercage_black','hamster/hamstercage_ourple','hamster/hamstercage_red','hamster/hamstercage_turquise','hamster/hamstercage_white'];
+//sleep, walk_down, walk_left, walk_right, walk_up + drink, eat, sleep, sit_left, sit_right, sit_up (dog/yorkie_
+var fires = ['candelabra_gold_red','candelabra_gold_white','candelabra_silver_red','candelabra__silver_white','candleholder_gold_red','candleholder_gold_white','candleholder_silver_red','candleholder_silver_white','candles_red','candles_white','fireplace1_beige','fireplace1_black','fireplace1_darkbrown','fireplace1_grey','fireplace1_redbeige','fireplace1_redbrown','fireplace1_white','fireplace2_beige','fireplace2_black','fireplace2_darkbrown','fireplace2_grey','fireplace2_redbeige','fireplace2_redbrown','fireplace2_white','fireplace_modern_beige','fireplace_modern_black','fireplace_modern_darkbrown','fireplace_modern_grey','fireplace_modern_redbeige','fireplace_modern_redbrown','fireplace_modern_white'];
+function changeChannel() {
+if (remote > 3) { remote = 0; } else { remote += 1; }
+$("#tv").attr("src","res/img/dralun/int/tv/TV_" + channels[remote] + ".gif");  $("#retro").attr("src","res/img/dralun/int/tv/retroTV_" + retros[remote1] + ".gif"); $("#pet").attr("src","res/img/dralun/int/pet/" + pets[remote2] + ".gif"); $("#fire").attr("src","res/img/dralun/int/fire/" + fires[remote3] + ".gif");
+}
+</script>
+
+
+
+To understand time, consider three (3) principles:
+
+**Tortoise** and **Hare**, one moves *slow* and reflective, the other moves *fast* without thought
+
+**Chronos** and **Kairos**, the ancient Greek's two distinctions,
+
+    - Chronos, as numeric or chronological, time as a *quantitative* force
+
+    - Kairos, as the right or opportune moment, used in metaphysical or Divine time, as a *qualitative* force
+
+**Janus**, the Roman, double faced towards both *future* and *past*
+
+Taken as one, time becomes a steady stream to which we are given mere "drops" so that we can observe the basic structure of things and not be overwhelmed by the details.
+
+You must work to avoid pitfalls by challenging your instincts and training them with constructive plans, a classic representation of our struggles.
+
+### "worker" dirty habits vs. "king" technology scenario
+
+#### Case example: Huff Parker (asleep)
+
+Suffering from the prisoner's dilemna, a person is alone and confused now fallen into a state of continual discomfort. For example, he wakes up in a cave of darkness. Damn, he mutters checking the time. He was running late and was already lost in the memories of last night's dream. The thoughts of work encroach upon his mind and for a moment he tells himself one more minute of rest until his phone awakens. Damn, he said again and so it was. Lying in a messy bedroom, unshowered/unshaved, only looking forward to his stash of drugs and a smoke with Mr. Pibbles and his clan of cats, now oblvious to the light outside.
+
+- ("overinflated bloat") madness, confusion, details, so many goddamn details, scattered thoughts like papers, try to grab as many as you can, random universe, forget something and go back to get it, you're going off course into dead time where you see things you normally wouldn't, things as they are without you there
+
+#### Case example: Max Hamish (awake)
+
+- ("pure primalcy") Need to defeat my colossi, catch the millennium to save myself, past/present/true/false matrix as lie detector, dark tower as mountain top? something to waste away on, the "kings" I pay homage to...
+
+### Use the remarkable routine to maximize quandrants
+
+1. awake to noise with natural light in cozy den
+    - do chores (household order, diner) for exercise
+    - clean as you go
+1. take shower in hot springs with hygiene
+    - dress/style in clean linens with an agenda
+    - map (unfamiliar) territory with laid out as paths
+    - chart a course/campaign, script day with tasks/events/deliverables...
+1. have coffee and movable snack
+    - open shop, discuss specs (we'll eat first, then go), commute by drive or passenger, make observations on the environment, run errands/stocks/shipments
+1. meet not for fun, but business, adversaries and islands (with whales)
+    - two shelters in position, both shaky, raid them and take fire
+    - fun and games said officer, we saw your smoke, what have you been doing? having a war or something?
+    - on friendship, let's have a fort
+    - people haul rocks up a mountain, each move on in a different way
+1. get home and sit on floor with back against wall
+    - eat dinner, watch old shows with chess/cards, music/news, relax, read by a fire, work late with classical music, study with homework/reading/writing/drawing
+1. rest and wash up, drink water, medicine, then sleep
+    - midnight snack of milk and apple), no Stress
+
+Our father and our God we pray to thoueth take these few thoughts on time and help us to realize the brevity and the urgency of time, and may we invest what little time we in the kingdom of God but we ask it in his name Amen
+
+*the "American Archetype", Matthew Tin, from the food truck diner menu* household order...
+
+**Richard Matt, 
+May 18, 2017 Lake Erie Plane Crash
+Mackinac "Drowning Pool"
+
+beer/bread Tartoogas revival with picnics, renditions of American classics with exotic cash crops (peppers/willow/mint/gum), menu abstract simple vs. detailed
+
+- "crafted" snacks to feasts (cooked beef stew, fried chicken/potato salad/bread/cheese/brownies, crackers, meat, spices, knoephla bacon) fry/spice meat, (potato)salad/bread/cheese/brownies/soup/crackers
+- jelly jar drink alchemy tonic/elixir (water, coffee, tea, vitamins, shakes, wine, spirits, sparkling juice), screen shock headache powder
+
+climb/dive/fly, be Mr. Happy and own a mountain, beach "model" island sanctuary in sustainable [boat](https://www.boattrader.com/boat/2005-catamaran-cruisers-35-vagabond-7311908/) cabin with hawks/whales in Edmonds with bio toilet as a isolationist outpost (land)
+coast with Canada and Mexico by 41, expeditions for artifacts/relics, nomad/forager, maps/charts for geocaching/geotagging, freedom to roam, Silver dollars, victory gin, 3.1415
+
+online food truck (electric van) with "hot" delivery
+psy op fish biosynthesis, reward registry...drug shower...food truck feast
+
+
+
+### On State and Process in Non-Death Scenarios (Current State)
+
+ [order]: past/present/true/false (suit quadrant?)
+*patrician...
+|Laws of Governance|[order]|
+|-|-|
+|Self, plan, people, ability to empower|[spec] - "power" (good to get lost)|
+|Task, stock/supply, item/tool, transport|[build] - "raid" (expand territory)|
+|Cash/papers, property, market, utility|[resource] - "establishment" (build base)|
+|Desert mentality, sustainable boat cabin|[relic] - "world citizenship" (consume)|
+
+
+
+neoprene suit, brick central fire box, compositing bio pit, rooftop solar heater
+
+tonic and elixir "channel"
+
+"visor" kit
+...special day/dose with theme?
+
+Crexi
+
+Fakro
+...ladder, door window
+
+Ecobee thermostat, lockly 2nd door lock
+Sarah Meyerson
+
+craigslist
+
+mimakiusa.com
+
+National Honor Society
+
+trawler boat, elevator
+
+snohomish (haircut at Stag) SAT, national honor society
+
+Boston Architectural
+Goddard
+Lake Washington Institute of Technology
+Montana State (Northern also)
+New England
+North Florida
+Concordia
+Covenant
+Eastern Oregon
+Evergreen State
+National Louis
+
+www.saiyangmarine.com
+charts.noaa.gov
+ienccloud.us
+
+Chevy Bolt
+seabolt.co = no dock unless already built
+
+www.robomarkets.com
+
+Quitclaim Deed
+Recording Requested By:
+...
+And When Recorded Mail To:
+..., Grantee(s):
+...
+...
+Consideration: $...
+Property Transfer Tax: $...
+Assessor's ParcelNo.:...
+PREPARED BY:...certifies herein that he or she has prepared this Deed.
+...(Signature of Preparer) ...(Date of Preparation)
+...(Printed Name of Preparer)
+THIS QUITCLAIM DEED, executed on...in the County of..., State of... by Grantor(s),...,
+whose post office address is...to Grantee(s),...,...whose post office address is...
+WITNESSETH, that the said Grantor(s),...
+for good consideration and for the sum of...($...) paid by the said Grantee(s), the receipt whereof is hereby acknowledged, does hereby remise, release and quitclaim unto the said Grantee(s) forever, all the right, title interest and claim which the said Grantor(s) have in and to the following described parcel of land, and improvements and appurtenances thereto in the County of..., State of... and more specifically described as set forth in EXHIBIT "A" to this Quitclaim Deed, which is attached hereto and incorporated herein by reference.
+IN WITNESS WHEREOF, the said Grantor(s) has signed and sealed these presents the day and year first above written. Signed, sealed and delivered in presence of:
+GRANTOR(S):
+...(Signature of  Grantor) ...(Signature of Second Grantor) (if applicable)
+...(Print Name of Grantor) ...(Print  Name of Second Grantor) (if applicable)
+...(Signatureof First  Witness to Grantor(s)) ...(Signature of Second Witness to Grantor(s)
+...(Print Name of First Witness to Grantor(s)) ...(Print Name of Second Witness to Grantor(s)
+GRANTEE(S):
+...(Signature  of Grantee) ...(Signature of  Second Grantee (if applicable)
+...(Print Name of  Grantee) ...(Print Name of Second Grantee (if applicable)
+...(Signture of First Witness to Grantee(s) ...(Signature  of Second Witness to Grantee(s)
+...(Print Name  of First Witness to Grantee(s) ...(Print Name  of Second Witness to Grantee(s)
+
+NOTARY ACKNOWLEDGMENT
+State of ...
+County of ...
+On..., before  me, ..., a notary public in and for said  state, personally appeared, ...
+who are known to me (or proved to me on the basis of satisfactory evidence) to be the persons whose names are subscribed to the within instrument and acknowledged to me that they executed the same  in their  authorized capacities, and that by their signatures on the instrumentthe persons, or the entity upon behalf of whichthe persons acted, executed the instrument.
+WITNESS my hand and official seal.
+...(Signature of Notary)
+Affiant Known... Produced ID...
+Type of ID ... 
+(Seal)
+Exhibit "A"
+...
+...
+...
+...
+
+add notary? process server?
