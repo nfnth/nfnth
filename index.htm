@@ -41,7 +41,7 @@
 	
 	<ul >
    
-      <li><a id="dropper" class="dropdown-trigger" href="#!" data-target="dropdown1"><img class="image gear-image" style="opacity:0.6; height: 36px; width:36px; margin-right:-12px;cursor:pointer;" src="img/compass3(1).png" /><i class="material-icons right">arrow_drop_down</i></a></li>
+      <li><a id="dropdown-tooler" class="dropdown-trigger" href="#!" data-target="dropdown-tool"><img class="image gear-image" style="opacity:0.6; height: 36px; width:36px; margin-right:-12px;cursor:pointer;" src="img/compass3(1).png" /><i class="material-icons right">arrow_drop_down</i></a></li>
     </ul>
 	</div></nav>
 		
@@ -117,13 +117,23 @@
 		<a href="#!" class="modal-close waves-effect waves-light btn green" style="width:120px; display: flex; justify-content: space-between;" onclick="showView('lister');">🗒️<span class="hide-on-med-and-down">&nbsp;&nbsp;Notepad</span></a>
 		<a href="#!" class="modal-close waves-effect waves-light blue btn" style="width:120px; display: flex; justify-content: space-between;" onclick="showView('mapper');">🗺️<span class="hide-on-med-and-down">&nbsp;&nbsp;Map</span></a></div></div>
 
-<!-- items -->
-<ul id="dropdown1" class="dropdown-content">
-  <li><a href="#!">one</a></li>
-  <li><a href="#!">two</a></li>
-  <li class="divider"></li>
-  <li><a href="#!">three</a></li>
-</ul>
+<!-- template -->
+<ul id='dropdown-tool' class='dropdown-content' style="max-height:none;">
+	<li><a href="#!" onclick="showView('charter'); openMap();" ><span>📝</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Editor</span></a></li>
+	<li style="margin-top:0;"class="divider" tabindex="-1"></li>
+    
+    <li><a href="#!" onclick="$('#modal-settings').modal('open');"><span>⚙️</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Settings</span></a></li>
+    <li><a href="#!" onclick="$('#modal-snap').modal('open');"><span>☎️</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Help</span></a></li>
+    <li style="margin-top:0;"class="divider" tabindex="-1"></li>
+    <li><a href="#!" onclick="showDoc('PLANME');" ><span>⛰️️</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>About</span></a></li></ul>
+
+<ul id='dropdown-use' class='dropdown-content' style="max-height:none;">
+	<li><a href="#!" onclick="$('#modal-sign').modal('open');" ><span>📝</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Sign In</span></a></li>
+	<li style="margin-top:0;"class="divider" tabindex="-1"></li>
+    <li><a href="#!" onclick="$('#modal-user').modal('open'); clearUser();"><span>🪪</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Create User</span></a></li>
+    <li style="margin-top:0;"class="divider" tabindex="-1"></li>
+    <li><a href="#!" onclick="$('#modal-pass').modal('open');" class="disabled"><span>🔑</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Edit Password</span></a></li>
+    <li><a href="#!" onclick="$('#modal-reset').modal('open');" ><span>🔓️</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Reset Password</span></a></li></ul>
 
 <ul id='dropdown-open' class='dropdown-content'>
     	<li><a href="#!" onclick="opens.sort(openAZ); showList('open');">Name&nbsp;&nbsp; &#8595;</a></li><li><a href="#!" onclick="opens.sort(openZA); showList('open');">Name&nbsp;&nbsp; &#8593;</a></li>
@@ -139,7 +149,7 @@
 	<li style="margin-top:0;" class="divider" tabindex="-1"></li>
 	<li><a href="#!" onclick="domains.sort(domain09); showList('domain');">Price &#8595;</a></li><li><a href="#!" onclick="domains.sort(domain90); showList('domain');">Price &#8593;</a></li></ul>
 
-<ul id='dropdown-tool' class='dropdown-content'>
+<ul id='dropdown-toolx' class='dropdown-content'>
     	<li><a href="#!" onclick="domains.sort(domainAZ); showList('domain');">Name &#8595;</a></li><li><a href="#!" onclick="domains.sort(domainZA); showList('domain');">Name &#8593;</a></li>
     	<li style="margin-top:0;"class="divider" tabindex="-1"></li>
     	<li><a href="#!" onclick="domains.sort(domainaz); showList('domain');">Count &#8595;</a></li><li><a href="#!" onclick="domains.sort(domainza); showList('domain');">count &#8593;</a></li>
@@ -234,7 +244,7 @@ async function initial() { $('body').css("background-color","lightgrey");
 	//$("#registry-open").css("height",(height - 120) + "px"); $("#registry-domain").css("height",(height - 120) + "px");
     	//$('#docs').dropdown({ constrainWidth: false, coverTrigger: false } ); $('#doc-hide').dropdown({ constrainWidth: false, coverTrigger: false } ); //hover: true 
 	//$('#tools').dropdown({ constrainWidth: false, coverTrigger: false } ); $('#tool-hide').dropdown({ constrainWidth: false, coverTrigger: false } );
-	$('#dropper').dropdown({ constrainWidth: false });
+	$('#dropdown-tooler').dropdown({ constrainWidth: false });
 //$(".dropdown-trigger").dropdown({ constrainWidth: false });
 	$('#dropdown-opener').dropdown({ constrainWidth: false }); $('#dropdown-domainer').dropdown({ constrainWidth: false });
 	$('#deed-pane').sidenav({ edge: 'left' }); //, onCloseEnd: deedMap});
