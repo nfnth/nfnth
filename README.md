@@ -8,17 +8,17 @@
 
 #### Projects
 
-Build <img src="img/island.png" style="width:40px;height:40px;" /> [**UR**.Land map](https://ur.land) with [🪨](https://xn--g19h.ws) [**OCUR**.app](https://ocur.app), see the guided tour at <img src="res/img/gear/gear1.png" style="width:40px;height:40px;" /> [**iOCUR**.com](https://iocur.com).
+Build <img src="img/island.png" style="width:40px;height:40px;" /> [**UR**.Land map](https://ur.land) with [🪨](https://xn--g19h.ws) [**OCUR**.app](https://ocur.app), see the guided tour at <img src="res/img/gear/gear1.png" style="width:40px;height:40px;" /> [**iOCUR**.com](https://iocur.com). Hold <img src="img/opensea.png" style="width:40px;height:40px;" /> [**OpenSea** deed domain](https://opensea.io/urland) to keep virtual space.
 
 <p align="center"><img src="img/par.png" style="width:120px;height:120px;" /><img src="img/wash.png" style="width:120px;height:120px;" /><img src="img/sphinx.png" style="width:120px;height:120px;" /><img src="img/charm.png" style="width:120px;height:120px;" /></p>
-
-Hold <img src="img/opensea.png" style="width:40px;height:40px;" /> [**OpenSea** deed domain](https://opensea.io/urland) to keep virtual space in <img src="img/island.png" style="width:40px;height:40px;" /> [**UR**.Land](https://ur.land).
-
-<p align="center"><img src="res/img/key/red.png" style="width:80px;height:80px;" /><img src="res/img/key/yellow.png" style="width:80px;height:80px;" /><img src="res/img/key/green.png" style="width:80px;height:80px;" /><img src="res/img/key/blue.png" style="width:80px;height:80px;" /></p>
 
 <br/>
 
 Install <img src="img/meta.png" style="width:40px;height:40px;" /> [**MetaMask** wallet](https://metamask.io) to trade the <img src="res/img/seal3.png" style="width:32px;height:32px;" /> [**OCUR**.io token](https://ocur.io), now available on <img src="img/uniswap.png" style="width:40px;height:40px;" /> [**Uniswap**](https://app.uniswap.org/#/tokens/ethereum/0xccab679860b1017589239bceeeabe5cd45965afc) and/or <img src="img/sushi.png" style="width:40px;height:40px;" /> [**SushiSwap**](https://www.sushi.com/swap).
+
+<br/>
+
+<p align="center"><img src="res/img/key/red.png" style="width:80px;height:80px;" /><img src="res/img/key/yellow.png" style="width:80px;height:80px;" /><img src="res/img/key/green.png" style="width:80px;height:80px;" /><img src="res/img/key/blue.png" style="width:80px;height:80px;" /></p>
 
 <br/>
 
