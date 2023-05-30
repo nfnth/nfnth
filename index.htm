@@ -217,9 +217,7 @@ function showFav() {
     	$('<link>').appendTo('head').attr({ class: 'ico', type: 'image/x-icon', rel: 'icon', sizes: "192x192", href: "res/img/fav/android-chrome-192x192.png" });
     	$('<link>').appendTo('head').attr({ class: 'ico', type: 'image/x-icon', rel: 'apple-touch-icon', sizes: "128x128", href: "res/img/fav/apple-touch-icon.png" }); }
 	
-function showPanel() {
-	var gear = Math.floor(Math.random() * (16 - 1 + 1)) + 1; document.getElementById('gear-pic').src = "res/img/leaf/leaf" + gear.toString() + ".png";
-	gear = Math.floor(Math.random() * (16 - 1 + 1)) + 1; document.getElementById('gear-pic2').src = "res/img/leaf/leaf" + gear.toString() + ".png";  }
+function showPanel() { document.getElementById('gear-pic').src = "img/gear1.png"; document.getElementById('gear-pic2').src = "img/gear2.png";  }
 		
 function copyClip(text) { navigator.clipboard.writeText(text); M.toast({html: 'Address copied.'}); }
 function openInNewTab(url) { window.open(url, '_blank').focus(); } //window.location.href = url;
@@ -255,7 +253,7 @@ function setDialog(text) {
     steps = { open : morphEl.getAttribute( 'data-morph-open' ), close : morphEl.getAttribute( 'data-morph-close' )};
     dlg2 = new DialogFx( somedialog, {
         onOpenDialog : function( instance ) { path.stop().animate( { 'path' : steps.open }, 400, mina.easeinout );},
-        onCloseDialog : function( instance ) { path.stop().animate( { 'path' : steps.close }, 400, mina.easeinout );	}	} ); dlg2.toggle(dlg2); }
+        onCloseDialog : function( instance ) { path.stop().animate( { 'path' : steps.close }, 400, mina.easeinout );}}); dlg2.toggle(dlg2);}
 function setConfirm(text) { 
 	$("#somedialog1").css("z-index",1004); document.getElementById('dialog-inner1').scrollTo(0, 0);
 	
