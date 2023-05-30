@@ -51,8 +51,44 @@ Use the map to visit a continent filled with amazing peoples and lands, and foll
 
 <br/>
 
+[!IMAGE](res/img/seal3.png,64,64)
+<br/>
+### On Deed to Domain
 
-<button onclick="buyThing();" style="background-color:#6772E5;color:#FFF;border:0;border-radius:4px;font-size:1em;cursor:pointer" id="checkout-button-price_1NCnkuHtnEEsiKCN9RRuHv4h" role="link" type="button">Checkout</button>
+Welcome to **OCUR.io • UR.Land**, a world inspired by adventure, destined to be explored by the only dApp fueled by *geocache* and an *explorer's trade*, all powered by the concept of **deed domain**, and **OCUR**, an ETH ERC-20 token.
 
-<div id="error-message"></div>
+<br/>
+
+A **deed domain** functions as both,
+
+
+- *deed*, a token to store in your wallet and trade with others
+- *domain*, a key to access the site and list artifact
+
+
+All artifact posted is public, can be viewed by anyone, and can only be changed by the owner of the *deed domain*.  All information traded between wallets and/or deeds is private and cannot be shared.
+<br/><br/>
+
+
+#### Get Started
+
+To begin, install a *Web3-compliant* wallet, such as [MetaMask](https://metamask.io/) and/or [Coinbase](https://www.coinbase.com/wallet), and in the 🥚 menu, select **Connect** 🪙 to connect your wallet.
+
+To list and/or trade artifact, use either,
+
+
+- a deed domain purchased from [OpenSea](https://opensea.io/urland) ⛵
+- a fixed amount of **OCUR** token, select the 🏠 icon to purchase
+
+
+After purchase, both deeds and **OCUR**/**LOCUR** will appear in the **Wallet** 🪙 menu.
+
+
+#### Explore Further
+
+Use the map to visit a continent filled with amazing peoples and lands, and follow in the footsteps of history to achieve dominion. Trade items with others to share experiences and exchange goods, as both you and your team explore the land.
+
+"May the nomad wander until what is lost can be found again."
+*~Unknown*
+
 
