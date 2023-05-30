@@ -37,41 +37,34 @@
 						<li><div style="margin-top:0;" class="divider"></div></li>
 						<li id="deeder" class="mobile-stat" style="display: flex; align-items: center; margin:12px;justify-content:center;">No profile connected.</li></ul></div></div></div>
     		
-		<!--<div style="width:64px;margin-left:16px;"><a><div style="width:64px;"><img class="image gear-image" style="opacity:0.6; height: 48px;position:absolute; margin: 4px; cursor:pointer;right:12px;top:4px;" src="img/egg(1).png" /></div></a></div>-->
+
 	
 	<ul >
    
-      <li><a id="dropper" class="dropdown-trigger" href="#!" data-target="dropdown1"><img class="image gear-image" style="opacity:0.6; height: 48px;cursor:pointer;" src="img/compass3(1).png" /><i class="material-icons right">arrow_drop_down</i></a></li>
+      <li><a id="dropper" class="dropdown-trigger" href="#!" data-target="dropdown1"><img class="image gear-image" style="opacity:0.6; height: 36px; width:36px; margin-right:-12px;cursor:pointer;" src="img/compass3(1).png" /><i class="material-icons right">arrow_drop_down</i></a></li>
     </ul>
 	</div></nav>
 		
 <!-- panel -->
 <ul id="deed-pane" class="sidenav loader" style="visibility:hidden;overflow:hidden;">
-	<li><div class="user-view z-depth-1 blue-grey lighten-5" style="z-index:9;display: flex;margin: auto; padding: 0;align-items: center; justify-content: space-evenly; padding: 12px;height:72px;"><div class="containerx redx" style="background-color: indianred;"><span id="booker" class="button setter">📚</span>
+	<li><div class="user-view z-depth-1 blue-grey lighten-5" style="display: flex;margin: auto; padding: 0;align-items: center; justify-content: space-evenly; height:72px;"><div class="containerx redx" style="z-index:2;" ><span id="booker" class="button setter">📚</span>
 			  <div class="contentx">
 				<div class="head" style="display: flex;align-items: center;justify-content: center;padding-top:0;"></div>
-				<div class="body">
-				  <p>
+				<div class="body"><p>
 					<ul style="display: flex;flex-direction: column;">
-						
-					<li><a class="subheader">Project</a></li>
-						
-						<li><a onclick="showView('mapper'); showIntroSim();" class="waves-effect" style="display:flex;align-items:center;"><div>🪨</div>&nbsp;&nbsp;&nbsp;&nbsp;OCUR</a></li>
-						<li><a onclick="showView('mapper'); clearMap(); setTimeout(function() { showIntroMap(); }, 1000);" class="waves-effect" style="display:flex;align-items:center;"><div>🧭</div>&nbsp;&nbsp;&nbsp;&nbsp;Learn To Explore</a></li>
-						<li><a onclick="showView('mapper'); showHouse();" class="waves-effect" style="display:flex;align-items:center;"><div>🏝️</div>&nbsp;&nbsp;&nbsp;&nbsp;About nf/nth</a></li>
+						<li class="booker"><a onclick="document.getElementById('booker').click(); setShop();" class="waves-effect" style="display:flex;align-items:center;padding-top:12px;padding-bottom:12px;"><div style="display:flex;"><img class="hover-link" src="res/img/seal3.png" style="width:24px; height:24px;" /></div>&nbsp;&nbsp;&nbsp;&nbsp;<span id="shopper">Shop NfNth</span></a></li>
+						<li class="booker" style="margin-bottom:12px;"><a onclick="closeLeft(); openInNewTab('https://discord.com/channels/938133518154887168/938133518154887171');"  class="waves-effect" style="display:flex;align-items:center;padding-top:12px;padding-bottom:12px;"><div style="display:flex;"><img class="hover-link" src="res/img/icon/discord.png" style="width:24px; height:24px;" /></div>&nbsp;&nbsp;&nbsp;&nbsp;Join Discord</a></li>
+						<li><a class="subheader">Guide</a></li>
+						<li class="booker"><a onclick="closeLeft(); showView('charter'); openMap(); clearTutorial(); setTimeout(function() { showTutorial(); }, 1000);" class="waves-effect" style="display:flex;align-items:center;"><div>🥾</div>&nbsp;&nbsp;&nbsp;&nbsp;Learn To Explore</a></li>
+						<li class="booker"><a onclick="closeLeft(); showView('charter'); clearTutorial(); setTimeout(function() { showOutpost(); }, 1000);" class="waves-effect" style="display:flex;align-items:center;"><div>🪵</div>&nbsp;&nbsp;&nbsp;&nbsp;Build Outpost</a></li>
+						<li class="booker"><a onclick="closeLeft(); showView('charter'); clearTutorial(); setTimeout(function() { showHouse(); }, 1000);" class="waves-effect" style="display:flex;align-items:center;"><div>🪨</div>&nbsp;&nbsp;&nbsp;&nbsp;About OCUR</a></li>
 						<li><div style="margin-top:0;" class="divider"></div></li>
 						<li><a class="subheader">Manual</a></li>
-						<li><a onclick="showDoc('README');" class="waves-effect" style="display:flex;align-items:center;"><div>📕</div>&nbsp;&nbsp;&nbsp;&nbsp;Build Strack</a></li>
-						<li><a onclick="showDoc('ocur');" class="waves-effect" style="display:flex;align-items:center;"><div>📗</div>&nbsp;&nbsp;&nbsp;&nbsp;Trade OCUR</a></li>
-						<li><a onclick="showDoc('deed');" class="waves-effect" style="display:flex;align-items:center;"><div>📘</div>&nbsp;&nbsp;&nbsp;&nbsp;On Deed Domain</a></li>
-					
-					
-					
-						<li><div style="margin-top:0;" class="divider"></div></li>
+						<li class="booker"><a onclick="showDoc('deed');" class="waves-effect" style="display:flex;align-items:center;"><div>📕</div>&nbsp;&nbsp;&nbsp;&nbsp;On Map Domain</a></li>
+						<li class="booker"><a onclick="showDoc('ocur'); setTimeout(function() { $('#image-template').formSelect(); }, 1000);" class="waves-effect" style="display:flex;align-items:center;"><div>📗</div>&nbsp;&nbsp;&nbsp;&nbsp;How To Trade</a></li>
+						<li class="booker"><a onclick="showDoc('README');" class="waves-effect" style="display:flex;align-items:center;padding-right:0px;"><div>📘</div>&nbsp;&nbsp;&nbsp;&nbsp;Run Strack&nbsp;&nbsp;&nbsp;&nbsp;<span style="margin:0; width:80px; color: whitesmoke!important;" class="badge blue">v3.2-1</span></a></li></ul></p></div></div></div>
 						
-						<li><a onclick="showLoc();" class="waves-effect" style="display:flex;justify-items:center;margin-top:12px;"><div id="set-2" class="quick hoverable z-depth-1">📍</div>Use Location</a></li>
-						<li><a onclick="showNfNth();" class="waves-effect" style="display:flex;justify-items:center;"><div id="set-3" class="quickg hoverable z-depth-1">🎁</div>Shop Items</a></li>
-					<li><a onclick="showCard(); runCards();" class="waves-effect" style="display:flex;justify-items:center;"> <div id="set-4" class="quickb hoverable z-depth-1">🃏</div>Play Cards</a></li></ul></p></div></div></div></div></li>
+		<a onclick="showView('emojier');$('#searcher').show();" style="border-radius:8px; display: flex;justify-content: space-between;margin-right:24px;" class="waves-effect waves-light  btn-flat modal-close" >🔎</a></div></li>
 				
 	<!-- tabs -->
 	<li style="height:100%;"><ul id="token-tabs" class="tabs tabs-fixed-width z-depth-1 deed">
