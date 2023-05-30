@@ -36,18 +36,18 @@ To purchase, either,
 Please contact **m@nfnth.com** with any issues in process.
 <br/>
 
-<button style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em;cursor:pointer" id="checkout-button-price_1NCnkuHtnEEsiKCN9RRuHv4h" role="link" type="button">Checkout</button>
+### How To Trade OCUR
 
-<div id="error-message"></div>
+Invest in **OCUR**, a standard issue ETH ERC-20 token, to hold stock and trade in **OCUR.io**, for details see [OCUR's profile](https://etherscan.io/token/0xCcaB679860B1017589239BCeEEabe5CD45965aFc) on [etherscan.io](https://etherscan.io).
 
-<script>
-(function() {
-  var stripe = Stripe('pk_live_51LsD4eHtnEEsiKCNaOlvv3Hh54aEX2GjPhrtcdMZcDPFFl4EttcqC5bhxTOUBSJ9lvstkxzqz4GLOe4vJKLrrHft00veYVOXU7');
-  var checkoutButton = document.getElementById('checkout-button-price_1NCnkuHtnEEsiKCN9RRuHv4h');
-  checkoutButton.addEventListener('click', function () {
-    stripe.redirectToCheckout({
-      lineItems: [{price: 'price_1NCnkuHtnEEsiKCN9RRuHv4h', quantity: 1}],
-      mode: 'payment',  successUrl: window.location.protocol + '//mattdown.com/success',cancelUrl: window.location.protocol + '//mattdown.com/canceled', })
-    .then(function (result) {
-      if (result.error) {
-        var displayError = document.getElementById('error-message'); displayError.textContent = result.error.message; } }); });})();</script>
+
+<br/>
+
+To exchange, use <img src="res/img/icon/uniswap.png" style="width:24px; height:24px;" /> [Uniswap](https://app.uniswap.org) and/or <img src="res/img/icon/sushi.png" style="width:24px; height:24px;" /> [SushiSwap](https://app.sushi.com/swap?chainId=1&inputCurrency=ETH&outputCurrency=0xCcaB679860B1017589239BCeEEabe5CD45965aFc) and use the token address,
+
+<div style="display: flex; flex-direction: column; text-align: center; cursor:pointer;" onclick="navigator.clipboard.writeText('0xCcaB679860B1017589239BCeEEabe5CD45965aFc');M.toast({html: 'Address copied.'});"><div><img style="cursor:pointer;"  src="https://chart.googleapis.com/chart?chs=120x120&cht=qr&chl=0xCcaB679860B1017589239BCeEEabe5CD45965aFc&choe=UTF-8" /></div><div>**0xCcaB679860B1017589239BCeEEabe5CD45965aFc**</div></div>
+
+<br/>
+
+<div style="text-align:center;display:flex;justify-content:center;"><a onclick="addToken();" class="waves-effect waves-light btn blue lighten-2" style="width:220px;display:flex;justify-content:space-between;"><span>Add Token</span><span>🪙</span></a></div>
+<br/>
