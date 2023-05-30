@@ -83,7 +83,20 @@
 
 <!-- view -->
 <div id="home" style="height:105%; text-align:center;visibility:hidden; width:100%; z-index:1; padding-top: 54px;" class="content loader print-help">
-	
+
+<!-- load -->
+	<div id="loader" class="" >
+		<div class="loaderx">
+			<div style="color:indianred; font-weight:bold; font-size:18px;margin-top:-100px;display:flex;justify-content:center;">LOADING <div style="margin-left:12px;  color:black; font-weight:none;" id="brand"></div></div>
+			<div class="loader-bg z-depth-1">
+				<span style="display:flex;justify-content:center;height:100%;align-items:center;opacity:0.9;"><img src="res/img/seal3.png" class="kuhl"></span></div>
+			<div class="drops"><div class="drop1"></div><div class="drop2"></div></div></div>
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+		  <defs><filter id="liquid">
+			  <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+			  <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="liquid" /></filter></defs></svg></div>
+
+<!-- slide -->
 <div id="slider" class="slider content loader pane scale-transition scale-out">
   <div class="items-group">
     <div id="item0" class="item" >
@@ -101,6 +114,27 @@
 <!-- list -->
 <div id="lister" class="content loader pane scale-transition scale-out" style="overflow-y: auto; height: 130%;">
 	<div id="lists" style="width:100%; height:100%;"></div></div>
+	
+	<!-- map -->
+	<div id="charter" class="content loader pane scale-transition scale-out" style="overflow-y: auto; height: 115%;width:100%;margin-top:48px;">
+		<div class="fixed-action-btn" style="bottom:25%;">
+		  <a class="btn-floating btn-large" style="background-color:indianred;display:flex;justify-content:center;align-items:center;font-size:20px;cursor:pointer;">📝</a><ul>
+			<li><a class="btn-floating grey lighten-3" onclick="$('#modal-map').modal('open');">🛰️</a></li>
+			<li><a class="btn-floating grey lighten-3" onclick="$('#modal-address').modal('open'); searcher();">🏠</a></li>
+			<li><a class="btn-floating grey lighten-3">📍</a></li>
+			<li><a class="btn-floating red lighten-3" onclick="$('#modal-list').modal('open');" >📄</a></li>
+			<li><a class="btn-floating red lighten-3" onclick="$('#modal-editor').modal('open');" >✏️</a></li></ul></div>
+		<div id="comparison-container" style="width:100%;height:110%;"><div id="before" class="map"></div><div id="after" class="map"></div></div></div>
+	
+	<!-- datetime -->
+	<div id="datetime" class="content loader pane scale-transition scale-out" >
+		<input type="text" class="datepicker" /></div>
+			 
+			 
+	<div id="emojier" class="content loader pane scale-transition scale-out" style="overflow-y: auto; width:100%;height:100%;margin-top:90px;">
+			<div class="z-depth-2" style="width:100%;display:flex;align-items:center;justify-content:space-evenly;padding:24px; background-color:ghostwhite; flex-direction:column;">
+				<div><emoji-picker style="border-radius:8px;"></emoji-picker></div></div>
+				<div id="resulter" style="margin-top:48px;">No search results.</div></div>
 	  
 </div>
 
