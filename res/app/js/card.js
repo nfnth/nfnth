@@ -65,4 +65,63 @@ function makeCardArt(i) { return cardArt.replace('XXXX',domains[i].desc).replace
                    
  function makeJoker(color) { var leaf = Math.floor(Math.random() * (16 - 1 + 1)) + 1; var leafSrc = "res/img/icon/leaf/leaf" + leaf.toString() + ".png";  return jokerCode.replace('XXXX',leafSrc).replace('YYYY',color); }
 
+
+function showCards() { $("#carder").show(); $("#carder").addClass("scale-in"); }
+function hideCards() { $("#carder").removeClass("scale-in");$("#carder").hide(); }
 	
+	var slideCode = '<div id="flipXXX" class="block flip-card flip-card-inner" style="display:flex;align-items:center;cursor:pointer;"><div class="flip-card-fronty backer card-wrap" style="height:120px;width:100%;background-color:whitesmoke;color:black;opacity:0.75;transition:all 0.5s!important;"><span class="circleLight"></span><div class="text" style="display:flex; flex-direction:column;align-items:center;"><div style="display:flex;align-items:center;"><img src="res/img/seal3.png" style="width:48px; height:48px;" /><span style="margin-top:12px;margin-left:12px;color:indianred;font-weight:bold;font-size:16px;">UR.Land </span><span style="margin-top:12px;margin-left:24px;font-weight:bold;">dee.d/omain</span></div><p  id="card-nameXXXX" style="display:flex; align-items:center;">I`m cool card</p></div></div></div>';
+
+
+var mouse = {X   : 0,Y   : 0,CX  : 0,CY  : 0 },
+    block = {X   : mouse.X,Y   : mouse.Y,CX  : mouse.CX,CY  : mouse.CY}, vmags = [ '', ''],fmags = [ '', ''],bmags = [ '', ''],imags = ['','','','',];
+
+$('.block').on('mousemove', function(e) {mouse.X   = (e.pageX - $(this).offset().left) - $('.block').width() / 2;mouse.Y   = (e.pageY - $(this).offset().top) - $('.block').height() / 2;})
+$('.block').on('mouseleave', function(e) {mouse.X   = mouse.CX;mouse.Y   = mouse.CY;})
+
+var shiner = setInterval(function(){
+	//if (stationary) { 
+	block.CY   += (mouse.Y - block.CY) / 12;block.CX   += (mouse.X - block.CX) / 12;
+  $('.block .circleLight').css('background', 'radial-gradient(circle at ' + mouse.X + 'px ' + mouse.Y + 'px, #fff, transparent)')
+  $('.block').css({
+    transform : 'scale(1.03) translate(' + (block.CX * 0.05) + 'px, ' + (block.CY * 0.05) + 'px) rotateX(' + (block.CY * 0.05) + 'deg) rotateY(' + (block.CX * 0.05) + 'deg)'}) }, 20);
+
+function shakeCard(i) { 
+	var dCard = Math.floor(Math.random() * (domains.length-1+1)); 
+	 imags[i] = domains[dCard].core.image_url; $("#card-name"+i).html(domains[dCard].core.name + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div><img style='display:flex;border-radius:8px; cursor:pointer;' onclick='addOpenDeed(" + i + ");' class='z-depth-1' width='30' height='30' src='res/img/key/" + getCollect(domains[dCard].core.collection.slug) + "'/></div>"); 
+	 vmags[i] = domains[dCard].core.image_url; 
+	fmags[i] = domains[dCard].core.permalink; $("#flip"+i).click(function(){ buildDoc(dCard); });
+bmags[i] = getBack(domains[dCard].core.collection.slug);}
+
+function setCards() { shakeCard(0); shakeCard(1); 
+$('.slider .item').each(function(i){
+  if(i == 0){$(this).addClass('active');$(this).next().addClass('next');$(this).prev().addClass('prev'); }
+  $(this).attr('id', 'slide-'+i);
+  $(this).prepend($('<div>', {class: 'blur', style: 'background-image: url(' + imags[i] + ');'}),$('<div>', {class: 'bg', style: 'background-image: url(' + imags[i] + ');'}))
+  if (vmags[i] != null) $(this).find('.block').css('background-image', 'url(' + vmags[i] + ')'); else $(this).find('.block').css('background-image', 'url(' + imags[i] + ')'); }) }
+
+function setCard(id) { $("#slide-"+id).html(slideCode.replace("XXXX",id).replace("XXX",id)); shakeCard(id);
+$('.slider .item').each(function(i){ if (i == id) {
+	$(this).attr('id', 'slide-'+i);
+  $(this).prepend($('<div>', {class: 'blur', style: 'background-image: url(' + imags[i] + ');'}),$('<div>', {class: 'bg', style: 'background-image: url(' + imags[i] + ');'}))
+  if (vmags[i] != null) $(this).find('.block').css('background-image', 'url(' + vmags[i] + ')'); else $(this).find('.block').css('background-image', 'url(' + imags[i] + ')'); } })}
+var switcher = false;
+function changeCard() { 
+	//$("#card-vid").html('<source src="https://openseauserdata.com/files/83d939c2d34d81ec15b55d206284e7f2.mp4" type="video/mp4">');
+	stationary = true; $('.flip-card-inner').css("transform",""); $('.flip-card-front').css("transform",""); $('.text').addClass("backer");
+	$('.flip-card-inner').removeClass("card-background"); $(".card-wrap").css("margin-top","0px");
+	setTimeout(function () {
+		
+		$('.block').on('mousemove', function(e) {mouse.X   = (e.pageX - $(this).offset().left) - $('.block').width() / 2;mouse.Y   = (e.pageY - $(this).offset().top) - $('.block').height() / 2;})
+$('.block').on('mouseleave', function(e) {mouse.X   = mouse.CX;mouse.Y   = mouse.CY;})
+	shiner = setInterval(function(){
+	if (stationary) { 
+	block.CY   += (mouse.Y - block.CY) / 12;block.CX   += (mouse.X - block.CX) / 12;
+  $('.block .circleLight').css('background', 'radial-gradient(circle at ' + mouse.X + 'px ' + mouse.Y + 'px, #fff, transparent)')
+  $('.block').css({
+    transform : 'scale(1.03) translate(' + (block.CX * 0.05) + 'px, ' + (block.CY * 0.05) + 'px) rotateX(' + (block.CY * 0.05) + 'deg) rotateY(' + (block.CX * 0.05) + 'deg)'}) } else { 
+		$('.flip-card-inner').addClass("card-background"); $("#card-wrap").css("margin-top","64px");
+		clearInterval(shiner); } }, 20); }, 1000);
+		$('.slider .item').removeClass('active prev next');
+	if (switcher) { var cSlide = $('.slider #slide-0'); switcher = false; 
+      cSlide.addClass('active');cSlide.next().addClass('next');cSlide.prev().addClass('prev');  setTimeout(function() { setCard(1); }, 1000); } else { var cSlide = $('.slider #slide-1'); switcher = true; 
+      cSlide.addClass('active');cSlide.next().addClass('next');cSlide.prev().addClass('prev');  setTimeout(function() { setCard(0); }, 1000); } }
