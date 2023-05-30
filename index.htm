@@ -225,7 +225,7 @@ function getParameter() { var path = window.location.href.replace('https://','')
 		for (let j = 0; j < domains.length; j++) { if (domains[j].desc == keyDomain) { pullOwner(j); showView('charter'); document.title = domains[j].core.name; setTimeout(function() { flyDomain(j); }, 2000); break; } } } } } }
 		
 function setPage() { var page = window.location.href.replace('https://','').replace('/','').replace('#','').replace('!',''); 
-	$("#brand").html(page); setImages();
+	$("#brand").html(page); //setImages();
     switch(page){ 
         case 'nfnth.com': document.title = "OCUR • nf/nth"; showDoc('PLANME'); break; //showView('loader'); showDoc('PLANME'); break;
         case 'ocur.app': document.title = "OCUR • map  token"; showView('charter'); break;     
