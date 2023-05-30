@@ -224,7 +224,8 @@ function openInNewTab(url) { window.open(url, '_blank').focus(); } //window.loca
 
 var width = window.innerWidth; var height = window.innerHeight + 48;
 async function initial() { $('body').css("background-color","lightgrey");  
-	$('.tabs').tabs(); showFav(); showPanel(); document.title = "nf/nth"; 
+	$('.tabs').tabs(); showFav();// showPanel();
+			  document.title = "nf/nth"; 
 	$('.modal').modal(); 
 	//$("#registry-open").css("height",(height - 120) + "px"); $("#registry-domain").css("height",(height - 120) + "px");
     	//$('#docs').dropdown({ constrainWidth: false, coverTrigger: false } ); $('#doc-hide').dropdown({ constrainWidth: false, coverTrigger: false } ); //hover: true 
