@@ -87,7 +87,7 @@ var shiner = setInterval(function(){
 
 function shakeCard(i) { 
 	var dCard = Math.floor(Math.random() * (domains.length-1+1)); 
-	 imags[i] = domains[dCard].core.image_url; $("#card-name"+i).html(domains[dCard].core.name + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div><img style='display:flex;border-radius:8px; cursor:pointer;' onclick='addOpenDeed(" + i + ");' class='z-depth-1' width='30' height='30' src='res/img/key/" + getCollect(domains[dCard].core.collection.slug) + "'/></div>"); 
+	 imags[i] = domains[dCard].core.image_url; $("#card-name"+i).html(domains[dCard].core.name + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div><img style='display:flex;border-radius:8px; cursor:pointer;' onclick='addOpenDeed(" + i + ");' class='z-depth-1' width='30' height='30' src='res/img/icon/key/" + getCollect(domains[dCard].core.collection.slug) + "'/></div>"); 
 	 vmags[i] = domains[dCard].core.image_url; 
 	fmags[i] = domains[dCard].core.permalink; $("#flip"+i).click(function(){ buildDoc(dCard); });
 bmags[i] = getBack(domains[dCard].core.collection.slug);}
