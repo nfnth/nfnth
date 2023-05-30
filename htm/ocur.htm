@@ -1,0 +1,1010 @@
+<!DOCTYPE html><html lang="en">
+	
+<head><title>• • •</title>
+<meta http-equiv="Content-Language" content="en-US"><meta charset="UTF-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="map maker" /><meta name="keywords" content="map, maker, token, urland, iocur, ocur, ocurio, dBay, nfnth, dralun" />
+<meta name="author" content="ocur" />
+
+<!-- resources -->
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mapbox-gl/2.11.0/mapbox-gl.js" integrity="sha512-kH0Kk+oPmZ+F7HbpYS4nQvazGc7ykQJ1+0M2+DfE0mGv0/cLI3QR1IpGCYOVPGc9OlIDm2PWLbjOJBBxoj4L5A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-compare/v0.4.0/mapbox-gl-compare.css" type="text/css">
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-compare/v0.4.0/mapbox-gl-compare.js"></script>
+
+<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/mapbox-gl-animated-popup@latest/dist/mapbox-gl-animated-popup.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/pixi.js@7.x/dist/pixi.min.js"></script><script src="js/gameboy.js"></script>
+
+<script src="https://js.stripe.com/v3/"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/core.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/sha256.js"></script>
+    
+
+<!--<link rel="stylesheet" href="js/all.css"></script>--><script src="js/slide.js"></script><script src="js/help.js"></script><script defer src="js/icon.js"></script><script defer src="js/map.js"></script><script defer src="js/pin.js"></script><script defer src="js/guide.js"></script><script defer src="js/note.js"></script><script defer src="js/card.js"></script></head>
+
+<body id="mainer" style="overflow:overlay;  background: white; transition: opacity 1s linear; opacity:0;" >
+	
+<!-- clock/timer/alarm/world, print/download -->
+<!-- menu -->
+<nav id="main-menu" style="position: fixed;top:0; z-index:2;opacity:0;" class="z-depth-1">
+	<div id="panel-menu" class="nav-wrapper header z-depth-1 grey lighten-5" style="padding-top:0px!important; padding-bottom:0px!important; display:flex; justify-content: space-between; color:black;">
+    		<div style="height:103%;border-bottom:solid 2px darkred;" class="z-depth-1"><a id="menu-deed" style="cursor:pointer; color:darkslategrey; opacity:0.7; background-color:ghostwhite; display: flex; align-items: center; height: 100%; padding-right: 10px;font-weight: bold;font-size: 20px; -webkit-transition: background-color 300ms linear, color 300ms linear;-moz-transition: background-color 300ms linear, color 300ms linear;-o-transition: background-color 300ms linear, color 300ms linear;-ms-transition: background-color 300ms linear, color 300ms linear;transition: background-color 300ms linear, color 300ms linear;"><i id="bars" class="material-icons" style="padding-left:16px;" onclick="$('#deed-pane').sidenav('open');">menu</i><div id="waiter" style="height:48px; width:48px; cursor: pointer; margin-left: 12px;" onclick="$('#deed-pane').sidenav('open');"><img id="list-wait" class="image" src="res/img/seal3.png" width="48" /></div></a></div>
+
+    	<!-- profile -->
+    	<div id="egger" class="containerx yellowx golden" style="background-color: beige;display:none;"><span id="connor" class="button setter">🪨</span>
+			  <div class="contentx">
+				<div id="walleter" class="head" style="display: flex;align-items: center;justify-content: space-evenly;">
+					<a id="dropdown-user" href="#" data-target="dropdown-use" style="border-radius:8px; width:160px; display: flex;justify-content: space-between;" class="dropdown-trigger waves-effect waves-light amber btn" onclick="playGame(); closeTop();"><span class="mobile-hide">PROFILE</span><span>🪪</span></a>
+					<a id="mapper" style="border-radius:8px; width:160px; display: flex;justify-content: space-between;" class="waves-effect waves-light amber lighten-1 btn" onclick="closeTop(); showView('lister');"><span class="mobile-hide">CART</span><span>🛒</span></a></div>
+				<div class="body" style="text-align:center;">
+					<ul style="display: flex;flex-direction: column;">
+						<li class="edger"><a onclick="closeTop(); openInNewTab('https://dralun.com');" class="edger waves-effect"><span  style="color:black!important;">✉️&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color:black!important;">Mail</span></a></li>
+						<li class="edger"><a id="locurScan" onclick="closeTop(); showDoc('manifest');" class="edger waves-effect"><span  class="lighten-2" style="color:black!important;">📄&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="myDomain" style="color:black!important;">Notes</span></a></li>
+						<li class="edger"><a onclick="closeTop(); openInNewTab('https://ocur.io');" class="edger waves-effect"><span  style="color:black!important;">📮&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color:black!important;">Posts</span></a></li>
+						<li class="edger"><a class="edger waves-effect" onclick="closeTop(); openInNewTab('https://iocur.com');" ><span  style="color:black!important;">📦&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="myAdd" style="color:black!important;">Shipments</span></a></li>
+						<li><div style="margin-top:0;" class="divider"></div></li>
+						<li id="deeder" class="mobile-stat" style="display: flex; align-items: center; margin:12px;justify-content:center;">No profile connected.</li></ul></div></div></div>
+						
+		<div style="width:64px;margin-left:16px;"><a id="dropdown-tooler" href="#" data-target="dropdown-tool" class="dropdown-trigger" style="position:absolute;right:0;top:4px;"><div style="width:64px;"><img class="image image-rotate gear-image" id="gear-pic" style="opacity:0.6; height: 48px;position:absolute; margin: 4px; cursor:pointer;right:12px;" /><img id="gear-pic2" class="image image-rotate gear-image" style="opacity:0.6; height: 48px;position:absolute;cursor:pointer;margin:4px;right:12px;" /></div></a></div></div></nav>
+
+<!-- menu (search) -->
+<nav id="searcher" class="content loader pane" style="position:absolute;top:66px;background-color:burlywood;z-index:1;">
+    <div class="nav-wrapper"><form><div class="input-field"><input id="search" type="search" required><label class="label-icon" for="search"><i class="material-icons">search</i></label><i onclick="clearSearch();" class="material-icons">close</i></div></form></div></nav>
+
+<!-- panel -->
+<ul id="deed-pane" class="sidenav loader" style="overflow:hidden;">
+	<li><div class="user-view z-depth-1 blue-grey lighten-5" style="display: flex;margin: auto; padding: 0;align-items: center; justify-content: space-evenly; height:72px;"><div class="containerx redx" style="z-index:2;" ><span id="booker" class="button setter">📚</span>
+			  <div class="contentx">
+				<div class="head" style="display: flex;align-items: center;justify-content: center;padding-top:0;"></div>
+				<div class="body"><p>
+					<ul style="display: flex;flex-direction: column;">
+						<li class="booker"><a onclick="document.getElementById('booker').click(); setShop();" class="waves-effect" style="display:flex;align-items:center;padding-top:12px;padding-bottom:12px;"><div style="display:flex;"><img class="hover-link" src="res/img/seal3.png" style="width:24px; height:24px;" /></div>&nbsp;&nbsp;&nbsp;&nbsp;<span id="shopper">Shop NfNth</span></a></li>
+						<li class="booker" style="margin-bottom:12px;"><a onclick="closeLeft(); openInNewTab('https://discord.com/channels/938133518154887168/938133518154887171');"  class="waves-effect" style="display:flex;align-items:center;padding-top:12px;padding-bottom:12px;"><div style="display:flex;"><img class="hover-link" src="res/img/icon/discord.png" style="width:24px; height:24px;" /></div>&nbsp;&nbsp;&nbsp;&nbsp;Join Discord</a></li>
+						<li><a class="subheader">Guide</a></li>
+						<li class="booker"><a onclick="closeLeft(); showView('charter'); openMap(); clearTutorial(); setTimeout(function() { showTutorial(); }, 1000);" class="waves-effect" style="display:flex;align-items:center;"><div>🥾</div>&nbsp;&nbsp;&nbsp;&nbsp;Learn To Explore</a></li>
+						<li class="booker"><a onclick="closeLeft(); showView('charter'); clearTutorial(); setTimeout(function() { showOutpost(); }, 1000);" class="waves-effect" style="display:flex;align-items:center;"><div>🪵</div>&nbsp;&nbsp;&nbsp;&nbsp;Build Outpost</a></li>
+						<li class="booker"><a onclick="closeLeft(); showView('charter'); clearTutorial(); setTimeout(function() { showHouse(); }, 1000);" class="waves-effect" style="display:flex;align-items:center;"><div>🪨</div>&nbsp;&nbsp;&nbsp;&nbsp;About OCUR</a></li>
+						<li><div style="margin-top:0;" class="divider"></div></li>
+						<li><a class="subheader">Manual</a></li>
+						<li class="booker"><a onclick="showDoc('deed');" class="waves-effect" style="display:flex;align-items:center;"><div>📕</div>&nbsp;&nbsp;&nbsp;&nbsp;On Map Domain</a></li>
+						<li class="booker"><a onclick="showDoc('ocur'); setTimeout(function() { $('#image-template').formSelect(); }, 1000);" class="waves-effect" style="display:flex;align-items:center;"><div>📗</div>&nbsp;&nbsp;&nbsp;&nbsp;How To Trade</a></li>
+						<li class="booker"><a onclick="showDoc('README');" class="waves-effect" style="display:flex;align-items:center;padding-right:0px;"><div>📘</div>&nbsp;&nbsp;&nbsp;&nbsp;Run Strack&nbsp;&nbsp;&nbsp;&nbsp;<span style="margin:0; width:80px; color: whitesmoke!important;" class="badge blue">v3.2-1</span></a></li></ul></p></div></div></div>
+						
+		<a onclick="showView('emojier');$('#searcher').show();" style="border-radius:8px; display: flex;justify-content: space-between;margin-right:24px;" class="waves-effect waves-light  btn-flat modal-close" >🔎</a></div></li>
+				
+	<!-- tabs (doc) -->
+	<li style="height:100%;"><ul id="token-tabs" class="tabs tabs-fixed-width z-depth-1 deed">
+			<li class="tab blue-grey lighten-5" ><a class="active" href="#test1">Class</a></li>
+			<li class="tab blue-grey lighten-5" ><a href="#test2">&nbsp;&nbsp;Item&nbsp;&nbsp;</a></li></ul><div class="card-content z-depth-1" style="height:100%;background-color:ghostwhite;">
+			
+		<!-- list (collect) -->
+		<div id="test1"><ul>
+			<li style="padding-top:16px;margin-bottom:12px;display: flex;justify-content: space-evenly;"><div style="display:flex;justify-content:space-evenly;width:100%;"><a class='btn-flat waves-effect waves-light' onclick="selectDomain();"><i id="domain-sel-icon" class="material-icons">select_all</i></a><a id="dropdown-domainer" class='dropdown-trigger btn-flat' href='#' data-target='dropdown-domain'><i class="material-icons">sort</i></a><a class="waves-effect waves-light btn red lighten-4" style="display:inline-flex;align-items:center;" onclick="switchDomain(); labelDomain();"><span id="domain-icon">🗂️</span></a></div></li>
+			<li><div id="registry-domain" class="collection" style="overflow:scroll;"><a class='collection-item'>No class found.</a></div></li></ul></div>
+			
+		<!-- list (icon) -->
+		<div id="test2"><ul>
+			<li style="padding-top:16px;margin-bottom:12px;display: flex;justify-content: space-evenly;"><div style="display:flex;justify-content:space-evenly;width:100%;"><a id='selLink' class='btn-flat disabled' onclick="selDomain();"><i id="deed-sel-icon" class="material-icons">select_all</i></a><a id="dropdown-deeder" class='dropdown-trigger btn-flat disabled' ref='#' data-target='dropdown-deed'><i class="material-icons">sort</i></a><a id='switchLink' class="waves-effect waves-light btn amber lighten-4 disabled" style="display:inline-flex;align-items:center;" onclick="switchDeed(); labelDeed();"><span id="deed-icon">📑</span></a></div></li>
+			<li><div id="registry-deed" class="collection" style="overflow:scroll;"><a onclick='$(#token-tabs).select("test1");' class='collection-item'>No icon found.</a></div></li></ul></div></div></div></li></ul>
+
+<!-- view -->
+<div id="home" style="height:106%; text-align:center; width:100%; " class="print-help">
+	
+	<!-- load -->
+	<div id="loader" class="" >
+		<div class="loaderx">
+			<div style="color:indianred; font-weight:bold; font-size:18px;margin-top:-100px;display:flex;justify-content:center;">LOADING <div style="margin-left:12px;  color:black; font-weight:none;" id="brand"></div></div>
+			<div class="loader-bg z-depth-1">
+				<span style="display:flex;justify-content:center;height:100%;align-items:center;opacity:0.9;"><img src="res/img/seal3.png" class="kuhl"></span></div>
+			<div class="drops"><div class="drop1"></div><div class="drop2"></div></div></div>
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+		  <defs><filter id="liquid">
+			  <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+			  <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="liquid" /></filter></defs></svg></div>
+			  
+	<!-- project -->
+	<div id="project" class="content loader pane scale-transition scale-out" style="overflow-y: auto; height: 115%;width:100%;margin-top:54px; padding-top:16px; background: rgb(255,255,255);background: linear-gradient(156deg, rgba(255,255,255,1) 0%, rgba(245,205,205,1) 35%, rgba(242,129,129,1) 100%); "><div style="width:240px;height:100%;display:flex;justify-content:center;flex-direction:column;margin:auto;">
+	
+	<div class="card hoverable" style="border-radius:10px;">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img id="ocur-app" class="activator" src="res/img/ocur-app.png" style="width:240px; height:240px; object-fit:cover;border-radius:12px 12px 0px 0px;"></div>
+    <div class="card-content">
+      <span class="card-title activator fonter" style="font-size:20px;">🪨&nbsp;&nbsp;OCUR.app<i class="material-icons right">more_vert</i></span>
+      <p style="padding-top:8px;"><a class="waves-effect waves-light btn red lighten-5 grey-text text-darken-3" style="width:150px;display:flex;justify-content:space-between;" onclick="openInNewTab('https://ocur.app');"><span>🗺️</span><span>Open️ Map</span></a></p></div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4" style="font-size:18px;">🧭&nbsp;&nbsp;Explore now<i class="material-icons right">close</i></span>
+      <p><video style="width:100%; height:100px; object-fit:cover;border-radius:2px;" class="z-depth-1" controls="controls" src="res/test.mp4"></video></p>
+      <p>Online journal to take notes and list objects.</p>
+      <p><a class="waves-effect waves-light btn blue-grey lighten-2 blue-grey-text text-darken-2" onclick="showDoc('README');" style="display:flex;justify-content:space-between;"><span>📄</span><span>Read More</span></a></p></div></div>
+	
+	<div class="card hoverable" style="border-radius:12px;">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img id="iocur-com" class="activator" src="res/img/iocur-com.png" style="width:240px; height:240px; object-fit:cover;border-radius:12px 12px 0px 0px;"></div>
+    <div class="card-content">
+      <span class="card-title activator fonter" style="font-size:20px;">🪨&nbsp;&nbsp;iOCUR.com<i class="material-icons right">more_vert</i></span>
+      <p style="padding-top:8px;"><a class="waves-effect waves-light btn red lighten-5 grey-text text-darken-3" style="width:150px;display:flex;justify-content:space-between;" onclick="openInNewTab('https://ocur.app');"><span>🪪</span><span>Use Badge️</span></a></p></div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4" style="font-size:18px;">🧭&nbsp;&nbsp;Explore now<i class="material-icons right">close</i></span>
+      <p><video style="width:100%; height:100px; object-fit:cover;border-radius:2px;" class="z-depth-1" controls="controls" src="res/test.mp4"></video></p>
+      <p>Real-time feed and marketplace of OCUR items</p>
+      <p><a class="waves-effect waves-light btn blue-grey lighten-2 blue-grey-text text-darken-2" onclick="showDoc('README');" style="display:flex;justify-content:space-between;"><span>📄</span><span>Read More</span></a></p></div></div>
+	
+	<div class="card hoverable" style="border-radius:12px;">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img id="ocur-io" class="activator" src="res/img/ocur-io.png" style="width:240px; height:240px; object-fit:cover;border-radius:12px 12px 0px 0px;"></div>
+    <div class="card-content">
+      <span class="card-title activator fonter" style="font-size:20px;">🪨&nbsp;&nbsp;OCUR.io<i class="material-icons right">more_vert</i></span>
+      <p style="padding-top:8px;"><a class="waves-effect waves-light btn red lighten-4 grey-text text-darken-3" style="width:150px;display:flex;justify-content:space-between;" onclick="openInNewTab('https://ocur.app');"><span>🖼️</span><span>View Art</span></a></p></div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4" style="font-size:18px;">🧭&nbsp;&nbsp;Explore now<i class="material-icons right">close</i></span>
+      <p><video style="width:100%; height:100px; object-fit:cover;border-radius:2px;" class="z-depth-1" controls="controls" src="res/test.mp4"></video></p>
+      <p>Real-time feed and marketplace of OCUR items</p>
+      <p><a class="waves-effect waves-light btn blue-grey lighten-2 blue-grey-text text-darken-2" onclick="showDoc('README');" style="display:flex;justify-content:space-between;"><span>📄</span><span>Read More</span></a></p></div></div>
+	
+	<div class="card hoverable" style="border-radius:12px;">
+    <div id="dralun-com" class="card-image waves-effect waves-block waves-light">
+      <img class="activator" src="res/img/dralun-com.png" style="width:240px; height:240px; object-fit:cover;border-radius:12px 12px 0px 0px;"></div>
+    <div class="card-content">
+      <span class="card-title activator fonter" style="font-size:20px;">🪨&nbsp;&nbsp;Dralun.com<i class="material-icons right">more_vert</i></span>
+      <p style="padding-top:8px;"><a class="waves-effect waves-light btn red lighten-4 grey-text text-darken-3" style="width:150px;display:flex;justify-content:space-between;" onclick="openInNewTab('https://ocur.app');"><span>⚔️</span><span>Play Game</span></a></p></div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4" style="font-size:18px;">🧭&nbsp;&nbsp;Explore now<i class="material-icons right">close</i></span>
+      <p><video style="width:100%; height:100px; object-fit:cover;border-radius:2px;" class="z-depth-1" controls="controls" src="res/test.mp4"></video></p>
+      <p>Real-time feed and marketplace of OCUR items</p>
+      <p><a class="waves-effect waves-light btn blue-grey lighten-2 blue-grey-text text-darken-2" onclick="showDoc('README');" style="display:flex;justify-content:space-between;"><span>📄</span><span>Read More</span></a></p></div></div>
+	
+	<div class="card hoverable" style="border-radius:12px;">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img id="ur-land" class="activator" src="res/img/ur-land.png" style="width:240px; height:240px; object-fit:cover;border-radius:12px 12px 0px 0px;"></div>
+    <div class="card-content">
+      <span class="card-title activator fonter" style="font-size:20px;">🪨&nbsp;&nbsp;UR.Land<i class="material-icons right">more_vert</i></span>
+      <p style="padding-top:8px;"><a class="waves-effect waves-light btn red lighten-3 grey-text text-darken-3" style="width:150px;display:flex;justify-content:space-between;" onclick="openInNewTab('https://ocur.app');"><span>🗿</span><span>Claim Icon</span></a></p></div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4" style="font-size:18px;">🧭&nbsp;&nbsp;Explore now<i class="material-icons right">close</i></span>
+      <p><video style="width:100%; height:100px; object-fit:cover;border-radius:2px;" class="z-depth-1" controls="controls" src="res/test.mp4"></video></p>
+      <p>Real-time feed and marketplace of OCUR items</p>
+      <p><a class="waves-effect waves-light btn blue-grey lighten-2 blue-grey-text text-darken-2" onclick="showDoc('README');" style="display:flex;justify-content:space-between;"><span>📄</span><span>Read More</span></a></p></div></div>
+      
+    <div class="card hoverable" style="border-radius:12px;">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img id="ur-land" class="activator" src="res/img/nfnth-com.png" style="width:240px; height:240px; object-fit:cover;border-radius:12px 12px 0px 0px;"></div>
+    <div class="card-content">
+      <span class="card-title activator fonter" style="font-size:20px;">🪨&nbsp;&nbsp;nfnth.com<i class="material-icons right">more_vert</i></span>
+      <p style="padding-top:8px;"><a class="waves-effect waves-light btn red lighten-3 grey-text text-darken-3" style="width:150px;display:flex;justify-content:space-between;" onclick="openInNewTab('https://ocur.app');"><span>📦</span><span>Shop Gear</span></a></p></div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4" style="font-size:18px;">🧭&nbsp;&nbsp;Explore now<i class="material-icons right">close</i></span>
+      <p><video style="width:100%; height:100px; object-fit:cover;border-radius:2px;" class="z-depth-1" controls="controls" src="res/test.mp4"></video></p>
+      <p>Real-time feed and marketplace of OCUR items</p>
+      <p><a class="waves-effect waves-light btn blue-grey lighten-2 blue-grey-text text-darken-2" onclick="showDoc('README');" style="display:flex;justify-content:space-between;"><span>📄</span><span>Read More</span></a></p></div></div>
+    	
+	<div class="card hoverable" style="border-radius:12px;">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img id="1950-app" class="activator" src="res/img/1950-app.png" style="width:240px; height:240px; object-fit:cover;border-radius:12px 12px 0px 0px;"></div>
+    <div class="card-content">
+      <span class="card-title activator fonter" style="font-size:20px;">🪨&nbsp;&nbsp;1950.app<i class="material-icons right">more_vert</i></span>
+      <p style="padding-top:8px;"><a class="waves-effect waves-light btn red lighten-2 grey-text text-darken-3" style="width:150px;display:flex;justify-content:space-between;" onclick="openInNewTab('https://ocur.app');"><span>🏪</span><span>Rent Room</span></a></p></div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4" style="font-size:18px;">🧭&nbsp;&nbsp;Explore now<i class="material-icons right">close</i></span>
+      <p><video style="width:100%; height:100px; object-fit:cover;border-radius:2px;" class="z-depth-1" controls="controls" src="res/test.mp4"></video></p>
+      <p>Real-time feed and marketplace of OCUR items</p>
+      <p><a class="waves-effect waves-light btn blue-grey lighten-2 blue-grey-text text-darken-2" onclick="showDoc('README');" style="display:flex;justify-content:space-between;"><span>📄</span><span>Read More</span></a></p></div></div></div></div>
+			  
+	<!-- gallery -->
+	<div id="slider" class="slider content loader pane scale-transition scale-out" >
+		<div class="items-group">
+			<div id="item0" class="item" >
+				<div id="flip0" class="block flip-card flip-card-inner" style="display:flex;align-items:center;cursor:pointer;">
+					<div class="flip-card-fronty backer card-wrap" style="height:120px;width:100%;background-color:whitesmoke;color:black;opacity:0.75;transition:all 0.5s!important;"><span class="circleLight"></span><div  class="text" style="display:flex; flex-direction:column;align-items:center;">
+					<div style="display:flex;align-items:center;"><img src="res/img/seal3.png" style="width:48px; height:48px;" /><span style="margin-top:12px;margin-left:12px;color:indianred;font-weight:bold;font-size:16px;">OCUR </span><span style="margin-top:12px;margin-left:12px;font-weight:bold;">map.d/omain</span></div><p  id="card-name0" style="display:flex; align-items:center;">I`m cool card</p></div></div></div></div>
+			<div id="item1" class="item">
+				<div id="flip1" class="block flip-card flip-card-inner" style="display:flex;align-items:center;cursor:pointer;" >
+					<div class="flip-card-fronty backer card-wrap" style="height:120px;width:100%;background-color:whitesmoke;color:black;opacity:0.75;transition:all 0.5s!important;"><span class="circleLight"></span><div  class="text" style="display:flex; flex-direction:column;align-items:center;">
+					<div style="display:flex;align-items:center;"><img src="res/img/seal3.png" style="width:48px; height:48px;" /><span style="margin-top:12px;margin-left:12px;color:indianred;font-weight:bold;font-size:16px;">OCUR </span><span style="margin-top:12px;margin-left:12px;font-weight:bold;">map.d*/omain</span></div><p  id="card-name1" style="display:flex; align-items:center;">I`m cool card</p></div></div></div></div>
+			  
+		<div class="navigations"><ul class="dots"><li id="clicker" onclick="changeCard();"><a class="btn-flat grey lighten-4"><i class="material-icons grey-text text-darken-1" >restart_alt</i></a></li></ul></div></div></div>
+	
+	<!-- map -->
+	<div id="charter" class="content loader pane scale-transition scale-out" style="overflow-y: auto; height: 115%;width:100%;margin-top:48px;">
+		<div class="fixed-action-btn" style="bottom:25%;">
+		  <a class="btn-floating btn-large" style="background-color:indianred;display:flex;justify-content:center;align-items:center;font-size:20px;cursor:pointer;">📝</a><ul>
+			<li><a class="btn-floating grey lighten-3" onclick="$('#modal-map').modal('open');">🛰️</a></li>
+			<li><a class="btn-floating grey lighten-3" onclick="$('#modal-address').modal('open'); searcher();">🏠</a></li>
+			<li><a class="btn-floating grey lighten-3">📍</a></li>
+			<li><a class="btn-floating red lighten-3" onclick="$('#modal-list').modal('open');" >📄</a></li>
+			<li><a class="btn-floating red lighten-3" onclick="$('#modal-editor').modal('open');" >✏️</a></li></ul></div>
+		<div id="comparison-container" style="width:100%;height:110%;"><div id="before" class="map"></div><div id="after" class="map"></div></div></div>
+	
+	<!-- datetime -->
+	<div id="datetime" class="content loader pane scale-transition scale-out" >
+		<input type="text" class="datepicker" /></div>
+			 
+			 
+	<div id="emojier" class="content loader pane scale-transition scale-out" style="overflow-y: auto; width:100%;height:100%;margin-top:90px;">
+			<div class="z-depth-2" style="width:100%;display:flex;align-items:center;justify-content:space-evenly;padding:24px; background-color:ghostwhite; flex-direction:column;">
+				<div><emoji-picker style="border-radius:8px;"></emoji-picker></div></div>
+				<div id="resulter" style="margin-top:48px;">No search results.</div></div>
+			  </div>
+			  
+<!-- template -->
+<ul id='dropdown-tool' class='dropdown-content' style="max-height:none;">
+	<li><a href="#!" onclick="showView('charter'); openMap();" ><span>📝</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Editor</span></a></li>
+	<li style="margin-top:0;"class="divider" tabindex="-1"></li>
+    
+    <li><a href="#!" onclick="$('#modal-settings').modal('open');"><span>⚙️</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Settings</span></a></li>
+    <li><a href="#!" onclick="$('#modal-snap').modal('open');"><span>☎️</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Help</span></a></li>
+    <li style="margin-top:0;"class="divider" tabindex="-1"></li>
+    <li><a href="#!" onclick="showDoc('PLANME');" ><span>⛰️️</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>About</span></a></li></ul>
+
+<ul id='dropdown-use' class='dropdown-content' style="max-height:none;">
+	<li><a href="#!" onclick="$('#modal-sign').modal('open');" ><span>📝</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Sign In</span></a></li>
+	<li style="margin-top:0;"class="divider" tabindex="-1"></li>
+    <li><a href="#!" onclick="$('#modal-user').modal('open'); clearUser();"><span>🪪</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Create User</span></a></li>
+    <li style="margin-top:0;"class="divider" tabindex="-1"></li>
+    <li><a href="#!" onclick="$('#modal-pass').modal('open');" class="disabled"><span>🔑</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Edit Password</span></a></li>
+    <li><a href="#!" onclick="$('#modal-reset').modal('open');" ><span>🔓️</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Reset Password</span></a></li></ul>
+    
+<ul id='dropdown-domain' class='dropdown-content' style="max-height:none;">
+    	<li><a href="#!" onclick="domains.sort(domainAZ); showDomain();">Name&nbsp;&nbsp; &#8595;</a></li><li><a href="#!" onclick="domains.sort(domainZA); showDomain();">Name&nbsp;&nbsp; &#8593;</a></li>
+    	<li style="margin-top:0;"class="divider" tabindex="-1"></li>
+    	<li><a href="#!" onclick="domains.sort(domain90); showDomain());">Count&nbsp;&nbsp; &#8595;</a></li><li><a href="#!" onclick="domains.sort(domain09); showDomain();">Count&nbsp;&nbsp; &#8593;</a></li>
+		<li style="margin-top:0;" class="divider" tabindex="-1"></li>
+		<li><a href="#!" onclick="domains.sort(domainaz); showDomain();">Color&nbsp;&nbsp; &#8595;</a></li><li><a href="#!" onclick="domains.sort(domainza); showDomain();">Color&nbsp;&nbsp; &#8593;</a></li></ul>
+<ul id='dropdown-deed' class='dropdown-content' style="max-height:none;">
+    	<li><a href="#!" onclick="deeds.sort(deedAZ); showList('domain');">Name &#8595;</a></li><li><a href="#!" onclick="deeds.sort(deedZA); showList('domain');">Name &#8593;</a></li>
+    	<li style="margin-top:0;"class="divider" tabindex="-1"></li>
+    	<li><a href="#!" onclick="deeds.sort(deedaz); showList('domain');">Count &#8595;</a></li><li><a href="#!" onclick="deeds.sort(deedza); showList('domain');">Count &#8593;</a></li>
+		<li style="margin-top:0;" class="divider" tabindex="-1"></li>
+		<li><a href="#!" onclick="deeds.sort(deed09); showList('domain');">Price &#8595;</a></li><li><a href="#!" onclick="deeds.sort(deed90); showList('domain');">Price &#8593;</a></li></ul>
+
+
+<!--modal -->
+<div id="modal1" class="modal bottom-sheet content loader"><div id="domain-info" class="modal-content grey lighten-4" style="box-shadow: 1px 18px 24px 1px inset cornsilk" ></div></div>
+
+<div id="modal-list" class="modal bottom-sheet content loader"><div id="domain-info" class="modal-content grey lighten-4" style="box-shadow: 1px 18px 24px 1px inset cornsilk" >
+	<div id="lister" class="collection" style="overflow:scroll;width:100%;"><a class='collection-item'>No entries found.</a></div></div></div>
+
+
+<div id="modal-map" class="modal">
+    <div class="modal-content">
+		<div style="display:flex;width:100%;justify-content:center;margin-bottom:16px;"><a onclick="$('#modal-address').modal('close'); $('#modal-map').modal('close'); setMap('satellite', 'dark'); setTimeout(function() { markEdit(); }, 1000);" style="border-radius:8px; display: flex;justify-content: space-between;width:140px;" class="waves-effect waves-light blue lighten-4 btn" ><span>Locate</span>&nbsp;&nbsp;&nbsp;&nbsp;🛰️</a></div>
+		<div style="display: flex;justify-content: center;align-items: center; display: flex;margin-top:10px;flex-direction:column;">
+		<div class="row" style="margin:0;"><div class="input-field col s6"><input id="lat" type="number" min="-90" max="90" step="0.0001" value="45"><label for="lat">Latitude</label></div>
+		<div class="input-field col s6"><input id="long" type="number" min="-180" max="180" step="0.0001" value="105"><label for="long">Longitude</label></div></div></div></div>
+	<div class="modal-footer" style="margin-bottom:12px;display:flex;justify-content:space-evenly;">
+		<a onclick="$('#modal-address').modal('close'); $('#modal-map').modal('close'); setMap('satellite', 'dark'); setTimeout(function() { markEdit(); }, 1000);" style="border-radius:8px; display: flex;justify-content: space-between;width:140px;" class="waves-effect waves-light green lighten-4 btn" ><span>✔️</span><span>Confirm</span></a></div></div>
+		
+<div id="modal-address" class="modal">
+    <div class="modal-content">
+		<div style="display: flex;justify-content: center;align-items: center; display: flex;margin-top:10px;flex-direction:column;">
+			<div class="row" style="margin:0;"><div id="geocoder" class="geocoder"></div></div>
+			<div class="row" style="margin:0;"><form class="col s12">
+				<div class="row"><div class="input-field col s12" style="margin-bottom:0px;"><mapbox-address-autofill>
+					<input id="auto-ad" class="input mb12" name="address" autocomplete="shipping address-line1" placeholder="Search ..."></mapbox-address-autofill></div></div></form></div>
+		<div class="row" ><div class="input-field col s12" style="margin:0px;"><textarea id="textarea1" class="materialize-textarea" rows="2"></textarea><label for="textarea1">Address</label></div></div></div></div>
+	<div class="modal-footer" style="margin-bottom:12px;display:flex;justify-content:space-evenly;">
+		<a onclick="$('#modal-address').modal('close'); $('#modal-map').modal('close'); setMap('satellite', 'dark'); setTimeout(function() { markEdit(); }, 1000);" style="border-radius:8px; display: flex;justify-content: space-between;width:140px;" class="waves-effect waves-light green lighten-4 btn" ><span>✔️</span><span>Confirm</span></a></div></div>
+
+<div id="modal-editor" class="modal">
+	<div class="modal-content">
+		<div class="row" style="margin:0;"><form class="col s12">
+				<div class="row"><div class="input-field col s12" style="margin-bottom:0px;">
+		<input type="text" class="datepicker" /></div></div></form></div>
+			<div class="row" style="display:flex; justify-content:center;">
+				<a id="dropdown-temper" href='#' data-target='dropdown-temp' class="btn blue-grey blue-grey-text text-darken-2 lighten-2 z-depth-1 waves-effect waves-light dropdown-trigger"  style="font-size:16px; width: 120px; border-radius:8px 0px 0px 8px; display:flex; justify-content:space-between;"><span>💼</span><span>Case</span></a>
+				<a id="dropdown-filer" href='#' data-target='dropdown-file' class="btn blue-grey blue-grey-text lighten-3 z-depth-1 waves-effect waves-light dropdown-trigger text-darken-2"  style="font-size:16px; border-radius: 0px 8px 8px 0px; width: 120px; justify-content:space-between; display:flex;" ><span>File</span><span>📁</span></a></div>
+		
+        	<div id="pad" class="z-depth-1" contentEditable="true" style="text-align:left; overflow-y: auto; width:90%; border:1px solid darkgrey; opacity:0.75; border-radius: 8px;padding: 12px;margin:auto;font-size:20px;height:240px; background-color:whitesmoke;white-space: pre;"></div></div>
+			
+		<div class="modal-footer" style="margin-bottom:12px;display:flex;justify-content:center;">
+			<div style="display:flex;align-items:center;justify-content:space-evenly;">
+				<a onclick="showPreview();" class="waves-effect waves-light btn blue lighten-2" style="width:140px;margin-right:12px;"><span class='edit-device'>📃</span><span>Preview</span></a>
+				<a onclick=" clearPad();" class="waves-effect waves-grey btn-flat"  >🗑️</a></div></div></div></div>
+
+<div id="modal-user" class="modal">
+    <div class="modal-content">
+		<div id="wait-user" style="opacity:0;">
+		 <div class="preloader-wrapper big active">
+    <div class="spinner-layer spinner-green-only">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div><div class="gap-patch">
+        <div class="circle"></div>
+      </div><div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
+<a onclick="submitUser();" style="border-radius:8px; display: flex;justify-content: space-between;width:160px;" class="waves-effect waves-light green lighten-2 btn  disabled modal-close" ><span>OK</span><span>✔️</span></a>
+		
+		</div>
+		<div id="form-user" style="display: flex;justify-content: center;align-items: center; display: flex;margin-top:10px;flex-direction:column;opacity:1;">
+			<div class="row" style="margin:0;display:flex;align-items:center;"><a id="tip-0" class="btn-flat tooltipped" onmouseout="hideTool(0);" onclick="showTool(0);" data-position="bottom" >ℹ️</a><div class="input-field col s12" onclick="showFocus(0);">
+				<input id="input-0" type="text" class="validate" style="text-transform: lowercase" onblur="checkUser();"><label id="label-0" for="user">Select username ...</label></div><div><span id="yes-user" class="spanner" style="position:absolute;">✅</span><span id="no-user" class="spanner">❌</span></div></div>
+			<div class="row" style="margin:0;display:flex;align-items:center;"><a id="tip-1" class="btn-flat tooltipped" onmouseout="hideTool(1);" onclick="showTool(1);" data-position="bottom" >ℹ️</a><div class="input-field col s12" onclick="showFocus(1);">
+				<input id="input-1" type="text" class="validate" onblur="checkPassword();"><label id="label-1" for="password">Enter password ...</label></div><div><span id="yes-password" class="spanner" style="position:absolute;">✅</span><span id="no-password" class="spanner">❌</span></div></div>
+			<div class="row" style="margin:0;display:flex;align-items:center;"><a id="tip-2" class="btn-flat tooltipped" style="opacity:0;" data-position="bottom" >ℹ️</a><div class="input-field col s12" onclick="showFocus(2);">
+				<input id="input-2" type="text" class="validate" disabled onblur="checkConfirm();"><label id="label-2" for="password2">Confirm password ...</label></div><div><span id="yes-confirm" class="spanner" style="position:absolute;">✅</span><span id="no-confirm" class="spanner">❌</span></div></div></div></div>
+	<div class="modal-footer" style="margin-bottom:12px;display:flex;justify-content:space-evenly;">
+		<a id="subber" onclick="submitUser();" style="border-radius:8px; display: flex;justify-content: space-between;width:160px;" class="waves-effect waves-light green lighten-2 btn  disabled" ><span>Create</span><span>🪪</span></a></div></div>
+		
+<div id="modal-sign" class="modal">
+    <div class="modal-content">
+		<div id="wait-sign" style="opacity:0;">
+		 <div class="preloader-wrapper big active">
+    <div class="spinner-layer spinner-green-only">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div><div class="gap-patch">
+        <div class="circle"></div>
+      </div><div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
+<a onclick="submitUser();" style="border-radius:8px; display: flex;justify-content: space-between;width:160px;" class="waves-effect waves-light green lighten-2 btn  disabled modal-close" ><span>OK</span><span>✔️</span></a>
+		
+		</div>
+		<div id="form-sign" style="display: flex;justify-content: center;align-items: center; display: flex;margin-top:10px;flex-direction:column;opacity:1;">
+			<div class="row" style="margin:0;display:flex;align-items:center;"><a id="tip-2" class="btn-flat tooltipped" onmouseout="hideTool(2);" onclick="showTool(2);" data-position="bottom" >ℹ️</a><div class="input-field col s12" onclick="showFocus(2);">
+				<input id="input-2" type="text" class="validate" style="text-transform: lowercase" onblur="checkUser();"><label id="label-2" for="user">Enter username ...</label></div><div><span id="yes-user" class="spanner" style="position:absolute;">✅</span><span id="no-user" class="spanner">❌</span></div></div>
+			<div class="row" style="margin:0;display:flex;align-items:center;"><a id="tip-3" class="btn-flat tooltipped" onmouseout="hideTool(3);" onclick="showTool(3);" data-position="bottom" >ℹ️</a><div class="input-field col s12" onclick="showFocus(3);">
+				<input id="input-4" type="text" class="validate" onblur="checkPassword();"><label id="label-4" for="password">Enter password ...</label></div><div><span id="yes-password" class="spanner" style="position:absolute;">✅</span><span id="no-password" class="spanner">❌</span></div></div></div></div>
+	<div class="modal-footer" style="margin-bottom:12px;display:flex;justify-content:space-evenly;">
+		<a id="subber" onclick="submitUser();" style="border-radius:8px; display: flex;justify-content: space-between;width:160px;" class="waves-effect waves-light green lighten-2 btn  disabled" ><span>Sign In</span><span>✔️</span></a></div></div>
+		
+<div id="modal-pass" class="modal">
+    <div class="modal-content">
+		<div id="wait-sign" style="opacity:0;">
+		 <div class="preloader-wrapper big active">
+    <div class="spinner-layer spinner-green-only">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div><div class="gap-patch">
+        <div class="circle"></div>
+      </div><div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
+<a onclick="submitUser();" style="border-radius:8px; display: flex;justify-content: space-between;width:160px;" class="waves-effect waves-light green lighten-2 btn  disabled modal-close" ><span>OK</span><span>✔️</span></a>
+		
+		</div>
+		<div id="form-sign" style="display: flex;justify-content: center;align-items: center; display: flex;margin-top:10px;flex-direction:column;opacity:1;">
+			<div class="row" style="margin:0;display:flex;align-items:center;"><a id="tip-2" class="btn-flat tooltipped" onmouseout="hideTool(2);" onclick="showTool(2);" data-position="bottom" >ℹ️</a><div class="input-field col s12" onclick="showFocus(2);">
+				<input id="input-2" type="text" class="validate" style="text-transform: lowercase" onblur="checkUser();"><label id="label-2" for="user">Enter username ...</label></div><div><span id="yes-user" class="spanner" style="position:absolute;">✅</span><span id="no-user" class="spanner">❌</span></div></div>
+			<div class="row" style="margin:0;display:flex;align-items:center;"><a id="tip-3" class="btn-flat tooltipped" onmouseout="hideTool(3);" onclick="showTool(3);" data-position="bottom" >ℹ️</a><div class="input-field col s12" onclick="showFocus(3);">
+				<input id="input-4" type="text" class="validate" onblur="checkPassword();"><label id="label-4" for="password">Enter password ...</label></div><div><span id="yes-password" class="spanner" style="position:absolute;">✅</span><span id="no-password" class="spanner">❌</span></div></div></div></div>
+	<div class="modal-footer" style="margin-bottom:12px;display:flex;justify-content:space-evenly;">
+		<a id="subber" onclick="submitUser();" style="border-radius:8px; display: flex;justify-content: space-between;width:160px;" class="waves-effect waves-light green lighten-2 btn  disabled" ><span>Sign In</span><span>✔️</span></a></div></div>
+		
+		
+<!-- dialog -->
+<div id="somedialog2" class="dialog print-help hide-scrollbar" style="z-index:99;">
+	<div id="someoverlay" class="dialog__overlay hide-scrollbar"></div>
+	<div class="dialog__content print-help hide-scrollbar" style="width: 90%; height:80%; text-align:left;overflow:auto; padding:24px;">
+		<div class="morph-shape" data-morph-open="M0,0h80c0,0,0,9.977,0,29.834c0,19.945,0,30.249,0,30.249H0c0,0,0-10.055,0-30.332C0,8.219,0,0,0,0z" data-morph-close="M0,29.75h80c0,0-3.083,0.014-3.083,0.041c0,0.028,3.083,0.042,3.083,0.042H0c0,0,3.084-0.014,3.084-0.042
+											C3.084,29.762,0,29.75,0,29.75z"><svg id='test-svg' xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 80 60" preserveAspectRatio="none"><path d="M0,29.75h80c0,0-3.083,0.014-3.083,0.041c0,0.028,3.083,0.042,3.083,0.042H0c0,0,3.084-0.014,3.084-0.042
+											C3.084,29.762,0,29.75,0,29.75z"></path></svg></div>
+		<div id="dialog-inner2" class="dialog-inner print-help hide-scrollbar" style="overflow:auto;"></div></div> 
+
+<script>
+	var valids = [false, false, false];
+	function showSubmit() { var subSwitch = true; for(var a = 0; a < valids.length; a++) { if (valids[a] == false) { subSwitch = false; } } if (subSwitch) { $("#subber").removeClass("disabled"); } else { $("#subber").addClass("disabled"); } }
+	var tips = ['Select a <span style="font-weight:bold;">username</span> <span style="font-style:italic;">between 6 to 14</span> characters.','Choose a <span style="font-weight:bold;">password</span> <span style="font-style:italic;">between 6 to 14</span> characters with <span style="font-style:italic;">both</span> a number and special character.'];
+	function showTool(i) {
+		$('#tip-'+i).tooltip({ html:tips[i] });$('#tip-'+i).tooltip('open'); } 
+	function hideTool(i) {  $('#tip-'+i).tooltip('destroy'); }
+	var labels = ['Choose username', 'Enter password', 'Confirm password']; 
+	function showLabel(i) { $("#label-"+i).html(labels[i]);$("#label-"+i).removeClass("righter-label"); $("#label-"+i).removeClass("wronger-label"); } 
+	function setLabel(i, message) { $("#label-"+i).html(message); }
+	function showFocus(i) { $("#input-"+i).focus(); }
+	
+function clearUser() { $("#input-0").val(''); $("#input-1").val(''); $("#input-2").val(''); $("label").removeClass("active"); 
+	for (var a = 0; a < valids.length; a++) { showLabel(a); }$("#input-0").focus(); }
+function fixUser() { $("#input-0").val($("#input-0").val().toLowerCase()); }
+function checkUser() { if ($("#input-0").val() != "") { var formdata = new FormData(); 
+	formdata.append('user',$("#input-0").val()); $("#yes-user").css("opacity","0");  $("#no-user").css("opacity","0");
+	$.ajax({ url: "check", type: "POST", data: formdata, processData: false, contentType: false, success: function(data) { if (data == 'valid') { setLabel("0", "User available"); $("#label-0").addClass("righter-label"); valids[0] = true; $("#yes-user").css("opacity","1");   } else  {  setLabel(0, "User taken"); $("#label-0").addClass("wronger-label"); valids[0] = false; $("#no-user").css("opacity","1");  } showSubmit(); } }); } }
+function checkPassword() { $("#input-1").removeClass("wronger"); $("#label-1").removeClass("wronger-label"); $("#label-1").removeClass("righter-label");  $("#input-1").removeClass("wronger"); $("#yes-password").css("opacity","0");  $("#no-password").css("opacity","0"); if ($("#input-1").val().length > 6) { setLabel(1,"Password valid"); $("#label-1").addClass("righter-label");valids[1] = true; $("#yes-password").css("opacity","1");  $('#input-2').prop("disabled", false); } else { setLabel(1, "Invalid password"); $("#input-1").addClass("wronger"); $("#label-1").addClass("wronger-label");valids[1] = false; $("#no-password").css("opacity","1");$('#input-2').prop("disabled", true); } showSubmit(); }
+function checkConfirm() { $("#yes-confirm").css("opacity","0");  $("#no-confirm").css("opacity","0"); $("#input-2").removeClass("wronger"); $("#label-2").removeClass("wronger-label"); $("#label-2").removeClass("righter-label"); if ($("#input-2").val() == $("#input-1").val()) { setLabel(2, "Passwords match"); $("#label-2").addClass("righter-label"); valids[2] = true; $("#yes-confirm").css("opacity","1"); } else { setLabel(2, "Password mismatch"); $("#label-2").addClass("wronger-label"); $("#input-2").addClass("wronger"); valids[2] = false; $("#no-confirm").css("opacity","1"); } showSubmit();  }
+
+
+function encryptPassword(salt, digest) {
+
+      
+      let algo = CryptoJS.algo.SHA256.create();
+      algo.update(digest, "utf-8");
+      algo.update(CryptoJS.SHA256(salt), "utf-8");
+      hash = algo.finalize().toString(CryptoJS.enc.hex);
+      console.log(hash);
+      return hash;
+}
+function submitUser() { var formdata = new FormData(); $("body").addClass("waiter"); $("#wait-user").css("opacity","1"); $("#form-user").css("opacity","0");
+	var user = $("#input-0").val(); var salt = CryptoJS.lib.WordArray.random(128/8); var password = encryptPassword(salt.toString(), $("#input-1").val());
+	formdata.append('user',user); formdata.append('password',password); formdata.append('salt',salt.toString()); console.log(salt.toString());
+	$.ajax({ url: "user", type: "POST", data: formdata, processData: false, contentType: false, success: function(data) { if (data == 'valid') { saltUser(user, $("#input-1").val()); }  $("body").removeClass("waiter"); } }); }
+	
+function saltUser(user, password) {
+	var formdata = new FormData(); 
+	formdata.append('user',user); 
+	$.ajax({ url: "salt", type: "POST", data: formdata, processData: false, contentType: false, success: function(data) { console.log(data); lockUser(user, data, password); } });
+}
+
+function lockUser(user, salt, digest) {
+	var formdata = new FormData(); var password = encryptPassword(salt, digest);
+	formdata.append('user',user); formdata.append('password',password);
+	$.ajax({ url: "lock", type: "POST", data: formdata, processData: false, contentType: false, success: function(data) { alert(data); } });
+}
+// check (user)
+// user (user, password, confirm, backup)
+// lock (user, password, salt)
+
+const app = new PIXI.Application({ backgroundAlpha: 0, antialias: true, width:window.innerWidth, height:240 });
+
+//let app = new PIXI.Application({ width: 640, height: 360, transparent: true }); 
+
+//var renderer = PIXI.autoDetectRenderer(256, 256, {antialias: false, transparent: true, resolution: 1});
+
+
+
+//var renderer = PIXI.autoDetectRenderer(800, 600, { BackgroundAlpha:0 });
+//var stage = new PIXI.Container();
+
+/*const app = new PIXI.Application({ background: '#1099bb' });
+document.body.appendChild(app.view);
+
+PIXI.Assets.load('examples/assets/spritesheet/fighter.json').then(() => {
+    // create an array of textures from an image path
+    const frames = [];
+
+    for (let i = 0; i < 30; i++) {
+        const val = i < 10 ? `0${i}` : i;
+
+        // magically works since the spritesheet was loaded with the pixi loader
+        frames.push(PIXI.Texture.from(`rollSequence00${val}.png`));
+    }
+
+    // create an AnimatedSprite (brings back memories from the days of Flash, right ?)
+    const anim = new PIXI.AnimatedSprite(frames);
+
+
+    anim.x = app.screen.width / 2;
+    anim.y = app.screen.height / 2;
+    anim.anchor.set(0.5);
+    anim.animationSpeed = 0.5;
+    anim.play();
+
+    app.stage.addChild(anim);
+
+    // Animate the rotation
+    app.ticker.add(() => {
+        anim.rotation += 0.01;
+    });
+});
+
+*/
+//function animate() {
+ //   requestAnimationFrame(animate);
+   // renderer.render(stage); }
+
+var   priestImage = [];
+for (var a = 0;  a <41; a++) { priestImage.push('res/img/laugh/Priest_Laugh_000/Priest_Laugh_000_000'+a.toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false}).slice(-2)+'.png'); }
+const alienImages = [
+    'image_sequence_01.png',
+    'image_sequence_02.png',
+    'image_sequence_03.png',
+    'image_sequence_04.png',
+];
+const textureArray = [];
+
+for (let i = 0; i < 41; i++)
+{
+    const texture = PIXI.Texture.from(priestImage[i]);
+    textureArray.push(texture);
+}
+
+const anim = new PIXI.AnimatedSprite(textureArray);
+
+
+//const pawn = new PIXI.Spritesheet(PIXI.BaseTexture.from(fireEffectData.meta.image), fireEffectData ); pawn.parse();
+//const animx = new PIXI.AnimatedSprite(pawn.animations.fire); 
+
+const pawn = new PIXI.Spritesheet(PIXI.BaseTexture.from(cyberData.meta.image), cyberData ); pawn.parse();
+const pawn2 = new PIXI.Spritesheet(PIXI.BaseTexture.from(cyberData2.meta.image), cyberData2 ); pawn2.parse();
+const animx = new PIXI.AnimatedSprite(pawn.animations.idle); const animx2 = new PIXI.AnimatedSprite(pawn2.animations.hurt); 
+
+  /*  this.spriteSheet = this.loader.resources["images/atlus_runner.json"].spritesheet
+    this.anim = new PIXI.extras.AnimatedSprite(
+      this.spriteSheet.animations["walk"]
+    );
+    this.anim.animationSpeed = 0.2;
+    this.anim.loop = true;
+    this.anim.play();
+    this.addChild(this.anim);
+
+When I wanted to play another animation, I did it in following manner
+
+    var newAnim = this.spriteSheet.animations["jump"];
+    this.anim.stop();
+    this.anim.textures = newAnim;
+    this.anim.play();
+    
+    */
+
+//const pawn = new PIXI.Spritesheet(PIXI.BaseTexture.from(pawnData.meta.image), pawnData ); pawn.parse();
+//const animx = new PIXI.AnimatedSprite(pawn.animations.walk); 
+
+animx.animationSpeed = 0.24666; animx.position.set(animx.position.x + 100, animx.position.y +100);
+animx2.animationSpeed = 0.24666; animx2.position.set(animx2.position.x + 100, animx2.position.y +100);
+	animx.eventMode  = 'static';
+	animx.on('pointerdown', (event) => { alert('clicked!'); animx.textures = pawn2.animations.hurt; });
+
+    var plane;
+function playGame() {
+	
+	document.body.appendChild(app.view);
+	//document.body.appendChild(renderer.view);
+
+
+//let texture = PIXI.Texture.fromVideo('res/img/test.mp4');
+      //  let video = document.createElement('video');
+       // video.preload = 'auto';
+       // video.loop = true;
+       // video.autoplay = true;
+       // video.src = 'res/img/test.mp4';
+        const videoResource = new PIXI.VideoResource('res/img/test.mp4'); 
+
+        videoResource.updateFPS = 30 // set video to render at 30FPS to avoid performance issues
+
+        let texture = PIXI.Texture.from(videoResource);
+
+        let videoSprite = new PIXI.Sprite(texture);
+
+        
+//const videoResource = new PIXI.VideoResource(video); 
+
+  //      videoResource.updateFPS = 5; // set video to render at 30FPS to avoid performance issues
+
+//        let texture = PIXI.Texture.from(videoResource);
+//let texture = PIXI.Texture.from('res/img/test.mp4');
+
+//var texture = new PIXI.Texture(baseTexture);
+
+// create the root of the scene graph
+//const texture = PIXI.Texture.from('res/img/walls.png');
+
+/* create a tiling sprite ...
+ * requires a texture, a width and a height
+ * in WebGL the image size should preferably be a power of two
+ */
+ //this.backgroundVideo = videoSprite
+
+    //    this.backgroundVideo.height = h
+      //  this.backgroundVideo.width = w
+
+       // app.stage.addChild(videoSprite);
+        
+//const tilingSprite = new PIXI.TilingSprite(
+//    texture,
+//    app.screen.width,
+//    app.screen.height,
+//);
+//app.stage.addChild(tilingSprite);
+
+let count = 0;
+
+//app.ticker.add(() => {
+//    count += 0.005;
+
+//    tilingSprite.tileScale.x = 2 + Math.sin(count);
+//    tilingSprite.tileScale.y = 2 + Math.cos(count);
+
+//    tilingSprite.tilePosition.x += 1;
+ //   tilingSprite.tilePosition.y += 1;
+//});
+//PIXI.Assets.load('res/img/walls.png').then((texture) => {
+  //  plane = new PIXI.SimplePlane(texture, 10, 10);
+    //plane.x = 100;
+    //plane.y = 100;
+
+    //app.stage.addChild(plane);
+//});
+
+
+// const texture = PIXI.utils.TextureCache["res/img/walls.png"];
+//const img = new PIXI.Sprite(texture);
+       // img.width = window.innerWidth;
+        //img.height = window.innerHeight;
+        //app.stage.addChild(img);
+
+
+	animx.play();
+	//stage.addChild(anim);
+	app.stage.addChild(animx);
+	
+
+	//animx.pointertap = (event) => {alert('clicked!'); animx.texture = pawn2.animations.hurt;
+ //some function here that happens on pointerdown
+
+	app.ticker.add((delta) => {
+    // just for fun, let's rotate mr rabbit a little
+    // delta is 1 if running at 100% performance
+    // creates frame-independent transformation
+    animx.x += 0.3 * delta;
+});
+
+//requestAnimationFrame(animate);
+
+	//app.stage.removeChildren();
+}  
+
+
+// Update the shared group
+
+
+// Create a new texture
+//const texture = PIXI.Texture.from('examples/assets/bunny.png');
+
+// time animation in miliseconds!
+
+/*
+const bunny2 = new PIXI.Sprite(texture);
+bunny2.y = 100;
+app.stage.addChild(bunny2);
+
+new TWEEDLE.Tween(bunny2).to({ alpha: 0.0 }, time)
+    .repeat(Infinity)
+    .yoyo(true)
+    .start();
+
+const bunny3 = new PIXI.Sprite(texture);
+bunny3.y = 200;
+app.stage.addChild(bunny3);
+
+new TWEEDLE.Tween(bunny3).to({ scale: { x: 2.0, y: 2.0 } }, time)
+    .repeat(Infinity)
+    .yoyo(true)
+    .start();
+
+const bunny4 = new PIXI.Sprite(texture);
+bunny4.y = 350;
+bunny4.x = 100;
+bunny4.anchor.set(0.5, 0.5);
+app.stage.addChild(bunny4);
+
+new TWEEDLE.Tween(bunny4).to({ rotation: 2 * Math.PI }, time)
+    .repeat(Infinity)
+    .yoyo(true)
+    .start();
+
+let colorBunny = null;
+createNewBunny();
+
+function createNewBunny() {
+    if (colorBunny) {
+        app.stage.removeChild(colorBunny);
+    }
+
+    colorBunny = new PIXI.Sprite(texture);
+    colorBunny.y = 500;
+    colorBunny.x = 50;
+    colorBunny.tint = `0x${Math.floor(Math.random() * 16777215).toString(16)}`;
+    app.stage.addChild(colorBunny);
+
+    new TWEEDLE.Tween(colorBunny).to({ x: 500 }, time)
+        .onComplete(createNewBunny)
+        .start();
+}
+
+*/
+
+
+async function initial() { showFav();  showGear();
+ $('#deed-pane').sidenav({ edge: 'left' });  $('.tabs').tabs(); $('.modal').modal(); $('#dropdown-user').dropdown({ constrainWidth: false }); $('#dropdown-tooler').dropdown({ constrainWidth: false });
+   $('.datepicker').datepicker({ autoClose: true, isRTL: false });
+   $('#dropdown-domainer').dropdown({ constrainWidth: false }); $('#dropdown-deeder').dropdown({ constrainWidth: false });
+ $('.fixed-action-btn').floatingActionButton({ hoverEnabled: false });
+    $("#mainer").css("opacity", 1); startup(); setTimeout(function() { $("#egger").fadeIn(); }, 1000 ); 
+    setPage(); } 
+
+initial(); //document.addEventListener('DOMContentLoaded', function() {  }); 
+
+
+
+</script>
+
+<style>		
+	.waiter { pointer-events: none; }
+.spanner { opacity:0; transition: opacity 0.3s; } .wronger { border-bottom: red solid 1px!important; } .wronger-label { color: red!important; } .righter-label { color: green!important; }
+a.edger {  width:100%; display:flex; justify-content:left; }	.namer {   transition: opacity 0.3s; } .imager {   transition: opacity 0.3s; }
+img {-khtml-user-select: none;-o-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;}span {-khtml-user-select: none;-o-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;}div {-khtml-user-select: none;-o-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;}a {cursor:pointer;}a:focus {outline: 0;}*::-webkit-scrollbar, *::-webkit-scrollbar-thumb {width: 0px!important;border-radius: 1px;background-clip: padding-box;border: 10px solid transparent;height: 1px;-webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);}*::-webkit-scrollbar-thumb {box-shadow: inset 0 0 0 10px;}body {scrollbar-width: none!important;}
+	
+@keyframes fade-in { 0% { opacity: 0; } 100% { opacity: 1; } }
+@keyframes drop { 0% { bottom: 0px; opacity: 1; } 80% { opacity: 1; } 100% { opacity: 1; bottom: -200px; } }
+@keyframes wave { 0% { background-position: 0 160px; background-size: 170px 300px; } 100% { background-position: 500px -18px; background-size: 250px 150px; } }
+
+.kuhl{ width: 58%; }
+
+.loaderx { width: 120px; height: 120px; position: fixed;  margin: auto; left: 0;right: 0;top: 0;bottom: 0;text-align: center;line-height: 120px;font-family: sans-serif; color: #ffffff; font-size: 16px; border-radius: 25px; }
+.loaderx span { z-index: 3; }
+.loader-bg { position: absolute; left: 0; right: 0; top: 0; bottom: 0; border-radius: 25px; background: transparent repeat-x 0 100px/150px 300px url('res/img/loader.png');
+	/*url('data:image/png;base64,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'); */
+  z-index: 2; animation: wave 1s ease-out forwards; }
+
+.drops { -webkit-filter: url('#liquid'); filter: url('#liquid'); position:absolute; top:0; left:0; bottom:0; right:0; z-index: 1; opacity: 0; animation: fade-in .1s linear .4s forwards; }
+.drop1 , .drop2 { width: 21px; height: 24px; border-radius: 50%; position: absolute; left: 0; right: 0; bottom: 0; margin: auto; background-color: gold; }
+.drop1 { width: 90px; height: 16px; bottom: 2px; border-radius: 0; }
+.drop2 { animation: drop 1.3s cubic-bezier(1,.19,.66,.12) .5s infinite; }
+
+
+.tabber {color: dimgrey;}  .active .tabber { color:indianred; } .tabby {color: darkgrey;}  .active .tabby { color:darkred; }
+
+
+.edger {border-left:solid 4px white!important; -webkit-transition: .3s ease-out;
+    transition: .3s ease-out; }
+.edger:hover {border-left:solid 4px goldenrod!important;}
+
+.booker { border-left:solid 4px white!important; -webkit-transition: .3s ease-out;
+    transition: .3s ease-out; }
+.booker:hover { border-left:solid 4px indianred!important; }
+
+
+
+.image {position: absolute;width: 48px;height: 48px;opacity: 0.95;transition: opacity .2s;}.image:hover {opacity:0.75;}.image-rotate {-webkit-animation:spin 8s linear infinite;-moz-animation:spin 8s linear infinite;animation:spin 8s linear infinite;}@-moz-keyframes spin {100% {-moz-transform: rotate(360deg);}}@-webkit-keyframes spin {100% {-webkit-transform: rotate(360deg);}}@keyframes spin {100% {-webkit-transform: rotate(360deg);transform:rotate(360deg);}}.image-rotate-back {-webkit-animation:spin-back 8s linear infinite;-moz-animation:spin-back 8s linear infinite;animation:spin-back 8s linear infinite;}@-moz-keyframes spin-back {100% {-moz-transform: rotate(-360deg);}}@-webkit-keyframes spin-back {100% {-webkit-transform: rotate(-360deg);}}@keyframes spin-back {100% {-webkit-transform: rotate(=360deg);transform:rotate(-360deg);}}.select-wrapper {width:100%!important;}.positioning-context {width:100%;height:100%;background-color:#CCCCCC;display:inline-block;float:left;position:relative;}.positioning-context img {max-width: 100%;max-height:100%;margin: auto;position:absolute;top:0;left:0;right:0;bottom:0;}.open {cursor:default;}#domain-info {padding:0;}.desk-menu {height:103%;}.desk-link:hover {height:103%;border-bottom: solid 2px darkslategrey!important;}nav ul a {color:darkslategray;}nav ul a:hover {color:darkslategrey;background-color: lightgrey!important;}dropdown-content li>a>i {margin:0 12px 0 0;}.dropdown-content li>a, .dropdown-content li>span {color:darkslategrey!important;}#wallet-icon {color:darkslategrey;}nav ul a:hover #wallet-area:hover {background-color: green!important;}#setting-wallet:hover {background-color: lightgrey!important;color:black!important;}.tabs.deed .tab a{color:black;}.tabs.deed .tab a:hover {background-color:darkred;color:white;}.tabs.deed .tab a.active {background-color:indianred;color:ghostwhite;}.tabs.deed .indicator {background-color:indianred;}.tabs.deed .tab a:focus.active {color:white;background-color: indianred;}#doc li a {background-color:ghostwhite;}.hide-scrollbar {overflow: auto;-ms-overflow-style: none;scrollbar-width: none;}.svg{font: bold 24px Century Gothic, Arial;width : 100%;height : 120px;}text{fill: cornflowerblue;stroke: royalblue;stroke-width: .5px;stroke-linejoin : round;animation: 2s pulsate infinite;}.collection a.collection-item {color:black!important;}.collected:hover {background-color:indianred;color:ghostwhite;}@keyframes pulsate {50%{stroke-width:1px }}[type="checkbox"]:checked + span:not(.lever)::before {border-right: 2px solid black!important;border-bottom: 2px solid black!important;}.mapboxgl-popup-close-button {display:none!important;}.flip-card {background-color: transparent;width: 100px;height: 100px;border-radius:12px;perspective: 1000px;}.flip-card-inner {position: relative;width: 100%;height: 100%;text-align: center;transition: transform 0.8s, opacity 0.2s!important;transform-style: preserve-3d;}.flip-card-front, .flip-card-back {position: absolute;width: 100%;height: 100%;transition: transform 0.8s, opacity 0.2s!important;transform-style: preserve-3d;-webkit-backface-visibility:hidden;backface-visibility: hidden;}.flip-card-front {color: black;display: flex;align-items: center;justify-content: center;border-radius: 12px;border: solid 2px darkseagreen;}.backer {-webkit-backface-visibility: hidden;backface-visibility: hidden;}.flip-card-back {background-color: ghostwhite;color: white;display: flex;align-items: center;justify-content: center;border-radius: 12px;border: solid 1px gainsboro;}.rotate {-webkit-transform: rotateX(180deg) rotateY(180deg);transform: rotateX(180deg) rotateY(180deg);}.flipper {transform: scaleX(-1), scaleY(-1);}[type="checkbox"].filled-in:checked+span:not(.lever):after {border: 2px solid steelblue!important;background-color: steelblue!important;}.video-hold{margin: auto;height: 100px;max-width:95%;overflow: hidden;clip-path: 0 0;transform: translatez(0);}.video-clip {height:100%;width:100%;object-fit:cover;}video::-internal-media-controls-overlay-cast-button {display: none;}.scene {width: 1000px;display: flex;justify-content: space-between;perspective: 800px;}.scene .card {position: relative;width: 240px;height: 300px;color: white;cursor: pointer;transition: 1s ease-in-out;transform-style: preserve-3d;}.scene .card:hover {transform: rotateY(0.5turn);}.scene .card .card__face {position: absolute;top: 0;left: 0;width: 100%;height: 100%;backface-visibility: hidden;transition: 1s ease-in-out;-webkit-box-reflect: below 0 linear-gradient(transparent, transparent, rgba(0, 0, 0, 0.4));}.scene .card .card__face img {width: 240px;height: 300px;object-fit: cover;}.scene .card .card__face--back {transform: rotateY(0.5turn);}h1 {font-weight: 700;font-size: 64px;margin: 20px 0 0 0;padding: 0 20px;}p {font-size: 16px;padding: 0 20px;}em {font-style: normal;color: #ffc400;}a {font-style: normal;text-decoration: none;cursor: pointer;}.sub {margin: 0;}
+
+.setter {cursor: pointer;bottom: 10px;position: relative;display: inline-block;font-size: 20px;line-height: 60px;font-weight: bold;transform: rotate(45deg);transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);}
+.expand .button {transform: rotate(630deg);transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);}
+.containerx {border: solid 1px lightgrey;margin: auto;top: 12px;border-radius: 50%;height: 36px;text-align: center;width:36px;max-width:800px;box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);overflow: hidden;transition: all 0.2s 0.45s, border 0s, height 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0.25s, max-width 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0.35s, width 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0.35s;}.containerx.yellowx {background: rgb(231,188,120);background: linear-gradient(153deg, rgba(231,188,120,1) 35%, rgba(173,149,103,1) 100%);}
+.containerx.whitex { background: rgb(94,153,209); background: linear-gradient(167deg, rgba(94,153,209,1) 0%, rgba(127,179,227,1) 35%, rgba(119,177,218,1) 100%);}
+/*.shadow { box-shadow:none!important; }*/
+
+
+
+.whitex.expand { height: 580px; } .redx.expand { height: 610px; }
+
+.containerx.redx {background: rgb(245,141,141);background: linear-gradient(153deg, rgba(245,141,141,1) 35%, rgba(212,110,94,1) 100%);}.greenx {background: rgb(130,219,130);background: linear-gradient(153deg, rgba(130,219,130,1) 35%, rgba(103,173,109,1) 100%);}.containerx.bluex {background: rgb(113,149,207);background: linear-gradient(153deg, rgba(113,149,207,1) 35%, rgba(74,90,119,1) 100%);}
+
+.redx.expand:hover {border:solid 1px transparent;}.greenx.expand:hover {border:solid 1px transparent;}.bluex:hover {border:solid 1px transparent;}.yellowx.expand:hover {border:solid 1px transparent;} .whitex.expand:hover {border:solid 1px transparent;} 
+.redx:hover {border:solid 1px indianred;}.greenx:hover {border:solid 2px darkgreen;}.bluex:hover {border:solid 2px darkblue;}.yellowx:hover {border:solid 1px darkgoldenrod;}.whitex:hover {border:solid 1px darksteelblue;}
+
+/*.whitex.expand {border:solid 2px lightsteelblue!important;} .redx.expand {border:solid 2px indianred!important;}.bluex.expand {border:solid 2px darkblue;}*/
+
+.containerx.expand {box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.17);border-radius: 0px 0px 8px 8px;width: 80%;max-width:800px;padding: 0;transition: all 0.2s, max-width 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0.1s, height 0.3s ease 0.25s;}.containerx.expand.golden {height:560px!important;border-radius: 0px 0px 8px 8px;}.contentx {transform: translateY(100%);width: 100%;height: 100%;opacity: 0;text-align: left;transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s 0.2s;}
+
+.expand .contentx {transform: translateY(0px);opacity: 1;transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.05s, opacity 0s;}.contentx .head {padding: 0 0 20px 0;}.contentx .body {color: #000;color: rgba(0, 0, 0, 0.87);background-color: #fff;width: 100%;height: 100%;box-sizing: border-box;}.action-bar {padding-left: 15px;border-top: 1px solid #e0e0e0;width: 100%;}.action-bar a {text-transform: uppercase;line-height: 52px;color: #ffc400;}.badge-stamp {display: flex!important;align-items: center;justify-content: center;padding-top: 8px!important;}.dropdown-content {max-height:180px;}.select-wrapper {max-width:200px!important;} .popupContainer {z-index:1;}
+
+.added {opacity: 1!important;}.removed {display:none;}.over-icon {line-height:36px!important;}.card-background {background: lightgray!important;}.slider {width: 100%;height: 100vh;}.slider .items-group {width: 100%;height: 100%;position: relative;}.slider .items-group .item {top: 0px;left: 0px;opacity: 0;width: 100%;height: 100%;display: flex;overflow: hidden;transition: 0.5s;visibility: hidden;position: relative;padding: 50px 20px;position: absolute;align-items: center;justify-content: center;box-sizing: border-box;}.slider .items-group .item:hover .bg {opacity: 0.2;}.slider .items-group .item:hover .block {box-shadow: 0px 0px 50px #333;}.slider .items-group .item.active {opacity: 1;visibility: visible;}.slider .items-group .item .bg {top: 0px;left: 0px;opacity: 1;z-index: -1;width: 100%;height: 100%;transition: 0.5s;position: absolute;transform: scale(1.03);background-size: cover;background-position: center;background-attachment: fixed;}.slider .items-group .item .blur {top: 0px;left: 0px;z-index: -1;width: 100%;height: 100%;transition: 0.5s;filter: blur(5px);position: absolute;transform: scale(1.03);background-size: cover;background-position: center;background-attachment: fixed;}.slider .items-group .item .block {width: 100%;height: 100%;color: #fff;transition: box-shadow 0.5s;max-width: 300px;overflow: hidden;max-height: 450px;border-radius: 10px;transform: scale(1.03);box-sizing: border-box;background-size: cover;background-position: center;background-attachment: fixed;box-shadow: none;}.slider .items-group .item .block .circleLight {top: 0px;left: 0px;opacity: 0;content: &#39;&#39;;width: 100%;height: 100%;display: block;transition: 0.5s;position: absolute;border-radius: 10px;background: radial-gradient(circle at 80px 40px, #fff, transparent);}.slider .items-group .item .block .text {width: 100%;height: 100%;display: flex;text-align: center;flex-direction: column;justify-content: center;background-position: center;background-attachment: fixed;}.slider .items-group .item .block h2 {font-family: &#39;Oswald&#39;, sans-serif;font-size: 130px;margin-bottom: 0px;}.slider .items-group .item .block p {font-family: &#39;Open Sans&#39;, sans-serif;font-size: 15px;}.slider .items-group .item .block:hover {box-shadow: 0px 0px 70px #111;}.slider .items-group .item .block:hover .circleLight {opacity: 0.4;}.slider .navigations {bottom: 36px;width: 100%;position: absolute;}.slider .navigations .dots {height: 50px;text-align: center;}.slider .navigations .dots li {cursor: pointer;transition: 0.3s;background: #fff;border-radius: 50%;display: inline-block;vertical-align: middle;}.slider .navigations .dots li + li {margin-left: 10px;}.slider .navigations .dots li:hover {filter: blur(2px);}.slider .navigations .dots li.active {width: 15px;height: 15px;}.slider .navigations .dots li.active:hover {filter: blur(0px);}
+
+
+
+.fonter {
+
+    
+
+    text-align: center;
+    font-size: 35px;
+    color: rgb(109, 94, 44);
+ 
+    text-shadow: rgb(176, 176, 176) 2px 2px 2px;
+}
+
+.map {
+position: absolute;
+top: 0;
+bottom: 0;
+width: 100%;
+}
+
+#map {
+position: absolute;
+top: 0;
+bottom: 0;
+width: 100%;
+}
+
+.mapboxgl-compare .compare-swiper-vertical { background-color:indianred!important; top:30%; }
+
+
+html {
+	 height: 100%;
+}
+ body {
+	 min-height: 100%;
+	 display: flex;
+	 flex-direction: column;
+	 justify-content: center;
+	 align-items: center;
+	 background: #EEE;
+}
+ .flip-clock {
+	 text-align: center;
+	 perspective: 400px;
+	 margin: 20px auto;
+}
+ .flip-clock *, .flip-clock *:before, .flip-clock *:after {
+	 box-sizing: border-box;
+}
+ .flip-clock__piece {
+	 display: inline-block;
+	 margin: 0 5px;
+}
+ .flip-clock__slot {
+	 font-size: 2vw;
+}
+ .card {
+	 display: block;
+	 position: relative;
+	 padding-bottom: 0.72em;
+	 font-size: 9vw;
+	 line-height: 0.95;
+	 border-radius:18px;
+}
+ .card__top, .card__bottom, .card__back::before, .card__back::after {
+	 display: block;
+	 height: 0.72em;
+	 color: #ccc;
+	 background: #222;
+	 padding: 0.25em 0.25em;
+	 border-radius: 0.15em 0.15em 0 0;
+	 backface-visiblity: hidden;
+	 transform-style: preserve-3d;
+	 width: 1.8em;
+	 transform: translateZ(0);
+}
+ .card__bottom {
+	 color: #FFF;
+	 position: absolute;
+	 top: 50%;
+	 left: 0;
+	 border-top: solid 1px #000;
+	 background: #393939;
+	 border-radius: 0 0 0.15em 0.15em;
+	 pointer-events: none;
+	 overflow: hidden;
+}
+ .card__bottom::after {
+	 display: block;
+	 margin-top: -0.72em;
+}
+ .card__back::before, .card__bottom::after {
+	 content: attr(data-value);
+}
+ .card__back {
+	 position: absolute;
+	 top: 0;
+	 height: 100%;
+	 left: 0%;
+	 pointer-events: none;
+}
+ .card__back::before {
+	 position: relative;
+	 z-index: -1;
+	 overflow: hidden;
+}
+ .flip .card__back::before {
+	 animation: flipTop 0.3s cubic-bezier(.37,.01,.94,.35);
+	 animation-fill-mode: both;
+	 transform-origin: center bottom;
+}
+ .flip .card__back .card__bottom {
+	 transform-origin: center top;
+	 animation-fill-mode: both;
+	 animation: flipBottom 0.6s cubic-bezier(.15,.45,.28,1);
+}
+ @keyframes flipTop {
+	 0% {
+		 transform: rotateX(0deg);
+		 z-index: 2;
+	}
+	 0%, 99% {
+		 opacity: 0.99;
+	}
+	 100% {
+		 transform: rotateX(-90deg);
+		 opacity: 0;
+	}
+}
+ @keyframes flipBottom {
+	 0%, 50% {
+		 z-index: -1;
+		 transform: rotateX(90deg);
+		 opacity: 0;
+	}
+	 51% {
+		 opacity: 0.99;
+	}
+	 100% {
+		 opacity: 0.99;
+		 transform: rotateX(0deg);
+		 z-index: 5;
+	}
+}
+
+@media screen and (max-width: 999px) { .gear-image {top:0px!important;}.mobile-hide {display:none;} }
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/materialicons/v121/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+.container > header {margin: 0 auto 2em;padding: 2em;text-align: center;background: rgba(0,0,0,0.01);}
+.container > header h1 {font-size: 3.5em;line-height: 1.3;margin: 0;font-weight: 300;}
+.container > header span {display: block;font-size: 60%;color: #148544;padding: 0.3em 0 0.6em 0.1em;}
+
+.note {color: #85cd62;}
+
+.dialog__overlay {-webkit-transition-duration: 0.4s;transition-duration: 0.4s;}
+
+.dialog__content {background: transparent;}
+
+.dialog-inner {opacity: 0;-webkit-transform: scale3d(0.7, 0.5, 1);transform: scale3d(0.7, 0.5, 1);-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;transition: opacity 0.3s, transform 0.3s;}
+
+.dialog--open .dialog-inner {opacity: 1;-webkit-transform: scale3d(1, 1, 1);transform: scale3d(1, 1, 1);-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;transition: opacity 0.3s, transform 0.3s;-webkit-transition-delay: 0.2s;transition-delay: 0.2s;}
+
+.morph-shape {position: absolute;width: 100%;height: 100%;top: 0;left: 0;z-index: -1;}
+.morph-shape svg {fill: #fff;}
+
+.dialog.dialog--open .dialog__content,
+.dialog.dialog--close .dialog__content {-webkit-animation-duration: 0.4s;animation-duration: 0.4s;-webkit-animation-fill-mode: forwards;animation-fill-mode: forwards;-webkit-animation-timing-function: cubic-bezier(0.6,0,0.4,1);animation-timing-function: cubic-bezier(0.6,0,0.4,1);}
+.dialog.dialog--open .dialog__content {-webkit-animation-name: anim-open;animation-name: anim-open;}
+.dialog.dialog--close .dialog__content {-webkit-animation-name: anim-close;animation-name: anim-close;}
+
+@-webkit-keyframes anim-open {0% { opacity: 0; -webkit-transform: scale3d(0.6, 0.6, 1); }100% { opacity: 1; -webkit-transform: scale3d(1, 1, 1); }}
+@keyframes anim-open {0% { opacity: 0; -webkit-transform: scale3d(0.6, 0.6, 1); transform: scale3d(0.6, 0.6, 1); }100% { opacity: 1; -webkit-transform: scale3d(1, 1, 1); transform: scale3d(1, 1, 1) }}
+@-webkit-keyframes anim-close {0% { opacity: 1; }100% { opacity: 0; -webkit-transform: scale3d(0.6, 0.6, 1); }}
+@keyframes anim-close {0% { opacity: 1; }100% { opacity: 0; -webkit-transform: scale3d(0.6, 0.6, 1); transform: scale3d(0.6, 0.6, 1); }}
+
+.dialog,.dialog__overlay {width: 100%;height: 100%;top: 0;left: 0;}
+.dialog {position: fixed;display: -webkit-flex;display: flex;-webkit-align-items: center;align-items: center;-webkit-justify-content: center;justify-content: center;pointer-events: none;}
+
+.dialog__overlay {position: absolute;z-index: 1;background: rgba(55, 58, 71, 0.9);opacity: 0;-webkit-transition: opacity 0.3s;transition: opacity 0.3s;-webkit-backface-visibility: hidden;}
+.dialog--open .dialog__overlay {opacity: 1;pointer-events: auto;}
+.dialog__content {width: 50%;max-width: 1200px;min-width: 290px;background: #fff;padding: 4em;text-align: center;position: relative;z-index: 5;opacity: 0;}
+.dialog--open .dialog__content {pointer-events: auto;}
+
+/* Content */
+.dialog h2 {margin: 0;font-weight: 400;font-size: 2em;padding: 0 0 2em;margin: 0;}
+
+/* Common, default styles for the notification box */
+
+.ns-box {position: fixed;background: rgba(230, 243, 250,0.95);padding: 22px;line-height: 1.4;z-index: 1000;pointer-events: none;color: rgba(250,251,255,0.95);font-size: 90%;font-family: 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif;}
+.ns-box.ns-show {pointer-events: auto;}
+.ns-box a {color: inherit;opacity: 0.7;font-weight: 700;}
+.ns-box a:hover,.ns-box a:focus {opacity: 1;}
+.ns-box p {margin: 0;}
+.ns-box.ns-show,.ns-box.ns-visible {pointer-events: auto;}
+
+.ns-close {width: 20px;height: 20px;position: absolute;right: 4px;top: 4px;overflow: hidden;text-indent: 100%;cursor: pointer;-webkit-backface-visibility: hidden;backface-visibility: hidden;}
+.ns-close:hover, .ns-close:focus {outline: none;}
+.ns-close::before,.ns-close::after {content: '';position: absolute;width: 3px;height: 60%;top: 50%;left: 50%;background: #6e6e6e;}
+.ns-close:hover::before,.ns-close:hover::after {background: #fff;}
+.ns-close::before {-webkit-transform: translate(-50%,-50%) rotate(45deg);transform: translate(-50%,-50%) rotate(45deg);}
+.ns-close::after {-webkit-transform: translate(-50%,-50%) rotate(-45deg);transform: translate(-50%,-50%) rotate(-45deg);}
+
+</style></body></html>
