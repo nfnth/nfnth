@@ -6,16 +6,30 @@
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="deed domains for sale, from deed to domain, collectible domains" />
-<meta name="keywords" content="domain, deed, urland, ocur, ocurio, crypto, dBay, nfnth" />
-<meta name="author" content="urland" />
+<meta name="description" content="deed domains for sale, from deed to domain, collectible domains, map maker" />
+<meta name="keywords" content="domain, deed, urland, ocur, ocurio, crypto, dBay, nfnth, map, maker, token, iocur, dralun" />
+<meta name="author" content="nfnth" />
 
 <!-- resources -->
 <script src="res/app/all.js"></script><link rel="stylesheet" href="res/app/all.css"></script>
 <script src="res/app/md.js"></script><script src="res/app/open.js"></script><script src="res/app/ui.js"></script><script src="res/app/card.js"></script>
-<script src="https://js.stripe.com/v3"></script></head>
+<script src="https://js.stripe.com/v3"></script>
 
-<body style="overflow:overlay; background-color:whitesmoke;transition: background-color 1s linear;" >
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mapbox-gl/2.11.0/mapbox-gl.js" integrity="sha512-kH0Kk+oPmZ+F7HbpYS4nQvazGc7ykQJ1+0M2+DfE0mGv0/cLI3QR1IpGCYOVPGc9OlIDm2PWLbjOJBBxoj4L5A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-compare/v0.4.0/mapbox-gl-compare.css" type="text/css"><script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-compare/v0.4.0/mapbox-gl-compare.js"></script><link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css"><script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script><script src="https://cdn.jsdelivr.net/npm/mapbox-gl-animated-popup@latest/dist/mapbox-gl-animated-popup.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/pixi.js@7.x/dist/pixi.min.js"></script><script src="js/gameboy.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/core.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/sha256.js"></script>
+    
+
+<!--<link rel="stylesheet" href="js/all.css"></script>--><script src="res/app/help.js"></script><script defer src="res/app/map.js"></script><script defer src="res/app/guide.js"></script>
+
+
+
+</head>
+
+<body style="overflow:overlay; background-color:whitesmoke;transition: opacity 1s linear; opacity:0;" >
 
 <!-- menu -->
 <nav id="main-menu" style="position: fixed;top:0; z-index:2;visibility:hidden;" class="loader">
@@ -38,7 +52,11 @@
 						<li id="deeder" class="mobile-stat" style="display: flex; align-items: center; margin:12px;justify-content:center;">No profile connected.</li></ul></div></div></div>
 
 		<!-- tool -->
-		<ul><li><a id="dropdown-tooler" class="dropdown-trigger" href="#!" data-target="dropdown-tool"><img class="image gear-image" style="opacity:0.6; height: 36px; width:36px; margin-right:-12px;cursor:pointer;" src="res/img/icon/pen.png" /><i class="material-icons right">arrow_drop_down</i></a></li></ul></div></nav>
+		<ul><li><a id="dropdown-tooler" class="dropdown-trigger" href="#!" data-target="dropdown-tool"><img class="image gear-image" style="opacity:0.6; height: 28px; width:28px; margin-right:-12px;cursor:pointer;" src="res/img/icon/pen.png" /><i class="material-icons right">arrow_drop_down</i></a></li></ul></div></nav>
+
+<!-- menu (search) -->
+<nav id="searcher" class="content loader pane" style="position:absolute;top:66px;background-color:burlywood;z-index:1;">
+    <div class="nav-wrapper"><form><div class="input-field"><input id="search" type="search" required><label class="label-icon" for="search"><i class="material-icons">search</i></label><i onclick="clearSearch();" class="material-icons">close</i></div></form></div></nav>
 		
 <!-- panel -->
 <ul id="deed-pane" class="sidenav loader" style="visibility:hidden;overflow:hidden;">
@@ -66,21 +84,21 @@
 			<li class="tab blue-grey lighten-5" onclick="showList('open');"><a class="active" href="#test1">Class</a></li>
 			<li class="tab blue-grey lighten-5" onclick="showList('domain');"><a href="#test2">&nbsp;&nbsp;Item&nbsp;&nbsp;</a></li></ul><div class="card-content z-depth-1" style="height:100%;background-color:ghostwhite;">
 			
-		<!-- list (collect) -->
+		<!-- list (class) -->
 		<div id="test1"><ul>
 			<li style="padding-top:16px;margin-bottom:12px;display: flex;justify-content: space-evenly;"><div style="display:flex;justify-content:space-evenly;width:100%;"><a class='btn-flat waves-effect waves-light' onclick="selOpen();"><i id="open-sel-icon" class="material-icons">select_all</i></a><a id="dropdown-opener" class='dropdown-trigger btn-flat' href='#' data-target='dropdown-open'><i class="material-icons">sort</i></a><a class="waves-effect waves-light btn red lighten-3" style="display:inline-flex;align-items:center;" onclick="switchOpen();"><span id="open-icon">🗂️</span></a></div></li>
 			<li><div id="registry-open" class="collection" style="overflow:auto;"></div></li></ul></div>
 			
 		<!-- list (item) -->
 		<div id="test2"><ul>
-			<li style="padding-top:16px;margin-bottom:12px;display: flex;justify-content: space-evenly;"><div style="display:flex;justify-content:space-evenly;width:100%;"><a id='selLink' class='btn-flat disabled' onclick="selDomain();"><i id="domain-sel-icon" class="material-icons">select_all</i></a><a id="dropdown-domainer" class='dropdown-trigger btn-flat disabled' ref='#' data-target='dropdown-domain'><i class="material-icons">sort</i></a><a id='switchLink' class="waves-effect waves-light btn red lighten-3 disabled" style="display:inline-flex;align-items:center;" onclick="switchDomain();"><span id="domain-icon">📜</span></a></div></li>
-			<li><div id="registry-domain" class="collection" style="overflow:auto;"><a onclick='$(#token-tabs).select("test1");' class='collection-item'>No deed found.</a></div></li></ul></div></div></div></li></ul>	
+			<li style="padding-top:16px;margin-bottom:12px;display: flex;justify-content: space-evenly;"><div style="display:flex;justify-content:space-evenly;width:100%;"><a id='selLink' class='btn-flat disabled' onclick="selDomain();"><i id="domain-sel-icon" class="material-icons">select_all</i></a><a id="dropdown-domainer" class='dropdown-trigger btn-flat disabled' ref='#' data-target='dropdown-domain'><i class="material-icons">sort</i></a><a id='switchLink' class="waves-effect waves-light btn red lighten-3 disabled" style="display:inline-flex;align-items:center;" onclick="switchDomain();"><span id="domain-icon">📑</span></a></div></li>
+			<li><div id="registry-domain" class="collection" style="overflow:auto;"><a onclick='$(#token-tabs).select("test1");' class='collection-item'>No items found.</a></div></li></ul></div></div></div></li></ul>	
 
 <!-- view -->
 <div id="home" style="height:105%; text-align:center;visibility:hidden; width:100%; z-index:1; padding-top: 54px;" class="content loader print-help">
 
 <!-- load -->
-	<div id="loader" class="content loader pane scale-transition scale-out" >
+	<div id="loader" class="" >
 		<div class="loaderx">
 			<div style="color:indianred; font-weight:bold; font-size:18px;margin-top:-100px;display:flex;justify-content:center;">LOADING <div style="margin-left:12px;  color:black; font-weight:none;" id="brand"></div></div>
 			<div class="loader-bg z-depth-1">
@@ -280,8 +298,19 @@ async function initial() { $('body').css("background-color","lightgrey");
 	// $('#user-pane').sidenav({ edge: 'right' }); showView('mapper');  pullOpens(); switchFeed(false);
 showView("slider");
     	setTimeout(function() { $(".loader").css("visibility", "visible");  $('img').on('dragstart', function(evt) { return false; }); setCards(); }  , 2000);
-    	setTimeout(function() { $("#egger").fadeIn(); }, 1000 ); 
+     $("#mainer").css("opacity", 1); startup();	setTimeout(function() { $("#egger").fadeIn(); }, 1000 ); 
     	pullOpens();  }
+    	
+    	
+  //  	async function initial() { showFav();  showGear();
+// $('#deed-pane').sidenav({ edge: 'left' });  $('.tabs').tabs(); $('.modal').modal(); $('#dropdown-user').dropdown({ constrainWidth: false }); $('#dropdown-tooler').dropdown({ constrainWidth: false });
+  // $('.datepicker').datepicker({ autoClose: true, isRTL: false });
+  // $('#dropdown-domainer').dropdown({ constrainWidth: false }); $('#dropdown-deeder').dropdown({ constrainWidth: false });
+ //$('.fixed-action-btn').floatingActionButton({ hoverEnabled: false });
+   // $("#mainer").css("opacity", 1); startup(); setTimeout(function() { $("#egger").fadeIn(); }, 1000 ); 
+   // setPage(); } 
+
+
 
 initial(); //document.addEventListener('DOMContentLoaded', function() {  }); 
 
