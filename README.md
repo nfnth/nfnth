@@ -10,9 +10,7 @@
 
 Build <img src="img/island.png" style="width:40px;height:40px;" /> [**UR**.Land map](https://ur.land) with [🪨](https://xn--g19h.ws) [**OCUR**.app](https://ocur.app), see the guided tour and play <img src="res/img/card/club.png" style="width:40px;height:40px;" /><img src="res/img/card/diamond.png" style="width:40px;height:40px;" /><img src="res/img/card/heart.png" style="width:40px;height:40px;" /><img src="res/img/card/spade.png" style="width:40px;height:40px;" /> [**Dralun**.com](https://dralun.com), a Western-themed card game. 
 
-Hold <img src="img/opensea.png" style="width:40px;height:40px;" /> [**OpenSea** deed domain](https://opensea.io/urland) to keep virtual space and [shop items]().
-
-Install <img src="img/meta.png" style="width:40px;height:40px;" /> [**MetaMask** wallet](https://metamask.io) to trade the <img src="res/img/seal3.png" style="width:32px;height:32px;" /> [**OCUR**.io token](https://ocur.io), now available on <img src="img/uniswap.png" style="width:40px;height:40px;" /> [**Uniswap**](https://app.uniswap.org/#/tokens/ethereum/0xccab679860b1017589239bceeeabe5cd45965afc) and/or <img src="img/sushi.png" style="width:40px;height:40px;" /> [**SushiSwap**](https://www.sushi.com/swap).
+Hold <img src="img/opensea.png" style="width:40px;height:40px;" /> [**OpenSea** deed domain](https://opensea.io/urland) to keep virtual space and [shop items](), trade the <img src="res/img/seal3.png" style="width:32px;height:32px;" /> [**OCUR**.io token](https://ocur.io), now available on <img src="img/uniswap.png" style="width:40px;height:40px;" /> [**Uniswap**](https://app.uniswap.org/#/tokens/ethereum/0xccab679860b1017589239bceeeabe5cd45965afc) and/or <img src="img/sushi.png" style="width:40px;height:40px;" /> [**SushiSwap**](https://www.sushi.com/swap).
 
 <br/>
 
