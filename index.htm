@@ -227,7 +227,7 @@ function getParameter() { var path = window.location.href.replace('https://','')
 function setPage() { var page = window.location.href.replace('https://','').replace('/','').replace('#','').replace('!',''); 
 	$("#brand").html(page); //setImages();
     switch(page){ 
-        case 'nfnth.com': document.title = "OCUR • nf/nth"; showDoc('PLANME'); break; //showView('loader'); showDoc('PLANME'); break;
+        case 'nfnth.com': document.title = "OCUR • nf/nth version"; break; //showView('loader'); showDoc('PLANME'); break;
         case 'ocur.app': document.title = "OCUR • map  token"; showView('charter'); break;     
         //case 'ur.land': document.title = "UR.Land • dee*d/omain"; showView('slider'); changeCard();changeCard(); setTimeout(function() { changeCard(); }, 2000); break; //showView('charter');  getParameter(); break;
 } }
@@ -242,7 +242,7 @@ function turnGear(turn) { if (turn) { $("#gear-pic").addClass(); $("#gear-pic2")
 
 var width = window.innerWidth; var height = window.innerHeight + 64; var currentView;
 function showView(view) { if (view != currentView) { hideView(); createView(view); } } 
-function hideView() { $('.modal').modal('close'); window.scrollTo(0, 0); $('#'+currentView).css("opacity","0"); $(".pane").removeClass("scale-in"); $('.pane').hide(); }
+function hideView() { $('.modal').modal('close'); $("#loader").hide(); window.scrollTo(0, 0); $('#'+currentView).css("opacity","0"); $(".pane").removeClass("scale-in"); $('.pane').hide(); }
 function createView(view) { currentView = view; 
 	$("#"+currentView).addClass("scale-in"); $('#'+currentView).css("opacity","0"); $('#'+view).show(); $("#"+currentView).hide().css("opacity","1").fadeIn('slow');  }
 
