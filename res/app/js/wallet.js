@@ -1,4 +1,4 @@
-class Wallet { address = ""; deed = []; } class Deed { name = ""; id = ""; }
+
 var user = new Wallet(); //var disconnect = false;
 var gasPrice = ""; var itemPrice; var localAmount = 0; var secretKey;
 var setup = async function () {
