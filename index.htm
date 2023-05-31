@@ -56,7 +56,7 @@
 		<ul><li><a id="dropdown-tooler" class="dropdown-trigger" href="#!" data-target="dropdown-tool"><img class="image gear-image" style="opacity:0.6; height: 28px; width:28px; margin-right:-12px;cursor:pointer;" src="res/img/icon/pen.png" /><i class="material-icons right">arrow_drop_down</i></a></li></ul></div></nav>
 
 <!-- menu (search) -->
-<nav id="searcher" class="content loader pane" style="position:absolute;top:66px;background-color:burlywood;z-index:1;">
+<nav id="searcher" class="loader" style="position:absolute;top:66px;background-color:burlywood;z-index:1;">
     <div class="nav-wrapper"><form><div class="input-field"><input id="search" type="search" required><label class="label-icon" for="search"><i class="material-icons">search</i></label><i onclick="clearSearch();" class="material-icons">close</i></div></form></div></nav>
 		
 <!-- panel -->
@@ -227,7 +227,7 @@ function getParameter() { var path = window.location.href.replace('https://','')
 function setPage() { var page = window.location.href.replace('https://','').replace('/','').replace('#','').replace('!',''); 
 	$("#brand").html(page); //setImages();
     switch(page){ 
-        case 'nfnth.com': document.title = "OCUR • nf/nth version"; break; //showView('loader'); showDoc('PLANME'); break;
+        case 'nfnth.com': document.title = "OCUR • nf/nth"; break; //showView('loader'); showDoc('PLANME'); break;
         case 'ocur.app': document.title = "OCUR • map  token"; showView('charter'); break;     
         //case 'ur.land': document.title = "UR.Land • dee*d/omain"; showView('slider'); changeCard();changeCard(); setTimeout(function() { changeCard(); }, 2000); break; //showView('charter');  getParameter(); break;
 } }
