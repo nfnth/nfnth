@@ -42,15 +42,15 @@
 					<a style="border-radius:8px; width:160px; display: flex;justify-content: space-between;" class="mobile-width waves-effect waves-light amber lighten-1 btn" onclick="$('#modal-qr').modal('open');"><span class="mobile-hide">SCAN</span><span>🔑</span></a></div>
 				<div class="body" style="text-align:center;">
 					<ul style="display: flex;flex-direction: column;">
-						<li class="edger"><a onclick="showDoc('deed');" class="edger waves-effect"><span class="badge red lighten-1 badge-stamp z-depth-1"><span style="font-weight:bold;margin-right:4px;">0</span>&nbsp;&nbsp;deed&nbsp;&nbsp;📜</span></a></li>
-						<li class="edger"><a id="locurScan" onclick="showDoc('deed');" class="edger waves-effect"><span class="badge blue lighten-1 badge-stamp z-depth-1"><span style="font-weight:bold;margin-right:4px;">0</span>&nbsp;&nbsp;note&nbsp;&nbsp;🗒️</span></a></li>
-						<li class="edger"><a onclick="showDoc('deed');" class="edger waves-effect"><span class="badge green lighten-1 badge-stamp z-depth-1"><span style="font-weight:bold;margin-right:4px;">0</span>&nbsp;&nbsp;map&nbsp;&nbsp;🗺️</span></a></li>
-						<li class="edger"><a class="edger waves-effect" onclick="showDoc('deed');" ><span class="badge amber ligten-1 badge-stamp z-depth-1"><span style="font-weight:bold;margin-right:4px;">0</span>&nbsp;&nbsp;box&nbsp;&nbsp;📦</span></a></li>
+						<li class="edger"><a onclick="showDoc('deed');" class="edger waves-effect"><span class="badge red lighten-1 badge-stamp z-depth-1"><span style="font-weight:bold;margin-right:4px;">0</span>&nbsp;&nbsp;deed&nbsp;&nbsp;&nbsp;&nbsp;📜</span></a></li>
+						<li class="edger"><a id="locurScan" onclick="showDoc('deed');" class="edger waves-effect"><span class="badge blue lighten-1 badge-stamp z-depth-1"><span style="font-weight:bold;margin-right:4px;">0</span>&nbsp;&nbsp;note&nbsp;&nbsp;&nbsp;&nbsp;🗒️</span></a></li>
+						<li class="edger"><a onclick="showDoc('deed');" class="edger waves-effect"><span class="badge green lighten-1 badge-stamp z-depth-1"><span style="font-weight:bold;margin-right:4px;">0</span>&nbsp;&nbsp;map&nbsp;&nbsp;&nbsp;&nbsp;🗺️</span></a></li>
+						<li class="edger"><a class="edger waves-effect" onclick="showDoc('deed');" ><span class="badge amber ligten-1 badge-stamp z-depth-1"><span style="font-weight:bold;margin-right:4px;">0</span>&nbsp;&nbsp;box&nbsp;&nbsp;&nbsp;&nbsp;📦</span></a></li>
 						<li><div style="margin-top:0;" class="divider"></div></li>
 						<li id="deeder" class="mobile-stat" style="display: flex; align-items: center; margin:12px;justify-content:center;">No profile connected.</li></ul></div></div></div>
 
 		<!-- tool -->
-		<ul><li><a id="dropdown-tooler" class="dropdown-trigger" href="#!" data-target="dropdown-tool" style="padding-left:0px;"><img class="image gear-image" style="opacity:0.6; height: 24px; width:24px; margin-right:-16px;cursor:pointer;" src="res/img/icon/pen.png" /><i class="material-icons right">arrow_drop_down</i></a></li></ul></div></nav>
+		<ul><li><a id="dropdown-tooler" class="dropdown-trigger" href="#!" data-target="dropdown-tool" ><img class="image gear-image" style="opacity:0.6; height: 24px; width:24px; margin-right:-16px;cursor:pointer;" src="res/img/icon/pen.png" /><i class="material-icons right">arrow_drop_down</i></a></li></ul></div></nav>
 
 <!-- menu (search) -->
 <nav id="searcher" class="content loader pane" style="position:absolute;top:60px;visibility:hidden;background-color:burlywood;z-index:2;">
@@ -121,56 +121,56 @@
 		<ul class="dots"><li onclick="changeCard();"><a class="btn-flat amber lighten-4"><i class="material-icons" style="color:goldenrod;">restart_alt</i></a></li></ul></div></div></div>
 
 	<!-- shop -->
-	<div id="shopper" class="content loader pane scale-transition scale-out" style="overflow-y: auto; height: 115%;width:100%;padding-top:420px; background: rgb(255,255,255);background: linear-gradient(156deg, rgba(255,255,255,1) 0%, rgba(245,205,205,1) 35%, rgba(242,129,129,1) 100%); "><div class="mobile-column" style="width:100%; display:flex;justify-content:center;margin:auto;">
+	<div id="shopper" class="content loader pane scale-transition scale-out" style="overflow-y: auto; height: 115%;width:100%;padding-top:24px; background: rgb(255,255,255);background: linear-gradient(156deg, rgba(255,255,255,1) 0%, rgba(245,205,205,1) 35%, rgba(242,129,129,1) 100%); "><div class="mobile-column" style="width:100%; display:flex;justify-content:center;margin:auto;">
 	
-	<div class="card hoverable" style="border-radius:10px;">
-    <div class="card-image waves-effect waves-block waves-light">
-      <img id="ocur-app" class="activator" src="res/img/shop/stick.png" style="width:240px; height:240px; object-fit:cover;border-radius:12px 12px 0px 0px;"></div>
-    <div class="card-content">
-      <span class="card-title activator fonter" style="font-size:20px;">🪨&nbsp;&nbsp;OCUR.app<i class="material-icons right">more_vert</i></span>
-      <p style="padding-top:8px;"><a class="waves-effect waves-light btn red lighten-5 grey-text text-darken-3" style="width:150px;display:flex;justify-content:space-between;" onclick="openInNewTab('https://ocur.app');"><span>🗺️</span><span>Open️ Map</span></a></p></div>
-    <div class="card-reveal">
-      <span class="card-title grey-text text-darken-4" style="font-size:18px;">🧭&nbsp;&nbsp;Explore now<i class="material-icons right">close</i></span>
-      <p><video style="width:100%; height:100px; object-fit:cover;border-radius:2px;" class="z-depth-1" controls="controls" src="res/test.mp4"></video></p>
-      <p>Online journal to take notes and list objects.</p>
-      <p><input type="number" value="1" min="1" max="999"></p>
-      <p><a class="waves-effect waves-light btn blue-grey lighten-2 blue-grey-text text-darken-2" onclick="showDoc('README');" style="display:flex;justify-content:space-between;"><span>📄</span><span>Read More</span></a></p></div></div>
-	
-	<div class="card hoverable" style="border-radius:12px;">
-    <div class="card-image waves-effect waves-block waves-light">
-      <img id="iocur-com" class="activator" src="res/img/shop/mini.png" style="width:240px; height:240px; object-fit:cover;border-radius:12px 12px 0px 0px;"></div>
-    <div class="card-content">
-      <span class="card-title activator fonter" style="font-size:20px;">🪨&nbsp;&nbsp;iOCUR.com<i class="material-icons right">more_vert</i></span>
-      <p style="padding-top:8px;"><a class="waves-effect waves-light btn red lighten-5 grey-text text-darken-3" style="width:150px;display:flex;justify-content:space-between;" onclick="openInNewTab('https://ocur.app');"><span>🪪</span><span>Use Badge️</span></a></p></div>
-    <div class="card-reveal">
-      <span class="card-title grey-text text-darken-4" style="font-size:18px;">🧭&nbsp;&nbsp;Explore now<i class="material-icons right">close</i></span>
-      <p><video style="width:100%; height:100px; object-fit:cover;border-radius:2px;" class="z-depth-1" controls="controls" src="res/test.mp4"></video></p>
-      <p>Real-time feed and marketplace of OCUR items</p>
-      <p><a class="waves-effect waves-light btn blue-grey lighten-2 blue-grey-text text-darken-2" onclick="showDoc('README');" style="display:flex;justify-content:space-between;"><span>📄</span><span>Read More</span></a></p></div></div>
-	
-	<div class="card hoverable" style="border-radius:12px;">
-    <div class="card-image waves-effect waves-block waves-light">
-      <img id="ocur-io" class="activator" src="res/img/shop/electric.png" style="width:240px; height:240px; object-fit:cover;border-radius:12px 12px 0px 0px;"></div>
-    <div class="card-content">
-      <span class="card-title activator fonter" style="font-size:20px;">🪨&nbsp;&nbsp;OCUR.io<i class="material-icons right">more_vert</i></span>
-      <p style="padding-top:8px;"><a class="waves-effect waves-light btn red lighten-4 grey-text text-darken-3" style="width:150px;display:flex;justify-content:space-between;" onclick="openInNewTab('https://ocur.app');"><span>🖼️</span><span>View Art</span></a></p></div>
-    <div class="card-reveal">
-      <span class="card-title grey-text text-darken-4" style="font-size:18px;">🧭&nbsp;&nbsp;Explore now<i class="material-icons right">close</i></span>
-      <p><video style="width:100%; height:100px; object-fit:cover;border-radius:2px;" class="z-depth-1" controls="controls" src="res/test.mp4"></video></p>
-      <p>Real-time feed and marketplace of OCUR items</p>
-      <p><a class="waves-effect waves-light btn blue-grey lighten-2 blue-grey-text text-darken-2" onclick="showDoc('README');" style="display:flex;justify-content:space-between;"><span>📄</span><span>Read More</span></a></p></div></div>
-	
-	<div class="card hoverable" style="border-radius:12px;">
-    <div id="dralun-com" class="card-image waves-effect waves-block waves-light">
-      <img class="activator" src="res/img/shop/gas.png" style="width:240px; height:240px; object-fit:cover;border-radius:12px 12px 0px 0px;"></div>
-    <div class="card-content">
-      <span class="card-title activator fonter" style="font-size:20px;">🪨&nbsp;&nbsp;Dralun.com<i class="material-icons right">more_vert</i></span>
-      <p style="padding-top:8px;"><a class="waves-effect waves-light btn red lighten-4 grey-text text-darken-3" style="width:150px;display:flex;justify-content:space-between;" onclick="openInNewTab('https://ocur.app');"><span>⚔️</span><span>Play Game</span></a></p></div>
-    <div class="card-reveal">
-      <span class="card-title grey-text text-darken-4" style="font-size:18px;">🧭&nbsp;&nbsp;Explore now<i class="material-icons right">close</i></span>
-      <p><video style="width:100%; height:100px; object-fit:cover;border-radius:2px;" class="z-depth-1" controls="controls" src="res/test.mp4"></video></p>
-      <p>Real-time feed and marketplace of OCUR items</p>
-      <p><a class="waves-effect waves-light btn blue-grey lighten-2 blue-grey-text text-darken-2" onclick="showDoc('README');" style="display:flex;justify-content:space-between;"><span>📄</span><span>Read More</span></a></p></div></div>
+		<div class="card hoverable" style="border-radius:10px;">
+		<div class="card-image waves-effect waves-block waves-light">
+		  <img id="ocur-app" class="activator" src="res/img/shop/stick.png" style="width:240px; height:240px; object-fit:cover;border-radius:12px 12px 0px 0px;"></div>
+		<div class="card-content">
+		  <span class="card-title activator fonter" style="font-size:20px;">🪨&nbsp;&nbsp;OCUR.app<i class="material-icons right">more_vert</i></span>
+		  <p style="padding-top:8px;"><a class="waves-effect waves-light btn red lighten-5 grey-text text-darken-3" style="width:100px;display:flex;justify-content:space-between;" onclick="openInNewTab('https://ocur.app');"><span>➕</span><span>Add</span></a></p></div>
+		<div class="card-reveal">
+		  <span class="card-title grey-text text-darken-4" style="font-size:18px;">🧭&nbsp;&nbsp;Explore now<i class="material-icons right">close</i></span>
+		  <p><video style="width:100%; height:100px; object-fit:cover;border-radius:2px;" class="z-depth-1" controls="controls" src="res/test.mp4"></video></p>
+		  <p>Online journal to take notes and list objects.</p>
+		  <p><input type="number" value="1" min="1" max="999"></p>
+		  <p><a class="waves-effect waves-light btn blue-grey lighten-2 blue-grey-text text-darken-2" onclick="showDoc('README');" style="display:flex;justify-content:space-between;"><span>📄</span><span>Read More</span></a></p></div></div>
+		
+		<div class="card hoverable" style="border-radius:12px;">
+		<div class="card-image waves-effect waves-block waves-light">
+		  <img id="iocur-com" class="activator" src="res/img/shop/mini.png" style="width:240px; height:240px; object-fit:cover;border-radius:12px 12px 0px 0px;"></div>
+		<div class="card-content">
+		  <span class="card-title activator fonter" style="font-size:20px;">🪨&nbsp;&nbsp;iOCUR.com<i class="material-icons right">more_vert</i></span>
+		  <p style="padding-top:8px;"><div style="border-radius:50%;border:solid black 1px;background-color:ghostwhite;width:24px;height:24px;"></div><div style="border-radius:50%;border:solid black 1px;background-color:ghostwhite;width:24px;height:24px;"></div><a class="waves-effect waves-light btn red lighten-5 grey-text text-darken-3" style="width:100px;display:flex;justify-content:space-between;" onclick="openInNewTab('https://ocur.app');"><span>➕</span><span>Add</span></a></p></div>
+		<div class="card-reveal">
+		  <span class="card-title grey-text text-darken-4" style="font-size:18px;">🧭&nbsp;&nbsp;Explore now<i class="material-icons right">close</i></span>
+		  <p><video style="width:100%; height:100px; object-fit:cover;border-radius:2px;" class="z-depth-1" controls="controls" src="res/test.mp4"></video></p>
+		  <p>Real-time feed and marketplace of OCUR items</p>
+		  <p><a class="waves-effect waves-light btn blue-grey lighten-2 blue-grey-text text-darken-2" onclick="showDoc('README');" style="display:flex;justify-content:space-between;"><span>📄</span><span>Read More</span></a></p></div></div>
+		
+		<div class="card hoverable" style="border-radius:12px;">
+		<div class="card-image waves-effect waves-block waves-light">
+		  <img id="ocur-io" class="activator" src="res/img/shop/electric.png" style="width:240px; height:240px; object-fit:cover;border-radius:12px 12px 0px 0px;"></div>
+		<div class="card-content">
+		  <span class="card-title activator fonter" style="font-size:20px;">🪨&nbsp;&nbsp;OCUR.io<i class="material-icons right">more_vert</i></span>
+		  <p style="padding-top:8px;"><a class="waves-effect waves-light btn red lighten-4 grey-text text-darken-3" style="width:100px;display:flex;justify-content:space-between;" onclick="openInNewTab('https://ocur.app');"><span>➕</span><span>Add</span></a></p></div>
+		<div class="card-reveal">
+		  <span class="card-title grey-text text-darken-4" style="font-size:18px;">🧭&nbsp;&nbsp;Explore now<i class="material-icons right">close</i></span>
+		  <p><video style="width:100%; height:100px; object-fit:cover;border-radius:2px;" class="z-depth-1" controls="controls" src="res/test.mp4"></video></p>
+		  <p>Real-time feed and marketplace of OCUR items</p>
+		  <p><a class="waves-effect waves-light btn blue-grey lighten-2 blue-grey-text text-darken-2" onclick="showDoc('README');" style="display:flex;justify-content:space-between;"><span>📄</span><span>Read More</span></a></p></div></div>
+		
+		<div class="card hoverable" style="border-radius:12px;">
+		<div id="dralun-com" class="card-image waves-effect waves-block waves-light">
+		  <img class="activator" src="res/img/shop/gas.png" style="width:240px; height:240px; object-fit:cover;border-radius:12px 12px 0px 0px;"></div>
+		<div class="card-content">
+		  <span class="card-title activator fonter" style="font-size:20px;">🪨&nbsp;&nbsp;Dralun.com<i class="material-icons right">more_vert</i></span>
+		  <p style="padding-top:8px;"><a class="waves-effect waves-light btn red lighten-4 grey-text text-darken-3" style="width:100px;display:flex;justify-content:space-between;" onclick="openInNewTab('https://ocur.app');"><span>➕</span><span>Add</span></a></p></div>
+		<div class="card-reveal">
+		  <span class="card-title grey-text text-darken-4" style="font-size:18px;">🧭&nbsp;&nbsp;Explore now<i class="material-icons right">close</i></span>
+		  <p><video style="width:100%; height:100px; object-fit:cover;border-radius:2px;" class="z-depth-1" controls="controls" src="res/test.mp4"></video></p>
+		  <p>Real-time feed and marketplace of OCUR items</p>
+		  <p><a class="waves-effect waves-light btn blue-grey lighten-2 blue-grey-text text-darken-2" onclick="showDoc('README');" style="display:flex;justify-content:space-between;"><span>📄</span><span>Read More</span></a></p></div></div>
 	
 	</div></div>
 
@@ -857,4 +857,6 @@ h1 {font-weight: 700;font-size: 64px; margin: 20px 0 0 0;padding: 0 20px;}
 .ns-close:hover::before,.ns-close:hover::after {background: #fff;}
 .ns-close::before {-webkit-transform: translate(-50%,-50%) rotate(45deg);transform: translate(-50%,-50%) rotate(45deg);}
 .ns-close::after {-webkit-transform: translate(-50%,-50%) rotate(-45deg);transform: translate(-50%,-50%) rotate(-45deg);}
+
+.card { margin:12px; }
 </style>
