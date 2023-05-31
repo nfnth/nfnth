@@ -12,7 +12,8 @@
 
 	<!-- resources -->
 	<script src="res/app/all.js"></script><link rel="stylesheet" href="res/app/all.css"></script>
-	<script src="res/app/js/open.js"></script><script src="res/app/js/wallet.js"></script><script src="res/app/js/qr.js"></script>
+	<script src="res/app/js/open.js"></script><script src="res/app/js/wallet.js"></script>
+	<script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script><script src="res/app/js/easy.qrcode.js" type="text/javascript" charset="utf-8"></script><script src="res/app/js/qr.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/sha256.js"></script>
 
 	<script src="res/app/js/ui.js"></script><script src="res/app/js/md.js"></script>
@@ -33,7 +34,7 @@
     	<div id="egger" class="containerx yellowx golden" style="background-color: beige;display:none;"><span id="connor" class="button setter">🪨</span>
 			  <div class="contentx">
 				<div id="walleter" class="head" style="display: flex;align-items: center;justify-content: space-evenly;">
-					<a style="border-radius:8px; width:160px; display: flex;justify-content: space-between;" class="mobile-width waves-effect waves-light amber ligten-3 btn" onclick="$('#modal-wallet').modal('open'); closeTop();"><span class="mobile-hide">CONNECT</span><span>🪙</span></a>
+					<a style="border-radius:8px; width:160px; display: flex;justify-content: space-between;" class="mobile-width waves-effect waves-light amber ligten-3 btn" onclick="setup();"><span class="mobile-hide">CONNECT</span><span>🪙</span></a>
 					<a style="border-radius:8px; width:160px; display: flex;justify-content: space-between;" class="mobile-width waves-effect waves-light amber lighten-1 btn" onclick="$('#modal-qr').modal('open');"><span class="mobile-hide">SCAN</span><span>🔑</span></a></div>
 				<div class="body" style="text-align:center;">
 					<ul style="display: flex;flex-direction: column;">
@@ -167,41 +168,7 @@
       <p>Real-time feed and marketplace of OCUR items</p>
       <p><a class="waves-effect waves-light btn blue-grey lighten-2 blue-grey-text text-darken-2" onclick="showDoc('README');" style="display:flex;justify-content:space-between;"><span>📄</span><span>Read More</span></a></p></div></div>
 	
-	<div class="card hoverable" style="border-radius:12px;">
-    <div class="card-image waves-effect waves-block waves-light">
-      <img id="ur-land" class="activator" src="res/img/ur-land.png" style="width:240px; height:240px; object-fit:cover;border-radius:12px 12px 0px 0px;"></div>
-    <div class="card-content">
-      <span class="card-title activator fonter" style="font-size:20px;">🪨&nbsp;&nbsp;UR.Land<i class="material-icons right">more_vert</i></span>
-      <p style="padding-top:8px;"><a class="waves-effect waves-light btn red lighten-3 grey-text text-darken-3" style="width:150px;display:flex;justify-content:space-between;" onclick="openInNewTab('https://ocur.app');"><span>🗿</span><span>Claim Icon</span></a></p></div>
-    <div class="card-reveal">
-      <span class="card-title grey-text text-darken-4" style="font-size:18px;">🧭&nbsp;&nbsp;Explore now<i class="material-icons right">close</i></span>
-      <p><video style="width:100%; height:100px; object-fit:cover;border-radius:2px;" class="z-depth-1" controls="controls" src="res/test.mp4"></video></p>
-      <p>Real-time feed and marketplace of OCUR items</p>
-      <p><a class="waves-effect waves-light btn blue-grey lighten-2 blue-grey-text text-darken-2" onclick="showDoc('README');" style="display:flex;justify-content:space-between;"><span>📄</span><span>Read More</span></a></p></div></div>
-      
-    <div class="card hoverable" style="border-radius:12px;">
-    <div class="card-image waves-effect waves-block waves-light">
-      <img id="ur-land" class="activator" src="res/img/nfnth-com.png" style="width:240px; height:240px; object-fit:cover;border-radius:12px 12px 0px 0px;"></div>
-    <div class="card-content">
-      <span class="card-title activator fonter" style="font-size:20px;">🪨&nbsp;&nbsp;nfnth.com<i class="material-icons right">more_vert</i></span>
-      <p style="padding-top:8px;"><a class="waves-effect waves-light btn red lighten-3 grey-text text-darken-3" style="width:150px;display:flex;justify-content:space-between;" onclick="openInNewTab('https://ocur.app');"><span>📦</span><span>Shop Gear</span></a></p></div>
-    <div class="card-reveal">
-      <span class="card-title grey-text text-darken-4" style="font-size:18px;">🧭&nbsp;&nbsp;Explore now<i class="material-icons right">close</i></span>
-      <p><video style="width:100%; height:100px; object-fit:cover;border-radius:2px;" class="z-depth-1" controls="controls" src="res/test.mp4"></video></p>
-      <p>Real-time feed and marketplace of OCUR items</p>
-      <p><a class="waves-effect waves-light btn blue-grey lighten-2 blue-grey-text text-darken-2" onclick="showDoc('README');" style="display:flex;justify-content:space-between;"><span>📄</span><span>Read More</span></a></p></div></div>
-    	
-	<div class="card hoverable" style="border-radius:12px;">
-    <div class="card-image waves-effect waves-block waves-light">
-      <img id="1950-app" class="activator" src="res/img/1950-app.png" style="width:240px; height:240px; object-fit:cover;border-radius:12px 12px 0px 0px;"></div>
-    <div class="card-content">
-      <span class="card-title activator fonter" style="font-size:20px;">🪨&nbsp;&nbsp;1950.app<i class="material-icons right">more_vert</i></span>
-      <p style="padding-top:8px;"><a class="waves-effect waves-light btn red lighten-2 grey-text text-darken-3" style="width:150px;display:flex;justify-content:space-between;" onclick="openInNewTab('https://ocur.app');"><span>🏪</span><span>Rent Room</span></a></p></div>
-    <div class="card-reveal">
-      <span class="card-title grey-text text-darken-4" style="font-size:18px;">🧭&nbsp;&nbsp;Explore now<i class="material-icons right">close</i></span>
-      <p><video style="width:100%; height:100px; object-fit:cover;border-radius:2px;" class="z-depth-1" controls="controls" src="res/test.mp4"></video></p>
-      <p>Real-time feed and marketplace of OCUR items</p>
-      <p><a class="waves-effect waves-light btn blue-grey lighten-2 blue-grey-text text-darken-2" onclick="showDoc('README');" style="display:flex;justify-content:space-between;"><span>📄</span><span>Read More</span></a></p></div></div></div></div>
+	</div></div>
 
 	<!-- list -->
 	<div id="lister" class="content loader pane scale-transition scale-out" style="overflow-y: auto; height: 115%;">
@@ -228,7 +195,6 @@
 	<!-- datetime -->
 	<div id="datetime" class="content loader pane scale-transition scale-out" >
 		<input type="text" class="datepicker" /></div>
-			 
 			 
 	<div id="emojier" class="content loader pane scale-transition scale-out" style="overflow-y: auto; width:100%;height:100%;margin-top:80px;">
 			<div class="z-depth-2" style="width:100%;display:flex;align-items:center;justify-content:space-evenly;padding:24px; background-color:ghostwhite; flex-direction:column;">
@@ -498,26 +464,32 @@
 											C3.084,29.762,0,29.75,0,29.75z"></path></svg></div><div id="dialog-inner2" class="dialog-inner print-help hide-scrollbar" style="overflow:auto;"></div></div></div>
 
 <script>
-//document.getElementById('booker').click();
+
 function startup() { $('img').on('dragstart', function(evt) { return false; }); showView("slider"); $(".loader").css("visibility", "visible"); setCards();
 	$('.setter').click(function () { $(this).parent().toggleClass('expand');     $('.extra').toggleClass('removed'); $('.extra').toggleClass('added');  }); }
 
 function closeLeft() { document.getElementById('booker').click(); $('#deed-pane').sidenav('close'); }
+function closeTop() { document.getElementById('egger').click();  }
 
-function getParameter() { var path = window.location.href.replace('https://','').replace('!','').replace('#',''); 
+/*function getParameterx() { var path = window.location.href.replace('https://','').replace('!','').replace('#',''); 
 	if (path.indexOf("/") > 0) { var keyDomain = path.substring(path.indexOf("/")+1, path.length); 
 	if (keyDomain.length > 1) { 
 		if (keyDomain == "about") { showView('charter'); clearMap(); setTimeout(function() { showTutorial(); }, 1000); }
 		else if (keyDomain.indexOf("0x") > -1) { showOwner(keyDomain); } else {
-		for (let j = 0; j < domains.length; j++) { if (domains[j].desc == keyDomain) { pullOwner(j); showView('charter'); document.title = domains[j].core.name; setTimeout(function() { flyDomain(j); }, 2000); break; } } } } } }
+		for (let j = 0; j < domains.length; j++) { if (domains[j].desc == keyDomain) { pullOwner(j); showView('charter'); document.title = domains[j].core.name; setTimeout(function() { flyDomain(j); }, 2000); break; } } } } } }*/
+
+function getParameter() { const urlParams = new URLSearchParams(window.location.search); return urlParams.get('action'); }
+function getDomain() { const urlParams = new URLSearchParams(window.location.search); return urlParams.get('domain'); }
 		
 function setPage() { var page = window.location.href.replace('https://','').replace('/','').replace('#','').replace('!',''); 
 	$("#brand").html(page); //setImages();
     switch(page){ 
-        case 'nfnth.com': document.title = "OCUR • nf/nth"; break; //showView('loader'); showDoc('PLANME'); break;
-        case 'ocur.app': document.title = "OCUR • map token"; showView('charter'); break;     
-        //case 'ur.land': document.title = "UR.Land • dee*d/omain"; showView('slider'); changeCard();changeCard(); setTimeout(function() { changeCard(); }, 2000); break; //showView('charter');  getParameter(); break;
-} }
+        case 'nfnth.com': document.title = "OCUR • nf/nth"; 
+			var action = getParameter(); switch(action){
+				case 'iocur': break;
+				case 'ocur': showDoc('ocur'); break;
+				case 'urland': var placer = getDomain(); break; } break;
+        case 'ocur.app': document.title = "OCUR • app"; break; } }
 
 var gearSwitch = 0; function gearBox() { // 0 (stop, show dialog), 1 (rotate), 2 (rotate back)
 	if(gearSwitch == 0) { $("#gear-pic").removeClass("image-rotate"); $("#gear-pic2").removeClass("image-rotate"); $("#gear-pic").removeClass("image-rotate-back"); $("#gear-pic2").removeClass("image-rotate-back");  } else if (gearSwitch == 1) {  $("#gear-pic").addClass("image-rotate"); $("#gear-pic2").addClass("image-rotate");  } else if (gearSwitch == 2) {  $("#gear-pic").addClass("image-rotate-back"); $("#gear-pic2").addClass("image-rotate-back"); }  }
@@ -548,14 +520,12 @@ async function initial() { showFav(); setPage();
 	$('.tabs').tabs(); $('.modal').modal(); $('#deed-pane').sidenav({ edge: 'left' }); //, onCloseEnd: deedMap});
 	//$("#registry-open").css("height",(height - 120) + "px"); $("#registry-domain").css("height",(height - 120) + "px");
     //$('#doc-hide').dropdown({ constrainWidth: false, coverTrigger: false } ); //hover: true 
+    $('.fixed-action-btn').floatingActionButton({ hoverEnabled: false });
 	$('#dropdown-tooler').dropdown({ constrainWidth: false }); $('#dropdown-opener').dropdown({ constrainWidth: false }); $('#dropdown-domainer').dropdown({ constrainWidth: false });
     $("#mainer").css("opacity", 1); setTimeout(function() { $("#egger").fadeIn(); startup(); }, 2000 ); pullOpens();  }
-
   // $('.datepicker').datepicker({ autoClose: true, isRTL: false });
- //$('.fixed-action-btn').floatingActionButton({ hoverEnabled: false });
 
 initial(); //document.addEventListener('DOMContentLoaded', function() {  }); 
-
 
 </script>
 <style>
