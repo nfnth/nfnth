@@ -33,26 +33,6 @@ renderMd = function (text) {
 
     return text;}
 
-var meta = `//name=Max Hamish|image=default.png|icon=river1.png|location=56,-32|link=https://nfnth.com|description=`
-
-var profileListingPreview = `
-## Your Name
-
-- contact
-- interests
-
-
-|Item|Price|
-|-|-|
-|Car|1000|
-|New Shirt|500|
-
-`
-
-var templateTask = `X buy milk
-X get cereal
-X make plan`;
-
 function switchTime() {
     	var current = new Date(); // timestamp, milliseconds since 1970 (?) vs. milliseconds (UTC)
     	var yyyy = current.getFullYear(), MM = current.getMonth() + 1; if (MM < 10) { MM = "0" + MM.toString(); }
@@ -60,30 +40,7 @@ function switchTime() {
     	var datestamp = yyyy + "." + MM + "." + dd; var timestamp = hh + ":" + mm + ":" + ss; // calendar?
 	$("#edit-stamp").html(datestamp + "@" + timestamp); }
 
-  function setTemplate(content) {
-      switch(content) {
-          case "task": $("#pad").html($("#pad").html()+templateTask); break;
-          case "datetime": $("#pad").html($("#pad").html()+'\n\n2022...'); break;
-          case "Listing": $("#pad").html(profileListing); break;
-          case "Recipe": $("#pad").html(artifactRecipe); break;
-          case "Instruction": $("#pad").html(artifactRecipe); break;
-          case "Sequence": $("#pad").html(artifactSequence); break;
-          case "Graph": $("#pad").html(artifactGraph); break; }
-     //changeFocus(); 
-  
-  }
 
-function previewTemplate(content) {
-    switch(content) {
-          case "Profile": setDialog(renderMd(profileListingPreview)); break;
-          case "Listing": setDialog(renderMd(profileListingPreview)); break;
-          case "Recipe": setDialog(renderMd(profileListingPreview)); break;
-          case "Instruction": setDialog(renderMd(profileListingPreview)); break;
-          case "Sequence": setDialog(renderMd(profileListingPreview)); break;
-          case "Graph": setDialog(renderMd(profileListingPreview)); break; }
-}
-
-var templates = ['Profile','Listing','Recipe','Instruction','Sequence','Graph'];
 function fillTemplate() {
    for (let a = 0; a < templates.length; a++) {
        $("#registry-template").append("<a class='collection-item'><div style='display:flex;justify-content:space-between;'><div style='display:flex;justify-content:space-between;align-items:center;' onclick='setTemplate(\"" + templates[a] + "\");'>" + templates[a] + "</div><div style='display:flex; justify-content:space-between;align-items:center;'><span style='color:ghostwhite' class='green btn waves-effect waves-light lighten-2' onclick='previewTemplate(\"" + templates[a] + "\");'><i class='material-icons'>description</i></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style='display:flex; flex-direction:column;'></div></div></div></a>"); }

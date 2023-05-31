@@ -69,12 +69,10 @@ function makeCardArt(i) { return cardArt.replace('XXXX',domains[i].desc).replace
 function showCards() { $("#carder").show(); $("#carder").addClass("scale-in"); }
 function hideCards() { $("#carder").removeClass("scale-in");$("#carder").hide(); }
 	
-	var slideCode = '<div id="flipXXX" class="block flip-card flip-card-inner" style="display:flex;align-items:center;cursor:pointer;"><div class="flip-card-fronty backer card-wrap" style="height:120px;width:100%;background-color:whitesmoke;color:black;opacity:0.75;transition:all 0.5s!important;"><span class="circleLight"></span><div class="text" style="display:flex; flex-direction:column;align-items:center;"><div style="display:flex;align-items:center;"><img src="res/img/seal3.png" style="width:48px; height:48px;" /><span style="margin-top:12px;margin-left:12px;color:indianred;font-weight:bold;font-size:16px;">UR.Land </span><span style="margin-top:12px;margin-left:24px;font-weight:bold;">dee.d/omain</span></div><p  id="card-nameXXXX" style="display:flex; align-items:center;">I`m cool card</p></div></div></div>';
+var slideCode = '<div id="flipXXX" class="block flip-card flip-card-inner" style="display:flex;align-items:center;cursor:pointer;"><div class="flip-card-fronty backer card-wrap" style="height:120px;width:100%;background-color:whitesmoke;color:black;opacity:0.75;transition:all 0.5s!important;"><span class="circleLight"></span><div class="text" style="display:flex; flex-direction:column;align-items:center;"><div style="display:flex;align-items:center;"><img src="res/img/seal3.png" style="width:48px; height:48px;" /><span style="margin-top:12px;margin-left:12px;color:indianred;font-weight:bold;font-size:16px;">UR.Land </span><span style="margin-top:12px;margin-left:24px;font-weight:bold;">dee.d/omain</span></div><p  id="card-nameXXXX" style="display:flex; align-items:center;">I`m cool card</p></div></div></div>';
 
 
-var mouse = {X   : 0,Y   : 0,CX  : 0,CY  : 0 },
-    block = {X   : mouse.X,Y   : mouse.Y,CX  : mouse.CX,CY  : mouse.CY}, vmags = [ '', ''],fmags = [ '', ''],bmags = [ '', ''],imags = ['','','','',];
-
+var mouse = {X   : 0,Y   : 0,CX  : 0,CY  : 0 }, block = {X   : mouse.X,Y   : mouse.Y,CX  : mouse.CX,CY  : mouse.CY}, vmags = [ '', ''],fmags = [ '', ''],bmags = [ '', ''],imags = ['','','','',];
 $('.block').on('mousemove', function(e) {mouse.X   = (e.pageX - $(this).offset().left) - $('.block').width() / 2;mouse.Y   = (e.pageY - $(this).offset().top) - $('.block').height() / 2;})
 $('.block').on('mouseleave', function(e) {mouse.X   = mouse.CX;mouse.Y   = mouse.CY;})
 
