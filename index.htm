@@ -33,14 +33,14 @@
     	<div id="egger" class="containerx yellowx golden" style="background-color: beige;display:none;"><span id="connor" class="button setter">🪨</span>
 			  <div class="contentx">
 				<div id="walleter" class="head" style="display: flex;align-items: center;justify-content: space-evenly;">
-					<a id="dropdown-user" href="#" data-target="dropdown-use" style="border-radius:8px; width:160px; display: flex;justify-content: space-between;" class="dropdown-trigger waves-effect waves-light amber btn" onclick="$('#modal-map').modal('open'); closeTop();"><span class="mobile-hide">CONNECT</span><span>🪙</span></a>
-					<a id="mapper" style="border-radius:8px; width:160px; display: flex;justify-content: space-between;" class="waves-effect waves-light amber lighten-1 btn" onclick="$('#modal-map').modal('open');"><span class="mobile-hide">SCAN</span><span>🔑</span></a></div>
+					<a id="dropdown-user" href="#" data-target="dropdown-use" style="border-radius:8px; width:160px; display: flex;justify-content: space-between;" class="dropdown-trigger waves-effect waves-light amber ligten-3 btn" onclick="$('#modal-wallet').modal('open'); closeTop();"><span class="mobile-hide">CONNECT</span><span>🪙</span></a>
+					<a id="mapper" style="border-radius:8px; width:160px; display: flex;justify-content: space-between;" class="waves-effect waves-light amber lighten-1 btn" onclick="$('#modal-qr').modal('open');"><span class="mobile-hide">SCAN</span><span>🔑</span></a></div>
 				<div class="body" style="text-align:center;">
 					<ul style="display: flex;flex-direction: column;">
-						<li class="edger"><a onclick="showDoc('deed');" class="edger waves-effect"><span class="badge amber badge-stamp z-depth-1"><span style="font-weight:bold;margin-right:4px;">0</span>&nbsp;&nbsp;📜</span></a></li>
-						<li class="edger"><a id="locurScan" onclick="showDoc('deed');" class="edger waves-effect"><span class="badge amber badge-stamp z-depth-1"><span style="font-weight:bold;margin-right:4px;">0</span>&nbsp;&nbsp;🗒️</span></a></li>
-						<li class="edger"><a onclick="showDoc('deed');" class="edger waves-effect"><span class="badge amber badge-stamp z-depth-1"><span style="font-weight:bold;margin-right:4px;">0</span>&nbsp;&nbsp;🗺️</span></a></li>
-						<li class="edger"><a class="edger waves-effect" onclick="showDoc('deed');" ><span class="badge amber badge-stamp z-depth-1"><span style="font-weight:bold;margin-right:4px;">0</span>&nbsp;&nbsp;📦</span></a></li>
+						<li class="edger"><a onclick="showDoc('deed');" class="edger waves-effect"><span class="badge red lighten-1 badge-stamp z-depth-1"><span style="font-weight:bold;margin-right:4px;">0</span>&nbsp;&nbsp;deed&nbsp;&nbsp;📜</span></a></li>
+						<li class="edger"><a id="locurScan" onclick="showDoc('deed');" class="edger waves-effect"><span class="badge blue lighten-1 badge-stamp z-depth-1"><span style="font-weight:bold;margin-right:4px;">0</span>&nbsp;&nbsp;note&nbsp;&nbsp;🗒️</span></a></li>
+						<li class="edger"><a onclick="showDoc('deed');" class="edger waves-effect"><span class="badge green lighten-1 badge-stamp z-depth-1"><span style="font-weight:bold;margin-right:4px;">0</span>&nbsp;&nbsp;map&nbsp;&nbsp;🗺️</span></a></li>
+						<li class="edger"><a class="edger waves-effect" onclick="showDoc('deed');" ><span class="badge amber ligten-1 badge-stamp z-depth-1"><span style="font-weight:bold;margin-right:4px;">0</span>&nbsp;&nbsp;box&nbsp;&nbsp;📦</span></a></li>
 						<li><div style="margin-top:0;" class="divider"></div></li>
 						<li id="deeder" class="mobile-stat" style="display: flex; align-items: center; margin:12px;justify-content:center;">No profile connected.</li></ul></div></div></div>
 
@@ -58,8 +58,8 @@
 				<div class="head" style="display: flex;align-items: center;justify-content: center;padding-top:0;"></div>
 				<div class="body"><p>
 					<ul style="display: flex;flex-direction: column;">
-						<li class="booker"><a onclick="closeLeft(); showView('shopper');" class="waves-effect" style="display:flex;align-items:center;padding-top:12px;padding-bottom:12px;"><div style="display:flex;"><img class="hover-link" src="res/img/icon/lighter.png" style="width:20px; height:20px;" /></div>&nbsp;&nbsp;&nbsp;&nbsp;<span id="shopper">Shop Dralun</span></a></li>
-						<li class="booker" style="margin-bottom:12px;"><a onclick="closeLeft(); openInNewTab('https://discord.com/channels/938133518154887168/938133518154887171');"  class="waves-effect" style="display:flex;align-items:center;padding-top:12px;padding-bottom:12px;"><div style="display:flex;"><img class="hover-link" src="res/img/icon/discord.png" style="width:24px; height:24px;" /></div>&nbsp;&nbsp;&nbsp;&nbsp;Join Discord</a></li>
+						<li class="booker"><a onclick="closeLeft(); openInNewTab('https://discord.com/channels/938133518154887168/938133518154887171');"  class="waves-effect" style="display:flex;align-items:center;padding-top:12px;padding-bottom:12px;"><div style="display:flex;"><img class="hover-link" src="res/img/icon/discord.png" style="width:24px; height:24px;" /></div>&nbsp;&nbsp;&nbsp;&nbsp;Join Discord</a></li>
+						<li class="booker" style="margin-bottom:12px;"><a onclick="closeLeft(); showView('shopper');" class="waves-effect" style="display:flex;align-items:center;padding-top:12px;padding-bottom:12px;"><div style="display:flex;"><img class="hover-link" src="res/img/icon/lighter.png" style="width:20px; height:20px;" /></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Shop Dralun</span></a></li>
 						<li><a class="subheader">Guide</a></li>
 						<li class="booker"><a onclick="closeLeft(); showView('charter'); openMap(); clearTutorial(); setTimeout(function() { showTutorial(); }, 1000);" class="waves-effect" style="display:flex;align-items:center;"><div>🥾</div>&nbsp;&nbsp;&nbsp;&nbsp;Learn To Explore</a></li>
 						<li class="booker"><a onclick="closeLeft(); showView('charter'); clearTutorial(); setTimeout(function() { showOutpost(); }, 1000);" class="waves-effect" style="display:flex;align-items:center;"><div>🪵</div>&nbsp;&nbsp;&nbsp;&nbsp;Build Outpost</a></li>
@@ -68,7 +68,7 @@
 						<li><a class="subheader">Manual</a></li>
 						<li class="booker"><a onclick="showDoc('deed');" class="waves-effect" style="display:flex;align-items:center;"><div>📕</div>&nbsp;&nbsp;&nbsp;&nbsp;On Map Domain</a></li>
 						<li class="booker"><a onclick="showDoc('ocur'); setTimeout(function() { $('#image-template').formSelect(); }, 1000);" class="waves-effect" style="display:flex;align-items:center;"><div>📗</div>&nbsp;&nbsp;&nbsp;&nbsp;How To Invest</a></li>
-						<li class="booker"><a onclick="showDoc('manifest');" class="waves-effect" style="display:flex;align-items:center;padding-right:0px;"><div>📘</div>&nbsp;&nbsp;&nbsp;&nbsp;By Manifest&nbsp;&nbsp;&nbsp;&nbsp;<span style="margin:0; width:80px; color: whitesmoke!important;" class="badge blue">v3.2-1</span></a></li></ul></p></div></div></div>
+						<li class="booker"><a onclick="showDoc('manifest');" class="waves-effect" style="display:flex;align-items:center;padding-right:0px;"><div>📘</div>&nbsp;&nbsp;&nbsp;&nbsp;By Manifest&nbsp;&nbsp;<span style="margin:0; width:80px; color: whitesmoke!important;" class="badge blue">v3.2-1</span></a></li></ul></p></div></div></div>
 						
 		<a onclick="showView('emojier');$('#searcher').show();" style="border-radius:8px; display: flex;justify-content: space-between;margin-right:24px;" class="waves-effect waves-light  btn-flat modal-close" >🔎</a></div></li>
 				
@@ -360,7 +360,7 @@
 	<div class="modal-footer" style="margin-bottom:12px;display:flex;justify-content:space-evenly;">
 		<a id="subber" onclick="submitUser();" style="border-radius:8px; display: flex;justify-content: space-between;width:160px;" class="waves-effect waves-light green lighten-2 btn  disabled" ><span>Create</span><span>🪪</span></a></div></div>
 		-->
-<div id="modal-sign" class="modal">
+<div id="modal-wallet" class="modal">
     <div class="modal-content">
 		<div id="wait-sign" style="opacity:0;">
 		 <div class="preloader-wrapper big active">
@@ -385,7 +385,7 @@
 	<div class="modal-footer" style="margin-bottom:12px;display:flex;justify-content:space-evenly;">
 		<a id="subber" onclick="submitUser();" style="border-radius:8px; display: flex;justify-content: space-between;width:160px;" class="waves-effect waves-light green lighten-2 btn  disabled" ><span>Sign In</span><span>✔️</span></a></div></div>
 		
-<div id="modal-pass" class="modal">
+<div id="modal-qr" class="modal">
     <div class="modal-content">
 		<div id="wait-sign" style="opacity:0;">
 		 <div class="preloader-wrapper big active">
@@ -765,12 +765,9 @@ h1 {font-weight: 700;font-size: 64px; margin: 20px 0 0 0;padding: 0 20px;}
 
 .containerx.expand {box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.17);border-radius: 0px 0px 8px 8px;width: 80%;max-width:800px;padding: 0;transition: all 0.2s, max-width 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0.1s, height 0.3s ease 0.25s;}.containerx.expand.golden {height:560px!important;border-radius: 0px 0px 8px 8px;}.contentx {transform: translateY(100%);width: 100%;height: 100%;opacity: 0;text-align: left;transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s 0.2s;}
 
-.expand .contentx {transform: translateY(0px);opacity: 1;transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.05s, opacity 0s;}.contentx .head {padding: 0 0 20px 0;}.contentx .body {color: #000;color: rgba(0, 0, 0, 0.87);background-color: #fff;width: 100%;height: 100%;box-sizing: border-box;}.action-bar {padding-left: 15px;border-top: 1px solid #e0e0e0;width: 100%;}.action-bar a {text-transform: uppercase;line-height: 52px;color: #ffc400;}.badge-stamp {display: flex!important;align-items: center;justify-content: center;padding-top: 8px!important;}.dropdown-content {max-height:180px;}.select-wrapper {max-width:200px!important;} .popupContainer {z-index:1;}
+.expand .contentx {transform: translateY(0px);opacity: 1;transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.05s, opacity 0s;}.contentx .head {padding: 0 0 20px 0;}.contentx .body {color: #000;color: rgba(0, 0, 0, 0.87);background-color: #fff;width: 100%;height: 100%;box-sizing: border-box;}.action-bar {padding-left: 15px;border-top: 1px solid #e0e0e0;width: 100%;}.action-bar a {text-transform: uppercase;line-height: 52px;color: #ffc400;}.dropdown-content {max-height:180px;}.select-wrapper {max-width:200px!important;} .popupContainer {z-index:1;}
 
-	.badge-stamp { display: flex!important;
-    align-items: center;
-    justify-content: center;
-		padding-top: 8px!important; }
+	.badge-stamp { display: flex!important;align-items: center;justify-content: center;padding-top: 8px!important; margin:12px; }
 	
 	.dropdown-content { max-height:180px; }
 	.select-wrapper { max-width:200px!important;}
