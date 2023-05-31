@@ -38,16 +38,16 @@
     	<div id="egger" class="containerx yellowx golden" style="background-color: beige;display:none;"><span id="connor" class="button setter">🪨</span>
 			  <div class="contentx">
 				<div id="walleter" class="head" style="display: flex;align-items: center;justify-content: space-evenly;">
-					<a id="dropdown-user" href="#" data-target="dropdown-use" style="border-radius:8px; width:160px; display: flex;justify-content: space-between;" class="dropdown-trigger waves-effect waves-light amber btn" onclick="playGame(); closeTop();"><span class="mobile-hide">PROFILE</span><span>🪪</span></a>
-					<a id="mapper" style="border-radius:8px; width:160px; display: flex;justify-content: space-between;" class="waves-effect waves-light amber lighten-1 btn" onclick="closeTop(); showView('lister');"><span class="mobile-hide">CART</span><span>🛒</span></a></div>
+					<a id="dropdown-user" href="#" data-target="dropdown-use" style="border-radius:8px; width:160px; display: flex;justify-content: space-between;" class="dropdown-trigger waves-effect waves-light amber btn" onclick="playGame(); closeTop();"><span class="mobile-hide">CONNECT</span><span>🪙</span></a>
+					<a id="mapper" style="border-radius:8px; width:160px; display: flex;justify-content: space-between;" class="waves-effect waves-light amber lighten-1 btn" onclick="closeTop(); showView('lister');"><span class="mobile-hide">PROFILE</span><span>🏛️</span></a></div>
 				<div class="body" style="text-align:center;">
 					<ul style="display: flex;flex-direction: column;">
-						<li class="edger"><a onclick="closeTop(); openInNewTab('https://dralun.com');" class="edger waves-effect"><span  style="color:black!important;">✉️&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color:black!important;">Mail</span></a></li>
-						<li class="edger"><a id="locurScan" onclick="closeTop(); showDoc('manifest');" class="edger waves-effect"><span  class="lighten-2" style="color:black!important;">📄&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="myDomain" style="color:black!important;">Notes</span></a></li>
-						<li class="edger"><a onclick="closeTop(); openInNewTab('https://ocur.io');" class="edger waves-effect"><span  style="color:black!important;">📮&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color:black!important;">Posts</span></a></li>
-						<li class="edger"><a class="edger waves-effect" onclick="closeTop(); openInNewTab('https://iocur.com');" ><span  style="color:black!important;">📦&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="myAdd" style="color:black!important;">Shipments</span></a></li>
+						<li class="edger"><a onclick="closeTop(); openInNewTab('https://dralun.com');" class="edger waves-effect"><span  style="color:black!important;">⛰️&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color:black!important;">Domain</span></a></li>
+						<li class="edger"><a id="locurScan" onclick="closeTop(); showDoc('manifest');" class="edger waves-effect"><span  class="lighten-2" style="color:black!important;">📜&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="myDomain" style="color:black!important;">Deed</span></a></li>
+						<li class="edger"><a onclick="closeTop(); openInNewTab('https://ocur.io');" class="edger waves-effect"><span  style="color:black!important;">🗺️&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color:black!important;">Map</span></a></li>
+						<li class="edger"><a class="edger waves-effect" onclick="closeTop(); openInNewTab('https://iocur.com');" ><span  style="color:black!important;">🪟&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="myAdd" style="color:black!important;">Scene</span></a></li>
 						<li><div style="margin-top:0;" class="divider"></div></li>
-						<li id="deeder" class="mobile-stat" style="display: flex; align-items: center; margin:12px;justify-content:center;">No profile connected.</li></ul></div></div></div>
+						<li id="deeder" class="mobile-stat" style="display: flex; align-items: center; margin:12px;justify-content:center;">No wallet connected.</li></ul></div></div></div>
 
 		<!-- tool -->
 		<ul><li><a id="dropdown-tooler" class="dropdown-trigger" href="#!" data-target="dropdown-tool"><img class="image gear-image" style="opacity:0.6; height: 28px; width:28px; margin-right:-12px;cursor:pointer;" src="res/img/icon/pen.png" /><i class="material-icons right">arrow_drop_down</i></a></li></ul></div></nav>
@@ -162,22 +162,14 @@
 
 <!-- template -->
 <ul id='dropdown-tool' class='dropdown-content' style="max-height:none;">
-	<li><a href="#!" onclick="showView('lister');" ><span>📜</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Deed Editor</span></a></li>
-	<li><a href="#!" onclick="showVieww('charter'); openMap();"><span>🗺️</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Map Maker</span></a></li>
+	<li><a href="#!" onclick="showView('lister');" ><span>📜</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Deed Maker</span></a></li>
+	<li><a href="#!" onclick="showVieww('charter'); openMap();"><span>🗺️</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Map Editor</span></a></li>
 	<li style="margin-top:0;"class="divider" tabindex="-1"></li>
     
-    <li><a href="#!" onclick="$('#modal-settings').modal('open');"><span>⚙️</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Settings</span></a></li>
+    <li><a href="#!" onclick="$('#modal-settings').modal('open');"><span>🪟</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Scene Builder</span></a></li>
     
     <li style="margin-top:0;"class="divider" tabindex="-1"></li>
     <li><a href="#!" onclick="showDoc('PLANME');" ><span>🃏️</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Play Cards</span></a></li></ul>
-
-<ul id='dropdown-use' class='dropdown-content' style="max-height:none;">
-	<li><a href="#!" onclick="$('#modal-sign').modal('open');" ><span>📝</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Sign In</span></a></li>
-	<li style="margin-top:0;"class="divider" tabindex="-1"></li>
-    <li><a href="#!" onclick="$('#modal-user').modal('open'); clearUser();"><span>🪪</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Create User</span></a></li>
-    <li style="margin-top:0;"class="divider" tabindex="-1"></li>
-    <li><a href="#!" onclick="$('#modal-pass').modal('open');" class="disabled"><span>🔑</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Edit Password</span></a></li>
-    <li><a href="#!" onclick="$('#modal-reset').modal('open');" ><span>🔓️</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Reset Password</span></a></li></ul>
 
 <ul id='dropdown-open' class='dropdown-content'>
     	<li><a href="#!" onclick="opens.sort(openAZ); showList('open');">Name&nbsp;&nbsp; &#8595;</a></li><li><a href="#!" onclick="opens.sort(openZA); showList('open');">Name&nbsp;&nbsp; &#8593;</a></li>
