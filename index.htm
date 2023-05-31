@@ -2,30 +2,25 @@
 <html lang="en">
 <head><title>• • •</title>
 
-<meta http-equiv="Content-Language" content="en-US">
-<meta charset="UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="deed domains for sale, from deed to domain, collectible domains, map maker" />
-<meta name="keywords" content="domain, deed, urland, ocur, ocurio, crypto, dBay, nfnth, map, maker, token, iocur, dralun" />
-<meta name="author" content="nfnth" />
+	<meta http-equiv="Content-Language" content="en-US">
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="deed domains for sale, from deed to domain, collectible domains, map maker" />
+	<meta name="keywords" content="domain, deed, urland, ocur, ocurio, crypto, dBay, nfnth, map, maker, token, iocur, dralun" />
+	<meta name="author" content="nfnth" />
 
-<!-- resources -->
-<script src="res/app/all.js"></script><link rel="stylesheet" href="res/app/all.css"></script>
-<script src="res/app/js/md.js"></script><script src="res/app/js/open.js"></script><script src="res/app/js/ui.js"></script><script src="res/app/js/card.js"></script>
-<script src="https://js.stripe.com/v3"></script>
+	<!-- resources -->
+	<script src="res/app/all.js"></script><link rel="stylesheet" href="res/app/all.css"></script>
+	<script src="res/app/js/open.js"></script><script src="res/app/js/wallet.js"></script><script src="res/app/js/qr.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/sha256.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mapbox-gl/2.11.0/mapbox-gl.js" integrity="sha512-kH0Kk+oPmZ+F7HbpYS4nQvazGc7ykQJ1+0M2+DfE0mGv0/cLI3QR1IpGCYOVPGc9OlIDm2PWLbjOJBBxoj4L5A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-compare/v0.4.0/mapbox-gl-compare.css" type="text/css"><script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-compare/v0.4.0/mapbox-gl-compare.js"></script><link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css"><script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script><script src="https://cdn.jsdelivr.net/npm/mapbox-gl-animated-popup@latest/dist/mapbox-gl-animated-popup.min.js"></script>
+	<script src="res/app/js/ui.js"></script><script src="res/app/js/md.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/pixi.js@7.x/dist/pixi.min.js"></script><!--<script src="js/gameboy.js"></script><script defer src="res/app/map.js">-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/mapbox-gl/2.11.0/mapbox-gl.js" integrity="sha512-kH0Kk+oPmZ+F7HbpYS4nQvazGc7ykQJ1+0M2+DfE0mGv0/cLI3QR1IpGCYOVPGc9OlIDm2PWLbjOJBBxoj4L5A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-compare/v0.4.0/mapbox-gl-compare.css" type="text/css"><script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-compare/v0.4.0/mapbox-gl-compare.js"></script><link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css"><script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script><script src="https://cdn.jsdelivr.net/npm/mapbox-gl-animated-popup@latest/dist/mapbox-gl-animated-popup.min.js"></script>
+	<script defer src="res/app/js/map.js"></script><script defer src="res/app/js/guide.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/core.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/sha256.js"></script>
-    
-
-<!--<link rel="stylesheet" href="js/all.css"></script>-->
-<!--<script src="res/app/help.js"></script></script><script defer src="res/app/guide.js"></script>-->
-</head>
+	<script src="https://cdn.jsdelivr.net/npm/pixi.js@7.x/dist/pixi.min.js"></script><script src="res/app/js/card.js"></script><script src="res/app/js/gameboy.js"></script></head>
 
 <body id="mainer" style="overflow:overlay; background-color:whitesmoke;transition: opacity 1s linear; opacity:0;" >
 
@@ -38,22 +33,22 @@
     	<div id="egger" class="containerx yellowx golden" style="background-color: beige;display:none;"><span id="connor" class="button setter">🪨</span>
 			  <div class="contentx">
 				<div id="walleter" class="head" style="display: flex;align-items: center;justify-content: space-evenly;">
-					<a id="dropdown-user" href="#" data-target="dropdown-use" style="border-radius:8px; width:160px; display: flex;justify-content: space-between;" class="dropdown-trigger waves-effect waves-light amber btn" onclick="playGame(); closeTop();"><span class="mobile-hide">CONNECT</span><span>🪙</span></a>
-					<a id="mapper" style="border-radius:8px; width:160px; display: flex;justify-content: space-between;" class="waves-effect waves-light amber lighten-1 btn" onclick="closeTop(); showView('lister');"><span class="mobile-hide">PROFILE</span><span>🏛️</span></a></div>
+					<a id="dropdown-user" href="#" data-target="dropdown-use" style="border-radius:8px; width:160px; display: flex;justify-content: space-between;" class="dropdown-trigger waves-effect waves-light amber btn" onclick="$('#modal-map').modal('open'); closeTop();"><span class="mobile-hide">CONNECT</span><span>🪙</span></a>
+					<a id="mapper" style="border-radius:8px; width:160px; display: flex;justify-content: space-between;" class="waves-effect waves-light amber lighten-1 btn" onclick="$('#modal-map').modal('open');"><span class="mobile-hide">SCAN</span><span>🔑</span></a></div>
 				<div class="body" style="text-align:center;">
 					<ul style="display: flex;flex-direction: column;">
-						<li class="edger"><a onclick="closeTop(); openInNewTab('https://dralun.com');" class="edger waves-effect"><span  style="color:black!important;">⛰️&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color:black!important;">Domain</span></a></li>
-						<li class="edger"><a id="locurScan" onclick="closeTop(); showDoc('manifest');" class="edger waves-effect"><span  class="lighten-2" style="color:black!important;">📜&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="myDomain" style="color:black!important;">Deed</span></a></li>
-						<li class="edger"><a onclick="closeTop(); openInNewTab('https://ocur.io');" class="edger waves-effect"><span  style="color:black!important;">🗺️&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color:black!important;">Map</span></a></li>
-						<li class="edger"><a class="edger waves-effect" onclick="closeTop(); openInNewTab('https://iocur.com');" ><span  style="color:black!important;">🪟&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="myAdd" style="color:black!important;">Scene</span></a></li>
+						<li class="edger"><a onclick="showDoc('deed');" class="edger waves-effect"><span class="badge amber badge-stamp z-depth-1"><span style="font-weight:bold;margin-right:4px;">0</span>&nbsp;&nbsp;📜</span></a></li>
+						<li class="edger"><a id="locurScan" onclick="showDoc('deed');" class="edger waves-effect"><span class="badge amber badge-stamp z-depth-1"><span style="font-weight:bold;margin-right:4px;">0</span>&nbsp;&nbsp;🗒️</span></a></li>
+						<li class="edger"><a onclick="showDoc('deed');" class="edger waves-effect"><span class="badge amber badge-stamp z-depth-1"><span style="font-weight:bold;margin-right:4px;">0</span>&nbsp;&nbsp;🗺️</span></a></li>
+						<li class="edger"><a class="edger waves-effect" onclick="showDoc('deed');" ><span class="badge amber badge-stamp z-depth-1"><span style="font-weight:bold;margin-right:4px;">0</span>&nbsp;&nbsp;📦</span></a></li>
 						<li><div style="margin-top:0;" class="divider"></div></li>
-						<li id="deeder" class="mobile-stat" style="display: flex; align-items: center; margin:12px;justify-content:center;">No wallet connected.</li></ul></div></div></div>
+						<li id="deeder" class="mobile-stat" style="display: flex; align-items: center; margin:12px;justify-content:center;">No profile connected.</li></ul></div></div></div>
 
 		<!-- tool -->
-		<ul><li><a id="dropdown-tooler" class="dropdown-trigger" href="#!" data-target="dropdown-tool"><img class="image gear-image" style="opacity:0.6; height: 28px; width:28px; margin-right:-12px;cursor:pointer;" src="res/img/icon/pen.png" /><i class="material-icons right">arrow_drop_down</i></a></li></ul></div></nav>
+		<ul><li><a id="dropdown-tooler" class="dropdown-trigger" href="#!" data-target="dropdown-tool"><img class="image gear-image" style="opacity:0.6; height: 24px; width:24px; margin-right:-16px;cursor:pointer;" src="res/img/icon/pen.png" /><i class="material-icons right">arrow_drop_down</i></a></li></ul></div></nav>
 
 <!-- menu (search) -->
-<nav id="searcher" class="content loader pane" style="position:absolute;top:58px;visibility:hidden;background-color:burlywood;z-index:2;">
+<nav id="searcher" class="content loader pane" style="position:absolute;top:60px;visibility:hidden;background-color:burlywood;z-index:2;">
     <div class="nav-wrapper"><form><div class="input-field"><input id="search" type="search" required><label class="label-icon" for="search"><i class="material-icons">search</i></label><i onclick="clearSearch();" class="material-icons">close</i></div></form></div></nav>
 		
 <!-- panel -->
@@ -63,7 +58,7 @@
 				<div class="head" style="display: flex;align-items: center;justify-content: center;padding-top:0;"></div>
 				<div class="body"><p>
 					<ul style="display: flex;flex-direction: column;">
-						<li class="booker"><a onclick="document.getElementById('booker').click(); setShop();" class="waves-effect" style="display:flex;align-items:center;padding-top:12px;padding-bottom:12px;"><div style="display:flex;"><img class="hover-link" src="res/img/icon/lighter.png" style="width:24px; height:24px;" /></div>&nbsp;&nbsp;&nbsp;&nbsp;<span id="shopper">Shop OCUR</span></a></li>
+						<li class="booker"><a onclick="closeLeft(); showView('shopper');" class="waves-effect" style="display:flex;align-items:center;padding-top:12px;padding-bottom:12px;"><div style="display:flex;"><img class="hover-link" src="res/img/icon/lighter.png" style="width:20px; height:20px;" /></div>&nbsp;&nbsp;&nbsp;&nbsp;<span id="shopper">Shop Dralun</span></a></li>
 						<li class="booker" style="margin-bottom:12px;"><a onclick="closeLeft(); openInNewTab('https://discord.com/channels/938133518154887168/938133518154887171');"  class="waves-effect" style="display:flex;align-items:center;padding-top:12px;padding-bottom:12px;"><div style="display:flex;"><img class="hover-link" src="res/img/icon/discord.png" style="width:24px; height:24px;" /></div>&nbsp;&nbsp;&nbsp;&nbsp;Join Discord</a></li>
 						<li><a class="subheader">Guide</a></li>
 						<li class="booker"><a onclick="closeLeft(); showView('charter'); openMap(); clearTutorial(); setTimeout(function() { showTutorial(); }, 1000);" class="waves-effect" style="display:flex;align-items:center;"><div>🥾</div>&nbsp;&nbsp;&nbsp;&nbsp;Learn To Explore</a></li>
@@ -75,7 +70,7 @@
 						<li class="booker"><a onclick="showDoc('ocur'); setTimeout(function() { $('#image-template').formSelect(); }, 1000);" class="waves-effect" style="display:flex;align-items:center;"><div>📗</div>&nbsp;&nbsp;&nbsp;&nbsp;How To Invest</a></li>
 						<li class="booker"><a onclick="showDoc('manifest');" class="waves-effect" style="display:flex;align-items:center;padding-right:0px;"><div>📘</div>&nbsp;&nbsp;&nbsp;&nbsp;By Manifest&nbsp;&nbsp;&nbsp;&nbsp;<span style="margin:0; width:80px; color: whitesmoke!important;" class="badge blue">v3.2-1</span></a></li></ul></p></div></div></div>
 						
-		<a onclick="showView('emojier');$('#searcher').show();" style="border-radius:8px; display: flex;justify-content: space-between;margin-right:24px;" class="waves-effect waves-light  btn-flat modal-close" >🔎</a><a onclick="showView('emojier');$('#searcher').show();" style="border-radius:8px; display: flex;justify-content: space-between;margin-right:24px;" class="waves-effect waves-light  btn-flat modal-close" >☎️</a></div></li>
+		<a onclick="showView('emojier');$('#searcher').show();" style="border-radius:8px; display: flex;justify-content: space-between;margin-right:24px;" class="waves-effect waves-light  btn-flat modal-close" >🔎</a></div></li>
 				
 	<!-- tabs -->
 	<li style="height:100%;"><ul id="token-tabs" class="tabs tabs-fixed-width z-depth-1 deed">
@@ -100,12 +95,12 @@
 		<div class="loaderx">
 			<div style="color:indianred; font-weight:bold; font-size:18px;margin-top:-100px;display:flex;justify-content:center;">LOADING <div style="margin-left:12px;  color:black; font-weight:none;" id="brand"></div></div>
 			<div class="loader-bg z-depth-1">
-				<span style="display:flex;justify-content:center;height:100%;align-items:center;opacity:0.9;"><img src="res/img/icon/maps.png" class="kuhl"></span></div>
+				<span style="display:flex;justify-content:center;height:100%;align-items:center;opacity:0.9;"><img src="res/img/icon/compass.png" class="kuhl"></span></div>
 			<div class="drops"><div class="drop1"></div><div class="drop2"></div></div></div>
 		<svg xmlns="http://www.w3.org/2000/svg" version="1.1"><defs><filter id="liquid"><feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
 			  <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="liquid" /></filter></defs></svg></div>
 
-	<!-- slide -->
+	<!-- gallery -->
 	<div id="slider" class="slider content loader pane scale-transition scale-out">
 	  <div class="items-group">
 		<div id="item0" class="item" >
@@ -120,8 +115,103 @@
 	  <div class="navigations">
 		<ul class="dots"><li onclick="changeCard();"><a class="btn-flat amber lighten-4"><i class="material-icons" style="color:goldenrod;">restart_alt</i></a></li></ul></div></div></div>
 
+	<!-- shop -->
+	<div id="shopper" class="content loader pane scale-transition scale-out" style="overflow-y: auto; height: 115%;width:100%;margin-top:54px; padding-top:16px; background: rgb(255,255,255);background: linear-gradient(156deg, rgba(255,255,255,1) 0%, rgba(245,205,205,1) 35%, rgba(242,129,129,1) 100%); "><div style="width:240px;height:100%;display:flex;justify-content:center;flex-direction:column;margin:auto;">
+	
+	<div class="card hoverable" style="border-radius:10px;">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img id="ocur-app" class="activator" src="res/img/ocur-app.png" style="width:240px; height:240px; object-fit:cover;border-radius:12px 12px 0px 0px;"></div>
+    <div class="card-content">
+      <span class="card-title activator fonter" style="font-size:20px;">🪨&nbsp;&nbsp;OCUR.app<i class="material-icons right">more_vert</i></span>
+      <p style="padding-top:8px;"><a class="waves-effect waves-light btn red lighten-5 grey-text text-darken-3" style="width:150px;display:flex;justify-content:space-between;" onclick="openInNewTab('https://ocur.app');"><span>🗺️</span><span>Open️ Map</span></a></p></div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4" style="font-size:18px;">🧭&nbsp;&nbsp;Explore now<i class="material-icons right">close</i></span>
+      <p><video style="width:100%; height:100px; object-fit:cover;border-radius:2px;" class="z-depth-1" controls="controls" src="res/test.mp4"></video></p>
+      <p>Online journal to take notes and list objects.</p>
+      <p><input type="number" value="1" min="1" max="999"></p>
+      <p><a class="waves-effect waves-light btn blue-grey lighten-2 blue-grey-text text-darken-2" onclick="showDoc('README');" style="display:flex;justify-content:space-between;"><span>📄</span><span>Read More</span></a></p></div></div>
+	
+	<div class="card hoverable" style="border-radius:12px;">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img id="iocur-com" class="activator" src="res/img/iocur-com.png" style="width:240px; height:240px; object-fit:cover;border-radius:12px 12px 0px 0px;"></div>
+    <div class="card-content">
+      <span class="card-title activator fonter" style="font-size:20px;">🪨&nbsp;&nbsp;iOCUR.com<i class="material-icons right">more_vert</i></span>
+      <p style="padding-top:8px;"><a class="waves-effect waves-light btn red lighten-5 grey-text text-darken-3" style="width:150px;display:flex;justify-content:space-between;" onclick="openInNewTab('https://ocur.app');"><span>🪪</span><span>Use Badge️</span></a></p></div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4" style="font-size:18px;">🧭&nbsp;&nbsp;Explore now<i class="material-icons right">close</i></span>
+      <p><video style="width:100%; height:100px; object-fit:cover;border-radius:2px;" class="z-depth-1" controls="controls" src="res/test.mp4"></video></p>
+      <p>Real-time feed and marketplace of OCUR items</p>
+      <p><a class="waves-effect waves-light btn blue-grey lighten-2 blue-grey-text text-darken-2" onclick="showDoc('README');" style="display:flex;justify-content:space-between;"><span>📄</span><span>Read More</span></a></p></div></div>
+	
+	<div class="card hoverable" style="border-radius:12px;">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img id="ocur-io" class="activator" src="res/img/ocur-io.png" style="width:240px; height:240px; object-fit:cover;border-radius:12px 12px 0px 0px;"></div>
+    <div class="card-content">
+      <span class="card-title activator fonter" style="font-size:20px;">🪨&nbsp;&nbsp;OCUR.io<i class="material-icons right">more_vert</i></span>
+      <p style="padding-top:8px;"><a class="waves-effect waves-light btn red lighten-4 grey-text text-darken-3" style="width:150px;display:flex;justify-content:space-between;" onclick="openInNewTab('https://ocur.app');"><span>🖼️</span><span>View Art</span></a></p></div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4" style="font-size:18px;">🧭&nbsp;&nbsp;Explore now<i class="material-icons right">close</i></span>
+      <p><video style="width:100%; height:100px; object-fit:cover;border-radius:2px;" class="z-depth-1" controls="controls" src="res/test.mp4"></video></p>
+      <p>Real-time feed and marketplace of OCUR items</p>
+      <p><a class="waves-effect waves-light btn blue-grey lighten-2 blue-grey-text text-darken-2" onclick="showDoc('README');" style="display:flex;justify-content:space-between;"><span>📄</span><span>Read More</span></a></p></div></div>
+	
+	<div class="card hoverable" style="border-radius:12px;">
+    <div id="dralun-com" class="card-image waves-effect waves-block waves-light">
+      <img class="activator" src="res/img/dralun-com.png" style="width:240px; height:240px; object-fit:cover;border-radius:12px 12px 0px 0px;"></div>
+    <div class="card-content">
+      <span class="card-title activator fonter" style="font-size:20px;">🪨&nbsp;&nbsp;Dralun.com<i class="material-icons right">more_vert</i></span>
+      <p style="padding-top:8px;"><a class="waves-effect waves-light btn red lighten-4 grey-text text-darken-3" style="width:150px;display:flex;justify-content:space-between;" onclick="openInNewTab('https://ocur.app');"><span>⚔️</span><span>Play Game</span></a></p></div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4" style="font-size:18px;">🧭&nbsp;&nbsp;Explore now<i class="material-icons right">close</i></span>
+      <p><video style="width:100%; height:100px; object-fit:cover;border-radius:2px;" class="z-depth-1" controls="controls" src="res/test.mp4"></video></p>
+      <p>Real-time feed and marketplace of OCUR items</p>
+      <p><a class="waves-effect waves-light btn blue-grey lighten-2 blue-grey-text text-darken-2" onclick="showDoc('README');" style="display:flex;justify-content:space-between;"><span>📄</span><span>Read More</span></a></p></div></div>
+	
+	<div class="card hoverable" style="border-radius:12px;">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img id="ur-land" class="activator" src="res/img/ur-land.png" style="width:240px; height:240px; object-fit:cover;border-radius:12px 12px 0px 0px;"></div>
+    <div class="card-content">
+      <span class="card-title activator fonter" style="font-size:20px;">🪨&nbsp;&nbsp;UR.Land<i class="material-icons right">more_vert</i></span>
+      <p style="padding-top:8px;"><a class="waves-effect waves-light btn red lighten-3 grey-text text-darken-3" style="width:150px;display:flex;justify-content:space-between;" onclick="openInNewTab('https://ocur.app');"><span>🗿</span><span>Claim Icon</span></a></p></div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4" style="font-size:18px;">🧭&nbsp;&nbsp;Explore now<i class="material-icons right">close</i></span>
+      <p><video style="width:100%; height:100px; object-fit:cover;border-radius:2px;" class="z-depth-1" controls="controls" src="res/test.mp4"></video></p>
+      <p>Real-time feed and marketplace of OCUR items</p>
+      <p><a class="waves-effect waves-light btn blue-grey lighten-2 blue-grey-text text-darken-2" onclick="showDoc('README');" style="display:flex;justify-content:space-between;"><span>📄</span><span>Read More</span></a></p></div></div>
+      
+    <div class="card hoverable" style="border-radius:12px;">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img id="ur-land" class="activator" src="res/img/nfnth-com.png" style="width:240px; height:240px; object-fit:cover;border-radius:12px 12px 0px 0px;"></div>
+    <div class="card-content">
+      <span class="card-title activator fonter" style="font-size:20px;">🪨&nbsp;&nbsp;nfnth.com<i class="material-icons right">more_vert</i></span>
+      <p style="padding-top:8px;"><a class="waves-effect waves-light btn red lighten-3 grey-text text-darken-3" style="width:150px;display:flex;justify-content:space-between;" onclick="openInNewTab('https://ocur.app');"><span>📦</span><span>Shop Gear</span></a></p></div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4" style="font-size:18px;">🧭&nbsp;&nbsp;Explore now<i class="material-icons right">close</i></span>
+      <p><video style="width:100%; height:100px; object-fit:cover;border-radius:2px;" class="z-depth-1" controls="controls" src="res/test.mp4"></video></p>
+      <p>Real-time feed and marketplace of OCUR items</p>
+      <p><a class="waves-effect waves-light btn blue-grey lighten-2 blue-grey-text text-darken-2" onclick="showDoc('README');" style="display:flex;justify-content:space-between;"><span>📄</span><span>Read More</span></a></p></div></div>
+    	
+	<div class="card hoverable" style="border-radius:12px;">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img id="1950-app" class="activator" src="res/img/1950-app.png" style="width:240px; height:240px; object-fit:cover;border-radius:12px 12px 0px 0px;"></div>
+    <div class="card-content">
+      <span class="card-title activator fonter" style="font-size:20px;">🪨&nbsp;&nbsp;1950.app<i class="material-icons right">more_vert</i></span>
+      <p style="padding-top:8px;"><a class="waves-effect waves-light btn red lighten-2 grey-text text-darken-3" style="width:150px;display:flex;justify-content:space-between;" onclick="openInNewTab('https://ocur.app');"><span>🏪</span><span>Rent Room</span></a></p></div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4" style="font-size:18px;">🧭&nbsp;&nbsp;Explore now<i class="material-icons right">close</i></span>
+      <p><video style="width:100%; height:100px; object-fit:cover;border-radius:2px;" class="z-depth-1" controls="controls" src="res/test.mp4"></video></p>
+      <p>Real-time feed and marketplace of OCUR items</p>
+      <p><a class="waves-effect waves-light btn blue-grey lighten-2 blue-grey-text text-darken-2" onclick="showDoc('README');" style="display:flex;justify-content:space-between;"><span>📄</span><span>Read More</span></a></p></div></div></div></div>
+
 	<!-- list -->
-	<div id="lister" class="content loader pane scale-transition scale-out" style="overflow-y: auto; height: 130%;">
+	<div id="lister" class="content loader pane scale-transition scale-out" style="overflow-y: auto; height: 115%;">
+		<div class="fixed-action-btn" style="bottom:25%;">
+		  <a class="btn-floating btn-large" style="background-color:indianred;display:flex;justify-content:center;align-items:center;font-size:20px;cursor:pointer;">📝</a><ul>
+			<li><a class="btn-floating grey lighten-3" onclick="$('#modal-map').modal('open');">🛰️</a></li>
+			<li><a class="btn-floating grey lighten-3" onclick="$('#modal-address').modal('open'); searcher();">🏠</a></li>
+			<li><a class="btn-floating grey lighten-3">📍</a></li>
+			<li><a class="btn-floating red lighten-3" onclick="$('#modal-list').modal('open');" >📄</a></li>
+			<li><a class="btn-floating red lighten-3" onclick="$('#modal-editor').modal('open');" >✏️</a></li></ul></div>
 		<div id="lists" style="width:100%; height:100%;"></div></div>
 	
 	<!-- map -->
@@ -140,36 +230,27 @@
 		<input type="text" class="datepicker" /></div>
 			 
 			 
-	<div id="emojier" class="content loader pane scale-transition scale-out" style="overflow-y: auto; width:100%;height:100%;margin-top:90px;">
+	<div id="emojier" class="content loader pane scale-transition scale-out" style="overflow-y: auto; width:100%;height:100%;margin-top:80px;">
 			<div class="z-depth-2" style="width:100%;display:flex;align-items:center;justify-content:space-evenly;padding:24px; background-color:ghostwhite; flex-direction:column;">
 				<div><emoji-picker style="border-radius:8px;"></emoji-picker></div></div>
+				<div id="resulter" style="margin-top:48px;">No search results.</div></div>
+				
+	<!-- game -->
+	<div id="gamer" class="content loader pane scale-transition scale-out" style="overflow-y: auto; width:100%;height:100%;margin-top:90px;">
+			<div class="z-depth-2" style="width:100%;display:flex;align-items:center;justify-content:space-evenly;padding:24px; background-color:ghostwhite; flex-direction:column;">
+				<div>Card Game</div></div>
 				<div id="resulter" style="margin-top:48px;">No search results.</div></div>
 	  
 </div>
 
-
-<!-- dialog -->
-<div id="modal1" class="modal bottom-sheet content loader"><div id="domain-info" class="modal-content grey lighten-4" style="box-shadow: 1px 18px 24px 1px inset cornsilk" ></div></div>
-
-<div id="modal2" class="modal">
-    <div class="modal-content">
-	    <div style="display:flex;align-items:center;justify-content:center;"><img src="res/img/seal3.png" style="height:48px;width:48px;" /><p>OCUR Console</p></div></div>
-	<div class="modal-footer" style="display:flex;justify-content:space-evenly;">
-		<a href="#!" class="modal-close waves-effect waves-light btn red" style="width:120px; display: flex; justify-content: space-between;" onclick="showView('carder');">🎺<span class="hide-on-med-and-down">&nbsp;&nbsp;War!</span></a><input type="number" value="1" min="1" max="999">
-		<a href="#!" class="modal-close waves-effect waves-light btn amber" style="width:120px; display: flex; justify-content: space-between;" onclick="showView('slider');">🃏<span class="hide-on-med-and-down">&nbsp;&nbsp;Deck</span></a>
-		<a href="#!" class="modal-close waves-effect waves-light btn green" style="width:120px; display: flex; justify-content: space-between;" onclick="showView('lister');">🗒️<span class="hide-on-med-and-down">&nbsp;&nbsp;Notepad</span></a>
-		<a href="#!" class="modal-close waves-effect waves-light blue btn" style="width:120px; display: flex; justify-content: space-between;" onclick="showView('mapper');">🗺️<span class="hide-on-med-and-down">&nbsp;&nbsp;Map</span></a></div></div>
-
 <!-- template -->
 <ul id='dropdown-tool' class='dropdown-content' style="max-height:none;">
-	<li><a href="#!" onclick="showView('lister');" ><span>📜</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Deed Maker</span></a></li>
-	<li><a href="#!" onclick="showVieww('charter'); openMap();"><span>🗺️</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Map Editor</span></a></li>
+	<li><a href="#!" onclick="showView('lister');" ><span>📜</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Note Editor</span></a></li>
+	<li><a href="#!" onclick="showView('charter'); openMap();"><span>🗺️</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Map Builder</span></a></li>
 	<li style="margin-top:0;"class="divider" tabindex="-1"></li>
-    
-    <li><a href="#!" onclick="$('#modal-settings').modal('open');"><span>🪟</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Scene Builder</span></a></li>
-    
+    <li><a href="#!" onclick="$('#modal-room').modal('open');"><span>🪟</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Room Maker</span></a></li>
     <li style="margin-top:0;"class="divider" tabindex="-1"></li>
-    <li><a href="#!" onclick="showDoc('PLANME');" ><span>🃏️</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Play Cards</span></a></li></ul>
+    <li><a href="#!" onclick="showView('gamer');" ><span>🃏️</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>WAR!</span></a></li></ul>
 
 <ul id='dropdown-open' class='dropdown-content'>
     	<li><a href="#!" onclick="opens.sort(openAZ); showList('open');">Name&nbsp;&nbsp; &#8595;</a></li><li><a href="#!" onclick="opens.sort(openZA); showList('open');">Name&nbsp;&nbsp; &#8593;</a></li>
@@ -177,7 +258,6 @@
     	<li><a href="#!" onclick="opens.sort(open90); showList('open');">Count&nbsp;&nbsp; &#8595;</a></li><li><a href="#!" onclick="opens.sort(open09); showList('open');">Count&nbsp;&nbsp; &#8593;</a></li>
 	<li style="margin-top:0;" class="divider" tabindex="-1"></li>
 	<li><a href="#!" onclick="opens.sort(openaz); showList('open');">Color&nbsp;&nbsp; &#8595;</a></li><li><a href="#!" onclick="opens.sort(openza); showList('open');">Color&nbsp;&nbsp; &#8593;</a></li></ul>
-
 <ul id='dropdown-domain' class='dropdown-content'>
     	<li><a href="#!" onclick="domains.sort(domainAZ); showList('domain');">Name &#8595;</a></li><li><a href="#!" onclick="domains.sort(domainZA); showList('domain');">Name &#8593;</a></li>
     	<li style="margin-top:0;"class="divider" tabindex="-1"></li>
@@ -185,12 +265,229 @@
 	<li style="margin-top:0;" class="divider" tabindex="-1"></li>
 	<li><a href="#!" onclick="domains.sort(domain09); showList('domain');">Price &#8595;</a></li><li><a href="#!" onclick="domains.sort(domain90); showList('domain');">Price &#8593;</a></li></ul>
 
-<ul id='dropdown-toolx' class='dropdown-content'>
-    	<li><a href="#!" onclick="domains.sort(domainAZ); showList('domain');">Name &#8595;</a></li><li><a href="#!" onclick="domains.sort(domainZA); showList('domain');">Name &#8593;</a></li>
+<!--
+<ul id='dropdown-note' class='dropdown-content' style="max-height:none;">
+    	<li><a href="#!" onclick="$('#modal-editor').modal('open')" class="action-menu"><span>Text</span><span>📝</span></a></li><li><a href="#!" onclick="$('#preview').trigger('click');" class="action-menu"><span>Image</span><span>📷</span></a></li></ul>
+<ul id='dropdown-mark' class='dropdown-content' style="max-height:none;">
+    	<li><a href="#!" onclick="mapAdd();" class="action-menu"><span>📌</span><span>Pin</span></a></li><li style="margin-top:0;"class="divider" tabindex="-1"></li>
+    	<li><a href="#!" onclick="$('#modal-address').modal('open'); searcher();" class="action-menu"><span>🏠</span><span>Address</span></a></li>
+    	<li><a href="#!" onclick="$('#modal-address').modal('open'); searcher();" class="action-menu"><span>🚐</span><span>Route</span></a></li>
+    	<li style="margin-top:0;"class="divider" tabindex="-1"></li><li><a href="#!" onclick="$('#modal-track').modal('open'); " class="action-menu"><span>🛰️</span><span>Track</span></a></li></ul>
+    	
+<ul id='dropdown-map' class='dropdown-content' style="max-height:none;">
+		<li><a href="#!" onclick="$('#modal-editor').modal('open'); ;" class="action-menu"><span>Note</span><span>📄</span></a></li>
+		<li style="margin-top:0;"class="divider" tabindex="-1"></li>
+    	<li><a href="#!" onclick="mapAdd();" class="action-menu"><span>Pin</span><span>📌</span></a></li>
+    	<li><a href="#!" onclick="$('#modal-address').modal('open'); searcher();" class="action-menu"><span>Find ...</span><span>🔦</span></a></li>
     	<li style="margin-top:0;"class="divider" tabindex="-1"></li>
-    	<li><a href="#!" onclick="domains.sort(domainaz); showList('domain');">Count &#8595;</a></li><li><a href="#!" onclick="domains.sort(domainza); showList('domain');">count &#8593;</a></li>
-	<li style="margin-top:0;" class="divider" tabindex="-1"></li>
-	<li><a href="#!" onclick="domains.sort(domain09); showList('domain');">Price &#8595;</a></li><li><a href="#!" onclick="domains.sort(domain90); showList('domain');">Price &#8593;</a></li></ul>
+    	<li><a href="#!" onclick="$('#modal-track').modal('open'); ;" class="action-menu"><span>Track ...</span><span>📟</span></a></li></ul>
+<ul id='dropdown-file' class='dropdown-content' style="max-height:none;">
+    	<li><a href="#!" onclick="$('#modal-editor').modal('open')" class="action-menu"><span>📎</span><span>Attach ...</span></a></li><li><a href="#!" onclick="$('#preview').trigger('click');" class="action-menu"><span>🗑️</span><span>Remove</span></a></li></ul>
+<ul id='dropdown-temp' class='dropdown-content' style="max-height:none;">
+    	<li><a href="#!" onclick="$('#modal-editor').modal('open')" class="action-menu"><span>🍲</span><span>Recipe</span></a></li><li><a href="#!" onclick="$('#preview').trigger('click');" class="action-menu"><span>🪧</span><span>For Sale</span></a></li></ul>
+    	
+<ul id='dropdown-sign' class='dropdown-content' style="max-height:none;">
+		<li><a href="#!" onclick="$('#modal-track').modal('open');" class="action-menu"><span>Confirm</span><span>🛰️</span></a></li><li style="margin-top:0;"class="divider" tabindex="-1"></li>
+    	<li><a href="#!" onclick="mapAdd();" class="action-menu"><span>Reset</span><span>📌</span></a></li><li><a href="#!" onclick="$('#modal-address').modal('open'); searcher();" class="action-menu"><span>Help</span><span>🏠</span></a></li></ul>-->
+
+<!-- dialog -->
+<div id="modal1" class="modal bottom-sheet content loader"><div id="domain-info" class="modal-content grey lighten-4" style="box-shadow: 1px 18px 24px 1px inset cornsilk" ></div></div>
+
+<div id="modal-list" class="modal bottom-sheet content loader"><div id="domain-info" class="modal-content grey lighten-4" style="box-shadow: 1px 18px 24px 1px inset cornsilk" >
+	<div id="lister" class="collection" style="overflow:scroll;width:100%;"><a class='collection-item'>No entries found.</a></div></div></div>
+
+
+<div id="modal-map" class="modal">
+    <div class="modal-content">
+		<div style="display:flex;width:100%;justify-content:center;margin-bottom:16px;"><a onclick="$('#modal-address').modal('close'); $('#modal-map').modal('close'); setMap('satellite', 'dark'); setTimeout(function() { markEdit(); }, 1000);" style="border-radius:8px; display: flex;justify-content: space-between;width:140px;" class="waves-effect waves-light blue lighten-4 btn" ><span>Locate</span>&nbsp;&nbsp;&nbsp;&nbsp;🛰️</a></div>
+		<div style="display: flex;justify-content: center;align-items: center; display: flex;margin-top:10px;flex-direction:column;">
+		<div class="row" style="margin:0;"><div class="input-field col s6"><input id="lat" type="number" min="-90" max="90" step="0.0001" value="45"><label for="lat">Latitude</label></div>
+		<div class="input-field col s6"><input id="long" type="number" min="-180" max="180" step="0.0001" value="105"><label for="long">Longitude</label></div></div></div></div>
+	<div class="modal-footer" style="margin-bottom:12px;display:flex;justify-content:space-evenly;">
+		<a onclick="$('#modal-address').modal('close'); $('#modal-map').modal('close'); setMap('satellite', 'dark'); setTimeout(function() { markEdit(); }, 1000);" style="border-radius:8px; display: flex;justify-content: space-between;width:140px;" class="waves-effect waves-light green lighten-4 btn" ><span>✔️</span><span>Confirm</span></a></div></div>
+		<!--
+<div id="modal-address" class="modal">
+    <div class="modal-content">
+		<div style="display: flex;justify-content: center;align-items: center; display: flex;margin-top:10px;flex-direction:column;">
+			<div class="row" style="margin:0;"><div id="geocoder" class="geocoder"></div></div>
+			<div class="row" style="margin:0;"><form class="col s12">
+				<div class="row"><div class="input-field col s12" style="margin-bottom:0px;"><mapbox-address-autofill>
+					<input id="auto-ad" class="input mb12" name="address" autocomplete="shipping address-line1" placeholder="Search ..."></mapbox-address-autofill></div></div></form></div>
+		<div class="row" ><div class="input-field col s12" style="margin:0px;"><textarea id="textarea1" class="materialize-textarea" rows="2"></textarea><label for="textarea1">Address</label></div></div></div></div>
+	<div class="modal-footer" style="margin-bottom:12px;display:flex;justify-content:space-evenly;">
+		<a onclick="$('#modal-address').modal('close'); $('#modal-map').modal('close'); setMap('satellite', 'dark'); setTimeout(function() { markEdit(); }, 1000);" style="border-radius:8px; display: flex;justify-content: space-between;width:140px;" class="waves-effect waves-light green lighten-4 btn" ><span>✔️</span><span>Confirm</span></a></div></div>
+
+<div id="modal-editor" class="modal">
+	<div class="modal-content">
+		<div class="row" style="margin:0;"><form class="col s12">
+				<div class="row"><div class="input-field col s12" style="margin-bottom:0px;">
+		<input type="text" class="datepicker" /></div></div></form></div>
+			<div class="row" style="display:flex; justify-content:center;">
+				<a id="dropdown-temper" href='#' data-target='dropdown-temp' class="btn blue-grey blue-grey-text text-darken-2 lighten-2 z-depth-1 waves-effect waves-light dropdown-trigger"  style="font-size:16px; width: 120px; border-radius:8px 0px 0px 8px; display:flex; justify-content:space-between;"><span>💼</span><span>Case</span></a>
+				<a id="dropdown-filer" href='#' data-target='dropdown-file' class="btn blue-grey blue-grey-text lighten-3 z-depth-1 waves-effect waves-light dropdown-trigger text-darken-2"  style="font-size:16px; border-radius: 0px 8px 8px 0px; width: 120px; justify-content:space-between; display:flex;" ><span>File</span><span>📁</span></a></div>
+		
+        	<div id="pad" class="z-depth-1" contentEditable="true" style="text-align:left; overflow-y: auto; width:90%; border:1px solid darkgrey; opacity:0.75; border-radius: 8px;padding: 12px;margin:auto;font-size:20px;height:240px; background-color:whitesmoke;white-space: pre;"></div></div>
+			
+		<div class="modal-footer" style="margin-bottom:12px;display:flex;justify-content:center;">
+			<div style="display:flex;align-items:center;justify-content:space-evenly;">
+				<a onclick="showPreview();" class="waves-effect waves-light btn blue lighten-2" style="width:140px;margin-right:12px;"><span class='edit-device'>📃</span><span>Preview</span></a>
+				<a onclick=" clearPad();" class="waves-effect waves-grey btn-flat"  >🗑️</a></div></div></div></div>
+
+<div id="modal-user" class="modal">
+    <div class="modal-content">
+		<div id="wait-user" style="opacity:0;">
+		 <div class="preloader-wrapper big active">
+    <div class="spinner-layer spinner-green-only">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div><div class="gap-patch">
+        <div class="circle"></div>
+      </div><div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
+<a onclick="submitUser();" style="border-radius:8px; display: flex;justify-content: space-between;width:160px;" class="waves-effect waves-light green lighten-2 btn  disabled modal-close" ><span>OK</span><span>✔️</span></a>
+		
+		</div>
+		<div id="form-user" style="display: flex;justify-content: center;align-items: center; display: flex;margin-top:10px;flex-direction:column;opacity:1;">
+			<div class="row" style="margin:0;display:flex;align-items:center;"><a id="tip-0" class="btn-flat tooltipped" onmouseout="hideTool(0);" onclick="showTool(0);" data-position="bottom" >ℹ️</a><div class="input-field col s12" onclick="showFocus(0);">
+				<input id="input-0" type="text" class="validate" style="text-transform: lowercase" onblur="checkUser();"><label id="label-0" for="user">Select username ...</label></div><div><span id="yes-user" class="spanner" style="position:absolute;">✅</span><span id="no-user" class="spanner">❌</span></div></div>
+			<div class="row" style="margin:0;display:flex;align-items:center;"><a id="tip-1" class="btn-flat tooltipped" onmouseout="hideTool(1);" onclick="showTool(1);" data-position="bottom" >ℹ️</a><div class="input-field col s12" onclick="showFocus(1);">
+				<input id="input-1" type="text" class="validate" onblur="checkPassword();"><label id="label-1" for="password">Enter password ...</label></div><div><span id="yes-password" class="spanner" style="position:absolute;">✅</span><span id="no-password" class="spanner">❌</span></div></div>
+			<div class="row" style="margin:0;display:flex;align-items:center;"><a id="tip-2" class="btn-flat tooltipped" style="opacity:0;" data-position="bottom" >ℹ️</a><div class="input-field col s12" onclick="showFocus(2);">
+				<input id="input-2" type="text" class="validate" disabled onblur="checkConfirm();"><label id="label-2" for="password2">Confirm password ...</label></div><div><span id="yes-confirm" class="spanner" style="position:absolute;">✅</span><span id="no-confirm" class="spanner">❌</span></div></div></div></div>
+	<div class="modal-footer" style="margin-bottom:12px;display:flex;justify-content:space-evenly;">
+		<a id="subber" onclick="submitUser();" style="border-radius:8px; display: flex;justify-content: space-between;width:160px;" class="waves-effect waves-light green lighten-2 btn  disabled" ><span>Create</span><span>🪪</span></a></div></div>
+		-->
+<div id="modal-sign" class="modal">
+    <div class="modal-content">
+		<div id="wait-sign" style="opacity:0;">
+		 <div class="preloader-wrapper big active">
+    <div class="spinner-layer spinner-green-only">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div><div class="gap-patch">
+        <div class="circle"></div>
+      </div><div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
+<a onclick="submitUser();" style="border-radius:8px; display: flex;justify-content: space-between;width:160px;" class="waves-effect waves-light green lighten-2 btn  disabled modal-close" ><span>OK</span><span>✔️</span></a>
+		
+		</div>
+		<div id="form-sign" style="display: flex;justify-content: center;align-items: center; display: flex;margin-top:10px;flex-direction:column;opacity:1;">
+			<div class="row" style="margin:0;display:flex;align-items:center;"><a id="tip-2" class="btn-flat tooltipped" onmouseout="hideTool(2);" onclick="showTool(2);" data-position="bottom" >ℹ️</a><div class="input-field col s12" onclick="showFocus(2);">
+				<input id="input-2" type="text" class="validate" style="text-transform: lowercase" onblur="checkUser();"><label id="label-2" for="user">Enter username ...</label></div><div><span id="yes-user" class="spanner" style="position:absolute;">✅</span><span id="no-user" class="spanner">❌</span></div></div>
+			<div class="row" style="margin:0;display:flex;align-items:center;"><a id="tip-3" class="btn-flat tooltipped" onmouseout="hideTool(3);" onclick="showTool(3);" data-position="bottom" >ℹ️</a><div class="input-field col s12" onclick="showFocus(3);">
+				<input id="input-4" type="text" class="validate" onblur="checkPassword();"><label id="label-4" for="password">Enter password ...</label></div><div><span id="yes-password" class="spanner" style="position:absolute;">✅</span><span id="no-password" class="spanner">❌</span></div></div></div></div>
+	<div class="modal-footer" style="margin-bottom:12px;display:flex;justify-content:space-evenly;">
+		<a id="subber" onclick="submitUser();" style="border-radius:8px; display: flex;justify-content: space-between;width:160px;" class="waves-effect waves-light green lighten-2 btn  disabled" ><span>Sign In</span><span>✔️</span></a></div></div>
+		
+<div id="modal-pass" class="modal">
+    <div class="modal-content">
+		<div id="wait-sign" style="opacity:0;">
+		 <div class="preloader-wrapper big active">
+    <div class="spinner-layer spinner-green-only">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div><div class="gap-patch">
+        <div class="circle"></div>
+      </div><div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
+<a onclick="submitUser();" style="border-radius:8px; display: flex;justify-content: space-between;width:160px;" class="waves-effect waves-light green lighten-2 btn  disabled modal-close" ><span>OK</span><span>✔️</span></a>
+		
+		</div>
+		<div id="form-sign" style="display: flex;justify-content: center;align-items: center; display: flex;margin-top:10px;flex-direction:column;opacity:1;">
+			<div class="row" style="margin:0;display:flex;align-items:center;"><a id="tip-2" class="btn-flat tooltipped" onmouseout="hideTool(2);" onclick="showTool(2);" data-position="bottom" >ℹ️</a><div class="input-field col s12" onclick="showFocus(2);">
+				<input id="input-2" type="text" class="validate" style="text-transform: lowercase" onblur="checkUser();"><label id="label-2" for="user">Enter username ...</label></div><div><span id="yes-user" class="spanner" style="position:absolute;">✅</span><span id="no-user" class="spanner">❌</span></div></div>
+			<div class="row" style="margin:0;display:flex;align-items:center;"><a id="tip-3" class="btn-flat tooltipped" onmouseout="hideTool(3);" onclick="showTool(3);" data-position="bottom" >ℹ️</a><div class="input-field col s12" onclick="showFocus(3);">
+				<input id="input-4" type="text" class="validate" onblur="checkPassword();"><label id="label-4" for="password">Enter password ...</label></div><div><span id="yes-password" class="spanner" style="position:absolute;">✅</span><span id="no-password" class="spanner">❌</span></div></div></div></div>
+	<div class="modal-footer" style="margin-bottom:12px;display:flex;justify-content:space-evenly;">
+		<a id="subber" onclick="submitUser();" style="border-radius:8px; display: flex;justify-content: space-between;width:160px;" class="waves-effect waves-light green lighten-2 btn  disabled" ><span>Sign In</span><span>✔️</span></a></div></div>
+		
+<div id="modal-cart" class="modal bottom-sheet content loader"><div class="modal-content grey lighten-4" style="box-shadow: 1px 18px 24px 1px inset cornsilk" >
+	<div><span id="stamper" style="margin:12px;">OCUR #1910 | 2023.03.02@11:39:28</span><br/><img id="thumb" onclick="$('#preview').trigger('click');" class="z-depth-1" style="width:25%; max-width:240px; max-height:240px; object-fit:cover; border-radius:12px; margin-top:12px;" /></div>
+	<div id="show-progress" class="progress" ><div class="indeterminate"></div></div><p id="post-status">Posting item now...</p>
+	<div style="width:100%; height:48px;display:flex;justify-content:center;margin-top:12px;"><a class=" z-depth-1 waves-effect waves-light btn-flat" onclick="outlineStart(this);" style="margin-right:12px; border-radius:8px;">🛰️</a><a class=" z-depth-1 waves-effect waves-light btn red lighten-4" onclick="$('#modal-map').modal('close'); mapAdd();" style="border-radius:8px 0px 0px 8px; width:70px;display:flex;justify-content:space-between;"><span>📍</span><span>Pin</span></a><a class=" z-depth-1 waves-effect waves-light btn amber lighten-4"style="width:140px; border-radius:0px 8px 8px 0px; display:flex; justify-content:space-between;" onclick="$('#modal-address').modal('open'); searcher();"><span>Search</span><span>🏠</span></a></div></div></div>
+
+<div id="modal-note" class="modal bottom-sheet content loader"><div class="modal-content grey lighten-4" style="box-shadow: 1px 18px 24px 1px inset cornsilk" >
+	<div style="display:flex;align-items:center;justify-content:center;padding-top:12px;"><select id="note-template" class="sider" onchange="noteSelect();"></select></div>
+	<div style="display:flex;align-items:center;justify-content:center;padding-top:12px;"><span id="notes"></span></div>
+	<div style="width:100%; height:48px;display:flex;justify-content:center;margin-top:12px;"><a class=" z-depth-1 waves-effect waves-light btn green lighten-3" onclick="$('#modal-map').modal('close'); mapAdd();" style="border-radius:8px 0px 0px 8px; width:100px;display:flex;justify-content:space-between;"><span>➕</span><span>New</span></a><a class=" z-depth-1 waves-effect waves-light btn green lighten-4"style="width:100px; border-radius:0px 8px 8px 0px; display:flex; justify-content:space-between;" onclick="$('#modal-address').modal('open'); searcher();"><span>Edit</span><span>📝</span></a><a class=" z-depth-1 waves-effect waves-light btn-flat" onclick="outlineStart(this);" style="margin-right:12px; border-radius:8px;">🗑️</a></div></div></div>
+	
+<div id="modal-profile" class="modal bottom-sheet content loader"><div class="modal-content grey lighten-4" style="box-shadow: 1px 18px 24px 1px inset cornsilk" >
+	<div><span id="stamper" style="margin:12px;">OCUR #1910 | 2023.03.02@11:39:28</span><br/><img id="thumb" onclick="$('#preview').trigger('click');" class="z-depth-1" style="width:25%; max-width:240px; max-height:240px; object-fit:cover; border-radius:12px; margin-top:12px;" /></div>
+	<div id="show-progress" class="progress" ><div class="indeterminate"></div></div><p id="post-status">Posting item now...</p>
+	<div style="width:100%; height:48px;display:flex;justify-content:center;margin-top:12px;"><a class=" z-depth-1 waves-effect waves-light btn-flat" onclick="outlineStart(this);" style="margin-right:12px; border-radius:8px;">🛰️</a><a class=" z-depth-1 waves-effect waves-light btn red lighten-4" onclick="$('#modal-map').modal('close'); mapAdd();" style="border-radius:8px 0px 0px 8px; width:70px;display:flex;justify-content:space-between;"><span>📍</span><span>Pin</span></a><a class=" z-depth-1 waves-effect waves-light btn amber lighten-4"style="width:140px; border-radius:0px 8px 8px 0px; display:flex; justify-content:space-between;" onclick="$('#modal-address').modal('open'); searcher();"><span>Search</span><span>🏠</span></a></div></div></div>
+
+<div id="modal-track" class="modal">
+    <div class="modal-content">
+		<div style="display:flex;width:100%;justify-content:center;margin-bottom:16px;"><a onclick="$('#modal-address').modal('close'); $('#modal-map').modal('close'); setMap('satellite', 'dark'); setTimeout(function() { markEdit(); }, 1000);" style="border-radius:8px; display: flex;justify-content: space-between;width:140px;" class="waves-effect waves-light blue lighten-4 btn" ><span>Locate</span>&nbsp;&nbsp;&nbsp;&nbsp;🛰️</a></div>
+		<div style="display: flex;justify-content: center;align-items: center; display: flex;margin-top:10px;flex-direction:column;">
+		<div class="row" style="margin:0;"><div class="input-field col s6"><input id="lat" type="number" min="-90" max="90" step="0.0001" value="45"><label for="lat">Latitude</label></div>
+		<div class="input-field col s6"><input id="long" type="number" min="-180" max="180" step="0.0001" value="105"><label for="long">Longitude</label></div></div></div></div>
+	<div class="modal-footer" style="margin-bottom:12px;display:flex;justify-content:space-evenly;">
+		<a onclick="$('#modal-address').modal('close'); $('#modal-map').modal('close'); setMap('satellite', 'dark'); setTimeout(function() { markEdit(); }, 1000);" style="border-radius:8px; display: flex;justify-content: space-between;width:140px;" class="waves-effect waves-light green lighten-4 btn" ><span>✔️</span><span>Confirm</span></a></div></div>
+		
+<div id="modal-address" class="modal">
+    <div class="modal-content">
+		<div style="display: flex;justify-content: center;align-items: center; display: flex;margin-top:10px;flex-direction:column;">
+			<div class="row" style="margin:0;"><div id="geocoder" class="geocoder"></div></div>
+			<div class="row" style="margin:0;"><form class="col s12">
+				<div class="row"><div class="input-field col s12" style="margin-bottom:0px;"><mapbox-address-autofill>
+					<input id="auto-ad" class="input mb12" name="address" autocomplete="shipping address-line1" placeholder="Search ..."></mapbox-address-autofill></div></div></form></div>
+		<div class="row" ><div class="input-field col s12" style="margin:0px;"><textarea id="textarea1" class="materialize-textarea" rows="2"></textarea><label for="textarea1">Address</label></div></div></div></div>
+	<div class="modal-footer" style="margin-bottom:12px;display:flex;justify-content:space-evenly;">
+		<a onclick="$('#modal-address').modal('close'); $('#modal-map').modal('close'); setMap('satellite', 'dark'); setTimeout(function() { markEdit(); }, 1000);" style="border-radius:8px; display: flex;justify-content: space-between;width:140px;" class="waves-effect waves-light green lighten-4 btn" ><span>✔️</span><span>Confirm</span></a></div></div>
+		
+<div id="modal-user" class="modal">
+    <div class="modal-content">
+		<div style="display: flex;justify-content: center;align-items: center; display: flex;margin-top:10px;flex-direction:column;">
+			<div class="row" style="margin:0;"><div class="input-field col s12">
+				<input id="email" type="text" class="validate" onchange="checkUser();"><label for="email">Email</label></div></div>
+			<div class="row" style="margin:0;"><div class="input-field col s12">
+				<input id="password" type="text" class="validate"><label for="password">Password</label></div></div>
+			<div class="row" style="margin:0;"><div class="input-field col s12">
+				<input id="password2" type="text" class="validate" disabled><label for="password2">Re-enter Password</label></div></div></div></div>
+	<div class="modal-footer" style="margin-bottom:12px;display:flex;justify-content:space-evenly;">
+		<a id="dropdown-signer" href='#' data-target='dropdown-sign' class="btn blue-grey blue-grey-text lighten-3 waves-effect waves-light dropdown-trigger text-darken-2"  style="font-size:16px; border-radius: 8px; justify-content:space-between; display:flex;" ><span>📁</span></a>
+		<a onclick="$('#modal-address').modal('close'); $('#modal-map').modal('close'); setMap('satellite', 'dark'); setTimeout(function() { markEdit(); }, 1000);" style="border-radius:8px; display: flex;justify-content: space-between;width:140px;" class="waves-effect waves-light green lighten-4 btn" ><span>✔️</span><span>Confirm</span></a></div></div>
+	
+<div id="modal-editor" class="modal">
+	<div class="modal-content">
+			<div class="row" style="display:flex; justify-content:center;">
+				<a id="dropdown-temper" href='#' data-target='dropdown-temp' class="btn blue-grey blue-grey-text text-darken-2 lighten-2 z-depth-1 waves-effect waves-light dropdown-trigger"  style="font-size:16px; width: 120px; border-radius:8px 0px 0px 8px; display:flex; justify-content:space-between;"><span>💼</span><span>Case</span></a>
+				<a id="dropdown-filer" href='#' data-target='dropdown-file' class="btn blue-grey blue-grey-text lighten-3 z-depth-1 waves-effect waves-light dropdown-trigger text-darken-2"  style="font-size:16px; border-radius: 0px 8px 8px 0px; width: 120px; justify-content:space-between; display:flex;" ><span>File</span><span>📁</span></a></div>
+		
+        	<div id="pad" class="z-depth-1" contentEditable="true" style="text-align:left; overflow-y: auto; width:90%; border:1px solid darkgrey; opacity:0.75; border-radius: 8px;padding: 12px;margin:auto;font-size:20px;height:240px; background-color:whitesmoke;white-space: pre;"></div></div>
+			
+		<div class="modal-footer" style="margin-bottom:12px;display:flex;justify-content:center;">
+			<div style="display:flex;align-items:center;justify-content:space-evenly;">
+				<a onclick="showPreview();" class="waves-effect waves-light btn blue lighten-2" style="width:140px;margin-right:12px;"><span class='edit-device'>📃</span><span>Preview</span></a>
+				<a onclick=" clearPad();" class="waves-effect waves-grey btn-flat"  >🗑️</a></div></div></div></div>
+
+
+
+<div id="modal-shop" class="modal"><!--<i class="material-icons left">calculate</i>-->
+    <div class="modal-content">
+		<div style="width:100%; display:flex; justify-content:center;">
+			<div  id="stats" class="z-depth-2" style="position:fixed; bottom:20%; background-color: floralwhite;padding: 12px;border-radius: 12px; font-size: 24px;  color: goldenrod;border:solid 2px darkgoldenrod; justify-content:center; display:flex; flex-direction:column; align-items:center;">No wallet connected.</div></div>
+
+		
+		<div style="margin-top:48px;text-align:center;">
+			<p>My LOCUR Balance = <span id="locur"></span> OCUR</p>
+			<p>Current Status = <span id="access"></span></p></div></div>
+	<div class="modal-footer" style="margin-bottom:12px;padding-right:24px;display:flex;justify-content:center;">
+		<a onclick="trade(1000);" style="border-radius:8px; display: flex;justify-content: space-between;" class="waves-effect waves-light green lighten-3 btn modal-close" ><span>Deposit LOCUR</span>&nbsp;&nbsp;&nbsp;&nbsp;💵</a></div></div>
+
+<div id="modal-help" class="modal"><!-- datetime, IP, rando to QR sign-in with camera video posts? -->
+    <div class="modal-content"></div>
+	<div class="modal-footer" style="margin-bottom:12px;padding-right:24px;display:flex;justify-content:center;"></div></div>
 
 <!--<div id="somedialog1" class="dialog print-help hide-scrollbar" style="z-index:99;"><div id="someoverlay" class="dialog__overlay hide-scrollbar"></div><div class="dialog__content print-help hide-scrollbar" style="width: 90%; height:40%; text-align:left;overflow:auto; padding:24px;"><div class="morph-shape" data-morph-open="M0,0h80c0,0,0,9.977,0,29.834c0,19.945,0,30.249,0,30.249H0c0,0,0-10.055,0-30.332C0,8.219,0,0,0,0z" data-morph-close="M0,29.75h80c0,0-3.083,0.014-3.083,0.041c0,0.028,3.083,0.042,3.083,0.042H0c0,0,3.084-0.014,3.084-0.042
 											C3.084,29.762,0,29.75,0,29.75z"><svg id='test-svg' xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 80 60" preserveAspectRatio="none"><path d="M0,29.75h80c0,0-3.083,0.014-3.083,0.041c0,0.028,3.083,0.042,3.083,0.042H0c0,0,3.084-0.014,3.084-0.042
@@ -201,7 +498,7 @@
 											C3.084,29.762,0,29.75,0,29.75z"></path></svg></div><div id="dialog-inner2" class="dialog-inner print-help hide-scrollbar" style="overflow:auto;"></div></div></div>
 
 <script>
-
+//document.getElementById('booker').click();
 function startup() { $('img').on('dragstart', function(evt) { return false; }); showView("slider"); $(".loader").css("visibility", "visible"); setCards();
 	$('.setter').click(function () { $(this).parent().toggleClass('expand');     $('.extra').toggleClass('removed'); $('.extra').toggleClass('added');  }); }
 
@@ -218,7 +515,7 @@ function setPage() { var page = window.location.href.replace('https://','').repl
 	$("#brand").html(page); //setImages();
     switch(page){ 
         case 'nfnth.com': document.title = "OCUR • nf/nth"; break; //showView('loader'); showDoc('PLANME'); break;
-        case 'ocur.app': document.title = "OCUR • map  token"; showView('charter'); break;     
+        case 'ocur.app': document.title = "OCUR • map token"; showView('charter'); break;     
         //case 'ur.land': document.title = "UR.Land • dee*d/omain"; showView('slider'); changeCard();changeCard(); setTimeout(function() { changeCard(); }, 2000); break; //showView('charter');  getParameter(); break;
 } }
 
@@ -258,6 +555,7 @@ async function initial() { showFav(); setPage();
  //$('.fixed-action-btn').floatingActionButton({ hoverEnabled: false });
 
 initial(); //document.addEventListener('DOMContentLoaded', function() {  }); 
+
 
 </script>
 <style>
