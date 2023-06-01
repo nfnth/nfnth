@@ -1,30 +1,5 @@
 
-//mapbox.mapbox-bathymetry-v2 (use with streets v8?)
-//terrain?
-//mapbox.transit-v2
 
-
-// A GeoJSON object with a LineString route from the White House to Capitol Hill
-const geojson = {'type': 'FeatureCollection','features': [{'type': 'Feature','geometry': {'type': 'LineString','properties': {},'coordinates': [[-77.0366048812866, 38.89873175227713],[-77.03364372253417, 38.89876515143842],[-77.03364372253417, 38.89549195896866],[-77.02982425689697, 38.89549195896866],[-77.02400922775269, 38.89387200688839],[-77.01519012451172, 38.891416957534204],[-77.01521158218382, 38.892068305429156],[-77.00813055038452, 38.892051604275686],[-77.00832366943358, 38.89143365883688],[-77.00818419456482, 38.89082405874451],[-77.00815200805664, 38.88989712255097]]}}]};
- 
-const map = new mapboxgl.Map({
-container: 'map',
-// Choose from Mapbox's core styles, or make your own style with Mapbox Studio
-style: 'mapbox://styles/mapbox/light-v11',center: [-77.0214, 38.897],zoom: 12});
- 
-map.on('load', () => {map.addSource('LineString', {'type': 'geojson','data': geojson});
-map.addLayer({'id': 'LineString','type': 'line','source': 'LineString','layout': {'line-join': 'round','line-cap': 'round'},'paint': {'line-color': '#BF93E4','line-width': 5}});
- 
-document.getElementById('zoomto').addEventListener('click', () => {
-// Geographic coordinates of the LineString
-const coordinates = geojson.features[0].geometry.coordinates;
- 
-// Create a 'LngLatBounds' with both corners at the first coordinate.
-const bounds = new mapboxgl.LngLatBounds(coordinates[0],coordinates[0]);
- 
-// Extend the 'LngLatBounds' to include every coordinate in the bounds result.
-for (const coord of coordinates) {bounds.extend(coord);}
-map.fitBounds(bounds, {padding: 20});});});
 
 mapboxgl.accessToken = "pk.eyJ1IjoibmZudGgiLCJhIjoiY2tweW1rNXlsMGFpYzJwcGt1cHh6dmxzcyJ9.ZJaFrGpPDv5froWZMLXXYQ";
 
@@ -37,7 +12,7 @@ function setMap() { if (charter != "") { base = beforeMap.getCenter(); }
 		case 'street': beforeStyle = 'mapbox://styles/mapbox/streets-v12'; break;
 		case 'outdoor': beforeStyle = 'mapbox://styles/mapbox/outdoors-v12'; break;
 		case 'satellite': beforeStyle = 'mapbox://styles/mapbox/satellite-streets-v11'; break;
-		case 'light': beforeStyle = 'mapbox://styles/mapbox/light-v10'; break;
+		case 'light': beforeStyle = 'mapbox://styles/mapbox/light-v11'; break;
 		case 'dark': beforeStyle = 'mapbox://styles/mapbox/dark-v10'; break; }
 		//case 'terrain': beforeStyle = 'cjaudgl840gn32rnrepcb9b9g'; break; }
 	switch (rightMap) {
@@ -68,6 +43,26 @@ map.on('style.load', () => {
 
 
 setMap();  charter = new mapboxgl.Compare(beforeMap, afterMap, container, { });
+
+
+
+//mapbox.mapbox-bathymetry-v2 (use with streets v8?)
+//terrain?
+//mapbox.transit-v2
+
+/*
+const geojson = {'type': 'FeatureCollection','features': [{'type': 'Feature','geometry': {'type': 'LineString','properties': {},'coordinates': [[-77.0366048812866, 38.89873175227713],[-77.03364372253417, 38.89876515143842],[-77.03364372253417, 38.89549195896866],[-77.02982425689697, 38.89549195896866],[-77.02400922775269, 38.89387200688839],[-77.01519012451172, 38.891416957534204],[-77.01521158218382, 38.892068305429156],[-77.00813055038452, 38.892051604275686],[-77.00832366943358, 38.89143365883688],[-77.00818419456482, 38.89082405874451],[-77.00815200805664, 38.88989712255097]]}}]};
+ 
+map.on('load', () => {map.addSource('LineString', {'type': 'geojson','data': geojson});
+map.addLayer({'id': 'LineString','type': 'line','source': 'LineString','layout': {'line-join': 'round','line-cap': 'round'},'paint': {'line-color': '#BF93E4','line-width': 5}});
+ 
+document.getElementById('zoomto').addEventListener('click', () => {
+
+const coordinates = geojson.features[0].geometry.coordinates;
+const bounds = new mapboxgl.LngLatBounds(coordinates[0],coordinates[0]);
+
+for (const coord of coordinates) {bounds.extend(coord);}
+map.fitBounds(bounds, {padding: 20});});});
 
 const marker = new mapboxgl.Marker({draggable: true}).setLngLat(center).addTo(map);
 
@@ -100,8 +95,7 @@ var linestring = turf.lineString(router);
 
 //map.addSource('trace', {type: 'geojson',data: {'type': 'Feature','properties': {},'geometry': {'type': 'LineString','coordinates': JSON.parse(JSON.stringify(router))}}});
 //map.addLayer({type: 'line',source: 'trace',id: 'line',paint: {'line-color': 'black','line-width': 5},layout: {'line-cap': 'round','line-join': 'round'}});
-
-
+*/
 var mapControl = false;
 var locControl = new mapboxgl.GeolocateControl({ positionOptions: { enableHighAccuracy: true },trackUserLocation: true,showUserHeading: true}); 
 var navControl = new mapboxgl.NavigationControl({ showCompass: true, showZoom: true, visualizePitch: true }); 
@@ -118,8 +112,6 @@ function sync (master, clones) { off(); moveToMapPosition(master, clones); on();
 on(); return function(){  off(); fns = []; maps = []; }; }
 
 
-
- 
 function showMap() { clearMarkers();
 	for (let a=0;a<currentContent.length;a++) { addMark(currentContent[a][0],currentContent[a][1],currentContent[a][2],currentContent[a][3],currentContent[a][4],currentContent[a][5],currentContent[a][6]); } currentMarkers[currentToggle].togglePopup(); }
 
