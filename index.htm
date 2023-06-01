@@ -121,7 +121,32 @@
 		<ul class="dots"><li onclick="changeCard();"><a class="btn-flat amber lighten-4"><i class="material-icons" style="color:goldenrod;">restart_alt</i></a></li></ul></div></div></div>
 
 	<!-- shop -->
-	<div id="shopper" class="content loader pane scale-transition scale-out" style="overflow-y: auto; height: 115%;width:100%;padding-top:24px; background: rgb(255,255,255);background: linear-gradient(156deg, rgba(255,255,255,1) 0%, rgba(245,205,205,1) 35%, rgba(242,129,129,1) 100%); "><div class="mobile-column" style="width:100%; display:flex;justify-content:center;margin:auto;align-items:center;">
+	<div id="shopper" class="content loader pane scale-transition scale-out" style="overflow-y: auto; height: 115%;width:100%;padding-top:24px; background: rgb(255,255,255);background: linear-gradient(156deg, rgba(255,255,255,1) 0%, rgba(245,205,205,1) 35%, rgba(242,129,129,1) 100%); ">
+		<div><div onclick="switchShop();" class="switch"><label>🗒️<input type="checkbox"><span class="lever"></span>🖼️</label></div></div>
+		
+		<div id="shop-list" class="mobile-column" style="width:100%; display:flex;justify-content:center;margin:auto;align-items:center; padding-bottom:120px;">
+		
+		
+  <ul class="collapsible">
+    <li>
+      <div class="collapsible-header">🔥&nbsp;&nbsp;Fire Stick<a class="waves-effect waves-light btn red lighten-5 grey-text text-darken-3" style="display:flex;justify-content:space-between;" onclick="openInNewTab('https://ocur.app');"><span>➕</span></a><a class="waves-effect waves-light btn red lighten-5 grey-text text-darken-3" style="display:flex;justify-content:space-between;" onclick="openInNewTab('https://ocur.app');"><span>➖</span></a></div>
+      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+    </li>
+    <li>
+      <div class="collapsible-header">🛢️&nbsp;&nbsp;Mini Canister</div>
+      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+    </li>
+  </ul>
+        
+		
+		</div>
+		
+		
+		<div id="shop-grid" class="mobile-column" style="width:100%; display:flex;justify-content:center;margin:auto;align-items:center; padding-bottom:120px;">
 	
 		<div class="card hoverable" style="border-radius:10px;">
 		<div class="card-image waves-effect waves-block waves-light">
@@ -133,7 +158,6 @@
 		  <span class="card-title grey-text text-darken-4" style="font-size:18px;">🔥&nbsp;&nbsp;Fire Stick<i class="material-icons right">close</i></span>
 		  <p><video style="width:100%; height:100px; object-fit:cover;border-radius:2px;" class="z-depth-1" controls="controls" src="res/test.mp4"></video></p>
 		  <p>Online journal to take notes and list objects.</p>
-		  <p><input type="number" value="1" min="1" max="999"></p>
 		  <p><a class="waves-effect waves-light btn blue-grey lighten-2 blue-grey-text text-darken-2" onclick="showDoc('README');" style="display:flex;justify-content:space-between;"><span>📄</span><span>Read More</span></a></p></div></div>
 		
 		<div class="card hoverable" style="border-radius:12px;">
@@ -142,8 +166,7 @@
 		<div class="card-content">
 		  <span class="card-title activator fonter" style="font-size:20px;">🛢️&nbsp;&nbsp;Mini Canister<i class="material-icons right">more_vert</i></span>
 		  <div style="padding-top:8px;display:flex;justify-content:center;align-items:center;"><div style="border-radius:50%;border:solid black 1px;background-color:ghostwhite;width:24px;height:24px;"></div><div style="border-radius:50%;border:solid black 1px;background-color:ghostwhite;width:24px;height:24px;"></div><div style="border-radius:50%;border:solid black 1px;background-color:ghostwhite;width:24px;height:24px;"></div><div style="border-radius:50%;border:solid black 1px;background-color:ghostwhite;width:24px;height:24px;"></div>
-		  <input style="width:36px;" type="number" value="0" min="0" max="99">
-		  <a class="waves-effect waves-light btn red lighten-5 grey-text text-darken-3" style="display:flex;justify-content:space-between;" onclick="openInNewTab('https://ocur.app');"><span>➕</span></a></div></div>
+		  <a class="waves-effect waves-light btn red lighten-5 grey-text text-darken-3" style="display:flex;justify-content:space-between;" onclick="openInNewTab('https://ocur.app');"><span>➕</span></a><a class="waves-effect waves-light btn red lighten-5 grey-text text-darken-3" style="display:flex;justify-content:space-between;" onclick="openInNewTab('https://ocur.app');"><span>➖</span></a></div></div>
 		<div class="card-reveal">
 		  <span class="card-title grey-text text-darken-4" style="font-size:18px;">🛢️&nbsp;&nbsp;Mini Canister<i class="material-icons right">close</i></span>
 		  <p><video style="width:100%; height:100px; object-fit:cover;border-radius:2px;" class="z-depth-1" controls="controls" src="res/test.mp4"></video></p>
@@ -175,6 +198,7 @@
 		  <p><a class="waves-effect waves-light btn blue-grey lighten-2 blue-grey-text text-darken-2" onclick="showDoc('README');" style="display:flex;justify-content:space-between;"><span>📄</span><span>Read More</span></a></p></div></div>
 	
 	</div></div>
+
 
 	<!-- list -->
 	<div id="lister" class="content loader pane scale-transition scale-out" style="overflow-y: auto; height: 115%;">
@@ -218,10 +242,11 @@
 <!-- template -->
 <ul id='dropdown-tool' class='dropdown-content' style="max-height:none;">
 	<li><a href="#!" onclick="showView('lister');" ><span>📜</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Note Editor</span></a></li>
-	<li><a href="#!" onclick="showView('charter'); openMap();"><span>🗺️</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Map Builder</span></a></li>
+	<li><a href="#!" onclick="showView('charter'); openMap();"><span>🗺️</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Map Maker</span></a></li>
 	<li style="margin-top:0;"class="divider" tabindex="-1"></li>
-    <li><a href="#!" onclick="$('#modal-room').modal('open');"><span>🪟</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Room Maker</span></a></li>
+    <li><a href="#!" onclick="$('#modal-room').modal('open');"><span>📦</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Box Builder</span></a></li>
     <li style="margin-top:0;"class="divider" tabindex="-1"></li>
+    <li><a href="#!" onclick="showView('shopper'); switchShop();" ><span>🃏️</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>WAR!</span></a></li>
     <li><a href="#!" onclick="showView('gamer');" ><span>🃏️</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>WAR!</span></a></li></ul>
 
 <ul id='dropdown-open' class='dropdown-content'>
@@ -470,6 +495,8 @@
 											C3.084,29.762,0,29.75,0,29.75z"></path></svg></div><div id="dialog-inner2" class="dialog-inner print-help hide-scrollbar" style="overflow:auto;"></div></div></div>
 
 <script>
+var shopList = true;
+function switchShop() { if (shopList) { $("#shop-list").show(); $("#shop-grid").hide(); shopList = false; } else { $("#shop-list").hide(); $("#shop-grid").show(); shopList = true; } }
 
 function startup() { $('img').on('dragstart', function(evt) { return false; }); showView("slider"); $(".loader").css("visibility", "visible"); setCards();
 	$('.setter').click(function () { $(this).parent().toggleClass('expand');     $('.extra').toggleClass('removed'); $('.extra').toggleClass('added');  }); }
@@ -526,7 +553,7 @@ async function initial() { showGear(); showFav(); setPage();
 	$('.tabs').tabs(); $('.modal').modal(); $('#deed-pane').sidenav({ edge: 'left' }); //, onCloseEnd: deedMap});
 	//$("#registry-open").css("height",(height - 120) + "px"); $("#registry-domain").css("height",(height - 120) + "px");
     //$('#doc-hide').dropdown({ constrainWidth: false, coverTrigger: false } ); //hover: true 
-    $('.fixed-action-btn').floatingActionButton({ hoverEnabled: false });
+    $('.fixed-action-btn').floatingActionButton({ hoverEnabled: false }); $('.collapsible').collapsible();
 	$('#dropdown-tooler').dropdown({ constrainWidth: false }); $('#dropdown-opener').dropdown({ constrainWidth: false }); $('#dropdown-domainer').dropdown({ constrainWidth: false });
     $("#mainer").css("opacity", 1); setTimeout(function() { $("#egger").fadeIn(); startup(); }, 2000 ); pullOpens();  }
   // $('.datepicker').datepicker({ autoClose: true, isRTL: false });
