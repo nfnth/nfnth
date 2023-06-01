@@ -1,4 +1,9 @@
 
+
+
+
+
+
 var widths = 1024; var xs = 4; var ws = widths/xs; var heights = 768; var ys = 3; var hs = heights/ys; //console.log(ws); console.log(hs);
 var fireEffectData = { frames: {
 		fire1: { frame: { x: (0*ws), y:(0*hs), w:ws, h:hs }, sourceSize: { w: ws, h: hs}, spriteSourceSize: { x: 0, y: 0, w: ws, h: hs } },
@@ -17,7 +22,45 @@ var fireEffectData = { frames: {
 	animations: {
 		fire: ['fire1','fire2','fire3','fire4','fire5','fire6','fire7','fire8','fire9','fire10'],
  } }
+ 
+widths = 312; xs = 12; var ws = widths/xs; heights = 288; ys = 8; hs = heights/ys; //console.log(ws); console.log(hs);
+var animalData = { frames: {
+		dogad1: { frame: { x: (0*ws), y:(0*hs), w:ws, h:hs }, sourceSize: { w: ws, h: hs}, spriteSourceSize: { x: 0, y: 0, w: ws, h: hs } },
+		dogad2: { frame: { x: (1*ws), y:(0*hs), w:ws, h:hs }, sourceSize: { w: ws, h: hs}, spriteSourceSize: { x: 0, y: 0, w: ws, h: hs } },
+		dogad3: { frame: { x: (2*ws), y:(0*hs), w:ws, h:hs }, sourceSize: { w: ws, h: hs}, spriteSourceSize: { x: 0, y: 0, w: ws, h: hs } },
+		
+		dogal1: { frame: { x: (0*ws), y:(1*hs), w:ws, h:hs }, sourceSize: { w: ws, h: hs}, spriteSourceSize: { x: 0, y: 0, w: ws, h: hs } },
+		dogal2: { frame: { x: (1*ws), y:(1*hs), w:ws, h:hs }, sourceSize: { w: ws, h: hs}, spriteSourceSize: { x: 0, y: 0, w: ws, h: hs } },
+		dogal3: { frame: { x: (2*ws), y:(1*hs), w:ws, h:hs }, sourceSize: { w: ws, h: hs}, spriteSourceSize: { x: 0, y: 0, w: ws, h: hs } },
+		
+		dogar1: { frame: { x: (0*ws), y:(2*hs), w:ws, h:hs }, sourceSize: { w: ws, h: hs}, spriteSourceSize: { x: 0, y: 0, w: ws, h: hs } },
+		dogar2: { frame: { x: (1*ws), y:(2*hs), w:ws, h:hs }, sourceSize: { w: ws, h: hs}, spriteSourceSize: { x: 0, y: 0, w: ws, h: hs } },
+		dogar3: { frame: { x: (2*ws), y:(2*hs), w:ws, h:hs }, sourceSize: { w: ws, h: hs}, spriteSourceSize: { x: 0, y: 0, w: ws, h: hs } },
+		
+		dogau1: { frame: { x: (0*ws), y:(3*hs), w:ws, h:hs }, sourceSize: { w: ws, h: hs}, spriteSourceSize: { x: 0, y: 0, w: ws, h: hs } },
+		dogau2: { frame: { x: (1*ws), y:(3*hs), w:ws, h:hs }, sourceSize: { w: ws, h: hs}, spriteSourceSize: { x: 0, y: 0, w: ws, h: hs } },
+		dogau3: { frame: { x: (2*ws), y:(3*hs), w:ws, h:hs }, sourceSize: { w: ws, h: hs}, spriteSourceSize: { x: 0, y: 0, w: ws, h: hs } },
+		
+		
+ },
+	meta: { image: 'res/img/game/sprite/animal/animals1.png', format: 'RGBA8888', size: { w: widths, h: heights }, scale: 1	},
+	animations: {
+		dogad: ['dogad1','dogad2','dogad3'], dogal: ['dogal1','dogal2','dogal3'], dogar: ['dogar1','dogar2','dogar3'], dogau: ['dogau1','dogau2','dogau3'],
+ } }
+ 
+ 
+ // add dogb, dogc, dogd, cata, catb,  catc, catd
+ // animals2/3/4/5 (different size!)
+ //... squirrel,hamster,rabbita,rabbitb,porcupine,raccoona,  raccoonb,fox
+ //... cowa, cowaba,cowb, cowbba,pig,pigba,goata,goatb
+ //...sheepa,sheepb,sheepc,sheepaba,sheepbba,sheepcba
+ //...deerfba,deerf,deermba,deerm,bearaba,beara,bearbba,bearb
+ 
+ 
+ 
+ 
 widths = 384; xs = 4; ws = widths/xs; heights = 96; ys = 1; hs = heights/ys; 
+
 
 var cyberData = { frames: {
 		idle1: { frame: { x: (0*ws), y:(0*hs), w:ws, h:hs }, sourceSize: { w: ws, h: hs}, spriteSourceSize: { x: 0, y: 0, w: ws, h: hs } },

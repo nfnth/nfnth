@@ -35,12 +35,12 @@ function setTile() {
 
 
  
-
+/*
 map.on('style.load', () => {
 
 
 });
-
+*/
 
 setMap();  charter = new mapboxgl.Compare(beforeMap, afterMap, container, { });
 
