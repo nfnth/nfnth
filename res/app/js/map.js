@@ -74,7 +74,7 @@ const marker = new mapboxgl.Marker({draggable: true}).setLngLat(center).addTo(ma
 function onDragEnd() {const lngLat = marker.getLngLat();coordinates.style.display = 'block';coordinates.innerHTML = `Longitude: ${lngLat.lng}<br />Latitude: ${lngLat.lat}`;}
 marker.on('dragend', onDragEnd);
 
-const canvas = map.getCanvasContainer(); const geojson = {'type': 'FeatureCollection','features': [{'type': 'Feature','geometry': {'type': 'Point','coordinates': center}}]};
+const canvas = map.getCanvasContainer(); //const geojson = {'type': 'FeatureCollection','features': [{'type': 'Feature','geometry': {'type': 'Point','coordinates': center}}]};
 function onMove(e) {const coords = e.lngLat;canvas.style.cursor = 'grabbing';geojson.features[0].geometry.coordinates = [coords.lng, coords.lat];map.getSource('point').setData(geojson);}
 function onUp(e) {const coords = e.lngLat;coordinates.style.display = 'block';coordinates.innerHTML = `Longitude: ${coords.lng}<br />Latitude: ${coords.lat}`;canvas.style.cursor = '';
 

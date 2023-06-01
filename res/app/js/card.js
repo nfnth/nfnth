@@ -83,12 +83,12 @@ var shiner = setInterval(function(){
   $('.block').css({
     transform : 'scale(1.03) translate(' + (block.CX * 0.05) + 'px, ' + (block.CY * 0.05) + 'px) rotateX(' + (block.CY * 0.05) + 'deg) rotateY(' + (block.CX * 0.05) + 'deg)'}) }, 20);
 
-function shakeCard(i) { 
-	var dCard = Math.floor(Math.random() * (domains.length-1+1)); 
-	 imags[i] = domains[dCard].core.image_url; $("#card-name"+i).html(domains[dCard].core.name + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div><img style='display:flex;border-radius:8px; cursor:pointer;' onclick='addOpenDeed(" + i + ");' class='z-depth-1' width='30' height='30' src='res/img/icon/key/" + getCollect(domains[dCard].core.collection.slug) + "'/></div>"); 
-	 vmags[i] = domains[dCard].core.image_url; 
-	fmags[i] = domains[dCard].core.permalink; $("#flip"+i).click(function(){ buildDoc(dCard); });
-bmags[i] = getBack(domains[dCard].core.collection.slug);}
+function shakeCard(i) { var oCard = Math.floor(Math.random() * (opens.length-1+1));
+	var dCard = Math.floor(Math.random() * (opens[oCard].domains.length-1+1)); 
+	 imags[i] = opens[oCard].domains[dCard].core.image_url; $("#card-name"+i).html(opens[oCard].domains[dCard].core.name + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div><img style='display:flex;border-radius:8px; cursor:pointer;' onclick='addOpenDeed(" + i + ");' class='z-depth-1' width='30' height='30' src='res/img/icon/key/" + getCollect(opens[oCard].domains[dCard].core.collection.slug) + "'/></div>"); 
+	 vmags[i] = opens[oCard].domains[dCard].core.image_url; 
+	fmags[i] = opens[oCard].domains[dCard].core.permalink; $("#flip"+i).click(function(){ buildDoc(dCard); });
+bmags[i] = getBack(opens[oCard].domains[dCard].core.collection.slug);}
 
 function setCards() { shakeCard(0); shakeCard(1); 
 $('.slider .item').each(function(i){
