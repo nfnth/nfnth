@@ -26,7 +26,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/mapbox-gl-animated-popup@latest/dist/mapbox-gl-animated-popup.min.js"></script><script src="https://unpkg.com/@turf/turf@6/turf.min.js"></script>
 	<!--<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>--><script defer src="res/app/js/map.js"></script>
 
-	<script src="https://cdn.jsdelivr.net/npm/pixi.js@7.x/dist/pixi.min.js"></script><script src="res/app/js/card.js"></script><script src="res/app/js/gameboy.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/pixi.js@7.x/dist/pixi.min.js"></script><script src="res/app/js/card.js"></script><script src="res/app/js/gameboy.js"></script><script src="res/app/js/game.js"></script>
 	
 	<script>let FF_FOUC_FIX;</script></head>
 
@@ -250,7 +250,7 @@
     <li><a href="#!" onclick="$('#modal-room').modal('open');"><span>📦</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Box Builder</span></a></li>
     <li style="margin-top:0;"class="divider" tabindex="-1"></li>
     <li><a href="#!" onclick="showView('shopper'); switchShop();" ><span>🏪️</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Dralun Shop</span></a></li>
-    <li><a href="#!" onclick="showView('gamer');" ><span>🃏️</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>WAR!</span></a></li></ul>
+    <li><a href="#!" onclick="playGame();" ><span>🃏️</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>WAR!</span></a></li></ul>
 
 <ul id='dropdown-open' class='dropdown-content'>
     	<li><a href="#!" onclick="opens.sort(openAZ); showList('open');">Name&nbsp;&nbsp; &#8595;</a></li><li><a href="#!" onclick="opens.sort(openZA); showList('open');">Name&nbsp;&nbsp; &#8593;</a></li>
