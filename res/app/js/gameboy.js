@@ -56,6 +56,12 @@ var animalData = { frames: {
  //...sheepa,sheepb,sheepc,sheepaba,sheepbba,sheepcba
  //...deerfba,deerf,deermba,deerm,bearaba,beara,bearbba,bearb
  
+ // birds1/2
+ //... chickena, chickenb, chick, egg, ducka, duckb,  swan, flamingo
+ //... flya, flyb, flyc, flyd
+ 
+ // horse
+ //... horsea, horseb,  horsec, horsed, horseas,  horsebs, horsecs, horseds
  
  
  
