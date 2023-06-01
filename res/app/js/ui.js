@@ -1,4 +1,4 @@
-var complete; var reset = false; var first = true; 
+var complete; var reset = false; var first = true; var nfnth = false;
 
 function showList(area) {  $("#registry").html(''); $("#registry").hide(); 
     switch (area) {
