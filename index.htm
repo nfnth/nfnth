@@ -122,14 +122,14 @@
 
 	<!-- shop -->
 	<div id="shopper" class="content loader pane scale-transition scale-out" style="overflow-y: auto; height: 115%;width:100%;padding-top:24px; background: rgb(255,255,255);background: linear-gradient(156deg, rgba(255,255,255,1) 0%, rgba(245,205,205,1) 35%, rgba(242,129,129,1) 100%); ">
-		<div><div onclick="switchShop();" class="switch"><label>🗒️<input type="checkbox"><span class="lever"></span>🖼️</label></div></div>
+		<div><div class="switch"><label onclick="switchShop();">🗒️<input type="checkbox"><span class="lever"></span>🖼️</label></div></div>
 		
 		<div id="shop-list" class="mobile-column" style="width:100%; display:flex;justify-content:center;margin:auto;align-items:center; padding-bottom:120px;">
 		
 		
   <ul class="collapsible">
     <li>
-      <div class="collapsible-header">🔥&nbsp;&nbsp;Fire Stick<a class="waves-effect waves-light btn red lighten-5 grey-text text-darken-3" style="display:flex;justify-content:space-between;" onclick="openInNewTab('https://ocur.app');"><span>➕</span></a><a class="waves-effect waves-light btn red lighten-5 grey-text text-darken-3" style="display:flex;justify-content:space-between;" onclick="openInNewTab('https://ocur.app');"><span>➖</span></a></div>
+      <div class="collapsible-header">🔥&nbsp;&nbsp;Fire Stick&nbsp;&nbsp;&nbsp;&nbsp;<a class="waves-effect waves-light btn green lighten-2 grey-text text-darken-3" style="display:flex;justify-content:space-between;border-radius:8px 0px 0px 8px;" onclick="openInNewTab('https://ocur.app');"><span>➕</span></a><a class="waves-effect waves-light btn red lighten-2 grey-text text-darken-3" style="display:flex;justify-content:space-between;border-radius:0px 8px 8px 0px;" onclick="openInNewTab('https://ocur.app');"><span>➖</span></a></div>
       <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
     </li>
     <li>
@@ -246,7 +246,7 @@
 	<li style="margin-top:0;"class="divider" tabindex="-1"></li>
     <li><a href="#!" onclick="$('#modal-room').modal('open');"><span>📦</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Box Builder</span></a></li>
     <li style="margin-top:0;"class="divider" tabindex="-1"></li>
-    <li><a href="#!" onclick="showView('shopper'); switchShop();" ><span>🃏️</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>WAR!</span></a></li>
+    <li><a href="#!" onclick="showView('shopper'); switchShop();" ><span>🏪️</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Dralun Shop</span></a></li>
     <li><a href="#!" onclick="showView('gamer');" ><span>🃏️</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>WAR!</span></a></li></ul>
 
 <ul id='dropdown-open' class='dropdown-content'>
@@ -888,4 +888,7 @@ h1 {font-weight: 700;font-size: 64px; margin: 20px 0 0 0;padding: 0 20px;}
 .ns-close::after {-webkit-transform: translate(-50%,-50%) rotate(-45deg);transform: translate(-50%,-50%) rotate(-45deg);}
 
 .card { margin:12px; max-width:240px; }
+
+.collapsible-header { display:flex; justify-content:center; align-items:center; }
+.collapsible-body { background-color: ghostwhite; }
 </style>
