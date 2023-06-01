@@ -213,7 +213,7 @@ function addArt() { showEdit(); tempMark.togglePopup();
 
 
 
-
+/*
 
 map.on('load', () => { 
 
@@ -287,6 +287,8 @@ map.setPaintProperty('line', 'line-gradient', ['step',['line-progress'],'red',an
 const rotation = 150 - animationPhase * 40.0;
 map.setBearing(rotation % 360);
 window.requestAnimationFrame(frame);}window.requestAnimationFrame(frame); });
+
+*/
 
 //map.setLayoutProperty('country-label', 'text-field', ['get', `name_${language}` ]); //ru fr de es
 
