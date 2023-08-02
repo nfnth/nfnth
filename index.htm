@@ -103,11 +103,9 @@ function buyThing() {
   var checkoutButton = document.getElementById('checkout-button-price_1NCnkuHtnEEsiKCN9RRuHv4h');
  
 //   -d "line_items[0][price]"={{PRICE_ID}}
- 
  //  -d "line_items[0][quantity]"=1 \
  // -d mode=payment \
  // -d "shipping_address_collection[allowed_countries][0]"=US \
- 
  
     stripe.redirectToCheckout({ lineItems: [{price: 'price_1NDCR0HtnEEsiKCNNSsw3bez', quantity: 1}, {price: 'price_1NCnqqHtnEEsiKCNctqWZqSJ', quantity: 2}
 					   , {price: 'price_1NDCiTHtnEEsiKCN3it7GWWE', quantity: 1}],
@@ -120,21 +118,12 @@ function buyThing() {
     .then(function (result) { if (result.error) {var displayError = document.getElementById('error-message'); displayError.textContent = result.error.message; } }); 
     
     }
-var shopList = true;
-function switchShop() { if (shopList) { $("#shop-list").show(); $("#shop-grid").hide(); shopList = false; } else { $("#shop-list").hide(); $("#shop-grid").show(); shopList = true; } }
 
 function startup() { $('img').on('dragstart', function(evt) { return false; }); showView("slider"); $(".loader").css("visibility", "visible"); setCards();
 	$('.setter').click(function () { $(this).parent().toggleClass('expand');     $('.extra').toggleClass('removed'); $('.extra').toggleClass('added');  }); }
 
 function closeLeft() { document.getElementById('booker').click(); $('#deed-pane').sidenav('close'); }
 function closeTop() { document.getElementById('egger').click();  }
-
-/*function getParameterx() { var path = window.location.href.replace('https://','').replace('!','').replace('#',''); 
-	if (path.indexOf("/") > 0) { var keyDomain = path.substring(path.indexOf("/")+1, path.length); 
-	if (keyDomain.length > 1) { 
-		if (keyDomain == "about") { showView('charter'); clearMap(); setTimeout(function() { showTutorial(); }, 1000); }
-		else if (keyDomain.indexOf("0x") > -1) { showOwner(keyDomain); } else {
-		for (let j = 0; j < domains.length; j++) { if (domains[j].desc == keyDomain) { pullOwner(j); showView('charter'); document.title = domains[j].core.name; setTimeout(function() { flyDomain(j); }, 2000); break; } } } } } }*/
 
 function getParameter() { const urlParams = new URLSearchParams(window.location.search); return urlParams.get('action'); }
 function getDomain() { const urlParams = new URLSearchParams(window.location.search); return urlParams.get('domain'); }
@@ -149,13 +138,6 @@ function setPage() { var page = window.location.href.replace('https://','').repl
 				case 'urland': var placer = getDomain(); break; } break;
         case 'ocur.app': document.title = "OCUR • app"; break; } }
 
-var gearSwitch = 0; function gearBox() { // 0 (stop, show dialog), 1 (rotate), 2 (rotate back)
-	if(gearSwitch == 0) { $("#gear-pic").removeClass("image-rotate"); $("#gear-pic2").removeClass("image-rotate"); $("#gear-pic").removeClass("image-rotate-back"); $("#gear-pic2").removeClass("image-rotate-back");  } else if (gearSwitch == 1) {  $("#gear-pic").addClass("image-rotate"); $("#gear-pic2").addClass("image-rotate");  } else if (gearSwitch == 2) {  $("#gear-pic").addClass("image-rotate-back"); $("#gear-pic2").addClass("image-rotate-back"); }  }
-	
-function showGear() {
-	var gear = Math.floor(Math.random() * (42 - 1 + 1)) + 1; document.getElementById('gear-pic').src = "res/img/icon/gear/gear" + gear.toString() + ".png";
-	gear = Math.floor(Math.random() * (42 - 1 + 1)) + 1; document.getElementById('gear-pic2').src = "res/img/icon/gear/gear" + gear.toString() + ".png";   }
-function turnGear(turn) { if (turn) { $("#gear-pic").addClass(); $("#gear-pic2").addClass(); } else { $("#gear-pic").removeClass(); $("#gear-pic2").removeClass(); } }
 
 var width = window.innerWidth; var height = window.innerHeight + 64; var currentView;
 function showView(view) { if (view != currentView) { hideView(); createView(view); } } 
@@ -171,17 +153,11 @@ function showFav() {
     	$('<link>').appendTo('head').attr({ class: 'ico', type: 'image/x-icon', rel: 'icon', sizes: "192x192", href: "res/img/fav/android-chrome-192x192.png" });
     	$('<link>').appendTo('head').attr({ class: 'ico', type: 'image/x-icon', rel: 'apple-touch-icon', sizes: "128x128", href: "res/img/fav/apple-touch-icon.png" }); }
 
-function copyClip(text) { navigator.clipboard.writeText(text); M.toast({html: 'Address copied.'}); }
-function openInNewTab(url) { window.open(url, '_blank').focus(); } //window.location.href = url;
 
-async function initial() { showGear(); showFav(); setPage();
-
-	//$("#registry-open").css("height",(height - 120) + "px"); $("#registry-domain").css("height",(height - 120) + "px");
-    //$('#doc-hide').dropdown({ constrainWidth: false, coverTrigger: false } ); //hover: true 
+async function initial() { showFav(); setPage();
 
 	$('#dropdown-tooler').dropdown({ constrainWidth: false });
     $("#mainer").css("opacity", 1); setTimeout(function() { $("#egger").fadeIn(); startup(); }, 2000 );  }
-  // $('.datepicker').datepicker({ autoClose: true, isRTL: false });
 
 initial(); //document.addEventListener('DOMContentLoaded', function() {  }); 
 
