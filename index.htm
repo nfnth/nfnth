@@ -247,7 +247,7 @@
 	<li><a href="#!" onclick="showView('lister');" ><span>📜</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Note Editor</span></a></li>
 	<li><a href="#!" onclick="showView('charter'); openMap();"><span>🗺️</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Map Maker</span></a></li>
 	<li style="margin-top:0;"class="divider" tabindex="-1"></li>
-    <li><a href="#!" onclick="$('#modal-room').modal('open');"><span>📦</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Box Builder</span></a></li>
+    <li><a href="#!" onclick="buyThing();"><span>📦</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Box Builder</span></a></li>
     <li style="margin-top:0;"class="divider" tabindex="-1"></li>
     <li><a href="#!" onclick="showView('shopper'); switchShop();" ><span>🏪️</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Dralun Shop</span></a></li>
     <li><a href="#!" onclick="playGame();" ><span>🃏️</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>WAR!</span></a></li></ul>
@@ -499,6 +499,65 @@
 											C3.084,29.762,0,29.75,0,29.75z"></path></svg></div><div id="dialog-inner2" class="dialog-inner print-help hide-scrollbar" style="overflow:auto;"></div></div></div>
 
 <script>
+	const stripe = Stripe('pk_live_51LsD4eHtnEEsiKCNaOlvv3Hh54aEX2GjPhrtcdMZcDPFFl4EttcqC5bhxTOUBSJ9lvstkxzqz4GLOe4vJKLrrHft00veYVOXU7');
+function showScreen() { }
+
+
+function makePayment(amount) {
+	
+	$.get('pay').done(function(data) { console.log(data);
+	const options = { 'clientSecret': data, }//'appearance': {/*...*/},};
+
+// Set up Stripe.js and Elements to use in checkout form, passing the client secret obtained in step 3
+const elements = stripe.elements(options);
+
+// Create and mount the Payment Element
+const paymentElement = elements.create('payment');
+$('#modal-pay').modal('open');
+paymentElement.mount('#payment-element'); });
+
+}
+	function setPayment() {
+//window.location = "https://iocur.com/pay";
+  var stripe = Stripe('pk_live_51LsD4eHtnEEsiKCNaOlvv3Hh54aEX2GjPhrtcdMZcDPFFl4EttcqC5bhxTOUBSJ9lvstkxzqz4GLOe4vJKLrrHft00veYVOXU7');
+  var checkoutButton = document.getElementById('checkout-button-price_1Mv2mUHtnEEsiKCNlDBI8oKR');
+
+    stripe.redirectToCheckout({
+      lineItems: [{price: 'price_1Mv2mUHtnEEsiKCNlDBI8oKR', quantity: 1},{price: 'price_1MBog2HtnEEsiKCN7NyvGgII', quantity: 1}],
+      mode: 'payment',
+      successUrl: window.location.protocol + '//iocur.com/success',
+      cancelUrl: window.location.protocol + '//iocur.com/canceled', })
+    .then(function (result) { if (result.error) {var displayError = document.getElementById('error-message');
+        displayError.textContent = result.error.message; } });}
+     
+
+var coordinates; var artFlag = false; var tempMark = ""; var tempMap = [];
+
+
+if ($(window).width() < 700) { $('.material-icons').removeClass('left'); }
+
+function buyThing() {
+  var stripe = Stripe('pk_live_51LsD4eHtnEEsiKCNaOlvv3Hh54aEX2GjPhrtcdMZcDPFFl4EttcqC5bhxTOUBSJ9lvstkxzqz4GLOe4vJKLrrHft00veYVOXU7');
+  var checkoutButton = document.getElementById('checkout-button-price_1NCnkuHtnEEsiKCN9RRuHv4h');
+ 
+//   -d "line_items[0][price]"={{PRICE_ID}}
+ 
+ //  -d "line_items[0][quantity]"=1 \
+ // -d mode=payment \
+ // -d "shipping_address_collection[allowed_countries][0]"=US \
+ 
+ 
+    stripe.redirectToCheckout({ lineItems: [{price: 'price_1NDCR0HtnEEsiKCNNSsw3bez', quantity: 1}, {price: 'price_1NCnqqHtnEEsiKCNctqWZqSJ', quantity: 2}
+					   , {price: 'price_1NDCiTHtnEEsiKCN3it7GWWE', quantity: 1}],
+    
+    billingAddressCollection: 'required', shippingAddressCollection: { allowedCountries:['US'] } ,
+							
+
+
+      mode: 'payment',  successUrl: window.location.protocol + '//nfnth.com/success',cancelUrl: window.location.protocol + '//nfnth.com/canceled', })
+    .then(function (result) { if (result.error) {var displayError = document.getElementById('error-message'); displayError.textContent = result.error.message; } }); 
+    
+    }
 var shopList = true;
 function switchShop() { if (shopList) { $("#shop-list").show(); $("#shop-grid").hide(); shopList = false; } else { $("#shop-list").hide(); $("#shop-grid").show(); shopList = true; } }
 
