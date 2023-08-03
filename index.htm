@@ -11,7 +11,7 @@
 <body id="mainer" style="overflow:overlay; background-color:whitesmoke;transition: opacity 1s linear;opacity:0;" >
 
 <!-- menu -->
-<nav id="main-menu" style="position: fixed;top:0; z-index:3;display:flex;justify-content:center;" class="loader">
+<nav id="main-menu" style="position: fixed;top:0; z-index:3;display:flex;justify-content:center;" class="loader blue-grey lighten-4">
 	<ul><li><a id="dropdown-tooler" class="dropdown-trigger" href="#!" data-target="dropdown-tool" ><img class="image" style="opacity:0.6; height: 24px; width:24px; margin-right:-16px;cursor:pointer;" src="res/img/icon/seal.png" /><i class="material-icons right">arrow_drop_down</i></a></li></ul></div></nav>
 
 <!-- view -->
@@ -67,7 +67,7 @@ var coordinates; var artFlag = false; var tempMark = ""; var tempMap = [];
 
 if ($(window).width() < 700) { $('.material-icons').removeClass('left'); }
 
-function buyThing() {
+function buyThing() { alert('buying...');
   var stripe = Stripe('pk_live_51LsD4eHtnEEsiKCNaOlvv3Hh54aEX2GjPhrtcdMZcDPFFl4EttcqC5bhxTOUBSJ9lvstkxzqz4GLOe4vJKLrrHft00veYVOXU7');
   var checkoutButton = document.getElementById('checkout-button-price_1NCnkuHtnEEsiKCN9RRuHv4h');
  
