@@ -1,7 +1,0 @@
-[Unit]
-Description=nth
-[Service]
-ExecStart=/usr/bin/python3 /root/ur/res/site.py
-Type=idle
-[Install]
-WantedBy=multi-user.target
