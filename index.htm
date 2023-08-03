@@ -2,20 +2,10 @@
 <html lang="en">
 <head><title>• • •</title>
 
-	<meta http-equiv="Content-Language" content="en-US">
-	<meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="deed domains for sale, from deed to domain, collectible domains, map maker" />
-	<meta name="keywords" content="domain, deed, urland, ocur, ocurio, crypto, dBay, nfnth, map, maker, token, iocur, dralun" />
-	<meta name="author" content="nfnth" />
-
 	<!-- resources -->
-	<script src="res/app/all.js"></script><link rel="stylesheet" href="res/app/all.css"></script>
 	<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-	
 	<script src="https://js.stripe.com/v3/"></script></head>
 
 <body id="mainer" style="overflow:overlay; background-color:whitesmoke;transition: opacity 1s linear; opacity:0;" >
@@ -24,21 +14,6 @@
 <nav id="main-menu" style="position: fixed;top:0; z-index:3;visibility:hidden;" class="loader">
 	<div id="panel-menu" class="nav-wrapper header z-depth-1 grey lighten-5" style="padding-top:0px!important; padding-bottom:0px!important; display:flex; justify-content: left; color:black; border-bottom: solid 1px gainsboro;">
     	<div style="height:103%;border-bottom:solid 2px darkred;" class="z-depth-1"><a id="menu-deed" style="cursor:pointer; color:darkslategrey; opacity:0.7; background-color:ghostwhite; display: flex; align-items: center; height: 100%; padding-right: 10px;font-weight: bold;font-size: 20px; -webkit-transition: background-color 300ms linear, color 300ms linear;-moz-transition: background-color 300ms linear, color 300ms linear;-o-transition: background-color 300ms linear, color 300ms linear;-ms-transition: background-color 300ms linear, color 300ms linear;transition: background-color 300ms linear, color 300ms linear;"><i id="bars" class="material-icons" style="padding-left:16px;" onclick="showList('open');$('#deed-pane').sidenav('open');">menu</i><div id="waiter" style="height:48px; width:48px; cursor: pointer; margin-left: 12px;" onclick="showList('open');$('#deed-pane').sidenav('open');"><img id="list-wait" class="image" src="res/img/icon/seal.png" width="48" /></div></a></div>
-    		
-    	<!-- profile -->
-    	<div id="egger" class="containerx yellowx golden" style="background-color: beige;display:none;"><span id="connor" class="button setter">🪨</span>
-			  <div class="contentx">
-				<div id="walleter" class="head" style="display: flex;align-items: center;justify-content: space-evenly;">
-					<a style="border-radius:8px; width:160px; display: flex;justify-content: space-between;" class="mobile-width waves-effect waves-light amber ligten-3 btn" onclick="setup();"><span class="mobile-hide">CONNECT</span><span>🪙</span></a>
-					<a style="border-radius:8px; width:160px; display: flex;justify-content: space-between;" class="mobile-width waves-effect waves-light amber lighten-1 btn" onclick="$('#modal-qr').modal('open');"><span class="mobile-hide">SCAN</span><span>🔑</span></a></div>
-				<div class="body" style="text-align:center;">
-					<ul style="display: flex;flex-direction: column;">
-						<li class="edger"><a onclick="showDoc('deed');" class="edger waves-effect"><span class="badge red lighten-1 badge-stamp z-depth-1"><span style="font-weight:bold;margin-right:4px;">0</span>&nbsp;&nbsp;deed&nbsp;&nbsp;&nbsp;&nbsp;📜</span></a></li>
-						<li class="edger"><a id="locurScan" onclick="showDoc('deed');" class="edger waves-effect"><span class="badge blue lighten-1 badge-stamp z-depth-1"><span style="font-weight:bold;margin-right:4px;">0</span>&nbsp;&nbsp;note&nbsp;&nbsp;&nbsp;&nbsp;🗒️</span></a></li>
-						<li class="edger"><a onclick="showDoc('deed');" class="edger waves-effect"><span class="badge green lighten-1 badge-stamp z-depth-1"><span style="font-weight:bold;margin-right:4px;">0</span>&nbsp;&nbsp;map&nbsp;&nbsp;&nbsp;&nbsp;🗺️</span></a></li>
-						<li class="edger"><a class="edger waves-effect" onclick="showDoc('deed');" ><span class="badge amber ligten-1 badge-stamp z-depth-1"><span style="font-weight:bold;margin-right:4px;">0</span>&nbsp;&nbsp;box&nbsp;&nbsp;&nbsp;&nbsp;📦</span></a></li>
-						<li><div style="margin-top:0;" class="divider"></div></li>
-						<li id="deeder" class="mobile-stat" style="display: flex; align-items: center; margin:12px;justify-content:center;">No profile connected.</li></ul></div></div></div>
 
 		<!-- tool -->
 		<ul><li><a id="dropdown-tooler" class="dropdown-trigger" href="#!" data-target="dropdown-tool" ><img class="image gear-image" style="opacity:0.6; height: 24px; width:24px; margin-right:-16px;cursor:pointer;" src="res/img/icon/pen.png" /><i class="material-icons right">arrow_drop_down</i></a></li></ul></div></nav>
@@ -118,15 +93,6 @@ function buyThing() {
     .then(function (result) { if (result.error) {var displayError = document.getElementById('error-message'); displayError.textContent = result.error.message; } }); 
     
     }
-
-function startup() { $('img').on('dragstart', function(evt) { return false; }); showView("slider"); $(".loader").css("visibility", "visible"); setCards();
-	$('.setter').click(function () { $(this).parent().toggleClass('expand');     $('.extra').toggleClass('removed'); $('.extra').toggleClass('added');  }); }
-
-function closeLeft() { document.getElementById('booker').click(); $('#deed-pane').sidenav('close'); }
-function closeTop() { document.getElementById('egger').click();  }
-
-function getParameter() { const urlParams = new URLSearchParams(window.location.search); return urlParams.get('action'); }
-function getDomain() { const urlParams = new URLSearchParams(window.location.search); return urlParams.get('domain'); }
 		
 function setPage() { var page = window.location.href.replace('https://','').replace('/','').replace('#','').replace('!',''); 
 	$("#brand").html(page); //setImages();
@@ -153,12 +119,10 @@ function showFav() {
     	$('<link>').appendTo('head').attr({ class: 'ico', type: 'image/x-icon', rel: 'icon', sizes: "192x192", href: "res/img/fav/android-chrome-192x192.png" });
     	$('<link>').appendTo('head').attr({ class: 'ico', type: 'image/x-icon', rel: 'apple-touch-icon', sizes: "128x128", href: "res/img/fav/apple-touch-icon.png" }); }
 
-
 async function initial() { showFav(); setPage();
 
 	$('#dropdown-tooler').dropdown({ constrainWidth: false });
-    $("#mainer").css("opacity", 1); setTimeout(function() { $("#egger").fadeIn(); startup(); }, 2000 );  }
+    $("#mainer").css("opacity", 1);   }
 
-initial(); //document.addEventListener('DOMContentLoaded', function() {  }); 
-
+initial();
 </script>
