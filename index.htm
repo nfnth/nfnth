@@ -11,15 +11,19 @@
 <body id="mainer" style="overflow:overlay; background-color:whitesmoke;transition: opacity 1s linear;opacity:0;" >
 
 <!-- menu -->
-<nav id="main-menu" style="position: fixed;top:0; z-index:3;display:flex;justify-content:center;align-items:center;" class="loader blue-grey lighten-4">
+<nav id="main-menu" style="position: fixed;top:0; z-index:3;display:flex;justify-content:space-between;align-items:center;" class="loader blue-grey lighten-4">
 	<div>
 	<ul><li><a id="dropdown-tooler" class="dropdown-trigger" href="#!" data-target="dropdown-tool" ><img class="image" style="height: 48px; width:48px; cursor:pointer;" src="res/img/icon/seal.png" /></a></li></ul></div>
-<div><a class=" z-depth-1 waves-effect waves-light btn blue lighten-4 mobile-width" style="width:160px; border-radius:8px; display:flex; justify-content:space-between;" onclick="buyThing(); "><span class="mobile-hide">Checkout</span><span>📝</span></a></div>	
+<div><a class=" z-depth-1 waves-effect waves-light btn green lighten-3" style="margin-right:48px; width:160px; border-radius:8px; display:flex; justify-content:space-between;" onclick="buyThing(); "><span class="mobile-hide">Checkout</span><span>🛒<span id="carter"></span></a></div>	
 </nav>
 
 <!-- view -->
 <div id="home" style="height:105%; text-align:center; width:100%; z-index:1;" class="content loader print-help">
-
+<div>
+	<div class="card hoverable sticky-action" style="border-radius:12px;"><div id="dralun-com" class="card-image waves-effect waves-block waves-light"><img class="activator" src="res/img/shop/gas.png" style="width:240px; height:240px; object-fit:cover;border-radius:12px 12px 0px 0px;"></div><div class="card-content"><span class="card-title activator fonter" style="font-size:20px;">♨️&nbsp;&nbsp;Pocket Torch<i class="material-icons right">more_vert</i></span><p style="padding-top:8px;"><a class="waves-effect waves-light btn red lighten-4 grey-text text-darken-3" style="width:100px;display:flex;justify-content:space-between;" onclick="openInNewTab(\'https://ocur.app\');"><span>➕</span><span>Add</span></a></p></div><div class="card-action">...</div><div class="card-reveal"><span class="card-title grey-text text-darken-4" style="font-size:18px;">♨️&nbsp;&nbsp;Pocket Torch<i class="material-icons right">close</i></span><p><video style="width:100%; height:100px; object-fit:cover;border-radius:2px;" class="z-depth-1" controls="controls" src=""></video></p><p>Real-time feed and marketplace of OCUR items</p><p><a class="waves-effect waves-light btn blue-grey lighten-2 blue-grey-text text-darken-2" onclick="showDoc(\'README\');" style="display:flex;justify-content:space-between;"><span>📄</span><span>Read More</span></a></p></div></div></div>
+	<div class="card hoverable sticky-action" style="border-radius:12px;"><div id="dralun-com" class="card-image waves-effect waves-block waves-light"><img class="activator" src="res/img/shop/gas.png" style="width:240px; height:240px; object-fit:cover;border-radius:12px 12px 0px 0px;"></div><div class="card-content"><span class="card-title activator fonter" style="font-size:20px;">♨️&nbsp;&nbsp;Pocket Torch<i class="material-icons right">more_vert</i></span><p style="padding-top:8px;"><a class="waves-effect waves-light btn red lighten-4 grey-text text-darken-3" style="width:100px;display:flex;justify-content:space-between;" onclick="openInNewTab(\'https://ocur.app\');"><span>➕</span><span>Add</span></a></p></div><div class="card-action">...</div><div class="card-reveal"><span class="card-title grey-text text-darken-4" style="font-size:18px;">♨️&nbsp;&nbsp;Pocket Torch<i class="material-icons right">close</i></span><p><video style="width:100%; height:100px; object-fit:cover;border-radius:2px;" class="z-depth-1" controls="controls" src=""></video></p><p>Real-time feed and marketplace of OCUR items</p><p><a class="waves-effect waves-light btn blue-grey lighten-2 blue-grey-text text-darken-2" onclick="showDoc(\'README\');" style="display:flex;justify-content:space-between;"><span>📄</span><span>Read More</span></a></p></div></div></div>
+	<div class="card hoverable sticky-action" style="border-radius:12px;"><div id="dralun-com" class="card-image waves-effect waves-block waves-light"><img class="activator" src="res/img/shop/gas.png" style="width:240px; height:240px; object-fit:cover;border-radius:12px 12px 0px 0px;"></div><div class="card-content"><span class="card-title activator fonter" style="font-size:20px;">♨️&nbsp;&nbsp;Pocket Torch<i class="material-icons right">more_vert</i></span><p style="padding-top:8px;"><a class="waves-effect waves-light btn red lighten-4 grey-text text-darken-3" style="width:100px;display:flex;justify-content:space-between;" onclick="openInNewTab(\'https://ocur.app\');"><span>➕</span><span>Add</span></a></p></div><div class="card-action">...</div><div class="card-reveal"><span class="card-title grey-text text-darken-4" style="font-size:18px;">♨️&nbsp;&nbsp;Pocket Torch<i class="material-icons right">close</i></span><p><video style="width:100%; height:100px; object-fit:cover;border-radius:2px;" class="z-depth-1" controls="controls" src=""></video></p><p>Real-time feed and marketplace of OCUR items</p><p><a class="waves-effect waves-light btn blue-grey lighten-2 blue-grey-text text-darken-2" onclick="showDoc(\'README\');" style="display:flex;justify-content:space-between;"><span>📄</span><span>Read More</span></a></p></div></div></div>
+</div>
 </div>
 
 <!-- template -->
@@ -103,8 +107,6 @@ function showFav() {
     	$('<link>').appendTo('head').attr({ class: 'ico', type: 'image/x-icon', rel: 'icon', sizes: "192x192", href: "res/img/fav/android-chrome-192x192.png" });
     	$('<link>').appendTo('head').attr({ class: 'ico', type: 'image/x-icon', rel: 'apple-touch-icon', sizes: "128x128", href: "res/img/fav/apple-touch-icon.png" }); }
 
-async function initial() { showFav(); document.title = "nf/nth • Survival Gear";
-	$('#dropdown-tooler').dropdown({ constrainWidth: false }); $("#mainer").css("opacity", 1);   }
-
+async function initial() { showFav(); document.title = "nf/nth • Survival Gear"; $("#mainer").css("opacity", 1);   }
 initial();
 </script>
