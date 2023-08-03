@@ -11,8 +11,11 @@
 <body id="mainer" style="overflow:overlay; background-color:whitesmoke;transition: opacity 1s linear;opacity:0;" >
 
 <!-- menu -->
-<nav id="main-menu" style="position: fixed;top:0; z-index:3;display:flex;justify-content:center;" class="loader blue-grey lighten-4">
-	<ul><li><a id="dropdown-tooler" class="dropdown-trigger" href="#!" data-target="dropdown-tool" ><img class="image" style="height: 48px; width:48px; cursor:pointer;" src="res/img/icon/seal.png" /></a></li></ul></div></nav>
+<nav id="main-menu" style="position: fixed;top:0; z-index:3;display:flex;justify-content:center;align-items:center;" class="loader blue-grey lighten-4">
+	<div>
+	<ul><li><a id="dropdown-tooler" class="dropdown-trigger" href="#!" data-target="dropdown-tool" ><img class="image" style="height: 48px; width:48px; cursor:pointer;" src="res/img/icon/seal.png" /></a></li></ul></div>
+<div><a class=" z-depth-1 waves-effect waves-light btn blue lighten-4 mobile-width" style="width:160px; border-radius:8px; display:flex; justify-content:space-between;" onclick="buyThing(); "><span class="mobile-hide">Checkout</span><span>📝</span></a></div>	
+</nav>
 
 <!-- view -->
 <div id="home" style="height:105%; text-align:center; width:100%; z-index:1;" class="content loader print-help">
